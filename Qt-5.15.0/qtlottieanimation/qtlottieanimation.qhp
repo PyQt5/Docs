@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QtHelpProject version="1.0">
+    <namespace>org.qt-project.qtlottieanimation.5150</namespace>
+    <virtualFolder>qtlottieanimation</virtualFolder>
+    <metaData name="version" value="5.15.0"/>
+    <customFilter name="QtLottieAnimation 5.15.0">
+        <filterAttribute>5.15.0</filterAttribute>
+        <filterAttribute>qtlottieanimation</filterAttribute>
+    </customFilter>
+    <filterSection>
+        <filterAttribute>5.15.0</filterAttribute>
+        <filterAttribute>qtlottieanimation</filterAttribute>
+        <filterAttribute>qtrefdoc</filterAttribute>
+        <toc>
+            <section ref="qtlottieanimation-index.html" title="Qt Lottie Animation">
+                <section ref="qt-labs-lottieqt-qmlmodule.html" title="QML Types">
+                    <section ref="qml-qt-labs-lottieqt-lottieanimation.html" title="LottieAnimation Type Reference">
+                        <section ref="qml-qt-labs-lottieqt-lottieanimation-members.html" title="List of all members"/>
+                    </section>
+                </section>
+            </section>
+        </toc>
+        <keywords>
+            <keyword name="LottieAnimation" id="QML.LottieAnimation" ref="qml-qt-labs-lottieqt-lottieanimation.html"/>
+            <keyword name="Qt Lottie Animation" id="Qt Lottie Animation" ref="qtlottieanimation-index.html"/>
+            <keyword name="Qt Lottie Animation QML Types" id="Qt Lottie Animation QML Types" ref="qt-labs-lottieqt-qmlmodule.html"/>
+            <keyword name="autoPlay" id="LottieAnimation::autoPlay" ref="qml-qt-labs-lottieqt-lottieanimation.html#autoPlay-prop"/>
+            <keyword name="direction" id="LottieAnimation::direction" ref="qml-qt-labs-lottieqt-lottieanimation.html#direction-prop"/>
+            <keyword name="endFrame" id="LottieAnimation::endFrame" ref="qml-qt-labs-lottieqt-lottieanimation.html#endFrame-prop"/>
+            <keyword name="finished" id="LottieAnimation::finished" ref="qml-qt-labs-lottieqt-lottieanimation.html#finished-signal"/>
+            <keyword name="frameRate" id="LottieAnimation::frameRate" ref="qml-qt-labs-lottieqt-lottieanimation.html#frameRate-prop"/>
+            <keyword name="getDuration" id="LottieAnimation::getDuration" ref="qml-qt-labs-lottieqt-lottieanimation.html#getDuration-method"/>
+            <keyword name="gotoAndPlay" id="LottieAnimation::gotoAndPlay" ref="qml-qt-labs-lottieqt-lottieanimation.html#gotoAndPlay-method"/>
+            <keyword name="gotoAndStop" id="LottieAnimation::gotoAndStop" ref="qml-qt-labs-lottieqt-lottieanimation.html#gotoAndStop-method"/>
+            <keyword name="loops" id="LottieAnimation::loops" ref="qml-qt-labs-lottieqt-lottieanimation.html#loops-prop"/>
+            <keyword name="pause" id="LottieAnimation::pause" ref="qml-qt-labs-lottieqt-lottieanimation.html#pause-method"/>
+            <keyword name="play" id="LottieAnimation::play" ref="qml-qt-labs-lottieqt-lottieanimation.html#play-method"/>
+            <keyword name="quality" id="LottieAnimation::quality" ref="qml-qt-labs-lottieqt-lottieanimation.html#quality-prop"/>
+            <keyword name="source" id="LottieAnimation::source" ref="qml-qt-labs-lottieqt-lottieanimation.html#source-prop"/>
+            <keyword name="start" id="LottieAnimation::start" ref="qml-qt-labs-lottieqt-lottieanimation.html#start-method"/>
+            <keyword name="startFrame" id="LottieAnimation::startFrame" ref="qml-qt-labs-lottieqt-lottieanimation.html#startFrame-prop"/>
+            <keyword name="status" id="LottieAnimation::status" ref="qml-qt-labs-lottieqt-lottieanimation.html#status-prop"/>
+            <keyword name="stop" id="LottieAnimation::stop" ref="qml-qt-labs-lottieqt-lottieanimation.html#stop-method"/>
+            <keyword name="togglePause" id="LottieAnimation::togglePause" ref="qml-qt-labs-lottieqt-lottieanimation.html#togglePause-method"/>
+        </keywords>
+        <files>
+            <file>images/arrow_bc.png</file>
+            <file>images/bgrContent.png</file>
+            <file>images/btn_next.png</file>
+            <file>images/btn_prev.png</file>
+            <file>images/bullet_dn.png</file>
+            <file>images/bullet_sq.png</file>
+            <file>images/home.png</file>
+            <file>images/ico_note.png</file>
+            <file>images/ico_note_attention.png</file>
+            <file>images/ico_out.png</file>
+            <file>images/logo.png</file>
+            <file>qml-qt-labs-lottieqt-lottieanimation-members.html</file>
+            <file>qml-qt-labs-lottieqt-lottieanimation.html</file>
+            <file>qt-labs-lottieqt-qmlmodule.html</file>
+            <file>qtlottieanimation-index.html</file>
+            <file>style/offline-simple.css</file>
+            <file>style/offline.css</file>
+        </files>
+    </filterSection>
+</QtHelpProject>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- notifications.qdoc -->
+  <title>WebEngine Notifications Example | Qt WebEngine 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtwebengine-index.html">Qt WebEngine</a></li>
+<li>WebEngine Notifications Example</li>
+<li id="buildversion"><a href="qtwebengine-index.html">Qt 5.15.0 Reference Documentation</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#running-the-example">Running the Example</a></li>
+<li class="level1"><a href="#html-page">HTML Page</a></li>
+<li class="level1"><a href="#main-function">Main Function</a></li>
+<li class="level2"><a href="#requesting-feature-permissions">Requesting Feature Permissions</a></li>
+<li class="level2"><a href="#handling-new-notifications">Handling New Notifications</a></li>
+<li class="level1"><a href="#presenting-notifications-to-users">Presenting Notifications to Users</a></li>
+<li class="level2"><a href="#presenting-notifications">Presenting Notifications</a></li>
+<li class="level2"><a href="#closing-active-notification">Closing Active Notification</a></li>
+<li class="level2"><a href="#implementing-user-interaction">Implementing User Interaction</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">WebEngine Notifications Example</h1>
+<span class="subtitle"></span>
+<!-- $$$webenginewidgets/notifications-brief -->
+<p>Demonstrates how to pass HTML5 web notifications to users.</p>
+<!-- @@@webenginewidgets/notifications -->
+<!-- $$$webenginewidgets/notifications-description -->
+<div class="descr"> <a name="details"></a>
+<p class="centerAlign"><img src="images/notifications-example.png" alt="" /></p><p><i>WebEngine Notifications</i> demonstrates how to use the <a href="qwebengineprofile.html#setNotificationPresenter">QWebEngineProfile::setNotificationPresenter</a>() method and <a href="qwebenginenotification.html">QWebEngineNotification</a> class to show an HTML5 web notification to the user.</p>
+<a name="running-the-example"></a>
+<h4 id="running-the-example">Running the Example</h4>
+<p>To run the example from <a href="http://doc.qt.io/qtcreator/index.html">Qt Creator</a>, open the <b>Welcome</b> mode and select the example from <b>Examples</b>. For more information, visit <a href="http://doc.qt.io/qtcreator/creator-build-example-application.html">Building and Running an Example</a>.</p>
+<a name="html-page"></a>
+<h4 id="html-page">HTML Page</h4>
+<p>In this example, we create an internal HTML page that is added through a resource collection file (.qrc). The page displays buttons for requesting permissions and contains necessary JavaScript code to trigger this request:</p>
+<pre class="cpp">
+             Notification.requestPermission().then(function (permission) {
+                 if (permission == 'granted')
+                     createNotification()
+             })
+</pre>
+<p>Also page contains a button for creating a notification. The following JavaScript constructions are executed on the press event:</p>
+<pre class="cpp">
+     function createNotification() {
+         let title = 'Notification #' + ++notificationsCreated
+         let options = { body: 'Visit doc.qt.io for more info!', icon: 'icon.png', }
+
+         let notification = new Notification(title, options)
+     }
+</pre>
+<a name="main-function"></a>
+<h4 id="main-function">Main Function</h4>
+<p>In the <code>main</code> function, we instantiate a <a href="qwebengineview.html">QWebEngineView</a>, load our internal HTML page, and set up the required callbacks for notifications handling.</p>
+<a name="requesting-feature-permissions"></a>
+<h5 id="requesting-feature-permissions">Requesting Feature Permissions</h5>
+<p>We then use the <a href="qwebenginepage.html#featurePermissionRequested">QWebEnginePage::featurePermissionRequested</a>() call to request the user's permission to show notifications on their device.</p>
+<pre class="cpp">
+     <span class="type"><a href="../qtcore/qobject.html">QObject</a></span><span class="operator">::</span>connect(view<span class="operator">.</span>page()<span class="operator">,</span> <span class="operator">&amp;</span><span class="type"><a href="qwebenginepage.html">QWebEnginePage</a></span><span class="operator">::</span>featurePermissionRequested<span class="operator">,</span>
+                      <span class="operator">[</span><span class="operator">&amp;</span><span class="operator">]</span> (<span class="keyword">const</span> <span class="type"><a href="../qtcore/qurl.html">QUrl</a></span> <span class="operator">&amp;</span>origin<span class="operator">,</span> <span class="type"><a href="qwebenginepage.html">QWebEnginePage</a></span><span class="operator">::</span>Feature feature) {
+                          <span class="keyword">if</span> (feature <span class="operator">!</span><span class="operator">=</span> <span class="type"><a href="qwebenginepage.html">QWebEnginePage</a></span><span class="operator">::</span>Notifications)
+                              <span class="keyword">return</span>;
+                          view<span class="operator">.</span>page()<span class="operator">-</span><span class="operator">&gt;</span>setFeaturePermission(origin<span class="operator">,</span> feature<span class="operator">,</span> <span class="type"><a href="qwebenginepage.html">QWebEnginePage</a></span><span class="operator">::</span>PermissionGrantedByUser);
+                      });
+</pre>
+<a name="handling-new-notifications"></a>
+<h5 id="handling-new-notifications">Handling New Notifications</h5>
+<p>We then construct a <code>NotificationPopup</code> that encapsulates the data of the HTML web notification. We also use the <a href="qwebengineprofile.html#setNotificationPresenter">QWebEngineProfile::setNotificationPresenter</a>() call to set our handler, which we use in conjunction with our <code>popup</code> to handle all new notifications.</p>
+<pre class="cpp">
+     <span class="keyword">auto</span> popup <span class="operator">=</span> <span class="keyword">new</span> NotificationPopup(<span class="operator">&amp;</span>view);
+     profile<span class="operator">-</span><span class="operator">&gt;</span>setNotificationPresenter(<span class="operator">[</span><span class="operator">&amp;</span><span class="operator">]</span> (std<span class="operator">::</span>unique_ptr<span class="operator">&lt;</span><span class="type"><a href="qwebenginenotification.html">QWebEngineNotification</a></span><span class="operator">&gt;</span> notification)
+                                       { popup<span class="operator">-</span><span class="operator">&gt;</span>present(notification); });
+</pre>
+<a name="presenting-notifications-to-users"></a>
+<h4 id="presenting-notifications-to-users">Presenting Notifications to Users</h4>
+<p>The <code>NotificationPopup</code> class in this example is a simple <a href="../qtwidgets/qwidget.html">QWidget</a>-based class that uses multiple <a href="../qtwidgets/qlabel.html">QLabel</a> instances for displaying the notification's title, message, and icon.</p>
+<pre class="cpp">
+ <span class="keyword">class</span> NotificationPopup : <span class="keyword">public</span> <span class="type"><a href="../qtwidgets/qwidget.html">QWidget</a></span>
+ {
+     Q_OBJECT
+
+     <span class="type"><a href="../qtwidgets/qlabel.html">QLabel</a></span> m_icon<span class="operator">,</span> m_title<span class="operator">,</span> m_message;
+     std<span class="operator">::</span>unique_ptr<span class="operator">&lt;</span><span class="type"><a href="qwebenginenotification.html">QWebEngineNotification</a></span><span class="operator">&gt;</span> notification;
+</pre>
+<a name="presenting-notifications"></a>
+<h5 id="presenting-notifications">Presenting Notifications</h5>
+<p>Inside the <code>present</code> method, we first close and release the previous notification if we have one and then take ownership of a new notification by calling the <code>std::unique_ptr::swap</code> method on our internal notification instance.</p>
+<pre class="cpp">
+     <span class="type">void</span> present(std<span class="operator">::</span>unique_ptr<span class="operator">&lt;</span><span class="type"><a href="qwebenginenotification.html">QWebEngineNotification</a></span><span class="operator">&gt;</span> <span class="operator">&amp;</span>newNotification)
+     {
+         <span class="keyword">if</span> (notification) {
+             notification<span class="operator">-</span><span class="operator">&gt;</span>close();
+             notification<span class="operator">.</span>reset();
+         }
+
+         notification<span class="operator">.</span>swap(newNotification);
+</pre>
+<p>Then we query the notification instance for a title, a message, and an icon by calling <a href="qwebenginenotification.html#title-prop">QWebEngineNotification::title</a>(), <a href="qwebenginenotification.html#message-prop">QWebEngineNotification::message</a>(), <a href="qwebenginenotification.html#icon">QWebEngineNotification::icon</a>() and set up the appropriate labels in our popup.</p>
+<pre class="cpp">
+         m_title<span class="operator">.</span>setText(<span class="string">&quot;&lt;b&gt;&quot;</span> <span class="operator">+</span> notification<span class="operator">-</span><span class="operator">&gt;</span>title() <span class="operator">+</span> <span class="string">&quot;&lt;/b&gt;&quot;</span>);
+         m_message<span class="operator">.</span>setText(notification<span class="operator">-</span><span class="operator">&gt;</span>message());
+         m_icon<span class="operator">.</span>setPixmap(<span class="type"><a href="../qtgui/qpixmap.html">QPixmap</a></span><span class="operator">::</span>fromImage(notification<span class="operator">-</span><span class="operator">&gt;</span>icon())<span class="operator">.</span>scaledToHeight(m_icon<span class="operator">.</span>height()));
+</pre>
+<p>After that we are ready to display our notification to the user by calling the <a href="../qtwidgets/qwidget.html#show">QWidget::show</a>() method. On this step we also call the <a href="qwebenginenotification.html#show">QWebEngineNotification::show</a>() method to notify <code>JavaScript</code> code about our <i>show</i> event.</p>
+<pre class="cpp">
+         show();
+         notification<span class="operator">-</span><span class="operator">&gt;</span>show();
+</pre>
+<p>Finally, we set up a callback to handle the <i>close</i> event from the <code>JavaScript</code> side by connecting to the <a href="qwebenginenotification.html#closed">QWebEngineNotification::closed</a>() signal. We also schedule a timer event to close our active notification automatically.</p>
+<pre class="cpp">
+         connect(notification<span class="operator">.</span>get()<span class="operator">,</span> <span class="operator">&amp;</span><span class="type"><a href="qwebenginenotification.html">QWebEngineNotification</a></span><span class="operator">::</span>closed<span class="operator">,</span> <span class="keyword">this</span><span class="operator">,</span> <span class="operator">&amp;</span>NotificationPopup<span class="operator">::</span>onClosed);
+         <span class="type"><a href="../qtcore/qtimer.html">QTimer</a></span><span class="operator">::</span>singleShot(<span class="number">10000</span><span class="operator">,</span> notification<span class="operator">.</span>get()<span class="operator">,</span> <span class="operator">[</span><span class="operator">&amp;</span><span class="operator">]</span> () { onClosed(); });
+
+     }
+</pre>
+<a name="closing-active-notification"></a>
+<h5 id="closing-active-notification">Closing Active Notification</h5>
+<p>We execute the <i>close</i> step for the currently active notification either by timeout or by handling the <code>JavaScript</code> event. First, we hide the popup widget itself by calling <a href="../qtwidgets/qwidget.html#hide">QWidget::hide</a>(). Then, we notify the <code>JavaScript</code> code by calling the <a href="qwebenginenotification.html#close">QWebEngineNotification::close</a>() method. Finally, we destroy the notification object through the <code>std::unique_ptr::reset()</code> method.</p>
+<pre class="cpp">
+     <span class="type">void</span> onClosed()
+     {
+         hide();
+         notification<span class="operator">-</span><span class="operator">&gt;</span>close();
+         notification<span class="operator">.</span>reset();
+     }
+</pre>
+<a name="implementing-user-interaction"></a>
+<h5 id="implementing-user-interaction">Implementing User Interaction</h5>
+<p>To implement the <i>click</i> step for a notification, we handle mouse interaction through <a href="../qtwidgets/qwidget.html#mouseReleaseEvent">QWidget::mouseReleaseEvent</a>(). On this event, the <code>JavaScript</code> code is notified by calling the <a href="qwebenginenotification.html#click">QWebEngineNotification::click</a>() method. Then we automatically perform the <i>close</i> step as a notification is considered fully handled and no longer needed, and therefore can be destroyed.</p>
+<pre class="cpp">
+     <span class="type">void</span> mouseReleaseEvent(<span class="type"><a href="../qtgui/qmouseevent.html">QMouseEvent</a></span> <span class="operator">*</span>event) override
+     {
+         <span class="type"><a href="../qtwidgets/qwidget.html">QWidget</a></span><span class="operator">::</span>mouseReleaseEvent(event);
+         <span class="keyword">if</span> (notification <span class="operator">&amp;</span><span class="operator">&amp;</span> event<span class="operator">-</span><span class="operator">&gt;</span>button() <span class="operator">=</span><span class="operator">=</span> <span class="type"><a href="../qtcore/qt.html">Qt</a></span><span class="operator">::</span>LeftButton) {
+             notification<span class="operator">-</span><span class="operator">&gt;</span>click();
+             onClosed();
+         }
+     }
+</pre>
+<p><a href="https://code.qt.io/cgit/qt/qtwebengine.git/tree/examples/webenginewidgets/notifications?h=5.15">Example project @ code.qt.io</a></p>
+</div>
+<!-- @@@webenginewidgets/notifications -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

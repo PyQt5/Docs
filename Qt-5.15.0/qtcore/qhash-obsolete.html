@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qhash.cpp -->
+  <title>Obsolete Members for QHash | Qt Core 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtcore-index.html">Qt Core</a></li>
+<li><a href="qtcore-module.html">C++ Classes</a></li>
+<li>QHash</li>
+<li id="buildversion"><a href="qtcore-index.html">Qt 5.15.0 Reference Documentation</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar"><div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Obsolete Members for QHash</h1>
+<p><b>The following members of class <a href="qhash.html">QHash</a> are obsolete.</b> They are provided to keep old source code working. We strongly advise against using them in new code.</p>
+<h2>Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>QHash::iterator </td><td class="memItemRight bottomAlign"><b><a href="qhash-obsolete.html#insertMulti">insertMulti</a></b>(const Key &amp;<i>key</i>, const T &amp;<i>value</i>)</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>QList&lt;Key&gt; </td><td class="memItemRight bottomAlign"><b><a href="qhash-obsolete.html#uniqueKeys">uniqueKeys</a></b>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>QHash&lt;K, V&gt; &amp;</td><td class="memItemRight bottomAlign"><b><a href="qhash-obsolete.html#unite">unite</a></b>(const QHash&lt;K, V&gt; &amp;<i>other</i>)</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>QList&lt;T&gt; </td><td class="memItemRight bottomAlign"><b><a href="qhash-obsolete.html#values-1">values</a></b>(const Key &amp;<i>key</i>) const</td></tr>
+</table></div>
+<h2>Member Function Documentation</h2>
+<!-- $$$insertMulti[overload1]$$$insertMulticonstKey&constT& -->
+<h3 class="fn" id="insertMulti"><a name="insertMulti"></a><span class="type"><a href="qhash-iterator.html">QHash::iterator</a></span> QHash::<span class="name">insertMulti</span>(const <span class="type">Key</span> &amp;<i>key</i>, const <span class="type">T</span> &amp;<i>value</i>)</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>Inserts a new item with the <i>key</i> and a value of <i>value</i>.</p>
+<p>If there is already an item with the same key in the hash, this function will simply create a new one. (This behavior is different from <a href="qhash.html#insert">insert</a>(), which overwrites the value of an existing item.)</p>
+<p>This function is obsolete. Use <a href="qmultihash.html">QMultiHash</a> or <a href="qmultimap.html">QMultiMap</a> instead.</p>
+<p><b>See also </b><a href="qhash.html#insert">insert</a>() and <a href="qhash.html#values">values</a>().</p>
+<!-- @@@insertMulti -->
+<!-- $$$uniqueKeys[overload1]$$$uniqueKeys -->
+<h3 class="fn" id="uniqueKeys"><a name="uniqueKeys"></a><span class="type"><a href="qlist.html">QList</a></span>&lt;<span class="type">Key</span>&gt; QHash::<span class="name">uniqueKeys</span>() const</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>Use <a href="qmultihash.html">QMultiHash</a> for storing multiple values with the same key.</p>
+<p>Returns a list containing all the keys in the map. Keys that occur multiple times in the map (because items were inserted with <a href="qhash-obsolete.html#insertMulti">insertMulti</a>(), or <a href="qhash-obsolete.html#unite">unite</a>() was used) occur only once in the returned list.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p><b>See also </b><a href="qmultihash.html#uniqueKeys">QMultiHash::uniqueKeys</a>().</p>
+<!-- @@@uniqueKeys -->
+<!-- $$$unite[overload1]$$$uniteconstQHash<K,V>& -->
+<h3 class="fn" id="unite"><a name="unite"></a><span class="type"><a href="qhash.html#QHash">QHash</a></span>&lt;<span class="type">K</span>, <span class="type">V</span>&gt; &amp;QHash::<span class="name">unite</span>(const <span class="type"><a href="qhash.html#QHash">QHash</a></span>&lt;<span class="type">K</span>, <span class="type">V</span>&gt; &amp;<i>other</i>)</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>Inserts all the items in the <i>other</i> hash into this hash. If a key is common to both hashes, the resulting hash will contain the key multiple times.</p>
+<!-- @@@unite -->
+<!-- $$$values$$$valuesconstKey& -->
+<h3 class="fn" id="values-1"><a name="values-1"></a><span class="type"><a href="qlist.html">QList</a></span>&lt;<span class="type">T</span>&gt; QHash::<span class="name">values</span>(const <span class="type">Key</span> &amp;<i>key</i>) const</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>This is an overloaded function.</p>
+<p>Use <a href="qmultihash.html">QMultiHash</a> for storing multiple values with the same key.</p>
+<p>Returns a list of all the values associated with the <i>key</i>, from the most recently inserted to the least recently inserted.</p>
+<p><b>See also </b><a href="qhash.html#count-1">count</a>() and <a href="qhash-obsolete.html#insertMulti">insertMulti</a>().</p>
+<!-- @@@values -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

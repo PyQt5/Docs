@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- dynamictexture.qdoc -->
+  <title>Qt Quick 3D - Dynamic Texture Example | Qt Quick 3D 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtquick3d-index.html">Qt Quick 3D</a></li>
+<li>Qt Quick 3D - Dynamic Texture Example</li>
+<li id="buildversion"><a href="qtquick3d-index.html">Qt Quick 3D | Commercial or GPLv3</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<h1 class="title">Qt Quick 3D - Dynamic Texture Example</h1>
+<span class="subtitle"></span>
+<pre class="qml">
+ <span class="comment">/****************************************************************************
+ **
+ ** Copyright (C) 2019 The Qt Company Ltd.
+ ** Contact: https://www.qt.io/licensing/
+ **
+ ** This file is part of the examples of the Qt Toolkit.
+ **
+ ** $QT_BEGIN_LICENSE:BSD$
+ ** Commercial License Usage
+ ** Licensees holding valid commercial Qt licenses may use this file in
+ ** accordance with the commercial license agreement provided with the
+ ** Software or, alternatively, in accordance with the terms contained in
+ ** a written agreement between you and The Qt Company. For licensing terms
+ ** and conditions see https://www.qt.io/terms-conditions. For further
+ ** information use the contact form at https://www.qt.io/contact-us.
+ **
+ ** BSD License Usage
+ ** Alternatively, you may use this file under the terms of the BSD license
+ ** as follows:
+ **
+ ** &quot;Redistribution and use in source and binary forms, with or without
+ ** modification, are permitted provided that the following conditions are
+ ** met:
+ **   * Redistributions of source code must retain the above copyright
+ **     notice, this list of conditions and the following disclaimer.
+ **   * Redistributions in binary form must reproduce the above copyright
+ **     notice, this list of conditions and the following disclaimer in
+ **     the documentation and/or other materials provided with the
+ **     distribution.
+ **   * Neither the name of The Qt Company Ltd nor the names of its
+ **     contributors may be used to endorse or promote products derived
+ **     from this software without specific prior written permission.
+ **
+ **
+ ** THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ ** &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ ** LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+ ** OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ ** SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+ ** LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ ** DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ ** THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ ** (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ ** OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.&quot;
+ **
+ ** $QT_END_LICENSE$
+ **
+ ****************************************************************************/</span>
+
+ import QtQuick3D 1.15
+ import QtQuick 2.15
+
+ <span class="type"><a href="qml-qtquick3d-node.html">Node</a></span> {
+     <span class="name">id</span>: <span class="name">doorRoot</span>
+     property <span class="type"><a href="qml-qtquick3d-perspectivecamera.html">PerspectiveCamera</a></span> <span class="name">activeCamera</span>: <span class="name">camera</span>
+
+     <span class="type"><a href="qml-qtquick3d-pointlight.html">PointLight</a></span> {
+         <span class="name">id</span>: <span class="name">lamp</span>
+         <span class="name">x</span>: -<span class="number">10</span>
+         <span class="name">y</span>: <span class="number">100</span>
+         <span class="name">z</span>: -<span class="number">100</span>
+         <span class="name">color</span>: <span class="string">&quot;#ffffffff&quot;</span>
+         <span class="name">linearFade</span>: <span class="number">1</span>
+         <span class="name">brightness</span>: <span class="number">300</span>
+     }
+
+     <span class="type"><a href="qml-qtquick3d-perspectivecamera.html">PerspectiveCamera</a></span> {
+         <span class="name">id</span>: <span class="name">camera</span>
+
+         <span class="name">x</span>: <span class="number">180.067</span>
+         <span class="name">y</span>: <span class="number">225.598</span>
+         <span class="name">z</span>: -<span class="number">411.521</span>
+         <span class="name">eulerRotation</span>.x: -<span class="number">15.4614</span>
+
+         <span class="name">eulerRotation</span>.y: <span class="number">171.605</span>
+
+         <span class="name">fieldOfViewOrientation</span>: <span class="name">Camera</span>.<span class="name">Horizontal</span>
+     }
+
+     <span class="type"><a href="qml-qtquick3d-model.html">Model</a></span> {
+         <span class="name">id</span>: <span class="name">door1</span>
+         <span class="name">pivot</span>.x: <span class="number">20</span>
+         <span class="name">x</span>: <span class="number">80</span>
+         <span class="name">y</span>: <span class="number">70</span>
+         <span class="name">scale</span>.x: <span class="number">2</span>
+         <span class="name">scale</span>.y: <span class="number">3.5</span>
+         <span class="name">scale</span>.z: <span class="number">0.5</span>
+         <span class="name">source</span>: <span class="string">&quot;meshes/door1.mesh&quot;</span>
+         <span class="name">pickable</span>: <span class="number">true</span>
+
+         <span class="type"><a href="qml-qtquick3d-defaultmaterial.html">DefaultMaterial</a></span> {
+             <span class="name">id</span>: <span class="name">material_001_material</span>
+             <span class="name">diffuseMap</span>: <span class="name">Texture</span> {
+                 <span class="name">sourceItem</span>: <span class="name">object2d</span>
+             }
+         }
+         <span class="name">materials</span>: [
+             <span class="name">material_001_material</span>
+         ]
+
+         <span class="name">states</span>: <span class="name">State</span> {
+             <span class="name">name</span>: <span class="string">&quot;opened&quot;</span>
+             <span class="type"><a href="../qtquick/qml-qtquick-propertychanges.html">PropertyChanges</a></span> {
+                 <span class="name">target</span>: <span class="name">door1</span>
+                 <span class="name">eulerRotation</span>.y: <span class="number">90</span>
+             }
+         }
+         <span class="name">transitions</span>: <span class="name">Transition</span> {
+             <span class="name">to</span>: <span class="string">&quot;opened&quot;</span>
+             <span class="name">reversible</span>: <span class="number">true</span>
+             <span class="type"><a href="../qtquick/qml-qtquick-sequentialanimation.html">SequentialAnimation</a></span> {
+                 <span class="type"><a href="../qtquick/qml-qtquick-propertyanimation.html">PropertyAnimation</a></span> { <span class="name">property</span>: <span class="string">&quot;eulerRotation.y&quot;</span>; <span class="name">duration</span>: <span class="number">2000</span> }
+             }
+         }
+      }
+
+     <span class="type"><a href="qml-qtquick3d-model.html">Model</a></span> {
+         <span class="name">id</span>: <span class="name">wall</span>
+         <span class="name">y</span>: <span class="number">100</span>
+         <span class="name">scale</span>.x: <span class="number">400</span>
+         <span class="name">scale</span>.y: <span class="number">100</span>
+         <span class="name">scale</span>.z: <span class="number">10</span>
+         <span class="name">source</span>: <span class="string">&quot;meshes/wall.mesh&quot;</span>
+
+         <span class="type"><a href="qml-qtquick3d-defaultmaterial.html">DefaultMaterial</a></span> {
+             <span class="name">id</span>: <span class="name">material_material</span>
+             <span class="name">diffuseColor</span>: <span class="string">&quot;lightgreen&quot;</span>
+         }
+         <span class="name">materials</span>: [
+             <span class="name">material_material</span>
+         ]
+     }
+
+     <span class="type"><a href="qml-qtquick3d-model.html">Model</a></span> {
+         <span class="name">id</span>: <span class="name">door2</span>
+         <span class="name">x</span>: -<span class="number">80</span>
+         <span class="name">y</span>: <span class="number">70</span>
+         <span class="name">scale</span>.x: <span class="number">2</span>
+         <span class="name">scale</span>.y: <span class="number">3.5</span>
+         <span class="name">scale</span>.z: <span class="number">0.5</span>
+         <span class="name">pivot</span>.x: -<span class="number">20</span>
+         <span class="name">source</span>: <span class="string">&quot;meshes/door2.mesh&quot;</span>
+         <span class="name">pickable</span>: <span class="number">true</span>
+         <span class="name">materials</span>: [
+             <span class="name">material_001_material</span>
+         ]
+         <span class="name">states</span>: <span class="name">State</span> {
+             <span class="name">name</span>: <span class="string">&quot;opened&quot;</span>
+             <span class="type"><a href="../qtquick/qml-qtquick-propertychanges.html">PropertyChanges</a></span> {
+                 <span class="name">target</span>: <span class="name">door2</span>
+                 <span class="name">eulerRotation</span>.y: -<span class="number">90</span>
+             }
+         }
+         <span class="name">transitions</span>: <span class="name">Transition</span> {
+             <span class="name">to</span>: <span class="string">&quot;opened&quot;</span>
+             <span class="name">reversible</span>: <span class="number">true</span>
+             <span class="type"><a href="../qtquick/qml-qtquick-sequentialanimation.html">SequentialAnimation</a></span> {
+                 <span class="type"><a href="../qtquick/qml-qtquick-propertyanimation.html">PropertyAnimation</a></span> { <span class="name">property</span>: <span class="string">&quot;eulerRotation.y&quot;</span>; <span class="name">duration</span>: <span class="number">2000</span> }
+             }
+         }
+     }
+ }
+</pre>

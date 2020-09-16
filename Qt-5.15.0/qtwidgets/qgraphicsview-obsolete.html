@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qgraphicsview.cpp -->
+  <title>Obsolete Members for QGraphicsView | Qt Widgets 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtwidgets-index.html">Qt Widgets</a></li>
+<li><a href="qtwidgets-module.html">C++ Classes</a></li>
+<li>QGraphicsView</li>
+<li id="buildversion"><a href="qtwidgets-index.html">Qt 5.15.0 Reference Documentation</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar"><div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Obsolete Members for QGraphicsView</h1>
+<p><b>The following members of class <a href="qgraphicsview.html">QGraphicsView</a> are obsolete.</b> They are provided to keep old source code working. We strongly advise against using them in new code.</p>
+<h2>Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>QMatrix </td><td class="memItemRight bottomAlign"><b><a href="qgraphicsview-obsolete.html#matrix">matrix</a></b>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>void </td><td class="memItemRight bottomAlign"><b><a href="qgraphicsview-obsolete.html#resetMatrix">resetMatrix</a></b>()</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>void </td><td class="memItemRight bottomAlign"><b><a href="qgraphicsview-obsolete.html#setMatrix">setMatrix</a></b>(const QMatrix &amp;<i>matrix</i>, bool <i>combine</i> = false)</td></tr>
+</table></div>
+<h2>Protected Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>virtual void </td><td class="memItemRight bottomAlign"><b><a href="qgraphicsview-obsolete.html#drawItems">drawItems</a></b>(QPainter *<i>painter</i>, int <i>numItems</i>, QGraphicsItem *[] <i>items</i>, const QStyleOptionGraphicsItem [] <i>options</i>)</td></tr>
+</table></div>
+<h2>Member Function Documentation</h2>
+<!-- $$$drawItems[overload1]$$$drawItemsQPainter*intQGraphicsItem*[]constQStyleOptionGraphicsItem[] -->
+<h3 class="fn" id="drawItems"><a name="drawItems"></a><code>[virtual protected] </code><span class="type">void</span> QGraphicsView::<span class="name">drawItems</span>(<span class="type"><a href="../qtgui/qpainter.html">QPainter</a></span> *<i>painter</i>, <span class="type">int</span> <i>numItems</i>, <span class="type"><a href="qgraphicsitem.html">QGraphicsItem</a></span> *[] <i>items</i>, const <span class="type"><a href="qstyleoptiongraphicsitem.html">QStyleOptionGraphicsItem</a></span> [] <i>options</i>)</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>Draws the items <i>items</i> in the scene using <i>painter</i>, after the background and before the foreground are drawn. <i>numItems</i> is the number of items in <i>items</i> and options in <i>options</i>. <i>options</i> is a list of styleoptions; one for each item. Reimplement this function to provide custom item drawing for this view.</p>
+<p>The default implementation calls the scene's drawItems() function.</p>
+<p>Since Qt 4.6, this function is not called anymore unless the <a href="qgraphicsview.html#OptimizationFlag-enum">QGraphicsView::IndirectPainting</a> flag is given as an Optimization flag.</p>
+<p><b>See also </b><a href="qgraphicsview.html#drawForeground">drawForeground</a>(), <a href="qgraphicsview.html#drawBackground">drawBackground</a>(), and <a href="qgraphicsscene-obsolete.html#drawItems">QGraphicsScene::drawItems</a>().</p>
+<!-- @@@drawItems -->
+<!-- $$$matrix[overload1]$$$matrix -->
+<h3 class="fn" id="matrix"><a name="matrix"></a><span class="type"><a href="../qtgui/qmatrix.html">QMatrix</a></span> QGraphicsView::<span class="name">matrix</span>() const</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>Use <a href="qgraphicsview.html#transform">transform</a>() instead.</p>
+<p>Returns the current transformation matrix for the view. If no current transformation is set, the identity matrix is returned.</p>
+<p><b>See also </b><a href="qgraphicsview-obsolete.html#setMatrix">setMatrix</a>(), <a href="qgraphicsview.html#transform">transform</a>(), <a href="qgraphicsview.html#rotate">rotate</a>(), <a href="qgraphicsview.html#scale">scale</a>(), <a href="qgraphicsview.html#shear">shear</a>(), and <a href="qgraphicsview.html#translate">translate</a>().</p>
+<!-- @@@matrix -->
+<!-- $$$resetMatrix[overload1]$$$resetMatrix -->
+<h3 class="fn" id="resetMatrix"><a name="resetMatrix"></a><span class="type">void</span> QGraphicsView::<span class="name">resetMatrix</span>()</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>Use <a href="qgraphicsview.html#resetTransform">resetTransform</a>() instead.</p>
+<p>Resets the view transformation matrix to the identity matrix.</p>
+<p><b>See also </b><a href="qgraphicsview.html#resetTransform">resetTransform</a>().</p>
+<!-- @@@resetMatrix -->
+<!-- $$$setMatrix[overload1]$$$setMatrixconstQMatrix&bool -->
+<h3 class="fn" id="setMatrix"><a name="setMatrix"></a><span class="type">void</span> QGraphicsView::<span class="name">setMatrix</span>(const <span class="type"><a href="../qtgui/qmatrix.html">QMatrix</a></span> &amp;<i>matrix</i>, <span class="type">bool</span> <i>combine</i> = false)</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>Use <a href="qgraphicsview.html#setTransform">setTransform</a>() instead.</p>
+<p>Sets the view's current transformation matrix to <i>matrix</i>.</p>
+<p>If <i>combine</i> is true, then <i>matrix</i> is combined with the current matrix; otherwise, <i>matrix</i> <i>replaces</i> the current matrix. <i>combine</i> is false by default.</p>
+<p>The transformation matrix tranforms the scene into view coordinates. Using the default transformation, provided by the identity matrix, one pixel in the view represents one unit in the scene (e.g&#x2e;, a 10x10 rectangular item is drawn using 10x10 pixels in the view). If a 2x2 scaling matrix is applied, the scene will be drawn in 1:2 (e.g&#x2e;, a 10x10 rectangular item is then drawn using 20x20 pixels in the view).</p>
+<p>Example:</p>
+<pre class="cpp">
+ <span class="type"><a href="qgraphicsscene.html">QGraphicsScene</a></span> scene;
+ scene<span class="operator">.</span>addText(<span class="string">&quot;GraphicsView rotated clockwise&quot;</span>);
+
+ <span class="type"><a href="qgraphicsview.html#QGraphicsView">QGraphicsView</a></span> view(<span class="operator">&amp;</span>scene);
+ view<span class="operator">.</span>rotate(<span class="number">90</span>); <span class="comment">// the text is rendered with a 90 degree clockwise rotation</span>
+ view<span class="operator">.</span>show();
+</pre>
+<p>To simplify interation with items using a transformed view, <a href="qgraphicsview.html">QGraphicsView</a> provides <a href="qwidget.html#mapTo">mapTo</a>... and <a href="qwidget.html#mapFrom">mapFrom</a>... functions that can translate between scene and view coordinates. For example, you can call <a href="qgraphicsview.html#mapToScene">mapToScene</a>() to map a view coordinate to a floating point scene coordinate, or <a href="qgraphicsview.html#mapFromScene">mapFromScene</a>() to map from floating point scene coordinates to view coordinates.</p>
+<p><b>See also </b><a href="qgraphicsview-obsolete.html#matrix">matrix</a>(), <a href="qgraphicsview.html#setTransform">setTransform</a>(), <a href="qgraphicsview.html#rotate">rotate</a>(), <a href="qgraphicsview.html#scale">scale</a>(), <a href="qgraphicsview.html#shear">shear</a>(), and <a href="qgraphicsview.html#translate">translate</a>().</p>
+<!-- @@@setMatrix -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

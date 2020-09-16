@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qremoteobjectnode.cpp -->
+  <title>Host QML Type | Qt Remote Objects 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtremoteobjects-index.html">Qt Remote Objects</a></li>
+<li><a href="qtremoteobjects-qmlmodule.html">QML Types</a></li>
+<li>Host QML Type</li>
+<li id="buildversion"><a href="qtremoteobjects-index.html">Qt 5.15.0 Reference Documentation</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#methods">Methods</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Host QML Type</h1>
+<span class="subtitle"></span>
+<!-- $$$Host-brief -->
+<p>A host node on a Qt Remote Objects network. <a href="#details">More...</a></p>
+<!-- @@@Host -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Import Statement:</td><td class="memItemRight bottomAlign"> import QtRemoteObjects 5.15</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Instantiates:</td><td class="memItemRight bottomAlign"> <a href="qml-qtremoteobjects-host.html"><a href="qremoteobjecthost.html">QRemoteObjectHost</a></td></tr></table></div><ul>
+<li><a href="qml-qtremoteobjects-host-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="properties"></a>
+<h2 id="properties">Properties</h2>
+<ul>
+<li class="fn"><b><b><a href="qml-qtremoteobjects-host.html#hostUrl-prop">hostUrl</a></b></b> : url</li>
+</ul>
+<a name="methods"></a>
+<h2 id="methods">Methods</h2>
+<ul>
+<li class="fn">bool <b><b><a href="qml-qtremoteobjects-host.html#disableRemoting-method">disableRemoting</a></b></b>(<i>remoteObject</i>)</li>
+<li class="fn">bool <b><b><a href="qml-qtremoteobjects-host.html#enableRemoting-method">enableRemoting</a></b></b>(<i>object</i>,  string <i>name</i>)</li>
+</ul>
+<!-- $$$Host-description -->
+<a name="details"></a>
+<h2 id="details">Detailed Description</h2>
+<p>The Host type provides an entry point to a Qt Remote Objects network. A network can be as simple as two nodes, or an arbitrarily complex set of processes and devices.</p>
+<p>Hosts have the same capabilities as Nodes, but they can also be connected to and can share source objects on the network.</p>
+<!-- @@@Host -->
+<h2>Property Documentation</h2>
+<!-- $$$hostUrl -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="hostUrl-prop">
+<td class="tblQmlPropNode"><p>
+<a name="hostUrl-prop"></a><span class="name">hostUrl</span> : <span class="type">url</span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>The host address for the node.</p>
+<p>This is the address where source objects remoted by this node will reside.</p>
+</div></div><!-- @@@hostUrl -->
+<br/>
+<h2>Method Documentation</h2>
+<!-- $$$disableRemoting[overload1]$$$disableRemoting -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="disableRemoting-method">
+<td class="tblQmlFuncNode"><p>
+<a name="disableRemoting-method"></a><span class="type">bool</span> <span class="name">disableRemoting</span>(<i>remoteObject</i>)</p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Disables remote access for the <a href="../qtcore/qobject.html">QObject</a> <i>remoteObject</i>. Returns <code>false</code> if the current node is a client node or if the <i>remoteObject</i> is not registered, and returns <code>true</code> if remoting is successfully disabled for the Source object.</p>
+<p><b>Warning:</b> Replicas of this object will no longer be valid after calling this method.</p>
+<p><b>See also </b><a href="qml-qtremoteobjects-host.html#enableRemoting-method">enableRemoting()</a>.</p>
+</div></div><!-- @@@disableRemoting -->
+<br/>
+<!-- $$$enableRemoting[overload1]$$$enableRemotingstring -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="enableRemoting-method">
+<td class="tblQmlFuncNode"><p>
+<a name="enableRemoting-method"></a><span class="type">bool</span> <span class="name">enableRemoting</span>(<i>object</i>,  <span class="type">string</span> <i>name</i>)</p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Enables a host node to dynamically provide remote access to the <a href="../qtcore/qobject.html">QObject</a> <i>object</i>. Client nodes connected to the node hosting this object may obtain Replicas of this Source.</p>
+<p>The optional <i>name</i> defines the lookup-name under which the <a href="../qtcore/qobject.html">QObject</a> can be acquired using <a href="qremoteobjectnode.html#acquire">QRemoteObjectNode::acquire()</a> . If not explicitly set then the name given in the QCLASSINFO_REMOTEOBJECT_TYPE will be used. If no such macro was defined for the <a href="../qtcore/qobject.html">QObject</a> then the <a href="../qtcore/qobject.html#objectName-prop">QObject::objectName()</a> is used.</p>
+<p>Returns <code>false</code> if the current node is a client node, or if the <a href="../qtcore/qobject.html">QObject</a> is already registered to be remoted, and <code>true</code> if remoting is successfully enabled for the dynamic <a href="../qtcore/qobject.html">QObject</a>.</p>
+<p><b>See also </b><a href="qml-qtremoteobjects-host.html#disableRemoting-method">disableRemoting()</a>.</p>
+</div></div><!-- @@@enableRemoting -->
+<br/>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

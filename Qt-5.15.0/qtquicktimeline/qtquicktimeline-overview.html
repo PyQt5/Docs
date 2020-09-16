@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qtquicktimeline-overview.qdoc -->
+  <title>Qt Quick Timeline Overview | Qt Quick Timeline 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtquicktimeline-index.html">Qt Quick Timeline</a></li>
+<li>Qt Quick Timeline Overview</li>
+<li id="buildversion"><a href="qtquicktimeline-index.html">Qt 5.15.0 Reference Documentation</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar"><div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Qt Quick Timeline Overview</h1>
+<span class="subtitle"></span>
+<!-- $$$qtquicktimeline-overview.html-description -->
+<div class="descr"> <a name="details"></a>
+<p>Timelines can be used to animate items and to define their behavior. Only one timeline can be active at a particular point in time.</p>
+<p>Animating item properties enables their values to move through intermediate values instead of immediately changing to the target value. For example, to move an item in a scene, you can animate the properties that control the item's position, x and y, so that the item's position changes at keyframes on the way to the target position. Similarly, you could change the color and scale properties of the item at keyframes to make it appear to move closer or farther away.</p>
+<p>Qt Design Studio and Qt Quick Designer contain a timeline editor for creating keyframe based animations.</p>
+<p class="centerAlign"><img src="images/timeline-editor.png" alt="" /></p><p>Qt Quick allows you to declare various UI states in <a href="../qtquick/qml-qtquick-state.html">State</a> objects. These states are comprised of property changes from a base state, and can be a useful way of organizing your UI logic. Transitions are objects you can associate with an item to define how its properties will animate when they change due to a state change. You can bind timeline animations to states in Qt Design Studio and Qt Quick Designer.</p>
+<p class="centerAlign"><img src="images/timeline-settings.png" alt="" /></p></div>
+<!-- @@@qtquicktimeline-overview.html -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

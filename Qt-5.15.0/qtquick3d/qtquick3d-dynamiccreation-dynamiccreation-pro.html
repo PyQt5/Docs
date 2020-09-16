@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qtquick3d-examples-dynamiccreation.qdoc -->
+  <title>Qt Quick 3D - Dynamic Model Creation Example | Qt Quick 3D 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtquick3d-index.html">Qt Quick 3D</a></li>
+<li>Qt Quick 3D - Dynamic Model Creation Example</li>
+<li id="buildversion"><a href="qtquick3d-index.html">Qt Quick 3D | Commercial or GPLv3</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<h1 class="title">Qt Quick 3D - Dynamic Model Creation Example</h1>
+<span class="subtitle"></span>
+<pre class="cpp">
+ QT += quick quick3d
+
+ target.path = $$[QT_INSTALL_EXAMPLES]/quick3d/dynamiccreation
+ INSTALLS += target
+
+ SOURCES += \
+     main.cpp
+
+ RESOURCES += \
+     qml.qrc
+
+ OTHER_FILES += \
+     doc/src/*.*
+</pre>

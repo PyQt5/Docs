@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- android-3rdparty-libs.qdoc -->
+  <title>Third-party Android Libraries | Qt 5.15</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt 5.15</a></li>
+<li>Third-party Android Libraries</li>
+<li id="buildversion">Qt 5.15.0 Reference Documentation</li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#prerequisites">Prerequisites</a></li>
+<li class="level1"><a href="#including-a-library-to-an-android-project">Including a Library to an Android Project</a></li>
+<li class="level2"><a href="#adding-a-jar-or-aar-library">Adding a .jar or .aar Library</a></li>
+<li class="level1"><a href="#adding-a-library-project">Adding a Library Project</a></li>
+<li class="level1"><a href="#deployment">Deployment</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Third-party Android Libraries</h1>
+<span class="subtitle"></span>
+<!-- $$$android-3rdparty-libs.html-description -->
+<div class="descr"> <a name="details"></a>
+<p>This guide describes how to include a Java-based third-party library in your application package. There are many Java libraries which provide APIs that may be useful to your application.</p>
+<a name="prerequisites"></a>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>This guide assumes that the <a href="deployment-android.html#androiddeployqt">androiddeployqt</a> tool is used for constructing the deployment package. When using Qt Creator for building and deploying, androiddeployqt is used behind the scenes, so this also applies to development with Qt Creator. Explaining how to access the Java APIs after being included in the the project is not in the scope of this guide. For more information, see <a href="deployment-android.html#customizing-the-package-templates">Customizing the Package Templates</a>.</p>
+<a name="including-a-library-to-an-android-project"></a>
+<h2 id="including-a-library-to-an-android-project">Including a Library to an Android Project</h2>
+<p>The very first thing you need to do is to copy the library files into your project. The contents of the library have to be copied without modifications into the packaging directory, i.e&#x2e; into the path set with <a href="../qmake/qmake-manual.html">qmake</a> variable <a href="../qmake/qmake-variable-reference.html#android-package-source-dir">ANDROID_PACKAGE_SOURCE_DIR</a>. For more information, see <a href="deployment-android.html#android-libraries">Android Libraries</a>.</p>
+<p>If you are using Qt Creator, you can quickly set up the packaging directory structure by selecting <b>Projects</b> &gt; <b>Build</b> &gt; <b>Build Android APK</b> &gt; <b>Create Templates</b>. This creates a directory for your <a href="deployment-android.html#customizing-the-package-templates">Android package customizations</a>. Copy the library directory into <code>$ANDROID_PACKAGE_SOURCE_DIR/libs/</code>.</p>
+<a name="adding-a-jar-or-aar-library"></a>
+<h3 id="adding-a-jar-or-aar-library">Adding a .jar or .aar Library</h3>
+<p>By default, Qt for Android uses can use <code>.jar</code> or <code>.aar</code> libraries that are found in the path <code>$ANDROID_PACKAGE_SOURCE_DIR/libs/</code>. Qt has the following rule in <code>build.gradle</code> file that is part of <a href="deployment-android.html#gradle-files">the Gradle files</a> used by Android build:</p>
+<pre class="cpp plain">
+ dependencies {
+     implementation fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
+</pre>
+<a name="adding-a-library-project"></a>
+<h2 id="adding-a-library-project">Adding a Library Project</h2>
+<p>Having a library called <code>CustomLibrary</code>, similar to the previous approach, copy the library project to your packaging directory <code>$ANDROID_PACKAGE_SOURCE_DIR/libs/</code>, then create a file <code>settings.gradle</code> with the following content:</p>
+<pre class="cpp plain">
+ include ':libs:CustomLibrary'
+</pre>
+<p>Then, add the dependency to <code>build.gradle</code> file inside the <code>dependencies</code> block:</p>
+<pre class="cpp plain">
+ dependencies {
+     implementation project(&quot;:libs:CustomLibrary&quot;)
+ }
+</pre>
+<p>For more information on adding libraries to an Android project, see <a href="https://developer.android.com/studio/build/dependencies">Add build dependencies Android documentation</a>.</p>
+<a name="deployment"></a>
+<h2 id="deployment">Deployment</h2>
+<p>Once <a href="http://www.gradle.org">Gradle</a> settings and the library files are all properly configured, Qt for Android should be able to build your <code>APK</code> or <code>AAB</code> package with your custom library.</p>
+</div>
+<!-- @@@android-3rdparty-libs.html -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qquickwheelhandler.cpp -->
+  <title>WheelHandler QML Type | Qt Quick 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtquick-index.html">Qt Quick</a></li>
+<li><a href="qtquick-qmlmodule.html">QML Types</a></li>
+<li>WheelHandler QML Type</li>
+<li id="buildversion"><a href="qtquick-index.html">Qt 5.15.0 Reference Documentation</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#signals">Signals</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">WheelHandler QML Type</h1>
+<span class="subtitle"></span>
+<!-- $$$WheelHandler-brief -->
+<p>Handler for the mouse wheel. <a href="#details">More...</a></p>
+<!-- @@@WheelHandler -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Import Statement:</td><td class="memItemRight bottomAlign"> import QtQuick 2.15</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Inherits:</td><td class="memItemRight bottomAlign"> <p><a href="qml-qtquick-singlepointhandler.html">SinglePointHandler</a></p>
+</td></tr></table></div><ul>
+<li><a href="qml-qtquick-wheelhandler-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="properties"></a>
+<h2 id="properties">Properties</h2>
+<ul>
+<li class="fn"><b><b><a href="qml-qtquick-wheelhandler.html#acceptedButtons-prop">acceptedButtons</a></b></b> : flags</li>
+<li class="fn"><b><b><a href="qml-qtquick-wheelhandler.html#acceptedDevices-prop">acceptedDevices</a></b></b> : flags</li>
+<li class="fn"><b><b><a href="qml-qtquick-wheelhandler.html#acceptedModifiers-prop">acceptedModifiers</a></b></b> : flags</li>
+<li class="fn"><b><b><a href="qml-qtquick-wheelhandler.html#acceptedPointerTypes-prop">acceptedPointerTypes</a></b></b> : flags</li>
+<li class="fn"><b><b><a href="qml-qtquick-wheelhandler.html#active-prop">active</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-qtquick-wheelhandler.html#activeTimeout-prop">activeTimeout</a></b></b> : real</li>
+<li class="fn"><b><b><a href="qml-qtquick-wheelhandler.html#cursorShape-prop">cursorShape</a></b></b> : Qt::CursorShape</li>
+<li class="fn"><b><b><a href="qml-qtquick-wheelhandler.html#dragThreshold-prop">dragThreshold</a></b></b> : int</li>
+<li class="fn"><b><b><a href="qml-qtquick-wheelhandler.html#enabled-prop">enabled</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-qtquick-wheelhandler.html#grabPermissions-prop">grabPermissions</a></b></b> : flags</li>
+<li class="fn"><b><b><a href="qml-qtquick-wheelhandler.html#invertible-prop">invertible</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-qtquick-wheelhandler.html#margin-prop">margin</a></b></b> : real</li>
+<li class="fn"><b><b><a href="qml-qtquick-wheelhandler.html#orientation-prop">orientation</a></b></b> : enum</li>
+<li class="fn"><b><b><a href="qml-qtquick-wheelhandler.html#parent-prop">parent</a></b></b> : Item</li>
+<li class="fn"><b><b><a href="qml-qtquick-wheelhandler.html#point-prop">point</a></b></b> : HandlerPoint</li>
+<li class="fn"><b><b><a href="qml-qtquick-wheelhandler.html#property-prop">property</a></b></b> : string</li>
+<li class="fn"><b><b><a href="qml-qtquick-wheelhandler.html#rotation-prop">rotation</a></b></b> : real</li>
+<li class="fn"><b><b><a href="qml-qtquick-wheelhandler.html#rotationScale-prop">rotationScale</a></b></b> : real</li>
+<li class="fn"><b><b><a href="qml-qtquick-wheelhandler.html#target-prop">target</a></b></b> : Item</li>
+<li class="fn"><b><b><a href="qml-qtquick-wheelhandler.html#targetScaleMultiplier-prop">targetScaleMultiplier</a></b></b> : real</li>
+<li class="fn"><b><b><a href="qml-qtquick-wheelhandler.html#targetTransformAroundCursor-prop">targetTransformAroundCursor</a></b></b> : bool</li>
+</ul>
+<a name="signals"></a>
+<h2 id="signals">Signals</h2>
+<ul>
+<li class="fn"><b><b><a href="qml-qtquick-wheelhandler.html#canceled-signal">canceled</a></b></b>(<i>point</i>)</li>
+<li class="fn"><b><b><a href="qml-qtquick-wheelhandler.html#grabChanged-signal">grabChanged</a></b></b>(<i>transition</i>,  EventPoint <i>point</i>)</li>
+<li class="fn"><b><b><a href="qml-qtquick-wheelhandler.html#wheel-signal">wheel</a></b></b>(<i>event</i>)</li>
+</ul>
+<!-- $$$WheelHandler-description -->
+<a name="details"></a>
+<h2 id="details">Detailed Description</h2>
+<p>WheelHandler is a handler that is used to interactively manipulate some numeric property of an Item as the user rotates the mouse wheel. Like other Input Handlers, by default it manipulates its <a href="qml-qtquick-wheelhandler.html#target-prop">target</a>. Declare <a href="qml-qtquick-wheelhandler.html#property-prop">property</a> to control which target property will be manipulated:</p>
+<pre class="qml">
+ import QtQuick 2.14
+
+ <span class="type"><a href="qml-qtquick-rectangle.html">Rectangle</a></span> {
+     <span class="name">width</span>: <span class="number">170</span>; <span class="name">height</span>: <span class="number">120</span>
+     <span class="name">color</span>: <span class="string">&quot;green&quot;</span>; <span class="name">antialiasing</span>: <span class="number">true</span>
+
+     <span class="type"><a href="qml-qtquick-wheelhandler.html">WheelHandler</a></span> {
+         <span class="name">property</span>: <span class="string">&quot;rotation&quot;</span>
+         <span class="name">onWheel</span>: <span class="name">console</span>.<span class="name">log</span>(<span class="string">&quot;rotation&quot;</span>, <span class="name">event</span>.<span class="name">angleDelta</span>.<span class="name">y</span>,
+                              <span class="string">&quot;scaled&quot;</span>, <span class="name">rotation</span>, <span class="string">&quot;@&quot;</span>, <span class="name">point</span>.<span class="name">position</span>, <span class="string">&quot;=&gt;&quot;</span>, <span class="name">parent</span>.<span class="name">rotation</span>)
+     }
+ }
+</pre>
+<p><a href="qml-qt-labs-animation-boundaryrule.html">BoundaryRule</a> is quite useful in combination with WheelHandler (as well as with other Input Handlers) to declare the allowed range of values that the target property can have. For example it is possible to implement scrolling using a combination of WheelHandler and <a href="qml-qtquick-draghandler.html">DragHandler</a> to manipulate the scrollable Item's <a href="qquickitem.html#y-prop">y</a> property when the user rotates the wheel or drags the item on a touchscreen, and <a href="qml-qt-labs-animation-boundaryrule.html">BoundaryRule</a> to limit the range of motion from the top to the bottom:</p>
+<pre class="qml">
+ import QtQuick 2.14
+ import Qt.labs.animation 1.0
+
+ <span class="type"><a href="qml-qtquick-item.html">Item</a></span> {
+     <span class="name">width</span>: <span class="number">320</span>; <span class="name">height</span>: <span class="number">480</span>
+     <span class="type"><a href="qml-qtquick-flow.html">Flow</a></span> {
+         <span class="name">id</span>: <span class="name">content</span>
+         <span class="name">width</span>: <span class="name">parent</span>.<span class="name">width</span>
+         <span class="name">spacing</span>: <span class="number">2</span>; <span class="name">padding</span>: <span class="number">2</span>
+
+         <span class="type"><a href="qml-qtquick-wheelhandler.html">WheelHandler</a></span> {
+             <span class="name">orientation</span>: <span class="name">Qt</span>.<span class="name">Vertical</span>
+             <span class="name">property</span>: <span class="string">&quot;y&quot;</span>
+             <span class="name">rotationScale</span>: <span class="number">15</span>
+             <span class="name">acceptedDevices</span>: <span class="name">PointerDevice</span>.<span class="name">Mouse</span> <span class="operator">|</span> <span class="name">PointerDevice</span>.<span class="name">TouchPad</span>
+             <span class="name">onActiveChanged</span>: <span class="keyword">if</span> (!<span class="name">active</span>) <span class="name">ybr</span>.<span class="name">returnToBounds</span>()
+         }
+
+         <span class="type"><a href="qml-qtquick-draghandler.html">DragHandler</a></span> {
+             <span class="name">xAxis</span>.enabled: <span class="number">false</span>
+             <span class="name">onActiveChanged</span>: <span class="keyword">if</span> (!<span class="name">active</span>) <span class="name">ybr</span>.<span class="name">returnToBounds</span>()
+         }
+
+         BoundaryRule on <span class="name">y</span> {
+             <span class="name">id</span>: <span class="name">ybr</span>
+             <span class="name">minimum</span>: <span class="name">content</span>.<span class="name">parent</span>.<span class="name">height</span> <span class="operator">-</span> <span class="name">content</span>.<span class="name">height</span>
+             <span class="name">maximum</span>: <span class="number">0</span>
+             <span class="name">minimumOvershoot</span>: <span class="number">400</span>; <span class="name">maximumOvershoot</span>: <span class="number">400</span>
+             <span class="name">overshootFilter</span>: <span class="name">BoundaryRule</span>.<span class="name">Peak</span>
+         }
+
+         <span class="type"><a href="qml-qtquick-repeater.html">Repeater</a></span> {
+             <span class="name">model</span>: <span class="number">1000</span>
+             <span class="type"><a href="qml-qtquick-rectangle.html">Rectangle</a></span> { <span class="name">color</span>: <span class="string">&quot;gray&quot;</span>; <span class="name">width</span>: <span class="number">10</span> <span class="operator">+</span> <span class="name">Math</span>.<span class="name">random</span>() <span class="operator">*</span> <span class="number">100</span>; <span class="name">height</span>: <span class="number">15</span> }
+         }
+     }
+ }
+</pre>
+<p>Alternatively, if <a href="qml-qtquick-wheelhandler.html#property-prop">property</a> is not set or <a href="../qmake/qmake-variable-reference.html#target">target</a> is null, WheelHandler will not automatically manipulate anything; but the <a href="qml-qtquick-wheelhandler.html#rotation-prop">rotation</a> property can be used in a binding to manipulate another property, or you can implement <code>onWheel</code> and handle the wheel event directly.</p>
+<p>WheelHandler handles only a rotating mouse wheel by default. Optionally it can handle smooth-scrolling events from touchpad gestures, by setting <a href="qml-qtquick-wheelhandler.html#acceptedDevices-prop">acceptedDevices</a> to <code>PointerDevice.Mouse | PointerDevice.TouchPad</code>.</p>
+<p><b>Note: </b>Some non-mouse hardware (such as a touch-sensitive Wacom tablet, or a Linux laptop touchpad) generates real wheel events from gestures. WheelHandler will respond to those events as wheel events regardless of the setting of the <a href="qml-qtquick-wheelhandler.html#acceptedDevices-prop">acceptedDevices</a> property.</p>
+<p><b>See also </b><a href="qml-qtquick-mousearea.html">MouseArea</a> and <a href="qml-qtquick-flickable.html">Flickable</a>.</p>
+<!-- @@@WheelHandler -->
+<h2>Property Documentation</h2>
+<!-- $$$acceptedButtons -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="acceptedButtons-prop">
+<td class="tblQmlPropNode"><p>
+<a name="acceptedButtons-prop"></a><span class="name">acceptedButtons</span> : <span class="type">flags</span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>The mouse buttons which can activate this Pointer Handler.</p>
+<p>By default, this property is set to <a href="qml-qtquick-mouseevent.html#button-prop">Qt.LeftButton</a>. It can be set to an OR combination of mouse buttons, and will ignore events from other buttons.</p>
+<p>For example, a control could be made to respond to left and right clicks in different ways, with two handlers:</p>
+<pre class="qml">
+ <span class="type"><a href="qml-qtquick-item.html">Item</a></span> {
+     <span class="type"><a href="qml-qtquick-taphandler.html">TapHandler</a></span> {
+         <span class="name">onTapped</span>: <span class="name">console</span>.<span class="name">log</span>(<span class="string">&quot;left clicked&quot;</span>)
+     }
+     <span class="type"><a href="qml-qtquick-taphandler.html">TapHandler</a></span> {
+         <span class="name">acceptedButtons</span>: <span class="name">Qt</span>.<span class="name">RightButton</span>
+         <span class="name">onTapped</span>: <span class="name">console</span>.<span class="name">log</span>(<span class="string">&quot;right clicked&quot;</span>)
+     }
+ }
+</pre>
+<p><b>Note: </b>Tapping on a touchscreen or tapping the stylus on a graphics tablet emulates clicking the left mouse button. This behavior can be altered via <a href="qml-qtquick-wheelhandler.html#acceptedDevices-prop">acceptedDevices</a> or <a href="qml-qtquick-wheelhandler.html#acceptedPointerTypes-prop">acceptedPointerTypes</a>.</p>
+</div></div><!-- @@@acceptedButtons -->
+<br/>
+<!-- $$$acceptedDevices -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="acceptedDevices-prop">
+<td class="tblQmlPropNode"><p>
+<a name="acceptedDevices-prop"></a><span class="name">acceptedDevices</span> : <span class="type">flags</span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>The types of pointing devices that can activate this Pointer Handler.</p>
+<p>By default, this property is set to <a href="qml-qtquick-pointerdevice.html#type-prop">PointerDevice.AllDevices</a>. If you set it to an OR combination of device types, it will ignore events from non-matching devices.</p>
+<p>For example, a control could be made to respond to mouse and stylus clicks in one way, and touchscreen taps in another way, with two handlers:</p>
+<pre class="qml">
+ <span class="type"><a href="qml-qtquick-item.html">Item</a></span> {
+    <span class="type"><a href="qml-qtquick-taphandler.html">TapHandler</a></span> {
+        <span class="name">acceptedDevices</span>: <span class="name">PointerDevice</span>.<span class="name">Mouse</span> <span class="operator">|</span> <span class="name">PointerDevice</span>.<span class="name">Stylus</span>
+        <span class="name">onTapped</span>: <span class="name">console</span>.<span class="name">log</span>(<span class="string">&quot;clicked&quot;</span>)
+    }
+    <span class="type"><a href="qml-qtquick-taphandler.html">TapHandler</a></span> {
+        <span class="name">acceptedDevices</span>: <span class="name">PointerDevice</span>.<span class="name">TouchScreen</span>
+        <span class="name">onTapped</span>: <span class="name">console</span>.<span class="name">log</span>(<span class="string">&quot;tapped&quot;</span>)
+    }
+ }
+</pre>
+</div></div><!-- @@@acceptedDevices -->
+<br/>
+<!-- $$$acceptedModifiers -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="acceptedModifiers-prop">
+<td class="tblQmlPropNode"><p>
+<a name="acceptedModifiers-prop"></a><span class="name">acceptedModifiers</span> : <span class="type">flags</span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>If this property is set, it will require the given keyboard modifiers to be pressed in order to react to pointer events, and otherwise ignore them.</p>
+<p>If this property is set to <code>Qt.KeyboardModifierMask</code> (the default value), then the <a href="qml-qtquick-pointerhandler.html">PointerHandler</a> ignores the modifier keys.</p>
+<p>For example, an <a href="qml-qtquick-item.html">Item</a> could have two handlers of the same type, one of which is enabled only if the required keyboard modifiers are pressed:</p>
+<pre class="qml">
+ <span class="type"><a href="qml-qtquick-item.html">Item</a></span> {
+    <span class="type"><a href="qml-qtquick-taphandler.html">TapHandler</a></span> {
+        <span class="name">acceptedModifiers</span>: <span class="name">Qt</span>.<span class="name">ControlModifier</span>
+        <span class="name">onTapped</span>: <span class="name">console</span>.<span class="name">log</span>(<span class="string">&quot;control-tapped&quot;</span>)
+    }
+    <span class="type"><a href="qml-qtquick-taphandler.html">TapHandler</a></span> {
+        <span class="name">acceptedModifiers</span>: <span class="name">Qt</span>.<span class="name">NoModifier</span>
+        <span class="name">onTapped</span>: <span class="name">console</span>.<span class="name">log</span>(<span class="string">&quot;tapped&quot;</span>)
+    }
+ }
+</pre>
+<p>If you set <code>acceptedModifiers</code> to an OR combination of modifier keys, it means <i>all</i> of those modifiers must be pressed to activate the handler:</p>
+<pre class="qml">
+ <span class="type"><a href="qml-qtquick-item.html">Item</a></span> {
+    <span class="type"><a href="qml-qtquick-taphandler.html">TapHandler</a></span> {
+        <span class="name">acceptedModifiers</span>: <span class="name">Qt</span>.<span class="name">ControlModifier</span> <span class="operator">|</span> <span class="name">Qt</span>.<span class="name">AltModifier</span> <span class="operator">|</span> <span class="name">Qt</span>.<span class="name">ShiftModifier</span>
+        <span class="name">onTapped</span>: <span class="name">console</span>.<span class="name">log</span>(<span class="string">&quot;control-alt-shift-tapped&quot;</span>)
+    }
+ }
+</pre>
+<p>The available modifiers are as follows:</p>
+<div class="table"><table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><code>NoModifier</code></td><td class="topAlign">No modifier key is allowed.</td></tr>
+<tr><td class="topAlign"><code>ShiftModifier</code></td><td class="topAlign">A Shift key on the keyboard must be pressed.</td></tr>
+<tr><td class="topAlign"><code>ControlModifier</code></td><td class="topAlign">A Ctrl key on the keyboard must be pressed.</td></tr>
+<tr><td class="topAlign"><code>AltModifier</code></td><td class="topAlign">An Alt key on the keyboard must be pressed.</td></tr>
+<tr><td class="topAlign"><code>MetaModifier</code></td><td class="topAlign">A Meta key on the keyboard must be pressed.</td></tr>
+<tr><td class="topAlign"><code>KeypadModifier</code></td><td class="topAlign">A keypad button must be pressed.</td></tr>
+<tr><td class="topAlign"><code>GroupSwitchModifier</code></td><td class="topAlign">X11 only (unless activated on Windows by a command line argument). A Mode_switch key on the keyboard must be pressed.</td></tr>
+<tr><td class="topAlign"><code>KeyboardModifierMask</code></td><td class="topAlign">The handler does not care which modifiers are pressed.</td></tr>
+</table></div>
+<p>If you need even more complex behavior than can be achieved with combinations of multiple handlers with multiple modifier flags, you can check the modifiers in JavaScript code:</p>
+<pre class="qml">
+ <span class="type"><a href="qml-qtquick-item.html">Item</a></span> {
+     <span class="type"><a href="qml-qtquick-taphandler.html">TapHandler</a></span> {
+         <span class="name">onTapped</span>:
+             <span class="keyword">switch</span> (<span class="name">point</span>.<span class="name">modifiers</span>) {
+             <span class="keyword">case</span> <span class="name">Qt</span>.<span class="name">ControlModifier</span> <span class="operator">|</span> <span class="name">Qt</span>.<span class="name">AltModifier</span>:
+                 <span class="name">console</span>.<span class="name">log</span>(<span class="string">&quot;CTRL+ALT&quot;</span>);
+                 <span class="keyword">break</span>;
+             <span class="keyword">case</span> <span class="name">Qt</span>.<span class="name">ControlModifier</span> <span class="operator">|</span> <span class="name">Qt</span>.<span class="name">AltModifier</span> <span class="operator">|</span> <span class="name">Qt</span>.<span class="name">MetaModifier</span>:
+                 <span class="name">console</span>.<span class="name">log</span>(<span class="string">&quot;CTRL+META+ALT&quot;</span>);
+                 <span class="keyword">break</span>;
+             <span class="keyword">default</span>:
+                 <span class="name">console</span>.<span class="name">log</span>(<span class="string">&quot;other modifiers&quot;</span>, <span class="name">point</span>.<span class="name">modifiers</span>);
+                 <span class="keyword">break</span>;
+             }
+     }
+ }
+</pre>
+<p><b>See also </b><a href="../qtcore/qt.html#KeyboardModifier-enum">Qt::KeyboardModifier</a>.</p>
+</div></div><!-- @@@acceptedModifiers -->
+<br/>
+<!-- $$$acceptedPointerTypes -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="acceptedPointerTypes-prop">
+<td class="tblQmlPropNode"><p>
+<a name="acceptedPointerTypes-prop"></a><span class="name">acceptedPointerTypes</span> : <span class="type">flags</span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>The types of pointing instruments (finger, stylus, eraser, etc.) that can activate this Pointer Handler.</p>
+<p>By default, this property is set to <a href="qml-qtquick-pointerdevice.html#pointerType-prop">PointerDevice.AllPointerTypes</a>. If you set it to an OR combination of device types, it will ignore events from non-matching events.</p>
+<p>For example, a control could be made to respond to mouse, touch, and stylus clicks in some way, but delete itself if tapped with an eraser tool on a graphics tablet, with two handlers:</p>
+<pre class="qml">
+ <span class="type"><a href="qml-qtquick-rectangle.html">Rectangle</a></span> {
+    <span class="name">id</span>: <span class="name">rect</span>
+    <span class="type"><a href="qml-qtquick-taphandler.html">TapHandler</a></span> {
+        <span class="name">acceptedPointerTypes</span>: <span class="name">PointerDevice</span>.<span class="name">GenericPointer</span> <span class="operator">|</span> <span class="name">PointerDevice</span>.<span class="name">Finger</span> <span class="operator">|</span> <span class="name">PointerDevice</span>.<span class="name">Pen</span>
+        <span class="name">onTapped</span>: <span class="name">console</span>.<span class="name">log</span>(<span class="string">&quot;clicked&quot;</span>)
+    }
+    <span class="type"><a href="qml-qtquick-taphandler.html">TapHandler</a></span> {
+        <span class="name">acceptedPointerTypes</span>: <span class="name">PointerDevice</span>.<span class="name">Eraser</span>
+        <span class="name">onTapped</span>: <span class="name">rect</span>.<span class="name">destroy</span>()
+    }
+ }
+</pre>
+</div></div><!-- @@@acceptedPointerTypes -->
+<br/>
+<!-- $$$active -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="active-prop">
+<td class="tblQmlPropNode"><p>
+<a name="active-prop"></a><span class="qmlreadonly">[read-only] </span><span class="name">active</span> : <span class="type"><a href="../qtqml/qml-bool.html">bool</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This holds true whenever this Input Handler has taken sole responsibility for handing one or more EventPoints, by successfully taking an exclusive grab of those points. This means that it is keeping its properties up-to-date according to the movements of those Event Points and actively manipulating its <a href="qml-qtquick-wheelhandler.html#target-prop">target</a> (if any).</p>
+</div></div><!-- @@@active -->
+<br/>
+<!-- $$$activeTimeout -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="activeTimeout-prop">
+<td class="tblQmlPropNode"><p>
+<a name="activeTimeout-prop"></a><span class="name">activeTimeout</span> : <span class="type"><a href="../qtqml/qml-real.html">real</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>The amount of time in seconds after which the <a href="../qtwidgets/stylesheet-reference.html#active">active</a> property will revert to <code>false</code> if no more wheel events are received. The default is <code>0.1</code> (100 ms).</p>
+<p>When <a href="qml-qtquick-wheelhandler.html">WheelHandler</a> handles events that contain <a href="../qtcore/qt.html#ScrollPhase-enum">scroll phase</a> information, such as events from some touchpads, the <a href="../qtwidgets/stylesheet-reference.html#active">active</a> property will become <code>false</code> as soon as an event with phase <a href="../qtcore/qt.html#ScrollPhase-enum">Qt::ScrollEnd</a> is received; in that case the timeout is not necessary. But a conventional mouse with a wheel does not provide the scroll phase: the mouse cannot detect when the user has decided to stop scrolling, so the <a href="../qtwidgets/stylesheet-reference.html#active">active</a> property transitions to <code>false</code> after this much time has elapsed.</p>
+</div></div><!-- @@@activeTimeout -->
+<br/>
+<!-- $$$cursorShape -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="cursorShape-prop">
+<td class="tblQmlPropNode"><p>
+<a name="cursorShape-prop"></a><span class="name">cursorShape</span> : <span class="type">Qt::CursorShape</span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property holds the cursor shape that will appear whenever the mouse is hovering over the parentItem while <a href="qml-qtquick-wheelhandler.html#active-prop">active</a> is <code>true</code>.</p>
+<p>The available cursor shapes are:</p>
+<ul>
+<li>Qt.ArrowCursor</li>
+<li>Qt.UpArrowCursor</li>
+<li>Qt.CrossCursor</li>
+<li>Qt.WaitCursor</li>
+<li>Qt.IBeamCursor</li>
+<li>Qt.SizeVerCursor</li>
+<li>Qt.SizeHorCursor</li>
+<li>Qt.SizeBDiagCursor</li>
+<li>Qt.SizeFDiagCursor</li>
+<li>Qt.SizeAllCursor</li>
+<li>Qt.BlankCursor</li>
+<li>Qt.SplitVCursor</li>
+<li>Qt.SplitHCursor</li>
+<li>Qt.PointingHandCursor</li>
+<li>Qt.ForbiddenCursor</li>
+<li>Qt.WhatsThisCursor</li>
+<li>Qt.BusyCursor</li>
+<li>Qt.OpenHandCursor</li>
+<li>Qt.ClosedHandCursor</li>
+<li>Qt.DragCopyCursor</li>
+<li>Qt.DragMoveCursor</li>
+<li>Qt.DragLinkCursor</li>
+</ul>
+<p>The default value is not set, which allows the <a href="qquickitem.html#cursor">cursor</a> of parentItem to appear. This property can be reset to the same initial condition by setting it to undefined.</p>
+<p><b>Note: </b>When this property has not been set, or has been set to <code>undefined</code>, if you read the value it will return <code>Qt.ArrowCursor</code>.</p>
+<p>This property was introduced in Qt 5.15.</p>
+<p><b>See also </b><a href="../qtcore/qt.html#CursorShape-enum">Qt::CursorShape</a>, <a href="qquickitem.html#cursor">QQuickItem::cursor()</a>, and <a href="qml-qtquick-hoverhandler.html#cursorShape-prop">HoverHandler::cursorShape</a>.</p>
+</div></div><!-- @@@cursorShape -->
+<br/>
+<!-- $$$dragThreshold -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="dragThreshold-prop">
+<td class="tblQmlPropNode"><p>
+<a name="dragThreshold-prop"></a><span class="name">dragThreshold</span> : <span class="type"><a href="../qtqml/qml-int.html">int</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>The distance in pixels that the user must drag an event point in order to have it treated as a drag gesture.</p>
+<p>The default value depends on the platform and screen resolution. It can be reset back to the default value by setting it to undefined. The behavior when a drag gesture begins varies in different handlers.</p>
+<p>This property was introduced in Qt 5.15.</p>
+</div></div><!-- @@@dragThreshold -->
+<br/>
+<!-- $$$enabled -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="enabled-prop">
+<td class="tblQmlPropNode"><p>
+<a name="enabled-prop"></a><span class="name">enabled</span> : <span class="type"><a href="../qtqml/qml-bool.html">bool</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>If a <a href="qml-qtquick-pointerhandler.html">PointerHandler</a> is disabled, it will reject all events and no signals will be emitted.</p>
+</div></div><!-- @@@enabled -->
+<br/>
+<!-- $$$grabPermissions -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="grabPermissions-prop">
+<td class="tblQmlPropNode"><p>
+<a name="grabPermissions-prop"></a><span class="name">grabPermissions</span> : <span class="type">flags</span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property specifies the permissions when this handler's logic decides to take over the exclusive grab, or when it is asked to approve grab takeover or cancellation by another handler.</p>
+<div class="table"><table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><code>PointerHandler.TakeOverForbidden</code></td><td class="topAlign">This handler neither takes from nor gives grab permission to any type of Item or Handler.</td></tr>
+<tr><td class="topAlign"><code>PointerHandler.CanTakeOverFromHandlersOfSameType</code></td><td class="topAlign">This handler can take the exclusive grab from another handler of the same class.</td></tr>
+<tr><td class="topAlign"><code>PointerHandler.CanTakeOverFromHandlersOfDifferentType</code></td><td class="topAlign">This handler can take the exclusive grab from any kind of handler.</td></tr>
+<tr><td class="topAlign"><code>PointerHandler.CanTakeOverFromAnything</code></td><td class="topAlign">This handler can take the exclusive grab from any type of Item or Handler.</td></tr>
+<tr><td class="topAlign"><code>PointerHandler.ApprovesTakeOverByHandlersOfSameType</code></td><td class="topAlign">This handler gives permission for another handler of the same class to take the grab.</td></tr>
+<tr><td class="topAlign"><code>PointerHandler.ApprovesTakeOverByHandlersOfDifferentType</code></td><td class="topAlign">This handler gives permission for any kind of handler to take the grab.</td></tr>
+<tr><td class="topAlign"><code>PointerHandler.ApprovesTakeOverByItems</code></td><td class="topAlign">This handler gives permission for any kind of Item to take the grab.</td></tr>
+<tr><td class="topAlign"><code>PointerHandler.ApprovesCancellation</code></td><td class="topAlign">This handler will allow its grab to be set to null.</td></tr>
+<tr><td class="topAlign"><code>PointerHandler.ApprovesTakeOverByAnything</code></td><td class="topAlign">This handler gives permission for any any type of Item or Handler to take the grab.</td></tr>
+</table></div>
+<p>The default is <code>PointerHandler.CanTakeOverFromItems | PointerHandler.CanTakeOverFromHandlersOfDifferentType | PointerHandler.ApprovesTakeOverByAnything</code> which allows most takeover scenarios but avoids e.g&#x2e; two PinchHandlers fighting over the same touchpoints.</p>
+</div></div><!-- @@@grabPermissions -->
+<br/>
+<!-- $$$invertible -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="invertible-prop">
+<td class="tblQmlPropNode"><p>
+<a name="invertible-prop"></a><span class="name">invertible</span> : <span class="type"><a href="../qtqml/qml-bool.html">bool</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Whether or not to reverse the direction of property change if QQuickPointerScrollEvent::inverted is true. The default is <code>true</code>.</p>
+<p>If the operating system has a &quot;natural scrolling&quot; setting that causes scrolling to be in the same direction as the finger movement, then if this property is set to <code>true</code>, and <a href="qml-qtquick-wheelhandler.html">WheelHandler</a> is directly setting a property on <a href="../qmake/qmake-variable-reference.html#target">target</a>, the direction of movement will correspond to the system setting. If this property is set to <code>false</code>, it will invert the <a href="qml-qtquick-wheelhandler.html#rotation-prop">rotation</a> so that the direction of motion is always the same as the direction of finger movement.</p>
+</div></div><!-- @@@invertible -->
+<br/>
+<!-- $$$margin -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="margin-prop">
+<td class="tblQmlPropNode"><p>
+<a name="margin-prop"></a><span class="name">margin</span> : <span class="type"><a href="../qtqml/qml-real.html">real</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>The margin beyond the bounds of the <a href="qml-qtquick-wheelhandler.html#parent-prop">parent</a> item within which an event point can activate this handler. For example, on a <a href="qml-qtquick-pinchhandler.html">PinchHandler</a> where the <a href="qml-qtquick-wheelhandler.html#target-prop">target</a> is also the <code>parent</code>, it's useful to set this to a distance at least half the width of a typical user's finger, so that if the <code>parent</code> has been scaled down to a very small size, the pinch gesture is still possible. Or, if a <a href="qml-qtquick-taphandler.html">TapHandler</a>-based button is placed near the screen edge, it can be used to comply with Fitts's Law: react to mouse clicks at the screen edge even though the button is visually spaced away from the edge by a few pixels.</p>
+<p>The default value is 0.</p>
+<p class="centerAlign"><img src="images/pointerHandlerMargin.png" alt="" /></p></div></div><!-- @@@margin -->
+<br/>
+<!-- $$$orientation -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="orientation-prop">
+<td class="tblQmlPropNode"><p>
+<a name="orientation-prop"></a><span class="name">orientation</span> : <span class="type">enum</span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Which wheel to react to. The default is <code>Qt.Vertical</code>.</p>
+<p>Not every mouse has a <code>Horizontal</code> wheel; sometimes it is emulated by tilting the wheel sideways. A touchpad can usually generate both vertical and horizontal wheel events.</p>
+</div></div><!-- @@@orientation -->
+<br/>
+<!-- $$$parent -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="parent-prop">
+<td class="tblQmlPropNode"><p>
+<a name="parent-prop"></a><span class="qmlreadonly">[read-only] </span><span class="name">parent</span> : <span class="type"><a href="qml-qtquick-item.html">Item</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>The <a href="qml-qtquick-item.html">Item</a> which is the scope of the handler; the Item in which it was declared. The handler will handle events on behalf of this Item, which means a pointer event is relevant if at least one of its event points occurs within the Item's interior. Initially <a href="qml-qtquick-wheelhandler.html#target-prop">target()</a> is the same, but it can be reassigned.</p>
+<p><b>See also </b><a href="qml-qtquick-wheelhandler.html#target-prop">target</a> and <a href="../qtcore/qobject.html#parent">QObject::parent()</a>.</p>
+</div></div><!-- @@@parent -->
+<br/>
+<!-- $$$point -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="point-prop">
+<td class="tblQmlPropNode"><p>
+<a name="point-prop"></a><span class="qmlreadonly">[read-only] </span><span class="name">point</span> : <span class="type"><a href="qml-qtquick-handlerpoint.html">HandlerPoint</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>The event point currently being handled. When no point is currently being handled, this object is reset to default values (all coordinates are 0).</p>
+</div></div><!-- @@@point -->
+<br/>
+<!-- $$$property -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="property-prop">
+<td class="tblQmlPropNode"><p>
+<a name="property-prop"></a><span class="name">property</span> : <span class="type"><a href="../qtqml/qml-string.html">string</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>The property to be modified on the <a href="../qmake/qmake-variable-reference.html#target">target</a> when the mouse wheel is rotated.</p>
+<p>The default is no property (empty string). When no target property is being automatically modified, you can use bindings to react to mouse wheel rotation in arbitrary ways.</p>
+<p>You can use the mouse wheel to adjust any numeric property. For example if <code>property</code> is set to <code>x</code>, the <a href="../qmake/qmake-variable-reference.html#target">target</a> will move horizontally as the wheel is rotated. The following properties have special behavior:</p>
+<div class="table"><table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><code>scale</code></td><td class="topAlign"><a href="qquickitem.html#scale-prop">scale</a> will be modified in a non-linear fashion as described under <a href="qml-qtquick-wheelhandler.html#targetScaleMultiplier-prop">targetScaleMultiplier</a>. If <a href="qml-qtquick-wheelhandler.html#targetTransformAroundCursor-prop">targetTransformAroundCursor</a> is <code>true</code>, the <a href="qquickitem.html#x-prop">x</a> and <a href="qquickitem.html#y-prop">y</a> properties will be simultaneously adjusted so that the user will effectively zoom into or out of the point under the mouse cursor.</td></tr>
+<tr><td class="topAlign"><code>rotation</code></td><td class="topAlign"><a href="qquickitem.html#rotation-prop">rotation</a> will be set to <a href="qml-qtquick-wheelhandler.html#rotation-prop">rotation</a>. If <a href="qml-qtquick-wheelhandler.html#targetTransformAroundCursor-prop">targetTransformAroundCursor</a> is <code>true</code>, the l{<a href="qquickitem.html#x-prop">QQuickItem::x</a>}{x} and <a href="qquickitem.html#y-prop">y</a> properties will be simultaneously adjusted so that the user will effectively rotate the item around the point under the mouse cursor.</td></tr>
+</table></div>
+<p>The adjustment of the given target property is always scaled by <a href="qml-qtquick-wheelhandler.html#rotationScale-prop">rotationScale</a>.</p>
+</div></div><!-- @@@property -->
+<br/>
+<!-- $$$rotation -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="rotation-prop">
+<td class="tblQmlPropNode"><p>
+<a name="rotation-prop"></a><span class="name">rotation</span> : <span class="type"><a href="../qtqml/qml-real.html">real</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>The angle through which the mouse wheel has been rotated since the last time this property was set, in wheel degrees.</p>
+<p>A positive value indicates that the wheel was rotated up/right; a negative value indicates that the wheel was rotated down/left.</p>
+<p>A basic mouse click-wheel works in steps of 15 degrees.</p>
+<p>The default is <code>0</code> at startup. It can be programmatically set to any value at any time. The value will be adjusted from there as the user rotates the mouse wheel.</p>
+<p><b>See also </b><a href="qml-qtquick-wheelhandler.html#orientation-prop">orientation</a>.</p>
+</div></div><!-- @@@rotation -->
+<br/>
+<!-- $$$rotationScale -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="rotationScale-prop">
+<td class="tblQmlPropNode"><p>
+<a name="rotationScale-prop"></a><span class="name">rotationScale</span> : <span class="type"><a href="../qtqml/qml-real.html">real</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>The scaling to be applied to the <a href="qml-qtquick-wheelhandler.html#rotation-prop">rotation</a> property, and to the <a href="qml-qtquick-wheelhandler.html#property-prop">property</a> on the <a href="../qmake/qmake-variable-reference.html#target">target</a> item, if any. The default is 1, such that <a href="qml-qtquick-wheelhandler.html#rotation-prop">rotation</a> will be in units of degrees of rotation. It can be set to a negative number to invert the effect of the direction of mouse wheel rotation.</p>
+</div></div><!-- @@@rotationScale -->
+<br/>
+<!-- $$$target -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="target-prop">
+<td class="tblQmlPropNode"><p>
+<a name="target-prop"></a><span class="name">target</span> : <span class="type"><a href="qml-qtquick-item.html">Item</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>The Item which this handler will manipulate.</p>
+<p>By default, it is the same as the <a href="qml-qtquick-wheelhandler.html#parent-prop">parent</a>, the Item within which the handler is declared. However, it can sometimes be useful to set the target to a different Item, in order to handle events within one item but manipulate another; or to <code>null</code>, to disable the default behavior and do something else instead.</p>
+</div></div><!-- @@@target -->
+<br/>
+<!-- $$$targetScaleMultiplier -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="targetScaleMultiplier-prop">
+<td class="tblQmlPropNode"><p>
+<a name="targetScaleMultiplier-prop"></a><span class="name">targetScaleMultiplier</span> : <span class="type"><a href="../qtqml/qml-real.html">real</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>The amount by which the <a href="../qmake/qmake-variable-reference.html#target">target</a> <a href="qquickitem.html#scale-prop">scale</a> is to be multiplied whenever the <a href="qml-qtquick-wheelhandler.html#rotation-prop">rotation</a> changes by 15 degrees. This is relevant only when <a href="qml-qtquick-wheelhandler.html#property-prop">property</a> is <code>&quot;scale&quot;</code>.</p>
+<p>The <code>scale</code> will be multiplied by <code>targetScaleMultiplier</code> <sup>angleDelta * <a href="qml-qtquick-wheelhandler.html#rotationScale-prop">rotationScale</a> / 15</sup>. The default is <code>2</code> <sup>1/3</sup>, which means that if <a href="qml-qtquick-wheelhandler.html#rotationScale-prop">rotationScale</a> is left at its default value, and the mouse wheel is rotated by one &quot;click&quot; (15 degrees), the <a href="../qmake/qmake-variable-reference.html#target">target</a> will be scaled by approximately 1.25; after three &quot;clicks&quot; its size will be doubled or halved, depending on the direction that the wheel is rotated. If you want to make it double or halve with every 2 clicks of the wheel, set this to <code>2</code> <sup>1/2</sup> (1.4142). If you want to make it scale the opposite way as the wheel is rotated, set <code>rotationScale</code> to a negative value.</p>
+</div></div><!-- @@@targetScaleMultiplier -->
+<br/>
+<!-- $$$targetTransformAroundCursor -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="targetTransformAroundCursor-prop">
+<td class="tblQmlPropNode"><p>
+<a name="targetTransformAroundCursor-prop"></a><span class="name">targetTransformAroundCursor</span> : <span class="type"><a href="../qtqml/qml-bool.html">bool</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Whether the <a href="../qmake/qmake-variable-reference.html#target">target</a> should automatically be repositioned in such a way that it is transformed around the mouse cursor position while the <a href="qml-qtquick-wheelhandler.html#property-prop">property</a> is adjusted. The default is <code>true</code>.</p>
+<p>If <a href="qml-qtquick-wheelhandler.html#property-prop">property</a> is set to <code>&quot;rotation&quot;</code> and targetTransformAroundCursor is <code>true</code>, then as the wheel is rotated, the <a href="../qmake/qmake-variable-reference.html#target">target</a> item will rotate in place around the mouse cursor position. If <code>targetTransformAroundCursor</code> is <code>false</code>, it will rotate around its <a href="qquickitem.html#transformOrigin-prop">transformOrigin</a> instead.</p>
+</div></div><!-- @@@targetTransformAroundCursor -->
+<br/>
+<h2>Signal Documentation</h2>
+<!-- $$$canceled[overload1]$$$canceled -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="canceled-signal">
+<td class="tblQmlFuncNode"><p>
+<a name="canceled-signal"></a><span class="name">canceled</span>(<i>point</i>)</p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>If this handler has already grabbed the given <i>point</i>, this signal is emitted when the grab is stolen by a different Pointer Handler or Item.</p>
+<p><b>Note: </b>The corresponding handler is <code>onCanceled</code>.</p>
+</div></div><!-- @@@canceled -->
+<br/>
+<!-- $$$grabChanged[overload1]$$$grabChangedEventPoint -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="grabChanged-signal">
+<td class="tblQmlFuncNode"><p>
+<a name="grabChanged-signal"></a><span class="name">grabChanged</span>(<i>transition</i>,  <span class="type"><a href="qml-qtquick-eventpoint.html">EventPoint</a></span> <i>point</i>)</p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This signal is emitted when the grab has changed in some way which is relevant to this handler.</p>
+<p>The <i>transition</i> (verb) tells what happened. The <i>point</i> (object) is the point that was grabbed or ungrabbed.</p>
+<p><b>Note: </b>The corresponding handler is <code>onGrabChanged</code>.</p>
+</div></div><!-- @@@grabChanged -->
+<br/>
+<!-- $$$wheel[overload1]$$$wheel -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="wheel-signal">
+<td class="tblQmlFuncNode"><p>
+<a name="wheel-signal"></a><span class="name">wheel</span>(<i>event</i>)</p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This signal is emitted every time this handler receives a <a href="../qtgui/qwheelevent.html">QWheelEvent</a>: that is, every time the wheel is moved or the scrolling gesture is updated.</p>
+<p><b>Note: </b>The corresponding handler is <code>onWheel</code>.</p>
+</div></div><!-- @@@wheel -->
+<br/>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

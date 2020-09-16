@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qtquick3d-materials.qdoc -->
+  <title>AluminumAnodizedMaterial QML Type | Qt Quick 3D 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtquick3d-index.html">Qt Quick 3D</a></li>
+<li><a href="qtquick3d-qmlmodule.html">QML Types</a></li>
+<li>AluminumAnodizedMaterial QML Type</li>
+<li id="buildversion"><a href="qtquick3d-index.html">Qt Quick 3D | Commercial or GPLv3</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">AluminumAnodizedMaterial QML Type</h1>
+<span class="subtitle"></span>
+<!-- $$$AluminumAnodizedMaterial-brief -->
+<p>Anodized aluminum material. <a href="#details">More...</a></p>
+<!-- @@@AluminumAnodizedMaterial -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Import Statement:</td><td class="memItemRight bottomAlign"> import QtQuick3D.Materials 1.15</td></tr></table></div><ul>
+<li><a href="qml-qtquick3d-materials-aluminumanodizedmaterial-members.html">List of all members, including inherited members</a></li>
+</ul>
+<!-- $$$AluminumAnodizedMaterial-description -->
+<a name="details"></a>
+<h2 id="details">Detailed Description</h2>
+<p class="centerAlign"><img src="images/material_aluminum_anodized.png" alt="" /></p><p>The anodized aluminum material has the following properties:</p>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Property Name</th><th >Property Type</th><th >Description</th></tr></thead>
+<tr valign="top" class="odd"><td >uEnvironmentMappingEnabled</td><td >bool</td><td >Does the material use an environment map. Default is <code>true</code>.</td></tr>
+<tr valign="top" class="even"><td >uShadowMappingEnabled</td><td >bool</td><td >Does the material use a baked shadow map. Default is <code>false</code>.</td></tr>
+<tr valign="top" class="odd"><td >roughness</td><td >real</td><td >Roughness of the material. Range is <code>[0, 1]</code>, with <code>0</code> being totally reflective. Default is <code>0.3</code>.</td></tr>
+<tr valign="top" class="even"><td >base_color</td><td >vector3d</td><td >Base color of the material. Default is <code>Qt.vector3d(0.7, 0.7, 0.7)</code>.</td></tr>
+<tr valign="top" class="odd"><td >uEnvironmentTexture</td><td ><a href="qml-qtquick3d-textureinput.html">TextureInput</a></td><td >The environment texture map. Enabled when <code>uEnvironmentMappingEnabled</code> is <code>true</code>. Default is a <a href="qml-qtquick3d-texture.html">Texture</a> with source <code>&quot;maps/spherical_checker.png&quot;</code>.</td></tr>
+<tr valign="top" class="even"><td >uBakedShadowTexture</td><td ><a href="qml-qtquick3d-textureinput.html">TextureInput</a></td><td >The baked shadow texture map. Enabled when <code>uShadowMappingEnabled</code> is <code>true</code>. Default is a <a href="qml-qtquick3d-texture.html">Texture</a> with source <code>&quot;maps/shadow.png&quot;</code>.</td></tr>
+</table></div>
+<!-- @@@AluminumAnodizedMaterial -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

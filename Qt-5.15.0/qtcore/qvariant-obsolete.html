@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qvariant.cpp -->
+  <title>Obsolete Members for QVariant | Qt Core 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtcore-index.html">Qt Core</a></li>
+<li><a href="qtcore-module.html">C++ Classes</a></li>
+<li>QVariant</li>
+<li id="buildversion"><a href="qtcore-index.html">Qt 5.15.0 Reference Documentation</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar"><div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Obsolete Members for QVariant</h1>
+<p><b>The following members of class <a href="qvariant.html">QVariant</a> are obsolete.</b> They are provided to keep old source code working. We strongly advise against using them in new code.</p>
+<h2>Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>bool </td><td class="memItemRight bottomAlign"><b><a href="qvariant-obsolete.html#operator-lt">operator&lt;</a></b>(const QVariant &amp;<i>v</i>) const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>bool </td><td class="memItemRight bottomAlign"><b><a href="qvariant-obsolete.html#operator-lt-eq">operator&lt;=</a></b>(const QVariant &amp;<i>v</i>) const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>bool </td><td class="memItemRight bottomAlign"><b><a href="qvariant-obsolete.html#operator-gt">operator&gt;</a></b>(const QVariant &amp;<i>v</i>) const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>bool </td><td class="memItemRight bottomAlign"><b><a href="qvariant-obsolete.html#operator-gt-eq">operator&gt;=</a></b>(const QVariant &amp;<i>v</i>) const</td></tr>
+</table></div>
+<h2>Related Non-Members</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>bool </td><td class="memItemRight bottomAlign"><b><a href="qvariant-obsolete.html#qVariantCanConvert">qVariantCanConvert</a></b>(const QVariant &amp;<i>value</i>)</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>QVariant </td><td class="memItemRight bottomAlign"><b><a href="qvariant-obsolete.html#qVariantFromValue">qVariantFromValue</a></b>(const T &amp;<i>value</i>)</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>void </td><td class="memItemRight bottomAlign"><b><a href="qvariant-obsolete.html#qVariantSetValue">qVariantSetValue</a></b>(QVariant &amp;<i>variant</i>, const T &amp;<i>value</i>)</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>T </td><td class="memItemRight bottomAlign"><b><a href="qvariant-obsolete.html#qVariantValue">qVariantValue</a></b>(const QVariant &amp;<i>value</i>)</td></tr>
+</table></div>
+<h2>Member Function Documentation</h2>
+<!-- $$$operator<[overload1]$$$operator<constQVariant& -->
+<h3 class="fn" id="operator-lt"><a name="operator-lt"></a><span class="type">bool</span> QVariant::<span class="name">operator&lt;</span>(const <span class="type"><a href="qvariant.html#QVariant">QVariant</a></span> &amp;<i>v</i>) const</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>Compares this <a href="qvariant.html">QVariant</a> with <i>v</i> and returns <code>true</code> if this is less than <i>v</i>.</p>
+<p><b>Note: </b>Comparability might not be availabe for the type stored in this <a href="qvariant.html">QVariant</a> or in <i>v</i>.</p>
+<p><b>Warning:</b> To make this function work with a custom type registered with <a href="qmetatype.html#qRegisterMetaType-1">qRegisterMetaType</a>(), its comparison operator must be registered using <a href="qmetatype.html#registerComparators">QMetaType::registerComparators</a>().</p>
+<p>This operator is deprecated as it cannot establish a total order required for most use of this operator, which is the reason you cannot use <a href="qvariant.html">QVariant</a> as the key of a <a href="qmap.html">QMap</a>.</p>
+<!-- @@@operator< -->
+<!-- $$$operator<=[overload1]$$$operator<=constQVariant& -->
+<h3 class="fn" id="operator-lt-eq"><a name="operator-lt-eq"></a><span class="type">bool</span> QVariant::<span class="name">operator&lt;=</span>(const <span class="type"><a href="qvariant.html#QVariant">QVariant</a></span> &amp;<i>v</i>) const</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>Compares this <a href="qvariant.html">QVariant</a> with <i>v</i> and returns <code>true</code> if this is less or equal than <i>v</i>.</p>
+<p><b>Note: </b>Comparability might not be available for the type stored in this <a href="qvariant.html">QVariant</a> or in <i>v</i>.</p>
+<p><b>Warning:</b> To make this function work with a custom type registered with <a href="qmetatype.html#qRegisterMetaType-1">qRegisterMetaType</a>(), its comparison operator must be registered using <a href="qmetatype.html#registerComparators">QMetaType::registerComparators</a>().</p>
+<p>This operator is deprecated as it cannot establish a total order.</p>
+<!-- @@@operator<= -->
+<!-- $$$operator>[overload1]$$$operator>constQVariant& -->
+<h3 class="fn" id="operator-gt"><a name="operator-gt"></a><span class="type">bool</span> QVariant::<span class="name">operator&gt;</span>(const <span class="type"><a href="qvariant.html#QVariant">QVariant</a></span> &amp;<i>v</i>) const</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>Compares this <a href="qvariant.html">QVariant</a> with <i>v</i> and returns <code>true</code> if this is larger than <i>v</i>.</p>
+<p><b>Note: </b>Comparability might not be available for the type stored in this <a href="qvariant.html">QVariant</a> or in <i>v</i>.</p>
+<p><b>Warning:</b> To make this function work with a custom type registered with <a href="qmetatype.html#qRegisterMetaType-1">qRegisterMetaType</a>(), its comparison operator must be registered using <a href="qmetatype.html#registerComparators">QMetaType::registerComparators</a>().</p>
+<p>This operator is deprecated as it cannot establish a total order.</p>
+<!-- @@@operator> -->
+<!-- $$$operator>=[overload1]$$$operator>=constQVariant& -->
+<h3 class="fn" id="operator-gt-eq"><a name="operator-gt-eq"></a><span class="type">bool</span> QVariant::<span class="name">operator&gt;=</span>(const <span class="type"><a href="qvariant.html#QVariant">QVariant</a></span> &amp;<i>v</i>) const</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>Compares this <a href="qvariant.html">QVariant</a> with <i>v</i> and returns <code>true</code> if this is larger or equal than <i>v</i>.</p>
+<p><b>Note: </b>Comparability might not be available for the type stored in this <a href="qvariant.html">QVariant</a> or in <i>v</i>.</p>
+<p><b>Warning:</b> To make this function work with a custom type registered with <a href="qmetatype.html#qRegisterMetaType-1">qRegisterMetaType</a>(), its comparison operator must be registered using <a href="qmetatype.html#registerComparators">QMetaType::registerComparators</a>().</p>
+<p>This operator is deprecated as it cannot establish a total order.</p>
+<!-- @@@operator>= -->
+<h2>Related Non-Members</h2>
+<!-- $$$qVariantCanConvert[overload1]$$$qVariantCanConvertconstQVariant& -->
+<h3 class="fn" id="qVariantCanConvert"><a name="qVariantCanConvert"></a>template &lt;typename T&gt; <span class="type">bool</span> <span class="name">qVariantCanConvert</span>(const <span class="type"><a href="qvariant.html#QVariant">QVariant</a></span> &amp;<i>value</i>)</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>Returns <code>true</code> if the given <i>value</i> can be converted to the template type specified; otherwise returns <code>false</code>.</p>
+<p>This function is equivalent to <a href="qvariant.html#canConvert">QVariant::canConvert</a>(<i>value</i>).</p>
+<p><b>Note: </b>This function was provided as a workaround for MSVC 6 which did not support member template functions. It is advised to use the other form in new code.</p>
+<p><b>See also </b><a href="qvariant.html#canConvert-1">QVariant::canConvert</a>().</p>
+<!-- @@@qVariantCanConvert -->
+<!-- $$$qVariantFromValue[overload1]$$$qVariantFromValueconstT& -->
+<h3 class="fn" id="qVariantFromValue"><a name="qVariantFromValue"></a>template &lt;typename T&gt; <span class="type"><a href="qvariant.html#QVariant">QVariant</a></span> <span class="name">qVariantFromValue</span>(const <span class="type">T</span> &amp;<i>value</i>)</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>Returns a variant containing a copy of the given <i>value</i> with template type <code>T</code>.</p>
+<p>This function is equivalent to <a href="qvariant.html#fromValue">QVariant::fromValue</a>(<i>value</i>).</p>
+<p><b>Note: </b>This function was provided as a workaround for MSVC 6 which did not support member template functions. It is advised to use the other form in new code.</p>
+<p>For example, a <a href="qobject.html">QObject</a> pointer can be stored in a variant with the following code:</p>
+<pre class="cpp">
+ <span class="type"><a href="qobject.html">QObject</a></span> <span class="operator">*</span>object <span class="operator">=</span> getObjectFromSomewhere();
+ <span class="type"><a href="qvariant.html#QVariant">QVariant</a></span> data <span class="operator">=</span> <span class="type"><a href="qvariant.html#QVariant">QVariant</a></span><span class="operator">::</span>fromValue(object);
+</pre>
+<p><b>See also </b><a href="qvariant.html#fromValue">QVariant::fromValue</a>().</p>
+<!-- @@@qVariantFromValue -->
+<!-- $$$qVariantSetValue[overload1]$$$qVariantSetValueQVariant&constT& -->
+<h3 class="fn" id="qVariantSetValue"><a name="qVariantSetValue"></a>template &lt;typename T&gt; <span class="type">void</span> <span class="name">qVariantSetValue</span>(<span class="type"><a href="qvariant.html#QVariant">QVariant</a></span> &amp;<i>variant</i>, const <span class="type">T</span> &amp;<i>value</i>)</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>Sets the contents of the given <i>variant</i> to a copy of the <i>value</i> with the specified template type <code>T</code>.</p>
+<p>This function is equivalent to <a href="qvariant.html#setValue">QVariant::setValue</a>(<i>value</i>).</p>
+<p><b>Note: </b>This function was provided as a workaround for MSVC 6 which did not support member template functions. It is advised to use the other form in new code.</p>
+<p><b>See also </b><a href="qvariant.html#setValue">QVariant::setValue</a>().</p>
+<!-- @@@qVariantSetValue -->
+<!-- $$$qVariantValue[overload1]$$$qVariantValueconstQVariant& -->
+<h3 class="fn" id="qVariantValue"><a name="qVariantValue"></a>template &lt;typename T&gt; <span class="type">T</span> <span class="name">qVariantValue</span>(const <span class="type"><a href="qvariant.html#QVariant">QVariant</a></span> &amp;<i>value</i>)</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>Returns the given <i>value</i> converted to the template type <code>T</code>.</p>
+<p>This function is equivalent to <a href="qvariant.html#value">QVariant::value</a>&lt;T&gt;(<i>value</i>).</p>
+<p><b>Note: </b>This function was provided as a workaround for MSVC 6 which did not support member template functions. It is advised to use the other form in new code.</p>
+<p><b>See also </b><a href="qvariant.html#value">QVariant::value</a>() and <a href="qvariant.html#qvariant_cast">qvariant_cast</a>().</p>
+<!-- @@@qVariantValue -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

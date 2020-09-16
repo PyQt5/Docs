@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- pdfviewer.qdoc -->
+  <title>PDF Viewer Example | Qt WebEngine 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtwebengine-index.html">Qt WebEngine</a></li>
+<li>PDF Viewer Example</li>
+<li id="buildversion"><a href="qtwebengine-index.html">Qt 5.15.0 Reference Documentation</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#running-the-example">Running the Example</a></li>
+<li class="level1"><a href="#creating-the-main-window">Creating the Main Window</a></li>
+<li class="level1"><a href="#files-and-attributions">Files and Attributions</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">PDF Viewer Example</h1>
+<span class="subtitle"></span>
+<!-- $$$pdfviewer-brief -->
+<p>Renders PDF documents.</p>
+<!-- @@@pdfviewer -->
+<!-- $$$pdfviewer-description -->
+<div class="descr"> <a name="details"></a>
+<p class="centerAlign"><font color="red">[Missing image pdfviewer.png]</font></p><p><i>PDF Viewer</i> demonstrates how to use the QPdfDocument class to render PDF documents and the QPdfPageNavigation class to navigate them.</p>
+<p>Qt Creator and the integrated Qt Designer were used to create the example UI and to connect it to the code. This affects the code, which might be somewhat different to what you would typically write by hand. For more information about using Qt Designer, see Qt Designer Manual and <a href="http://doc.qt.io/qtcreator/creator-writing-program.html">Qt Creator: Creating a Qt Widget Based Application</a>.</p>
+<a name="running-the-example"></a>
+<h4 id="running-the-example">Running the Example</h4>
+<p>To run the example from <a href="http://doc.qt.io/qtcreator/index.html">Qt Creator</a>, open the <b>Welcome</b> mode and select the example from <b>Examples</b>. For more information, visit <a href="http://doc.qt.io/qtcreator/creator-build-example-application.html">Building and Running an Example</a>.</p>
+<a name="creating-the-main-window"></a>
+<h4 id="creating-the-main-window">Creating the Main Window</h4>
+<p>The MainWindow class inherits the <a href="../qtwidgets/qmainwindow.html">QMainWindow</a> class:</p>
+<pre class="cpp">
+
+</pre>
+<p>The class declares public and private slots that match the actions of the selectors:</p>
+<pre class="cpp">
+
+</pre>
+<p>The actual layout of the main window is specified in a <code>.ui</code> file. The widgets and actions are available at runtime in the <code>ui</code> member variable.</p>
+<pre class="cpp">
+
+</pre>
+<p>The <code>m_zoomSelector</code> variable holds the zoom selector and the <code>m_pageSelector</code> holds the page selector. The <code>m_document</code> variable is an instance of the QPdfDocument class that contains the PDF document.</p>
+<pre class="cpp">
+
+</pre>
+<p>The actual setup of the different objects is done in the MainWindow constructor:</p>
+<pre class="cpp">
+
+</pre>
+<p>The constructor first calls <code>setupUi()</code> to construct the zoom and page selectors according to the UI file. We set the maximum width of the selectors.</p>
+<pre class="cpp">
+
+</pre>
+<p>We use the QPdfPageNavigation class to handle the navigation through a PDF document:</p>
+<pre class="cpp">
+
+</pre>
+<p>We connect the <code>zoomModeChanged</code> and <code>zoomFactor</code> changed signals of the PDF view to the functions that reset the zoom selector:</p>
+<pre class="cpp">
+
+</pre>
+<p>We then load the PDF document to the viewer:</p>
+<pre class="cpp">
+     ...
+</pre>
+<p>Finally, we connect the <code>zoomFactorChanged</code> signal to the function that sets the value of the zoom selector:</p>
+<pre class="cpp">
+
+</pre>
+<a name="files-and-attributions"></a>
+<h4 id="files-and-attributions">Files and Attributions</h4>
+<p><a href="https://code.qt.io/cgit/qt/qtwebengine.git/tree/examples/pdfviewer?h=5.15">Example project @ code.qt.io</a></p>
+</div>
+<!-- @@@pdfviewer -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

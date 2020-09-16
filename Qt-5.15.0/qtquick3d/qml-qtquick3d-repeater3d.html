@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qquick3drepeater.cpp -->
+  <title>Repeater3D QML Type | Qt Quick 3D 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtquick3d-index.html">Qt Quick 3D</a></li>
+<li><a href="qtquick3d-qmlmodule.html">QML Types</a></li>
+<li>Repeater3D QML Type</li>
+<li id="buildversion"><a href="qtquick3d-index.html">Qt Quick 3D | Commercial or GPLv3</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#signals">Signals</a></li>
+<li class="level1"><a href="#methods">Methods</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Repeater3D QML Type</h1>
+<span class="subtitle"></span>
+<!-- $$$Repeater3D-brief -->
+<p>Instantiates a number of Node-based components using a provided model. <a href="#details">More...</a></p>
+<!-- @@@Repeater3D -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Import Statement:</td><td class="memItemRight bottomAlign"> import QtQuick3D 1.15</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Inherits:</td><td class="memItemRight bottomAlign"> <p><a href="qml-qtquick3d-node.html">Node</a></p>
+</td></tr></table></div><ul>
+<li><a href="qml-qtquick3d-repeater3d-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="properties"></a>
+<h2 id="properties">Properties</h2>
+<ul>
+<li class="fn"><b><b><a href="qml-qtquick3d-repeater3d.html#count-prop">count</a></b></b> : int</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-repeater3d.html#delegate-prop">delegate</a></b></b> : Component</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-repeater3d.html#model-prop">model</a></b></b> : any</li>
+</ul>
+<a name="signals"></a>
+<h2 id="signals">Signals</h2>
+<ul>
+<li class="fn"><b><b><a href="qml-qtquick3d-repeater3d.html#objectAdded-signal">objectAdded</a></b></b>(<i>index</i>,  Object3D <i>object</i>)</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-repeater3d.html#objectRemoved-signal">objectRemoved</a></b></b>(<i>index</i>,  Object3D <i>object</i>)</li>
+</ul>
+<a name="methods"></a>
+<h2 id="methods">Methods</h2>
+<ul>
+<li class="fn">Object3D <b><b><a href="qml-qtquick3d-repeater3d.html#objectAt-method">objectAt</a></b></b>(<i>index</i>)</li>
+</ul>
+<!-- $$$Repeater3D-description -->
+<a name="details"></a>
+<h2 id="details">Detailed Description</h2>
+<p>The Repeater3D type is used to create a large number of similar items. Like other view types, a Repeater3D has a <a href="qml-qtquick3d-repeater3d.html#model-prop">model</a> and a <a href="qml-qtquick3d-repeater3d.html#delegate-prop">delegate</a>: for each entry in the model, the delegate is instantiated in a context seeded with data from the model.</p>
+<p>A Repeater's <a href="qml-qtquick3d-repeater3d.html#model-prop">model</a> can be any of the supported <a href="../qtquick/qtquick-modelviewsdata-modelview.html#qml-data-models">data models</a>. Additionally, like delegates for other views, a Repeater delegate can access its index within the repeater, as well as the model data relevant to the delegate. See the <a href="qml-qtquick3d-repeater3d.html#delegate-prop">delegate</a> property documentation for details.</p>
+<p><b>Note: </b>A Repeater3D item owns all items it instantiates. Removing or dynamically destroying an item created by a Repeater3D results in unpredictable behavior.</p>
+<p><b>Note: </b>Repeater3D is <a href="qml-qtquick3d-node.html">Node</a>-based, and can only repeat <a href="qml-qtquick3d-node.html">Node</a>-derived objects.</p>
+<!-- @@@Repeater3D -->
+<h2>Property Documentation</h2>
+<!-- $$$count -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="count-prop">
+<td class="tblQmlPropNode"><p>
+<a name="count-prop"></a><span class="name">count</span> : <span class="type"><a href="../qtqml/qml-int.html">int</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property holds the number of items in the model.</p>
+<p><b>Note: </b>The number of items in the model as reported by count may differ from the number of created delegates if the <a href="qml-qtquick3d-repeater3d.html">Repeater3D</a> is in the process of instantiating delegates or is incorrectly set up.</p>
+</div></div><!-- @@@count -->
+<br/>
+<!-- $$$delegate -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="delegate-prop">
+<td class="tblQmlPropNode"><p>
+<a name="delegate-prop"></a><span class="qmldefault">[default] </span><span class="name">delegate</span> : <span class="type"><a href="../qtqml/qml-qtqml-component.html">Component</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>The delegate provides a template defining each object instantiated by the repeater.</p>
+<p>Delegates are exposed to a read-only <code>index</code> property that indicates the index of the delegate within the repeater.</p>
+<p>If the <a href="qml-qtquick3d-repeater3d.html#model-prop">model</a> is a model object (such as a <a href="../qtqmlmodels/qml-qtqml-models-listmodel.html">ListModel</a>) the delegate can access all model roles as named properties, in the same way that delegates do for view classes like <a href="../qtquick/qml-qtquick-listview.html">ListView</a>.</p>
+<p><b>See also </b><a href="../qtquick/qtquick-modelviewsdata-modelview.html#qml-data-models">QML Data Models</a>.</p>
+</div></div><!-- @@@delegate -->
+<br/>
+<!-- $$$model -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="model-prop">
+<td class="tblQmlPropNode"><p>
+<a name="model-prop"></a><span class="name">model</span> : <span class="type">any</span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>The model providing data for the repeater.</p>
+<p>This property can be set to any of the supported <a href="../qtquick/qtquick-modelviewsdata-modelview.html#qml-data-models">data models</a>:</p>
+<ul>
+<li>A number that indicates the number of delegates to be created by the repeater</li>
+<li>A model (e.g&#x2e; a <a href="../qtqmlmodels/qml-qtqml-models-listmodel.html">ListModel</a> item, or a <a href="../qtcore/qabstractitemmodel.html">QAbstractItemModel</a> subclass)</li>
+<li>A string list</li>
+<li>An object list</li>
+</ul>
+<p>The type of model affects the properties that are exposed to the <a href="qml-qtquick3d-repeater3d.html#delegate-prop">delegate</a>.</p>
+<p><b>See also </b><a href="../qtquick/qtquick-modelviewsdata-modelview.html#qml-data-models">Data Models</a>.</p>
+</div></div><!-- @@@model -->
+<br/>
+<h2>Signal Documentation</h2>
+<!-- $$$objectAdded[overload1]$$$objectAddedObject3D -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="objectAdded-signal">
+<td class="tblQmlFuncNode"><p>
+<a name="objectAdded-signal"></a><span class="name">objectAdded</span>(<i>index</i>,  <span class="type"><a href="qml-qtquick3d-object3d.html">Object3D</a></span> <i>object</i>)</p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This signal is emitted when an object is added to the repeater. The <i>index</i> parameter holds the index at which object has been inserted within the repeater, and the <i>object</i> parameter holds the <a href="qml-qtquick3d-object3d.html">Object3D</a> that has been added.</p>
+<p>The corresponding handler is <code>onObjectAdded</code>.</p>
+<p><b>Note: </b>The corresponding handler is <code>onObjectAdded</code>.</p>
+</div></div><!-- @@@objectAdded -->
+<br/>
+<!-- $$$objectRemoved[overload1]$$$objectRemovedObject3D -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="objectRemoved-signal">
+<td class="tblQmlFuncNode"><p>
+<a name="objectRemoved-signal"></a><span class="name">objectRemoved</span>(<i>index</i>,  <span class="type"><a href="qml-qtquick3d-object3d.html">Object3D</a></span> <i>object</i>)</p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This signal is emitted when an object is removed from the repeater. The <i>index</i> parameter holds the index at which the item was removed from the repeater, and the <i>object</i> parameter holds the <a href="qml-qtquick3d-object3d.html">Object3D</a> that was removed.</p>
+<p>Do not keep a reference to <i>object</i> if it was created by this repeater, as in these cases it will be deleted shortly after the signal is handled.</p>
+<p>The corresponding handler is <code>onObjectRemoved</code>.</p>
+<p><b>Note: </b>The corresponding handler is <code>onObjectRemoved</code>.</p>
+</div></div><!-- @@@objectRemoved -->
+<br/>
+<h2>Method Documentation</h2>
+<!-- $$$objectAt[overload1]$$$objectAt -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="objectAt-method">
+<td class="tblQmlFuncNode"><p>
+<a name="objectAt-method"></a><span class="type"><a href="qml-qtquick3d-object3d.html">Object3D</a></span> <span class="name">objectAt</span>(<i>index</i>)</p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Returns the <a href="qml-qtquick3d-object3d.html">Object3D</a> that has been created at the given <i>index</i>, or <code>null</code> if no item exists at <i>index</i>.</p>
+</div></div><!-- @@@objectAt -->
+<br/>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

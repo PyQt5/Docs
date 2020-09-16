@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qcomputecommand.cpp -->
+  <title>ComputeCommand QML Type | Qt 3D 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qt3d-index.html">Qt 3D</a></li>
+<li><a href="qt3d-qml.html">QML Types</a></li>
+<li>ComputeCommand QML Type</li>
+<li id="buildversion"><a href="qt3d-index.html">Qt 5.15.0 Reference Documentation</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">ComputeCommand QML Type</h1>
+<span class="subtitle"></span>
+<!-- $$$ComputeCommand-brief -->
+<p>Component to issue work for the compute shader on GPU. <a href="#details">More...</a></p>
+<!-- @@@ComputeCommand -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Import Statement:</td><td class="memItemRight bottomAlign"> import Qt3D.Render 2.15</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Since:</td><td class="memItemRight bottomAlign"> Qt 5.7</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Instantiates:</td><td class="memItemRight bottomAlign"> <a href="qml-qt3d-render-computecommand.html"><a href="qt3drender-qcomputecommand.html">QComputeCommand</a></td></tr><tr><td class="memItemLeft rightAlign topAlign"> Inherits:</td><td class="memItemRight bottomAlign"> <p><a href="qml-qt3d-core-component3d.html">Component3D</a></p>
+</td></tr></table></div><ul>
+<li><a href="qml-qt3d-render-computecommand-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="properties"></a>
+<h2 id="properties">Properties</h2>
+<ul>
+<li class="fn"><b><b><a href="qml-qt3d-render-computecommand.html#runType-prop">runType</a></b></b> : enumeration</li>
+<li class="fn"><b><b><a href="qml-qt3d-render-computecommand.html#workGroupX-prop">workGroupX</a></b></b> : int</li>
+<li class="fn"><b><b><a href="qml-qt3d-render-computecommand.html#workGroupY-prop">workGroupY</a></b></b> : int</li>
+<li class="fn"><b><b><a href="qml-qt3d-render-computecommand.html#workGroupZ-prop">workGroupZ</a></b></b> : int</li>
+</ul>
+<!-- $$$ComputeCommand-description -->
+<a name="details"></a>
+<h2 id="details">Detailed Description</h2>
+<p>A ComputeCommand is used to issue work for the compute shader. The compute shader is specified in the Material component of the same entity the ComputeCommand is added to. The <a href="qml-qt3d-render-computecommand.html#workGroupX-prop">workGroupX</a>, <a href="qml-qt3d-render-computecommand.html#workGroupY-prop">workGroupY</a> and <a href="qml-qt3d-render-computecommand.html#workGroupZ-prop">workGroupZ</a> properties specify the work group sizes for the compute shader invocation. <a href="qml-qt3d-render-dispatchcompute.html">DispatchCompute</a> node needs to be present in the FrameGraph to actually issue the commands. The execution behavior of the compute command can be controlled with the run type property.</p>
+<p><b>Note: </b>If the rendering policy is set to <a href="qml-qt3d-render-rendersettings.html">RenderSettings</a>.OnDemand, the run type is set to Continuous and there are no changes to the scene, the ComputeCommand will not be invoked repeatedly. The <a href="qml-qt3d-render-rendersettings.html">RenderSettings</a>.Always render policy must be set for the ComputeCommand to be repeatedly invoked if there are no other changes to the scene that triggers rendering a new frame.</p>
+<!-- @@@ComputeCommand -->
+<h2>Property Documentation</h2>
+<!-- $$$runType -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="runType-prop">
+<td class="tblQmlPropNode"><p>
+<a name="runType-prop"></a><span class="name">runType</span> : <span class="type"><a href="../qtqml/qml-enumeration.html">enumeration</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Specifies whether the compute command should be performed every frame or manually triggered.</p>
+<div class="table"><table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><code>ComputeCommand.Continuous</code></td><td class="topAlign">Compute command is executed everyframe. This is the default.</td></tr>
+<tr><td class="topAlign"><code>ComputeCommand.Manual</code></td><td class="topAlign">CompouteCommand is executed for a given number of frames and then the component disables itself.</td></tr>
+</table></div>
+</div></div><!-- @@@runType -->
+<br/>
+<!-- $$$workGroupX -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="workGroupX-prop">
+<td class="tblQmlPropNode"><p>
+<a name="workGroupX-prop"></a><span class="name">workGroupX</span> : <span class="type"><a href="../qtqml/qml-int.html">int</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Specifies X workgroup size.</p>
+</div></div><!-- @@@workGroupX -->
+<br/>
+<!-- $$$workGroupY -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="workGroupY-prop">
+<td class="tblQmlPropNode"><p>
+<a name="workGroupY-prop"></a><span class="name">workGroupY</span> : <span class="type"><a href="../qtqml/qml-int.html">int</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Specifies Y workgroup size.</p>
+</div></div><!-- @@@workGroupY -->
+<br/>
+<!-- $$$workGroupZ -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="workGroupZ-prop">
+<td class="tblQmlPropNode"><p>
+<a name="workGroupZ-prop"></a><span class="name">workGroupZ</span> : <span class="type"><a href="../qtqml/qml-int.html">int</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Specifies Z workgroup size.</p>
+</div></div><!-- @@@workGroupZ -->
+<br/>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

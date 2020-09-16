@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- rendernode.qdoc -->
+  <title>Scene Graph - Custom Rendering with QSGRenderNode | Qt Quick 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtquick-index.html">Qt Quick</a></li>
+<li>Scene Graph - Custom Rendering with QSGRenderNode</li>
+<li id="buildversion"><a href="qtquick-index.html">Qt 5.15.0 Reference Documentation</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar"><div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Scene Graph - Custom Rendering with QSGRenderNode</h1>
+<span class="subtitle"></span>
+<!-- $$$scenegraph/rendernode-brief -->
+<p>Shows how to integrate drawing via the native graphics API with the Qt Quick scene graph.</p>
+<!-- @@@scenegraph/rendernode -->
+<!-- $$$scenegraph/rendernode-description -->
+<div class="descr"> <a name="details"></a>
+<p class="centerAlign"><img src="images/rendernode-example.jpg" alt="" /></p><p><a href="qsgrendernode.html">QSGRenderNode</a> allows integrating draw and other calls made directly via the Qt Quick scene graph's underlying native graphics API (such as, Vulkan, Metal, Direct 3D, or OpenGL). This example demonstrates implementing a custom <a href="qquickitem.html">QQuickItem</a> backed by a <a href="qsgrendernode.html">QSGRenderNode</a> implementation, where the node renders a triangle directly via the graphics API. The rest of the scene (background, text, rectangles) are standard Qt Quick items. The example has full support for OpenGL and Metal, as well as the software backend of Qt Quick.</p>
+<p>The custom item behaves like any other Qt Quick item, meaning it participates and stacking and clipping as usual, which is a big difference to the alternative approaches like having the custom rendering as an overlay (connecting to <a href="qquickwindow.html#afterRendering">QQuickWindow::afterRendering</a>()) and underlay (connecting to <a href="qquickwindow.html#beforeRendering">QQuickWindow::beforeRendering</a>()) because those do not offer the possibility of proper mixing of the custom content with the Qt Quick scene.</p>
+<p>Another important feature is that <a href="qsgrendernode.html">QSGRenderNode</a> can be helpful to preserve performance, when compared to some of the alternatives. Going through <a href="qquickframebufferobject.html">QQuickFramebufferObject</a> allows creating a custom item similarly to what this example does, but it does it by rendering the custom content in a texture, and then drawing a textured quad with that texture. This can be expensive on some systems due to the cost of texturing and blending. <a href="qsgrendernode.html">QSGRenderNode</a> avoids this since the native graphics calls are issued in line with the draw calls for the scene graph's batches.</p>
+<p>All this comes at the cost of being more complex, and not necessarily being suitable for all types of 3D content, in particular where vertices and different depth would clash with the 2D content in the Qt Quick scene graph's batches (those are better served by &quot;flattening&quot; into a 2D texture via approaches like <a href="qquickframebufferobject.html">QQuickFramebufferObject</a>). Therefore <a href="qsgrendernode.html">QSGRenderNode</a> is not always the right choice. It can however a good and powerful choice in many cases. This is what the example demonstrates.</p>
+<p>Let's go through the most important parts of the code:</p>
+<pre class="cpp">
+ <span class="keyword">class</span> CustomRenderItem : <span class="keyword">public</span> <span class="type"><a href="qquickitem.html">QQuickItem</a></span>
+ {
+     Q_OBJECT
+     QML_ELEMENT
+
+ <span class="keyword">public</span>:
+     CustomRenderItem(<span class="type"><a href="qquickitem.html">QQuickItem</a></span> <span class="operator">*</span>parent <span class="operator">=</span> nullptr);
+     <span class="type"><a href="qsgnode.html">QSGNode</a></span> <span class="operator">*</span>updatePaintNode(<span class="type"><a href="qsgnode.html">QSGNode</a></span> <span class="operator">*</span>node<span class="operator">,</span> UpdatePaintNodeData <span class="operator">*</span>) override;
+ };
+</pre>
+<p>Our custom QML type is implemented in the class CustomRenderItem.</p>
+<pre class="qml">
+ import SceneGraphRendering 2.0
+</pre>
+<p>The corresponding import in the QML document.</p>
+<pre class="qml">
+ <span class="type">CustomRenderItem</span> {
+     <span class="name">id</span>: <span class="name">renderer</span>
+     <span class="name">width</span>: <span class="name">bg</span>.<span class="name">width</span> <span class="operator">-</span> <span class="number">20</span>
+     <span class="name">height</span>: <span class="name">bg</span>.<span class="name">height</span> <span class="operator">-</span> <span class="number">20</span>
+     <span class="name">x</span>: -<span class="name">clipper</span>.<span class="name">x</span> <span class="operator">+</span> <span class="number">10</span>
+     <span class="name">y</span>: -<span class="name">clipper</span>.<span class="name">y</span> <span class="operator">+</span> <span class="number">10</span>
+
+     <span class="name">transform</span>: [
+         <span class="type"><a href="qml-qtquick-rotation.html">Rotation</a></span> { <span class="name">id</span>: <span class="name">rotation</span>; <span class="name">axis</span>.x: <span class="number">0</span>; <span class="name">axis</span>.z: <span class="number">0</span>; <span class="name">axis</span>.y: <span class="number">1</span>; <span class="name">angle</span>: <span class="number">0</span>; <span class="name">origin</span>.x: <span class="name">renderer</span>.<span class="name">width</span> <span class="operator">/</span> <span class="number">2</span>; <span class="name">origin</span>.y: <span class="name">renderer</span>.<span class="name">height</span> <span class="operator">/</span> <span class="number">2</span>; },
+         <span class="type"><a href="qml-qtquick-translate.html">Translate</a></span> { <span class="name">id</span>: <span class="name">txOut</span>; <span class="name">x</span>: -<span class="name">renderer</span>.<span class="name">width</span> <span class="operator">/</span> <span class="number">2</span>; <span class="name">y</span>: -<span class="name">renderer</span>.<span class="name">height</span> <span class="operator">/</span> <span class="number">2</span> },
+         <span class="type"><a href="qml-qtquick-scale.html">Scale</a></span> { <span class="name">id</span>: <span class="name">scale</span>; },
+         <span class="type"><a href="qml-qtquick-translate.html">Translate</a></span> { <span class="name">id</span>: <span class="name">txIn</span>; <span class="name">x</span>: <span class="name">renderer</span>.<span class="name">width</span> <span class="operator">/</span> <span class="number">2</span>; <span class="name">y</span>: <span class="name">renderer</span>.<span class="name">height</span> <span class="operator">/</span> <span class="number">2</span> }
+     ]
+ }
+</pre>
+<p>The CustomRenderItem object. It is positioned to fill a big part of the scene, covering its parent (the yellow rectangle; this will be used to demonstrate clipping). The item will have its scale and rotation animated.</p>
+<pre class="qml">
+ <span class="type"><a href="qml-qtquick-text.html">Text</a></span> {
+     <span class="name">id</span>: <span class="name">label</span>
+     <span class="name">anchors</span>.bottom: <span class="name">parent</span>.<span class="name">bottom</span>
+     <span class="name">anchors</span>.left: <span class="name">parent</span>.<span class="name">left</span>
+     <span class="name">anchors</span>.margins: <span class="number">20</span>
+     <span class="name">color</span>: <span class="string">&quot;yellow&quot;</span>
+     <span class="name">wrapMode</span>: <span class="name">Text</span>.<span class="name">WordWrap</span>
+     property <span class="type"><a href="../qtqml/qml-int.html">int</a></span> <span class="name">api</span>: <span class="name">GraphicsInfo</span>.<span class="name">api</span>
+     <span class="name">text</span>: {
+         var apiStr;
+         <span class="keyword">switch</span> (<span class="name">api</span>) {
+         <span class="keyword">case</span> <span class="name">GraphicsInfo</span>.<span class="name">OpenGL</span>: <span class="name">apiStr</span> <span class="operator">=</span> <span class="string">&quot;OpenGL (direct)&quot;</span>; <span class="keyword">break</span>;
+         <span class="keyword">case</span> <span class="name">GraphicsInfo</span>.<span class="name">Direct3D12</span>: <span class="name">apiStr</span> <span class="operator">=</span> <span class="string">&quot;Direct3D 12 (direct)&quot;</span>; <span class="keyword">break</span>;
+         <span class="keyword">case</span> <span class="name">GraphicsInfo</span>.<span class="name">Software</span>: <span class="name">apiStr</span> <span class="operator">=</span> <span class="string">&quot;Software (QPainter)&quot;</span>; <span class="keyword">break</span>;
+         <span class="keyword">case</span> <span class="name">GraphicsInfo</span>.<span class="name">OpenGLRhi</span>: <span class="name">apiStr</span> <span class="operator">=</span> <span class="string">&quot;OpenGL (RHI)&quot;</span>; <span class="keyword">break</span>;
+         <span class="keyword">case</span> <span class="name">GraphicsInfo</span>.<span class="name">MetalRhi</span>: <span class="name">apiStr</span> <span class="operator">=</span> <span class="string">&quot;Metal (RHI)&quot;</span>; <span class="keyword">break</span>;
+         <span class="comment">// the example has no other QSGRenderNode subclasses</span>
+         <span class="keyword">default</span>: <span class="name">apiStr</span> <span class="operator">=</span> <span class="string">&quot;&lt;UNSUPPORTED&gt;&quot;</span>; <span class="keyword">break</span>;
+         }
+         <span class="string">&quot;Custom rendering via the graphics API &quot;</span> <span class="operator">+</span> <span class="name">apiStr</span>
+                 <span class="operator">+</span> <span class="string">&quot;\nLeft click to toggle clipping to yellow rect&quot;</span>
+                 <span class="operator">+</span> <span class="string">&quot;\nRight click to rotate (can be used to exercise stencil clip instead of scissor)&quot;</span>
+     }
+</pre>
+<p>Text items are used to show some helpful information, such as, the active graphics API Qt Quick uses.</p>
+<pre class="qml">
+ <span class="type"><a href="qml-qtquick-mousearea.html">MouseArea</a></span> {
+     <span class="name">anchors</span>.fill: <span class="name">parent</span>
+     <span class="name">acceptedButtons</span>: <span class="name">Qt</span>.<span class="name">LeftButton</span> <span class="operator">|</span> <span class="name">Qt</span>.<span class="name">RightButton</span>
+     <span class="name">onClicked</span>: (<span class="keyword">mouse</span>) =&gt; {
+         <span class="keyword">if</span> (<span class="name">mouse</span>.<span class="name">button</span> <span class="operator">===</span> <span class="name">Qt</span>.<span class="name">LeftButton</span>) {
+             <span class="name">clipper</span>.<span class="name">clip</span> <span class="operator">=</span> !<span class="name">clipper</span>.<span class="name">clip</span>
+         } <span class="keyword">else</span> <span class="keyword">if</span> (<span class="name">mouse</span>.<span class="name">button</span> <span class="operator">===</span> <span class="name">Qt</span>.<span class="name">RightButton</span>) {
+             <span class="name">nonRectClipAnim</span>.<span class="name">running</span> <span class="operator">=</span> !<span class="name">nonRectClipAnim</span>.<span class="name">running</span>
+             <span class="keyword">if</span> (!<span class="name">nonRectClipAnim</span>.<span class="name">running</span>)
+                 <span class="name">clipper</span>.<span class="name">rotation</span> <span class="operator">=</span> <span class="number">0</span>;
+         }
+     }
+ }
+</pre>
+<p>Clicking the left mouse button is used to toggle clipping on the custom item's parent item. By default this is done using scissoring (GL_SCISSOR_TEST with OpenGL). A well-written <a href="qsgrendernode.html">QSGRenderNode</a> implementation is expected to be able to take this into account and enable scissor testing when the scene graph indicates that it is necessary.</p>
+<p>The right mouse button is used to toggle an animation on the rotation of the parent item. With clipping enabled, this demonstrates clipping via the stencil buffer since a rectangular scissor is not appropriate when we need to clip to a rotated rectangle shape. The scene graph fills up the stencil buffer as necessary, the <a href="qsgrendernode.html">QSGRenderNode</a> implementation just has to enable stencil testing using the provided reference value.</p>
+<pre class="cpp">
+ CustomRenderItem<span class="operator">::</span>CustomRenderItem(<span class="type"><a href="qquickitem.html">QQuickItem</a></span> <span class="operator">*</span>parent)
+     : <span class="type"><a href="qquickitem.html">QQuickItem</a></span>(parent)
+ {
+     <span class="comment">// Our item shows something so set the flag.</span>
+     setFlag(ItemHasContents);
+ }
+</pre>
+<p>Moving on to the CustomRenderItem implementation. This is a visual item.</p>
+<pre class="cpp">
+ <span class="type"><a href="qsgnode.html">QSGNode</a></span> <span class="operator">*</span>CustomRenderItem<span class="operator">::</span>updatePaintNode(<span class="type"><a href="qsgnode.html">QSGNode</a></span> <span class="operator">*</span>node<span class="operator">,</span> UpdatePaintNodeData <span class="operator">*</span>)
+ {
+     <span class="type"><a href="qsgrendernode.html">QSGRenderNode</a></span> <span class="operator">*</span>n <span class="operator">=</span> <span class="keyword">static_cast</span><span class="operator">&lt;</span><span class="type"><a href="qsgrendernode.html">QSGRenderNode</a></span> <span class="operator">*</span><span class="operator">&gt;</span>(node);
+
+     <span class="type"><a href="qsgrendererinterface.html">QSGRendererInterface</a></span> <span class="operator">*</span>ri <span class="operator">=</span> window()<span class="operator">-</span><span class="operator">&gt;</span>rendererInterface();
+     <span class="keyword">if</span> (<span class="operator">!</span>ri)
+         <span class="keyword">return</span> nullptr;
+
+     <span class="keyword">switch</span> (ri<span class="operator">-</span><span class="operator">&gt;</span>graphicsApi()) {
+     <span class="keyword">case</span> <span class="type"><a href="qsgrendererinterface.html">QSGRendererInterface</a></span><span class="operator">::</span>OpenGL:
+         Q_FALLTHROUGH();
+     <span class="keyword">case</span> <span class="type"><a href="qsgrendererinterface.html">QSGRendererInterface</a></span><span class="operator">::</span>OpenGLRhi:
+ <span class="preprocessor">#if QT_CONFIG(opengl)</span>
+         <span class="keyword">if</span> (<span class="operator">!</span>n)
+             n <span class="operator">=</span> <span class="keyword">new</span> OpenGLRenderNode;
+         <span class="keyword">static_cast</span><span class="operator">&lt;</span>OpenGLRenderNode <span class="operator">*</span><span class="operator">&gt;</span>(n)<span class="operator">-</span><span class="operator">&gt;</span>sync(<span class="keyword">this</span>);
+ <span class="preprocessor">#endif</span>
+         <span class="keyword">break</span>;
+
+     <span class="keyword">case</span> <span class="type"><a href="qsgrendererinterface.html">QSGRendererInterface</a></span><span class="operator">::</span>MetalRhi:
+ <span class="comment">// Restore when QTBUG-78580 is done and the .pro is updated accordingly</span>
+ <span class="comment">//#ifdef Q_OS_DARWIN</span>
+ <span class="preprocessor">#ifdef Q_OS_MACOS</span>
+         <span class="keyword">if</span> (<span class="operator">!</span>n) {
+             MetalRenderNode <span class="operator">*</span>metalNode <span class="operator">=</span> <span class="keyword">new</span> MetalRenderNode;
+             n <span class="operator">=</span> metalNode;
+             metalNode<span class="operator">-</span><span class="operator">&gt;</span>resourceBuilder()<span class="operator">-</span><span class="operator">&gt;</span>setWindow(window());
+             <span class="type"><a href="../qtcore/qobject.html">QObject</a></span><span class="operator">::</span>connect(window()<span class="operator">,</span> <span class="operator">&amp;</span><span class="type"><a href="qquickwindow.html">QQuickWindow</a></span><span class="operator">::</span>beforeRendering<span class="operator">,</span>
+                              metalNode<span class="operator">-</span><span class="operator">&gt;</span>resourceBuilder()<span class="operator">,</span> <span class="operator">&amp;</span>MetalRenderNodeResourceBuilder<span class="operator">::</span>build);
+         }
+         <span class="keyword">static_cast</span><span class="operator">&lt;</span>MetalRenderNode <span class="operator">*</span><span class="operator">&gt;</span>(n)<span class="operator">-</span><span class="operator">&gt;</span>sync(<span class="keyword">this</span>);
+ <span class="preprocessor">#endif</span>
+         <span class="keyword">break</span>;
+
+     <span class="keyword">case</span> <span class="type"><a href="qsgrendererinterface.html">QSGRendererInterface</a></span><span class="operator">::</span>Direct3D12: <span class="comment">// ### Qt 6: remove</span>
+ <span class="preprocessor">#if QT_CONFIG(d3d12)</span>
+         <span class="keyword">if</span> (<span class="operator">!</span>n)
+             n <span class="operator">=</span> <span class="keyword">new</span> D3D12RenderNode;
+         <span class="keyword">static_cast</span><span class="operator">&lt;</span>D3D12RenderNode <span class="operator">*</span><span class="operator">&gt;</span>(n)<span class="operator">-</span><span class="operator">&gt;</span>sync(<span class="keyword">this</span>);
+ <span class="preprocessor">#endif</span>
+         <span class="keyword">break</span>;
+
+     <span class="keyword">case</span> <span class="type"><a href="qsgrendererinterface.html">QSGRendererInterface</a></span><span class="operator">::</span>Software:
+         <span class="keyword">if</span> (<span class="operator">!</span>n)
+             n <span class="operator">=</span> <span class="keyword">new</span> SoftwareRenderNode;
+         <span class="keyword">static_cast</span><span class="operator">&lt;</span>SoftwareRenderNode <span class="operator">*</span><span class="operator">&gt;</span>(n)<span class="operator">-</span><span class="operator">&gt;</span>sync(<span class="keyword">this</span>);
+         <span class="keyword">break</span>;
+
+     <span class="keyword">default</span>:
+         <span class="keyword">break</span>;
+     }
+
+     <span class="keyword">if</span> (<span class="operator">!</span>n)
+         <a href="../qtcore/qtglobal.html#qWarning">qWarning</a>(<span class="string">&quot;QSGRendererInterface reports unknown graphics API %d&quot;</span><span class="operator">,</span> ri<span class="operator">-</span><span class="operator">&gt;</span>graphicsApi());
+
+     <span class="keyword">return</span> n;
+ }
+</pre>
+<p>The implementation of <a href="qquickitem.html#updatePaintNode">QQuickItem::updatePaintNode</a>() creates (if not yet done) and returns an instance of a suitable <a href="qsgrendernode.html">QSGRenderNode</a> subclass. The example supports multiple graphics APIs, and also the <code>software</code> backend.</p>
+<p>Let's look at the the render node for OpenGL (supporting both the traditional, direct OpenGL-based scene graph, and also the modern, abstracted variant using the RHI). For other graphics APIs, the concepts and the outline of a <a href="qsgrendernode.html">QSGRenderNode</a> implementation are the same. It is worth noting that in some cases it will also be necessary to connect to a signal like <a href="qquickwindow.html#beforeRendering">QQuickWindow::beforeRendering</a>() to perform copy type of operations (such as, vertex buffer uploads). This is not necessary for OpenGL, but it is essential for Vulkan or Metal since there such operations cannot be issued in render() as there is a renderpass being recorded when render() is called.</p>
+<pre class="cpp">
+ <span class="keyword">class</span> OpenGLRenderNode : <span class="keyword">public</span> <span class="type"><a href="qsgrendernode.html">QSGRenderNode</a></span>
+ {
+ <span class="keyword">public</span>:
+     <span class="operator">~</span>OpenGLRenderNode();
+
+     <span class="type">void</span> render(<span class="keyword">const</span> RenderState <span class="operator">*</span>state) override;
+     <span class="type">void</span> releaseResources() override;
+     StateFlags changedStates() <span class="keyword">const</span> override;
+     RenderingFlags flags() <span class="keyword">const</span> override;
+     <span class="type"><a href="../qtcore/qrectf.html">QRectF</a></span> rect() <span class="keyword">const</span> override;
+</pre>
+<p>The main job is to provide implementations of the virtual <a href="qsgrendernode.html">QSGRenderNode</a> functions.</p>
+<pre class="cpp">
+ OpenGLRenderNode<span class="operator">::</span><span class="operator">~</span>OpenGLRenderNode()
+ {
+     releaseResources();
+ }
+
+ <span class="type">void</span> OpenGLRenderNode<span class="operator">::</span>releaseResources()
+ {
+     <span class="keyword">delete</span> m_program;
+     m_program <span class="operator">=</span> nullptr;
+     <span class="keyword">delete</span> m_vbo;
+     m_vbo <span class="operator">=</span> nullptr;
+ }
+</pre>
+<p>The pattern for safe graphics resource management is to do any cleanup in <a href="qsgrendernode.html#releaseResources">releaseResources()</a>, while also calling this from the destructor.</p>
+<pre class="cpp">
+ <span class="type">void</span> OpenGLRenderNode<span class="operator">::</span>render(<span class="keyword">const</span> RenderState <span class="operator">*</span>state)
+ {
+     <span class="keyword">if</span> (<span class="operator">!</span>m_program)
+         init();
+
+     <span class="type"><a href="../qtgui/qopenglfunctions.html">QOpenGLFunctions</a></span> <span class="operator">*</span>f <span class="operator">=</span> <span class="type"><a href="../qtgui/qopenglcontext.html">QOpenGLContext</a></span><span class="operator">::</span>currentContext()<span class="operator">-</span><span class="operator">&gt;</span>functions();
+     m_program<span class="operator">-</span><span class="operator">&gt;</span>bind();
+     m_program<span class="operator">-</span><span class="operator">&gt;</span>setUniformValue(m_matrixUniform<span class="operator">,</span> <span class="operator">*</span>state<span class="operator">-</span><span class="operator">&gt;</span>projectionMatrix() <span class="operator">*</span> <span class="operator">*</span>matrix());
+     m_program<span class="operator">-</span><span class="operator">&gt;</span>setUniformValue(m_opacityUniform<span class="operator">,</span> <span class="type">float</span>(inheritedOpacity()));
+</pre>
+<p>The render() function initializes graphics resources (in this case, an OpenGL shader program and a vertex buffer), if not yet done. It then makes sure the necessary resources are bound and updates uniforms. The transformation matrix and the opacity are provided by the scene graph either via the <code>state</code> argument or base class functions.</p>
+<pre class="cpp">
+     <span class="type"><a href="../qtcore/qpointf.html">QPointF</a></span> p0(m_width <span class="operator">-</span> <span class="number">1</span><span class="operator">,</span> m_height <span class="operator">-</span> <span class="number">1</span>);
+     <span class="type"><a href="../qtcore/qpointf.html">QPointF</a></span> p1(<span class="number">0</span><span class="operator">,</span> <span class="number">0</span>);
+     <span class="type"><a href="../qtcore/qpointf.html">QPointF</a></span> p2(<span class="number">0</span><span class="operator">,</span> m_height <span class="operator">-</span> <span class="number">1</span>);
+
+     GLfloat vertices<span class="operator">[</span><span class="number">6</span><span class="operator">]</span> <span class="operator">=</span> { GLfloat(p0<span class="operator">.</span>x())<span class="operator">,</span> GLfloat(p0<span class="operator">.</span>y())<span class="operator">,</span>
+                             GLfloat(p1<span class="operator">.</span>x())<span class="operator">,</span> GLfloat(p1<span class="operator">.</span>y())<span class="operator">,</span>
+                             GLfloat(p2<span class="operator">.</span>x())<span class="operator">,</span> GLfloat(p2<span class="operator">.</span>y()) };
+     m_vbo<span class="operator">-</span><span class="operator">&gt;</span>write(<span class="number">0</span><span class="operator">,</span> vertices<span class="operator">,</span> <span class="keyword">sizeof</span>(vertices));
+</pre>
+<p>This render node is well-behaving since it basically renders in 2D, respecting the item's geometry. This is not mandatory, but then flags() has to return (or not return) the appropriate flags.</p>
+<pre class="cpp">
+ f<span class="operator">-</span><span class="operator">&gt;</span>glColorMask(GL_TRUE<span class="operator">,</span> GL_TRUE<span class="operator">,</span> GL_TRUE<span class="operator">,</span> GL_TRUE);
+
+ f<span class="operator">-</span><span class="operator">&gt;</span>glEnable(GL_BLEND);
+ f<span class="operator">-</span><span class="operator">&gt;</span>glBlendFunc(GL_ONE<span class="operator">,</span> GL_ONE_MINUS_SRC_ALPHA);
+
+ <span class="comment">// Clip support.</span>
+ <span class="keyword">if</span> (state<span class="operator">-</span><span class="operator">&gt;</span>scissorEnabled()) {
+     f<span class="operator">-</span><span class="operator">&gt;</span>glEnable(GL_SCISSOR_TEST);
+     <span class="keyword">const</span> <span class="type"><a href="../qtcore/qrect.html">QRect</a></span> r <span class="operator">=</span> state<span class="operator">-</span><span class="operator">&gt;</span>scissorRect(); <span class="comment">// already bottom-up</span>
+     f<span class="operator">-</span><span class="operator">&gt;</span>glScissor(r<span class="operator">.</span>x()<span class="operator">,</span> r<span class="operator">.</span>y()<span class="operator">,</span> r<span class="operator">.</span>width()<span class="operator">,</span> r<span class="operator">.</span>height());
+ }
+ <span class="keyword">if</span> (state<span class="operator">-</span><span class="operator">&gt;</span>stencilEnabled()) {
+     f<span class="operator">-</span><span class="operator">&gt;</span>glEnable(GL_STENCIL_TEST);
+     f<span class="operator">-</span><span class="operator">&gt;</span>glStencilFunc(GL_EQUAL<span class="operator">,</span> state<span class="operator">-</span><span class="operator">&gt;</span>stencilValue()<span class="operator">,</span> <span class="number">0xFF</span>);
+     f<span class="operator">-</span><span class="operator">&gt;</span>glStencilOp(GL_KEEP<span class="operator">,</span> GL_KEEP<span class="operator">,</span> GL_KEEP);
+ }
+
+ f<span class="operator">-</span><span class="operator">&gt;</span>glDrawArrays(GL_TRIANGLES<span class="operator">,</span> <span class="number">0</span><span class="operator">,</span> <span class="number">3</span>);
+</pre>
+<p>After setting up vertex inputs, but before recording a draw call for our triangle, it is important to set some state in order to integrate with the rest of the scene correctly. Setting scissor and stencil as instructed by <code>state</code> allows our item to render correctly even when there are one or more clips in the parent chain.</p>
+<pre class="cpp">
+ <span class="type"><a href="qsgrendernode.html">QSGRenderNode</a></span><span class="operator">::</span>StateFlags OpenGLRenderNode<span class="operator">::</span>changedStates() <span class="keyword">const</span>
+ {
+     <span class="keyword">return</span> BlendState <span class="operator">|</span> ScissorState <span class="operator">|</span> StencilState;
+ }
+
+ <span class="type"><a href="qsgrendernode.html">QSGRenderNode</a></span><span class="operator">::</span>RenderingFlags OpenGLRenderNode<span class="operator">::</span>flags() <span class="keyword">const</span>
+ {
+     <span class="keyword">return</span> BoundedRectRendering <span class="operator">|</span> DepthAwareRendering;
+ }
+
+ <span class="type"><a href="../qtcore/qrectf.html">QRectF</a></span> OpenGLRenderNode<span class="operator">::</span>rect() <span class="keyword">const</span>
+ {
+     <span class="keyword">return</span> <span class="type"><a href="../qtcore/qrect.html">QRect</a></span>(<span class="number">0</span><span class="operator">,</span> <span class="number">0</span><span class="operator">,</span> m_width<span class="operator">,</span> m_height);
+ }
+</pre>
+<p>As shown above, we only really render in 2D (no depth), within the item's geometry. changedStates() returns the flags corresponding to the OpenGL states render() touches.</p>
+<p><a href="https://code.qt.io/cgit/qt/qtdeclarative.git/tree/examples/quick/scenegraph/rendernode?h=5.15">Example project @ code.qt.io</a></p>
+</div>
+<!-- @@@scenegraph/rendernode -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

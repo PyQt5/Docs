@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qshaderimage.cpp -->
+  <title>ShaderImage QML Type | Qt 3D 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qt3d-index.html">Qt 3D</a></li>
+<li><a href="qt3d-qml.html">QML Types</a></li>
+<li>ShaderImage QML Type</li>
+<li id="buildversion"><a href="qt3d-index.html">Qt 5.15.0 Reference Documentation</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">ShaderImage QML Type</h1>
+<span class="subtitle"></span>
+<!-- $$$ShaderImage-brief -->
+<p>Provides Image access to shader programs. <a href="#details">More...</a></p>
+<!-- @@@ShaderImage -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Import Statement:</td><td class="memItemRight bottomAlign"> import Qt3D.Render 2.15</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Since:</td><td class="memItemRight bottomAlign"> Qt 5.14</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Instantiates:</td><td class="memItemRight bottomAlign"> <a href="qml-qt3d-render-shaderimage.html"><a href="qt3drender-qshaderimage.html">QShaderImage</a></td></tr></table></div><ul>
+<li><a href="qml-qt3d-render-shaderimage-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="properties"></a>
+<h2 id="properties">Properties</h2>
+<ul>
+<li class="fn"><b><b><a href="qml-qt3d-render-shaderimage.html#access-prop">access</a></b></b> : enumeration</li>
+<li class="fn"><b><b><a href="qml-qt3d-render-shaderimage.html#format-prop">format</a></b></b> : enumeration</li>
+<li class="fn"><b><b><a href="qml-qt3d-render-shaderimage.html#layer-prop">layer</a></b></b> : int</li>
+<li class="fn"><b><b><a href="qml-qt3d-render-shaderimage.html#layered-prop">layered</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-qt3d-render-shaderimage.html#mipLevel-prop">mipLevel</a></b></b> : int</li>
+</ul>
+<!-- $$$ShaderImage-description -->
+<a name="details"></a>
+<h2 id="details">Detailed Description</h2>
+<p>To make the content of textures available for read and write operations in a shader, they need to exposed as ShaderImage. Textures can be composed of several mip levels, layers and faces. Additionally declaring a ShaderImage allows specifying which level, layer or face of the texture content we want to access.</p>
+<p>ShaderImage has to be assigned as a Parameter's value and reference a valid Qt3D.Render.<a href="qml-qt3d-render-abstracttexture.html">AbstractTexture</a> to work properly.</p>
+<p>If the referenced texture is a one-dimensional array, two-dimensional array, three-dimensional, cube map, cube map array, or two-dimensional multisample array texture, it is possible to bind either the entire texture level or a single layer or face of the texture level. This can be controlled with the <a href="qml-qt3d-render-shaderimage.html#layered-prop">layered</a> property.</p>
+<p>Support for ShaderImage is only supported with OpenGL 4 and partially with OpenGL ES 3.1 and 3.2&#x2e;</p>
+<p>OpenGL 4 supports the following image types:</p>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >GLSL Type</th><th >OpenGL Type Enum</th><th >Texture Type</th></tr></thead>
+<tr valign="top" class="odd"><td >image1D</td><td >GL_IMAGE_1D</td><td ><a href="qml-qt3d-render-texture1d.html">Texture1D</a></td></tr>
+<tr valign="top" class="even"><td >image2D</td><td >GL_IMAGE_2D</td><td ><a href="qml-qt3d-render-texture2d.html">Texture2D</a></td></tr>
+<tr valign="top" class="odd"><td >image3D</td><td >GL_IMAGE_3D</td><td ><a href="qml-qt3d-render-texture3d.html">Texture3D</a></td></tr>
+<tr valign="top" class="even"><td >image2DRect</td><td >GL_IMAGE_2D_RECT</td><td ><a href="qml-qt3d-render-texturerectangle.html">TextureRectangle</a></td></tr>
+<tr valign="top" class="odd"><td >imageCube</td><td >GL_IMAGE_CUBE</td><td ><a href="qml-qt3d-render-texturecubemap.html">TextureCubeMap</a></td></tr>
+<tr valign="top" class="even"><td >imageBuffer</td><td >GL_IMAGE_BUFFER</td><td ><a href="qml-qt3d-render-texturebuffer.html">TextureBuffer</a></td></tr>
+<tr valign="top" class="odd"><td >image1DArray</td><td >GL_IMAGE_1D_ARRAY</td><td ><a href="qml-qt3d-render-texture1darray.html">Texture1DArray</a></td></tr>
+<tr valign="top" class="even"><td >image2DArray</td><td >GL_IMAGE_2D_ARRAY</td><td ><a href="qml-qt3d-render-texture2darray.html">Texture2DArray</a></td></tr>
+<tr valign="top" class="odd"><td >imageCubeArray</td><td >GL_IMAGE_CUBE_MAP_ARRAY</td><td ><a href="qml-qt3d-render-texturecubemaparray.html">TextureCubeMapArray</a></td></tr>
+<tr valign="top" class="even"><td >image2DMS</td><td >GL_IMAGE_2D_MULTISAMPLE</td><td ><a href="qml-qt3d-render-texture2dmultisample.html">Texture2DMultisample</a></td></tr>
+<tr valign="top" class="odd"><td >image2DMSArray</td><td >GL_IMAGE_2D_MULTISAMPLE_ARRAY</td><td ><a href="qml-qt3d-render-texture2dmultisamplearray.html">Texture2DMultisampleArray</a></td></tr>
+<tr valign="top" class="even"><td >iimage1D</td><td >GL_INT_IMAGE_1D</td><td ><a href="qml-qt3d-render-texture1d.html">Texture1D</a></td></tr>
+<tr valign="top" class="odd"><td >iimage2D</td><td >GL_INT_IMAGE_2D</td><td ><a href="qml-qt3d-render-texture2d.html">Texture2D</a></td></tr>
+<tr valign="top" class="even"><td >iimage3D</td><td >GL_INT_IMAGE_3D</td><td ><a href="qml-qt3d-render-texture3d.html">Texture3D</a></td></tr>
+<tr valign="top" class="odd"><td >iimage2DRect</td><td >GL_INT_IMAGE_2D_RECT</td><td ><a href="qml-qt3d-render-texturerectangle.html">TextureRectangle</a></td></tr>
+<tr valign="top" class="even"><td >iimageCube</td><td >GL_INT_IMAGE_CUBE</td><td ><a href="qml-qt3d-render-texturecubemap.html">TextureCubeMap</a></td></tr>
+<tr valign="top" class="odd"><td >iimageBuffer</td><td >GL_INT_IMAGE_BUFFER</td><td ><a href="qml-qt3d-render-texturebuffer.html">TextureBuffer</a></td></tr>
+<tr valign="top" class="even"><td >iimage1DArray</td><td >GL_INT_IMAGE_1D_ARRAY</td><td ><a href="qml-qt3d-render-texture1darray.html">Texture1DArray</a></td></tr>
+<tr valign="top" class="odd"><td >iimage2DArray</td><td >GL_INT_IMAGE_2D_ARRAY</td><td ><a href="qml-qt3d-render-texture2darray.html">Texture2DArray</a></td></tr>
+<tr valign="top" class="even"><td >iimageCubeArray</td><td >GL_INT_IMAGE_CUBE_MAP_ARRAY</td><td ><a href="qml-qt3d-render-texturecubemaparray.html">TextureCubeMapArray</a></td></tr>
+<tr valign="top" class="odd"><td >iimage2DMS</td><td >GL_INT_IMAGE_2D_MULTISAMPLE</td><td ><a href="qml-qt3d-render-texture2dmultisample.html">Texture2DMultisample</a></td></tr>
+<tr valign="top" class="even"><td >iimage2DMSArray</td><td >GL_INT_IMAGE_2D_MULTISAMPLE_ARRAY</td><td ><a href="qml-qt3d-render-texture2dmultisamplearray.html">Texture2DMultisampleArray</a></td></tr>
+<tr valign="top" class="odd"><td >uimage1D</td><td >GL_UNSIGNED_INT_IMAGE_1D</td><td ><a href="qml-qt3d-render-texture1d.html">Texture1D</a></td></tr>
+<tr valign="top" class="even"><td >uimage2D</td><td >GL_UNSIGNED_INT_IMAGE_2D</td><td ><a href="qml-qt3d-render-texture2d.html">Texture2D</a></td></tr>
+<tr valign="top" class="odd"><td >uimage3D</td><td >GL_UNSIGNED_INT_IMAGE_3D</td><td ><a href="qml-qt3d-render-texture3d.html">Texture3D</a></td></tr>
+<tr valign="top" class="even"><td >uimage2DRect</td><td >GL_UNSIGNED_INT_IMAGE_2D_RECT</td><td ><a href="qml-qt3d-render-texturerectangle.html">TextureRectangle</a></td></tr>
+<tr valign="top" class="odd"><td >uimageCube</td><td >GL_UNSIGNED_INT_IMAGE_CUBE</td><td ><a href="qml-qt3d-render-texturecubemap.html">TextureCubeMap</a></td></tr>
+<tr valign="top" class="even"><td >uimageBuffer</td><td >GL_UNSIGNED_INT_IMAGE_BUFFER</td><td ><a href="qml-qt3d-render-texturebuffer.html">TextureBuffer</a></td></tr>
+<tr valign="top" class="odd"><td >uimage1DArray</td><td >GL_UNSIGNED_INT_IMAGE_1D_ARRAY</td><td ><a href="qml-qt3d-render-texture1darray.html">Texture1DArray</a></td></tr>
+<tr valign="top" class="even"><td >uimage2DArray</td><td >GL_UNSIGNED_INT_IMAGE_2D_ARRAY</td><td ><a href="qml-qt3d-render-texture2darray.html">Texture2DArray</a></td></tr>
+<tr valign="top" class="odd"><td >uimageCubeArray</td><td >GL_UNSIGNED_INT_IMAGE_CUBE_MAP_ARRAY</td><td ><a href="qml-qt3d-render-texturecubemaparray.html">TextureCubeMapArray</a></td></tr>
+<tr valign="top" class="even"><td >uimage2DMS</td><td >GL_UNSIGNED_INT_IMAGE_2D_MULTISAMPLE</td><td ><a href="qml-qt3d-render-texture2dmultisample.html">Texture2DMultisample</a></td></tr>
+<tr valign="top" class="odd"><td >uimage2DMSArray</td><td >GL_UNSIGNED_INT_IMAGE_2D_MULTISAMPLE_ARRAY</td><td ><a href="qml-qt3d-render-texture2dmultisamplearray.html">Texture2DMultisampleArray</a></td></tr>
+</table></div>
+<p>OpenGL ES 3.1 supports the following image types:</p>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >GLSL Type</th><th >OpenGL Type Enum</th><th >Texture Type</th></tr></thead>
+<tr valign="top" class="odd"><td >image2D</td><td >GL_IMAGE_2D</td><td ><a href="qml-qt3d-render-texture2d.html">Texture2D</a></td></tr>
+<tr valign="top" class="even"><td >image3D</td><td >GL_IMAGE_3D</td><td ><a href="qml-qt3d-render-texture3d.html">Texture3D</a></td></tr>
+<tr valign="top" class="odd"><td >imageCube</td><td >GL_IMAGE_CUBE</td><td ><a href="qml-qt3d-render-texturecubemap.html">TextureCubeMap</a></td></tr>
+<tr valign="top" class="even"><td >image2DArray</td><td >GL_IMAGE_2D_ARRAY</td><td ><a href="qml-qt3d-render-texture2darray.html">Texture2DArray</a></td></tr>
+<tr valign="top" class="odd"><td >iimage2D</td><td >GL_INT_IMAGE_2D</td><td ><a href="qml-qt3d-render-texture2d.html">Texture2D</a></td></tr>
+<tr valign="top" class="even"><td >iimage3D</td><td >GL_INT_IMAGE_3D</td><td ><a href="qml-qt3d-render-texture3d.html">Texture3D</a></td></tr>
+<tr valign="top" class="odd"><td >iimageCube</td><td >GL_INT_IMAGE_CUBE</td><td ><a href="qml-qt3d-render-texturecubemap.html">TextureCubeMap</a></td></tr>
+<tr valign="top" class="even"><td >iimage2DArray</td><td >GL_INT_IMAGE_2D_ARRAY</td><td ><a href="qml-qt3d-render-texture2darray.html">Texture2DArray</a></td></tr>
+<tr valign="top" class="odd"><td >uimage2D</td><td >GL_UNSIGNED_INT_IMAGE_2D</td><td ><a href="qml-qt3d-render-texture2d.html">Texture2D</a></td></tr>
+<tr valign="top" class="even"><td >uimage3D</td><td >GL_UNSIGNED_INT_IMAGE_3D</td><td ><a href="qml-qt3d-render-texture3d.html">Texture3D</a></td></tr>
+<tr valign="top" class="odd"><td >uimageCube</td><td >GL_UNSIGNED_INT_IMAGE_CUBE</td><td ><a href="qml-qt3d-render-texturecubemap.html">TextureCubeMap</a></td></tr>
+<tr valign="top" class="even"><td >uimage2DArray</td><td >GL_UNSIGNED_INT_IMAGE_2D_ARRAY</td><td ><a href="qml-qt3d-render-texture2darray.html">Texture2DArray</a></td></tr>
+</table></div>
+<p>OpenGL ES 3.2 supports all of the OpenGL ES 3.1 image types as well as the following:</p>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >GLSL Type</th><th >OpenGL Type Enum</th><th >Texture Type</th></tr></thead>
+<tr valign="top" class="odd"><td >imageBuffer</td><td >GL_IMAGE_BUFFER</td><td ><a href="qml-qt3d-render-texturebuffer.html">TextureBuffer</a></td></tr>
+<tr valign="top" class="even"><td >imageCubeArray</td><td >GL_IMAGE_CUBE_MAP_ARRAY</td><td ><a href="qml-qt3d-render-texturecubemaparray.html">TextureCubeMapArray</a></td></tr>
+<tr valign="top" class="odd"><td >iimageBuffer</td><td >GL_IMAGE_BUFFER</td><td ><a href="qml-qt3d-render-texturebuffer.html">TextureBuffer</a></td></tr>
+<tr valign="top" class="even"><td >iimageCubeArray</td><td >GL_INT_IMAGE_CUBE_MAP_ARRAY</td><td ><a href="qml-qt3d-render-texturecubemaparray.html">TextureCubeMapArray</a></td></tr>
+<tr valign="top" class="odd"><td >uimageBuffer</td><td >GL_UNSIGNED_INT_IMAGE_BUFFER</td><td ><a href="qml-qt3d-render-texturebuffer.html">TextureBuffer</a></td></tr>
+<tr valign="top" class="even"><td >uimageCubeArray</td><td >GL_UNSIGNED_INT_IMAGE_CUBE_MAP_ARRAY</td><td ><a href="qml-qt3d-render-texturecubemaparray.html">TextureCubeMapArray</a></td></tr>
+</table></div>
+<p>Expected use would look like:</p>
+<pre class="cpp plain">
+ import Qt3D.Render 2.14
+
+ Entity {
+ ..&#x2e;
+     Texture2D {
+         id: tex2D
+         ..&#x2e;
+     }
+
+     Material {
+         parameters: Parameter {
+             name: &quot;imageUniformName&quot;
+             value: ShaderImage {
+                 texture: tex2D
+             }
+         }
+         ..&#x2e;
+     }
+  ..&#x2e;
+ }
+</pre>
+<!-- @@@ShaderImage -->
+<h2>Property Documentation</h2>
+<!-- $$$access -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="access-prop">
+<td class="tblQmlPropNode"><p>
+<a name="access-prop"></a><span class="name">access</span> : <span class="type"><a href="../qtqml/qml-enumeration.html">enumeration</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Specifies the type of access we want to allow from our shader instances to the image. If a shader tries to write or read from an image that has incompatible access, the behavior is undefined.</p>
+<div class="table"><table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><code>ShaderImage.ReadOnly</code></td><td class="topAlign">Read-only access.</td></tr>
+<tr><td class="topAlign"><code>ShaderImage.WriteOnly</code></td><td class="topAlign">Write-only access.</td></tr>
+<tr><td class="topAlign"><code>ShaderImage.ReadWrite</code></td><td class="topAlign">Read-write access.</td></tr>
+</table></div>
+<p>The default value is <a href="qml-qt3d-render-shaderimage.html">ShaderImage</a>.ReadWrite.</p>
+</div></div><!-- @@@access -->
+<br/>
+<!-- $$$format -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="format-prop">
+<td class="tblQmlPropNode"><p>
+<a name="format-prop"></a><span class="name">format</span> : <span class="type"><a href="../qtqml/qml-enumeration.html">enumeration</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Specifies the image format, which is essentially important when storing values in the <a href="qml-qt3d-render-shaderimage.html">ShaderImage</a> from a shader.</p>
+<p>The format doesn't have to be the same as the referenced texture's format. It however has to be compatible (matching in size but not necessarily by class type). For instance a texture of format R32F (size 32bits, class 1x32) could be used with an image of format RGBA8I (size 32bits, class 4x8). Table 8.27 of the <a href="https://www.khronos.org/registry/OpenGL/specs/gl/glspec45.core.pdf">OpenGL specifications</a> shows the size and class for all supported image formats.</p>
+<p>By default Qt3D will try to set the image format to match that of the referenced texture.</p>
+<p>The default value is <a href="qml-qt3d-render-shaderimage.html">ShaderImage</a>.Automatic.</p>
+</div></div><!-- @@@format -->
+<br/>
+<!-- $$$layer -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="layer-prop">
+<td class="tblQmlPropNode"><p>
+<a name="layer-prop"></a><span class="name">layer</span> : <span class="type"><a href="../qtqml/qml-int.html">int</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Holds which layer out of the referenced texture should be used for the <a href="qml-qt3d-render-shaderimage.html">ShaderImage</a>. This property does nothing if <i>layered</i> is set to true or if the reference texture's type isn't compatible with layers.</p>
+<p><b>Note: </b>When the referenced texture is of type cube map or cube map array and <i>ĺayered</i> is set to false, the face and layer are retrieved in the following manner:</p>
+<pre class="cpp plain">
+ cubeMapLayer = layer / 6
+ cubeMapFace = layer - (cubeMapLayer * 6)
+</pre>
+<p>The default value is 0.</p>
+</div></div><!-- @@@layer -->
+<br/>
+<!-- $$$layered -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="layered-prop">
+<td class="tblQmlPropNode"><p>
+<a name="layered-prop"></a><span class="name">layered</span> : <span class="type"><a href="../qtqml/qml-bool.html">bool</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>*</p>
+<p>If set to true, if the referenced texture is a one-dimensional array, two-dimensional array, three-dimensional, cube map, cube map array, or two-dimensional multisample array texture, the entire level will be bound for all layers. If set to false, only the single layer specified by the <i>layer</i> property will be bound.</p>
+<p>The default value is <code>false</code>.</p>
+</div></div><!-- @@@layered -->
+<br/>
+<!-- $$$mipLevel -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="mipLevel-prop">
+<td class="tblQmlPropNode"><p>
+<a name="mipLevel-prop"></a><span class="name">mipLevel</span> : <span class="type"><a href="../qtqml/qml-int.html">int</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Holds which mipLevel out of the referenced texture should be used for the <a href="qml-qt3d-render-shaderimage.html">ShaderImage</a>.</p>
+<p>The default value is 0.</p>
+</div></div><!-- @@@mipLevel -->
+<br/>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

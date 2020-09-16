@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qhash.cpp -->
+  <title>Obsolete Members for const_iterator | Qt Core 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtcore-index.html">Qt Core</a></li>
+<li><a href="qtcore-module.html">C++ Classes</a></li>
+<li>const_iterator</li>
+<li id="buildversion"><a href="qtcore-index.html">Qt 5.15.0 Reference Documentation</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar"><div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Obsolete Members for const_iterator</h1>
+<p><b>The following members of class <a href="qhash-const-iterator.html">const_iterator</a> are obsolete.</b> They are provided to keep old source code working. We strongly advise against using them in new code.</p>
+<h2>Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>const_iterator </td><td class="memItemRight bottomAlign"><b><a href="qhash-const-iterator-obsolete.html#operator-2b">operator+</a></b>(int <i>j</i>) const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>const_iterator &amp;</td><td class="memItemRight bottomAlign"><b><a href="qhash-const-iterator-obsolete.html#operator-2b-eq">operator+=</a></b>(int <i>j</i>)</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>const_iterator </td><td class="memItemRight bottomAlign"><b><a href="qhash-const-iterator-obsolete.html#operator-">operator-</a></b>(int <i>j</i>) const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>const_iterator &amp;</td><td class="memItemRight bottomAlign"><b><a href="qhash-const-iterator-obsolete.html#operator--">operator--</a></b>()</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>const_iterator </td><td class="memItemRight bottomAlign"><b><a href="qhash-const-iterator-obsolete.html#operator---1">operator--</a></b>(<i>int</i>)</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>const_iterator &amp;</td><td class="memItemRight bottomAlign"><b><a href="qhash-const-iterator-obsolete.html#operator--eq">operator-=</a></b>(int <i>j</i>)</td></tr>
+</table></div>
+<h2>Member Function Documentation</h2>
+<!-- $$$operator+[overload1]$$$operator+int -->
+<h3 class="fn" id="operator-2b"><a name="operator-2b"></a><span class="type"><a href="qhash-const-iterator.html#const_iterator">const_iterator</a></span> const_iterator::<span class="name">operator+</span>(<span class="type">int</span> <i>j</i>) const</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>This operator is deprecated in order to align with std::unordered_map functionality.</p>
+<p>Returns an iterator to the item at <i>j</i> positions forward from this iterator. (If <i>j</i> is negative, the iterator goes backward.)</p>
+<p>This operation can be slow for large <i>j</i> values.</p>
+<p><b>See also </b><a href="qhash-const-iterator-obsolete.html#operator-">operator-</a>().</p>
+<!-- @@@operator+ -->
+<!-- $$$operator+=[overload1]$$$operator+=int -->
+<h3 class="fn" id="operator-2b-eq"><a name="operator-2b-eq"></a><span class="type"><a href="qhash-const-iterator.html#const_iterator">const_iterator</a></span> &amp;const_iterator::<span class="name">operator+=</span>(<span class="type">int</span> <i>j</i>)</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>This operator is deprecated in order to align with std::unordered_map functionality.</p>
+<p>Advances the iterator by <i>j</i> items. (If <i>j</i> is negative, the iterator goes backward.)</p>
+<p>This operation can be slow for large <i>j</i> values.</p>
+<p><b>See also </b><a href="qhash-const-iterator-obsolete.html#operator--eq">operator-=</a>() and <a href="qhash-const-iterator-obsolete.html#operator-2b">operator+</a>().</p>
+<!-- @@@operator+= -->
+<!-- $$$operator-[overload1]$$$operator-int -->
+<h3 class="fn" id="operator-"><a name="operator-"></a><span class="type"><a href="qhash-const-iterator.html#const_iterator">const_iterator</a></span> const_iterator::<span class="name">operator-</span>(<span class="type">int</span> <i>j</i>) const</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>This operator is deprecated in order to align with std::unordered_map functionality.</p>
+<p>Returns an iterator to the item at <i>j</i> positions backward from this iterator. (If <i>j</i> is negative, the iterator goes forward.)</p>
+<p>This operation can be slow for large <i>j</i> values.</p>
+<p><b>See also </b><a href="qhash-const-iterator-obsolete.html#operator-2b">operator+</a>().</p>
+<!-- @@@operator- -->
+<!-- $$$operator--[overload1]$$$operator-- -->
+<h3 class="fn" id="operator--"><a name="operator--"></a><span class="type"><a href="qhash-const-iterator.html#const_iterator">const_iterator</a></span> &amp;const_iterator::<span class="name">operator--</span>()</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>This operator is deprecated in order to align with std::unordered_map functionality.</p>
+<p>The prefix -- operator (<code>--i</code>) makes the preceding item current and returns an iterator pointing to the new current item.</p>
+<p>Calling this function on <a href="qhash.html#begin">QHash::begin</a>() leads to undefined results.</p>
+<p><b>See also </b><a href="qhash-const-iterator.html#operator-2b-2b">operator++</a>().</p>
+<!-- @@@operator-- -->
+<!-- $$$operator--$$$operator--int -->
+<h3 class="fn" id="operator---1"><a name="operator---1"></a><span class="type"><a href="qhash-const-iterator.html#const_iterator">const_iterator</a></span> const_iterator::<span class="name">operator--</span>(<i>int</i>)</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>This operator is deprecated in order to align with std::unordered_map functionality.</p>
+<p>This is an overloaded function.</p>
+<p>The postfix -- operator (<code>i--</code>) makes the preceding item current and returns an iterator pointing to the previously current item.</p>
+<!-- @@@operator-- -->
+<!-- $$$operator-=[overload1]$$$operator-=int -->
+<h3 class="fn" id="operator--eq"><a name="operator--eq"></a><span class="type"><a href="qhash-const-iterator.html#const_iterator">const_iterator</a></span> &amp;const_iterator::<span class="name">operator-=</span>(<span class="type">int</span> <i>j</i>)</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>This operator is deprecated in order to align with std::unordered_map functionality.</p>
+<p>Makes the iterator go back by <i>j</i> items. (If <i>j</i> is negative, the iterator goes forward.)</p>
+<p>This operation can be slow for large <i>j</i> values.</p>
+<p><b>See also </b><a href="qhash-const-iterator-obsolete.html#operator-2b-eq">operator+=</a>() and <a href="qhash-const-iterator-obsolete.html#operator-">operator-</a>().</p>
+<!-- @@@operator-= -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

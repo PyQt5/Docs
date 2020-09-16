@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- lifecycle.qdoc -->
+  <title>WebEngine Lifecycle Example | Qt WebEngine 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtwebengine-index.html">Qt WebEngine</a></li>
+<li>WebEngine Lifecycle Example</li>
+<li id="buildversion"><a href="qtwebengine-index.html">Qt 5.15.0 Reference Documentation</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#running-the-example">Running the Example</a></li>
+<li class="level1"><a href="#ui-elements-of-the-example">UI Elements of the Example</a></li>
+<li class="level1"><a href="#lifecycle-states-in-the-example">Lifecycle States in the Example</a></li>
+<li class="level2"><a href="#manual-lifecycle-control">Manual Lifecycle Control</a></li>
+<li class="level2"><a href="#automatic-lifecycle-control">Automatic Lifecycle Control</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">WebEngine Lifecycle Example</h1>
+<span class="subtitle"></span>
+<!-- $$$webengine/lifecycle-brief -->
+<p>Freezes and discards background tabs to reduce CPU and memory usage.</p>
+<!-- @@@webengine/lifecycle -->
+<!-- $$$webengine/lifecycle-description -->
+<div class="descr"> <a name="details"></a>
+<p class="centerAlign"><img src="images/lifecycle.png" alt="" /></p><p><i><a href="qml-qtwebengine-webengine.html">WebEngine</a> Lifecycle Example</i> demonstrates how the <a href="qml-qtwebengine-webengineview.html#lifecycleState-prop">lifecycleState</a> and <a href="qml-qtwebengine-webengineview.html#recommendedState-prop">recommendedState</a> properties of the <a href="qml-qtwebengine-webengineview.html">WebEngineView</a> can be used to reduce the CPU and memory usage of background tabs in a tabbed browser.</p>
+<p>For an overview of the lifecycle feature, see <a href="qtwebengine-features.html#page-lifecycle-api">Page Lifecycle API</a>.</p>
+<a name="running-the-example"></a>
+<h4 id="running-the-example">Running the Example</h4>
+<p>To run the example from <a href="http://doc.qt.io/qtcreator/index.html">Qt Creator</a>, open the <b>Welcome</b> mode and select the example from <b>Examples</b>. For more information, visit <a href="http://doc.qt.io/qtcreator/creator-build-example-application.html">Building and Running an Example</a>.</p>
+<a name="ui-elements-of-the-example"></a>
+<h4 id="ui-elements-of-the-example">UI Elements of the Example</h4>
+<p>The example uses <a href="../qtquickcontrols/qtquickcontrols-index.html">Qt Quick Controls 2</a> to implement a traditional tabbed browser in the <a href="../qtquickcontrols/qtquickcontrols2-styles.html#material-style">Material Style</a> (dark variant). The main application window (<code>WebBrowser.qml</code>) is divided into a header bar at the top and a main viewing area filling the rest of the window. The header contains the tab bar (<code>WebTabBar.qml</code>) with one button per tab (<code>WebTabButton.qml</code>). The main area consists of a stack of tabs (<code>WebTabStack.qml</code> and <code>WebTab.qml</code>). Each tab in turn has a tool bar at the top and a <a href="qml-qtwebengine-webengineview.html">WebEngineView</a> for displaying web pages. Finally, the main window also has a <a href="../qtquickcontrols/qml-qtquick-controls2-drawer.html">Drawer</a> for changing settings. The drawer can be opened by clicking the &quot;⋮&quot; button on the tool bar.</p>
+<a name="lifecycle-states-in-the-example"></a>
+<h4 id="lifecycle-states-in-the-example">Lifecycle States in the Example</h4>
+<p>The example implements two ways of changing the lifecycle state: manual and automatic. The manual way uses the <a href="qml-qtwebengine-webengineview.html#lifecycleState-prop">lifecycleState</a> property directly to change the web view lifecycle state, while the automatic way is timer-based and also takes into account the <a href="qml-qtwebengine-webengineview.html#recommendedState-prop">recommendedState</a>.</p>
+<p>The tab titles in the tab bar are color coded with frozen tabs shown in blue and discarded in red.</p>
+<a name="manual-lifecycle-control"></a>
+<h5 id="manual-lifecycle-control">Manual Lifecycle Control</h5>
+<p class="centerAlign"><img src="images/lifecycle-manual.png" alt="" /></p><p>Manual control is provided by context menus on the tab bar buttons (<code>WebTabButton.qml</code>). The menu has three radio buttons, one for each lifecycle state, with the current state checked. Some buttons may be disabled, either because they represent illegal state transitions (for example, a <code>Discarded</code> view cannot directly transition to the <code>Frozen</code> state), or because other preconditions are not fulfilled (for example, a visible view can only be in the <code>Active</code> state).</p>
+<a name="automatic-lifecycle-control"></a>
+<h5 id="automatic-lifecycle-control">Automatic Lifecycle Control</h5>
+<p class="centerAlign"><img src="images/lifecycle-automatic.png" alt="" /></p><p>Automatic control is implemented with a <a href="../qtqml/qml-qtqml-timer.html">Timer</a> in the <code>WebTab</code> component (<code>WebTab.qml</code>). The timer is started whenever the <a href="qml-qtwebengine-webengineview.html#lifecycleState-prop">lifecycleState</a> of the web view does not match it's <a href="qml-qtwebengine-webengineview.html#recommendedState-prop">recommendedState</a>. Once the timer fires, the view's lifecycle state is set to the recommended state.</p>
+<p>The time delay is used to avoid changing the lifecycle state too quickly when the user is switching between tabs. The freezing and discarding delays can be changed in the settings drawer accessed through the &quot;⋮&quot; button on the tool bar.</p>
+<p>This is a rather simple algorithm for automatic lifecycle control, however more sophisticated algorithms could also be conceived and implemented on the basis of the <a href="qml-qtwebengine-webengineview.html#lifecycleState-prop">lifecycleState</a> property. For example, the Chromium browser experimentally uses a pretrained deep neural network to predict the next tab activation time by the user, essentially ranking tabs based on how interesting they are to the user. Implementing such an algorithm is left as an exercise to the reader for now.</p>
+<p><a href="https://code.qt.io/cgit/qt/qtwebengine.git/tree/examples/webengine/lifecycle?h=5.15">Example project @ code.qt.io</a></p>
+</div>
+<!-- @@@webengine/lifecycle -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

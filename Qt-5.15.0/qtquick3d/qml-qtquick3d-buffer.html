@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qquick3dshaderutils.cpp -->
+  <title>Buffer QML Type | Qt Quick 3D 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtquick3d-index.html">Qt Quick 3D</a></li>
+<li><a href="qtquick3d-qmlmodule.html">QML Types</a></li>
+<li>Buffer QML Type</li>
+<li id="buildversion"><a href="qtquick3d-index.html">Qt Quick 3D | Commercial or GPLv3</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Buffer QML Type</h1>
+<span class="subtitle"></span>
+<!-- $$$Buffer-brief -->
+<p>Defines a buffer to be used for a pass of a <a href="qml-qtquick3d-materials-custommaterial.html">CustomMaterial</a> or an Effect. <a href="#details">More...</a></p>
+<!-- @@@Buffer -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Import Statement:</td><td class="memItemRight bottomAlign"> import QtQuick3D 1.15</td></tr></table></div><ul>
+<li><a href="qml-qtquick3d-buffer-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="properties"></a>
+<h2 id="properties">Properties</h2>
+<ul>
+<li class="fn"><b><b><a href="qml-qtquick3d-buffer.html#bufferFlags-prop">bufferFlags</a></b></b> : enumeration</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-buffer.html#format-prop">format</a></b></b> : enumeration</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-buffer.html#name-prop">name</a></b></b> : string</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-buffer.html#sizeMultiplier-prop">sizeMultiplier</a></b></b> : real</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-buffer.html#textureCoordOperation-prop">textureCoordOperation</a></b></b> : enumeration</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-buffer.html#textureFilterOperation-prop">textureFilterOperation</a></b></b> : enumeration</li>
+</ul>
+<!-- $$$Buffer-description -->
+<a name="details"></a>
+<h2 id="details">Detailed Description</h2>
+<!-- @@@Buffer -->
+<h2>Property Documentation</h2>
+<!-- $$$bufferFlags -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="bufferFlags-prop">
+<td class="tblQmlPropNode"><p>
+<a name="bufferFlags-prop"></a><span class="name">bufferFlags</span> : <span class="type"><a href="../qtqml/qml-enumeration.html">enumeration</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Specifies the buffer allocation flags.</p>
+<div class="table"><table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><code>Buffer.None</code></td><td class="topAlign">Value not set.</td></tr>
+<tr><td class="topAlign"><code>Buffer.SceneLifetime</code></td><td class="topAlign">The buffer is allocated for the whole lifetime of the scene.</td></tr>
+</table></div>
+</div></div><!-- @@@bufferFlags -->
+<br/>
+<!-- $$$format -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="format-prop">
+<td class="tblQmlPropNode"><p>
+<a name="format-prop"></a><span class="name">format</span> : <span class="type"><a href="../qtqml/qml-enumeration.html">enumeration</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Specifies the buffer format.</p>
+<div class="table"><table class="valuelist"><tr><th class="tblConst">Constant</th><th class="tblVal">Value</th></tr>
+<tr><td class="topAlign"><code>Buffer.Unknown</code></td></tr>
+<tr><td class="topAlign"><code>Buffer.R8</code></td></tr>
+<tr><td class="topAlign"><code>Buffer.R16</code></td></tr>
+<tr><td class="topAlign"><code>Buffer.R16F</code></td></tr>
+<tr><td class="topAlign"><code>Buffer.R32I</code></td></tr>
+<tr><td class="topAlign"><code>Buffer.R32UI</code></td></tr>
+<tr><td class="topAlign"><code>Buffer.R32F</code></td></tr>
+<tr><td class="topAlign"><code>Buffer.RG8</code></td></tr>
+<tr><td class="topAlign"><code>Buffer.RGBA8</code></td></tr>
+<tr><td class="topAlign"><code>Buffer.RGB8</code></td></tr>
+<tr><td class="topAlign"><code>Buffer.SRGB8</code></td></tr>
+<tr><td class="topAlign"><code>Buffer.SRGB8A8</code></td></tr>
+<tr><td class="topAlign"><code>Buffer.RGB565</code></td></tr>
+<tr><td class="topAlign"><code>Buffer.RGBA16F</code></td></tr>
+<tr><td class="topAlign"><code>Buffer.RG16F</code></td></tr>
+<tr><td class="topAlign"><code>Buffer.RG32F</code></td></tr>
+<tr><td class="topAlign"><code>Buffer.RGB32F</code></td></tr>
+<tr><td class="topAlign"><code>Buffer.RGBA32F</code></td></tr>
+<tr><td class="topAlign"><code>Buffer.R11G11B10</code></td></tr>
+<tr><td class="topAlign"><code>Buffer.RGB9E5</code></td></tr>
+<tr><td class="topAlign"><code>Buffer.Depth16</code></td></tr>
+<tr><td class="topAlign"><code>Buffer.Depth24</code></td></tr>
+<tr><td class="topAlign"><code>Buffer.Depth32</code></td></tr>
+<tr><td class="topAlign"><code>Buffer.Depth24Stencil8</code></td></tr>
+</table></div>
+</div></div><!-- @@@format -->
+<br/>
+<!-- $$$name -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="name-prop">
+<td class="tblQmlPropNode"><p>
+<a name="name-prop"></a><span class="name">name</span> : <span class="type"><a href="../qtqml/qml-string.html">string</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Specifies the name of the buffer</p>
+</div></div><!-- @@@name -->
+<br/>
+<!-- $$$sizeMultiplier -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="sizeMultiplier-prop">
+<td class="tblQmlPropNode"><p>
+<a name="sizeMultiplier-prop"></a><span class="name">sizeMultiplier</span> : <span class="type"><a href="../qtqml/qml-real.html">real</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Specifies the size multiplier of the buffer. <code>1.0</code> creates buffer with the same size while <code>0.5</code> creates buffer with width and height halved.</p>
+</div></div><!-- @@@sizeMultiplier -->
+<br/>
+<!-- $$$textureCoordOperation -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="textureCoordOperation-prop">
+<td class="tblQmlPropNode"><p>
+<a name="textureCoordOperation-prop"></a><span class="name">textureCoordOperation</span> : <span class="type"><a href="../qtqml/qml-enumeration.html">enumeration</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Specifies the texture coordinate operation for coordinates outside [0, 1] range.</p>
+<div class="table"><table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><code>Buffer.Unknown</code></td><td class="topAlign">Value not set.</td></tr>
+<tr><td class="topAlign"><code>Buffer.ClampToEdge</code></td><td class="topAlign">Clamp coordinate to edge.</td></tr>
+<tr><td class="topAlign"><code>Buffer.MirroredRepeat</code></td><td class="topAlign">Repeat the coordinate, but flip direction at the beginning and end.</td></tr>
+<tr><td class="topAlign"><code>Buffer.Repeat</code></td><td class="topAlign">Repeat the coordinate always from the beginning.</td></tr>
+</table></div>
+</div></div><!-- @@@textureCoordOperation -->
+<br/>
+<!-- $$$textureFilterOperation -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="textureFilterOperation-prop">
+<td class="tblQmlPropNode"><p>
+<a name="textureFilterOperation-prop"></a><span class="name">textureFilterOperation</span> : <span class="type"><a href="../qtqml/qml-enumeration.html">enumeration</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Specifies the filter operation when a render <a href="qml-qtquick3d-pass.html">pass</a> is reading the buffer that is different size as the current output buffer.</p>
+<div class="table"><table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><code>Buffer.Unknown</code></td><td class="topAlign">Value not set.</td></tr>
+<tr><td class="topAlign"><code>Buffer.Nearest</code></td><td class="topAlign">Use nearest-neighbor.</td></tr>
+<tr><td class="topAlign"><code>Buffer.Linear</code></td><td class="topAlign">Use linear filtering.</td></tr>
+</table></div>
+</div></div><!-- @@@textureFilterOperation -->
+<br/>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

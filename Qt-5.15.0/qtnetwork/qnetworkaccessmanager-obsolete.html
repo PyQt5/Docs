@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qnetworkaccessmanager.cpp -->
+  <title>Obsolete Members for QNetworkAccessManager | Qt Network 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtnetwork-index.html">Qt Network</a></li>
+<li><a href="qtnetwork-module.html">C++ Classes</a></li>
+<li>QNetworkAccessManager</li>
+<li id="buildversion"><a href="qtnetwork-index.html">Qt 5.15.0 Reference Documentation</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar"><div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Obsolete Members for QNetworkAccessManager</h1>
+<p><b>The following members of class <a href="qnetworkaccessmanager.html">QNetworkAccessManager</a> are obsolete.</b> They are provided to keep old source code working. We strongly advise against using them in new code.</p>
+<h2>Public Types</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>enum </td><td class="memItemRight bottomAlign"><b><a href="qnetworkaccessmanager-obsolete.html#NetworkAccessibility-enum">NetworkAccessibility</a></b> { UnknownAccessibility, NotAccessible, Accessible }</td></tr>
+</table></div>
+<h2>Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>QNetworkConfiguration </td><td class="memItemRight bottomAlign"><b><a href="qnetworkaccessmanager-obsolete.html#activeConfiguration">activeConfiguration</a></b>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>QNetworkConfiguration </td><td class="memItemRight bottomAlign"><b><a href="qnetworkaccessmanager-obsolete.html#configuration">configuration</a></b>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>QNetworkAccessManager::NetworkAccessibility </td><td class="memItemRight bottomAlign"><b><a href="qnetworkaccessmanager-obsolete.html#networkAccessible">networkAccessible</a></b>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>void </td><td class="memItemRight bottomAlign"><b><a href="qnetworkaccessmanager-obsolete.html#setConfiguration">setConfiguration</a></b>(const QNetworkConfiguration &amp;<i>config</i>)</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>void </td><td class="memItemRight bottomAlign"><b><a href="qnetworkaccessmanager-obsolete.html#setNetworkAccessible">setNetworkAccessible</a></b>(QNetworkAccessManager::NetworkAccessibility <i>accessible</i>)</td></tr>
+</table></div>
+<h2>Signals</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>void </td><td class="memItemRight bottomAlign"><b><a href="qnetworkaccessmanager-obsolete.html#networkAccessibleChanged">networkAccessibleChanged</a></b>(QNetworkAccessManager::NetworkAccessibility <i>accessible</i>)</td></tr>
+</table></div>
+<h2>Member Type Documentation</h2>
+<!-- $$$NetworkAccessibility$$$UnknownAccessibility$$$NotAccessible$$$Accessible -->
+<h3 class="fn" id="NetworkAccessibility-enum"><a name="NetworkAccessibility-enum"></a>enum QNetworkAccessManager::<span class="name">NetworkAccessibility</span></h3>
+<p>This enum is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>Indicates whether the network is accessible via this network access manager.</p>
+<div class="table"><table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><code>QNetworkAccessManager::UnknownAccessibility</code></td><td class="topAlign tblval"><code>-1</code></td><td class="topAlign">The network accessibility cannot be determined.</td></tr>
+<tr><td class="topAlign"><code>QNetworkAccessManager::NotAccessible</code></td><td class="topAlign tblval"><code>0</code></td><td class="topAlign">The network is not currently accessible, either because there is currently no network coverage or network access has been explicitly disabled by a call to <a href="qnetworkaccessmanager-obsolete.html#setNetworkAccessible">setNetworkAccessible</a>().</td></tr>
+<tr><td class="topAlign"><code>QNetworkAccessManager::Accessible</code></td><td class="topAlign tblval"><code>1</code></td><td class="topAlign">The network is accessible.</td></tr>
+</table></div>
+<p><b>See also </b><a href="qnetworkaccessmanager-obsolete.html#networkAccessible">networkAccessible</a>.</p>
+<!-- @@@NetworkAccessibility -->
+<h2>Member Function Documentation</h2>
+<!-- $$$networkAccessibleChanged -->
+<h3 class="fn" id="networkAccessibleChanged"><a name="networkAccessibleChanged"></a><code>[signal] </code><span class="type">void</span> QNetworkAccessManager::<span class="name">networkAccessibleChanged</span>(<span class="type"><a href="qnetworkaccessmanager-obsolete.html#NetworkAccessibility-enum">QNetworkAccessManager::NetworkAccessibility</a></span> <i>accessible</i>)</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>This signal is emitted when the value of the <a href="qnetworkaccessmanager-obsolete.html#networkAccessible">networkAccessible</a> property changes. <i>accessible</i> is the new network accessibility.</p>
+<p><b>Note: </b>Notifier signal for property <a href="qnetworkaccessmanager-obsolete.html#networkAccessible">networkAccessible</a>. </p>
+<!-- @@@networkAccessibleChanged -->
+<!-- $$$activeConfiguration[overload1]$$$activeConfiguration -->
+<h3 class="fn" id="activeConfiguration"><a name="activeConfiguration"></a><span class="type"><a href="qnetworkconfiguration.html">QNetworkConfiguration</a></span> QNetworkAccessManager::<span class="name">activeConfiguration</span>() const</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>Returns the current active network configuration.</p>
+<p>If the network configuration returned by <a href="qnetworkaccessmanager-obsolete.html#configuration">configuration</a>() is of type <a href="qnetworkconfiguration.html#Type-enum">QNetworkConfiguration::ServiceNetwork</a> this function will return the current active child network configuration of that configuration. Otherwise returns the same network configuration as <a href="qnetworkaccessmanager-obsolete.html#configuration">configuration</a>().</p>
+<p>Use this function to return the actual network configuration currently in use by the network session.</p>
+<p>This function was introduced in Qt 4.7.</p>
+<p><b>See also </b><a href="qnetworkaccessmanager-obsolete.html#configuration">configuration</a>().</p>
+<!-- @@@activeConfiguration -->
+<!-- $$$configuration[overload1]$$$configuration -->
+<h3 class="fn" id="configuration"><a name="configuration"></a><span class="type"><a href="qnetworkconfiguration.html">QNetworkConfiguration</a></span> QNetworkAccessManager::<span class="name">configuration</span>() const</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>Returns the network configuration that will be used to create the <a href="qnetworksession.html">network session</a> which will be used when processing network requests.</p>
+<p>This function was introduced in Qt 4.7.</p>
+<p><b>See also </b><a href="qnetworkaccessmanager-obsolete.html#setConfiguration">setConfiguration</a>() and <a href="qnetworkaccessmanager-obsolete.html#activeConfiguration">activeConfiguration</a>().</p>
+<!-- @@@configuration -->
+<!-- $$$networkAccessible -->
+<h3 class="fn" id="networkAccessible"><a name="networkAccessible"></a><span class="type"><a href="qnetworkaccessmanager-obsolete.html#NetworkAccessibility-enum">QNetworkAccessManager::NetworkAccessibility</a></span> QNetworkAccessManager::<span class="name">networkAccessible</span>() const</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>Returns the current network accessibility.</p>
+<p><b>Note: </b>Getter function for property networkAccessible. </p>
+<p>This function was introduced in Qt 4.7.</p>
+<p><b>See also </b><a href="qnetworkaccessmanager-obsolete.html#setNetworkAccessible">setNetworkAccessible</a>().</p>
+<!-- @@@networkAccessible -->
+<!-- $$$setConfiguration[overload1]$$$setConfigurationconstQNetworkConfiguration& -->
+<h3 class="fn" id="setConfiguration"><a name="setConfiguration"></a><span class="type">void</span> QNetworkAccessManager::<span class="name">setConfiguration</span>(const <span class="type"><a href="qnetworkconfiguration.html">QNetworkConfiguration</a></span> &amp;<i>config</i>)</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>Sets the network configuration that will be used when creating the <a href="qnetworksession.html">network session</a> to <i>config</i>.</p>
+<p>The network configuration is used to create and open a network session before any request that requires network access is process. If no network configuration is explicitly set via this function the network configuration returned by <a href="qnetworkconfigurationmanager.html#defaultConfiguration">QNetworkConfigurationManager::defaultConfiguration</a>() will be used.</p>
+<p>To restore the default network configuration set the network configuration to the value returned from <a href="qnetworkconfigurationmanager.html#defaultConfiguration">QNetworkConfigurationManager::defaultConfiguration</a>().</p>
+<p>Setting a network configuration means that the <a href="qnetworkaccessmanager.html">QNetworkAccessManager</a> instance will only be using the specified one. In particular, if the default network configuration changes (upon e.g&#x2e; Wifi being available), this new configuration needs to be enabled manually if desired.</p>
+<pre class="cpp">
+ <span class="type"><a href="qnetworkconfigurationmanager.html">QNetworkConfigurationManager</a></span> manager;
+ networkAccessManager<span class="operator">-</span><span class="operator">&gt;</span>setConfiguration(manager<span class="operator">.</span>defaultConfiguration());
+</pre>
+<p>If an invalid network configuration is set, a network session will not be created. In this case network requests will be processed regardless, but may fail. For example:</p>
+<pre class="cpp">
+ networkAccessManager<span class="operator">-</span><span class="operator">&gt;</span>setConfiguration(<span class="type"><a href="qnetworkconfiguration.html">QNetworkConfiguration</a></span>());
+</pre>
+<p>This function was introduced in Qt 4.7.</p>
+<p><b>See also </b><a href="qnetworkaccessmanager-obsolete.html#configuration">configuration</a>() and <a href="qnetworksession.html">QNetworkSession</a>.</p>
+<!-- @@@setConfiguration -->
+<!-- $$$setNetworkAccessible -->
+<h3 class="fn" id="setNetworkAccessible"><a name="setNetworkAccessible"></a><span class="type">void</span> QNetworkAccessManager::<span class="name">setNetworkAccessible</span>(<span class="type"><a href="qnetworkaccessmanager-obsolete.html#NetworkAccessibility-enum">QNetworkAccessManager::NetworkAccessibility</a></span> <i>accessible</i>)</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>Overrides the reported network accessibility. If <i>accessible</i> is <a href="qnetworkaccessmanager-obsolete.html#NetworkAccessibility-enum">NotAccessible</a> the reported network accessiblity will always be <a href="qnetworkaccessmanager-obsolete.html#NetworkAccessibility-enum">NotAccessible</a>. Otherwise the reported network accessibility will reflect the actual device state.</p>
+<p><b>Note: </b>Setter function for property <a href="qnetworkaccessmanager-obsolete.html#networkAccessible">networkAccessible</a>. </p>
+<p>This function was introduced in Qt 4.7.</p>
+<p><b>See also </b><a href="qnetworkaccessmanager-obsolete.html#networkAccessible">networkAccessible</a>().</p>
+<!-- @@@setNetworkAccessible -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

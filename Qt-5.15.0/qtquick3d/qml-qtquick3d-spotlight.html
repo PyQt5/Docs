@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qquick3dspotlight.cpp -->
+  <title>SpotLight QML Type | Qt Quick 3D 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtquick3d-index.html">Qt Quick 3D</a></li>
+<li><a href="qtquick3d-qmlmodule.html">QML Types</a></li>
+<li>SpotLight QML Type</li>
+<li id="buildversion"><a href="qtquick3d-index.html">Qt Quick 3D | Commercial or GPLv3</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">SpotLight QML Type</h1>
+<span class="subtitle"></span>
+<!-- $$$SpotLight-brief -->
+<p>Defines a spot light in the scene. <a href="#details">More...</a></p>
+<!-- @@@SpotLight -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Import Statement:</td><td class="memItemRight bottomAlign"> import QtQuick3D 1.15</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Since:</td><td class="memItemRight bottomAlign"> Qt 5.15</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Inherits:</td><td class="memItemRight bottomAlign"> <p><a href="qml-qtquick3d-light.html">Light</a></p>
+</td></tr></table></div><ul>
+<li><a href="qml-qtquick3d-spotlight-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="properties"></a>
+<h2 id="properties">Properties</h2>
+<ul>
+<li class="fn"><b><b><a href="qml-qtquick3d-spotlight.html#coneAngle-prop">coneAngle</a></b></b> : real</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-spotlight.html#constantFade-prop">constantFade</a></b></b> : real</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-spotlight.html#innerConeAngle-prop">innerConeAngle</a></b></b> : real</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-spotlight.html#linearFade-prop">linearFade</a></b></b> : real</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-spotlight.html#quadraticFade-prop">quadraticFade</a></b></b> : real</li>
+</ul>
+<!-- $$$SpotLight-description -->
+<a name="details"></a>
+<h2 id="details">Detailed Description</h2>
+<p>The spot light emits light towards one direction in a cone shape, which is defined by the <a href="qml-qtquick3d-spotlight.html#coneAngle-prop">coneAngle</a> property. The light intensity diminishes when approaching the <a href="qml-qtquick3d-spotlight.html#coneAngle-prop">coneAngle</a>. The angle at which the light intensity starts to diminish is defined by <a href="qml-qtquick3d-spotlight.html#innerConeAngle-prop">innerConeAngle</a>. Both angles are defined in degrees.</p>
+<p>Inside the <a href="qml-qtquick3d-spotlight.html#innerConeAngle-prop">innerConeAngle</a>, the spot light behaves similarly to the point light. There the light intensity diminishes according to inverse-square-law. However, the fade-off (and range) can be controlled with the <a href="qml-qtquick3d-spotlight.html#constantFade-prop">constantFade</a>, <a href="qml-qtquick3d-spotlight.html#linearFade-prop">linearFade</a>, and <a href="qml-qtquick3d-spotlight.html#quadraticFade-prop">quadraticFade</a> properties.</p>
+<p><b>See also </b><a href="qml-qtquick3d-directionallight.html">DirectionalLight</a>, <a href="qml-qtquick3d-pointlight.html">PointLight</a>, and <a href="qml-qtquick3d-arealight.html">AreaLight</a>.</p>
+<!-- @@@SpotLight -->
+<h2>Property Documentation</h2>
+<!-- $$$coneAngle -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="coneAngle-prop">
+<td class="tblQmlPropNode"><p>
+<a name="coneAngle-prop"></a><span class="name">coneAngle</span> : <span class="type"><a href="../qtqml/qml-real.html">real</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property defines the cut-off angle beyond which the light doesn't affect the scene. Defined in degrees between 0 and 180. The default value is 40.</p>
+</div></div><!-- @@@coneAngle -->
+<br/>
+<!-- $$$constantFade -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="constantFade-prop">
+<td class="tblQmlPropNode"><p>
+<a name="constantFade-prop"></a><span class="name">constantFade</span> : <span class="type"><a href="../qtqml/qml-real.html">real</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property is constant factor of the attenuation term of the light. The default value is 1.0&#x2e;</p>
+</div></div><!-- @@@constantFade -->
+<br/>
+<!-- $$$innerConeAngle -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="innerConeAngle-prop">
+<td class="tblQmlPropNode"><p>
+<a name="innerConeAngle-prop"></a><span class="name">innerConeAngle</span> : <span class="type"><a href="../qtqml/qml-real.html">real</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property defines the angle at which the light intensity starts to gradually diminish as it approaches <a href="qml-qtquick3d-spotlight.html#coneAngle-prop">coneAngle</a>. Defined in degrees between 0 and 180. If the value is set larger than <a href="qml-qtquick3d-spotlight.html#coneAngle-prop">coneAngle</a>, it'll behave as if it had the same value as <a href="qml-qtquick3d-spotlight.html#coneAngle-prop">coneAngle</a>. The default value is 30.</p>
+</div></div><!-- @@@innerConeAngle -->
+<br/>
+<!-- $$$linearFade -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="linearFade-prop">
+<td class="tblQmlPropNode"><p>
+<a name="linearFade-prop"></a><span class="name">linearFade</span> : <span class="type"><a href="../qtqml/qml-real.html">real</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property increases the rate at which the lighting effect dims the light in proportion to the distance to the light. The default value is 0.0, which means the light doesn't have linear fade.</p>
+</div></div><!-- @@@linearFade -->
+<br/>
+<!-- $$$quadraticFade -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="quadraticFade-prop">
+<td class="tblQmlPropNode"><p>
+<a name="quadraticFade-prop"></a><span class="name">quadraticFade</span> : <span class="type"><a href="../qtqml/qml-real.html">real</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property increases the rate at which the lighting effect dims the light in proportion to the inverse square law. The default value is 1.0, which means the spot light fade exactly follows the inverse square law, i.e&#x2e; when distance to an object doubles the light intensity decreases to 1/4th.</p>
+</div></div><!-- @@@quadraticFade -->
+<br/>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

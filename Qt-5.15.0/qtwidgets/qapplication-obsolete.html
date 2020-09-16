@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qapplication.cpp -->
+  <title>Obsolete Members for QApplication | Qt Widgets 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtwidgets-index.html">Qt Widgets</a></li>
+<li><a href="qtwidgets-module.html">C++ Classes</a></li>
+<li>QApplication</li>
+<li id="buildversion"><a href="qtwidgets-index.html">Qt 5.15.0 Reference Documentation</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar"><div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Obsolete Members for QApplication</h1>
+<p><b>The following members of class <a href="qapplication.html">QApplication</a> are obsolete.</b> They are provided to keep old source code working. We strongly advise against using them in new code.</p>
+<h2>Properties</h2>
+<ul>
+<li class="fn"><code>(obsolete) </code><b><a href="qapplication-obsolete.html#globalStrut-prop">globalStrut</a></b> : QSize</li>
+</ul>
+<h2>Static Public Members</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>int </td><td class="memItemRight bottomAlign"><b><a href="qapplication-obsolete.html#colorSpec">colorSpec</a></b>()</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>QSize </td><td class="memItemRight bottomAlign"><b><a href="qapplication-obsolete.html#globalStrut-prop">globalStrut</a></b>()</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>bool </td><td class="memItemRight bottomAlign"><b><a href="qapplication-obsolete.html#keypadNavigationEnabled">keypadNavigationEnabled</a></b>()</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>void </td><td class="memItemRight bottomAlign"><b><a href="qapplication-obsolete.html#setColorSpec">setColorSpec</a></b>(int <i>spec</i>)</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>void </td><td class="memItemRight bottomAlign"><b><a href="qapplication-obsolete.html#globalStrut-prop">setGlobalStrut</a></b>(<i>const QSize &amp;</i>)</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>void </td><td class="memItemRight bottomAlign"><b><a href="qapplication-obsolete.html#setKeypadNavigationEnabled">setKeypadNavigationEnabled</a></b>(bool <i>enable</i>)</td></tr>
+</table></div>
+<h2>Property Documentation</h2>
+<!-- $$$globalStrut-prop$$$globalStrut$$$setGlobalStrutconstQSize& -->
+<h3 class="fn" id="globalStrut-prop"><a name="globalStrut-prop"></a><span class="name">globalStrut</span> : <span class="type"><a href="../qtcore/qsize.html">QSize</a></span></h3>
+<p>This property is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>This property holds the minimum size that any GUI element that the user can interact with should have</p>
+<p>For example, no button should be resized to be smaller than the global strut size. The strut size should be considered when reimplementing GUI controls that may be used on touch-screens or similar I/O devices.</p>
+<p>Example:</p>
+<pre class="cpp">
+ <span class="type"><a href="../qtcore/qsize.html">QSize</a></span> MyWidget<span class="operator">::</span>sizeHint() <span class="keyword">const</span>
+ {
+     <span class="keyword">return</span> <span class="type"><a href="../qtcore/qsize.html">QSize</a></span>(<span class="number">80</span><span class="operator">,</span> <span class="number">25</span>);
+ }
+</pre>
+<p>By default, this property contains a <a href="../qtcore/qsize.html">QSize</a> object with zero width and height.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> QSize </td><td class="memItemRight bottomAlign"><span class="name"><b>globalStrut</b></span>()</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>setGlobalStrut</b></span>(<i>const QSize &amp;</i>)</td></tr>
+</table></div>
+<!-- @@@globalStrut -->
+<h2>Member Function Documentation</h2>
+<!-- $$$colorSpec[overload1]$$$colorSpec -->
+<h3 class="fn" id="colorSpec"><a name="colorSpec"></a><code>[static] </code><span class="type">int</span> QApplication::<span class="name">colorSpec</span>()</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>Returns the color specification.</p>
+<p><b>See also </b><a href="qapplication-obsolete.html#setColorSpec">QApplication::setColorSpec</a>().</p>
+<!-- @@@colorSpec -->
+<!-- $$$keypadNavigationEnabled[overload1]$$$keypadNavigationEnabled -->
+<h3 class="fn" id="keypadNavigationEnabled"><a name="keypadNavigationEnabled"></a><code>[static] </code><span class="type">bool</span> QApplication::<span class="name">keypadNavigationEnabled</span>()</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>Returns <code>true</code> if Qt is set to use keypad navigation; otherwise returns false. The default value is false.</p>
+<p>This feature is available in Qt for Embedded Linux, and Windows CE only.</p>
+<p><b>Note: </b>On Windows CE this feature is disabled by default for touch device mkspecs. To enable keypad navigation, build Qt with QT_KEYPAD_NAVIGATION defined.</p>
+<p><b>See also </b><a href="qapplication-obsolete.html#setKeypadNavigationEnabled">setKeypadNavigationEnabled</a>() and <a href="qapplication.html#navigationMode">navigationMode</a>().</p>
+<!-- @@@keypadNavigationEnabled -->
+<!-- $$$setColorSpec[overload1]$$$setColorSpecint -->
+<h3 class="fn" id="setColorSpec"><a name="setColorSpec"></a><code>[static] </code><span class="type">void</span> QApplication::<span class="name">setColorSpec</span>(<span class="type">int</span> <i>spec</i>)</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>Sets the color specification for the application to <i>spec</i>.</p>
+<p>This call has no effect.</p>
+<p>The color specification controls how the application allocates colors when run on a display with a limited amount of colors, e.g&#x2e; 8 bit / 256 color displays.</p>
+<p>The color specification must be set before you create the <a href="qapplication.html">QApplication</a> object.</p>
+<p>The options are:</p>
+<ul>
+<li><a href="qapplication-obsolete.html#ColorSpec-enum">QApplication::NormalColor</a>. This is the default color allocation strategy. Use this option if your application uses buttons, menus, texts and pixmaps with few colors. With this option, the application uses system global colors. This works fine for most applications under X11, but on the Windows platform, it may cause dithering of non-standard colors.</li>
+<li><a href="qapplication-obsolete.html#ColorSpec-enum">QApplication::CustomColor</a>. Use this option if your application needs a small number of custom colors. On X11, this option is the same as <a href="qapplication-obsolete.html#ColorSpec-enum">NormalColor</a>. On Windows, Qt creates a Windows palette, and allocates colors to it on demand.</li>
+<li><a href="qapplication-obsolete.html#ColorSpec-enum">QApplication::ManyColor</a>. Use this option if your application is very color hungry, e.g&#x2e;, it requires thousands of colors. <br />
+ Under X11 the effect is:<ul>
+<li>For 256-color displays which have at best a 256 color true color visual, the default visual is used, and colors are allocated from a color cube. The color cube is the 6x6x6 (216 color) &quot;Web palette&quot; (the red, green, and blue components always have one of the following values: 0x00, 0x33, 0x66, 0x99, 0xCC, or 0xFF), but the number of colors can be changed by the <i>-ncols</i> option. The user can force the application to use the true color visual with the <a href="qapplication.html#QApplication">-visual</a> option.</li>
+<li>For 256-color displays which have a true color visual with more than 256 colors, use that visual. Silicon Graphics X servers this feature, for example. They provide an 8 bit visual by default but can deliver true color when asked.</li>
+</ul>
+<p>On Windows, Qt creates a Windows palette, and fills it with a color cube.</p>
+</li>
+</ul>
+<p>Be aware that the <a href="qapplication-obsolete.html#ColorSpec-enum">CustomColor</a> and <a href="qapplication-obsolete.html#ColorSpec-enum">ManyColor</a> choices may lead to colormap flashing: The foreground application gets (most) of the available colors, while the background windows will look less attractive.</p>
+<p>Example:</p>
+<pre class="cpp">
+ <span class="type">int</span> main(<span class="type">int</span> argc<span class="operator">,</span> <span class="type">char</span> <span class="operator">*</span>argv<span class="operator">[</span><span class="operator">]</span>)
+ {
+     <span class="type"><a href="qapplication.html#QApplication">QApplication</a></span><span class="operator">::</span>setColorSpec(<span class="type"><a href="qapplication.html#QApplication">QApplication</a></span><span class="operator">::</span>ManyColor);
+     <span class="type"><a href="qapplication.html#QApplication">QApplication</a></span> app(argc<span class="operator">,</span> argv);
+     <span class="operator">.</span><span class="operator">.</span><span class="operator">.</span>
+     <span class="keyword">return</span> app<span class="operator">.</span>exec();
+ }
+</pre>
+<p><b>See also </b><a href="qapplication-obsolete.html#colorSpec">colorSpec</a>().</p>
+<!-- @@@setColorSpec -->
+<!-- $$$setKeypadNavigationEnabled[overload1]$$$setKeypadNavigationEnabledbool -->
+<h3 class="fn" id="setKeypadNavigationEnabled"><a name="setKeypadNavigationEnabled"></a><code>[static] </code><span class="type">void</span> QApplication::<span class="name">setKeypadNavigationEnabled</span>(<span class="type">bool</span> <i>enable</i>)</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>Sets whether Qt should use focus navigation suitable for use with a minimal keypad.</p>
+<p>This feature is available in Qt for Embedded Linux, and Windows CE only.</p>
+<p><b>Note: </b>On Windows CE this feature is disabled by default for touch device mkspecs. To enable keypad navigation, build Qt with QT_KEYPAD_NAVIGATION defined.</p>
+<p><b>See also </b><a href="qapplication-obsolete.html#keypadNavigationEnabled">keypadNavigationEnabled</a>() and <a href="qapplication.html#setNavigationMode">setNavigationMode</a>().</p>
+<!-- @@@setKeypadNavigationEnabled -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

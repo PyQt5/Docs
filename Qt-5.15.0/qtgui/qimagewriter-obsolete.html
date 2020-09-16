@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qimagewriter.cpp -->
+  <title>Obsolete Members for QImageWriter | Qt GUI 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtgui-index.html">Qt GUI</a></li>
+<li><a href="qtgui-module.html">C++ Classes</a></li>
+<li>QImageWriter</li>
+<li id="buildversion"><a href="qtgui-index.html">Qt 5.15.0 Reference Documentation</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar"><div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Obsolete Members for QImageWriter</h1>
+<p><b>The following members of class <a href="qimagewriter.html">QImageWriter</a> are obsolete.</b> They are provided to keep old source code working. We strongly advise against using them in new code.</p>
+<h2>Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>QString </td><td class="memItemRight bottomAlign"><b><a href="qimagewriter-obsolete.html#description">description</a></b>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>float </td><td class="memItemRight bottomAlign"><b><a href="qimagewriter-obsolete.html#gamma">gamma</a></b>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>void </td><td class="memItemRight bottomAlign"><b><a href="qimagewriter-obsolete.html#setDescription">setDescription</a></b>(const QString &amp;<i>description</i>)</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>void </td><td class="memItemRight bottomAlign"><b><a href="qimagewriter-obsolete.html#setGamma">setGamma</a></b>(float <i>gamma</i>)</td></tr>
+</table></div>
+<h2>Member Function Documentation</h2>
+<!-- $$$description[overload1]$$$description -->
+<h3 class="fn" id="description"><a name="description"></a><span class="type"><a href="../qtcore/qstring.html">QString</a></span> QImageWriter::<span class="name">description</span>() const</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>Use <a href="qimagereader.html#text">QImageReader::text</a>() instead.</p>
+<p>Returns the description of the image.</p>
+<p><b>See also </b><a href="qimagewriter-obsolete.html#setDescription">setDescription</a>().</p>
+<!-- @@@description -->
+<!-- $$$gamma[overload1]$$$gamma -->
+<h3 class="fn" id="gamma"><a name="gamma"></a><span class="type">float</span> QImageWriter::<span class="name">gamma</span>() const</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>Use <a href="qimage.html#colorSpace">QImage::colorSpace</a>() and <a href="qcolorspace.html#gamma">QColorSpace::gamma</a>() instead.</p>
+<p>Returns the gamma level of the image.</p>
+<p><b>See also </b><a href="qimagewriter-obsolete.html#setGamma">setGamma</a>().</p>
+<!-- @@@gamma -->
+<!-- $$$setDescription[overload1]$$$setDescriptionconstQString& -->
+<h3 class="fn" id="setDescription"><a name="setDescription"></a><span class="type">void</span> QImageWriter::<span class="name">setDescription</span>(const <span class="type"><a href="../qtcore/qstring.html">QString</a></span> &amp;<i>description</i>)</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>Use <a href="qimagewriter.html#setText">setText</a>() instead.</p>
+<p>This is an image format specific function that sets the description of the image to <i>description</i>. For image formats that do not support setting the description, this value is ignored.</p>
+<p>The contents of <i>description</i> depends on the image format.</p>
+<p><b>See also </b><a href="qimagewriter-obsolete.html#description">description</a>().</p>
+<!-- @@@setDescription -->
+<!-- $$$setGamma[overload1]$$$setGammafloat -->
+<h3 class="fn" id="setGamma"><a name="setGamma"></a><span class="type">void</span> QImageWriter::<span class="name">setGamma</span>(<span class="type">float</span> <i>gamma</i>)</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>Use <a href="qcolorspace.html">QColorSpace</a> conversion on the <a href="qimage.html">QImage</a> instead.</p>
+<p>This is an image format specific function that sets the gamma level of the image to <i>gamma</i>. For image formats that do not support setting the gamma level, this value is ignored.</p>
+<p>The value range of <i>gamma</i> depends on the image format. For example, the &quot;png&quot; format supports a gamma range from 0.0 to 1.0&#x2e;</p>
+<p><b>See also </b><a href="qimagewriter-obsolete.html#gamma">gamma</a>() and <a href="qimagewriter.html#quality">quality</a>().</p>
+<!-- @@@setGamma -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- antialiasing.qdoc -->
+  <title>Anti-Aliasing | Qt Quick 3D 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtquick3d-index.html">Qt Quick 3D</a></li>
+<li>Anti-Aliasing</li>
+<li id="buildversion"><a href="qtquick3d-index.html">Qt Quick 3D | Commercial or GPLv3</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#causes-of-aliasing">Causes of Aliasing</a></li>
+<li class="level2"><a href="#geometry-aliasing">Geometry Aliasing</a></li>
+<li class="level2"><a href="#texture-aliasing">Texture Aliasing</a></li>
+<li class="level2"><a href="#reflection-aliasing">Reflection Aliasing</a></li>
+<li class="level1"><a href="#anti-aliasing-techniques">Anti-Aliasing Techniques</a></li>
+<li class="level2"><a href="#techniques-that-find-additional-information">Techniques that find additional information</a></li>
+<li class="level2"><a href="#artist-employed-cheats">Artist-Employed Cheats</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Anti-Aliasing</h1>
+<span class="subtitle"></span>
+<!-- $$$quick3d-asset-conditioning-anti-aliasing-description -->
+<div class="descr"> <a name="details"></a>
+<p>Qt Quick 3D has multiple ways to combat aliasing (the jagged edges) while rendering 3D models. Each technique offers its own benefits and limitations. Multiple techniques can be combined, but with additional performance cost.</p>
+<a name="causes-of-aliasing"></a>
+<h2 id="causes-of-aliasing">Causes of Aliasing</h2>
+<p>Although aliasing is a useful tool in rendering graphics, it could affect performance of your application if not used wisely. The following sections summarize the different aliasing techniques to choose from. Understanding which technology best targets your problems will help balance visual quality with sufficient rendering speed.</p>
+<a name="geometry-aliasing"></a>
+<h3 id="geometry-aliasing">Geometry Aliasing</h3>
+<p>By default, all geometry is rendered one on-screen pixel at a time. As you can see on the left in the image below, this leaves harsh edges that may be easily noticeable in high-contrast cases (most noticeably in this black-and-white case).</p>
+<p class="centerAlign"><img src="images/AA-GeometryAliasing.png" alt="" /></p><p class="figCaption">Effective techniques for reducing aliasing for geometry</p>
+<p>The most correct fix for this is to use <a href="quick3d-asset-conditioning-anti-aliasing.html#multisample-aa">Multisample Anti-Aliasing</a>, as it gathers more geometric detail only as needed. Using <a href="quick3d-asset-conditioning-anti-aliasing.html#temporal-aa">Temporal Anti-Aliasing</a> or <a href="quick3d-asset-conditioning-anti-aliasing.html#progressive-aa">Progressive Anti-Aliasing</a> can also mitigate the issue in a correct manner.</p>
+<p>Finally, in certain cases you can use a <a href="quick3d-asset-conditioning-anti-aliasing.html#silhouette-opacity-maps">silhouette opacity map</a> to smooth the edges of selected geometry.</p>
+<a name="texture-aliasing"></a><a name="texture-aliasing"></a>
+<h3 id="texture-aliasing">Texture Aliasing</h3>
+<p>When a texture is sub-sampled, fewer pixels than in the original are displayed, resulting in undesirable artifacts based on which pixels are chosen. This effect is worsened when the model is moving, as different pixels are chosen at different times. In the image below, notice how the line between E3 and F3 is missing, strongly present between G3 and H3, then gone for the next 5 columns, and so on.</p>
+<p class="centerAlign"><img src="images/AA-TextureAliasing.png" alt="" /></p><p class="figCaption">Effective techniques for reducing aliasing for textures</p>
+<p>The simplest (and arguably the best) fix for this problem is to use <a href="quick3d-asset-conditioning-anti-aliasing.html#mipmaps">mipmapping in the image texture</a> itself. Alternative fixes include using either <a href="quick3d-asset-conditioning-anti-aliasing.html#temporal-aa">Temporal AA</a> or <a href="quick3d-asset-conditioning-anti-aliasing.html#progressive-aa">Progressive AA</a> to gather more information from the texture.</p>
+<p>Using <a href="quick3d-asset-conditioning-anti-aliasing.html#multisample-aa">Multisample Anti-Aliasing</a> will not fix this problem.</p>
+<a name="reflection-aliasing"></a><a name="reflection-aliasing"></a>
+<h3 id="reflection-aliasing">Reflection Aliasing</h3>
+<p>Similar to l{Texture Aliasing}, a material reflecting the environment will sub-sample the image. In some cases, as seen on the left in the image below, becomes obvious when fine details are being skipped.</p>
+<p class="centerAlign"><img src="images/AA-ReflectionAliasing.png" alt="" /></p><p class="figCaption">Effective techniques for reducing aliasing for reflections</p>
+<p>The most correct solution in this case is using <a href="quick3d-asset-conditioning-anti-aliasing.html#temporal-aa">Temporal AA</a> or <a href="quick3d-asset-conditioning-anti-aliasing.html#progressive-aa">Progressive AA</a> to find the extra information.</p>
+<p>A simple alternative solution that may be acceptable is to make the material less glossy, more rough. In this case lower-resolution mipmaps of the environment are automatically used, blending the sharp details together.</p>
+<a name="anti-aliasing-techniques"></a>
+<h2 id="anti-aliasing-techniques">Anti-Aliasing Techniques</h2>
+<p>Aliasing is caused when there is more <i>information</i> present in the original than we can represent in the pixels on screen. Anti-aliasing techniques fall into three categories:</p>
+<ul>
+<li>Techniques that find additional information for a single pixel and represent them all at the same time.</li>
+<li>Image effects that attempt to find where things look bad and sweep the problems under the carpet.</li>
+<li>Techniques employed by artists that attempt to workaround the limitations.</li>
+</ul>
+<a name="techniques-that-find-additional-information"></a>
+<h3 id="techniques-that-find-additional-information">Techniques that find additional information</h3>
+<a name="multisample-aa"></a><a name="multisample-anti-aliasing"></a>
+<h4 id="multisample-anti-aliasing">Multisample Anti-Aliasing</h4>
+<p>Multisample AA (MSAA) operates on an entire layer. The edges of geometry are super-sampled, resulting in smoother silhouettes. This technique has no effect on the materials inside geometry, however.</p>
+<ul>
+<li><b>Pros</b>: Good results on geometry silhouettes, where aliasing is often most noticeable. Works with fast animation without an issue.</li>
+<li><b>Cons</b>: Can be expensive to use. Does not help with texture or reflection issues.</li>
+</ul>
+<a name="temporal-aa"></a><a name="temporal-anti-aliasing"></a>
+<h4 id="temporal-anti-aliasing">Temporal Anti-Aliasing</h4>
+<p>Temporal AA operates on an entire layer. The camera is jiggled <i>very slightly</i> between frames, and the result of each new frame is blended with the previous frame.</p>
+<ul>
+<li><b>Pros</b>: Due to the jiggling camera it finds real details that were otherwise lost. Low impact on performance.</li>
+<li><b>Cons</b>: Fast-moving objects cause one-frame ghosting.</li>
+</ul>
+<a name="progressive-aa"></a><a name="progressive-anti-aliasing"></a>
+<h4 id="progressive-anti-aliasing">Progressive Anti-Aliasing</h4>
+<p>Progressive AA (PAA) operates on an entire layer. When all content of the layer has stopped moving, the camera is jiggled <i>very slightly</i> between frames, and the result of each new frame is blended with the previous frames. The more frames you accumulate, better looking the result.</p>
+<ul>
+<li><b>Pros</b>: Provides detailed static images with no performance cost.</li>
+<li><b>Cons</b>: Does not take effect if any visual changes are occurring. 8x PAA takes one eighth of a second to finish rendering (at 60fps), which may be noticeable.</li>
+</ul>
+<a name="mipmaps"></a><a name="mipmaps"></a>
+<h4 id="mipmaps">Mipmaps</h4>
+<p>Mipmapping stores the texture along with its pre-calculated lower resolution versions. Whenever the texture is being displayed at a smaller size, the rendering system automatically uses these low-resolution images (which combine many details into a single pixel) blending them into the result as needed.</p>
+<ul>
+<li><b>Pros</b>: Very low performance impact. Greatly improves image quality for textures. Encourages you to use compressed textures, which load and render faster than uncompressed imnages.</li>
+<li><b>Cons</b>: Requires using external tools to optimize your images. Uses 33% more graphics memory than the same image without mipmaps.</li>
+</ul>
+<a name="supersample-aa"></a><a name="supersample-anti-aliasing"></a>
+<h4 id="supersample-anti-aliasing">Supersample Anti-Aliasing</h4>
+<p>Supersample AA (SSAA) operates on an entire layer, or even multiple layers. It is not mentioned or compared above because the performance penalty can be severe, and because it requires additional work from the artist. This technique should be used as a last resort.</p>
+<ul>
+<li><b>Pros</b>: Provides full-scene anti-aliasing with no limitations on animation.</li>
+<li><b>Cons</b>: Can severely degrade performance when your scene is already limited by the fill-rate of the graphics system, which is often the case.</li>
+</ul>
+<a name="artist-employed-cheats"></a>
+<h3 id="artist-employed-cheats">Artist-Employed Cheats</h3>
+<a name="silhouette-opacity-maps"></a><a name="silhouette-opacity-maps"></a>
+<h4 id="silhouette-opacity-maps">Silhouette Opacity Maps</h4>
+<p>When your model has a consistent silhouette, you can apply an opacity map that makes the outer edge of the geometry transparent. Using a gradient for the opacity will let the edge of the object smoothly disappear. However, even if your opacity map transitions directly from fully-opaque to fully-transparent over the space of one pixel, the result will still provide anti-aliased edges as seen in the example above. This is because image maps, including opacity maps, use bilinear interpolation.</p>
+<ul>
+<li><b>Pros</b>: Can show softer transitions than normal AA. Can be applied per model instead of per-layer.</li>
+<li><b>Cons</b>: Cannot be used if the silhouette of the object will ever change. Multiple overlapping models that employ transparency consume fill rate performance, which is often at a premium.</li>
+</ul>
+<a name="modifying-materials"></a><a name="modifying-materials-or-geometry"></a>
+<h4 id="modifying-materials-or-geometry">Modifying Materials or Geometry</h4>
+<p>As demonstrated in the image for <a href="quick3d-asset-conditioning-anti-aliasing.html#reflection-aliasing">Reflection Aliasing</a> above, sometimes the simplest fix for problems is to change the artwork. If you are getting distracting specular glints on the corner of your model, ask yourself: <i>Can I make the material softer? Can I modify the geometry to smooth or change the reflection angle? Can I edit the environment map to reduce sharp transitions?</i></p>
+</div>
+<!-- @@@quick3d-asset-conditioning-anti-aliasing -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

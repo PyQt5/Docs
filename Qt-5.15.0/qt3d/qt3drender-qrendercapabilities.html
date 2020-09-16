@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qrendercapabilities.cpp -->
+  <title>QRenderCapabilities Class | Qt 3D 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qt3d-index.html">Qt 3D</a></li>
+<li><a href="qt3d-cpp.html">C++ Classes</a></li>
+<li>QRenderCapabilities</li>
+<li id="buildversion"><a href="qt3d-index.html">Qt 5.15.0 Reference Documentation</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">QRenderCapabilities Class</h1>
+<span class="small-subtitle">class <a href="qt3drender-module.html">Qt3DRender</a>::QRenderCapabilities</span>
+<!-- $$$QRenderCapabilities-brief -->
+<p>The QRenderCapabilities class holds settings related to available rendering engines. <a href="#details">More...</a></p>
+<!-- @@@QRenderCapabilities -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign">  <span class="preprocessor">#include &lt;QRenderCapabilities&gt;</span>
+</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Since:</td><td class="memItemRight bottomAlign"> Qt 5.15</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Instantiated By:</td><td class="memItemRight bottomAlign"> <a href="qml-qt3d-render-rendercapabilities.html">RenderCapabilities</a></td></tr><tr><td class="memItemLeft rightAlign topAlign"> Inherits:</td><td class="memItemRight bottomAlign"> <a href="../qtcore/qobject.html">QObject</a></td></tr></table></div><p>This class was introduced in Qt 5.15.</p>
+<ul>
+<li><a href="qt3drender-qrendercapabilities-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="properties"></a>
+<h2 id="properties">Properties</h2>
+<div class="table"><table class="propsummary">
+<tr><td class="topAlign"><ul>
+<li class="fn"><b><a href="qt3drender-qrendercapabilities.html#api-prop">api</a></b> : const API</li>
+<li class="fn"><b><a href="qt3drender-qrendercapabilities.html#driverVersion-prop">driverVersion</a></b> : const QString</li>
+<li class="fn"><b><a href="qt3drender-qrendercapabilities.html#extensions-prop">extensions</a></b> : const QStringList</li>
+<li class="fn"><b><a href="qt3drender-qrendercapabilities.html#glslVersion-prop">glslVersion</a></b> : const QString</li>
+<li class="fn"><b><a href="qt3drender-qrendercapabilities.html#majorVersion-prop">majorVersion</a></b> : const int</li>
+<li class="fn"><b><a href="qt3drender-qrendercapabilities.html#maxComputeInvocations-prop">maxComputeInvocations</a></b> : const int</li>
+<li class="fn"><b><a href="qt3drender-qrendercapabilities.html#maxComputeSharedMemorySize-prop">maxComputeSharedMemorySize</a></b> : const int</li>
+<li class="fn"><b><a href="qt3drender-qrendercapabilities.html#maxImageUnits-prop">maxImageUnits</a></b> : const int</li>
+<li class="fn"><b><a href="qt3drender-qrendercapabilities.html#maxSSBOBindings-prop">maxSSBOBindings</a></b> : const int</li>
+<li class="fn"><b><a href="qt3drender-qrendercapabilities.html#maxSSBOSize-prop">maxSSBOSize</a></b> : const int</li>
+<li class="fn"><b><a href="qt3drender-qrendercapabilities.html#maxSamples-prop">maxSamples</a></b> : const int</li>
+<li class="fn"><b><a href="qt3drender-qrendercapabilities.html#maxTextureLayers-prop">maxTextureLayers</a></b> : const int</li>
+<li class="fn"><b><a href="qt3drender-qrendercapabilities.html#maxTextureSize-prop">maxTextureSize</a></b> : const int</li>
+<li class="fn"><b><a href="qt3drender-qrendercapabilities.html#maxTextureUnits-prop">maxTextureUnits</a></b> : const int</li>
+<li class="fn"><b><a href="qt3drender-qrendercapabilities.html#maxUBOBindings-prop">maxUBOBindings</a></b> : const int</li>
+<li class="fn"><b><a href="qt3drender-qrendercapabilities.html#maxUBOSize-prop">maxUBOSize</a></b> : const int</li>
+</ul></td><td class="topAlign"><ul>
+<li class="fn"><b><a href="qt3drender-qrendercapabilities.html#maxWorkGroupCountX-prop">maxWorkGroupCountX</a></b> : const int</li>
+<li class="fn"><b><a href="qt3drender-qrendercapabilities.html#maxWorkGroupCountY-prop">maxWorkGroupCountY</a></b> : const int</li>
+<li class="fn"><b><a href="qt3drender-qrendercapabilities.html#maxWorkGroupCountZ-prop">maxWorkGroupCountZ</a></b> : const int</li>
+<li class="fn"><b><a href="qt3drender-qrendercapabilities.html#maxWorkGroupSizeX-prop">maxWorkGroupSizeX</a></b> : const int</li>
+<li class="fn"><b><a href="qt3drender-qrendercapabilities.html#maxWorkGroupSizeY-prop">maxWorkGroupSizeY</a></b> : const int</li>
+<li class="fn"><b><a href="qt3drender-qrendercapabilities.html#maxWorkGroupSizeZ-prop">maxWorkGroupSizeZ</a></b> : const int</li>
+<li class="fn"><b><a href="qt3drender-qrendercapabilities.html#minorVersion-prop">minorVersion</a></b> : const int</li>
+<li class="fn"><b><a href="qt3drender-qrendercapabilities.html#profile-prop">profile</a></b> : const Profile</li>
+<li class="fn"><b><a href="qt3drender-qrendercapabilities.html#renderer-prop">renderer</a></b> : const QString</li>
+<li class="fn"><b><a href="qt3drender-qrendercapabilities.html#supportsCompute-prop">supportsCompute</a></b> : const bool</li>
+<li class="fn"><b><a href="qt3drender-qrendercapabilities.html#supportsImageStore-prop">supportsImageStore</a></b> : const bool</li>
+<li class="fn"><b><a href="qt3drender-qrendercapabilities.html#supportsSSBO-prop">supportsSSBO</a></b> : const bool</li>
+<li class="fn"><b><a href="qt3drender-qrendercapabilities.html#supportsUBO-prop">supportsUBO</a></b> : const bool</li>
+<li class="fn"><b><a href="qt3drender-qrendercapabilities.html#valid-prop">valid</a></b> : const bool</li>
+<li class="fn"><b><a href="qt3drender-qrendercapabilities.html#vendor-prop">vendor</a></b> : const QString</li>
+</ul>
+</td></tr>
+</table></div>
+<a name="public-functions"></a>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Qt3DRender::QRenderCapabilities::API </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qrendercapabilities.html#api-prop">api</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qrendercapabilities.html#driverVersion-prop">driverVersion</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QStringList </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qrendercapabilities.html#extensions-prop">extensions</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qrendercapabilities.html#glslVersion-prop">glslVersion</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qrendercapabilities.html#valid-prop">isValid</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qrendercapabilities.html#majorVersion-prop">majorVersion</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qrendercapabilities.html#maxComputeInvocations-prop">maxComputeInvocations</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qrendercapabilities.html#maxComputeSharedMemorySize-prop">maxComputeSharedMemorySize</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qrendercapabilities.html#maxImageUnits-prop">maxImageUnits</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qrendercapabilities.html#maxSSBOBindings-prop">maxSSBOBindings</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qrendercapabilities.html#maxSSBOSize-prop">maxSSBOSize</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qrendercapabilities.html#maxSamples-prop">maxSamples</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qrendercapabilities.html#maxTextureLayers-prop">maxTextureLayers</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qrendercapabilities.html#maxTextureSize-prop">maxTextureSize</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qrendercapabilities.html#maxTextureUnits-prop">maxTextureUnits</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qrendercapabilities.html#maxUBOBindings-prop">maxUBOBindings</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qrendercapabilities.html#maxUBOSize-prop">maxUBOSize</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qrendercapabilities.html#maxWorkGroupCountX-prop">maxWorkGroupCountX</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qrendercapabilities.html#maxWorkGroupCountY-prop">maxWorkGroupCountY</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qrendercapabilities.html#maxWorkGroupCountZ-prop">maxWorkGroupCountZ</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qrendercapabilities.html#maxWorkGroupSizeX-prop">maxWorkGroupSizeX</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qrendercapabilities.html#maxWorkGroupSizeY-prop">maxWorkGroupSizeY</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qrendercapabilities.html#maxWorkGroupSizeZ-prop">maxWorkGroupSizeZ</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qrendercapabilities.html#minorVersion-prop">minorVersion</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> Qt3DRender::QRenderCapabilities::Profile </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qrendercapabilities.html#profile-prop">profile</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qrendercapabilities.html#renderer-prop">renderer</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qrendercapabilities.html#supportsCompute-prop">supportsCompute</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qrendercapabilities.html#supportsImageStore-prop">supportsImageStore</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qrendercapabilities.html#supportsSSBO-prop">supportsSSBO</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qrendercapabilities.html#supportsUBO-prop">supportsUBO</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="qt3drender-qrendercapabilities.html#vendor-prop">vendor</a></b>() const</td></tr>
+</table></div>
+<a name="details"></a>
+<!-- $$$QRenderCapabilities-description -->
+<div class="descr">
+<h2 id="details">Detailed Description</h2>
+<p>QRenderCapabilities provides details of graphical features that are available at runtime. It can be used to decide which code path to use for some algorithms, for example, depending on whether compute shaders are available or not.</p>
+</div>
+<!-- @@@QRenderCapabilities -->
+<div class="prop">
+<h2>Property Documentation</h2>
+<!-- $$$api-prop$$$api -->
+<h3 class="fn" id="api-prop"><a name="api-prop"></a><span class="name">api</span> : const <span class="type">API</span></h3>
+<p>Returns which API is currently in use.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> Qt3DRender::QRenderCapabilities::API </td><td class="memItemRight bottomAlign"><span class="name"><b>api</b></span>() const</td></tr>
+</table></div>
+<!-- @@@api -->
+<!-- $$$driverVersion-prop$$$driverVersion -->
+<h3 class="fn" id="driverVersion-prop"><a name="driverVersion-prop"></a><span class="name">driverVersion</span> : const <span class="type"><a href="../qtcore/qstring.html">QString</a></span></h3>
+<p>Returns the driver version string.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> QString </td><td class="memItemRight bottomAlign"><span class="name"><b>driverVersion</b></span>() const</td></tr>
+</table></div>
+<!-- @@@driverVersion -->
+<!-- $$$extensions-prop$$$extensions -->
+<h3 class="fn" id="extensions-prop"><a name="extensions-prop"></a><span class="name">extensions</span> : const <span class="type"><a href="../qtcore/qstringlist.html">QStringList</a></span></h3>
+<p>Returns the list of extensions currently available.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> QStringList </td><td class="memItemRight bottomAlign"><span class="name"><b>extensions</b></span>() const</td></tr>
+</table></div>
+<!-- @@@extensions -->
+<!-- $$$glslVersion-prop$$$glslVersion -->
+<h3 class="fn" id="glslVersion-prop"><a name="glslVersion-prop"></a><span class="name">glslVersion</span> : const <span class="type"><a href="../qtcore/qstring.html">QString</a></span></h3>
+<p>Returns the GLSL version string.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> QString </td><td class="memItemRight bottomAlign"><span class="name"><b>glslVersion</b></span>() const</td></tr>
+</table></div>
+<!-- @@@glslVersion -->
+<!-- $$$majorVersion-prop$$$majorVersion -->
+<h3 class="fn" id="majorVersion-prop"><a name="majorVersion-prop"></a><span class="name">majorVersion</span> : const <span class="type">int</span></h3>
+<p>Returns the major version number currently in use.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> int </td><td class="memItemRight bottomAlign"><span class="name"><b>majorVersion</b></span>() const</td></tr>
+</table></div>
+<!-- @@@majorVersion -->
+<!-- $$$maxComputeInvocations-prop$$$maxComputeInvocations -->
+<h3 class="fn" id="maxComputeInvocations-prop"><a name="maxComputeInvocations-prop"></a><span class="name">maxComputeInvocations</span> : const <span class="type">int</span></h3>
+<p>Returns the maximum number of Compute Shaders available.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> int </td><td class="memItemRight bottomAlign"><span class="name"><b>maxComputeInvocations</b></span>() const</td></tr>
+</table></div>
+<!-- @@@maxComputeInvocations -->
+<!-- $$$maxComputeSharedMemorySize-prop$$$maxComputeSharedMemorySize -->
+<h3 class="fn" id="maxComputeSharedMemorySize-prop"><a name="maxComputeSharedMemorySize-prop"></a><span class="name">maxComputeSharedMemorySize</span> : const <span class="type">int</span></h3>
+<p>Returns the maximum amount of shared memory available for Compute Shaders.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> int </td><td class="memItemRight bottomAlign"><span class="name"><b>maxComputeSharedMemorySize</b></span>() const</td></tr>
+</table></div>
+<!-- @@@maxComputeSharedMemorySize -->
+<!-- $$$maxImageUnits-prop$$$maxImageUnits -->
+<h3 class="fn" id="maxImageUnits-prop"><a name="maxImageUnits-prop"></a><span class="name">maxImageUnits</span> : const <span class="type">int</span></h3>
+<p>Returns the maximum number of available image units.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> int </td><td class="memItemRight bottomAlign"><span class="name"><b>maxImageUnits</b></span>() const</td></tr>
+</table></div>
+<!-- @@@maxImageUnits -->
+<!-- $$$maxSSBOBindings-prop$$$maxSSBOBindings -->
+<h3 class="fn" id="maxSSBOBindings-prop"><a name="maxSSBOBindings-prop"></a><span class="name">maxSSBOBindings</span> : const <span class="type">int</span></h3>
+<p>Returns the maximum number of available SSBO binding points, if supported.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> int </td><td class="memItemRight bottomAlign"><span class="name"><b>maxSSBOBindings</b></span>() const</td></tr>
+</table></div>
+<!-- @@@maxSSBOBindings -->
+<!-- $$$maxSSBOSize-prop$$$maxSSBOSize -->
+<h3 class="fn" id="maxSSBOSize-prop"><a name="maxSSBOSize-prop"></a><span class="name">maxSSBOSize</span> : const <span class="type">int</span></h3>
+<p>Returns the maximum size of SSBOs, if available.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> int </td><td class="memItemRight bottomAlign"><span class="name"><b>maxSSBOSize</b></span>() const</td></tr>
+</table></div>
+<!-- @@@maxSSBOSize -->
+<!-- $$$maxSamples-prop$$$maxSamples -->
+<h3 class="fn" id="maxSamples-prop"><a name="maxSamples-prop"></a><span class="name">maxSamples</span> : const <span class="type">int</span></h3>
+<p>Returns the maximum number of samples available for MSAA.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> int </td><td class="memItemRight bottomAlign"><span class="name"><b>maxSamples</b></span>() const</td></tr>
+</table></div>
+<!-- @@@maxSamples -->
+<!-- $$$maxTextureLayers-prop$$$maxTextureLayers -->
+<h3 class="fn" id="maxTextureLayers-prop"><a name="maxTextureLayers-prop"></a><span class="name">maxTextureLayers</span> : const <span class="type">int</span></h3>
+<p>Returns the number of available texture layers.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> int </td><td class="memItemRight bottomAlign"><span class="name"><b>maxTextureLayers</b></span>() const</td></tr>
+</table></div>
+<!-- @@@maxTextureLayers -->
+<!-- $$$maxTextureSize-prop$$$maxTextureSize -->
+<h3 class="fn" id="maxTextureSize-prop"><a name="maxTextureSize-prop"></a><span class="name">maxTextureSize</span> : const <span class="type">int</span></h3>
+<p>Returns the maximum size of textures.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> int </td><td class="memItemRight bottomAlign"><span class="name"><b>maxTextureSize</b></span>() const</td></tr>
+</table></div>
+<!-- @@@maxTextureSize -->
+<!-- $$$maxTextureUnits-prop$$$maxTextureUnits -->
+<h3 class="fn" id="maxTextureUnits-prop"><a name="maxTextureUnits-prop"></a><span class="name">maxTextureUnits</span> : const <span class="type">int</span></h3>
+<p>Returns the number of available texture units.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> int </td><td class="memItemRight bottomAlign"><span class="name"><b>maxTextureUnits</b></span>() const</td></tr>
+</table></div>
+<!-- @@@maxTextureUnits -->
+<!-- $$$maxUBOBindings-prop$$$maxUBOBindings -->
+<h3 class="fn" id="maxUBOBindings-prop"><a name="maxUBOBindings-prop"></a><span class="name">maxUBOBindings</span> : const <span class="type">int</span></h3>
+<p>Returns the maximum number of available UBO binding points, if supported.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> int </td><td class="memItemRight bottomAlign"><span class="name"><b>maxUBOBindings</b></span>() const</td></tr>
+</table></div>
+<!-- @@@maxUBOBindings -->
+<!-- $$$maxUBOSize-prop$$$maxUBOSize -->
+<h3 class="fn" id="maxUBOSize-prop"><a name="maxUBOSize-prop"></a><span class="name">maxUBOSize</span> : const <span class="type">int</span></h3>
+<p>Returns the maximum size of UBOs, if supported.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> int </td><td class="memItemRight bottomAlign"><span class="name"><b>maxUBOSize</b></span>() const</td></tr>
+</table></div>
+<!-- @@@maxUBOSize -->
+<!-- $$$maxWorkGroupCountX-prop$$$maxWorkGroupCountX -->
+<h3 class="fn" id="maxWorkGroupCountX-prop"><a name="maxWorkGroupCountX-prop"></a><span class="name">maxWorkGroupCountX</span> : const <span class="type">int</span></h3>
+<p>Returns the maximum number of available Compute Shader workgroups in the X axis.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> int </td><td class="memItemRight bottomAlign"><span class="name"><b>maxWorkGroupCountX</b></span>() const</td></tr>
+</table></div>
+<!-- @@@maxWorkGroupCountX -->
+<!-- $$$maxWorkGroupCountY-prop$$$maxWorkGroupCountY -->
+<h3 class="fn" id="maxWorkGroupCountY-prop"><a name="maxWorkGroupCountY-prop"></a><span class="name">maxWorkGroupCountY</span> : const <span class="type">int</span></h3>
+<p>Returns the maximum number of available Compute Shader workgroups in the Y axis.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> int </td><td class="memItemRight bottomAlign"><span class="name"><b>maxWorkGroupCountY</b></span>() const</td></tr>
+</table></div>
+<!-- @@@maxWorkGroupCountY -->
+<!-- $$$maxWorkGroupCountZ-prop$$$maxWorkGroupCountZ -->
+<h3 class="fn" id="maxWorkGroupCountZ-prop"><a name="maxWorkGroupCountZ-prop"></a><span class="name">maxWorkGroupCountZ</span> : const <span class="type">int</span></h3>
+<p>Returns the maximum number of available Compute Shader workgroups in the Z axis.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> int </td><td class="memItemRight bottomAlign"><span class="name"><b>maxWorkGroupCountZ</b></span>() const</td></tr>
+</table></div>
+<!-- @@@maxWorkGroupCountZ -->
+<!-- $$$maxWorkGroupSizeX-prop$$$maxWorkGroupSizeX -->
+<h3 class="fn" id="maxWorkGroupSizeX-prop"><a name="maxWorkGroupSizeX-prop"></a><span class="name">maxWorkGroupSizeX</span> : const <span class="type">int</span></h3>
+<p>Returns the maximum size of Compute Shader local workgroups in the X axis.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> int </td><td class="memItemRight bottomAlign"><span class="name"><b>maxWorkGroupSizeX</b></span>() const</td></tr>
+</table></div>
+<!-- @@@maxWorkGroupSizeX -->
+<!-- $$$maxWorkGroupSizeY-prop$$$maxWorkGroupSizeY -->
+<h3 class="fn" id="maxWorkGroupSizeY-prop"><a name="maxWorkGroupSizeY-prop"></a><span class="name">maxWorkGroupSizeY</span> : const <span class="type">int</span></h3>
+<p>Returns the maximum size of Compute Shader local workgroups in the Y axis.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> int </td><td class="memItemRight bottomAlign"><span class="name"><b>maxWorkGroupSizeY</b></span>() const</td></tr>
+</table></div>
+<!-- @@@maxWorkGroupSizeY -->
+<!-- $$$maxWorkGroupSizeZ-prop$$$maxWorkGroupSizeZ -->
+<h3 class="fn" id="maxWorkGroupSizeZ-prop"><a name="maxWorkGroupSizeZ-prop"></a><span class="name">maxWorkGroupSizeZ</span> : const <span class="type">int</span></h3>
+<p>Returns the maximum size of Compute Shader local workgroups in the Z axis.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> int </td><td class="memItemRight bottomAlign"><span class="name"><b>maxWorkGroupSizeZ</b></span>() const</td></tr>
+</table></div>
+<!-- @@@maxWorkGroupSizeZ -->
+<!-- $$$minorVersion-prop$$$minorVersion -->
+<h3 class="fn" id="minorVersion-prop"><a name="minorVersion-prop"></a><span class="name">minorVersion</span> : const <span class="type">int</span></h3>
+<p>Returns the minor version number currently in use.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> int </td><td class="memItemRight bottomAlign"><span class="name"><b>minorVersion</b></span>() const</td></tr>
+</table></div>
+<!-- @@@minorVersion -->
+<!-- $$$profile-prop$$$profile -->
+<h3 class="fn" id="profile-prop"><a name="profile-prop"></a><span class="name">profile</span> : const <span class="type">Profile</span></h3>
+<p>Returns which profile (if applicable) is currently in use.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> Qt3DRender::QRenderCapabilities::Profile </td><td class="memItemRight bottomAlign"><span class="name"><b>profile</b></span>() const</td></tr>
+</table></div>
+<!-- @@@profile -->
+<!-- $$$renderer-prop$$$renderer -->
+<h3 class="fn" id="renderer-prop"><a name="renderer-prop"></a><span class="name">renderer</span> : const <span class="type"><a href="../qtcore/qstring.html">QString</a></span></h3>
+<p>Returns the device identification string.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> QString </td><td class="memItemRight bottomAlign"><span class="name"><b>renderer</b></span>() const</td></tr>
+</table></div>
+<!-- @@@renderer -->
+<!-- $$$supportsCompute-prop$$$supportsCompute -->
+<h3 class="fn" id="supportsCompute-prop"><a name="supportsCompute-prop"></a><span class="name">supportsCompute</span> : const <span class="type">bool</span></h3>
+<p>Returns true if Compute Shaders are supported.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> bool </td><td class="memItemRight bottomAlign"><span class="name"><b>supportsCompute</b></span>() const</td></tr>
+</table></div>
+<!-- @@@supportsCompute -->
+<!-- $$$supportsImageStore-prop$$$supportsImageStore -->
+<h3 class="fn" id="supportsImageStore-prop"><a name="supportsImageStore-prop"></a><span class="name">supportsImageStore</span> : const <span class="type">bool</span></h3>
+<p>Returns true if Image Store operations are supported.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> bool </td><td class="memItemRight bottomAlign"><span class="name"><b>supportsImageStore</b></span>() const</td></tr>
+</table></div>
+<!-- @@@supportsImageStore -->
+<!-- $$$supportsSSBO-prop$$$supportsSSBO -->
+<h3 class="fn" id="supportsSSBO-prop"><a name="supportsSSBO-prop"></a><span class="name">supportsSSBO</span> : const <span class="type">bool</span></h3>
+<p>Returns true if SSBOs are supported.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> bool </td><td class="memItemRight bottomAlign"><span class="name"><b>supportsSSBO</b></span>() const</td></tr>
+</table></div>
+<!-- @@@supportsSSBO -->
+<!-- $$$supportsUBO-prop$$$supportsUBO -->
+<h3 class="fn" id="supportsUBO-prop"><a name="supportsUBO-prop"></a><span class="name">supportsUBO</span> : const <span class="type">bool</span></h3>
+<p>Returns true if UBOs are supported.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> bool </td><td class="memItemRight bottomAlign"><span class="name"><b>supportsUBO</b></span>() const</td></tr>
+</table></div>
+<!-- @@@supportsUBO -->
+<!-- $$$valid-prop$$$isValid -->
+<h3 class="fn" id="valid-prop"><a name="valid-prop"></a><span class="name">valid</span> : const <span class="type">bool</span></h3>
+<p>true if the data is valid, otherwise Qt 3D failed to query the available hardware.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> bool </td><td class="memItemRight bottomAlign"><span class="name"><b>isValid</b></span>() const</td></tr>
+</table></div>
+<!-- @@@valid -->
+<!-- $$$vendor-prop$$$vendor -->
+<h3 class="fn" id="vendor-prop"><a name="vendor-prop"></a><span class="name">vendor</span> : const <span class="type"><a href="../qtcore/qstring.html">QString</a></span></h3>
+<p>Returns the vendor identification string.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> QString </td><td class="memItemRight bottomAlign"><span class="name"><b>vendor</b></span>() const</td></tr>
+</table></div>
+<!-- @@@vendor -->
+</div>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

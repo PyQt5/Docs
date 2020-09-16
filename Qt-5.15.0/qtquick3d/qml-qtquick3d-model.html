@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qquick3dmodel.cpp -->
+  <title>Model QML Type | Qt Quick 3D 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtquick3d-index.html">Qt Quick 3D</a></li>
+<li><a href="qtquick3d-qmlmodule.html">QML Types</a></li>
+<li>Model QML Type</li>
+<li id="buildversion"><a href="qtquick3d-index.html">Qt Quick 3D | Commercial or GPLv3</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+<li class="level2"><a href="#mesh-format-and-built-in-primitives">Mesh format and built-in primitives</a></li>
+<li class="level2"><a href="#materials">Materials</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Model QML Type</h1>
+<span class="subtitle"></span>
+<!-- $$$Model-brief -->
+<p>Lets you load a 3D model data. <a href="#details">More...</a></p>
+<!-- @@@Model -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Import Statement:</td><td class="memItemRight bottomAlign"> import QtQuick3D 1.15</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Inherits:</td><td class="memItemRight bottomAlign"> <p><a href="qml-qtquick3d-node.html">Node</a></p>
+</td></tr></table></div><ul>
+<li><a href="qml-qtquick3d-model-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="properties"></a>
+<h2 id="properties">Properties</h2>
+<ul>
+<li class="fn"><b><b><a href="qml-qtquick3d-model.html#bounds-prop">bounds</a></b></b> : Bounds</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-model.html#castsShadows-prop">castsShadows</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-model.html#edgeTessellation-prop">edgeTessellation</a></b></b> : real</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-model.html#geometry-prop">geometry</a></b></b> : Geometry</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-model.html#innerTessellation-prop">innerTessellation</a></b></b> : real</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-model.html#isWireframeMode-prop">isWireframeMode</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-model.html#materials-prop">materials</a></b></b> : List&lt;QtQuick3D::Material&gt;</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-model.html#pickable-prop">pickable</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-model.html#receivesShadows-prop">receivesShadows</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-model.html#source-prop">source</a></b></b> : url</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-model.html#tessellationMode-prop">tessellationMode</a></b></b> : enumeration</li>
+</ul>
+<!-- $$$Model-description -->
+<a name="details"></a>
+<h2 id="details">Detailed Description</h2>
+<p>The Model item makes it possible to load a mesh and modify how its shaded, by adding materials to it. For a model to be renderable, it needs at least a mesh and a material.</p>
+<a name="mesh-format-and-built-in-primitives"></a>
+<h2 id="mesh-format-and-built-in-primitives">Mesh format and built-in primitives</h2>
+<p>The model can load static meshes from storage or one of the built-in primitive types. The mesh format used is a run-time format that's native to the engine, but additional formats are supported through the asset import tool Balsam.</p>
+<p>The built-in primitives can be loaded by setting the <code>source</code> property to one of these values: <code>#Rectangle, #Sphere, #Cube, #Cylinder or #Cone</code>.</p>
+<pre class="qml">
+ <span class="type"><a href="qml-qtquick3d-model.html">Model</a></span> {
+     <span class="name">source</span>: <span class="string">&quot;#Sphere&quot;</span>
+ }
+</pre>
+<a name="materials"></a>
+<h2 id="materials">Materials</h2>
+<p>A model can consist of several sub-meshes, each of which can have its own material. The sub-mess uses a material from the <a href="qml-qtquick3d-model.html#materials">materials</a> list, corresponding to its index. If the number of materials is less than the sub-meshes, the last material in the list is used for subsequent sub-meshes.</p>
+<p>There are currently three different materials that can be used with the model item, the <a href="qml-qtquick3d-principledmaterial.html">PrincipledMaterial</a>, the <a href="qml-qtquick3d-defaultmaterial.html">DefaultMaterial</a>, and the <a href="qml-qtquick3d-materials-custommaterial.html">CustomMaterial</a>. In addition the <a href="qtquick3d-materials-qmlmodule.html">Material Library</a> provides a set of pre-made materials that can be used.</p>
+<!-- @@@Model -->
+<h2>Property Documentation</h2>
+<!-- $$$bounds -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="bounds-prop">
+<td class="tblQmlPropNode"><p>
+<a name="bounds-prop"></a><span class="qmlreadonly">[read-only] </span><span class="name">bounds</span> : <span class="type"><a href="qml-qtquick3d-bounds.html">Bounds</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This holds the bounds of the model. It can be read from the model that is set as a <a href="qml-qtquick3d-model.html#source-prop">source</a>.</p>
+<p><b>Note: </b>Bounds might not be immediately available since the source might have not been loaded.</p>
+</div></div><!-- @@@bounds -->
+<br/>
+<!-- $$$castsShadows -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="castsShadows-prop">
+<td class="tblQmlPropNode"><p>
+<a name="castsShadows-prop"></a><span class="name">castsShadows</span> : <span class="type"><a href="../qtqml/qml-bool.html">bool</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>When this property is <code>true</code>, the geometry of this model is used when rendering to the shadow maps.</p>
+</div></div><!-- @@@castsShadows -->
+<br/>
+<!-- $$$edgeTessellation -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="edgeTessellation-prop">
+<td class="tblQmlPropNode"><p>
+<a name="edgeTessellation-prop"></a><span class="name">edgeTessellation</span> : <span class="type"><a href="../qtqml/qml-real.html">real</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property defines the edge multiplier to the tessellation generator.</p>
+</div></div><!-- @@@edgeTessellation -->
+<br/>
+<!-- $$$geometry -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="geometry-prop">
+<td class="tblQmlPropNode"><p>
+<a name="geometry-prop"></a><span class="name">geometry</span> : <span class="type"><a href="qml-qtquick3d-geometry.html">Geometry</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Specify custom geometry for the model. The <a href="qml-qtquick3d-model.html#source-prop">Model::source</a> must be empty when custom geometry is used.</p>
+</div></div><!-- @@@geometry -->
+<br/>
+<!-- $$$innerTessellation -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="innerTessellation-prop">
+<td class="tblQmlPropNode"><p>
+<a name="innerTessellation-prop"></a><span class="name">innerTessellation</span> : <span class="type"><a href="../qtqml/qml-real.html">real</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property defines the inner multiplier to the tessellation generator.</p>
+</div></div><!-- @@@innerTessellation -->
+<br/>
+<!-- $$$isWireframeMode -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="isWireframeMode-prop">
+<td class="tblQmlPropNode"><p>
+<a name="isWireframeMode-prop"></a><span class="name">isWireframeMode</span> : <span class="type"><a href="../qtqml/qml-bool.html">bool</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>When this property is <code>true</code> and the <a href="qml-qtquick3d-model.html#tessellationMode-prop">tessellationMode</a> is not Model.NoTessellation, a wireframe is displayed to highlight the additional geometry created by the tessellation generator.</p>
+</div></div><!-- @@@isWireframeMode -->
+<br/>
+<!-- $$$materials -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="materials-prop">
+<td class="tblQmlPropNode"><p>
+<a name="materials-prop"></a><span class="name">materials</span> : <span class="type">List</span>&lt;<span class="type"><a href="qml-qtquick3d-material.html">QtQuick3D::Material</a></span>&gt;</p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property contains a list of materials used to render the provided geometry. To render anything, there must be at least one material. Normally there should be one material for each sub-mesh included in the source geometry.</p>
+</div></div><!-- @@@materials -->
+<br/>
+<!-- $$$pickable -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="pickable-prop">
+<td class="tblQmlPropNode"><p>
+<a name="pickable-prop"></a><span class="name">pickable</span> : <span class="type"><a href="../qtqml/qml-bool.html">bool</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property controls whether the model is pickable or not. By default models are not pickable and therefore not included when <a href="qml-qtquick3d-view3d.html#pick-method">picking</a> against the scene.</p>
+</div></div><!-- @@@pickable -->
+<br/>
+<!-- $$$receivesShadows -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="receivesShadows-prop">
+<td class="tblQmlPropNode"><p>
+<a name="receivesShadows-prop"></a><span class="name">receivesShadows</span> : <span class="type"><a href="../qtqml/qml-bool.html">bool</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>When this property is <code>true</code>, shadows can be cast onto this item. So the shadow map is applied to this model by the renderer.</p>
+</div></div><!-- @@@receivesShadows -->
+<br/>
+<!-- $$$source -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="source-prop">
+<td class="tblQmlPropNode"><p>
+<a name="source-prop"></a><span class="name">source</span> : <span class="type"><a href="../qtqml/qml-url.html">url</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property defines the location of the mesh file containing the geometry of this Model or one of the built-in primitive meshes listed below as described in <a href="qml-qtquick3d-model.html#mesh-format-and-built-in-primitives">Mesh format and built-in primitives</a>.</p>
+<ul>
+<li>&quot;#Rectangle&quot;</li>
+<li>&quot;#Sphere&quot;</li>
+<li>&quot;#Cube&quot;</li>
+<li>&quot;#Cone&quot;</li>
+<li>&quot;#Cylinder&quot;</li>
+</ul>
+</div></div><!-- @@@source -->
+<br/>
+<!-- $$$tessellationMode -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="tessellationMode-prop">
+<td class="tblQmlPropNode"><p>
+<a name="tessellationMode-prop"></a><span class="name">tessellationMode</span> : <span class="type"><a href="../qtqml/qml-enumeration.html">enumeration</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property defines what method to use to dynamically generate additional geometry for the model. Tessellation is useful if you are using a displacement map with your geometry, or if you wish to generate a smoother silhouette when zooming in.</p>
+<div class="table"><table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><code>Model.NoTessellation</code></td><td class="topAlign">No tessellation is used. This is the default.</td></tr>
+<tr><td class="topAlign"><code>Model.Linear</code></td><td class="topAlign">Tessellation uses linear generation.</td></tr>
+<tr><td class="topAlign"><code>Model.Phong</code></td><td class="topAlign">Tessellation uses Phong generation.</td></tr>
+<tr><td class="topAlign"><code>Model.NPatch</code></td><td class="topAlign">Tessellation uses NPatch generation.</td></tr>
+</table></div>
+</div></div><!-- @@@tessellationMode -->
+<br/>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

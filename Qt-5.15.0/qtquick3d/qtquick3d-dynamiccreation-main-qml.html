@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qtquick3d-examples-dynamiccreation.qdoc -->
+  <title>Qt Quick 3D - Dynamic Model Creation Example | Qt Quick 3D 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtquick3d-index.html">Qt Quick 3D</a></li>
+<li>Qt Quick 3D - Dynamic Model Creation Example</li>
+<li id="buildversion"><a href="qtquick3d-index.html">Qt Quick 3D | Commercial or GPLv3</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<h1 class="title">Qt Quick 3D - Dynamic Model Creation Example</h1>
+<span class="subtitle"></span>
+<pre class="qml">
+ <span class="comment">/****************************************************************************
+ **
+ ** Copyright (C) 2019 The Qt Company Ltd.
+ ** Contact: https://www.qt.io/licensing/
+ **
+ ** This file is part of the examples of the Qt Toolkit.
+ **
+ ** $QT_BEGIN_LICENSE:BSD$
+ ** Commercial License Usage
+ ** Licensees holding valid commercial Qt licenses may use this file in
+ ** accordance with the commercial license agreement provided with the
+ ** Software or, alternatively, in accordance with the terms contained in
+ ** a written agreement between you and The Qt Company. For licensing terms
+ ** and conditions see https://www.qt.io/terms-conditions. For further
+ ** information use the contact form at https://www.qt.io/contact-us.
+ **
+ ** BSD License Usage
+ ** Alternatively, you may use this file under the terms of the BSD license
+ ** as follows:
+ **
+ ** &quot;Redistribution and use in source and binary forms, with or without
+ ** modification, are permitted provided that the following conditions are
+ ** met:
+ **   * Redistributions of source code must retain the above copyright
+ **     notice, this list of conditions and the following disclaimer.
+ **   * Redistributions in binary form must reproduce the above copyright
+ **     notice, this list of conditions and the following disclaimer in
+ **     the documentation and/or other materials provided with the
+ **     distribution.
+ **   * Neither the name of The Qt Company Ltd nor the names of its
+ **     contributors may be used to endorse or promote products derived
+ **     from this software without specific prior written permission.
+ **
+ **
+ ** THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ ** &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ ** LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+ ** OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ ** SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+ ** LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ ** DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ ** THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ ** (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ ** OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.&quot;
+ **
+ ** $QT_END_LICENSE$
+ **
+ ****************************************************************************/</span>
+
+ import QtQuick 2.15
+ import QtQuick.Window 2.14
+ import QtQuick.Controls 2.14
+ import QtQuick3D 1.15
+
+ <span class="type"><a href="../qtquick/qml-qtquick-window-window.html">Window</a></span> {
+     <span class="name">id</span>: <span class="name">window</span>
+     <span class="name">width</span>: <span class="number">1280</span>
+     <span class="name">height</span>: <span class="number">720</span>
+     <span class="name">visible</span>: <span class="number">true</span>
+     <span class="name">title</span>: <span class="string">&quot;Dynamic Model Creation example&quot;</span>
+
+     <span class="type"><a href="../qtquickcontrols/qml-qtquick-controls2-button.html">Button</a></span> {
+         <span class="name">id</span>: <span class="name">addButton</span>
+         <span class="name">anchors</span>.left: <span class="name">parent</span>.<span class="name">left</span>
+         <span class="name">anchors</span>.top: <span class="name">parent</span>.<span class="name">top</span>
+         <span class="name">anchors</span>.margins: <span class="number">20</span>
+         <span class="name">text</span>: <span class="string">&quot;Add Model&quot;</span>
+         <span class="name">implicitWidth</span>: <span class="number">150</span>
+
+         <span class="name">background</span>: <span class="name">Rectangle</span> {
+             <span class="name">implicitWidth</span>: <span class="number">150</span>
+             <span class="name">implicitHeight</span>: <span class="number">40</span>
+             <span class="name">opacity</span>: <span class="name">enabled</span> ? <span class="number">1</span> : <span class="number">0.3</span>
+             <span class="name">color</span>: <span class="name">parent</span>.<span class="name">down</span> ? <span class="string">&quot;#6b7080&quot;</span> : <span class="string">&quot;#848895&quot;</span>
+             <span class="name">border</span>.color: <span class="string">&quot;#222840&quot;</span>
+             <span class="name">border</span>.width: <span class="number">1</span>
+             <span class="name">radius</span>: <span class="number">5</span>
+         }
+
+         <span class="name">onClicked</span>: {
+             <span class="keyword">if</span> (<span class="name">shapeSpawner</span>.<span class="name">instances</span>.<span class="name">length</span> <span class="operator">&lt;</span> <span class="name">shapeSpawner</span>.<span class="name">maxInstances</span>)
+                 <span class="name">shapeSpawner</span>.<span class="name">addOrRemove</span>(<span class="number">true</span>);
+         }
+     }
+
+     <span class="type"><a href="../qtquickcontrols/qml-qtquick-controls2-label.html">Label</a></span> {
+         <span class="name">id</span>: <span class="name">countLabel</span>
+         <span class="name">anchors</span>.top: <span class="name">parent</span>.<span class="name">top</span>
+         <span class="name">anchors</span>.horizontalCenter: <span class="name">parent</span>.<span class="name">horizontalCenter</span>
+         <span class="name">anchors</span>.margins: <span class="number">20</span>
+         <span class="name">font</span>.pointSize: <span class="number">20</span>
+         <span class="name">font</span>.bold: <span class="number">true</span>
+         <span class="name">color</span>: <span class="string">&quot;#848895&quot;</span>
+     }
+
+     <span class="type"><a href="../qtquickcontrols/qml-qtquick-controls2-button.html">Button</a></span> {
+         <span class="name">id</span>: <span class="name">removeButton</span>
+         <span class="name">anchors</span>.right: <span class="name">parent</span>.<span class="name">right</span>
+         <span class="name">anchors</span>.top: <span class="name">parent</span>.<span class="name">top</span>
+         <span class="name">anchors</span>.margins: <span class="number">20</span>
+         <span class="name">text</span>: <span class="string">&quot;Remove Model&quot;</span>
+         <span class="name">implicitWidth</span>: <span class="number">150</span>
+
+         <span class="name">background</span>: <span class="name">Rectangle</span> {
+             <span class="name">implicitWidth</span>: <span class="number">150</span>
+             <span class="name">implicitHeight</span>: <span class="number">40</span>
+             <span class="name">opacity</span>: <span class="name">enabled</span> ? <span class="number">1</span> : <span class="number">0.3</span>
+             <span class="name">color</span>: <span class="name">parent</span>.<span class="name">down</span> ? <span class="string">&quot;#6b7080&quot;</span> : <span class="string">&quot;#848895&quot;</span>
+             <span class="name">border</span>.color: <span class="string">&quot;#222840&quot;</span>
+             <span class="name">border</span>.width: <span class="number">1</span>
+             <span class="name">radius</span>: <span class="number">5</span>
+         }
+
+         <span class="name">onClicked</span>: {
+             <span class="keyword">if</span> (<span class="name">shapeSpawner</span>.<span class="name">instances</span>.<span class="name">length</span> <span class="operator">&gt;</span> <span class="number">0</span>)
+                 <span class="name">shapeSpawner</span>.<span class="name">addOrRemove</span>(<span class="number">false</span>);
+         }
+     }
+
+     <span class="type"><a href="qml-qtquick3d-view3d.html">View3D</a></span> {
+         <span class="name">anchors</span>.fill: <span class="name">parent</span>
+         <span class="name">camera</span>: <span class="name">camera</span>
+         <span class="name">renderMode</span>: <span class="name">View3D</span>.<span class="name">Underlay</span>
+
+         <span class="name">environment</span>: <span class="name">SceneEnvironment</span> {
+             <span class="name">clearColor</span>: <span class="string">&quot;black&quot;</span>
+             <span class="name">backgroundMode</span>: <span class="name">SceneEnvironment</span>.<span class="name">Color</span>
+             <span class="name">antialiasingMode</span>: <span class="name">SceneEnvironment</span>.<span class="name">MSAA</span>
+             <span class="name">antialiasingQuality</span>: <span class="name">SceneEnvironment</span>.<span class="name">High</span>
+         }
+
+         <span class="type"><a href="qml-qtquick3d-pointlight.html">PointLight</a></span> {
+             <span class="name">position</span>: <span class="name">Qt</span>.<span class="name">vector3d</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>);
+             <span class="name">brightness</span>: <span class="number">1500</span>
+         }
+
+         <span class="type"><a href="qml-qtquick3d-node.html">Node</a></span> {
+             <span class="name">position</span>: <span class="name">Qt</span>.<span class="name">vector3d</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>);
+
+             <span class="type"><a href="qml-qtquick3d-perspectivecamera.html">PerspectiveCamera</a></span> {
+                 <span class="name">position</span>: <span class="name">Qt</span>.<span class="name">vector3d</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">600</span>)
+             }
+
+             <span class="name">eulerRotation</span>.y: -<span class="number">90</span>
+
+             SequentialAnimation on <span class="name">eulerRotation</span>.y {
+                 <span class="name">loops</span>: <span class="name">Animation</span>.<span class="name">Infinite</span>
+                 <span class="type"><a href="../qtquick/qml-qtquick-propertyanimation.html">PropertyAnimation</a></span> {
+                     <span class="name">duration</span>: <span class="number">5000</span>
+                     <span class="name">to</span>: <span class="number">360</span>
+                     <span class="name">from</span>: <span class="number">0</span>
+                 }
+             }
+         }
+
+         <span class="type"><a href="qml-qtquick3d-node.html">Node</a></span> {
+             <span class="name">id</span>: <span class="name">shapeSpawner</span>
+             property <span class="type"><a href="../qtqml/qml-real.html">real</a></span> <span class="name">range</span>: <span class="number">300</span>
+             property <span class="type"><a href="../qtqml/qml-var.html">var</a></span> <span class="name">instances</span>: []
+             readonly property <span class="type"><a href="../qtqml/qml-int.html">int</a></span> <span class="name">maxInstances</span>: <span class="number">100</span>
+
+             <span class="keyword">function </span><span class="name">addOrRemove</span>(add) {
+                 <span class="keyword">if</span> (<span class="name">add</span>) {
+                     <span class="comment">// Create a new weirdShape at random postion</span>
+                     var xPos = (<span class="number">2</span> <span class="operator">*</span> <span class="name">Math</span>.<span class="name">random</span>() <span class="operator">*</span> <span class="name">range</span>) <span class="operator">-</span> <span class="name">range</span>;
+                     var yPos = (<span class="number">2</span> <span class="operator">*</span> <span class="name">Math</span>.<span class="name">random</span>() <span class="operator">*</span> <span class="name">range</span>) <span class="operator">-</span> <span class="name">range</span>;
+                     var zPos = (<span class="number">2</span> <span class="operator">*</span> <span class="name">Math</span>.<span class="name">random</span>() <span class="operator">*</span> <span class="name">range</span>) <span class="operator">-</span> <span class="name">range</span>;
+                     var weirdShapeComponent = <span class="name">Qt</span>.<span class="name">createComponent</span>(<span class="string">&quot;WeirdShape.qml&quot;</span>);
+                     let instance = <span class="name">weirdShapeComponent</span>.<span class="name">createObject</span>(
+                             <span class="name">shapeSpawner</span>, { &quot;x&quot;: <span class="name">xPos</span>, &quot;y&quot;: <span class="name">yPos</span>, &quot;z&quot;: <span class="name">zPos</span>,
+                                 &quot;scale&quot;: <span class="name">Qt</span>.<span class="name">vector3d</span>(<span class="number">0.25</span>, <span class="number">0.25</span>, <span class="number">0.25</span>)});
+                     <span class="name">instances</span>.<span class="name">push</span>(<span class="name">instance</span>);
+                     <span class="keyword">if</span> (<span class="name">instances</span>.<span class="name">length</span> <span class="operator">===</span> <span class="name">maxInstances</span>)
+                         <span class="name">addButton</span>.<span class="name">enabled</span> <span class="operator">=</span> <span class="number">false</span>;
+                     <span class="keyword">else</span> <span class="keyword">if</span> (<span class="name">instances</span>.<span class="name">length</span> <span class="operator">&gt;</span> <span class="number">0</span>)
+                         <span class="name">removeButton</span>.<span class="name">enabled</span> <span class="operator">=</span> <span class="number">true</span>;
+                 } <span class="keyword">else</span> {
+                     <span class="comment">// Remove last item in instances list</span>
+                     let instance = <span class="name">instances</span>.<span class="name">pop</span>();
+                     <span class="name">instance</span>.<span class="name">destroy</span>();
+                     <span class="keyword">if</span> (<span class="name">instances</span>.<span class="name">length</span> <span class="operator">===</span> <span class="number">0</span>)
+                         <span class="name">removeButton</span>.<span class="name">enabled</span> <span class="operator">=</span> <span class="number">false</span>;
+                     <span class="keyword">else</span> <span class="keyword">if</span> (<span class="name">instances</span>.<span class="name">length</span> <span class="operator">&lt;</span> <span class="name">maxInstances</span>)
+                         <span class="name">addButton</span>.<span class="name">enabled</span> <span class="operator">=</span> <span class="number">true</span>;
+                 }
+                 <span class="name">countLabel</span>.<span class="name">text</span> <span class="operator">=</span> <span class="string">&quot;Models in Scene: &quot;</span> <span class="operator">+</span> <span class="name">instances</span>.<span class="name">length</span>;
+             }
+         }
+
+         <span class="name">Component</span>.onCompleted: {
+             <span class="comment">// Create 10 instances to get started</span>
+             <span class="keyword">for</span> (var i = 0; <span class="name">i</span> <span class="operator">&lt;</span> <span class="number">10</span>; ++<span class="name">i</span>)
+                 <span class="name">shapeSpawner</span>.<span class="name">addOrRemove</span>(<span class="number">true</span>);
+         }
+     }
+ }
+</pre>

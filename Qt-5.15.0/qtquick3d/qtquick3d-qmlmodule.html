@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qtquick3d-qmlmodule.qdoc -->
+  <title>Qt Quick 3D QML Types | Qt Quick 3D 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtquick3d-index.html">Qt Quick 3D</a></li>
+<li>Qt Quick 3D QML Types</li>
+<li id="buildversion"><a href="qtquick3d-index.html">Qt Quick 3D | Commercial or GPLv3</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#qtquick3d-qml-types">QtQuick3D QML Types</a></li>
+<li class="level1"><a href="#qtquick3d-materials-qml-types">QtQuick3D.Materials QML Types</a></li>
+<li class="level1"><a href="#qtquick3d-helpers-qml-types">QtQuick3D.Helpers QML Types</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Qt Quick 3D QML Types</h1>
+<span class="subtitle"></span>
+<!-- $$$QtQuick3D-description -->
+<div class="descr"> <a name="details"></a>
+<p>This is the QML frontend for using the spatial renderer and scenegraph. For the time being, all 3D content goes through offscreen textures (FBO)s so that they can be composed into Qt Quick scenes (as a <a href="../qtquick/qquickitem.html">QQuickItem</a>).</p>
+<p>Qt Quick 3D provides the following QML types:</p>
+<a name="qtquick3d-qml-types"></a>
+<h2 id="qtquick3d-qml-types">QtQuick3D QML Types</h2>
+<p>Import the QtQuick3D module with the following statement:</p>
+<pre class="cpp">
+ import QtQuick3D <span class="number">1.15</span>
+</pre>
+<div class="table"><table class="annotated">
+<tr class="odd topAlign"><td class="tblName"><p><a href="qml-qtquick3d-arealight.html">AreaLight</a></p></td><td class="tblDescr"><p>Defines an area light in the scene</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qml-qtquick3d-blending.html">Blending</a></p></td><td class="tblDescr"><p>Defines the blending state in a pass of a CustomMaterial or an Effect</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qml-qtquick3d-bounds.html">Bounds</a></p></td><td class="tblDescr"><p>Specifies the bounds of a model</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qml-qtquick3d-buffer.html">Buffer</a></p></td><td class="tblDescr"><p>Defines a buffer to be used for a pass of a CustomMaterial or an Effect</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qml-qtquick3d-bufferblit.html">BufferBlit</a></p></td><td class="tblDescr"><p>Defines a copy operation between two buffers in a pass of a CustomMaterial or an Effect</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qml-qtquick3d-bufferinput.html">BufferInput</a></p></td><td class="tblDescr"><p>Defines an input buffer to be used for a pass of a CustomMaterial or an Effect</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qml-qtquick3d-camera.html">Camera</a></p></td><td class="tblDescr"><p>Defines an abstract base for Cameras</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qml-qtquick3d-command.html">Command</a></p></td><td class="tblDescr"><p>Defines a command to be performed in a pass of a CustomMaterial or an Effect</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qml-qtquick3d-cullmode.html">CullMode</a></p></td><td class="tblDescr"><p>Defines the cull mode for render pass</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qml-qtquick3d-customcamera.html">CustomCamera</a></p></td><td class="tblDescr"><p>Defines a Custom Camera for viewing the content of a 3D scene</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qml-qtquick3d-defaultmaterial.html">DefaultMaterial</a></p></td><td class="tblDescr"><p>Defines a Material generated depending on which properties are set</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qml-qtquick3d-depthinput.html">DepthInput</a></p></td><td class="tblDescr"><p>Defines the output texture for the depth buffer</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qml-qtquick3d-directionallight.html">DirectionalLight</a></p></td><td class="tblDescr"><p>Defines a directional light in the scene</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qml-qtquick3d-frustumcamera.html">FrustumCamera</a></p></td><td class="tblDescr"><p>Defines a Perspective Frustum Camera for viewing the content of a 3D scene</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qml-qtquick3d-geometry.html">Geometry</a></p></td><td class="tblDescr"><p>An Abstract base type for custom geometry</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qml-qtquick3d-light.html">Light</a></p></td><td class="tblDescr"><p>An uncreatable abstract base type for all lights</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qml-qtquick3d-loader3d.html">Loader3D</a></p></td><td class="tblDescr"><p>Allows dynamic loading of a 3D subtree from a URL or Component</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qml-qtquick3d-material.html">Material</a></p></td><td class="tblDescr"><p>Lets you define material for the 3D item</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qml-qtquick3d-model.html">Model</a></p></td><td class="tblDescr"><p>Lets you load a 3D model data</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qml-qtquick3d-node.html">Node</a></p></td><td class="tblDescr"><p>Base component for an object that exists in a 3D Scene</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qml-qtquick3d-object3d.html">Object3D</a></p></td><td class="tblDescr"><p>Abstract base type of all 3D nodes and resources</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qml-qtquick3d-orthographiccamera.html">OrthographicCamera</a></p></td><td class="tblDescr"><p>Defines a Orthographic Camera for viewing the content of a 3D scene</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qml-qtquick3d-pass.html">Pass</a></p></td><td class="tblDescr"><p>Defines a render pass in the CustomMaterial or the Effect</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qml-qtquick3d-perspectivecamera.html">PerspectiveCamera</a></p></td><td class="tblDescr"><p>Defines a Perspective Camera for viewing the content of a 3D scene</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qml-qtquick3d-pickresult.html">PickResult</a></p></td><td class="tblDescr"><p>Contains the results of a pick</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qml-qtquick3d-pointlight.html">PointLight</a></p></td><td class="tblDescr"><p>Defines a point light in the scene</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qml-qtquick3d-principledmaterial.html">PrincipledMaterial</a></p></td><td class="tblDescr"><p>Lets you define a material for 3D items</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qml-qtquick3d-quaternionanimation.html">QuaternionAnimation</a></p></td><td class="tblDescr"><p>A PropertyAnimation for quaternions</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qml-qtquick3d-renderstate.html">RenderState</a></p></td><td class="tblDescr"><p>Defines the render state to be disabled in a pass of a CustomMaterial or an Effect</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qml-qtquick3d-renderstats.html">RenderStats</a></p></td><td class="tblDescr"><p>Provides information of the scene rendering</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qml-qtquick3d-repeater3d.html">Repeater3D</a></p></td><td class="tblDescr"><p>Instantiates a number of Node-based components using a provided model</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qml-qtquick3d-sceneenvironment.html">SceneEnvironment</a></p></td><td class="tblDescr"><p>Lets you configure how a scene is rendered</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qml-qtquick3d-setuniformvalue.html">SetUniformValue</a></p></td><td class="tblDescr"><p>Defines a value to be set during a single pass</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qml-qtquick3d-shader.html">Shader</a></p></td><td class="tblDescr"><p>Container component for defining shader code used by CustomMaterials and Effects</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qml-qtquick3d-shaderinfo.html">ShaderInfo</a></p></td><td class="tblDescr"><p>Defines basic information about custom shader code for CustomMaterials</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qml-qtquick3d-spotlight.html">SpotLight</a></p></td><td class="tblDescr"><p>Defines a spot light in the scene</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qml-qtquick3d-texture.html">Texture</a></p></td><td class="tblDescr"><p>Defines a texture for use in 3D scenes</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qml-qtquick3d-textureinput.html">TextureInput</a></p></td><td class="tblDescr"><p>Defines a texture channel for a Custom Material or an Effect</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qml-qtquick3d-view3d.html">View3D</a></p></td><td class="tblDescr"><p>Provides a viewport on which to render a 3D scene</p></td></tr>
+</table></div>
+<a name="qtquick3d-materials-qml-types"></a>
+<h2 id="qtquick3d-materials-qml-types">QtQuick3D.Materials QML Types</h2>
+<p>Import the QtQuick3D.Materials module with the following statement:</p>
+<pre class="cpp">
+ import QtQuick3D<span class="operator">.</span>Materials <span class="number">1.15</span>
+</pre>
+<div class="table"><table class="annotated">
+<tr class="odd topAlign"><td class="tblName"><p><a href="qml-qtquick3d-materials-aluminumanodizedemissivematerial.html">AluminumAnodizedEmissiveMaterial</a></p></td><td class="tblDescr"><p>Anodized aluminum material with emissive properties</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qml-qtquick3d-materials-aluminumanodizedmaterial.html">AluminumAnodizedMaterial</a></p></td><td class="tblDescr"><p>Anodized aluminum material</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qml-qtquick3d-materials-aluminumbrushedmaterial.html">AluminumBrushedMaterial</a></p></td><td class="tblDescr"><p>Brushed aluminum material</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qml-qtquick3d-materials-aluminumemissivematerial.html">AluminumEmissiveMaterial</a></p></td><td class="tblDescr"><p>Aluminum with emissive properties</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qml-qtquick3d-materials-aluminummaterial.html">AluminumMaterial</a></p></td><td class="tblDescr"><p>Aluminum material</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qml-qtquick3d-materials-coppermaterial.html">CopperMaterial</a></p></td><td class="tblDescr"><p>Copper material</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qml-qtquick3d-materials-custommaterial.html">CustomMaterial</a></p></td><td class="tblDescr"><p>Base component for creating custom materials used to shade models</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qml-qtquick3d-materials-frostedglassmaterial.html">FrostedGlassMaterial</a></p></td><td class="tblDescr"><p>Frosted Glass material</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qml-qtquick3d-materials-frostedglasssinglepassmaterial.html">FrostedGlassSinglePassMaterial</a></p></td><td class="tblDescr"><p>Frosted Glass single-pass material</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qml-qtquick3d-materials-glassmaterial.html">GlassMaterial</a></p></td><td class="tblDescr"><p>Glass material</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qml-qtquick3d-materials-glassrefractivematerial.html">GlassRefractiveMaterial</a></p></td><td class="tblDescr"><p>Refractive glass material</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qml-qtquick3d-materials-paperartisticmaterial.html">PaperArtisticMaterial</a></p></td><td class="tblDescr"><p>Artistic paper material</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qml-qtquick3d-materials-paperofficematerial.html">PaperOfficeMaterial</a></p></td><td class="tblDescr"><p>Office paper material</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qml-qtquick3d-materials-plasticstructuredredemissivematerial.html">PlasticStructuredRedEmissiveMaterial</a></p></td><td class="tblDescr"><p>Structured red plastic material with emissive properties</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qml-qtquick3d-materials-plasticstructuredredmaterial.html">PlasticStructuredRedMaterial</a></p></td><td class="tblDescr"><p>Structured red plastic material</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qml-qtquick3d-materials-steelmilledconcentricmaterial.html">SteelMilledConcentricMaterial</a></p></td><td class="tblDescr"><p>Milled concentric steel material</p></td></tr>
+</table></div>
+<pre class="cpp">
+ import QtQuick3D<span class="operator">.</span>Effects <span class="number">1.15</span>
+</pre>
+<div class="table"><table class="annotated">
+<tr class="odd topAlign"><td class="tblName"><p><a href="qml-qtquick3d-effects-additivecolorgradient.html">AdditiveColorGradient</a></p></td><td class="tblDescr"><p>A gradient with additive color effect</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qml-qtquick3d-effects-blur.html">Blur</a></p></td><td class="tblDescr"><p>A one-pass blur effect</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qml-qtquick3d-effects-brushstrokes.html">BrushStrokes</a></p></td><td class="tblDescr"><p>A brush strokes noise effect</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qml-qtquick3d-effects-chromaticaberration.html">ChromaticAberration</a></p></td><td class="tblDescr"><p>A chromatic aberration effect</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qml-qtquick3d-effects-colormaster.html">ColorMaster</a></p></td><td class="tblDescr"><p>A color adjustment effect</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qml-qtquick3d-effects-depthoffieldhqblur.html">DepthOfFieldHQBlur</a></p></td><td class="tblDescr"><p>A depth-based blur effect</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qml-qtquick3d-effects-desaturate.html">Desaturate</a></p></td><td class="tblDescr"><p>A desaturating effect</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qml-qtquick3d-effects-distortionripple.html">DistortionRipple</a></p></td><td class="tblDescr"><p>A ripple distortion effect</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qml-qtquick3d-effects-distortionsphere.html">DistortionSphere</a></p></td><td class="tblDescr"><p>A sphere distortion effect</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qml-qtquick3d-effects-distortionspiral.html">DistortionSpiral</a></p></td><td class="tblDescr"><p>A spiral distortion effect</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qml-qtquick3d-effects-edgedetect.html">EdgeDetect</a></p></td><td class="tblDescr"><p>An edge highlighting effect</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qml-qtquick3d-effects-effect.html">Effect</a></p></td><td class="tblDescr"><p>Base component for creating a post-processing effect</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qml-qtquick3d-effects-emboss.html">Emboss</a></p></td><td class="tblDescr"><p>An emboss effect</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qml-qtquick3d-effects-flip.html">Flip</a></p></td><td class="tblDescr"><p>A scene flipping effect</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qml-qtquick3d-effects-fxaa.html">Fxaa</a></p></td><td class="tblDescr"><p>A fast approximate anti-aliasing effect</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qml-qtquick3d-effects-gaussianblur.html">GaussianBlur</a></p></td><td class="tblDescr"><p>A two-pass gaussian blur effect</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qml-qtquick3d-effects-hdrbloomtonemap.html">HDRBloomTonemap</a></p></td><td class="tblDescr"><p>A bloom with tonemapping effect</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qml-qtquick3d-effects-motionblur.html">MotionBlur</a></p></td><td class="tblDescr"><p>A motion blur effect</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qml-qtquick3d-effects-scurvetonemap.html">SCurveTonemap</a></p></td><td class="tblDescr"><p>A tonemapping effect</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qml-qtquick3d-effects-scatter.html">Scatter</a></p></td><td class="tblDescr"><p>A scatter noise effect</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qml-qtquick3d-effects-tiltshift.html">TiltShift</a></p></td><td class="tblDescr"><p>A tilt shift blur effect</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qml-qtquick3d-effects-vignette.html">Vignette</a></p></td><td class="tblDescr"><p>A vignette effect</p></td></tr>
+</table></div>
+<a name="qtquick3d-helpers-qml-types"></a>
+<h2 id="qtquick3d-helpers-qml-types">QtQuick3D.Helpers QML Types</h2>
+<p>Import the QtQuick3D.Helpers module with the following statement:</p>
+<pre class="cpp">
+ import QtQuick3D<span class="operator">.</span>Helpers <span class="number">1.15</span>
+</pre>
+<div class="table"><table class="annotated">
+<tr class="odd topAlign"><td class="tblName"><p><a href="qml-qtquick3d-helpers-axishelper.html">AxisHelper</a></p></td><td class="tblDescr"><p>Visual helper for showing axis in 3D scene</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qml-qtquick3d-helpers-debugview.html">DebugView</a></p></td><td class="tblDescr"><p>View to show render statistics</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qml-qtquick3d-helpers-gridgeometry.html">GridGeometry</a></p></td><td class="tblDescr"><p>Visual helper for showing grid in a scene</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qml-qtquick3d-helpers-wasdcontroller.html">WasdController</a></p></td><td class="tblDescr"><p>Control node position and orientation with keys and mouse</p></td></tr>
+</table></div>
+</div>
+<!-- @@@QtQuick3D -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

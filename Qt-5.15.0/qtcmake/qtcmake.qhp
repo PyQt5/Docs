@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QtHelpProject version="1.0">
+    <namespace>org.qt-project.qtcmake.5150</namespace>
+    <virtualFolder>qtcmake</virtualFolder>
+    <metaData name="version" value="5.15.0"/>
+    <customFilter name="Build with CMake">
+        <filterAttribute>cmake</filterAttribute>
+        <filterAttribute>qt</filterAttribute>
+        <filterAttribute>tools</filterAttribute>
+    </customFilter>
+    <filterSection>
+        <filterAttribute>5.15.0</filterAttribute>
+        <filterAttribute>cmake</filterAttribute>
+        <filterAttribute>qt</filterAttribute>
+        <filterAttribute>tools</filterAttribute>
+        <toc>
+            <section ref="index.html" title="Using Qt with CMake">
+                <section ref="cmake-manual.html" title="Manual">
+                    <section ref="cmake-get-started.html" title="Get started with CMake"/>
+                    <section ref="cmake-variable-reference.html" title="CMake Variable Reference"/>
+                    <section ref="cmake-command-reference.html" title="CMake Command Reference"/>
+                </section>
+            </section>
+        </toc>
+        <keywords>
+            <keyword name="Build with CMake" id="Build with CMake" ref="cmake-manual.html"/>
+            <keyword name="CMake Command Reference" id="CMake Command Reference" ref="cmake-command-reference.html"/>
+            <keyword name="CMake Variable Reference" id="CMake Variable Reference" ref="cmake-variable-reference.html"/>
+            <keyword name="Get started with CMake" id="Get started with CMake" ref="cmake-get-started.html"/>
+        </keywords>
+        <files>
+            <file>cmake-command-reference.html</file>
+            <file>cmake-get-started.html</file>
+            <file>cmake-manual.html</file>
+            <file>cmake-variable-reference.html</file>
+            <file>images/arrow_bc.png</file>
+            <file>images/bgrContent.png</file>
+            <file>images/btn_next.png</file>
+            <file>images/btn_prev.png</file>
+            <file>images/bullet_dn.png</file>
+            <file>images/bullet_sq.png</file>
+            <file>images/home.png</file>
+            <file>images/ico_note.png</file>
+            <file>images/ico_note_attention.png</file>
+            <file>images/ico_out.png</file>
+            <file>images/logo.png</file>
+            <file>style/offline-simple.css</file>
+            <file>style/offline.css</file>
+        </files>
+    </filterSection>
+</QtHelpProject>

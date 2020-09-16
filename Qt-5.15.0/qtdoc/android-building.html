@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- android-building.qdoc -->
+  <title>Qt for Android - Building from Source | Qt 5.15</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt 5.15</a></li>
+<li>Qt for Android - Building from Source</li>
+<li id="buildversion">Qt 5.15.0 Reference Documentation</li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#building-on-linux">Building on Linux</a></li>
+<li class="level2"><a href="#prepare-the-build-environment">Prepare the Build Environment</a></li>
+<li class="level2"><a href="#installing-the-license-file">Installing the License File</a></li>
+<li class="level2"><a href="#unpacking-the-archive">Unpacking the Archive</a></li>
+<li class="level2"><a href="#configuring-and-building">Configuring and Building</a></li>
+<li class="level1"><a href="#building-on-windows">Building on Windows</a></li>
+<li class="level2"><a href="#preparing-the-build-environment">Preparing the Build Environment</a></li>
+<li class="level2"><a href="#setting-a-commercial-license">Setting a Commercial License</a></li>
+<li class="level2"><a href="#building-the-sources">Building the Sources</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Qt for Android - Building from Source</h1>
+<span class="subtitle"></span>
+<!-- $$$android-building.html-description -->
+<div class="descr"> <a name="details"></a>
+<p>Qt for Android has some requirements that you are recommended to know before going through this guide. Accomplish the tasks in <a href="android-getting-started.html">Getting Started with Qt for Android</a> first.</p>
+<p>You can download the Qt 5 sources from the <a href="http://qt.io/download">Downloads</a> page.</p>
+<a name="building-on-linux"></a>
+<h2 id="building-on-linux">Building on Linux</h2>
+<a name="prepare-the-build-environment"></a>
+<h3 id="prepare-the-build-environment">Prepare the Build Environment</h3>
+<p>First, install the Android SDK in one of two ways:</p>
+<ul>
+<li><a href="android-building.html#using-the-package-manager">Using the package manager</a></li>
+<li><a href="android-building.html#using-manual-installation">Using a manual installation</a></li>
+</ul>
+<a name="using-the-package-manager"></a>
+<h4 id="using-the-package-manager">Using the Package Manager</h4>
+<p>For any Debian-based Linux, use the following command:</p>
+<pre class="cpp plain">
+ sudo apt install build-essential android-sdk openjdk-11-jdk
+</pre>
+<p>It is recommended to install the Android NDK using sdkmanager, with the following commands:</p>
+<pre class="cpp plain">
+ sdkmanager --verbose --licenses
+ sdkmanager --update
+ sdkmanager &quot;platforms;android-28&quot; &quot;ndk-bundle&quot; &quot;build-tools;28.0&#x2e;3&quot; &quot;platform-tools&quot;
+</pre>
+<p><b>Note: </b>If you are using the old SDK Tools packages &quot;tools&quot;, <a href="http://openjdk.java.net">OpenJDK</a> 1.8 is needed. It is also recommended to install the latest SDK Tools &quot;cmdline-tools&quot; package and switch to it.</p>
+<a name="using-manual-installation"></a>
+<h4 id="using-manual-installation">Using Manual Installation</h4>
+<p>You can use <a href="https://developer.android.com/studio/index.html">Android Studio</a> to download and installl the Android SDK packages required for developing applications for Android. For more information, see <a href="https://developer.android.com/studio/intro/update#sdk-manager">Android Studio documentation</a>.</p>
+<a name="installing-the-license-file"></a>
+<h3 id="installing-the-license-file">Installing the License File</h3>
+<p>If you use Qt with a commercial license, the Qt tools look for a local license file. If you are using a binary installer or the commercial Qt Creator, your licenses are automatically fetched and stored in your local user profile (<code>$XDG_DATA_HOME/Qt/qtlicenses.ini</code> file).</p>
+<p>If you do not use any binary installer or Qt Creator, you can download the respective license file from your <a href="https://account.qt.io/">Qt Account</a> Web portal and save it to your user profile as <code>$HOME/.qt-license</code>. If you prefer a different location or file name, you need to set the <code>QT_LICENSE_FILE</code> environment variable to the respective file path.</p>
+<a name="unpacking-the-archive"></a>
+<h3 id="unpacking-the-archive">Unpacking the Archive</h3>
+<p>Unpack the archive if you have not done so already. For example, if you have the <code>qt-everywhere-opensource-src-%VERSION%.tar.gz</code> package, type the following commands at a command line prompt:</p>
+<pre class="cpp">
+ cd <span class="operator">/</span>tmp
+ gunzip qt<span class="operator">-</span>everywhere<span class="operator">-</span>opensource<span class="operator">-</span>src<span class="operator">-</span><span class="operator">%</span>VERSION<span class="operator">%</span><span class="operator">.</span>tar<span class="operator">.</span>gz        <span class="preprocessor"># uncompress the archive</span>
+ tar xvf qt<span class="operator">-</span>everywhere<span class="operator">-</span>opensource<span class="operator">-</span>src<span class="operator">-</span><span class="operator">%</span>VERSION<span class="operator">%</span><span class="operator">.</span>tar          <span class="preprocessor"># unpack it</span>
+</pre>
+<p>This creates the directory <code>/tmp/qt-everywhere-opensource-src-%VERSION%</code> containing the files from the archive. We only support the GNU version of the tar archiving utility. Note that on some systems it is called gtar.</p>
+<a name="configuring-and-building"></a>
+<h3 id="configuring-and-building">Configuring and Building</h3>
+<p>Set the following environment variables, and add them to your <code>PATH</code>; preferably at the end of <code>~/.profile</code>:</p>
+<pre class="cpp plain">
+ export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+ export PATH=$PATH:$JAVA_HOME/bin
+</pre>
+<p>To configure Qt for Android, run the following:</p>
+<pre class="cpp plain">
+ cd /tmp/qt-everywhere-opensource-src-%VERSION%
+ ./configure -xplatform android-clang --disable-rpath -nomake tests -nomake examples -android-ndk &lt;path/to/sdk&gt;/ndk-bundle/ -android-sdk &lt;path/to/sdk&gt; -no-warnings-are-errors
+</pre>
+<p>The <a href="configure-options.html">Configure Options</a> page contains more information about the configure options.</p>
+<p>You may provide the <code>-android-abis</code> parameter to limit the Android ABIs being built, with either of: <i>armeabi-v7a</i>, <i>arm64-v8a</i>, <i>x86</i>, or <i>x86_64</i>:</p>
+<pre class="cpp plain">
+ -android-abis armeabi-v7a,arm64-v8a
+</pre>
+<p>If the parameter is not specified, Qt is built for all supported ABIs.</p>
+<p>To build the configured Qt code, run the following command:</p>
+<pre class="cpp plain">
+ make -j$(nproc)
+</pre>
+<p><b>Note: </b><i>nproc</i> is optional. It represents the number of parallel jobs your system can do.</p>
+<p>Then install the built Qt for Android:</p>
+<pre class="cpp plain">
+ make install
+</pre>
+<p>If you haven't provided the <code>--prefix &lt;install-dir&gt;</code> configure option, the installation is placed under <code>/usr/local/Qt-&lt;version&gt;</code>. In Debian/Ubuntu, you should prefix the <code>make</code> command with the <code>sudo</code> command.</p>
+<a name="building-on-windows"></a>
+<h2 id="building-on-windows">Building on Windows</h2>
+<p>First, you can use <a href="https://developer.android.com/studio/index.html">Android Studio</a> to download and install the Android SDK packages required for developing applications for Android. For more information, see <a href="https://developer.android.com/studio/intro/update#sdk-manager">Android Studio documentation</a>.</p>
+<a name="preparing-the-build-environment"></a>
+<h3 id="preparing-the-build-environment">Preparing the Build Environment</h3>
+<p>Install the following:</p>
+<ul>
+<li><a href="http://strawberryperl.com">Perl</a></li>
+<li>A JDK 1.8 package such as <a href="https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html">JDK</a> or <a href="http://openjdk.java.net">OpenJDK</a> or <a href="https://adoptopenjdk.net/">AdoptOpenJDK</a>.</li>
+<li><b><a href="https://mingw-w64.org/">MinGW</a> 7.3</b> toolchain</li>
+</ul>
+<p>Then set the respective environment variables, replacing them with the appropriate values:</p>
+<pre class="cpp plain">
+ set &quot;JDK_ROOT=&lt;JDK_ROOT_PATH&gt;\bin\&quot;
+ set &quot;MINGW_ROOT=&lt;MINGW_ROOT_PATH&gt;&quot;
+ set &quot;PERL_ROOT=&lt;PERL_ROOT_PATH&gt;&quot;
+</pre>
+<p>Open the <code>cmd.exe</code> window and verify that:</p>
+<ul>
+<li><code>where gcc.exe</code> lists <i>&lt;MINGW_ROOT&gt;.exe</i> first before <i>&lt;PERL_ROOT&gt;.exe</i>.</li>
+<li><code>where mingw32-make.exe</code> lists <i>&lt;MINGW_ROOT32&gt;-make.exe</i> first.</li>
+<li><code>where javac.exe</code> lists <i>&lt;JDK_ROOT&gt;</i> first.</li>
+</ul>
+<p><b>Note: </b>Currently, it is not possible to use Microsoft's compilers to build the Windows host tools for Qt Android.</p>
+<a name="setting-a-commercial-license"></a>
+<h3 id="setting-a-commercial-license">Setting a Commercial License</h3>
+<p>If you have a commercially licensed Qt, install your license file. If you're using a binary installer or the commercial Qt Creator, your licenses are automatically fetched and stored in your local user profile <code>%USERPROFILE%\AppData\Roaming\Qt\qtlicenses.ini</code>. Alternatively, you can download the respective license file from your Qt Account web portal and save it to your user profile as <code>%USERPROFILE%\.qt-license</code>. If you prefer a different location or file name, you need to set the <code>QT_LICENSE_FILE</code> environment variable to the respective file path.</p>
+<a name="building-the-sources"></a>
+<h3 id="building-the-sources">Building the Sources</h3>
+<p>Next, unpack the archive. Uncompress the files into the directory in which you want Qt installed, for example: <code>C:\Qt\%VERSION%</code>. This install path must not contain any spaces or Windows-specific file system characters.</p>
+<p>Run the following command to configure Qt:</p>
+<pre class="cpp plain">
+ cd &lt;decompressed_source_code_folder&gt;
+ configure.bat -prefix &lt;path to install Qt to&gt; -platform win32-g++ -opengl es2 -xplatform android-clang -android-sdk &lt;ANDROID_SDK_PATH&gt; -android-ndk &lt;ANDROID_SDK_PATH&gt;\ndk-bundle\ -nomake tests -nomake examples
+</pre>
+<p>The <a href="configure-options.html">Configure Options</a> page contains more information about the configure options.</p>
+<p>To build the configured Qt for Android code, run the following:</p>
+<pre class="cpp plain">
+ mingw32-make.exe -j&lt;N&gt;
+</pre>
+<p><b>Note: </b><i>&lt;N&gt;</i> is optional. It represents the number of parallel jobs your system can do.</p>
+<p>Now, to install Qt, run the following command:</p>
+<pre class="cpp plain">
+ mingw32-make.exe install
+</pre>
+</div>
+<!-- @@@android-building.html -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

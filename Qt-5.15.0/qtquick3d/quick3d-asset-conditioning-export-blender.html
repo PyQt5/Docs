@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- exporting-from-blender.qdoc -->
+  <title>Exporting from Blender | Qt Quick 3D 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtquick3d-index.html">Qt Quick 3D</a></li>
+<li>Exporting from Blender</li>
+<li id="buildversion"><a href="qtquick3d-index.html">Qt Quick 3D | Commercial or GPLv3</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#exporting-models">Exporting Models</a></li>
+<li class="level2"><a href="#create-material-slots">Create Material Slots</a></li>
+<li class="level2"><a href="#uv-unwrap-models">UV Unwrap Models</a></li>
+<li class="level2"><a href="#triangulate">Triangulate</a></li>
+<li class="level2"><a href="#bake-actions-for-animations">Bake Actions for Animations</a></li>
+<li class="level2"><a href="#apply-location-rotation-and-scale">Apply Location, Rotation, and Scale</a></li>
+<li class="level1"><a href="#exporting-lights">Exporting Lights</a></li>
+<li class="level1"><a href="#exporting-cameras">Exporting Cameras</a></li>
+<li class="level1"><a href="#exporting-collada-from-blender">Exporting COLLADA from Blender</a></li>
+<li class="level1"><a href="#exporting-fbx-from-blender">Exporting FBX from Blender</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Exporting from Blender</h1>
+<span class="subtitle"></span>
+<!-- $$$quick3d-asset-conditioning-export-blender-description -->
+<div class="descr"> <a name="details"></a>
+<p>It is possible to export meshes, lights, cameras, transform animations (scale/rotation/location), UV layouts, pivot points, object hierarchy, and material slots from Blender.</p>
+<a name="exporting-models"></a>
+<h2 id="exporting-models">Exporting Models</h2>
+<a name="create-material-slots"></a>
+<h3 id="create-material-slots">Create Material Slots</h3>
+<p>Material slots must be created and assigned in Blender before exporting. If this is not done, one default material slot is used for the object.</p>
+<p><b>Note: </b>Only material slots that have a material, and that are assigned to a mesh on the exported object, will be imported.</p>
+<p>To create material slots, follow the steps below.</p>
+<ol class="1" type="1"><li>In the properties panel, select the <b>material</b> tab.</li>
+<li>Press the <b>+</b> to add a new material slot.</li>
+<li>Press the <b>New</b> button.<p class="centerAlign"><img src="images/export-blender1.png" alt="" /></p></li>
+<li>Repeat steps 2 to 4 for each material slot to create.</li>
+</ol>
+<p>By default, the first material slot will be assigned to the object.</p>
+<p>To assign a different material slot to the object, or to assign several material slots to the same object, follow the steps below.</p>
+<ol class="1" type="1"><li>In edit mode, select the desired faces. (<i>Shift + Right Mouse Click</i> to multi select, <i>A</i> to select all faces).</li>
+<li>In the properties panel, select the material tab.</li>
+<li>In the material slots list, select the desired material slot.</li>
+<li>Press the <b>Assign</b> button to assign the selected material slot to selected faces.<p class="centerAlign"><img src="images/export-blender3.png" alt="" /></p></li>
+</ol>
+<a name="uv-unwrap-models"></a>
+<h3 id="uv-unwrap-models">UV Unwrap Models</h3>
+<p>UV unwrapping your model will create a UV layout. Without a UV layout you will not be able to render any textures on your model in Qt Quick 3D.</p>
+<p>There are many different ways and techniques to unwrap 3D meshes. The most basic way to do it in Blender is described below.</p>
+<ol class="1" type="1"><li>In edit mode, press <i>A</i> to select the whole mesh.</li>
+<li>Press the <i>U</i> key and select <b>Unwrap</b> from the context menu.<p class="centerAlign"><img src="images/export-blender2.png" alt="" /></p></li>
+</ol>
+<a name="triangulate"></a>
+<h3 id="triangulate">Triangulate</h3>
+<ol class="1" type="1"><li>In object mode, select the object.</li>
+<li>In the properties panel, select the modifiers tab.</li>
+<li>In the drop down list, select <b>Triangulate</b>.<p class="centerAlign"><img src="images/export-blender4.png" alt="" /></p></li>
+<li>Press <b>Apply</b>.</li>
+</ol>
+<p><b>Note: </b>When exporting as COLLADA, it is possible to do the triangulation in the actual export step.</p>
+<a name="bake-actions-for-animations"></a>
+<h3 id="bake-actions-for-animations">Bake Actions for Animations</h3>
+<p><b>Note: </b>This step is necessary only if you are exporting animations that are using custom curves or object constraints to control the animation.</p>
+<p>Actions are data-blocks containing animation data. If you are exporting animations you need to bake actions.</p>
+<ol class="1" type="1"><li>Press the <i>space bar</i> key.</li>
+<li>Type <i>bake actions</i>.</li>
+<li>Press the <i>Enter</i> key.</li>
+</ol>
+<a name="apply-location-rotation-and-scale"></a>
+<h3 id="apply-location-rotation-and-scale">Apply Location, Rotation, and Scale</h3>
+<p><b>Note: </b>This should not be done when exporting animations.</p>
+<p>Applying transform values resets the object's location, rotation, and scale values. Location and rotation values are changed to 0 while scale values are changed to 1. The object itself does not visually change.</p>
+<ol class="1" type="1"><li>In object mode, select the object.</li>
+<li>Press the <i>Ctrl + A</i> keys.</li>
+<li>Select <b>Location</b>.</li>
+<li>From the check box in the panel, check also <b>Rotation</b> and <b>Scale</b>.<p class="centerAlign"><img src="images/export-blender5.png" alt="" /></p></li>
+</ol>
+<p><b>Note: </b>Applying Location will also reset the object's origin (pivot point).</p>
+<a name="exporting-lights"></a>
+<h2 id="exporting-lights">Exporting Lights</h2>
+<p>You can export lights of any type from Blender to use in Qt Quick 3D.</p>
+<p>The following properties are imported:</p>
+<ul>
+<li>Position, rotation, scale</li>
+<li>Brightness</li>
+<li>Light color</li>
+<li>Cast shadows</li>
+</ul>
+<p>Light type is imported (and converted if needed).</p>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Light type in Blender</th><th >Will import to Qt Quick 3D as..&#x2e;</th></tr></thead>
+<tr valign="top" class="odd"><td >Point</td><td >Point</td></tr>
+<tr valign="top" class="even"><td >Area</td><td >Area</td></tr>
+<tr valign="top" class="odd"><td >Sun</td><td >Directional</td></tr>
+<tr valign="top" class="even"><td >Spot</td><td >Directional</td></tr>
+<tr valign="top" class="odd"><td >Hemi</td><td >Directional</td></tr>
+</table></div>
+<a name="exporting-cameras"></a>
+<h2 id="exporting-cameras">Exporting Cameras</h2>
+<p>You can export perspective and orthographic cameras from Blender to use in Qt Quick 3D.</p>
+<p>The following properties are imported:</p>
+<ul>
+<li>Position, rotation, scale</li>
+<li>Clipping start/end</li>
+<li>Focal Length (perspective camera only).</li>
+</ul>
+<a name="exporting-collada-from-blender"></a>
+<h2 id="exporting-collada-from-blender">Exporting COLLADA from Blender</h2>
+<ol class="1" type="1"><li>From the file menu, select <b>File &gt; Export &gt; Collada (.dae)</b>.</li>
+<li>Ensure that <b>Triangulation</b> is checked on, unless you already have triangulated all meshes.</li>
+<li>Select the <b>Export COLLADA</b> button.</li>
+</ol>
+<a name="exporting-fbx-from-blender"></a>
+<h2 id="exporting-fbx-from-blender">Exporting FBX from Blender</h2>
+<p>In order to export as FBX, you must have the FBX export add-on installed and enabled in Blender. With the default installation of Blender, the <code>Import-Export: FBX format</code> should be installed. If you do not have the option to export as FBX avaialble, ensure that the add-on is enabled by following the steps:</p>
+<ol class="1" type="1"><li>Select <b>File &gt; User Preferences</b>.</li>
+<li>Select <b>Add-ons</b> from the top menu bar.</li>
+<li>Search for <i>fbx</i>.</li>
+<li>The add-on should now be visible, enable it by selecting the checkbox next to its name.</li>
+</ol>
+<p class="centerAlign"><img src="images/export-blender-enable-fbx-addon.png" alt="" /></p><p>Next, to export as FBX, follow these steps:</p>
+<ol class="1" type="1"><li>Select <b>File &gt; Export &gt; FBX (.fbx)</b>.</li>
+<li>Under the <b>Main</b> tab, set <b>Forward</b> to <code>Y Forward</code> and <b>Up</b> to <code>Z Up</code>.<p class="centerAlign"><img src="images/export-blender-fbx-axis.png" alt="" /></p></li>
+<li>For animations, ensure that the <b>Baked Animation</b> option is checked in the <b>Animation</b> tab.<p class="centerAlign"><img src="images/export-blender6.png" alt="" /></p></li>
+<li>Select the <b>Export FBX</b> button.</li>
+</ol>
+</div>
+<!-- @@@quick3d-asset-conditioning-export-blender -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

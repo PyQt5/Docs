@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qtquick3d-effects.qdoc -->
+  <title>DistortionSphere QML Type | Qt Quick 3D 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtquick3d-index.html">Qt Quick 3D</a></li>
+<li><a href="qtquick3d-qmlmodule.html">QML Types</a></li>
+<li>DistortionSphere QML Type</li>
+<li id="buildversion"><a href="qtquick3d-index.html">Qt Quick 3D | Commercial or GPLv3</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">DistortionSphere QML Type</h1>
+<span class="subtitle"></span>
+<!-- $$$DistortionSphere-brief -->
+<p>A sphere distortion effect. <a href="#details">More...</a></p>
+<!-- @@@DistortionSphere -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Import Statement:</td><td class="memItemRight bottomAlign"> import QtQuick3D.Effects 1.15</td></tr></table></div><ul>
+<li><a href="qml-qtquick3d-effects-distortionsphere-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="properties"></a>
+<h2 id="properties">Properties</h2>
+<ul>
+<li class="fn"><b><b><a href="qml-qtquick3d-effects-distortionsphere.html#center-prop">center</a></b></b> : vector2d</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-effects-distortionsphere.html#distortionHeight-prop">distortionHeight</a></b></b> : real</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-effects-distortionsphere.html#radius-prop">radius</a></b></b> : real</li>
+</ul>
+<!-- $$$DistortionSphere-description -->
+<a name="details"></a>
+<h2 id="details">Detailed Description</h2>
+<p class="centerAlign"><img src="images/effect_distortion_sphere.png" alt="" /></p><p>The DistortionSphere effect creates a 3D effect of wrapping the scene around a spherical shape.</p>
+<!-- @@@DistortionSphere -->
+<h2>Property Documentation</h2>
+<!-- $$$center -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="center-prop">
+<td class="tblQmlPropNode"><p>
+<a name="center-prop"></a><span class="name">center</span> : <span class="type"><a href="../qtquick/qml-vector2d.html">vector2d</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>The focus point of the distortion. <code>Qt.vector2d(0.5, 0.5)</code> (i.e&#x2e; the center of the scene) by default.</p>
+</div></div><!-- @@@center -->
+<br/>
+<!-- $$$distortionHeight -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="distortionHeight-prop">
+<td class="tblQmlPropNode"><p>
+<a name="distortionHeight-prop"></a><span class="name">distortionHeight</span> : <span class="type"><a href="../qtqml/qml-real.html">real</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>The distortion amount. Range is <code>[-1..&#x2e;1</code>. <code>0.5</code> by default.</p>
+</div></div><!-- @@@distortionHeight -->
+<br/>
+<!-- $$$radius -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="radius-prop">
+<td class="tblQmlPropNode"><p>
+<a name="radius-prop"></a><span class="name">radius</span> : <span class="type"><a href="../qtqml/qml-real.html">real</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>The area of distortion. Range is <code>[0..&#x2e;1]</code>. <code>0.25</code> by default.</p>
+</div></div><!-- @@@radius -->
+<br/>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qtquick3d-examples-quickitems.qdoc -->
+  <title>Qt Quick 3D - Quick Items Example | Qt Quick 3D 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtquick3d-index.html">Qt Quick 3D</a></li>
+<li>Qt Quick 3D - Quick Items Example</li>
+<li id="buildversion"><a href="qtquick3d-index.html">Qt Quick 3D | Commercial or GPLv3</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#quick-items-in-a-quick-3d-scene">Quick Items in a Quick 3D Scene</a></li>
+<li class="level1"><a href="#the-test-scene">The test scene</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Qt Quick 3D - Quick Items Example</h1>
+<span class="subtitle"></span>
+<!-- $$$quickitems-brief -->
+<p>Demonstrates the use of Qt Quick Items in Quick 3D scene.</p>
+<!-- @@@quickitems -->
+<!-- $$$quickitems-description -->
+<div class="descr"> <a name="details"></a>
+<p class="centerAlign"><img src="images/quickitems-example.png" alt="" /></p><p>This example demonstrates using Qt Quick 2D items in the Quick 3D scene.</p>
+<a name="quick-items-in-a-quick-3d-scene"></a>
+<h4 id="quick-items-in-a-quick-3d-scene">Quick Items in a Quick 3D Scene</h4>
+<p>Qt Quick 2D Items can be added into Quick 3D scenes with some limitations and considerations. When using Qt Quick Items there are a few things to note:</p>
+<ul>
+<li>When an <code>Item</code> is inside a <code>Node</code>, it is automatically centered and the <code>Item</code>'s transforms (x, y, rotation etc.) are ignored. Instead, transforms should be added for the parent <code>Node</code>. If more than one <code>Item</code> should be affected by the same transform, then these items can be grouped together under a common parent <code>Item</code>.</li>
+<li>Items do not receive touch/mouse events e.g&#x2e; with <code>MouseArea</code>, so they should be non-interactive.</li>
+<li>Quick items are not affect by lights and shadows as they are rendered by the 2D Scenegraph.</li>
+</ul>
+<a name="the-test-scene"></a>
+<h4 id="the-test-scene">The test scene</h4>
+<p>The important parts of this example are the scene content of the <code>View3D</code> element.</p>
+<p>We start by adding the layer furthest away from the camera. This layer contains <code>Rectangle</code>, <code>Text</code> and <code>Image</code> elements. To ensure that the elements in the layer are positioned correctly they are grouped together under a common parent <code>Item</code>. Note that all content is clipped inside this root item so it needs to be sized appropriately.</p>
+<pre class="qml">
+ <span class="type"><a href="qml-qtquick3d-node.html">Node</a></span> {
+     <span class="name">position</span>: <span class="name">Qt</span>.<span class="name">vector3d</span>(<span class="number">0</span>, <span class="number">100</span>, -<span class="number">120</span>)
+     <span class="type"><a href="../qtquick/qml-qtquick-item.html">Item</a></span> {
+         <span class="name">width</span>: <span class="number">400</span>
+         <span class="name">height</span>: <span class="number">400</span>
+         <span class="type"><a href="../qtquick/qml-qtquick-rectangle.html">Rectangle</a></span> {
+             <span class="name">anchors</span>.fill: <span class="name">parent</span>
+             <span class="name">opacity</span>: <span class="number">0.4</span>
+             <span class="name">color</span>: <span class="string">&quot;#202020&quot;</span>
+             <span class="name">radius</span>: <span class="number">10</span>
+             <span class="name">border</span>.width: <span class="number">2</span>
+             <span class="name">border</span>.color: <span class="string">&quot;#f0f0f0&quot;</span>
+         }
+         <span class="type"><a href="../qtquick/qml-qtquick-text.html">Text</a></span> {
+             <span class="name">anchors</span>.top: <span class="name">parent</span>.<span class="name">top</span>
+             <span class="name">anchors</span>.topMargin: <span class="number">10</span>
+             <span class="name">anchors</span>.horizontalCenter: <span class="name">parent</span>.<span class="name">horizontalCenter</span>
+             <span class="name">font</span>.pixelSize: <span class="number">20</span>
+             <span class="name">color</span>: <span class="string">&quot;#e0e0e0&quot;</span>
+             <span class="name">style</span>: <span class="name">Text</span>.<span class="name">Raised</span>
+             <span class="name">text</span>: <span class="name">qsTr</span>(<span class="string">&quot;Background Item&quot;</span>)
+         }
+         <span class="type"><a href="../qtquick/qml-qtquick-image.html">Image</a></span> {
+             <span class="name">anchors</span>.centerIn: <span class="name">parent</span>
+             <span class="name">source</span>: <span class="string">&quot;Built_with_Qt_RGB_logo_vertical&quot;</span>
+         }
+     }
+ }
+</pre>
+<p>Next <code>Node</code> and its items are positioned a bit closer to the camera. It contains three <code>Rectangle</code> items which animate both the x position and the rotation. Note that the animations are done on the parent <code>Node</code> while the content of the Quick <code>Item</code> remains static. From a performance perspective this is a good approach with more complex items.</p>
+<pre class="qml">
+ <span class="type"><a href="qml-qtquick3d-node.html">Node</a></span> {
+     <span class="name">position</span>: <span class="name">Qt</span>.<span class="name">vector3d</span>(<span class="number">0</span>, <span class="number">150</span>, <span class="number">100</span>)
+     SequentialAnimation on <span class="name">x</span> {
+         <span class="name">loops</span>: <span class="name">Animation</span>.<span class="name">Infinite</span>
+         <span class="type"><a href="../qtquick/qml-qtquick-numberanimation.html">NumberAnimation</a></span> {
+             <span class="name">to</span>: -<span class="number">200</span>
+             <span class="name">duration</span>: <span class="number">1500</span>
+             <span class="name">easing</span>.type: <span class="name">Easing</span>.<span class="name">InOutQuad</span>
+         }
+         <span class="type"><a href="../qtquick/qml-qtquick-numberanimation.html">NumberAnimation</a></span> {
+             <span class="name">to</span>: <span class="number">200</span>
+             <span class="name">duration</span>: <span class="number">1500</span>
+             <span class="name">easing</span>.type: <span class="name">Easing</span>.<span class="name">InOutQuad</span>
+         }
+     }
+     NumberAnimation on <span class="name">eulerRotation</span>.z {
+         <span class="name">loops</span>: <span class="name">Animation</span>.<span class="name">Infinite</span>
+         <span class="name">from</span>: <span class="number">0</span>
+         <span class="name">to</span>: <span class="number">360</span>
+         <span class="name">duration</span>: <span class="number">4000</span>
+         <span class="name">easing</span>.type: <span class="name">Easing</span>.<span class="name">InOutBack</span>
+     }
+     <span class="type"><a href="../qtquick/qml-qtquick-item.html">Item</a></span> {
+         <span class="name">width</span>: <span class="number">400</span>
+         <span class="name">height</span>: <span class="number">400</span>
+         <span class="comment">// This allows rendering into offscreen surface and caching it.</span>
+         <span class="name">layer</span>.enabled: <span class="number">true</span>
+         <span class="type"><a href="../qtquick/qml-qtquick-rectangle.html">Rectangle</a></span> {
+             <span class="name">x</span>: <span class="number">150</span>
+             <span class="name">y</span>: <span class="number">100</span>
+             <span class="name">width</span>: <span class="number">100</span>
+             <span class="name">height</span>: <span class="number">100</span>
+             <span class="name">radius</span>: <span class="number">50</span>
+             <span class="name">color</span>: <span class="string">&quot;#80808020&quot;</span>
+             <span class="name">border</span>.color: <span class="string">&quot;black&quot;</span>
+             <span class="name">border</span>.width: <span class="number">2</span>
+         }
+         <span class="type"><a href="../qtquick/qml-qtquick-rectangle.html">Rectangle</a></span> {
+             <span class="name">x</span>: <span class="number">90</span>
+             <span class="name">y</span>: <span class="number">200</span>
+             <span class="name">width</span>: <span class="number">100</span>
+             <span class="name">height</span>: <span class="number">100</span>
+             <span class="name">radius</span>: <span class="number">50</span>
+             <span class="name">color</span>: <span class="string">&quot;#80808020&quot;</span>
+             <span class="name">border</span>.color: <span class="string">&quot;black&quot;</span>
+             <span class="name">border</span>.width: <span class="number">2</span>
+         }
+         <span class="type"><a href="../qtquick/qml-qtquick-rectangle.html">Rectangle</a></span> {
+             <span class="name">x</span>: <span class="number">210</span>
+             <span class="name">y</span>: <span class="number">200</span>
+             <span class="name">width</span>: <span class="number">100</span>
+             <span class="name">height</span>: <span class="number">100</span>
+             <span class="name">radius</span>: <span class="number">50</span>
+             <span class="name">color</span>: <span class="string">&quot;#80808020&quot;</span>
+             <span class="name">border</span>.color: <span class="string">&quot;black&quot;</span>
+             <span class="name">border</span>.width: <span class="number">2</span>
+         }
+     }
+ }
+</pre>
+<p>The third item layer of this example contains a single <code>Text</code> item with an opacity animation. The Text item is automatically centered into the parent <code>Node</code>.</p>
+<pre class="qml">
+ <span class="type"><a href="qml-qtquick3d-node.html">Node</a></span> {
+     <span class="name">position</span>: <span class="name">Qt</span>.<span class="name">vector3d</span>(<span class="number">0</span>, <span class="number">80</span>, <span class="number">250</span>)
+     <span class="type"><a href="../qtquick/qml-qtquick-text.html">Text</a></span> {
+         <span class="name">width</span>: <span class="number">300</span>
+         <span class="name">wrapMode</span>: <span class="name">Text</span>.<span class="name">WordWrap</span>
+         <span class="name">horizontalAlignment</span>: <span class="name">Text</span>.<span class="name">AlignJustify</span>
+         <span class="name">font</span>.pixelSize: <span class="number">14</span>
+         <span class="name">color</span>: <span class="string">&quot;#e0e0e0&quot;</span>
+         <span class="name">style</span>: <span class="name">Text</span>.<span class="name">Raised</span>
+         <span class="name">text</span>: <span class="string">&quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod &quot;</span> <span class="operator">+</span>
+               <span class="string">&quot;tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim &quot;</span> <span class="operator">+</span>
+               <span class="string">&quot;veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea &quot;</span> <span class="operator">+</span>
+               <span class="string">&quot;commodo consequat.&quot;</span>
+         SequentialAnimation on <span class="name">opacity</span> {
+             <span class="name">loops</span>: <span class="name">Animation</span>.<span class="name">Infinite</span>
+             <span class="type"><a href="../qtquick/qml-qtquick-numberanimation.html">NumberAnimation</a></span> {
+                 <span class="name">to</span>: <span class="number">0</span>
+                 <span class="name">duration</span>: <span class="number">1500</span>
+                 <span class="name">easing</span>.type: <span class="name">Easing</span>.<span class="name">InOutQuad</span>
+             }
+             <span class="type"><a href="../qtquick/qml-qtquick-numberanimation.html">NumberAnimation</a></span> {
+                 <span class="name">to</span>: <span class="number">1</span>
+                 <span class="name">duration</span>: <span class="number">1500</span>
+                 <span class="name">easing</span>.type: <span class="name">Easing</span>.<span class="name">InOutQuad</span>
+             }
+         }
+     }
+ }
+</pre>
+<p>To visualize z-ordering of the above Quick Item layers, we will also setup a model for the 3D wrecking ball. It animates rotation around the top <code>Node</code>, which makes the sphere move through the other layers.</p>
+<pre class="qml">
+ <span class="type"><a href="qml-qtquick3d-node.html">Node</a></span> {
+     <span class="name">position</span>: <span class="name">Qt</span>.<span class="name">vector3d</span>(<span class="number">0</span>, <span class="number">800</span>, <span class="number">0</span>)
+     SequentialAnimation on <span class="name">eulerRotation</span>.x {
+         <span class="name">loops</span>: <span class="name">Animation</span>.<span class="name">Infinite</span>
+         <span class="type"><a href="../qtquick/qml-qtquick-numberanimation.html">NumberAnimation</a></span> {
+             <span class="name">to</span>: <span class="number">20</span>
+             <span class="name">duration</span>: <span class="number">3500</span>
+             <span class="name">easing</span>.type: <span class="name">Easing</span>.<span class="name">InOutQuad</span>
+         }
+         <span class="type"><a href="../qtquick/qml-qtquick-numberanimation.html">NumberAnimation</a></span> {
+             <span class="name">to</span>: -<span class="number">20</span>
+             <span class="name">duration</span>: <span class="number">3500</span>
+             <span class="name">easing</span>.type: <span class="name">Easing</span>.<span class="name">InOutQuad</span>
+         }
+     }
+     <span class="type"><a href="qml-qtquick3d-model.html">Model</a></span> {
+         <span class="name">source</span>: <span class="string">&quot;#Cylinder&quot;</span>
+         <span class="name">y</span>: -<span class="number">300</span>
+         <span class="name">scale</span>: <span class="name">Qt</span>.<span class="name">vector3d</span>(<span class="number">0.1</span>, <span class="number">6.1</span>, <span class="number">0.1</span>)
+         <span class="name">materials</span>: <span class="name">DefaultMaterial</span> {
+             <span class="name">diffuseColor</span>: <span class="name">Qt</span>.<span class="name">rgba</span>(<span class="number">0.9</span>, <span class="number">0.9</span>, <span class="number">0.9</span>, <span class="number">1.0</span>)
+         }
+     }
+     <span class="type"><a href="qml-qtquick3d-model.html">Model</a></span> {
+         <span class="name">source</span>: <span class="string">&quot;#Sphere&quot;</span>
+         <span class="name">y</span>: -<span class="number">700</span>
+         <span class="name">scale</span>: <span class="name">Qt</span>.<span class="name">vector3d</span>(<span class="number">2</span>, <span class="number">2</span>, <span class="number">2</span>)
+         <span class="name">materials</span>: <span class="name">DefaultMaterial</span> {
+             <span class="name">diffuseColor</span>: <span class="name">Qt</span>.<span class="name">rgba</span>(<span class="number">0.4</span>, <span class="number">0.4</span>, <span class="number">0.4</span>, <span class="number">1.0</span>)
+         }
+     }
+ }
+</pre>
+<p>Files:</p>
+<ul>
+<li><a href="qtquick3d-quickitems-main-cpp.html">quickitems/main.cpp</a></li>
+<li><a href="qtquick3d-quickitems-main-qml.html">quickitems/main.qml</a></li>
+<li><a href="qtquick3d-quickitems-qml-qrc.html">quickitems/qml.qrc</a></li>
+<li><a href="qtquick3d-quickitems-quickitems-pro.html">quickitems/quickitems.pro</a></li>
+</ul>
+<p>Images:</p>
+<ul>
+<li><a href="images/used-in-examples/quickitems/Built_with_Qt_RGB_logo_vertical.png">quickitems/Built_with_Qt_RGB_logo_vertical.png</a></li>
+</ul>
+</div>
+<!-- @@@quickitems -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

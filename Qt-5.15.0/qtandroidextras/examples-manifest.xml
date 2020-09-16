@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<instructionals module="QtAndroidExtras">
+    <examples>
+        <example name="Qt JNI Messenger" docUrl="qthelp://org.qt-project.qtandroidextras.5150/qtandroidextras/qtandroidextras-jnimessenger-example.html" projectPath="androidextras/jnimessenger/jnimessenger.pro" imageUrl="qthelp://org.qt-project.qtandroidextras.5150/qtandroidextras/images/jnimessenger.png">
+            <description><![CDATA[Demonstrates communication between Java code and QML or C++ using NJI calls.]]></description>
+            <tags>android,extras,jni,messenger</tags>
+            <fileToOpen>androidextras/jnimessenger/main.cpp</fileToOpen>
+            <fileToOpen>androidextras/jnimessenger/main.qml</fileToOpen>
+            <fileToOpen>androidextras/jnimessenger/jnimessenger.h</fileToOpen>
+            <fileToOpen mainFile="true">androidextras/jnimessenger/jnimessenger.cpp</fileToOpen>
+        </example>
+        <example name="Qt Notifier" docUrl="qthelp://org.qt-project.qtandroidextras.5150/qtandroidextras/qtandroidextras-notification-example.html" projectPath="androidextras/notification/notification.pro" imageUrl="qthelp://org.qt-project.qtandroidextras.5150/qtandroidextras/images/notification.png">
+            <description><![CDATA[Demonstrates calling Java code from an Android application.]]></description>
+            <tags>android,extras,notifier</tags>
+            <fileToOpen>androidextras/notification/main.cpp</fileToOpen>
+            <fileToOpen mainFile="true">androidextras/notification/qml/main.qml</fileToOpen>
+        </example>
+    </examples>
+</instructionals>

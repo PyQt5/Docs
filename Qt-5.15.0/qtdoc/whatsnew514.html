@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- whatsnew514.qdoc -->
+  <title>What's New in Qt 5.14 | Qt 5.15</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="index.html">Qt 5.15</a></li>
+<li>What's New in Qt 5.14</li>
+<li id="buildversion">Qt 5.15.0 Reference Documentation</li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#new-features-in-qt-5-14">New Features in Qt 5.14</a></li>
+<li class="level2"><a href="#qt-3d-module">Qt 3D Module</a></li>
+<li class="level2"><a href="#qt-bluetooth-module">Qt Bluetooth Module</a></li>
+<li class="level2"><a href="#qt-core-module">Qt Core Module</a></li>
+<li class="level2"><a href="#qt-gui-module">Qt GUI Module</a></li>
+<li class="level2"><a href="#qt-multimedia-module">Qt Multimedia Module</a></li>
+<li class="level2"><a href="#qt-network-module">Qt Network Module</a></li>
+<li class="level2"><a href="#qt-qml-module">Qt QML Module</a></li>
+<li class="level2"><a href="#qt-quick-module">Qt Quick Module</a></li>
+<li class="level2"><a href="#qt-serial-bus-module">Qt Serial Bus Module</a></li>
+<li class="level2"><a href="#qt-test-module">Qt Test Module</a></li>
+<li class="level2"><a href="#qt-webengine-module">Qt WebEngine Module</a></li>
+<li class="level2"><a href="#qt-widgets-module">Qt Widgets Module</a></li>
+<li class="level1"><a href="#platform-changes">Platform Changes</a></li>
+<li class="level1"><a href="#new-modules">New Modules</a></li>
+<li class="level1"><a href="#technology-preview-modules">Technology Preview Modules</a></li>
+<li class="level1"><a href="#qt-for-automation-modules">Qt for Automation Modules</a></li>
+<li class="level1"><a href="#deprecated-modules">Deprecated Modules</a></li>
+<li class="level1"><a href="#list-of-api-changes">List of API Changes</a></li>
+<li class="level1"><a href="#additions-to-other-qt-5-releases">Additions to Other Qt 5 Releases</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">What's New in Qt 5.14</h1>
+<span class="subtitle"></span>
+<!-- $$$whatsnew514.html-description -->
+<div class="descr"> <a name="details"></a>
+<a name="new-features-in-qt-5-14"></a>
+<h2 id="new-features-in-qt-5-14">New Features in Qt 5.14</h2>
+<a name="qt-3d-module"></a>
+<h3 id="qt-3d-module">Qt 3D Module</h3>
+<ul>
+<li>Overhauled the threading architecture. This includes the removal of the aspect thread.</li>
+<li>Overhauled the frontend/backend node sync.</li>
+<li>Enabled <a href="qtransform-qmlmodule.html">QTransform</a> to have access to the world matrix.</li>
+<li>Introduced <a href="../qt3d/qml-qtquick-scene3d-scene3dview.html">Scene3DView</a>.</li>
+<li><a href="../qt3d/qml-qtquick-scene3d-scene3d.html">Scene3D</a> is now in sync with <a href="../qtquick/qtquick-module.html">QtQuick</a>, and can render as an underlay without an FBO.</li>
+</ul>
+<a name="qt-bluetooth-module"></a>
+<h3 id="qt-bluetooth-module">Qt Bluetooth Module</h3>
+<ul>
+<li>Introduced a new, optional Win32 backend with support for Windows 7 and 8. This backend is not built by default, nor is it part of the pre-built packages.</li>
+<li><a href="../qtbluetooth/qlowenergycontroller.html">QLowEnergyController</a>: Introduced <a href="../qtbluetooth/qlowenergycontroller.html#Error-enum">AuthorizationError</a>.</li>
+<li>Added the ability to include multiple manufacturer data entries per manufacturer ID.</li>
+</ul>
+<a name="qt-core-module"></a>
+<h3 id="qt-core-module">Qt Core Module</h3>
+<ul>
+<li>Added support in <a href="../qtcore/qcalendar.html">QCalendar</a> for calendars other than Gregorian, by implementation of suitable backends.</li>
+<li>Added backends to implement the Gregorian, Jalali (Persian), Islamic Civil, Milankovic, and Julian calendars. We look forward to other contributions.</li>
+<li>Added <a href="../qtgui/qcolorconstants.html">QColorConstants</a>, a namespace providing constexpr <a href="../qtgui/qcolor.html">QColor</a> instances that don't cost any runtime overhead.</li>
+</ul>
+<a name="qt-gui-module"></a>
+<h3 id="qt-gui-module">Qt GUI Module</h3>
+<ul>
+<li>Updated High-DPI support:<ul>
+<li>Introduced non-integer scale factors (for example, a scale factor of 150%) that applications can opt-in to use. Use <a href="../qtgui/qguiapplication.html#highDpiScaleFactorRoundingPolicy">QGuiApplication::highDpiScaleFactorRoundingPolicy</a> or QT_SCALE_FACTOR_ROUNDING_POLICY to set the rounding policy.</li>
+<li>Added the QT_ENABLE_HIGHDPI_SCALING environment variable, enabling high-DPI scaling based on display DPI. This replaces QT_AUTO_SCREEN_SCALE_FACTOR (now deprecated), and corresponds to the <a href="../qtcore/qt.html#ApplicationAttribute-enum">Qt::AA_EnableHighDpiScaling</a> application attribute.</li>
+<li>Added cross-platform support for the QT_FONT_DPI environment variable, for the purpose of developing and testing with specific DPI values.</li>
+</ul>
+</li>
+<li>Added color-space support for images; reading and writing color-spaces from JPEG, PNG, WebP and TIFF images, and performing color-space transformation on images.</li>
+<li>Improvements to <a href="../qtgui/qtextdocument.html">QTextDocument</a> and <a href="../qtgui/qtexttable.html">QTextTable</a> styling:<ul>
+<li>Added per-edge border styling via <a href="../qtgui/qtexttablecellformat.html">QTextTableCellFormat</a>.</li>
+<li>Added border-collapse mode.</li>
+<li>Added support for (partial) HTML table style import and export.</li>
+</ul>
+</li>
+<li>Added support for reading and writing Markdown format to <a href="../qtgui/qtextdocument.html">QTextDocument</a>, as an alternative to HTML.</li>
+</ul>
+<a name="qt-multimedia-module"></a>
+<h3 id="qt-multimedia-module">Qt Multimedia Module</h3>
+<ul>
+<li>Added <a href="../qtmultimedia/qvideoframe.html#PixelFormat-enum">QVideoFrame::Format_YUV422P</a>.</li>
+<li>Introduced support for the GStreamer OpenGL plugin.</li>
+</ul>
+<a name="qt-network-module"></a>
+<h3 id="qt-network-module">Qt Network Module</h3>
+<ul>
+<li>Introduced the HTTP/2 Configuration API.</li>
+<li>Introduced network connectivity monitoring.</li>
+<li>Added support for SPNEGO/Negotiate proxy authentication to <a href="../qtnetwork/qauthenticator.html">QAuthenticator</a>. This requires KRB5 GSSAPI to work.</li>
+</ul>
+<a name="qt-qml-module"></a>
+<h3 id="qt-qml-module">Qt QML Module</h3>
+<ul>
+<li>Added <a href="../qtqml/qqmlengine.html#qmlRegisterSingletonInstance">qmlRegisterSingletonInstance</a>() function. This allows to expose a <a href="../qtcore/qobject.html">QObject</a> as a singleton to QML, without having to create a factory function as required by <a href="../qtqml/qqmlengine.html#qmlRegisterSingletonType">qmlRegisterSingletonType</a>(). It is meant as a type safe replacement of setContextProperty() in common usages.</li>
+<li>Added <a href="../qtqml/qqmlengine.html#qmlRegisterAnonymousType">qmlRegisterAnonymousType</a>() as a replacement for qmlRegisterType(). It allows to specify the URI and major version, which enables better tooling support.</li>
+<li>Added an experimental -U option to <code>qmllint</code>. When set, access to unqualified identifiers generates warnings.</li>
+</ul>
+<a name="qt-quick-module"></a>
+<h3 id="qt-quick-module">Qt Quick Module</h3>
+<ul>
+<li>Added a preview of the graphics API independent scenegraph renderer as an opt-in feature. This allows running qualifying Qt Quick applications on top of Vulkan, Metal, or Direct3D 11, instead of OpenGL. Currently supported platforms:<ul>
+<li>Windows 10 (Direct3D)</li>
+<li>Linux with X11/xcb (Vulkan)</li>
+<li>macOS (Metal or Vulkan with MoltenVK)</li>
+<li>Android 7.0+ (Vulkan)</li>
+</ul>
+</li>
+<li>Added support for the Markdown format (including CommonMark and GitHub dialects) to <a href="../qtquick/qml-qtquick-text.html">Text</a> and <a href="../qtquick/qml-qtquick-textedit.html">TextEdit</a> as an alternative to HTML. This includes the GitHub checklist extension, allowing to toggle checkboxes in a <a href="../qtquick/qml-qtquick-textedit.html">TextEdit</a>.</li>
+<li>Switched <a href="../qtquick/qml-qtquick-textedit.html">TextEdit</a> to use an <i>I-beam cursor</i> by default, and a <i>pointing-hand cursor</i> when hovering over a checkbox or a link. Default cursors can be overridden.</li>
+<li>Added <a href="../qtquick/qml-qtquick-wheelhandler.html">WheelHandler</a>, an event handler for the mouse wheel, and optionally for emulated mouse wheel events coming from a trackpad.</li>
+<li>Added <a href="../qtquick/qml-qt-labs-animation-boundaryrule.html">BoundaryRule</a> in Qt.labs.animation: a PropertyValueInterceptor that restricts the range of values a numeric property can have, applies &quot;resistance&quot; when overshooting a value, and provides the ability to animate it back to its normal range. It's particularly useful in combination with <a href="../qtquick/qml-qtquick-wheelhandler.html">WheelHandler</a>, providing physics similar to <a href="../qtquick/qml-qtquick-flickable.html">Flickable</a>.</li>
+<li>Added <i>currentFrame</i> and <i>frameCount</i> properties to <a href="../qtquick/qml-qtquick-image.html">Image</a> and <a href="../qtquick/qml-qtquick-borderimage.html">BorderImage</a>, just as <a href="../qtquick/qml-qtquick-animatedimage.html">AnimatedImage</a> has; for example, this allows choosing an individual icon from an .ICO file that contains multiple icons.</li>
+<li>Added <a href="../qtquick/qml-qtquick-pathpolyline.html">PathPolyline</a> and <a href="../qtquick/qml-qtquick-pathmultiline.html">PathMultiline</a> as additional ways of drawing and/or filling arbitrary polygons and sets of polygons with Qt Quick Shapes.</li>
+</ul>
+<a name="qt-serial-bus-module"></a>
+<h3 id="qt-serial-bus-module">Qt Serial Bus Module</h3>
+<ul>
+<li>Added operators to compare <a href="../qtserialbus/qcanbusdevice-filter.html">QCanBusDevice::Filter</a> for equality or inequality.</li>
+<li>Added the <a href="../qtserialbus/qcanbusdevice.html#CanBusError-enum">QCanBusDevice::OperationError</a> and <a href="../qtserialbus/qcanbusdevice.html#CanBusError-enum">QCanBusDevice::TimeoutError</a> codes to signal operation and timeout errors.</li>
+<li>Added the <a href="../qtserialbus/qcanbusdevice.html#busStatus">QCanBusDevice::busStatus</a>() function to query the bus status from the CAN bus device.</li>
+<li>Added the <a href="../qtserialbus/qcanbusdevice.html#resetController">QCanBusDevice::resetController</a>() function to release the CAN controller from bus off state.</li>
+<li>SocketCAN: Added the configuration parameter <a href="../qtserialbus/qcanbusdevice.html#ConfigurationKey-enum">QCanBusDevice::ProtocolKey</a> to use another protocol inside the protocol family PF_CAN.</li>
+<li>SocketCAN: If <code>libsocketcan</code> is available, the CAN bus bitrate can be retrieved and set at runtime.</li>
+<li>PeakCAN: Added support for PCAN-USB devices on macOS by using the <i>MacCAN</i> library.</li>
+<li>Exposed the underlying <a href="../qtcore/qiodevice.html">QIODevice</a> used for Modbus communication. This enables, for example, setting the serial port hardware flow control (RTS/CTS).</li>
+</ul>
+<a name="qt-test-module"></a>
+<h3 id="qt-test-module">Qt Test Module</h3>
+<ul>
+<li>Introduced <code>initMain()</code> function to perform any initialization that must happen before <a href="../qtwidgets/qapplication.html">QApplication</a> exists.</li>
+</ul>
+<a name="qt-webengine-module"></a>
+<h3 id="qt-webengine-module">Qt WebEngine Module</h3>
+<ul>
+<li>Updated to Chromium 77.</li>
+<li>Added a new API to control the life-cycle of <a href="../qtwebengine/qwebenginepage.html">QWebEnginePage</a>.</li>
+</ul>
+<a name="qt-widgets-module"></a>
+<h3 id="qt-widgets-module">Qt Widgets Module</h3>
+<ul>
+<li>Added support for the Markdown format (including CommonMark and GitHub dialects) to <a href="../qtwidgets/qtextedit.html">QTextEdit</a> and <a href="../qtwidgets/qtextbrowser.html">QTextBrowser</a> as an alternative to HTML. This includes the GitHub checklist extension, allowing to toggle checkboxes if the widget is editable. <a href="../qtwidgets/qtextbrowser.html#source-prop">QTextBrowser::setSource</a>() detects Markdown based on the file extension.</li>
+</ul>
+<a name="platform-changes"></a>
+<h2 id="platform-changes">Platform Changes</h2>
+<p><b>Android</b></p>
+<ul>
+<li>Android now requires NDKr20+.</li>
+<li>Added multi-ABI build in one go. By default, all Android supported ABIs (arm64-v8a, armeabi-v7a, x86_64, x86) are built. <a href="../qmake/qmake-variable-reference.html#android-abis">ANDROID_ABIS</a> qmake variable can be used for selecting specific ABIs.</li>
+<li>Added support for the new AAB package format, which allows Google Play deployment of a single application bundle containing binaries for all supported ABIs.</li>
+</ul>
+<a name="new-modules"></a>
+<h2 id="new-modules">New Modules</h2>
+<ul>
+<li><a href="../qtquicktimeline/qtquicktimeline-index.html">Qt Quick Timeline</a> - Enables keyframe-based animations and parameterization.</li>
+</ul>
+<a name="technology-preview-modules"></a>
+<h2 id="technology-preview-modules">Technology Preview Modules</h2>
+<ul>
+<li><a href="../qtquick3d/qtquick3d-index.html">Qt Quick 3D</a> - A high-level API for creating 3D content for user interfaces from Qt Quick.</li>
+</ul>
+<a name="qt-for-automation-modules"></a>
+<h2 id="qt-for-automation-modules">Qt for Automation Modules</h2>
+<p><b>Qt KNX</b></p>
+<ul>
+<li>Extended support for KNXnet/IP Core V2 (discovery, tunneling, routing, and security).</li>
+</ul>
+<p><b>Qt MQTT</b></p>
+<ul>
+<li>Added support for using <a href="../qtnetwork/qsslconfiguration.html">QSslConfiguration</a> when creating encrypted connections.</li>
+<li>Added <i>autoKeepAlive</i> property to enable manual connectivity checks.</li>
+</ul>
+<p><b>Qt OPC UA</b></p>
+<ul>
+<li>Added GDS client support as a technology preview.</li>
+<li>Updated the 3rd-party open62541 implementation to version 1.0&#x2e;</li>
+</ul>
+<p><b>Qt CoAP</b></p>
+<ul>
+<li>This module is now out of technology preview status.</li>
+</ul>
+<a name="deprecated-modules"></a>
+<h2 id="deprecated-modules">Deprecated Modules</h2>
+<p>The following modules are part of Qt 5.14 release, but are deprecated and considered for removal in subsequent releases of Qt:</p>
+<ul>
+<li>Qt Script</li>
+<li>Qt Quick Controls 1</li>
+<li>Qt XmlPatterns</li>
+</ul>
+<a name="list-of-api-changes"></a>
+<h2 id="list-of-api-changes">List of API Changes</h2>
+<p>The pages below contain a list of API changes in Qt 5.14:</p>
+<ul>
+<li><a href="newclasses514.html">New Classes and Functions in Qt 5.14</a></li>
+<li><a href="obsoleteclasses.html">Obsolete Classes</a></li>
+</ul>
+<a name="additions-to-other-qt-5-releases"></a>
+<h2 id="additions-to-other-qt-5-releases">Additions to Other Qt 5 Releases</h2>
+<ul>
+<li><a href="whatsnew513.html">What's New in Qt 5.13</a></li>
+<li><a href="whatsnew512.html">What's New in Qt 5.12</a></li>
+<li><a href="whatsnew511.html">What's New in Qt 5.11</a></li>
+<li><a href="whatsnew510.html">What's New in Qt 5.10</a></li>
+<li><a href="whatsnew59.html">What's New in Qt 5.9</a></li>
+<li><a href="whatsnew58.html">What's New in Qt 5.8</a></li>
+<li><a href="whatsnew57.html">What's New in Qt 5.7</a></li>
+<li><a href="whatsnew56.html">What's New in Qt 5.6</a></li>
+<li><a href="whatsnew55.html">What's New in Qt 5.5</a></li>
+<li><a href="whatsnew54.html">What's New in Qt 5.4</a></li>
+<li><a href="whatsnew53.html">What's New in Qt 5.3</a></li>
+<li><a href="whatsnew52.html">What's New in Qt 5.2</a></li>
+<li><a href="whatsnew51.html">What's New in Qt 5.1</a></li>
+<li><a href="whatsnew50.html">What's New in Qt 5.0</a></li>
+</ul>
+</div>
+<!-- @@@whatsnew514.html -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

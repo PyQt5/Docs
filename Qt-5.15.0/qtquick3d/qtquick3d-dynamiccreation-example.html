@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qtquick3d-examples-dynamiccreation.qdoc -->
+  <title>Qt Quick 3D - Dynamic Model Creation Example | Qt Quick 3D 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtquick3d-index.html">Qt Quick 3D</a></li>
+<li>Qt Quick 3D - Dynamic Model Creation Example</li>
+<li id="buildversion"><a href="qtquick3d-index.html">Qt Quick 3D | Commercial or GPLv3</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#setting-up">Setting Up</a></li>
+<li class="level2"><a href="#spawner-node">Spawner Node</a></li>
+<li class="level2"><a href="#startup">Startup</a></li>
+<li class="level1"><a href="#dynamic-models">Dynamic Models</a></li>
+<li class="level2"><a href="#adding-models">Adding Models</a></li>
+<li class="level2"><a href="#removing-models">Removing Models</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Qt Quick 3D - Dynamic Model Creation Example</h1>
+<span class="subtitle"></span>
+<!-- $$$dynamiccreation-brief -->
+<p>Demonstrates dynamic model creation.</p>
+<!-- @@@dynamiccreation -->
+<!-- $$$dynamiccreation-description -->
+<div class="descr"> <a name="details"></a>
+<p>This example demonstrates creating models dynamically in an application. 10 models are created dynamically at the start of the application, and more can be added or removed using the <code>Add Model</code> and <code>Remove Model</code> buttons. Dynamic model count is limited to 100 in this example, but that is in no way a limitation of <a href="qtquick3d-qmlmodule.html">QtQuick3D</a>.</p>
+<p class="centerAlign"><img src="images/dynamiccreation-example.png" alt="" /></p><a name="setting-up"></a>
+<h4 id="setting-up">Setting Up</h4>
+<a name="spawner-node"></a>
+<h5 id="spawner-node">Spawner Node</h5>
+<p>We are going to need a <a href="qml-qtquick3d-node.html">Node</a> to hold the dynamically created models.</p>
+<pre class="qml">
+ <span class="type"><a href="qml-qtquick3d-node.html">Node</a></span> {
+     <span class="name">id</span>: <span class="name">shapeSpawner</span>
+     property <span class="type"><a href="../qtqml/qml-real.html">real</a></span> <span class="name">range</span>: <span class="number">300</span>
+     property <span class="type"><a href="../qtqml/qml-var.html">var</a></span> <span class="name">instances</span>: []
+     readonly property <span class="type"><a href="../qtqml/qml-int.html">int</a></span> <span class="name">maxInstances</span>: <span class="number">100</span>
+
+     <span class="keyword">function </span><span class="name">addOrRemove</span>(add) {
+     ...
+</pre>
+<a name="startup"></a>
+<h5 id="startup">Startup</h5>
+<p>We're creating 10 models at <code>Component.onCompleted</code> to avoid opening into an empty view.</p>
+<pre class="qml">
+ <span class="name">Component</span>.onCompleted: {
+     <span class="comment">// Create 10 instances to get started</span>
+     <span class="keyword">for</span> (var i = 0; <span class="name">i</span> <span class="operator">&lt;</span> <span class="number">10</span>; ++<span class="name">i</span>)
+         <span class="name">shapeSpawner</span>.<span class="name">addOrRemove</span>(<span class="number">true</span>);
+ }
+</pre>
+<a name="dynamic-models"></a>
+<h4 id="dynamic-models">Dynamic Models</h4>
+<p>The <code>addOrRemove()</code> function called during startup can add or remove the models.</p>
+<a name="adding-models"></a>
+<h5 id="adding-models">Adding Models</h5>
+<p>A model component is created using the <code>Qt.createComponent</code> function, and instantiated with <code>position</code> and <code>scale</code> parameters using the <code>createObject</code> function.</p>
+<pre class="qml">
+ <span class="comment">// Create a new weirdShape at random postion</span>
+ var xPos = (<span class="number">2</span> <span class="operator">*</span> <span class="name">Math</span>.<span class="name">random</span>() <span class="operator">*</span> <span class="name">range</span>) <span class="operator">-</span> <span class="name">range</span>;
+ var yPos = (<span class="number">2</span> <span class="operator">*</span> <span class="name">Math</span>.<span class="name">random</span>() <span class="operator">*</span> <span class="name">range</span>) <span class="operator">-</span> <span class="name">range</span>;
+ var zPos = (<span class="number">2</span> <span class="operator">*</span> <span class="name">Math</span>.<span class="name">random</span>() <span class="operator">*</span> <span class="name">range</span>) <span class="operator">-</span> <span class="name">range</span>;
+ var weirdShapeComponent = <span class="name">Qt</span>.<span class="name">createComponent</span>(<span class="string">&quot;WeirdShape.qml&quot;</span>);
+ let instance = <span class="name">weirdShapeComponent</span>.<span class="name">createObject</span>(
+         <span class="name">shapeSpawner</span>, { &quot;x&quot;: <span class="name">xPos</span>, &quot;y&quot;: <span class="name">yPos</span>, &quot;z&quot;: <span class="name">zPos</span>,
+             &quot;scale&quot;: <span class="name">Qt</span>.<span class="name">vector3d</span>(<span class="number">0.25</span>, <span class="number">0.25</span>, <span class="number">0.25</span>)});
+ <span class="name">instances</span>.<span class="name">push</span>(<span class="name">instance</span>);
+</pre>
+<a name="removing-models"></a>
+<h5 id="removing-models">Removing Models</h5>
+<p>Dynamically created models are removed simply by popping and destroying them from the instance stack.</p>
+<pre class="qml">
+ <span class="comment">// Remove last item in instances list</span>
+ let instance = <span class="name">instances</span>.<span class="name">pop</span>();
+ <span class="name">instance</span>.<span class="name">destroy</span>();
+</pre>
+<p>Files:</p>
+<ul>
+<li><a href="qtquick3d-dynamiccreation-weirdshape-qml.html">dynamiccreation/WeirdShape.qml</a></li>
+<li><a href="qtquick3d-dynamiccreation-dynamiccreation-pro.html">dynamiccreation/dynamiccreation.pro</a></li>
+<li><a href="qtquick3d-dynamiccreation-main-cpp.html">dynamiccreation/main.cpp</a></li>
+<li><a href="qtquick3d-dynamiccreation-main-qml.html">dynamiccreation/main.qml</a></li>
+<li><a href="qtquick3d-dynamiccreation-qml-qrc.html">dynamiccreation/qml.qrc</a></li>
+</ul>
+</div>
+<!-- @@@dynamiccreation -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

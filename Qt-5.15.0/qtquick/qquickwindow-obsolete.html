@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qquickwindow.cpp -->
+  <title>Obsolete Members for QQuickWindow | Qt Quick 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtquick-index.html">Qt Quick</a></li>
+<li><a href="qtquick-module.html">C++ Classes</a></li>
+<li>QQuickWindow</li>
+<li id="buildversion"><a href="qtquick-index.html">Qt 5.15.0 Reference Documentation</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar"><div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Obsolete Members for QQuickWindow</h1>
+<p><b>The following members of class <a href="qquickwindow.html">QQuickWindow</a> are obsolete.</b> They are provided to keep old source code working. We strongly advise against using them in new code.</p>
+<h2>Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>QSGTexture *</td><td class="memItemRight bottomAlign"><b><a href="qquickwindow-obsolete.html#createTextureFromId">createTextureFromId</a></b>(uint <i>id</i>, const QSize &amp;<i>size</i>, QQuickWindow::CreateTextureOptions <i>options</i> = CreateTextureOption()) const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>bool </td><td class="memItemRight bottomAlign"><b><a href="qquickwindow-obsolete.html#sendEvent">sendEvent</a></b>(QQuickItem *<i>item</i>, QEvent *<i>e</i>)</td></tr>
+</table></div>
+<h2>Member Function Documentation</h2>
+<!-- $$$createTextureFromId[overload1]$$$createTextureFromIduintconstQSize&QQuickWindow::CreateTextureOptions -->
+<h3 class="fn" id="createTextureFromId"><a name="createTextureFromId"></a><span class="type"><a href="qsgtexture.html">QSGTexture</a></span> *QQuickWindow::<span class="name">createTextureFromId</span>(<span class="type"><a href="../qtcore/qtglobal.html#uint-typedef">uint</a></span> <i>id</i>, const <span class="type"><a href="../qtcore/qsize.html">QSize</a></span> &amp;<i>size</i>, <span class="type"><a href="qquickwindow.html#CreateTextureOption-enum">QQuickWindow::CreateTextureOptions</a></span> <i>options</i> = CreateTextureOption()) const</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>Creates a new <a href="qsgtexture.html">QSGTexture</a> object from an existing OpenGL texture <i>id</i> and <i>size</i>.</p>
+<p>The caller of the function is responsible for deleting the returned texture.</p>
+<p>The returned texture will be using <code>GL_TEXTURE_2D</code> as texture target and assumes that internal format is <code>GL_RGBA</code>. Reimplement <a href="qsgtexture.html">QSGTexture</a> to create textures with different parameters.</p>
+<p>Use <i>options</i> to customize the texture attributes. The TextureUsesAtlas option is ignored.</p>
+<p><b>Warning:</b> This function will return null if the scenegraph has not yet been initialized or OpenGL is not in use.</p>
+<p><b>Note: </b>This function only has an effect when using the default OpenGL scene graph adaptation.</p>
+<p><b>Note: </b>This function has no effect when running on the RHI graphics abstraction. Use <a href="qquickwindow.html#createTextureFromNativeObject">createTextureFromNativeObject</a>() instead.</p>
+<p><b>See also </b><a href="qquickwindow.html#sceneGraphInitialized">sceneGraphInitialized</a>() and <a href="qsgtexture.html">QSGTexture</a>.</p>
+<!-- @@@createTextureFromId -->
+<!-- $$$sendEvent[overload1]$$$sendEventQQuickItem*QEvent* -->
+<h3 class="fn" id="sendEvent"><a name="sendEvent"></a><span class="type">bool</span> QQuickWindow::<span class="name">sendEvent</span>(<span class="type"><a href="qquickitem.html">QQuickItem</a></span> *<i>item</i>, <span class="type"><a href="../qtcore/qevent.html">QEvent</a></span> *<i>e</i>)</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>Propagates an event <i>e</i> to a <a href="qquickitem.html">QQuickItem</a> <i>item</i> on the window.</p>
+<p>Use <a href="../qtcore/qcoreapplication.html#sendEvent">QCoreApplication::sendEvent</a>() directly instead.</p>
+<p>The return value is currently not used.</p>
+<!-- @@@sendEvent -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

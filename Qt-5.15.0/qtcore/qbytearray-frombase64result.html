@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qbytearray.cpp -->
+  <title>FromBase64Result Class | Qt Core 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtcore-index.html">Qt Core</a></li>
+<li><a href="qtcore-module.html">C++ Classes</a></li>
+<li>FromBase64Result</li>
+<li id="buildversion"><a href="qtcore-index.html">Qt 5.15.0 Reference Documentation</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#public-variables">Public Variables</a></li>
+<li class="level1"><a href="#related-non-members">Related Non-Members</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">FromBase64Result Class</h1>
+<span class="small-subtitle">class <a href="qbytearray.html">QByteArray</a>::FromBase64Result</span>
+<!-- $$$FromBase64Result-brief -->
+<p>The <a href="qbytearray-frombase64result.html">QByteArray::FromBase64Result</a> class holds the result of a call to <a href="qbytearray.html#fromBase64Encoding">QByteArray::fromBase64Encoding</a>. <a href="#details">More...</a></p>
+<!-- @@@FromBase64Result -->
+<p>This class was introduced in Qt 5.15.</p>
+<ul>
+<li><a href="qbytearray-frombase64result-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qbytearray-frombase64result.html#operator-bool">operator bool</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> const QByteArray &amp;</td><td class="memItemRight bottomAlign"><b><a href="qbytearray-frombase64result.html#operator-2a-1">operator*</a></b>() const</td></tr>
+</table></div>
+<a name="public-variables"></a>
+<h2 id="public-variables">Public Variables</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> QByteArray </td><td class="memItemRight bottomAlign"><b><a href="qbytearray-frombase64result.html#decoded-var">decoded</a></b></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QByteArray::Base64DecodingStatus </td><td class="memItemRight bottomAlign"><b><a href="qbytearray-frombase64result.html#decodingStatus-var">decodingStatus</a></b></td></tr>
+</table></div>
+<a name="related-non-members"></a>
+<h2 id="related-non-members">Related Non-Members</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> uint </td><td class="memItemRight bottomAlign"><b><a href="qbytearray-frombase64result.html#qHash">qHash</a></b>(const QByteArray::FromBase64Result &amp;<i>key</i>, uint <i>seed</i> = 0)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qbytearray-frombase64result.html#operator-not-eq">operator!=</a></b>(const QByteArray::FromBase64Result &amp;<i>lhs</i>, const QByteArray::FromBase64Result &amp;<i>rhs</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qbytearray-frombase64result.html#operator-eq-eq">operator==</a></b>(const QByteArray::FromBase64Result &amp;<i>lhs</i>, const QByteArray::FromBase64Result &amp;<i>rhs</i>)</td></tr>
+</table></div>
+<a name="details"></a>
+<!-- $$$FromBase64Result-description -->
+<div class="descr">
+<h2 id="details">Detailed Description</h2>
+<p>Objects of this class can be used to check whether the conversion was successful, and if so, retrieve the decoded <a href="qbytearray.html">QByteArray</a>. The conversion operators defined for <a href="qbytearray-frombase64result.html">QByteArray::FromBase64Result</a> make its usage straightforward:</p>
+<pre class="cpp">
+ <span class="type">void</span> process(<span class="keyword">const</span> <span class="type"><a href="qbytearray.html#QByteArray">QByteArray</a></span> <span class="operator">&amp;</span>);
+
+ <span class="keyword">if</span> (<span class="keyword">auto</span> result <span class="operator">=</span> <span class="type"><a href="qbytearray.html#QByteArray">QByteArray</a></span><span class="operator">::</span>fromBase64Encoding(encodedData))
+     process(<span class="operator">*</span>result);
+</pre>
+<p>Alternatively, it is possible to access the conversion status and the decoded data directly:</p>
+<pre class="cpp">
+ <span class="keyword">auto</span> result <span class="operator">=</span> <span class="type"><a href="qbytearray.html#QByteArray">QByteArray</a></span><span class="operator">::</span>fromBase64Encoding(encodedData);
+ <span class="keyword">if</span> (result<span class="operator">.</span>decodingStatus <span class="operator">=</span><span class="operator">=</span> <span class="type"><a href="qbytearray.html#QByteArray">QByteArray</a></span><span class="operator">::</span>Base64DecodingStatus<span class="operator">::</span>Ok)
+     process(result<span class="operator">.</span>decoded);
+</pre>
+</div>
+<p><b>See also </b><a href="qbytearray.html#fromBase64">QByteArray::fromBase64</a>.</p>
+<!-- @@@FromBase64Result -->
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$operator bool[overload1]$$$operator bool -->
+<h3 class="fn" id="operator-bool"><a name="operator-bool"></a><span class="type">bool</span> FromBase64Result::<span class="name">operator bool</span>() const</h3>
+<p>Returns whether the decoding was successful. This is equivalent to checking whether the <code>decodingStatus</code> member is equal to QByteArray::Base64DecodingStatus::Ok.</p>
+<!-- @@@operator bool -->
+<!-- $$$operator*$$$operator* -->
+<h3 class="fn" id="operator-2a-1"><a name="operator-2a-1"></a>const <span class="type"><a href="qbytearray.html#QByteArray">QByteArray</a></span> &amp;FromBase64Result::<span class="name">operator*</span>() const</h3>
+<p>Returns the decoded byte array.</p>
+<!-- @@@operator* -->
+</div>
+<div class="vars">
+<h2>Member Variable Documentation</h2>
+<!-- $$$decoded -->
+<h3 class="fn" id="decoded-var"><a name="decoded-var"></a><span class="type"><a href="qbytearray.html#QByteArray">QByteArray</a></span> FromBase64Result::<span class="name">decoded</span></h3>
+<p>Contains the decoded byte array.</p>
+<!-- @@@decoded -->
+<!-- $$$decodingStatus -->
+<h3 class="fn" id="decodingStatus-var"><a name="decodingStatus-var"></a><span class="type">QByteArray::Base64DecodingStatus</span> FromBase64Result::<span class="name">decodingStatus</span></h3>
+<p>Contains whether the decoding was successful, expressed as a value of type QByteArray::Base64DecodingStatus.</p>
+<!-- @@@decodingStatus -->
+</div>
+<div class="relnonmem">
+<h2>Related Non-Members</h2>
+<!-- $$$qHash[overload1]$$$qHashconstQByteArray::FromBase64Result&uint -->
+<h3 class="fn" id="qHash"><a name="qHash"></a><span class="type"><a href="qtglobal.html#uint-typedef">uint</a></span> <span class="name">qHash</span>(const <span class="type"><a href="qbytearray-frombase64result.html">QByteArray::FromBase64Result</a></span> &amp;<i>key</i>, <span class="type"><a href="qtglobal.html#uint-typedef">uint</a></span> <i>seed</i> = 0)</h3>
+<p>Returns the hash value for <i>key</i>, using <i>seed</i> to seed the calculation.</p>
+<!-- @@@qHash -->
+<!-- $$$operator!=[overload1]$$$operator!=constQByteArray::FromBase64Result&constQByteArray::FromBase64Result& -->
+<h3 class="fn" id="operator-not-eq"><a name="operator-not-eq"></a><span class="type">bool</span> <span class="name">operator!=</span>(const <span class="type"><a href="qbytearray-frombase64result.html">QByteArray::FromBase64Result</a></span> &amp;<i>lhs</i>, const <span class="type"><a href="qbytearray-frombase64result.html">QByteArray::FromBase64Result</a></span> &amp;<i>rhs</i>)</h3>
+<p>Returns <code>true</code> if <i>lhs</i> and <i>rhs</i> are different, otherwise returns <code>false</code>.</p>
+<!-- @@@operator!= -->
+<!-- $$$operator==[overload1]$$$operator==constQByteArray::FromBase64Result&constQByteArray::FromBase64Result& -->
+<h3 class="fn" id="operator-eq-eq"><a name="operator-eq-eq"></a><span class="type">bool</span> <span class="name">operator==</span>(const <span class="type"><a href="qbytearray-frombase64result.html">QByteArray::FromBase64Result</a></span> &amp;<i>lhs</i>, const <span class="type"><a href="qbytearray-frombase64result.html">QByteArray::FromBase64Result</a></span> &amp;<i>rhs</i>)</h3>
+<p>Returns <code>true</code> if <i>lhs</i> and <i>rhs</i> are equal, otherwise returns <code>false</code>.</p>
+<p><i>lhs</i> and <i>rhs</i> are equal if and only if they contain the same decoding status and, if the status is QByteArray::Base64DecodingStatus::Ok, if and only if they contain the same decoded data.</p>
+<!-- @@@operator== -->
+</div>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

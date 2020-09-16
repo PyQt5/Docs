@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- d3d11underqml.qdoc -->
+  <title>Scene Graph - Direct3D 11 Under QML | Qt Quick 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtquick-index.html">Qt Quick</a></li>
+<li>Scene Graph - Direct3D 11 Under QML</li>
+<li id="buildversion"><a href="qtquick-index.html">Qt 5.15.0 Reference Documentation</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar"><div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Scene Graph - Direct3D 11 Under QML</h1>
+<span class="subtitle"></span>
+<!-- $$$scenegraph/d3d11underqml-brief -->
+<p>Shows how to render directly with Direct3D 11 under a Qt Quick scene.</p>
+<!-- @@@scenegraph/d3d11underqml -->
+<!-- $$$scenegraph/d3d11underqml-description -->
+<div class="descr"> <a name="details"></a>
+<p class="centerAlign"><img src="images/d3d11underqml-example.jpg" alt="" /></p><p>The Direct3D 11 Under QML example shows how an application can make use of the <a href="qquickwindow.html#beforeRendering">QQuickWindow::beforeRendering</a>() signal to draw custom D3D11 content under a Qt Quick scene. This signal is emitted at the start of every frame, before the scene graph starts its rendering, thus any D3D11 draw calls that are made as a response to this signal, will stack under the Qt Quick items.</p>
+<p>As an alternative, applications that wish to render D3D11 content on top of the Qt Quick scene, can do so by connecting to the <a href="qquickwindow.html#afterRendering">QQuickWindow::afterRendering</a>() signal.</p>
+<p>In this example, we will also see how it is possible to have values that are exposed to QML which affect the D3D11 rendering. We animate the threshold value using a <a href="qml-qtquick-numberanimation.html">NumberAnimation</a> in the QML file and this value is used by the HLSL shader program that draws the squircles.</p>
+<p>The example is equivalent in most ways to the <a href="qtquick-scenegraph-openglunderqml-example.html">OpenGL Under QML</a>, <a href="qtquick-scenegraph-metalunderqml-example.html">Metal Under QML</a>, and <a href="qtquick-scenegraph-vulkanunderqml-example.html">Vulkan Under QML</a> examples, they all render the same custom content, just via different native APIs.</p>
+<p><a href="https://code.qt.io/cgit/qt/qtdeclarative.git/tree/examples/quick/scenegraph/d3d11underqml?h=5.15">Example project @ code.qt.io</a></p>
+</div>
+<!-- @@@scenegraph/d3d11underqml -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

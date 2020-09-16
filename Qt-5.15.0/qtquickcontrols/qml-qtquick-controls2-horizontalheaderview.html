@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qquickheaderview.cpp -->
+  <title>HorizontalHeaderView QML Type | Qt Quick Controls 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtquickcontrols-index.html">Qt Quick Controls</a></li>
+<li><a href="qtquick-controls2-qmlmodule.html">QML Types</a></li>
+<li>HorizontalHeaderView QML Type</li>
+<li id="buildversion"><a href="qtquickcontrols-index.html">Qt 5.15.0 Reference Documentation</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">HorizontalHeaderView QML Type</h1>
+<span class="subtitle"></span>
+<!-- $$$HorizontalHeaderView-brief -->
+<p>Provides a horizontal header view to accompany a <a href="../qtquick/qml-qtquick-tableview.html">TableView</a>. <a href="#details">More...</a></p>
+<!-- @@@HorizontalHeaderView -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Import Statement:</td><td class="memItemRight bottomAlign"> import QtQuick.Controls 2.15</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Inherits:</td><td class="memItemRight bottomAlign"> <p><a href="../qtquick/qml-qtquick-tableview.html">TableView</a></p>
+</td></tr></table></div><ul>
+<li><a href="qml-qtquick-controls2-horizontalheaderview-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="properties"></a>
+<h2 id="properties">Properties</h2>
+<ul>
+<li class="fn"><b><b><a href="qml-qtquick-controls2-horizontalheaderview.html#model-prop">model</a></b></b> : QVariant</li>
+<li class="fn"><b><b><a href="qml-qtquick-controls2-horizontalheaderview.html#syncView-prop">syncView</a></b></b> : TableView</li>
+<li class="fn"><b><b><a href="qml-qtquick-controls2-horizontalheaderview.html#textRole-prop">textRole</a></b></b> : QString</li>
+</ul>
+<!-- $$$HorizontalHeaderView-description -->
+<a name="details"></a>
+<h2 id="details">Detailed Description</h2>
+<p>A HorizontalHeaderView provides labeling of the columns of a <a href="../qtquick/qml-qtquick-tableview.html">TableView</a>. To add a horizontal header to a <a href="../qtquick/qml-qtquick-tableview.html">TableView</a>, bind the <a href="qml-qtquick-controls2-horizontalheaderview.html#syncView-prop">syncView</a> property to the <a href="../qtquick/qml-qtquick-tableview.html">TableView</a>:</p>
+<pre class="qml">
+ <span class="type"><a href="qml-qtquick-controls2-horizontalheaderview.html">HorizontalHeaderView</a></span> {
+     <span class="name">id</span>: <span class="name">horizontalHeader</span>
+     <span class="name">syncView</span>: <span class="name">tableView</span>
+     <span class="name">anchors</span>.left: <span class="name">tableView</span>.<span class="name">left</span>
+ }
+</pre>
+<p>The header displays data from the {<a href="qml-qtquick-controls2-horizontalheaderview.html#syncView-prop">syncView</a>}'s model by default, but can also have its own model. If the model is a <a href="../qtcore/qabstracttablemodel.html">QAbstractTableModel</a>, then the header will display the model's horizontal headerData(); otherwise, the model's data().</p>
+<!-- @@@HorizontalHeaderView -->
+<h2>Property Documentation</h2>
+<!-- $$$model -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="model-prop">
+<td class="tblQmlPropNode"><p>
+<a name="model-prop"></a><span class="name">model</span> : <span class="type">QVariant</span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property holds the model providing data for the horizontal header view.</p>
+<p>When model is not explicitly set, the header will use the <a href="qml-qtquick-controls2-horizontalheaderview.html#syncView-prop">syncView</a>'s model once <a href="qml-qtquick-controls2-horizontalheaderview.html#syncView-prop">syncView</a> is set.</p>
+<p>If model is a <a href="../qtcore/qabstracttablemodel.html">QAbstractTableModel</a>, its horizontal headerData() will be accessed.</p>
+<p>If model is a <a href="../qtcore/qabstractitemmodel.html">QAbstractItemModel</a> other than <a href="../qtcore/qabstracttablemodel.html">QAbstractTableModel</a>, model's data() will be accessed.</p>
+<p>Otherwise, the behavior is same as setting <a href="../qtquick/qml-qtquick-tableview.html#model-prop">TableView::model</a>.</p>
+<p><b>See also </b><a href="../qtquick/qml-qtquick-tableview.html">TableView</a>, <a href="../qtquick/qml-qtquick-tableview.html#model-prop">model</a>, and <a href="../qtcore/qabstracttablemodel.html">QAbstractTableModel</a>.</p>
+</div></div><!-- @@@model -->
+<br/>
+<!-- $$$syncView -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="syncView-prop">
+<td class="tblQmlPropNode"><p>
+<a name="syncView-prop"></a><span class="name">syncView</span> : <span class="type"><a href="../qtquick/qml-qtquick-tableview.html">TableView</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property holds the <a href="../qtquick/qml-qtquick-tableview.html">TableView</a> to synchronize with.</p>
+<p>Once this property is bound to another <a href="../qtquick/qml-qtquick-tableview.html">TableView</a>, both header and table will synchronize with regard to column widths, column spacing, and flicking horizontally.</p>
+<p>If the <a href="qtquickcontrols-chattutorial-example.html#model">model</a> is not explicitly set, then the header will use the syncView's model to label the columns.</p>
+<p><b>See also </b><a href="qtquickcontrols-chattutorial-example.html#model">model</a> and <a href="../qtquick/qml-qtquick-tableview.html">TableView</a>.</p>
+</div></div><!-- @@@syncView -->
+<br/>
+<!-- $$$textRole -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="textRole-prop">
+<td class="tblQmlPropNode"><p>
+<a name="textRole-prop"></a><span class="name">textRole</span> : <span class="type">QString</span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property holds the model role used to display text in each header cell.</p>
+<p>When the model has multiple roles, textRole can be set to determine which role should be displayed.</p>
+<p>If model is a <a href="../qtcore/qabstractitemmodel.html">QAbstractItemModel</a> then it will default to &quot;display&quot;; otherwise it is empty.</p>
+<p><b>See also </b><a href="../qtcore/qabstractitemmodel.html#roleNames">QAbstractItemModel::roleNames()</a>.</p>
+</div></div><!-- @@@textRole -->
+<br/>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

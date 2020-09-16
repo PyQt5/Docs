@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QtHelpProject version="1.0">
+    <namespace>org.qt-project.qtquicktimeline.5150</namespace>
+    <virtualFolder>qtquicktimeline</virtualFolder>
+    <metaData name="version" value="5.15.0"/>
+    <customFilter name="QtQuickTimeline 5.15.0">
+        <filterAttribute>5.15.0</filterAttribute>
+        <filterAttribute>qtquicktimeline</filterAttribute>
+    </customFilter>
+    <filterSection>
+        <filterAttribute>5.15.0</filterAttribute>
+        <filterAttribute>qtquicktimeline</filterAttribute>
+        <filterAttribute>qtrefdoc</filterAttribute>
+        <toc>
+            <section ref="qtquicktimeline-index.html" title="Qt Quick Timeline">
+                <section ref="qtquick-timeline-qmlmodule.html" title="QML Types">
+                    <section ref="qml-qtquick-timeline-keyframe.html" title="Keyframe Type Reference">
+                        <section ref="qml-qtquick-timeline-keyframe-members.html" title="List of all members"/>
+                    </section>
+                    <section ref="qml-qtquick-timeline-keyframegroup.html" title="KeyframeGroup Type Reference">
+                        <section ref="qml-qtquick-timeline-keyframegroup-members.html" title="List of all members"/>
+                    </section>
+                    <section ref="qml-qtquick-timeline-timeline.html" title="Timeline Type Reference">
+                        <section ref="qml-qtquick-timeline-timeline-members.html" title="List of all members"/>
+                    </section>
+                    <section ref="qml-qtquick-timeline-timelineanimation.html" title="TimelineAnimation Type Reference">
+                        <section ref="qml-qtquick-timeline-timelineanimation-members.html" title="List of all members"/>
+                    </section>
+                </section>
+            </section>
+        </toc>
+        <keywords>
+            <keyword name="Keyframe" id="QML.Keyframe" ref="qml-qtquick-timeline-keyframe.html"/>
+            <keyword name="KeyframeGroup" id="QML.KeyframeGroup" ref="qml-qtquick-timeline-keyframegroup.html"/>
+            <keyword name="Qt Quick Timeline" id="Qt Quick Timeline" ref="qtquicktimeline-index.html"/>
+            <keyword name="Qt Quick Timeline Overview" id="Qt Quick Timeline Overview" ref="qtquicktimeline-overview.html"/>
+            <keyword name="Qt Quick Timeline QML Types" id="Qt Quick Timeline QML Types" ref="qtquick-timeline-qmlmodule.html"/>
+            <keyword name="Timeline" id="QML.Timeline" ref="qml-qtquick-timeline-timeline.html"/>
+            <keyword name="TimelineAnimation" id="QML.TimelineAnimation" ref="qml-qtquick-timeline-timelineanimation.html"/>
+            <keyword name="animations" id="Timeline::animations" ref="qml-qtquick-timeline-timeline.html#animations-prop"/>
+            <keyword name="currentFrame" id="Timeline::currentFrame" ref="qml-qtquick-timeline-timeline.html#currentFrame-prop"/>
+            <keyword name="easing" id="Keyframe::easing" ref="qml-qtquick-timeline-keyframe.html#easing-prop"/>
+            <keyword name="easingCurveChanged" id="Keyframe::easingCurveChanged" ref="qml-qtquick-timeline-keyframe.html#easingCurveChanged-signal"/>
+            <keyword name="enabled" id="Timeline::enabled" ref="qml-qtquick-timeline-timeline.html#enabled-prop"/>
+            <keyword name="endFrame" id="Timeline::endFrame" ref="qml-qtquick-timeline-timeline.html#endFrame-prop"/>
+            <keyword name="finished" id="TimelineAnimation::finished" ref="qml-qtquick-timeline-timelineanimation.html#finished-signal"/>
+            <keyword name="frame" id="Keyframe::frame" ref="qml-qtquick-timeline-keyframe.html#frame-prop"/>
+            <keyword name="keyframes" id="KeyframeGroup::keyframes" ref="qml-qtquick-timeline-keyframegroup.html#keyframes-prop"/>
+            <keyword name="keyframes" id="Timeline::keyframes" ref="qml-qtquick-timeline-timeline.html#keyframes-prop"/>
+            <keyword name="pingPong" id="TimelineAnimation::pingPong" ref="qml-qtquick-timeline-timelineanimation.html#pingPong-prop"/>
+            <keyword name="property" id="KeyframeGroup::property" ref="qml-qtquick-timeline-keyframegroup.html#property-prop"/>
+            <keyword name="startFrame" id="Timeline::startFrame" ref="qml-qtquick-timeline-timeline.html#startFrame-prop"/>
+            <keyword name="target" id="KeyframeGroup::target" ref="qml-qtquick-timeline-keyframegroup.html#target-prop"/>
+            <keyword name="value" id="Keyframe::value" ref="qml-qtquick-timeline-keyframe.html#value-prop"/>
+        </keywords>
+        <files>
+            <file>images/arrow_bc.png</file>
+            <file>images/bgrContent.png</file>
+            <file>images/btn_next.png</file>
+            <file>images/btn_prev.png</file>
+            <file>images/bullet_dn.png</file>
+            <file>images/bullet_sq.png</file>
+            <file>images/home.png</file>
+            <file>images/ico_note.png</file>
+            <file>images/ico_note_attention.png</file>
+            <file>images/ico_out.png</file>
+            <file>images/logo.png</file>
+            <file>images/timeline-editor.png</file>
+            <file>images/timeline-settings.png</file>
+            <file>qml-qtquick-timeline-keyframe-members.html</file>
+            <file>qml-qtquick-timeline-keyframe.html</file>
+            <file>qml-qtquick-timeline-keyframegroup-members.html</file>
+            <file>qml-qtquick-timeline-keyframegroup.html</file>
+            <file>qml-qtquick-timeline-timeline-members.html</file>
+            <file>qml-qtquick-timeline-timeline.html</file>
+            <file>qml-qtquick-timeline-timelineanimation-members.html</file>
+            <file>qml-qtquick-timeline-timelineanimation.html</file>
+            <file>qtquick-timeline-qmlmodule.html</file>
+            <file>qtquicktimeline-index.html</file>
+            <file>qtquicktimeline-overview.html</file>
+            <file>style/offline-simple.css</file>
+            <file>style/offline.css</file>
+        </files>
+    </filterSection>
+</QtHelpProject>

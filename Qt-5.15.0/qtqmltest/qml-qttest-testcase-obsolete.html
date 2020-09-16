@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- TestCase.qml -->
+  <title>Obsolete Members for TestCase | Qt Quick Test 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtquicktest-index.html">Qt Quick Test</a></li>
+<li><a href="qttest-qmlmodule.html">QML Types</a></li>
+<li>Obsolete Members for TestCase</li>
+<li id="buildversion"><a href="qtquicktest-index.html">Qt 5.15.0 Reference Documentation</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar"><div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Obsolete Members for TestCase</h1>
+<p><b>The following members of QML type <a href="qml-qttest-testcase.html">TestCase</a> are obsolete.</b> They are provided to keep old source code working. We strongly advise against using them in new code.</p>
+<a name="methods"></a>
+<h2 id="methods">Methods</h2>
+<ul>
+<li class="fn"><b><b><a href="qml-qttest-testcase-obsolete.html#mouseDoubleClick-method">mouseDoubleClick</a></b></b>(<i>item</i>, <i>x</i>, <i>y</i>, <i>button</i>, <i>modifiers</i>, <i>delay</i>)<code> (obsolete)</code></li>
+</ul>
+<h2>Method Documentation</h2>
+<!-- $$$mouseDoubleClick[overload1]$$$mouseDoubleClick -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="mouseDoubleClick-method">
+<td class="tblQmlFuncNode"><p>
+<a name="mouseDoubleClick-method"></a><span class="name">mouseDoubleClick</span>(<i>item</i>, <i>x</i> = item.width / 2, <i>y</i> = item.height / 2, <i>button</i> = Qt.LeftButton, <i>modifiers</i> = Qt.NoModifier, <i>delay</i> = -1)</p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This method is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>Simulates double-clicking a mouse <i>button</i> with optional <i>modifiers</i> on an <i>item</i>. The position of the click is defined by <i>x</i> and <i>y</i>. If <i>x</i> and <i>y</i> are not defined the position will be the center of <i>item</i>. If <i>delay</i> is specified, the test will wait for the specified amount of milliseconds before pressing and before releasing the button.</p>
+<p>The position given by <i>x</i> and <i>y</i> is transformed from the co-ordinate system of <i>item</i> into window co-ordinates and then delivered. If <i>item</i> is obscured by another item, or a child of <i>item</i> occupies that position, then the event will be delivered to the other item instead.</p>
+<p><b>See also </b><a href="qml-qttest-testcase.html#mouseDoubleClickSequence-method">mouseDoubleClickSequence()</a>, <a href="qml-qttest-testcase.html#mousePress-method">mousePress()</a>, <a href="qml-qttest-testcase.html#mouseRelease-method">mouseRelease()</a>, <a href="qml-qttest-testcase.html#mouseClick-method">mouseClick()</a>, <a href="qml-qttest-testcase.html#mouseMove-method">mouseMove()</a>, <a href="qml-qttest-testcase.html#mouseDrag-method">mouseDrag()</a>, and <a href="qml-qttest-testcase.html#mouseWheel-method">mouseWheel()</a>.</p>
+</div></div><!-- @@@mouseDoubleClick -->
+<br/>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

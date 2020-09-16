@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qtquick3d-helpers.qdoc -->
+  <title>WasdController QML Type | Qt Quick 3D 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtquick3d-index.html">Qt Quick 3D</a></li>
+<li><a href="qtquick3d-qmlmodule.html">QML Types</a></li>
+<li>WasdController QML Type</li>
+<li id="buildversion"><a href="qtquick3d-index.html">Qt Quick 3D | Commercial or GPLv3</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">WasdController QML Type</h1>
+<span class="subtitle"></span>
+<!-- $$$WasdController-brief -->
+<p>Control node position and orientation with keys and mouse. <a href="#details">More...</a></p>
+<!-- @@@WasdController -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Import Statement:</td><td class="memItemRight bottomAlign"> import QtQuick3D.Helpers 1.15</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Inherits:</td><td class="memItemRight bottomAlign"> <p><a href="../qtquick/qml-qtquick-item.html">Item</a></p>
+</td></tr></table></div><ul>
+<li><a href="qml-qtquick3d-helpers-wasdcontroller-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="properties"></a>
+<h2 id="properties">Properties</h2>
+<ul>
+<li class="fn"><b><b><a href="qml-qtquick3d-helpers-wasdcontroller.html#acceptedButtons-prop">acceptedButtons</a></b></b> : enumeration</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-helpers-wasdcontroller.html#backSpeed-prop">backSpeed</a></b></b> : real</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-helpers-wasdcontroller.html#controlledObject-prop">controlledObject</a></b></b> : QtQuick3D::Node</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-helpers-wasdcontroller.html#downSpeed-prop">downSpeed</a></b></b> : real</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-helpers-wasdcontroller.html#forwardSpeed-prop">forwardSpeed</a></b></b> : real</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-helpers-wasdcontroller.html#inputsNeedProcessing-prop">inputsNeedProcessing</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-helpers-wasdcontroller.html#keysEnabled-prop">keysEnabled</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-helpers-wasdcontroller.html#leftSpeed-prop">leftSpeed</a></b></b> : real</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-helpers-wasdcontroller.html#mouseEnabled-prop">mouseEnabled</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-helpers-wasdcontroller.html#rightSpeed-prop">rightSpeed</a></b></b> : real</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-helpers-wasdcontroller.html#shiftSpeed-prop">shiftSpeed</a></b></b> : real</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-helpers-wasdcontroller.html#speed-prop">speed</a></b></b> : real</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-helpers-wasdcontroller.html#upSpeed-prop">upSpeed</a></b></b> : real</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-helpers-wasdcontroller.html#xInvert-prop">xInvert</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-helpers-wasdcontroller.html#xSpeed-prop">xSpeed</a></b></b> : real</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-helpers-wasdcontroller.html#yInvert-prop">yInvert</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-helpers-wasdcontroller.html#ySpeed-prop">ySpeed</a></b></b> : real</li>
+</ul>
+<!-- $$$WasdController-description -->
+<a name="details"></a>
+<h2 id="details">Detailed Description</h2>
+<p>This helper allows the user to control a node using wasd or arrow keys and mouse. Usually the controlled node is camera.</p>
+<!-- @@@WasdController -->
+<h2>Property Documentation</h2>
+<!-- $$$acceptedButtons -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="acceptedButtons-prop">
+<td class="tblQmlPropNode"><p>
+<a name="acceptedButtons-prop"></a><span class="name">acceptedButtons</span> : <span class="type"><a href="../qtqml/qml-enumeration.html">enumeration</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Specify the buttons accepted by the controller.</p>
+<p><b>See also </b><a href="../qtquick/qml-qtquick-draghandler.html">DragHandler</a> and <a href="../qtquick/qml-qtquick-multipointhandler.html">MultiPointHandler</a>.</p>
+</div></div><!-- @@@acceptedButtons -->
+<br/>
+<!-- $$$backSpeed -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="backSpeed-prop">
+<td class="tblQmlPropNode"><p>
+<a name="backSpeed-prop"></a><span class="name">backSpeed</span> : <span class="type"><a href="../qtqml/qml-real.html">real</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Specifies the speed of the controls when back-key is pressed.</p>
+</div></div><!-- @@@backSpeed -->
+<br/>
+<!-- $$$controlledObject -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="controlledObject-prop">
+<td class="tblQmlPropNode"><p>
+<a name="controlledObject-prop"></a><span class="name">controlledObject</span> : <span class="type"><a href="qml-qtquick3d-node.html">QtQuick3D::Node</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Specifies the node to control.</p>
+</div></div><!-- @@@controlledObject -->
+<br/>
+<!-- $$$downSpeed -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="downSpeed-prop">
+<td class="tblQmlPropNode"><p>
+<a name="downSpeed-prop"></a><span class="name">downSpeed</span> : <span class="type"><a href="../qtqml/qml-real.html">real</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Specifies the speed of the controls when down-key is pressed.</p>
+</div></div><!-- @@@downSpeed -->
+<br/>
+<!-- $$$forwardSpeed -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="forwardSpeed-prop">
+<td class="tblQmlPropNode"><p>
+<a name="forwardSpeed-prop"></a><span class="name">forwardSpeed</span> : <span class="type"><a href="../qtqml/qml-real.html">real</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Specifies the speed of the controls when forward-key is pressed.</p>
+</div></div><!-- @@@forwardSpeed -->
+<br/>
+<!-- $$$inputsNeedProcessing -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="inputsNeedProcessing-prop">
+<td class="tblQmlPropNode"><p>
+<a name="inputsNeedProcessing-prop"></a><span class="qmlreadonly">[read-only] </span><span class="name">inputsNeedProcessing</span> : <span class="type"><a href="../qtqml/qml-bool.html">bool</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property is true when there are inputs needing processing.</p>
+</div></div><!-- @@@inputsNeedProcessing -->
+<br/>
+<!-- $$$keysEnabled -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="keysEnabled-prop">
+<td class="tblQmlPropNode"><p>
+<a name="keysEnabled-prop"></a><span class="name">keysEnabled</span> : <span class="type"><a href="../qtqml/qml-bool.html">bool</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Enable key controls.</p>
+</div></div><!-- @@@keysEnabled -->
+<br/>
+<!-- $$$leftSpeed -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="leftSpeed-prop">
+<td class="tblQmlPropNode"><p>
+<a name="leftSpeed-prop"></a><span class="name">leftSpeed</span> : <span class="type"><a href="../qtqml/qml-real.html">real</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Specifies the speed of the controls when left-key is pressed.</p>
+</div></div><!-- @@@leftSpeed -->
+<br/>
+<!-- $$$mouseEnabled -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="mouseEnabled-prop">
+<td class="tblQmlPropNode"><p>
+<a name="mouseEnabled-prop"></a><span class="name">mouseEnabled</span> : <span class="type"><a href="../qtqml/qml-bool.html">bool</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Enable mouse controls.</p>
+</div></div><!-- @@@mouseEnabled -->
+<br/>
+<!-- $$$rightSpeed -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="rightSpeed-prop">
+<td class="tblQmlPropNode"><p>
+<a name="rightSpeed-prop"></a><span class="name">rightSpeed</span> : <span class="type"><a href="../qtqml/qml-real.html">real</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Specifies the speed of the controls when right-key is pressed.</p>
+</div></div><!-- @@@rightSpeed -->
+<br/>
+<!-- $$$shiftSpeed -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="shiftSpeed-prop">
+<td class="tblQmlPropNode"><p>
+<a name="shiftSpeed-prop"></a><span class="name">shiftSpeed</span> : <span class="type"><a href="../qtqml/qml-real.html">real</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Specifies the speed of the controls when shift-key is pressed.</p>
+</div></div><!-- @@@shiftSpeed -->
+<br/>
+<!-- $$$speed -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="speed-prop">
+<td class="tblQmlPropNode"><p>
+<a name="speed-prop"></a><span class="name">speed</span> : <span class="type"><a href="../qtqml/qml-real.html">real</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Specifies the speed of the controls.</p>
+</div></div><!-- @@@speed -->
+<br/>
+<!-- $$$upSpeed -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="upSpeed-prop">
+<td class="tblQmlPropNode"><p>
+<a name="upSpeed-prop"></a><span class="name">upSpeed</span> : <span class="type"><a href="../qtqml/qml-real.html">real</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Specifies the speed of the controls when up-key is pressed.</p>
+</div></div><!-- @@@upSpeed -->
+<br/>
+<!-- $$$xInvert -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="xInvert-prop">
+<td class="tblQmlPropNode"><p>
+<a name="xInvert-prop"></a><span class="name">xInvert</span> : <span class="type"><a href="../qtqml/qml-bool.html">bool</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Inverts the x-axis controls.</p>
+</div></div><!-- @@@xInvert -->
+<br/>
+<!-- $$$xSpeed -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="xSpeed-prop">
+<td class="tblQmlPropNode"><p>
+<a name="xSpeed-prop"></a><span class="name">xSpeed</span> : <span class="type"><a href="../qtqml/qml-real.html">real</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Specifies the speed of the controls when mouse is moved along x-axis.</p>
+</div></div><!-- @@@xSpeed -->
+<br/>
+<!-- $$$yInvert -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="yInvert-prop">
+<td class="tblQmlPropNode"><p>
+<a name="yInvert-prop"></a><span class="name">yInvert</span> : <span class="type"><a href="../qtqml/qml-bool.html">bool</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Inverts the y-axis controls.</p>
+</div></div><!-- @@@yInvert -->
+<br/>
+<!-- $$$ySpeed -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="ySpeed-prop">
+<td class="tblQmlPropNode"><p>
+<a name="ySpeed-prop"></a><span class="name">ySpeed</span> : <span class="type"><a href="../qtqml/qml-real.html">real</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Specifies the speed of the controls when mouse is moved along y-axis.</p>
+</div></div><!-- @@@ySpeed -->
+<br/>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

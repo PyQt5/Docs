@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qatomic.cpp -->
+  <title>Obsolete Members for QAtomicPointer | Qt Core 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtcore-index.html">Qt Core</a></li>
+<li><a href="qtcore-module.html">C++ Classes</a></li>
+<li>QAtomicPointer</li>
+<li id="buildversion"><a href="qtcore-index.html">Qt 5.15.0 Reference Documentation</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar"><div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Obsolete Members for QAtomicPointer</h1>
+<p><b>The following members of class <a href="qatomicpointer.html">QAtomicPointer</a> are obsolete.</b> They are provided to keep old source code working. We strongly advise against using them in new code.</p>
+<h2>Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>T *</td><td class="memItemRight bottomAlign"><b><a href="qatomicpointer-obsolete.html#load">load</a></b>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>void </td><td class="memItemRight bottomAlign"><b><a href="qatomicpointer-obsolete.html#store">store</a></b>(T *<i>newValue</i>)</td></tr>
+</table></div>
+<h2>Member Function Documentation</h2>
+<!-- $$$load[overload1]$$$load -->
+<h3 class="fn" id="load"><a name="load"></a><span class="type">T</span> *QAtomicPointer::<span class="name">load</span>() const</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>Use <a href="qatomicpointer.html#loadRelaxed">loadRelaxed</a>() instead.</p>
+<p>Atomically loads the value of this <a href="qatomicpointer.html">QAtomicPointer</a> using relaxed memory ordering. The value is not modified in any way, but note that there's no guarantee that it remains so.</p>
+<p><b>See also </b><a href="qatomicpointer.html#storeRelaxed">storeRelaxed</a>() and <a href="qatomicpointer.html#loadAcquire">loadAcquire</a>().</p>
+<!-- @@@load -->
+<!-- $$$store[overload1]$$$storeT* -->
+<h3 class="fn" id="store"><a name="store"></a><span class="type">void</span> QAtomicPointer::<span class="name">store</span>(<span class="type">T</span> *<i>newValue</i>)</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>Use <a href="qatomicpointer.html#storeRelaxed">storeRelaxed</a>() instead.</p>
+<p>Atomically stores the <i>newValue</i> value into this atomic type, using relaxed memory ordering.</p>
+<p><b>See also </b><a href="qatomicpointer.html#storeRelease">storeRelease</a>() and <a href="qatomicpointer.html#loadRelaxed">loadRelaxed</a>().</p>
+<!-- @@@store -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

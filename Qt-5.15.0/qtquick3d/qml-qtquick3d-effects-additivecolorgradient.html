@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qtquick3d-effects.qdoc -->
+  <title>AdditiveColorGradient QML Type | Qt Quick 3D 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtquick3d-index.html">Qt Quick 3D</a></li>
+<li><a href="qtquick3d-qmlmodule.html">QML Types</a></li>
+<li>AdditiveColorGradient QML Type</li>
+<li id="buildversion"><a href="qtquick3d-index.html">Qt Quick 3D | Commercial or GPLv3</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">AdditiveColorGradient QML Type</h1>
+<span class="subtitle"></span>
+<!-- $$$AdditiveColorGradient-brief -->
+<p>A gradient with additive color effect. <a href="#details">More...</a></p>
+<!-- @@@AdditiveColorGradient -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Import Statement:</td><td class="memItemRight bottomAlign"> import QtQuick3D.Effects 1.15</td></tr></table></div><ul>
+<li><a href="qml-qtquick3d-effects-additivecolorgradient-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="properties"></a>
+<h2 id="properties">Properties</h2>
+<ul>
+<li class="fn"><b><b><a href="qml-qtquick3d-effects-additivecolorgradient.html#bottomColor-prop">bottomColor</a></b></b> : vector3d</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-effects-additivecolorgradient.html#topColor-prop">topColor</a></b></b> : vector3d</li>
+</ul>
+<!-- $$$AdditiveColorGradient-description -->
+<a name="details"></a>
+<h2 id="details">Detailed Description</h2>
+<p class="centerAlign"><img src="images/effect_additive_color_gradient.png" alt="" /></p><p>This effect adds a vertical gradient to the whole scene, then additively blends it with all other elements on the layer. Additive blending adds the pixel values of the gradient and the layer, making the result lighter. White areas do not change, and black areas are the same color as the gradient.</p>
+<!-- @@@AdditiveColorGradient -->
+<h2>Property Documentation</h2>
+<!-- $$$bottomColor -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="bottomColor-prop">
+<td class="tblQmlPropNode"><p>
+<a name="bottomColor-prop"></a><span class="name">bottomColor</span> : <span class="type"><a href="../qtquick/qml-vector3d.html">vector3d</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>The color to be used at the bottom of the screen for the gradient. <code>Qt.vector3d(0.0, 0.0, 0.0)</code> by default.</p>
+</div></div><!-- @@@bottomColor -->
+<br/>
+<!-- $$$topColor -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="topColor-prop">
+<td class="tblQmlPropNode"><p>
+<a name="topColor-prop"></a><span class="name">topColor</span> : <span class="type"><a href="../qtquick/qml-vector3d.html">vector3d</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>The color to be used at the top of the screen for the gradient. <code>Qt.vector3d(1.0, 1.0, 1.0)</code> by default.</p>
+</div></div><!-- @@@topColor -->
+<br/>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

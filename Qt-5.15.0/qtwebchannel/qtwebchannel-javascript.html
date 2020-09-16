@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- javascript.qdoc -->
+  <title>Qt WebChannel JavaScript API | Qt WebChannel 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtwebchannel-index.html">Qt WebChannel</a></li>
+<li>Qt WebChannel JavaScript API</li>
+<li id="buildversion"><a href="qtwebchannel-index.html">Qt 5.15.0 Reference Documentation</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#setting-up-the-javascript-api">Setting up the JavaScript API</a></li>
+<li class="level1"><a href="#interacting-with-qobjects">Interacting with QObjects</a></li>
+<li class="level2"><a href="#overloaded-methods-and-signals">Overloaded methods and signals</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Qt WebChannel JavaScript API</h1>
+<span class="subtitle"></span>
+<!-- $$$qtwebchannel-javascript.html-description -->
+<div class="descr"> <a name="details"></a>
+<a name="setting-up-the-javascript-api"></a>
+<h2 id="setting-up-the-javascript-api">Setting up the JavaScript API</h2>
+<p>To communicate with a <a href="qwebchannel.html">QWebChannel</a> or <a href="qml-qtwebchannel-webchannel.html">WebChannel</a>, a client must use and set up the JavaScript API provided by <code>qwebchannel.js</code>. For clients run inside <a href="../qtwebengine/qtwebengine-index.html">Qt WebEngine</a>, you can load the file via <code>qrc:///qtwebchannel/qwebchannel.js</code>. For external clients, you need to copy the file to your web server. Then instantiate a <a href="qwebchannel.html">QWebChannel</a> object and pass it a transport object and a callback function, which will be invoked once the initialization of the channel finishes and the published objects become available.</p>
+<p>The transport object implements a minimal message passing interface. It should be an object with a <code>send()</code> function, which takes a stringified JSON message and transmits it to the server-side <a href="qwebchannelabstracttransport.html">QWebChannelAbstractTransport</a> object. Furthermore, its <code>onmessage</code> property should be called when a message from the server was received. Alternatively, you can use a <a href="../qtwebsockets/qtwebsockets-index.html">WebSocket</a> to implement the interface.</p>
+<p>Note that the JavaScript <a href="qwebchannel.html">QWebChannel</a> object should be constructed once the transport object is fully operational. In case of a <a href="nolink">WebSocket</a>, that means you should create the <a href="qwebchannel.html">QWebChannel</a> in the socket's <code>onopen</code> handler. Take a look at the <a href="qtwebchannel-standalone-example.html">Qt WebChannel Standalone Example</a> to see how this is done.</p>
+<a name="interacting-with-qobjects"></a>
+<h2 id="interacting-with-qobjects">Interacting with QObjects</h2>
+<p>Once the callback passed to the <a href="qwebchannel.html">QWebChannel</a> object is invoked, the channel has finished initialization and all published objects are accessible to the HTML client via the <code>channel.objects</code> property. Thus, assuming an object was published with the identifier &quot;foo&quot;, then we can interact with it as shown in the example below. Note that all communication between the HTML client and the QML/C++ server is asynchronous. Properties are cached on the HTML side. Furthermore keep in mind that only QML/C++ data types which can be converted to JSON will be (de-)serialized properly and thus accessible to HTML clients.</p>
+<pre class="cpp">
+ <span class="keyword">new</span> <span class="type"><a href="qwebchannel.html">QWebChannel</a></span>(yourTransport<span class="operator">,</span> function(channel) {
+
+     <span class="comment">// Connect to a signal:</span>
+     channel<span class="operator">.</span>objects<span class="operator">.</span>foo<span class="operator">.</span>mySignal<span class="operator">.</span>connect(function() {
+         <span class="comment">// This callback will be invoked whenever the signal is emitted on the C++/QML side.</span>
+         console<span class="operator">.</span>log(arguments);
+     });
+
+     <span class="comment">// To make the object known globally, assign it to the window object, i.e.:</span>
+     window<span class="operator">.</span>foo <span class="operator">=</span> channel<span class="operator">.</span>objects<span class="operator">.</span>foo;
+
+     <span class="comment">// Invoke a method:</span>
+     foo<span class="operator">.</span>myMethod(arg1<span class="operator">,</span> arg2<span class="operator">,</span> function(returnValue) {
+         <span class="comment">// This callback will be invoked when myMethod has a return value. Keep in mind that</span>
+         <span class="comment">// the communication is asynchronous, hence the need for this callback.</span>
+         console<span class="operator">.</span>log(returnValue);
+     });
+
+     <span class="comment">// Read a property value, which is cached on the client side:</span>
+     console<span class="operator">.</span>log(foo<span class="operator">.</span>myProperty);
+
+     <span class="comment">// Writing a property will instantly update the client side cache.</span>
+     <span class="comment">// The remote end will be notified about the change asynchronously</span>
+     foo<span class="operator">.</span>myProperty <span class="operator">=</span> <span class="string">&quot;Hello World!&quot;</span>;
+
+     <span class="comment">// To get notified about remote property changes,</span>
+     <span class="comment">// simply connect to the corresponding notify signal:</span>
+     foo<span class="operator">.</span>myPropertyChanged<span class="operator">.</span>connect(function() {
+         console<span class="operator">.</span>log(foo<span class="operator">.</span>myProperty);
+     });
+
+     <span class="comment">// One can also access enums that are marked with Q_ENUM:</span>
+     console<span class="operator">.</span>log(foo<span class="operator">.</span>MyEnum<span class="operator">.</span>MyEnumerator);
+ });
+</pre>
+<a name="overloaded-methods-and-signals"></a>
+<h3 id="overloaded-methods-and-signals">Overloaded methods and signals</h3>
+<p>When you publish a <code>QObject</code> that has overloaded methods, <a href="qwebchannel.html">QWebChannel</a> will resolve method invocations to the best match. Note that due to JavaScript's type system, there is only a single 'number' type which maps best to a C++ 'double'. When overloads differ only in the type of a number-like parameter, <a href="qwebchannel.html">QWebChannel</a> will always choose that overload which best matches the JavaScript 'number' type. When you connect to an overloaded signal, the <a href="qwebchannel.html">QWebChannel</a> client will by default only connect to the first signal overload of that name. Additionally, overloads of methods and signals can explicitly be requested by their complete <code>QMetaMethod</code> signature. Assume we have the following <code>QObject</code> subclass on the C++ side:</p>
+<pre class="cpp">
+ <span class="keyword">class</span> Foo : <span class="keyword">public</span> <span class="type"><a href="../qtcore/qobject.html">QObject</a></span>
+ {
+     Q_OBJECT
+ <span class="keyword">slots</span>:
+     <span class="type">void</span> foo(<span class="type">int</span> i);
+     <span class="type">void</span> foo(<span class="type">double</span> d);
+     <span class="type">void</span> foo(<span class="keyword">const</span> <span class="type"><a href="../qtcore/qstring.html">QString</a></span> <span class="operator">&amp;</span>str);
+     <span class="type">void</span> foo(<span class="keyword">const</span> <span class="type"><a href="../qtcore/qstring.html">QString</a></span> <span class="operator">&amp;</span>str<span class="operator">,</span> <span class="type">int</span> i);
+
+ <span class="keyword">signals</span>:
+     <span class="type">void</span> bar(<span class="type">int</span> i);
+     <span class="type">void</span> bar(<span class="keyword">const</span> <span class="type"><a href="../qtcore/qstring.html">QString</a></span> <span class="operator">&amp;</span>str);
+     <span class="type">void</span> bar(<span class="keyword">const</span> <span class="type"><a href="../qtcore/qstring.html">QString</a></span> <span class="operator">&amp;</span>str<span class="operator">,</span> <span class="type">int</span> i);
+ };
+</pre>
+<p>Then you can interact with this class on the JavaScript side like this:</p>
+<pre class="cpp">
+ <span class="comment">// methods</span>
+ foo<span class="operator">.</span>foo(<span class="number">42</span>); <span class="comment">// will call the method named foo which best matches the JavaScript number parameter, i.e. foo(double d)</span>
+ foo<span class="operator">.</span>foo(<span class="string">&quot;asdf&quot;</span>); <span class="comment">// will call foo(const QString &amp;str)</span>
+ foo<span class="operator">.</span>foo(<span class="string">&quot;asdf&quot;</span><span class="operator">,</span> <span class="number">42</span>); <span class="comment">// will call foo(const QString &amp;str, int i)</span>
+ foo<span class="operator">[</span><span class="string">&quot;foo(int)&quot;</span><span class="operator">]</span>(<span class="number">42</span>); <span class="comment">// explicitly call foo(int i), *not* foo(double d)</span>
+ foo<span class="operator">[</span><span class="string">&quot;foo(QString)&quot;</span><span class="operator">]</span>(<span class="string">&quot;asdf&quot;</span>); <span class="comment">// explicitly call foo(const QString &amp;str)</span>
+ foo<span class="operator">[</span><span class="string">&quot;foo(QString,int)&quot;</span><span class="operator">]</span>(<span class="string">&quot;asdf&quot;</span><span class="operator">,</span> <span class="number">42</span>); <span class="comment">// explicitly call foo(const QString &amp;str, int i)</span>
+
+ <span class="comment">// signals</span>
+ foo<span class="operator">.</span>bar<span class="operator">.</span>connect(<span class="operator">.</span><span class="operator">.</span><span class="operator">.</span>); <span class="comment">// connect to first signal named bar, i.e. bar(int i)</span>
+ foo<span class="operator">[</span><span class="string">&quot;bar(int)&quot;</span><span class="operator">]</span><span class="operator">.</span>connect(<span class="operator">.</span><span class="operator">.</span><span class="operator">.</span>); <span class="comment">// connect explicitly to bar(int i)</span>
+ foo<span class="operator">[</span><span class="string">&quot;bar(QString)&quot;</span><span class="operator">]</span><span class="operator">.</span>connect(<span class="operator">.</span><span class="operator">.</span><span class="operator">.</span>); <span class="comment">// connect explicitly to bar(const QString &amp;str)</span>
+ foo<span class="operator">[</span><span class="string">&quot;bar(QString,int)&quot;</span><span class="operator">]</span><span class="operator">.</span>connect(<span class="operator">.</span><span class="operator">.</span><span class="operator">.</span>); <span class="comment">// connect explicitly to bar(const QString &amp;str, int i)</span>
+</pre>
+</div>
+<!-- @@@qtwebchannel-javascript.html -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

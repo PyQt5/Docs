@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qwaylandquickshellintegration.cpp -->
+  <title>QWaylandQuickShellIntegration Class | Qt Wayland Compositor 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtwaylandcompositor-index.html">Qt Wayland Compositor</a></li>
+<li><a href="qtwaylandcompositor-module.html">C++ Classes</a></li>
+<li>QWaylandQuickShellIntegration</li>
+<li id="buildversion"><a href="qtwaylandcompositor-index.html">Qt 5.15.0 Reference Documentation</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">QWaylandQuickShellIntegration Class</h1>
+<!-- $$$QWaylandQuickShellIntegration-brief -->
+<p>Provides support for shell surface integration with <a href="../qtquick/qtquick-module.html">QtQuick</a>. <a href="#details">More...</a></p>
+<!-- @@@QWaylandQuickShellIntegration -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign">  <span class="preprocessor">#include &lt;QWaylandQuickShellIntegration&gt;</span>
+</td></tr><tr><td class="memItemLeft rightAlign topAlign"> qmake:</td><td class="memItemRight bottomAlign"> QT += waylandcompositor</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Since:</td><td class="memItemRight bottomAlign"> Qt 5.14</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Inherits:</td><td class="memItemRight bottomAlign"> <a href="../qtcore/qobject.html">QObject</a></td></tr></table></div><p>This class was introduced in Qt 5.14.</p>
+<ul>
+<li><a href="qwaylandquickshellintegration-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="details"></a>
+<!-- $$$QWaylandQuickShellIntegration-description -->
+<div class="descr">
+<h2 id="details">Detailed Description</h2>
+<p>Shell surface implementations should inherit from this class in order to provide an integration between the shell surface and <a href="../qtquick/qtquick-module.html">QtQuick</a>.</p>
+<p>Shell integration is installed as an event filter for a <a href="qwaylandquickshellsurfaceitem.html">QWaylandQuickShellSurfaceItem</a>. Reimplement the event filter method and return <code>true</code> when you want to filter the event out, otherwise return <code>false</code>.</p>
+<p>Example:</p>
+<pre class="cpp">
+ <span class="keyword">class</span> MyShellIntegration : <span class="keyword">public</span> <span class="type">QWaylandQuickShellIntegration</span>
+ {
+     Q_OBJECT
+ <span class="keyword">public</span>:
+     MyShellIntegration(<span class="type"><a href="../qtcore/qobject.html#QObject">QObject</a></span> <span class="operator">*</span>parent <span class="operator">=</span> nullptr);
+
+ <span class="keyword">protected</span>:
+     bool eventFilter(<span class="type"><a href="../qtcore/qobject.html#QObject">QObject</a></span> <span class="operator">*</span>object<span class="operator">,</span> <span class="type"><a href="../qtcore/qevent.html">QEvent</a></span> <span class="operator">*</span>event) override;
+ };
+
+ MyShellIntegration<span class="operator">::</span>MyShellIntegration(<span class="type"><a href="../qtcore/qobject.html#QObject">QObject</a></span> <span class="operator">*</span>parent)
+     : <span class="type">QWaylandQuickShellIntegration</span>(parent)
+ {
+ }
+
+ bool MyShellIntegration<span class="operator">::</span>eventFilter(<span class="type"><a href="../qtcore/qobject.html#QObject">QObject</a></span> <span class="operator">*</span>object<span class="operator">,</span> <span class="type"><a href="../qtcore/qevent.html">QEvent</a></span> <span class="operator">*</span>event)
+ {
+     <span class="type"><a href="qwaylandquickshellsurfaceitem.html">QWaylandQuickShellSurfaceItem</a></span> <span class="operator">*</span>shellSurfaceItem <span class="operator">=</span> qobject_cast<span class="operator">&lt;</span><span class="type"><a href="qwaylandquickshellsurfaceitem.html">QWaylandQuickShellSurfaceItem</a></span> <span class="operator">*</span><span class="operator">&gt;</span>(object);
+     <span class="keyword">if</span> (<span class="operator">!</span>shellSurfaceItem)
+         <span class="keyword">return</span> <span class="type">QWaylandQuickShellIntegration</span><span class="operator">::</span>eventFilter(object<span class="operator">,</span> event);
+
+     <span class="keyword">if</span> (event<span class="operator">-</span><span class="operator">&gt;</span>type() <span class="operator">=</span><span class="operator">=</span> <span class="type"><a href="../qtcore/qevent.html">QEvent</a></span><span class="operator">::</span>MouseMove) {
+         <span class="type"><a href="../qtgui/qmouseevent.html">QMouseEvent</a></span> <span class="operator">*</span>mouseEvent <span class="operator">=</span> <span class="keyword">static_cast</span><span class="operator">&lt;</span><span class="type"><a href="../qtgui/qmouseevent.html">QMouseEvent</a></span> <span class="operator">*</span><span class="operator">&gt;</span>(event);
+         <a href="../qtcore/qtglobal.html#qDebug">qDebug</a>() <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;Mouse moved on&quot;</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> shellSurfaceItem <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;pos:&quot;</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> mouseEvent<span class="operator">-</span><span class="operator">&gt;</span>pos();
+         <span class="keyword">return</span> <span class="keyword">true</span>;
+     }
+
+     <span class="keyword">return</span> <span class="type">QWaylandQuickShellIntegration</span><span class="operator">::</span>eventFilter(object<span class="operator">,</span> event);
+ }
+</pre>
+</div>
+<p><b>See also </b><a href="qwaylandquickshellsurfaceitem.html">QWaylandQuickShellSurfaceItem</a> and <a href="../qtcore/qobject.html#eventFilter">QObject::eventFilter</a>().</p>
+<!-- @@@QWaylandQuickShellIntegration -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

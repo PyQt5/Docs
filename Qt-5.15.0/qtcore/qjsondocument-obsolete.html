@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qjsondocument.cpp -->
+  <title>Obsolete Members for QJsonDocument | Qt Core 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtcore-index.html">Qt Core</a></li>
+<li><a href="qtcore-module.html">C++ Classes</a></li>
+<li>QJsonDocument</li>
+<li id="buildversion"><a href="qtcore-index.html">Qt 5.15.0 Reference Documentation</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar"><div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Obsolete Members for QJsonDocument</h1>
+<p><b>The following members of class <a href="qjsondocument.html">QJsonDocument</a> are obsolete.</b> They are provided to keep old source code working. We strongly advise against using them in new code.</p>
+<h2>Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>const char *</td><td class="memItemRight bottomAlign"><b><a href="qjsondocument-obsolete.html#rawData">rawData</a></b>(int *<i>size</i>) const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>QByteArray </td><td class="memItemRight bottomAlign"><b><a href="qjsondocument-obsolete.html#toBinaryData">toBinaryData</a></b>() const</td></tr>
+</table></div>
+<h2>Static Public Members</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>QJsonDocument </td><td class="memItemRight bottomAlign"><b><a href="qjsondocument-obsolete.html#fromBinaryData">fromBinaryData</a></b>(const QByteArray &amp;<i>data</i>, QJsonDocument::DataValidation <i>validation</i> = Validate)</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>QJsonDocument </td><td class="memItemRight bottomAlign"><b><a href="qjsondocument-obsolete.html#fromRawData">fromRawData</a></b>(const char *<i>data</i>, int <i>size</i>, QJsonDocument::DataValidation <i>validation</i> = Validate)</td></tr>
+</table></div>
+<h2>Member Function Documentation</h2>
+<!-- $$$fromBinaryData[overload1]$$$fromBinaryDataconstQByteArray&QJsonDocument::DataValidation -->
+<h3 class="fn" id="fromBinaryData"><a name="fromBinaryData"></a><code>[static] </code><span class="type"><a href="qjsondocument.html#QJsonDocument">QJsonDocument</a></span> QJsonDocument::<span class="name">fromBinaryData</span>(const <span class="type"><a href="qbytearray.html">QByteArray</a></span> &amp;<i>data</i>, <span class="type"><a href="qjsondocument.html#DataValidation-enum">QJsonDocument::DataValidation</a></span> <i>validation</i> = Validate)</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>Creates a <a href="qjsondocument.html">QJsonDocument</a> from <i>data</i>.</p>
+<p><i>validation</i> decides whether the data is checked for validity before being used. By default the data is validated. If the <i>data</i> is not valid, the method returns a null document.</p>
+<p><b>Note: </b>Deprecated in Qt 5.15. The binary JSON encoding is only retained for backwards compatibility. It is undocumented and restrictive in the maximum size of JSON documents that can be encoded. Qt JSON types can be converted to Qt CBOR types, which can in turn be serialized into the CBOR binary format and vice versa. The CBOR format is a well-defined and less restrictive binary representation for a superset of JSON.</p>
+<p><b>See also </b><a href="qjsondocument-obsolete.html#toBinaryData">toBinaryData</a>(), <a href="qjsondocument-obsolete.html#fromRawData">fromRawData</a>(), <a href="qjsondocument.html#isNull">isNull</a>(), <a href="qjsondocument.html#DataValidation-enum">DataValidation</a>, and <a href="qcborvalue.html">QCborValue</a>.</p>
+<!-- @@@fromBinaryData -->
+<!-- $$$fromRawData[overload1]$$$fromRawDataconstchar*intQJsonDocument::DataValidation -->
+<h3 class="fn" id="fromRawData"><a name="fromRawData"></a><code>[static] </code><span class="type"><a href="qjsondocument.html#QJsonDocument">QJsonDocument</a></span> QJsonDocument::<span class="name">fromRawData</span>(const <span class="type">char</span> *<i>data</i>, <span class="type">int</span> <i>size</i>, <span class="type"><a href="qjsondocument.html#DataValidation-enum">QJsonDocument::DataValidation</a></span> <i>validation</i> = Validate)</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>Creates a <a href="qjsondocument.html">QJsonDocument</a> that uses the first <i>size</i> bytes from <i>data</i>. It assumes <i>data</i> contains a binary encoded JSON document. The created document does not take ownership of <i>data</i>. The data is copied into a different data structure, and the original data can be deleted or modified afterwards.</p>
+<p><i>data</i> has to be aligned to a 4 byte boundary.</p>
+<p><i>validation</i> decides whether the data is checked for validity before being used. By default the data is validated. If the <i>data</i> is not valid, the method returns a null document.</p>
+<p>Returns a <a href="qjsondocument.html">QJsonDocument</a> representing the data.</p>
+<p><b>Note: </b>Deprecated in Qt 5.15. The binary JSON encoding is only retained for backwards compatibility. It is undocumented and restrictive in the maximum size of JSON documents that can be encoded. Qt JSON types can be converted to Qt CBOR types, which can in turn be serialized into the CBOR binary format and vice versa. The CBOR format is a well-defined and less restrictive binary representation for a superset of JSON.</p>
+<p><b>Note: </b>Before Qt 5.15, the caller had to guarantee that <i>data</i> would not be deleted or modified as long as any <a href="qjsondocument.html">QJsonDocument</a>, <a href="qjsonobject.html">QJsonObject</a> or <a href="qjsonarray.html">QJsonArray</a> still referenced the data. From Qt 5.15 on, this is not necessary anymore.</p>
+<p><b>See also </b><a href="qjsondocument-obsolete.html#rawData">rawData</a>(), <a href="qjsondocument-obsolete.html#fromBinaryData">fromBinaryData</a>(), <a href="qjsondocument.html#isNull">isNull</a>(), <a href="qjsondocument.html#DataValidation-enum">DataValidation</a>, and <a href="qcborvalue.html">QCborValue</a>.</p>
+<!-- @@@fromRawData -->
+<!-- $$$rawData[overload1]$$$rawDataint* -->
+<h3 class="fn" id="rawData"><a name="rawData"></a>const <span class="type">char</span> *QJsonDocument::<span class="name">rawData</span>(<span class="type">int</span> *<i>size</i>) const</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>Returns the raw binary representation of the data <i>size</i> will contain the size of the returned data.</p>
+<p>This method is useful to e.g&#x2e; stream the JSON document in its binary form to a file.</p>
+<p><b>Note: </b>Deprecated in Qt 5.15. The binary JSON encoding is only retained for backwards compatibility. It is undocumented and restrictive in the maximum size of JSON documents that can be encoded. Qt JSON types can be converted to Qt CBOR types, which can in turn be serialized into the CBOR binary format and vice versa. The CBOR format is a well-defined and less restrictive binary representation for a superset of JSON.</p>
+<p><b>See also </b><a href="qcborvalue.html">QCborValue</a>.</p>
+<!-- @@@rawData -->
+<!-- $$$toBinaryData[overload1]$$$toBinaryData -->
+<h3 class="fn" id="toBinaryData"><a name="toBinaryData"></a><span class="type"><a href="qbytearray.html">QByteArray</a></span> QJsonDocument::<span class="name">toBinaryData</span>() const</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>Returns a binary representation of the document.</p>
+<p>The binary representation is also the native format used internally in Qt, and is very efficient and fast to convert to and from.</p>
+<p>The binary format can be stored on disk and interchanged with other applications or computers. <a href="qjsondocument-obsolete.html#fromBinaryData">fromBinaryData</a>() can be used to convert it back into a JSON document.</p>
+<p><b>Note: </b>Deprecated in Qt 5.15. The binary JSON encoding is only retained for backwards compatibility. It is undocumented and restrictive in the maximum size of JSON documents that can be encoded. Qt JSON types can be converted to Qt CBOR types, which can in turn be serialized into the CBOR binary format and vice versa. The CBOR format is a well-defined and less restrictive binary representation for a superset of JSON.</p>
+<p><b>See also </b><a href="qjsondocument-obsolete.html#fromBinaryData">fromBinaryData</a>() and <a href="qcborvalue.html">QCborValue</a>.</p>
+<!-- @@@toBinaryData -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

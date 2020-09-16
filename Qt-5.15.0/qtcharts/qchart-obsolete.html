@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qchart.cpp -->
+  <title>Obsolete Members for QChart | Qt Charts 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtcharts-index.html">Qt Charts</a></li>
+<li><a href="qtcharts-module.html">C++ Classes</a></li>
+<li>QChart</li>
+<li id="buildversion"><a href="qtcharts-index.html">Qt Charts | Commercial or GPLv3</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar"><div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Obsolete Members for QChart</h1>
+<p><b>The following members of class <a href="qchart.html">QChart</a> are obsolete.</b> They are provided to keep old source code working. We strongly advise against using them in new code.</p>
+<h2>Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>QAbstractAxis *</td><td class="memItemRight bottomAlign"><b><a href="qchart-obsolete.html#axisX">axisX</a></b>(QAbstractSeries *<i>series</i> = nullptr) const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>QAbstractAxis *</td><td class="memItemRight bottomAlign"><b><a href="qchart-obsolete.html#axisY">axisY</a></b>(QAbstractSeries *<i>series</i> = nullptr) const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>void </td><td class="memItemRight bottomAlign"><b><a href="qchart-obsolete.html#setAxisX">setAxisX</a></b>(QAbstractAxis *<i>axis</i>, QAbstractSeries *<i>series</i> = nullptr)</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>void </td><td class="memItemRight bottomAlign"><b><a href="qchart-obsolete.html#setAxisY">setAxisY</a></b>(QAbstractAxis *<i>axis</i>, QAbstractSeries *<i>series</i> = nullptr)</td></tr>
+</table></div>
+<h2>Member Function Documentation</h2>
+<!-- $$$axisX[overload1]$$$axisXQAbstractSeries* -->
+<h3 class="fn" id="axisX"><a name="axisX"></a><span class="type"><a href="qabstractaxis.html">QAbstractAxis</a></span> *QChart::<span class="name">axisX</span>(<span class="type"><a href="qabstractseries.html">QAbstractSeries</a></span> *<i>series</i> = nullptr) const</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>Use <a href="qchart.html#axes">axes</a>() instead.</p>
+<p>Returns a pointer to the horizontal axis attached to the specified <i>series</i>. If no series is specified, the first horizontal axis added to the chart is returned.</p>
+<p><b>See also </b><a href="qchart-obsolete.html#setAxisX">setAxisX</a>(), <a href="qchart.html#addAxis">addAxis</a>(), and <a href="qabstractseries.html#attachAxis">QAbstractSeries::attachAxis</a>().</p>
+<!-- @@@axisX -->
+<!-- $$$axisY[overload1]$$$axisYQAbstractSeries* -->
+<h3 class="fn" id="axisY"><a name="axisY"></a><span class="type"><a href="qabstractaxis.html">QAbstractAxis</a></span> *QChart::<span class="name">axisY</span>(<span class="type"><a href="qabstractseries.html">QAbstractSeries</a></span> *<i>series</i> = nullptr) const</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>Use <a href="qchart.html#axes">axes</a>() instead.</p>
+<p>Returns a pointer to the vertical axis attached to the specified <i>series</i>. If no series is specified, the first vertical axis added to the chart is returned.</p>
+<p><b>See also </b><a href="qchart-obsolete.html#setAxisY">setAxisY</a>(), <a href="qchart.html#addAxis">addAxis</a>(), and <a href="qabstractseries.html#attachAxis">QAbstractSeries::attachAxis</a>().</p>
+<!-- @@@axisY -->
+<!-- $$$setAxisX[overload1]$$$setAxisXQAbstractAxis*QAbstractSeries* -->
+<h3 class="fn" id="setAxisX"><a name="setAxisX"></a><span class="type">void</span> QChart::<span class="name">setAxisX</span>(<span class="type"><a href="qabstractaxis.html">QAbstractAxis</a></span> *<i>axis</i>, <span class="type"><a href="qabstractseries.html">QAbstractSeries</a></span> *<i>series</i> = nullptr)</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>Use <a href="qchart.html#addAxis">addAxis</a>() instead.</p>
+<p>Adds the axis <i>axis</i> to the chart and attaches it to the series <i>series</i> as a bottom-aligned horizontal axis. The chart takes ownership of both the axis and the series. Any horizontal axes previously attached to the series are deleted.</p>
+<p><b>See also </b><a href="qchart-obsolete.html#axisX">axisX</a>(), <a href="qchart-obsolete.html#axisY">axisY</a>(), <a href="qchart-obsolete.html#setAxisY">setAxisY</a>(), <a href="qchart.html#createDefaultAxes">createDefaultAxes</a>(), and <a href="qabstractseries.html#attachAxis">QAbstractSeries::attachAxis</a>().</p>
+<!-- @@@setAxisX -->
+<!-- $$$setAxisY[overload1]$$$setAxisYQAbstractAxis*QAbstractSeries* -->
+<h3 class="fn" id="setAxisY"><a name="setAxisY"></a><span class="type">void</span> QChart::<span class="name">setAxisY</span>(<span class="type"><a href="qabstractaxis.html">QAbstractAxis</a></span> *<i>axis</i>, <span class="type"><a href="qabstractseries.html">QAbstractSeries</a></span> *<i>series</i> = nullptr)</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>Use <a href="qchart.html#addAxis">addAxis</a>() instead.</p>
+<p>Adds the axis <i>axis</i> to the chart and attaches it to the series <i>series</i> as a left-aligned vertical axis. The chart takes ownership of both the axis and the series. Any vertical axes previously attached to the series are deleted.</p>
+<p><b>See also </b><a href="qchart-obsolete.html#axisX">axisX</a>(), <a href="qchart-obsolete.html#axisY">axisY</a>(), <a href="qchart-obsolete.html#setAxisX">setAxisX</a>(), <a href="qchart.html#createDefaultAxes">createDefaultAxes</a>(), and <a href="qabstractseries.html#attachAxis">QAbstractSeries::attachAxis</a>().</p>
+<!-- @@@setAxisY -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

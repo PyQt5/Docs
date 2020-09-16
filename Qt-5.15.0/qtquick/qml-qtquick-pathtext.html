@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qquickpath.cpp -->
+  <title>PathText QML Type | Qt Quick 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtquick-index.html">Qt Quick</a></li>
+<li><a href="qtquick-qmlmodule.html">QML Types</a></li>
+<li>PathText QML Type</li>
+<li id="buildversion"><a href="qtquick-index.html">Qt 5.15.0 Reference Documentation</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">PathText QML Type</h1>
+<span class="subtitle"></span>
+<!-- $$$PathText-brief -->
+<p>Defines a string in a specified font. <a href="#details">More...</a></p>
+<!-- @@@PathText -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Import Statement:</td><td class="memItemRight bottomAlign"> import QtQuick 2.15</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Since:</td><td class="memItemRight bottomAlign"> QtQuick 2.15</td></tr></table></div><ul>
+<li><a href="qml-qtquick-pathtext-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="properties"></a>
+<h2 id="properties">Properties</h2>
+<ul>
+<li class="fn"><b><b><a href="qml-qtquick-pathtext.html#font.bold-prop">font.bold</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-qtquick-pathtext.html#font.capitalization-prop">font.capitalization</a></b></b> : enumeration</li>
+<li class="fn"><b><b><a href="qml-qtquick-pathtext.html#font.family-prop">font.family</a></b></b> : string</li>
+<li class="fn"><b><b><a href="qml-qtquick-pathtext.html#font.italic-prop">font.italic</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-qtquick-pathtext.html#font.kerning-prop">font.kerning</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-qtquick-pathtext.html#font.letterSpacing-prop">font.letterSpacing</a></b></b> : real</li>
+<li class="fn"><b><b><a href="qml-qtquick-pathtext.html#font.pixelSize-prop">font.pixelSize</a></b></b> : int</li>
+<li class="fn"><b><b><a href="qml-qtquick-pathtext.html#font.pointSize-prop">font.pointSize</a></b></b> : real</li>
+<li class="fn"><b><b><a href="qml-qtquick-pathtext.html#font.preferShaping-prop">font.preferShaping</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-qtquick-pathtext.html#font.strikeout-prop">font.strikeout</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-qtquick-pathtext.html#font.styleName-prop">font.styleName</a></b></b> : string</li>
+<li class="fn"><b><b><a href="qml-qtquick-pathtext.html#font.underline-prop">font.underline</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-qtquick-pathtext.html#font.weight-prop">font.weight</a></b></b> : enumeration</li>
+<li class="fn"><b><b><a href="qml-qtquick-pathtext.html#font.wordSpacing-prop">font.wordSpacing</a></b></b> : real</li>
+<li class="fn"><b><b><a href="qml-qtquick-pathtext.html#text-prop">text</a></b></b> : string</li>
+<li class="fn"><b><b><a href="qml-qtquick-pathtext.html#x-prop">x</a></b></b> : real</li>
+<li class="fn"><b><b><a href="qml-qtquick-pathtext.html#y-prop">y</a></b></b> : real</li>
+</ul>
+<!-- $$$PathText-description -->
+<a name="details"></a>
+<h2 id="details">Detailed Description</h2>
+<p>This element defines the shape of a specified string in a specified font. The text's baseline will be translated to the x and y coordinates, and the outlines from the font will be added to the path accordingly.</p>
+<pre class="qml">
+ <span class="type"><a href="qml-qtquick-pathtext.html">PathText</a></span> {
+     <span class="name">x</span>: <span class="number">0</span>
+     <span class="name">y</span>: <span class="name">font</span>.<span class="name">pixelSize</span>
+     <span class="name">font</span>.family: <span class="string">&quot;Arial&quot;</span>
+     <span class="name">font</span>.pixelSize: <span class="number">100</span>
+     <span class="name">text</span>: <span class="string">&quot;Foobar&quot;</span>
+ }
+</pre>
+<p><b>See also </b><a href="qml-qtquick-path.html">Path</a>, <a href="../qtgui/qpainterpath.html#setFillRule">QPainterPath::setFillRule</a>, <a href="qml-qtquick-pathpolyline.html">PathPolyline</a>, <a href="qml-qtquick-pathquad.html">PathQuad</a>, <a href="qml-qtquick-pathcubic.html">PathCubic</a>, <a href="qml-qtquick-patharc.html">PathArc</a>, <a href="qml-qtquick-pathanglearc.html">PathAngleArc</a>, <a href="qml-qtquick-pathcurve.html">PathCurve</a>, <a href="qml-qtquick-pathsvg.html">PathSvg</a>, and <a href="qml-qtquick-pathmove.html">PathMove</a>.</p>
+<!-- @@@PathText -->
+<h2>Property Documentation</h2>
+<!-- $$$font.bold -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="font.bold-prop">
+<td class="tblQmlPropNode"><p>
+<a name="font.bold-prop"></a><span class="name">font.bold</span> : <span class="type"><a href="../qtqml/qml-bool.html">bool</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Sets whether the font weight is bold.</p>
+</div></div><!-- @@@font.bold -->
+<br/>
+<!-- $$$font.capitalization -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="font.capitalization-prop">
+<td class="tblQmlPropNode"><p>
+<a name="font.capitalization-prop"></a><span class="name">font.capitalization</span> : <span class="type"><a href="../qtqml/qml-enumeration.html">enumeration</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Sets the capitalization for the text.</p>
+<ul>
+<li>Font.MixedCase - This is the normal text rendering option where no capitalization change is applied.</li>
+<li>Font.AllUppercase - This alters the text to be rendered in all uppercase type.</li>
+<li>Font.AllLowercase - This alters the text to be rendered in all lowercase type.</li>
+<li>Font.SmallCaps - This alters the text to be rendered in small-caps type.</li>
+<li>Font.Capitalize - This alters the text to be rendered with the first character of each word as an uppercase character.</li>
+</ul>
+<pre class="qml">
+ <span class="type"><a href="qml-qtquick-pathtext.html">PathText</a></span> { <span class="name">text</span>: <span class="string">&quot;Hello&quot;</span>; <span class="name">font</span>.capitalization: <span class="name">Font</span>.<span class="name">AllLowercase</span> }
+</pre>
+</div></div><!-- @@@font.capitalization -->
+<br/>
+<!-- $$$font.family -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="font.family-prop">
+<td class="tblQmlPropNode"><p>
+<a name="font.family-prop"></a><span class="name">font.family</span> : <span class="type"><a href="../qtqml/qml-string.html">string</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Sets the family name of the font.</p>
+<p>The family name is case insensitive and may optionally include a foundry name, e.g&#x2e; &quot;Helvetica [Cronyx]&quot;. If the family is available from more than one foundry and the foundry isn't specified, an arbitrary foundry is chosen. If the family isn't available a family will be set using the font matching algorithm.</p>
+</div></div><!-- @@@font.family -->
+<br/>
+<!-- $$$font.italic -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="font.italic-prop">
+<td class="tblQmlPropNode"><p>
+<a name="font.italic-prop"></a><span class="name">font.italic</span> : <span class="type"><a href="../qtqml/qml-bool.html">bool</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Sets whether the font has an italic style.</p>
+</div></div><!-- @@@font.italic -->
+<br/>
+<!-- $$$font.kerning -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="font.kerning-prop">
+<td class="tblQmlPropNode"><p>
+<a name="font.kerning-prop"></a><span class="name">font.kerning</span> : <span class="type"><a href="../qtqml/qml-bool.html">bool</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Enables or disables the kerning OpenType feature when shaping the text. Disabling this may improve performance when creating or changing the text, at the expense of some cosmetic features. The default value is true.</p>
+<pre class="qml">
+ <span class="type"><a href="qml-qtquick-pathtext.html">PathText</a></span> { <span class="name">text</span>: <span class="string">&quot;OATS FLAVOUR WAY&quot;</span>; <span class="name">font</span>.kerning: <span class="number">false</span> }
+</pre>
+</div></div><!-- @@@font.kerning -->
+<br/>
+<!-- $$$font.letterSpacing -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="font.letterSpacing-prop">
+<td class="tblQmlPropNode"><p>
+<a name="font.letterSpacing-prop"></a><span class="name">font.letterSpacing</span> : <span class="type"><a href="../qtqml/qml-real.html">real</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Sets the letter spacing for the font.</p>
+<p>Letter spacing changes the default spacing between individual letters in the font. A positive value increases the letter spacing by the corresponding pixels; a negative value decreases the spacing.</p>
+</div></div><!-- @@@font.letterSpacing -->
+<br/>
+<!-- $$$font.pixelSize -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="font.pixelSize-prop">
+<td class="tblQmlPropNode"><p>
+<a name="font.pixelSize-prop"></a><span class="name">font.pixelSize</span> : <span class="type"><a href="../qtqml/qml-int.html">int</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Sets the font size in pixels.</p>
+<p>Using this function makes the font device dependent. Use <code>pointSize</code> to set the size of the font in a device independent manner.</p>
+</div></div><!-- @@@font.pixelSize -->
+<br/>
+<!-- $$$font.pointSize -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="font.pointSize-prop">
+<td class="tblQmlPropNode"><p>
+<a name="font.pointSize-prop"></a><span class="name">font.pointSize</span> : <span class="type"><a href="../qtqml/qml-real.html">real</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Sets the font size in points. The point size must be greater than zero.</p>
+</div></div><!-- @@@font.pointSize -->
+<br/>
+<!-- $$$font.preferShaping -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="font.preferShaping-prop">
+<td class="tblQmlPropNode"><p>
+<a name="font.preferShaping-prop"></a><span class="name">font.preferShaping</span> : <span class="type"><a href="../qtqml/qml-bool.html">bool</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Sometimes, a font will apply complex rules to a set of characters in order to display them correctly. In some writing systems, such as Brahmic scripts, this is required in order for the text to be legible, but in e.g&#x2e; Latin script, it is merely a cosmetic feature. Setting the <code>preferShaping</code> property to false will disable all such features when they are not required, which will improve performance in most cases.</p>
+<p>The default value is true.</p>
+<pre class="qml">
+ <span class="type"><a href="qml-qtquick-pathtext.html">PathText</a></span> { <span class="name">text</span>: <span class="string">&quot;Some text&quot;</span>; <span class="name">font</span>.preferShaping: <span class="number">false</span> }
+</pre>
+</div></div><!-- @@@font.preferShaping -->
+<br/>
+<!-- $$$font.strikeout -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="font.strikeout-prop">
+<td class="tblQmlPropNode"><p>
+<a name="font.strikeout-prop"></a><span class="name">font.strikeout</span> : <span class="type"><a href="../qtqml/qml-bool.html">bool</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Sets whether the font has a strikeout style.</p>
+</div></div><!-- @@@font.strikeout -->
+<br/>
+<!-- $$$font.styleName -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="font.styleName-prop">
+<td class="tblQmlPropNode"><p>
+<a name="font.styleName-prop"></a><span class="name">font.styleName</span> : <span class="type"><a href="../qtqml/qml-string.html">string</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Sets the style name of the font.</p>
+<p>The style name is case insensitive. If set, the font will be matched against style name instead of the font properties <a href="qml-qtquick-pathtext.html#font.weight-prop">font.weight</a>, <a href="qml-qtquick-pathtext.html#font.bold-prop">font.bold</a> and <a href="qml-qtquick-pathtext.html#font.italic-prop">font.italic</a>.</p>
+</div></div><!-- @@@font.styleName -->
+<br/>
+<!-- $$$font.underline -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="font.underline-prop">
+<td class="tblQmlPropNode"><p>
+<a name="font.underline-prop"></a><span class="name">font.underline</span> : <span class="type"><a href="../qtqml/qml-bool.html">bool</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Sets whether the text is underlined.</p>
+</div></div><!-- @@@font.underline -->
+<br/>
+<!-- $$$font.weight -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="font.weight-prop">
+<td class="tblQmlPropNode"><p>
+<a name="font.weight-prop"></a><span class="name">font.weight</span> : <span class="type"><a href="../qtqml/qml-enumeration.html">enumeration</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Sets the font's weight.</p>
+<p>The weight can be one of:</p>
+<ul>
+<li>Font.Thin</li>
+<li>Font.Light</li>
+<li>Font.ExtraLight</li>
+<li>Font.Normal - the default</li>
+<li>Font.Medium</li>
+<li>Font.DemiBold</li>
+<li>Font.Bold</li>
+<li>Font.ExtraBold</li>
+<li>Font.Black</li>
+</ul>
+<pre class="qml">
+ <span class="type"><a href="qml-qtquick-pathtext.html">PathText</a></span> { <span class="name">text</span>: <span class="string">&quot;Hello&quot;</span>; <span class="name">font</span>.weight: <span class="name">Font</span>.<span class="name">DemiBold</span> }
+</pre>
+</div></div><!-- @@@font.weight -->
+<br/>
+<!-- $$$font.wordSpacing -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="font.wordSpacing-prop">
+<td class="tblQmlPropNode"><p>
+<a name="font.wordSpacing-prop"></a><span class="name">font.wordSpacing</span> : <span class="type"><a href="../qtqml/qml-real.html">real</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Sets the word spacing for the font.</p>
+<p>Word spacing changes the default spacing between individual words. A positive value increases the word spacing by a corresponding amount of pixels, while a negative value decreases the inter-word spacing accordingly.</p>
+</div></div><!-- @@@font.wordSpacing -->
+<br/>
+<!-- $$$text -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="text-prop">
+<td class="tblQmlPropNode"><p>
+<a name="text-prop"></a><span class="name">text</span> : <span class="type"><a href="../qtqml/qml-string.html">string</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>The text for which this <a href="qml-qtquick-pathtext.html">PathText</a> should contain the outlines.</p>
+</div></div><!-- @@@text -->
+<br/>
+<!-- $$$x -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="x-prop">
+<td class="tblQmlPropNode"><p>
+<a name="x-prop"></a><span class="name">x</span> : <span class="type"><a href="../qtqml/qml-real.html">real</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>The horizontal position of the <a href="qml-qtquick-pathtext.html">PathText</a>'s baseline.</p>
+</div></div><!-- @@@x -->
+<br/>
+<!-- $$$y -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="y-prop">
+<td class="tblQmlPropNode"><p>
+<a name="y-prop"></a><span class="name">y</span> : <span class="type"><a href="../qtqml/qml-real.html">real</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>The vertical position of the <a href="qml-qtquick-pathtext.html">PathText</a>'s baseline.</p>
+<p><b>Note: </b>This property refers to the position of the baseline of the text, not the top of its bounding box. This may cause some confusion, e.g&#x2e; when using the <a href="qml-qtquick-pathtext.html">PathText</a> with Qt Quick Shapes. See <a href="qml-qtquick-fontmetrics.html">FontMetrics</a> for information on how to get the ascent of a font, which can be used to translate the text into the expected position.</p>
+</div></div><!-- @@@y -->
+<br/>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

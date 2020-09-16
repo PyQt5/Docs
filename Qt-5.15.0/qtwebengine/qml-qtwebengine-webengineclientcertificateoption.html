@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qquickwebengineclientcertificateselection.cpp -->
+  <title>WebEngineClientCertificateOption QML Type | Qt WebEngine 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtwebengine-index.html">Qt WebEngine</a></li>
+<li><a href="qtwebengine-qmlmodule.html">QML Types</a></li>
+<li>WebEngineClientCertificateOption QML Type</li>
+<li id="buildversion"><a href="qtwebengine-index.html">Qt 5.15.0 Reference Documentation</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#methods">Methods</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">WebEngineClientCertificateOption QML Type</h1>
+<span class="subtitle"></span>
+<!-- $$$WebEngineClientCertificateOption-brief -->
+<p>Represents a client certificate option. <a href="#details">More...</a></p>
+<!-- @@@WebEngineClientCertificateOption -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Import Statement:</td><td class="memItemRight bottomAlign"> import QtWebEngine 1.10</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Since:</td><td class="memItemRight bottomAlign"> QtWebEngine 1.9</td></tr></table></div><ul>
+<li><a href="qml-qtwebengine-webengineclientcertificateoption-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="properties"></a>
+<h2 id="properties">Properties</h2>
+<ul>
+<li class="fn"><b><b><a href="qml-qtwebengine-webengineclientcertificateoption.html#effectiveDate-prop">effectiveDate</a></b></b> : datetime</li>
+<li class="fn"><b><b><a href="qml-qtwebengine-webengineclientcertificateoption.html#expiryDate-prop">expiryDate</a></b></b> : datetime</li>
+<li class="fn"><b><b><a href="qml-qtwebengine-webengineclientcertificateoption.html#isSelfSigned-prop">isSelfSigned</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-qtwebengine-webengineclientcertificateoption.html#issuer-prop">issuer</a></b></b> : string</li>
+<li class="fn"><b><b><a href="qml-qtwebengine-webengineclientcertificateoption.html#subject-prop">subject</a></b></b> : string</li>
+</ul>
+<a name="methods"></a>
+<h2 id="methods">Methods</h2>
+<ul>
+<li class="fn">void <b><b><a href="qml-qtwebengine-webengineclientcertificateoption.html#select-method">select</a></b></b>()</li>
+</ul>
+<!-- $$$WebEngineClientCertificateOption-description -->
+<a name="details"></a>
+<h2 id="details">Detailed Description</h2>
+<p><b>See also </b><a href="qml-qtwebengine-webengineclientcertificateselection.html#certificates-prop">WebEngineClientCertificateSelection.certificates</a>.</p>
+<!-- @@@WebEngineClientCertificateOption -->
+<h2>Property Documentation</h2>
+<!-- $$$effectiveDate -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="effectiveDate-prop">
+<td class="tblQmlPropNode"><p>
+<a name="effectiveDate-prop"></a><span class="name">effectiveDate</span> : <span class="type">datetime</span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>The date and time when the certificate becomes valid.</p>
+</div></div><!-- @@@effectiveDate -->
+<br/>
+<!-- $$$expiryDate -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="expiryDate-prop">
+<td class="tblQmlPropNode"><p>
+<a name="expiryDate-prop"></a><span class="name">expiryDate</span> : <span class="type">datetime</span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>The date and time when the certificate becomes invalid.</p>
+</div></div><!-- @@@expiryDate -->
+<br/>
+<!-- $$$isSelfSigned -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="isSelfSigned-prop">
+<td class="tblQmlPropNode"><p>
+<a name="isSelfSigned-prop"></a><span class="name">isSelfSigned</span> : <span class="type"><a href="../qtqml/qml-bool.html">bool</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Whether the certificate is only self-signed.</p>
+</div></div><!-- @@@isSelfSigned -->
+<br/>
+<!-- $$$issuer -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="issuer-prop">
+<td class="tblQmlPropNode"><p>
+<a name="issuer-prop"></a><span class="name">issuer</span> : <span class="type"><a href="../qtqml/qml-string.html">string</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>The issuer of the certificate.</p>
+</div></div><!-- @@@issuer -->
+<br/>
+<!-- $$$subject -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="subject-prop">
+<td class="tblQmlPropNode"><p>
+<a name="subject-prop"></a><span class="name">subject</span> : <span class="type"><a href="../qtqml/qml-string.html">string</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>The subject of the certificate.</p>
+</div></div><!-- @@@subject -->
+<br/>
+<h2>Method Documentation</h2>
+<!-- $$$select[overload1]$$$select -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="select-method">
+<td class="tblQmlFuncNode"><p>
+<a name="select-method"></a><span class="type">void</span> <span class="name">select</span>()</p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Selects this client certificate option.</p>
+</div></div><!-- @@@select -->
+<br/>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

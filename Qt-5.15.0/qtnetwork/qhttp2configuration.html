@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qhttp2configuration.cpp -->
+  <title>QHttp2Configuration Class | Qt Network 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtnetwork-index.html">Qt Network</a></li>
+<li><a href="qtnetwork-module.html">C++ Classes</a></li>
+<li>QHttp2Configuration</li>
+<li id="buildversion"><a href="qtnetwork-index.html">Qt 5.15.0 Reference Documentation</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">QHttp2Configuration Class</h1>
+<!-- $$$QHttp2Configuration-brief -->
+<p>The QHttp2Configuration class controls HTTP/2 parameters and settings. <a href="#details">More...</a></p>
+<!-- @@@QHttp2Configuration -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign">  <span class="preprocessor">#include &lt;QHttp2Configuration&gt;</span>
+</td></tr><tr><td class="memItemLeft rightAlign topAlign"> qmake:</td><td class="memItemRight bottomAlign"> QT += network</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Since:</td><td class="memItemRight bottomAlign"> Qt 5.14</td></tr></table></div><p>This class was introduced in Qt 5.14.</p>
+<ul>
+<li><a href="qhttp2configuration-members.html">List of all members, including inherited members</a></li>
+</ul>
+<p><b>Note:</b> All functions in this class are <a href="../qtdoc/threads-reentrancy.html">reentrant</a>.</p>
+<a name="public-functions"></a>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qhttp2configuration.html#QHttp2Configuration-2">QHttp2Configuration</a></b>(QHttp2Configuration &amp;&amp;<i>other</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qhttp2configuration.html#QHttp2Configuration-1">QHttp2Configuration</a></b>(const QHttp2Configuration &amp;<i>other</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qhttp2configuration.html#QHttp2Configuration">QHttp2Configuration</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QHttp2Configuration &amp;</td><td class="memItemRight bottomAlign"><b><a href="qhttp2configuration.html#operator-eq-1">operator=</a></b>(QHttp2Configuration &amp;&amp;<i>other</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QHttp2Configuration &amp;</td><td class="memItemRight bottomAlign"><b><a href="qhttp2configuration.html#operator-eq">operator=</a></b>(const QHttp2Configuration &amp;<i>other</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qhttp2configuration.html#dtor.QHttp2Configuration">~QHttp2Configuration</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qhttp2configuration.html#huffmanCompressionEnabled">huffmanCompressionEnabled</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> unsigned int </td><td class="memItemRight bottomAlign"><b><a href="qhttp2configuration.html#maxFrameSize">maxFrameSize</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qhttp2configuration.html#serverPushEnabled">serverPushEnabled</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> unsigned int </td><td class="memItemRight bottomAlign"><b><a href="qhttp2configuration.html#sessionReceiveWindowSize">sessionReceiveWindowSize</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qhttp2configuration.html#setHuffmanCompressionEnabled">setHuffmanCompressionEnabled</a></b>(bool <i>enable</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qhttp2configuration.html#setMaxFrameSize">setMaxFrameSize</a></b>(unsigned int <i>size</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qhttp2configuration.html#setServerPushEnabled">setServerPushEnabled</a></b>(bool <i>enable</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qhttp2configuration.html#setSessionReceiveWindowSize">setSessionReceiveWindowSize</a></b>(unsigned int <i>size</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qhttp2configuration.html#setStreamReceiveWindowSize">setStreamReceiveWindowSize</a></b>(unsigned int <i>size</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> unsigned int </td><td class="memItemRight bottomAlign"><b><a href="qhttp2configuration.html#streamReceiveWindowSize">streamReceiveWindowSize</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qhttp2configuration.html#swap">swap</a></b>(QHttp2Configuration &amp;<i>other</i>)</td></tr>
+</table></div>
+<a name="details"></a>
+<!-- $$$QHttp2Configuration-description -->
+<div class="descr">
+<h2 id="details">Detailed Description</h2>
+<p>QHttp2Configuration controls HTTP/2 parameters and settings that <a href="qnetworkaccessmanager.html">QNetworkAccessManager</a> will use to send requests and process responses when the HTTP/2 protocol is enabled.</p>
+<p>The HTTP/2 parameters that QHttp2Configuration currently supports include:</p>
+<ul>
+<li>The session window size for connection-level flow control. Will be sent to a remote peer when needed as 'WINDOW_UPDATE' frames on the stream with an identifier 0.</li>
+<li>The stream receiving window size for stream-level flow control. Sent as 'SETTINGS_INITIAL_WINDOW_SIZE' parameter in the initial SETTINGS frame and, when needed, 'WINDOW_UPDATE' frames will be sent on streams that <a href="qnetworkaccessmanager.html">QNetworkAccessManager</a> opens.</li>
+<li>The maximum frame size. This parameter limits the maximum payload a frame coming from the remote peer can have. Sent by <a href="qnetworkaccessmanager.html">QNetworkAccessManager</a> as 'SETTINGS_MAX_FRAME_SIZE' parameter in the initial 'SETTINGS' frame.</li>
+<li>The server push. Allows to enable or disable server push. Sent as 'SETTINGS_ENABLE_PUSH' parameter in the initial 'SETTINGS' frame.</li>
+</ul>
+<p>The QHttp2Configuration class also controls if the header compression algorithm (HPACK) is additionally using Huffman coding for string compression.</p>
+<p><b>Note: </b>The configuration must be set before the first request was sent to a given host (and thus an HTTP/2 session established).</p>
+<p><b>Note: </b>Details about flow control, server push and 'SETTINGS' can be found in <a href="https://httpwg.org/specs/rfc7540.html">RFC 7540</a>. Different modes and parameters of the HPACK compression algorithm are described in <a href="https://httpwg.org/specs/rfc7541.html">RFC 7541</a>.</p>
+</div>
+<p><b>See also </b><a href="qnetworkrequest.html#setHttp2Configuration">QNetworkRequest::setHttp2Configuration</a>(), <a href="qnetworkrequest.html#http2Configuration">QNetworkRequest::http2Configuration</a>(), and <a href="qnetworkaccessmanager.html">QNetworkAccessManager</a>.</p>
+<!-- @@@QHttp2Configuration -->
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$QHttp2Configuration$$$QHttp2ConfigurationQHttp2Configuration&& -->
+<h3 class="fn" id="QHttp2Configuration-2"><a name="QHttp2Configuration-2"></a>QHttp2Configuration::<span class="name">QHttp2Configuration</span>(<span class="type"><a href="qhttp2configuration.html#QHttp2Configuration">QHttp2Configuration</a></span> &amp;&amp;<i>other</i>)</h3>
+<p>Move-constructs this QHttp2Configuration from <i>other</i></p>
+<!-- @@@QHttp2Configuration -->
+<!-- $$$QHttp2Configuration$$$QHttp2ConfigurationconstQHttp2Configuration& -->
+<h3 class="fn" id="QHttp2Configuration-1"><a name="QHttp2Configuration-1"></a>QHttp2Configuration::<span class="name">QHttp2Configuration</span>(const <span class="type"><a href="qhttp2configuration.html#QHttp2Configuration">QHttp2Configuration</a></span> &amp;<i>other</i>)</h3>
+<p>Copy-constructs this QHttp2Configuration.</p>
+<!-- @@@QHttp2Configuration -->
+<!-- $$$QHttp2Configuration[overload1]$$$QHttp2Configuration -->
+<h3 class="fn" id="QHttp2Configuration"><a name="QHttp2Configuration"></a>QHttp2Configuration::<span class="name">QHttp2Configuration</span>()</h3>
+<p>Default constructs a QHttp2Configuration object.</p>
+<p>Such a configuration has the following values:</p>
+<ul>
+<li>Server push is disabled</li>
+<li>Huffman string compression is enabled</li>
+<li>Window size for connection-level flow control is 65535 octets</li>
+<li>Window size for stream-level flow control is 65535 octets</li>
+<li>Frame size is 16384 octets</li>
+</ul>
+<!-- @@@QHttp2Configuration -->
+<!-- $$$operator=$$$operator=QHttp2Configuration&& -->
+<h3 class="fn" id="operator-eq-1"><a name="operator-eq-1"></a><span class="type"><a href="qhttp2configuration.html#QHttp2Configuration">QHttp2Configuration</a></span> &amp;QHttp2Configuration::<span class="name">operator=</span>(<span class="type"><a href="qhttp2configuration.html#QHttp2Configuration">QHttp2Configuration</a></span> &amp;&amp;<i>other</i>)</h3>
+<p>Move-assigns to this <a href="qhttp2configuration.html">QHttp2Configuration</a>.</p>
+<!-- @@@operator= -->
+<!-- $$$operator=[overload1]$$$operator=constQHttp2Configuration& -->
+<h3 class="fn" id="operator-eq"><a name="operator-eq"></a><span class="type"><a href="qhttp2configuration.html#QHttp2Configuration">QHttp2Configuration</a></span> &amp;QHttp2Configuration::<span class="name">operator=</span>(const <span class="type"><a href="qhttp2configuration.html#QHttp2Configuration">QHttp2Configuration</a></span> &amp;<i>other</i>)</h3>
+<p>Copy-assigns to this <a href="qhttp2configuration.html">QHttp2Configuration</a>.</p>
+<!-- @@@operator= -->
+<!-- $$$~QHttp2Configuration[overload1]$$$~QHttp2Configuration -->
+<h3 class="fn" id="dtor.QHttp2Configuration"><a name="dtor.QHttp2Configuration"></a>QHttp2Configuration::<span class="name">~QHttp2Configuration</span>()</h3>
+<p>Destructor.</p>
+<!-- @@@~QHttp2Configuration -->
+<!-- $$$huffmanCompressionEnabled[overload1]$$$huffmanCompressionEnabled -->
+<h3 class="fn" id="huffmanCompressionEnabled"><a name="huffmanCompressionEnabled"></a><span class="type">bool</span> QHttp2Configuration::<span class="name">huffmanCompressionEnabled</span>() const</h3>
+<p>Returns <code>true</code> if the Huffman coding in HPACK is enabled.</p>
+<p><b>See also </b><a href="qhttp2configuration.html#setHuffmanCompressionEnabled">setHuffmanCompressionEnabled</a>.</p>
+<!-- @@@huffmanCompressionEnabled -->
+<!-- $$$maxFrameSize[overload1]$$$maxFrameSize -->
+<h3 class="fn" id="maxFrameSize"><a name="maxFrameSize"></a><span class="type">unsigned</span> <span class="type">int</span> QHttp2Configuration::<span class="name">maxFrameSize</span>() const</h3>
+<p>The maximum payload size that HTTP/2 frames can have. The default (initial) value is 16384 octets.</p>
+<p><b>See also </b><a href="qhttp2configuration.html#setMaxFrameSize">setMaxFrameSize</a>().</p>
+<!-- @@@maxFrameSize -->
+<!-- $$$serverPushEnabled[overload1]$$$serverPushEnabled -->
+<h3 class="fn" id="serverPushEnabled"><a name="serverPushEnabled"></a><span class="type">bool</span> QHttp2Configuration::<span class="name">serverPushEnabled</span>() const</h3>
+<p>Returns true if server push was enabled.</p>
+<p><b>Note: </b>By default, <a href="qnetworkaccessmanager.html">QNetworkAccessManager</a> disables server push via the 'SETTINGS' frame.</p>
+<p><b>See also </b><a href="qhttp2configuration.html#setServerPushEnabled">setServerPushEnabled</a>.</p>
+<!-- @@@serverPushEnabled -->
+<!-- $$$sessionReceiveWindowSize[overload1]$$$sessionReceiveWindowSize -->
+<h3 class="fn" id="sessionReceiveWindowSize"><a name="sessionReceiveWindowSize"></a><span class="type">unsigned</span> <span class="type">int</span> QHttp2Configuration::<span class="name">sessionReceiveWindowSize</span>() const</h3>
+<p>Returns the window size for connection-level flow control. The default value <a href="qnetworkaccessmanager.html">QNetworkAccessManager</a> will be using is 2147483647 octets.</p>
+<p><b>See also </b><a href="qhttp2configuration.html#setSessionReceiveWindowSize">setSessionReceiveWindowSize</a>().</p>
+<!-- @@@sessionReceiveWindowSize -->
+<!-- $$$setHuffmanCompressionEnabled[overload1]$$$setHuffmanCompressionEnabledbool -->
+<h3 class="fn" id="setHuffmanCompressionEnabled"><a name="setHuffmanCompressionEnabled"></a><span class="type">void</span> QHttp2Configuration::<span class="name">setHuffmanCompressionEnabled</span>(<span class="type">bool</span> <i>enable</i>)</h3>
+<p>If <i>enable</i> is <code>true</code>, HPACK compression will additionally compress string using the Huffman coding. Enabled by default.</p>
+<p><b>Note: </b>This parameter only affects 'HEADERS' frames that <a href="qnetworkaccessmanager.html">QNetworkAccessManager</a> is sending.</p>
+<p><b>See also </b><a href="qhttp2configuration.html#huffmanCompressionEnabled">huffmanCompressionEnabled</a>.</p>
+<!-- @@@setHuffmanCompressionEnabled -->
+<!-- $$$setMaxFrameSize[overload1]$$$setMaxFrameSizeunsignedint -->
+<h3 class="fn" id="setMaxFrameSize"><a name="setMaxFrameSize"></a><span class="type">bool</span> QHttp2Configuration::<span class="name">setMaxFrameSize</span>(<span class="type">unsigned</span> <span class="type">int</span> <i>size</i>)</h3>
+<p>Sets the maximum frame size that <a href="qnetworkaccessmanager.html">QNetworkAccessManager</a> will advertise to the server when sending its initial SETTINGS frame.</p>
+<p><b>Note: </b>While this <i>size</i> is required to be within a range between 16384 and 16777215 inclusive, the actual payload size in frames that carry payload maybe be less than 16384.</p>
+<p><b>See also </b><a href="qhttp2configuration.html#maxFrameSize">maxFrameSize</a>().</p>
+<!-- @@@setMaxFrameSize -->
+<!-- $$$setServerPushEnabled[overload1]$$$setServerPushEnabledbool -->
+<h3 class="fn" id="setServerPushEnabled"><a name="setServerPushEnabled"></a><span class="type">void</span> QHttp2Configuration::<span class="name">setServerPushEnabled</span>(<span class="type">bool</span> <i>enable</i>)</h3>
+<p>If <i>enable</i> is <code>true</code>, a remote server can potentially use server push to send reponses in advance.</p>
+<p><b>See also </b><a href="qhttp2configuration.html#serverPushEnabled">serverPushEnabled</a>.</p>
+<!-- @@@setServerPushEnabled -->
+<!-- $$$setSessionReceiveWindowSize[overload1]$$$setSessionReceiveWindowSizeunsignedint -->
+<h3 class="fn" id="setSessionReceiveWindowSize"><a name="setSessionReceiveWindowSize"></a><span class="type">bool</span> QHttp2Configuration::<span class="name">setSessionReceiveWindowSize</span>(<span class="type">unsigned</span> <span class="type">int</span> <i>size</i>)</h3>
+<p>Sets the window size for connection-level flow control. <i>size</i> cannot be 0 and must not exceed 2147483647 octets.</p>
+<p><b>See also </b><a href="qhttp2configuration.html#sessionReceiveWindowSize">sessionReceiveWindowSize</a>.</p>
+<!-- @@@setSessionReceiveWindowSize -->
+<!-- $$$setStreamReceiveWindowSize[overload1]$$$setStreamReceiveWindowSizeunsignedint -->
+<h3 class="fn" id="setStreamReceiveWindowSize"><a name="setStreamReceiveWindowSize"></a><span class="type">bool</span> QHttp2Configuration::<span class="name">setStreamReceiveWindowSize</span>(<span class="type">unsigned</span> <span class="type">int</span> <i>size</i>)</h3>
+<p>Sets the window size for stream-level flow control. <i>size</i> cannot be 0 and must not exceed 2147483647 octets.</p>
+<p><b>See also </b><a href="qhttp2configuration.html#streamReceiveWindowSize">streamReceiveWindowSize</a>.</p>
+<!-- @@@setStreamReceiveWindowSize -->
+<!-- $$$streamReceiveWindowSize[overload1]$$$streamReceiveWindowSize -->
+<h3 class="fn" id="streamReceiveWindowSize"><a name="streamReceiveWindowSize"></a><span class="type">unsigned</span> <span class="type">int</span> QHttp2Configuration::<span class="name">streamReceiveWindowSize</span>() const</h3>
+<p>Returns the window size for stream-level flow control. The default value <a href="qnetworkaccessmanager.html">QNetworkAccessManager</a> will be using is 21474836 octets.</p>
+<p><b>See also </b><a href="qhttp2configuration.html#setStreamReceiveWindowSize">setStreamReceiveWindowSize</a>().</p>
+<!-- @@@streamReceiveWindowSize -->
+<!-- $$$swap[overload1]$$$swapQHttp2Configuration& -->
+<h3 class="fn" id="swap"><a name="swap"></a><span class="type">void</span> QHttp2Configuration::<span class="name">swap</span>(<span class="type"><a href="qhttp2configuration.html#QHttp2Configuration">QHttp2Configuration</a></span> &amp;<i>other</i>)</h3>
+<p>Swaps this configuration with the <i>other</i> configuration.</p>
+<!-- @@@swap -->
+</div>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

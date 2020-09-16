@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qtquick3d-effects.qdoc -->
+  <title>DepthOfFieldHQBlur QML Type | Qt Quick 3D 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtquick3d-index.html">Qt Quick 3D</a></li>
+<li><a href="qtquick3d-qmlmodule.html">QML Types</a></li>
+<li>DepthOfFieldHQBlur QML Type</li>
+<li id="buildversion"><a href="qtquick3d-index.html">Qt Quick 3D | Commercial or GPLv3</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">DepthOfFieldHQBlur QML Type</h1>
+<span class="subtitle"></span>
+<!-- $$$DepthOfFieldHQBlur-brief -->
+<p>A depth-based blur effect. <a href="#details">More...</a></p>
+<!-- @@@DepthOfFieldHQBlur -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Import Statement:</td><td class="memItemRight bottomAlign"> import QtQuick3D.Effects 1.15</td></tr></table></div><ul>
+<li><a href="qml-qtquick3d-effects-depthoffieldhqblur-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="properties"></a>
+<h2 id="properties">Properties</h2>
+<ul>
+<li class="fn"><b><b><a href="qml-qtquick3d-effects-depthoffieldhqblur.html#blurAmount-prop">blurAmount</a></b></b> : real</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-effects-depthoffieldhqblur.html#focusDistance-prop">focusDistance</a></b></b> : real</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-effects-depthoffieldhqblur.html#focusRange-prop">focusRange</a></b></b> : real</li>
+</ul>
+<!-- $$$DepthOfFieldHQBlur-description -->
+<a name="details"></a>
+<h2 id="details">Detailed Description</h2>
+<p class="centerAlign"><img src="images/effect_depth_of_field_hq_blur.png" alt="" /></p><p>The DepthOfFieldHQBlur effect performs a gradient blur on regions of the image based on their deviation from a specified distance from the camera.</p>
+<p>For this effect to work well, you need to adjust the <a href="qml-qtquick3d-perspectivecamera.html#clipFar-prop">clipFar</a> and <a href="qml-qtquick3d-perspectivecamera.html#clipNear-prop">clipNear</a> properties of the camera for the scene to frame the content. You ideally want the largest possible value for <a href="qml-qtquick3d-perspectivecamera.html#clipNear-prop">clipNear</a> and the smallest possible value for <a href="qml-qtquick3d-perspectivecamera.html#clipFar-prop">clipFar</a>. Next, adjust the properties of the effect for the desired result.</p>
+<p>For example, a <a href="qml-qtquick3d-effects-depthoffieldhqblur.html#focusDistance-prop">focusDistance</a> of <code>100</code> and a <a href="qml-qtquick3d-effects-depthoffieldhqblur.html#focusRange-prop">focusRange</a> of <code>20</code> means that everything that is between 90 and 110 units away from the camera will be entirely in focus, items at a distance of 70-90 and 110-130 units will experience variable blurring, and everything closer than 70 or farther than 130 will be entirely blurred.</p>
+<p><b>See also </b><a href="qml-qtquick3d-effects-tiltshift.html">TiltShift</a>.</p>
+<!-- @@@DepthOfFieldHQBlur -->
+<h2>Property Documentation</h2>
+<!-- $$$blurAmount -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="blurAmount-prop">
+<td class="tblQmlPropNode"><p>
+<a name="blurAmount-prop"></a><span class="name">blurAmount</span> : <span class="type"><a href="../qtqml/qml-real.html">real</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>The strength of blur when out of focus. Sensible values are in the range <code>[1..&#x2e;10]</code>. <code>4</code> by default.</p>
+</div></div><!-- @@@blurAmount -->
+<br/>
+<!-- $$$focusDistance -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="focusDistance-prop">
+<td class="tblQmlPropNode"><p>
+<a name="focusDistance-prop"></a><span class="name">focusDistance</span> : <span class="type"><a href="../qtqml/qml-real.html">real</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>The distance from the camera where the content is in perfect focus. <code>600</code> by default.</p>
+</div></div><!-- @@@focusDistance -->
+<br/>
+<!-- $$$focusRange -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="focusRange-prop">
+<td class="tblQmlPropNode"><p>
+<a name="focusRange-prop"></a><span class="name">focusRange</span> : <span class="type"><a href="../qtqml/qml-real.html">real</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>The distance around the <a href="qml-qtquick3d-effects-depthoffieldhqblur.html#focusDistance-prop">focusDistance</a> where items are fully in focus. The focus then fades away to fully blurred by the same distance on both the near and far sides. <code>100</code> by default.</p>
+</div></div><!-- @@@focusRange -->
+<br/>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qtquick3d-effects.qdoc -->
+  <title>Fxaa QML Type | Qt Quick 3D 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtquick3d-index.html">Qt Quick 3D</a></li>
+<li><a href="qtquick3d-qmlmodule.html">QML Types</a></li>
+<li>Fxaa QML Type</li>
+<li id="buildversion"><a href="qtquick3d-index.html">Qt Quick 3D | Commercial or GPLv3</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Fxaa QML Type</h1>
+<span class="subtitle"></span>
+<!-- $$$Fxaa-brief -->
+<p>A fast approximate anti-aliasing effect. <a href="#details">More...</a></p>
+<!-- @@@Fxaa -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Import Statement:</td><td class="memItemRight bottomAlign"> import QtQuick3D.Effects 1.15</td></tr></table></div><ul>
+<li><a href="qml-qtquick3d-effects-fxaa-members.html">List of all members, including inherited members</a></li>
+</ul>
+<!-- $$$Fxaa-description -->
+<a name="details"></a>
+<h2 id="details">Detailed Description</h2>
+<p class="centerAlign"><img src="images/effect_fxaa.png" alt="" /></p><p>The FXAA effect applies fast approximate anti-aliasing to the scene. FXAA is a high-speed anti-aliasing technique that removes some of the artifacts from the image without impacting performance as heavily as super-sampling would.</p>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Pros</th><th >Cons</th></tr></thead>
+<tr valign="top" class="odd"><td ><ul>
+<li>Easy fix for many aliasing problems.</li>
+<li>Works with moving images.</li>
+</ul>
+</td><td ><ul>
+<li>Can blur and distort fine text details.</li>
+<li>As a screen-space heuristic technique, it can sometimes leave sharp edges that ideally would be anti-aliased.</li>
+</ul>
+</td></tr>
+</table></div>
+<p>Fxaa does not have adjustable properties.</p>
+<!-- @@@Fxaa -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qstring.cpp -->
+  <title>Obsolete Members for QStringRef | Qt Core 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtcore-index.html">Qt Core</a></li>
+<li><a href="qtcore-module.html">C++ Classes</a></li>
+<li>QStringRef</li>
+<li id="buildversion"><a href="qtcore-index.html">Qt 5.15.0 Reference Documentation</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar"><div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Obsolete Members for QStringRef</h1>
+<p><b>The following members of class <a href="qstringref.html">QStringRef</a> are obsolete.</b> They are provided to keep old source code working. We strongly advise against using them in new code.</p>
+<h2>Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>QVector&lt;QStringRef&gt; </td><td class="memItemRight bottomAlign"><b><a href="qstringref-obsolete.html#split-1">split</a></b>(const QString &amp;<i>sep</i>, QString::SplitBehavior <i>behavior</i>, Qt::CaseSensitivity <i>cs</i> = Qt::CaseSensitive) const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>QVector&lt;QStringRef&gt; </td><td class="memItemRight bottomAlign"><b><a href="qstringref-obsolete.html#split-2">split</a></b>(QChar <i>sep</i>, QString::SplitBehavior <i>behavior</i>, Qt::CaseSensitivity <i>cs</i> = Qt::CaseSensitive) const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>QByteArray </td><td class="memItemRight bottomAlign"><b><a href="qstringref-obsolete.html#toAscii">toAscii</a></b>() const</td></tr>
+</table></div>
+<h2>Member Function Documentation</h2>
+<!-- $$$split$$$splitconstQString&QString::SplitBehaviorQt::CaseSensitivity -->
+<h3 class="fn" id="split-1"><a name="split-1"></a><span class="type"><a href="qvector.html">QVector</a></span>&lt;<span class="type"><a href="qstringref.html#QStringRef">QStringRef</a></span>&gt; QStringRef::<span class="name">split</span>(const <span class="type"><a href="qstring.html">QString</a></span> &amp;<i>sep</i>, <span class="type"><a href="qstring-obsolete.html#SplitBehavior-enum">QString::SplitBehavior</a></span> <i>behavior</i>, <span class="type"><a href="qt.html#CaseSensitivity-enum">Qt::CaseSensitivity</a></span> <i>cs</i> = Qt::CaseSensitive) const</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>This is an overloaded function.</p>
+<p>This function was introduced in Qt 5.4.</p>
+<!-- @@@split -->
+<!-- $$$split$$$splitQCharQString::SplitBehaviorQt::CaseSensitivity -->
+<h3 class="fn" id="split-2"><a name="split-2"></a><span class="type"><a href="qvector.html">QVector</a></span>&lt;<span class="type"><a href="qstringref.html#QStringRef">QStringRef</a></span>&gt; QStringRef::<span class="name">split</span>(<span class="type"><a href="qchar.html">QChar</a></span> <i>sep</i>, <span class="type"><a href="qstring-obsolete.html#SplitBehavior-enum">QString::SplitBehavior</a></span> <i>behavior</i>, <span class="type"><a href="qt.html#CaseSensitivity-enum">Qt::CaseSensitivity</a></span> <i>cs</i> = Qt::CaseSensitive) const</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>This is an overloaded function.</p>
+<p>This function was introduced in Qt 5.4.</p>
+<!-- @@@split -->
+<!-- $$$toAscii[overload1]$$$toAscii -->
+<h3 class="fn" id="toAscii"><a name="toAscii"></a><span class="type"><a href="qbytearray.html">QByteArray</a></span> QStringRef::<span class="name">toAscii</span>() const</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>Returns an 8-bit representation of the string as a <a href="qbytearray.html">QByteArray</a>.</p>
+<p>This function does the same as <a href="qstringref.html#toLatin1">toLatin1</a>().</p>
+<p>Note that, despite the name, this function does not necessarily return an US-ASCII (ANSI X3.4-1986) string and its result may not be US-ASCII compatible.</p>
+<p>This function was introduced in Qt 4.8.</p>
+<p><b>See also </b><a href="qstringref.html#toLatin1">toLatin1</a>(), <a href="qstringref.html#toUtf8">toUtf8</a>(), <a href="qstringref.html#toLocal8Bit">toLocal8Bit</a>(), and <a href="qtextcodec.html">QTextCodec</a>.</p>
+<!-- @@@toAscii -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

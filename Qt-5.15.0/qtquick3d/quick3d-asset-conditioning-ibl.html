@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- using-ibl.qdoc -->
+  <title>Using Image-Based Lighting | Qt Quick 3D 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtquick3d-index.html">Qt Quick 3D</a></li>
+<li>Using Image-Based Lighting</li>
+<li id="buildversion"><a href="qtquick3d-index.html">Qt Quick 3D | Commercial or GPLv3</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#introduction">Introduction</a></li>
+<li class="level1"><a href="#scene-lighting">Scene Lighting</a></li>
+<li class="level1"><a href="#material-lighting">Material Lighting</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Using Image-Based Lighting</h1>
+<span class="subtitle"></span>
+<!-- $$$quick3d-asset-conditioning-ibl-description -->
+<div class="descr"> <a name="details"></a>
+<a name="introduction"></a>
+<h2 id="introduction">Introduction</h2>
+<p>Qt Quick 3D supports IBL (Image-Based Lighting) to illuminate scenes or individual materials.</p>
+<p>IBL is a lighting technique that allows scenes to be illuminated with images. This is especially useful when you want to create realistic lighting and reflections in indoor and outdoor scenes.</p>
+<p>You can use any image file for IBL, but it is recommended to use 360º HDR (High Dynamic Range) images. HDR images have a much higher dynamic range than for example JPEG or PNG images. A higher dynamic range provides more realistic lighting through a great range of luminance levels from very bright to very dark.</p>
+<p>The following example demonstrates the lighting effect on an object using an HDR image vs a single directional light:</p>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Light</th><th >Reflective material</th><th >Matte material</th></tr></thead>
+<tr valign="top" class="odd"><td ><b>Single directional light</b></td><td ><p class="centerAlign"><img src="images/IBL-ball-directional-light.png" alt="" /></p></td><td ><p class="centerAlign"><img src="images/IBL-ball-directional-light-matte.png" alt="" /></p></td></tr>
+<tr valign="top" class="even"><td ><b>Image-based light</b></td><td ><p class="centerAlign"><img src="images/IBL-ball-environment-light.png" alt="" /></p></td><td ><p class="centerAlign"><img src="images/IBL-ball-environment-light-matte.png" alt="" /></p></td></tr>
+</table></div>
+<a name="scene-lighting"></a>
+<h2 id="scene-lighting">Scene Lighting</h2>
+<p>To illuminate a <a href="qml-qtquick3d-sceneenvironment.html">scene</a> using an image you'll add the image as a <a href="qml-qtquick3d-texture.html">Texture</a> to the <a href="qml-qtquick3d-sceneenvironment.html#lightProbe-prop">lightProbe</a> property.</p>
+<pre class="qml">
+ lightProbe: Texture {
+     source: &quot;maps/OpenfootageNET_garage-1024.hdr&quot;
+ }
+</pre>
+<p>Once you have selected an image, IBL is set up for your scene. All models in the scene are illuminated by the light probe by default.</p>
+<p><b>Note: </b>You can also combine IBL with any other light source to compliment the lighting effect on an object.</p>
+<p>Now that you have IBL set up for your scene, let us have a look at the different properties for the probe. In many cases the default values provide a satisfying result, but you can tweak the following property values depending on the image and desired result:</p>
+<ul>
+<li><a href="qml-qtquick3d-sceneenvironment.html#probeBrightness-prop">Brightness</a> The amount of light emitted by the light probe.</li>
+<li><a href="qml-qtquick3d-sceneenvironment.html#probeHorizon-prop">Horizon Cut-Off</a> Increasing the value adds darkness (black) to the bottom half of the environment, forcing the lighting to come predominantly from the top of the image (and removing specific reflections from the lower half).</li>
+<li><a href="qml-qtquick3d-sceneenvironment.html#probeFieldOfView-prop">Field Of View Angle</a> The image source field of view.</li>
+<li><a href="qml-qtquick3d-sceneenvironment.html#fastImageBasedLightingEnabled-prop">Fast Mode</a> When this property is enabled more shortcuts are taken to approximate the light contributes of the light probe, at the expense of quality.</li>
+</ul>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Property</th><th >Reflective material</th><th >Matte material</th></tr></thead>
+<tr valign="top" class="odd"><td ><i><b>Default settings</b></i></td><td ><p class="centerAlign"><img src="images/IBL-ball-environment-light.png" alt="" /></p></td><td ><p class="centerAlign"><img src="images/IBL-ball-environment-light-matte.png" alt="" /></p></td></tr>
+<tr valign="top" class="even"><td ><b>Horizon Cut-Off</b></td><td ><p class="centerAlign"><img src="images/IBL-ball-environment-light-horiz.png" alt="" /></p></td><td ><p class="centerAlign"><img src="images/IBL-ball-environment-light-horiz-matte.png" alt="" /></p></td></tr>
+<tr valign="top" class="odd"><td ><b>FOV Angle</b></td><td ><p class="centerAlign"><img src="images/IBL-ball-environment-light-fov.png" alt="" /></p></td><td ><p class="centerAlign"><img src="images/IBL-ball-environment-light-fov-matte.png" alt="" /></p></td></tr>
+</table></div>
+<a name="material-lighting"></a>
+<h2 id="material-lighting">Material Lighting</h2>
+<p>To use image-based lighting only on one material instead of a whole scene, or use a separate light probe for a model already illuminated by image-based lighting, set the image as the <a href="qml-qtquick3d-material.html#lightProbe-prop">light probe</a> for the material.</p>
+<p>Once you have followed the steps above, you have a separate light probe set for the material. This light probe overrides the scene light probe if there is one specified.</p>
+</div>
+<!-- @@@quick3d-asset-conditioning-ibl -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qsignalmapper.cpp -->
+  <title>Obsolete Members for QSignalMapper | Qt Core 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtcore-index.html">Qt Core</a></li>
+<li><a href="qtcore-module.html">C++ Classes</a></li>
+<li>QSignalMapper</li>
+<li id="buildversion"><a href="qtcore-index.html">Qt 5.15.0 Reference Documentation</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar"><div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Obsolete Members for QSignalMapper</h1>
+<p><b>The following members of class <a href="qsignalmapper.html">QSignalMapper</a> are obsolete.</b> They are provided to keep old source code working. We strongly advise against using them in new code.</p>
+<h2>Signals</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>void </td><td class="memItemRight bottomAlign"><b><a href="qsignalmapper-obsolete.html#mapped-3">mapped</a></b>(QObject *<i>object</i>)</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>void </td><td class="memItemRight bottomAlign"><b><a href="qsignalmapper-obsolete.html#mapped-2">mapped</a></b>(QWidget *<i>widget</i>)</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>void </td><td class="memItemRight bottomAlign"><b><a href="qsignalmapper-obsolete.html#mapped-1">mapped</a></b>(const QString &amp;<i>text</i>)</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>void </td><td class="memItemRight bottomAlign"><b><a href="qsignalmapper-obsolete.html#mapped">mapped</a></b>(int <i>i</i>)</td></tr>
+</table></div>
+<h2>Member Function Documentation</h2>
+<!-- $$$mapped$$$mappedQObject* -->
+<h3 class="fn" id="mapped-3"><a name="mapped-3"></a><code>[signal] </code><span class="type">void</span> QSignalMapper::<span class="name">mapped</span>(<span class="type"><a href="qobject.html#QObject">QObject</a></span> *<i>object</i>)</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>This is an overloaded function.</p>
+<p>This signal is emitted when <a href="qsignalmapper.html#map">map</a>() is signalled from an object that has an object mapping set. The object provided by the map is passed in <i>object</i>.</p>
+<p><b>Note:</b> Signal <i>mapped</i> is overloaded in this class. To connect to this signal by using the function pointer syntax, Qt provides a convenient helper for obtaining the function pointer as shown in this example:<pre class="cpp">
+ connect(signalMapper<span class="operator">,</span> <span class="type">QOverload</span><span class="operator">&lt;</span><span class="type"><a href="qobject.html#QObject">QObject</a></span> <span class="operator">*</span><span class="operator">&gt;</span><span class="operator">::</span>of(<span class="operator">&amp;</span><span class="type"><a href="qsignalmapper.html#QSignalMapper">QSignalMapper</a></span><span class="operator">::</span>mapped)<span class="operator">,</span>
+     <span class="operator">[</span><span class="operator">=</span><span class="operator">]</span>(<span class="type"><a href="qobject.html#QObject">QObject</a></span> <span class="operator">*</span>object){ <span class="comment">/* ... */</span> });
+</pre>
+<p><b>See also </b><a href="qsignalmapper.html#setMapping">setMapping</a>().</p>
+<!-- @@@mapped -->
+<!-- $$$mapped$$$mappedQWidget* -->
+<h3 class="fn" id="mapped-2"><a name="mapped-2"></a><code>[signal] </code><span class="type">void</span> QSignalMapper::<span class="name">mapped</span>(<span class="type"><a href="../qtwidgets/qwidget.html">QWidget</a></span> *<i>widget</i>)</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>This is an overloaded function.</p>
+<p>This signal is emitted when <a href="qsignalmapper.html#map">map</a>() is signalled from an object that has a widget mapping set. The object's mapped widget is passed in <i>widget</i>.</p>
+<p><b>Note:</b> Signal <i>mapped</i> is overloaded in this class. To connect to this signal by using the function pointer syntax, Qt provides a convenient helper for obtaining the function pointer as shown in this example:<pre class="cpp">
+ connect(signalMapper<span class="operator">,</span> <span class="type">QOverload</span><span class="operator">&lt;</span><span class="type"><a href="../qtwidgets/qwidget.html">QWidget</a></span> <span class="operator">*</span><span class="operator">&gt;</span><span class="operator">::</span>of(<span class="operator">&amp;</span><span class="type"><a href="qsignalmapper.html#QSignalMapper">QSignalMapper</a></span><span class="operator">::</span>mapped)<span class="operator">,</span>
+     <span class="operator">[</span><span class="operator">=</span><span class="operator">]</span>(<span class="type"><a href="../qtwidgets/qwidget.html">QWidget</a></span> <span class="operator">*</span>widget){ <span class="comment">/* ... */</span> });
+</pre>
+<p><b>See also </b><a href="qsignalmapper.html#setMapping">setMapping</a>().</p>
+<!-- @@@mapped -->
+<!-- $$$mapped$$$mappedconstQString& -->
+<h3 class="fn" id="mapped-1"><a name="mapped-1"></a><code>[signal] </code><span class="type">void</span> QSignalMapper::<span class="name">mapped</span>(const <span class="type"><a href="qstring.html">QString</a></span> &amp;<i>text</i>)</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>This is an overloaded function.</p>
+<p>This signal is emitted when <a href="qsignalmapper.html#map">map</a>() is signalled from an object that has a string mapping set. The object's mapped string is passed in <i>text</i>.</p>
+<p><b>Note:</b> Signal <i>mapped</i> is overloaded in this class. To connect to this signal by using the function pointer syntax, Qt provides a convenient helper for obtaining the function pointer as shown in this example:<pre class="cpp">
+ connect(signalMapper<span class="operator">,</span> <span class="type">QOverload</span><span class="operator">&lt;</span><span class="keyword">const</span> <span class="type"><a href="qstring.html">QString</a></span> <span class="operator">&amp;</span><span class="operator">&gt;</span><span class="operator">::</span>of(<span class="operator">&amp;</span><span class="type"><a href="qsignalmapper.html#QSignalMapper">QSignalMapper</a></span><span class="operator">::</span>mapped)<span class="operator">,</span>
+     <span class="operator">[</span><span class="operator">=</span><span class="operator">]</span>(<span class="keyword">const</span> <span class="type"><a href="qstring.html">QString</a></span> <span class="operator">&amp;</span>text){ <span class="comment">/* ... */</span> });
+</pre>
+<p><b>See also </b><a href="qsignalmapper.html#setMapping">setMapping</a>().</p>
+<!-- @@@mapped -->
+<!-- $$$mapped[overload1]$$$mappedint -->
+<h3 class="fn" id="mapped"><a name="mapped"></a><code>[signal] </code><span class="type">void</span> QSignalMapper::<span class="name">mapped</span>(<span class="type">int</span> <i>i</i>)</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>This is an overloaded function.</p>
+<p>This signal is emitted when <a href="qsignalmapper.html#map">map</a>() is signalled from an object that has an integer mapping set. The object's mapped integer is passed in <i>i</i>.</p>
+<p><b>Note:</b> Signal <i>mapped</i> is overloaded in this class. To connect to this signal by using the function pointer syntax, Qt provides a convenient helper for obtaining the function pointer as shown in this example:<pre class="cpp">
+ connect(signalMapper<span class="operator">,</span> <span class="type">QOverload</span><span class="operator">&lt;</span><span class="type">int</span><span class="operator">&gt;</span><span class="operator">::</span>of(<span class="operator">&amp;</span><span class="type"><a href="qsignalmapper.html#QSignalMapper">QSignalMapper</a></span><span class="operator">::</span>mapped)<span class="operator">,</span>
+     <span class="operator">[</span><span class="operator">=</span><span class="operator">]</span>(<span class="type">int</span> i){ <span class="comment">/* ... */</span> });
+</pre>
+<p><b>See also </b><a href="qsignalmapper.html#setMapping">setMapping</a>().</p>
+<!-- @@@mapped -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

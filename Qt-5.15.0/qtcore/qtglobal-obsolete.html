@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qglobal.cpp -->
+  <title>Obsolete Members for &lt;QtGlobal&gt; | Qt Core 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtcore-index.html">Qt Core</a></li>
+<li>Obsolete Members for &lt;QtGlobal&gt;</li>
+<li id="buildversion"><a href="qtcore-index.html">Qt 5.15.0 Reference Documentation</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar"><div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Obsolete Members for &lt;QtGlobal&gt;</h1>
+<p><b>The following members of class <a href="qtglobal.html">&lt;QtGlobal&gt;</a> are obsolete.</b> They are provided to keep old source code working. We strongly advise against using them in new code.</p>
+<h2>Types</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>typedef </td><td class="memItemRight bottomAlign"><b><a href="qtglobal-obsolete.html#QtMsgHandler-typedef">QtMsgHandler</a></b></td></tr>
+</table></div>
+<h2>Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>QtMsgHandler </td><td class="memItemRight bottomAlign"><b><a href="qtglobal-obsolete.html#qInstallMsgHandler">qInstallMsgHandler</a></b>(QtMsgHandler <i>handler</i>)</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>int </td><td class="memItemRight bottomAlign"><b><a href="qtglobal-obsolete.html#qrand">qrand</a></b>()</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>void </td><td class="memItemRight bottomAlign"><b><a href="qtglobal-obsolete.html#qsrand">qsrand</a></b>(uint <i>seed</i>)</td></tr>
+</table></div>
+<h2>Macros</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code></td><td class="memItemRight bottomAlign"><b><a href="qtglobal-obsolete.html#Q_DECL_FINAL">Q_DECL_FINAL</a></b></td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code></td><td class="memItemRight bottomAlign"><b><a href="qtglobal-obsolete.html#Q_DECL_OVERRIDE">Q_DECL_OVERRIDE</a></b></td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code></td><td class="memItemRight bottomAlign"><b><a href="qtglobal-obsolete.html#qMove">qMove</a></b>(<i>x</i>)</td></tr>
+</table></div>
+<h2>Type Documentation</h2>
+<!-- $$$QtMsgHandler -->
+<h3 class="fn" id="QtMsgHandler-typedef"><a name="QtMsgHandler-typedef"></a>typedef <span class="name">QtMsgHandler</span></h3>
+<p>This typedef is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>This is a typedef for a pointer to a function with the following signature:</p>
+<pre class="cpp">
+ <span class="type">void</span> myMsgHandler(<span class="type"><a href="qtglobal.html#QtMsgType-enum">QtMsgType</a></span><span class="operator">,</span> <span class="keyword">const</span> <span class="type">char</span> <span class="operator">*</span>);
+</pre>
+<p>This typedef is deprecated, you should use <a href="qtglobal.html#QtMessageHandler-typedef">QtMessageHandler</a> instead.</p>
+<p><b>See also </b><a href="qtglobal.html#QtMsgType-enum">QtMsgType</a>, <a href="qtglobal.html#QtMessageHandler-typedef">QtMessageHandler</a>, <a href="qtglobal-obsolete.html#qInstallMsgHandler">qInstallMsgHandler</a>(), and <a href="qtglobal.html#qInstallMessageHandler">qInstallMessageHandler</a>().</p>
+<!-- @@@QtMsgHandler -->
+<h2>Function Documentation</h2>
+<!-- $$$qInstallMsgHandler[overload1]$$$qInstallMsgHandlerQtMsgHandler -->
+<h3 class="fn" id="qInstallMsgHandler"><a name="qInstallMsgHandler"></a><span class="type"><a href="qtglobal-obsolete.html#QtMsgHandler-typedef">QtMsgHandler</a></span> <span class="name">qInstallMsgHandler</span>(<span class="type"><a href="qtglobal-obsolete.html#QtMsgHandler-typedef">QtMsgHandler</a></span> <i>handler</i>)</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>Installs a Qt message <i>handler</i> which has been defined previously. This method is deprecated, use <a href="qtglobal.html#qInstallMessageHandler">qInstallMessageHandler</a> instead.</p>
+<p><b>See also </b><a href="qtglobal-obsolete.html#QtMsgHandler-typedef">QtMsgHandler</a> and <a href="qtglobal.html#qInstallMessageHandler">qInstallMessageHandler</a>().</p>
+<!-- @@@qInstallMsgHandler -->
+<!-- $$$qrand[overload1]$$$qrand -->
+<h3 class="fn" id="qrand"><a name="qrand"></a><span class="type">int</span> <span class="name">qrand</span>()</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>Thread-safe version of the standard C++ <code>rand()</code> function.</p>
+<p>Returns a value between 0 and <code>RAND_MAX</code> (defined in <code>&lt;cstdlib&gt;</code> and <code>&lt;stdlib.h&gt;</code>), the next number in the current sequence of pseudo-random integers.</p>
+<p>Use <code>qsrand()</code> to initialize the pseudo-random number generator with a seed value. Seeding must be performed at least once on each thread. If that step is skipped, then the sequence will be pre-seeded with a constant value.</p>
+<p><b>Note: </b>This function is deprecated. In new applications, use <a href="qrandomgenerator.html">QRandomGenerator</a> instead.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p><b>See also </b><a href="qtglobal-obsolete.html#qsrand">qsrand</a>() and <a href="qrandomgenerator.html">QRandomGenerator</a>.</p>
+<!-- @@@qrand -->
+<!-- $$$qsrand[overload1]$$$qsranduint -->
+<h3 class="fn" id="qsrand"><a name="qsrand"></a><span class="type">void</span> <span class="name">qsrand</span>(<span class="type"><a href="qtglobal.html#uint-typedef">uint</a></span> <i>seed</i>)</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>Thread-safe version of the standard C++ <code>srand()</code> function.</p>
+<p>Sets the argument <i>seed</i> to be used to generate a new random number sequence of pseudo random integers to be returned by <a href="qtglobal-obsolete.html#qrand">qrand</a>().</p>
+<p>The sequence of random numbers generated is deterministic per thread. For example, if two threads call qsrand(1) and subsequently call <a href="qtglobal-obsolete.html#qrand">qrand</a>(), the threads will get the same random number sequence.</p>
+<p><b>Note: </b>This function is deprecated. In new applications, use <a href="qrandomgenerator.html">QRandomGenerator</a> instead.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p><b>See also </b><a href="qtglobal-obsolete.html#qrand">qrand</a>() and <a href="qrandomgenerator.html">QRandomGenerator</a>.</p>
+<!-- @@@qsrand -->
+<h2>Macro Documentation</h2>
+<!-- $$$Q_DECL_FINAL[overload1]$$$Q_DECL_FINAL -->
+<h3 class="fn" id="Q_DECL_FINAL"><a name="Q_DECL_FINAL"></a><span class="name">Q_DECL_FINAL</span></h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>This macro can be used to declare an overriding virtual or a class as &quot;final&quot;, with Java semantics. Further-derived classes can then no longer override this virtual function, or inherit from this class, respectively.</p>
+<p>It expands to &quot;final&quot;.</p>
+<p>The macro goes at the end of the function, usually after the <code>const</code>, if any:</p>
+<pre class="cpp">
+     <span class="comment">// more-derived classes no longer permitted to override this:</span>
+     <span class="keyword">virtual</span> <span class="type">void</span> MyWidget<span class="operator">::</span>paintEvent(<span class="type"><a href="../qtgui/qpaintevent.html">QPaintEvent</a></span><span class="operator">*</span>) final;
+</pre>
+<p>For classes, it goes in front of the <code>:</code> in the class definition, if any:</p>
+<pre class="cpp">
+     <span class="keyword">class</span> <span class="type"><a href="qrect.html">QRect</a></span> final { <span class="comment">// cannot be derived from</span>
+         <span class="comment">// ...</span>
+     };
+</pre>
+<p>This function was introduced in Qt 5.0.</p>
+<p><b>See also </b><a href="qtglobal-obsolete.html#Q_DECL_OVERRIDE">Q_DECL_OVERRIDE</a>.</p>
+<!-- @@@Q_DECL_FINAL -->
+<!-- $$$Q_DECL_OVERRIDE[overload1]$$$Q_DECL_OVERRIDE -->
+<h3 class="fn" id="Q_DECL_OVERRIDE"><a name="Q_DECL_OVERRIDE"></a><span class="name">Q_DECL_OVERRIDE</span></h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>This macro can be used to declare an overriding virtual function. Use of this markup will allow the compiler to generate an error if the overriding virtual function does not in fact override anything.</p>
+<p>It expands to &quot;override&quot;.</p>
+<p>The macro goes at the end of the function, usually after the <code>const</code>, if any:</p>
+<pre class="cpp">
+     <span class="comment">// generate error if this doesn't actually override anything:</span>
+     <span class="keyword">virtual</span> <span class="type">void</span> MyWidget<span class="operator">::</span>paintEvent(<span class="type"><a href="../qtgui/qpaintevent.html">QPaintEvent</a></span><span class="operator">*</span>) override;
+</pre>
+<p>This function was introduced in Qt 5.0.</p>
+<p><b>See also </b><a href="qtglobal-obsolete.html#Q_DECL_FINAL">Q_DECL_FINAL</a>.</p>
+<!-- @@@Q_DECL_OVERRIDE -->
+<!-- $$$qMove[overload1]$$$qMove -->
+<h3 class="fn" id="qMove"><a name="qMove"></a><span class="name">qMove</span>(<i>x</i>)</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>Use <code>std::move</code> instead.</p>
+<p>It expands to &quot;std::move&quot;.</p>
+<p>qMove takes an rvalue reference to its parameter <i>x</i>, and converts it to an xvalue.</p>
+<!-- @@@qMove -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

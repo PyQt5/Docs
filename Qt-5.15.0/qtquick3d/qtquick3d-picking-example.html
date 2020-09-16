@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qtquick3d-examples-picking.qdoc -->
+  <title>Qt Quick 3D - Picking example | Qt Quick 3D 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtquick3d-index.html">Qt Quick 3D</a></li>
+<li>Qt Quick 3D - Picking example</li>
+<li id="buildversion"><a href="qtquick3d-index.html">Qt Quick 3D | Commercial or GPLv3</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#making-model-pickable">Making Model Pickable</a></li>
+<li class="level1"><a href="#getting-pick-results">Getting Pick Results</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Qt Quick 3D - Picking example</h1>
+<span class="subtitle"></span>
+<!-- $$$picking-brief -->
+<p>Demonstrates picking of models.</p>
+<!-- @@@picking -->
+<!-- $$$picking-description -->
+<div class="descr"> <a name="details"></a>
+<p>This example demonstrates picking. There are 3 different animated models which can be picked. When a model is picked, the animation is stopped and the model color changed to make it clear which model got picked. Detailed information of the pick result is displayed on the top of the application window.</p>
+<p class="centerAlign"><img src="images/picking-example.png" alt="" /></p><a name="making-model-pickable"></a>
+<h4 id="making-model-pickable">Making Model Pickable</h4>
+<p>To make a model pickable, the <a href="qml-qtquick3d-model.html#pickable-prop">pickable</a> property needs to be set to <code>true</code>. We also add <code>objectName</code> for the model to be able to display the name of the picked model.</p>
+<pre class="qml">
+ <span class="type"><a href="qml-qtquick3d-model.html">Model</a></span> {
+     <span class="name">id</span>: <span class="name">cubeModel</span>
+     <span class="name">objectName</span>: <span class="string">&quot;Cube&quot;</span>
+     <span class="name">source</span>: <span class="string">&quot;#Cube&quot;</span>
+     <span class="name">pickable</span>: <span class="number">true</span>
+     property <span class="type"><a href="../qtqml/qml-bool.html">bool</a></span> <span class="name">isPicked</span>: <span class="number">false</span>
+</pre>
+<p>The <code>isPicked</code> property was added to be used to toggle the animation and color.</p>
+<pre class="qml">
+ <span class="name">materials</span>: <span class="name">DefaultMaterial</span> {
+     <span class="name">diffuseColor</span>: <span class="name">cubeModel</span>.<span class="name">isPicked</span> ? <span class="string">&quot;#41cd52&quot;</span> : <span class="string">&quot;#09102b&quot;</span>
+     ...
+ SequentialAnimation on <span class="name">eulerRotation</span> {
+     <span class="name">running</span>: !<span class="name">cubeModel</span>.<span class="name">isPicked</span>
+</pre>
+<a name="getting-pick-results"></a>
+<h4 id="getting-pick-results">Getting Pick Results</h4>
+<p>To do the actual picking we need to add a <a href="../qtquick/qml-qtquick-mousearea.html">MouseArea</a> to cover the entire <a href="qml-qtquick3d-view3d.html">View3D</a>.</p>
+<pre class="qml">
+ <span class="type"><a href="../qtquick/qml-qtquick-mousearea.html">MouseArea</a></span> {
+     <span class="name">anchors</span>.fill: <span class="name">view</span>
+</pre>
+<p>In the <code>onClicked</code> handler of the mouse area, we use the <a href="qml-qtquick3d-view3d.html#pick-method">pick</a> method to get the actual result of the pick.</p>
+<pre class="qml">
+ var result = <span class="name">view</span>.<span class="name">pick</span>(<span class="name">mouse</span>.<span class="name">x</span>, <span class="name">mouse</span>.<span class="name">y</span>);
+</pre>
+<p>If the result has a <a href="qml-qtquick3d-pickresult.html#objectHit-prop">target object</a>, we go through the specifics of the result, and display them in the text field at the top of the application view.</p>
+<pre class="qml">
+ <span class="keyword">if</span> (<span class="name">result</span>.<span class="name">objectHit</span>) {
+     var pickedObject = <span class="name">result</span>.<span class="name">objectHit</span>;
+     <span class="comment">// Toggle the isPicked property for the model</span>
+     <span class="name">pickedObject</span>.<span class="name">isPicked</span> <span class="operator">=</span> !<span class="name">pickedObject</span>.<span class="name">isPicked</span>;
+     <span class="comment">// Get picked model name</span>
+     <span class="name">pickName</span>.<span class="name">text</span> <span class="operator">=</span> <span class="string">&quot;Last Pick: &quot;</span> <span class="operator">+</span> <span class="name">pickedObject</span>.<span class="name">objectName</span>;
+     <span class="comment">// Get other pick specifics</span>
+     <span class="name">uvPosition</span>.<span class="name">text</span> <span class="operator">=</span> <span class="string">&quot;UV Position: (&quot;</span>
+             <span class="operator">+</span> <span class="name">result</span>.<span class="name">uvPosition</span>.<span class="name">x</span>.<span class="name">toFixed</span>(<span class="number">2</span>) <span class="operator">+</span> <span class="string">&quot;, &quot;</span>
+             <span class="operator">+</span> <span class="name">result</span>.<span class="name">uvPosition</span>.<span class="name">y</span>.<span class="name">toFixed</span>(<span class="number">2</span>) <span class="operator">+</span> <span class="string">&quot;)&quot;</span>;
+     <span class="name">distance</span>.<span class="name">text</span> <span class="operator">=</span> <span class="string">&quot;Distance: &quot;</span> <span class="operator">+</span> <span class="name">result</span>.<span class="name">distance</span>.<span class="name">toFixed</span>(<span class="number">2</span>);
+     <span class="name">scenePosition</span>.<span class="name">text</span> <span class="operator">=</span> <span class="string">&quot;World Position: (&quot;</span>
+             <span class="operator">+</span> <span class="name">result</span>.<span class="name">scenePosition</span>.<span class="name">x</span>.<span class="name">toFixed</span>(<span class="number">2</span>) <span class="operator">+</span> <span class="string">&quot;, &quot;</span>
+             <span class="operator">+</span> <span class="name">result</span>.<span class="name">scenePosition</span>.<span class="name">y</span>.<span class="name">toFixed</span>(<span class="number">2</span>) <span class="operator">+</span> <span class="string">&quot;)&quot;</span>;
+</pre>
+<p>Files:</p>
+<ul>
+<li><a href="qtquick3d-picking-main-cpp.html">picking/main.cpp</a></li>
+<li><a href="qtquick3d-picking-main-qml.html">picking/main.qml</a></li>
+<li><a href="qtquick3d-picking-materials-qrc.html">picking/materials.qrc</a></li>
+<li><a href="qtquick3d-picking-picking-pro.html">picking/picking.pro</a></li>
+<li><a href="qtquick3d-picking-qml-qrc.html">picking/qml.qrc</a></li>
+</ul>
+<p>Images:</p>
+<ul>
+<li><a href="images/used-in-examples/picking/maps/roughness.jpg">picking/maps/roughness.jpg</a></li>
+</ul>
+</div>
+<!-- @@@picking -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

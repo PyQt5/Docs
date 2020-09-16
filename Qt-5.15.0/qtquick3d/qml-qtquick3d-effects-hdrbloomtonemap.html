@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qtquick3d-effects.qdoc -->
+  <title>HDRBloomTonemap QML Type | Qt Quick 3D 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtquick3d-index.html">Qt Quick 3D</a></li>
+<li><a href="qtquick3d-qmlmodule.html">QML Types</a></li>
+<li>HDRBloomTonemap QML Type</li>
+<li id="buildversion"><a href="qtquick3d-index.html">Qt Quick 3D | Commercial or GPLv3</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">HDRBloomTonemap QML Type</h1>
+<span class="subtitle"></span>
+<!-- $$$HDRBloomTonemap-brief -->
+<p>A bloom with tonemapping effect. <a href="#details">More...</a></p>
+<!-- @@@HDRBloomTonemap -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Import Statement:</td><td class="memItemRight bottomAlign"> import QtQuick3D.Effects 1.15</td></tr></table></div><ul>
+<li><a href="qml-qtquick3d-effects-hdrbloomtonemap-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="properties"></a>
+<h2 id="properties">Properties</h2>
+<ul>
+<li class="fn"><b><b><a href="qml-qtquick3d-effects-hdrbloomtonemap.html#bloomThreshold-prop">bloomThreshold</a></b></b> : real</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-effects-hdrbloomtonemap.html#blurFalloff-prop">blurFalloff</a></b></b> : real</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-effects-hdrbloomtonemap.html#channelThreshold-prop">channelThreshold</a></b></b> : real</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-effects-hdrbloomtonemap.html#exposure-prop">exposure</a></b></b> : real</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-effects-hdrbloomtonemap.html#gamma-prop">gamma</a></b></b> : real</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-effects-hdrbloomtonemap.html#tonemappingLerp-prop">tonemappingLerp</a></b></b> : real</li>
+</ul>
+<!-- $$$HDRBloomTonemap-description -->
+<a name="details"></a>
+<h2 id="details">Detailed Description</h2>
+<p class="centerAlign"><img src="images/effect_hdr_bloom_tonemap.png" alt="" /></p><p>The HDRBloomTonemap effect provides two features:</p>
+<ul>
+<li>Adjust the gamma and exposure of the high-dynamic range rendered content to achieve the image quality you want.</li>
+<li>Apply an adjustable bloom effect to very bright areas (like the sun glinting off a car).</li>
+</ul>
+<!-- @@@HDRBloomTonemap -->
+<h2>Property Documentation</h2>
+<!-- $$$bloomThreshold -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="bloomThreshold-prop">
+<td class="tblQmlPropNode"><p>
+<a name="bloomThreshold-prop"></a><span class="name">bloomThreshold</span> : <span class="type"><a href="../qtqml/qml-real.html">real</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Lighting greater than this value blooms. A value of <code>1.0</code> corresponds to white in the original render result. Lowering this value causes more areas of the rendered scene to bloom. At a value of <code>0.0</code> everything in the scene blooms. Range is <code>[0..&#x2e;1]</code>. <code>1</code> by default.</p>
+</div></div><!-- @@@bloomThreshold -->
+<br/>
+<!-- $$$blurFalloff -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="blurFalloff-prop">
+<td class="tblQmlPropNode"><p>
+<a name="blurFalloff-prop"></a><span class="name">blurFalloff</span> : <span class="type"><a href="../qtqml/qml-real.html">real</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Adjusts the amount of bloom. Lower values result in stronger bloom effect, and higher values make the effect more subtle. Range is <code>[0..&#x2e;10]</code>. <code>0</code> by default.</p>
+</div></div><!-- @@@blurFalloff -->
+<br/>
+<!-- $$$channelThreshold -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="channelThreshold-prop">
+<td class="tblQmlPropNode"><p>
+<a name="channelThreshold-prop"></a><span class="name">channelThreshold</span> : <span class="type"><a href="../qtqml/qml-real.html">real</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>The white point for the image. There is usually no need to adjust this. Range is <code>[0..&#x2e;1]</code>. <code>1</code> by default.</p>
+</div></div><!-- @@@channelThreshold -->
+<br/>
+<!-- $$$exposure -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="exposure-prop">
+<td class="tblQmlPropNode"><p>
+<a name="exposure-prop"></a><span class="name">exposure</span> : <span class="type"><a href="../qtqml/qml-real.html">real</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>A linear multiplier on the lighting, brightening, or darkening the image overall. A value of <code>0.0</code> causes no adjustment to the image. Range is <code>[-9..&#x2e;9]</code>. <code>0</code> by default.</p>
+</div></div><!-- @@@exposure -->
+<br/>
+<!-- $$$gamma -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="gamma-prop">
+<td class="tblQmlPropNode"><p>
+<a name="gamma-prop"></a><span class="name">gamma</span> : <span class="type"><a href="../qtqml/qml-real.html">real</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Affects the non-linear curve of the lighting. Higher values increase the exposure of mid tones, lightening the image and decreasing the contrast. A value of <code>1.0</code> causes no adjustment to the image. Sensible values are in the range <code>[0.1&#x2e;.&#x2e;4]</code>. <code>1</code> by default.</p>
+</div></div><!-- @@@gamma -->
+<br/>
+<!-- $$$tonemappingLerp -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="tonemappingLerp-prop">
+<td class="tblQmlPropNode"><p>
+<a name="tonemappingLerp-prop"></a><span class="name">tonemappingLerp</span> : <span class="type"><a href="../qtqml/qml-real.html">real</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Strength of the overall bloom effect. There is usually no need to adjust this. Range is <code>[0..&#x2e;1]</code>, with <code>0</code> being no blur and <code>1</code> being full bloom. <code>1</code> by default.</p>
+</div></div><!-- @@@tonemappingLerp -->
+<br/>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

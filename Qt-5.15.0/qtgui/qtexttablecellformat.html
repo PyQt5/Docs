@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qtextformat.cpp -->
+  <title>QTextTableCellFormat Class | Qt GUI 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtgui-index.html">Qt GUI</a></li>
+<li><a href="qtgui-module.html">C++ Classes</a></li>
+<li>QTextTableCellFormat</li>
+<li id="buildversion"><a href="qtgui-index.html">Qt 5.15.0 Reference Documentation</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">QTextTableCellFormat Class</h1>
+<!-- $$$QTextTableCellFormat-brief -->
+<p>The QTextTableCellFormat class provides formatting information for table cells in a <a href="qtextdocument.html">QTextDocument</a>. <a href="#details">More...</a></p>
+<!-- @@@QTextTableCellFormat -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign">  <span class="preprocessor">#include &lt;QTextTableCellFormat&gt;</span>
+</td></tr><tr><td class="memItemLeft rightAlign topAlign"> qmake:</td><td class="memItemRight bottomAlign"> QT += gui</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Since:</td><td class="memItemRight bottomAlign"> Qt 4.4</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Inherits:</td><td class="memItemRight bottomAlign"> <a href="qtextcharformat.html">QTextCharFormat</a></td></tr></table></div><p>This class was introduced in Qt 4.4.</p>
+<ul>
+<li><a href="qtexttablecellformat-members.html">List of all members, including inherited members</a></li>
+</ul>
+<p><b>Note:</b> All functions in this class are <a href="../qtdoc/threads-reentrancy.html">reentrant</a>.</p>
+<a name="public-functions"></a>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qtexttablecellformat.html#QTextTableCellFormat">QTextTableCellFormat</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> qreal </td><td class="memItemRight bottomAlign"><b><a href="qtexttablecellformat.html#bottomBorder">bottomBorder</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QBrush </td><td class="memItemRight bottomAlign"><b><a href="qtexttablecellformat.html#bottomBorderBrush">bottomBorderBrush</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QTextFrameFormat::BorderStyle </td><td class="memItemRight bottomAlign"><b><a href="qtexttablecellformat.html#bottomBorderStyle">bottomBorderStyle</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> qreal </td><td class="memItemRight bottomAlign"><b><a href="qtexttablecellformat.html#bottomPadding">bottomPadding</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qtexttablecellformat.html#isValid">isValid</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> qreal </td><td class="memItemRight bottomAlign"><b><a href="qtexttablecellformat.html#leftBorder">leftBorder</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QBrush </td><td class="memItemRight bottomAlign"><b><a href="qtexttablecellformat.html#leftBorderBrush">leftBorderBrush</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QTextFrameFormat::BorderStyle </td><td class="memItemRight bottomAlign"><b><a href="qtexttablecellformat.html#leftBorderStyle">leftBorderStyle</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> qreal </td><td class="memItemRight bottomAlign"><b><a href="qtexttablecellformat.html#leftPadding">leftPadding</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> qreal </td><td class="memItemRight bottomAlign"><b><a href="qtexttablecellformat.html#rightBorder">rightBorder</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QBrush </td><td class="memItemRight bottomAlign"><b><a href="qtexttablecellformat.html#rightBorderBrush">rightBorderBrush</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QTextFrameFormat::BorderStyle </td><td class="memItemRight bottomAlign"><b><a href="qtexttablecellformat.html#rightBorderStyle">rightBorderStyle</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> qreal </td><td class="memItemRight bottomAlign"><b><a href="qtexttablecellformat.html#rightPadding">rightPadding</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qtexttablecellformat.html#setBorder">setBorder</a></b>(qreal <i>width</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qtexttablecellformat.html#setBorderBrush">setBorderBrush</a></b>(const QBrush &amp;<i>brush</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qtexttablecellformat.html#setBorderStyle">setBorderStyle</a></b>(QTextFrameFormat::BorderStyle <i>style</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qtexttablecellformat.html#setBottomBorder">setBottomBorder</a></b>(qreal <i>width</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qtexttablecellformat.html#setBottomBorderBrush">setBottomBorderBrush</a></b>(const QBrush &amp;<i>brush</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qtexttablecellformat.html#setBottomBorderStyle">setBottomBorderStyle</a></b>(QTextFrameFormat::BorderStyle <i>style</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qtexttablecellformat.html#setBottomPadding">setBottomPadding</a></b>(qreal <i>padding</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qtexttablecellformat.html#setLeftBorder">setLeftBorder</a></b>(qreal <i>width</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qtexttablecellformat.html#setLeftBorderBrush">setLeftBorderBrush</a></b>(const QBrush &amp;<i>brush</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qtexttablecellformat.html#setLeftBorderStyle">setLeftBorderStyle</a></b>(QTextFrameFormat::BorderStyle <i>style</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qtexttablecellformat.html#setLeftPadding">setLeftPadding</a></b>(qreal <i>padding</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qtexttablecellformat.html#setPadding">setPadding</a></b>(qreal <i>padding</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qtexttablecellformat.html#setRightBorder">setRightBorder</a></b>(qreal <i>width</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qtexttablecellformat.html#setRightBorderBrush">setRightBorderBrush</a></b>(const QBrush &amp;<i>brush</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qtexttablecellformat.html#setRightBorderStyle">setRightBorderStyle</a></b>(QTextFrameFormat::BorderStyle <i>style</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qtexttablecellformat.html#setRightPadding">setRightPadding</a></b>(qreal <i>padding</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qtexttablecellformat.html#setTopBorder">setTopBorder</a></b>(qreal <i>width</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qtexttablecellformat.html#setTopBorderBrush">setTopBorderBrush</a></b>(const QBrush &amp;<i>brush</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qtexttablecellformat.html#setTopBorderStyle">setTopBorderStyle</a></b>(QTextFrameFormat::BorderStyle <i>style</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qtexttablecellformat.html#setTopPadding">setTopPadding</a></b>(qreal <i>padding</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> qreal </td><td class="memItemRight bottomAlign"><b><a href="qtexttablecellformat.html#topBorder">topBorder</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QBrush </td><td class="memItemRight bottomAlign"><b><a href="qtexttablecellformat.html#topBorderBrush">topBorderBrush</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QTextFrameFormat::BorderStyle </td><td class="memItemRight bottomAlign"><b><a href="qtexttablecellformat.html#topBorderStyle">topBorderStyle</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> qreal </td><td class="memItemRight bottomAlign"><b><a href="qtexttablecellformat.html#topPadding">topPadding</a></b>() const</td></tr>
+</table></div>
+<a name="details"></a>
+<!-- $$$QTextTableCellFormat-description -->
+<div class="descr">
+<h2 id="details">Detailed Description</h2>
+<p>The table cell format of a table cell in a document specifies the visual properties of the table cell.</p>
+<p>The padding properties of a table cell are controlled by <a href="qtexttablecellformat.html#setLeftPadding">setLeftPadding</a>(), <a href="qtexttablecellformat.html#setRightPadding">setRightPadding</a>(), <a href="qtexttablecellformat.html#setTopPadding">setTopPadding</a>(), and <a href="qtexttablecellformat.html#setBottomPadding">setBottomPadding</a>(). All the paddings can be set at once using <a href="qtexttablecellformat.html#setPadding">setPadding</a>().</p>
+</div>
+<p><b>See also </b><a href="qtextformat.html">QTextFormat</a>, <a href="qtextblockformat.html">QTextBlockFormat</a>, <a href="qtexttableformat.html">QTextTableFormat</a>, and <a href="qtextcharformat.html">QTextCharFormat</a>.</p>
+<!-- @@@QTextTableCellFormat -->
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$QTextTableCellFormat[overload1]$$$QTextTableCellFormat -->
+<h3 class="fn" id="QTextTableCellFormat"><a name="QTextTableCellFormat"></a>QTextTableCellFormat::<span class="name">QTextTableCellFormat</span>()</h3>
+<p>Constructs a new table cell format object.</p>
+<p>This function was introduced in Qt 4.4.</p>
+<!-- @@@QTextTableCellFormat -->
+<!-- $$$bottomBorder[overload1]$$$bottomBorder -->
+<h3 class="fn" id="bottomBorder"><a name="bottomBorder"></a><span class="type"><a href="../qtcore/qtglobal.html#qreal-typedef">qreal</a></span> QTextTableCellFormat::<span class="name">bottomBorder</span>() const</h3>
+<p>Returns the bottom border width of the table cell.</p>
+<p>This function was introduced in Qt 5.14.</p>
+<p><b>See also </b><a href="qtexttablecellformat.html#setBottomBorder">setBottomBorder</a>().</p>
+<!-- @@@bottomBorder -->
+<!-- $$$bottomBorderBrush[overload1]$$$bottomBorderBrush -->
+<h3 class="fn" id="bottomBorderBrush"><a name="bottomBorderBrush"></a><span class="type"><a href="qbrush.html">QBrush</a></span> QTextTableCellFormat::<span class="name">bottomBorderBrush</span>() const</h3>
+<p>Returns the bottom border brush of the table cell.</p>
+<p>This function was introduced in Qt 5.14.</p>
+<p><b>See also </b><a href="qtexttablecellformat.html#setBottomBorderBrush">setBottomBorderBrush</a>().</p>
+<!-- @@@bottomBorderBrush -->
+<!-- $$$bottomBorderStyle[overload1]$$$bottomBorderStyle -->
+<h3 class="fn" id="bottomBorderStyle"><a name="bottomBorderStyle"></a><span class="type"><a href="qtextframeformat.html#BorderStyle-enum">QTextFrameFormat::BorderStyle</a></span> QTextTableCellFormat::<span class="name">bottomBorderStyle</span>() const</h3>
+<p>Returns the bottom border style of the table cell.</p>
+<p>This function was introduced in Qt 5.14.</p>
+<p><b>See also </b><a href="qtexttablecellformat.html#setBottomBorderStyle">setBottomBorderStyle</a>().</p>
+<!-- @@@bottomBorderStyle -->
+<!-- $$$bottomPadding[overload1]$$$bottomPadding -->
+<h3 class="fn" id="bottomPadding"><a name="bottomPadding"></a><span class="type"><a href="../qtcore/qtglobal.html#qreal-typedef">qreal</a></span> QTextTableCellFormat::<span class="name">bottomPadding</span>() const</h3>
+<p>Gets the bottom padding of the table cell.</p>
+<p>This function was introduced in Qt 4.4.</p>
+<p><b>See also </b><a href="qtexttablecellformat.html#setBottomPadding">setBottomPadding</a>(), <a href="qtexttablecellformat.html#leftPadding">leftPadding</a>(), <a href="qtexttablecellformat.html#rightPadding">rightPadding</a>(), and <a href="qtexttablecellformat.html#topPadding">topPadding</a>().</p>
+<!-- @@@bottomPadding -->
+<!-- $$$isValid[overload1]$$$isValid -->
+<h3 class="fn" id="isValid"><a name="isValid"></a><span class="type">bool</span> QTextTableCellFormat::<span class="name">isValid</span>() const</h3>
+<p>Returns <code>true</code> if this table cell format is valid; otherwise returns <code>false</code>.</p>
+<p>This function was introduced in Qt 4.4.</p>
+<!-- @@@isValid -->
+<!-- $$$leftBorder[overload1]$$$leftBorder -->
+<h3 class="fn" id="leftBorder"><a name="leftBorder"></a><span class="type"><a href="../qtcore/qtglobal.html#qreal-typedef">qreal</a></span> QTextTableCellFormat::<span class="name">leftBorder</span>() const</h3>
+<p>Returns the left border width of the table cell.</p>
+<p>This function was introduced in Qt 5.14.</p>
+<p><b>See also </b><a href="qtexttablecellformat.html#setLeftBorder">setLeftBorder</a>().</p>
+<!-- @@@leftBorder -->
+<!-- $$$leftBorderBrush[overload1]$$$leftBorderBrush -->
+<h3 class="fn" id="leftBorderBrush"><a name="leftBorderBrush"></a><span class="type"><a href="qbrush.html">QBrush</a></span> QTextTableCellFormat::<span class="name">leftBorderBrush</span>() const</h3>
+<p>Returns the left border brush of the table cell.</p>
+<p>This function was introduced in Qt 5.14.</p>
+<p><b>See also </b><a href="qtexttablecellformat.html#setLeftBorderBrush">setLeftBorderBrush</a>().</p>
+<!-- @@@leftBorderBrush -->
+<!-- $$$leftBorderStyle[overload1]$$$leftBorderStyle -->
+<h3 class="fn" id="leftBorderStyle"><a name="leftBorderStyle"></a><span class="type"><a href="qtextframeformat.html#BorderStyle-enum">QTextFrameFormat::BorderStyle</a></span> QTextTableCellFormat::<span class="name">leftBorderStyle</span>() const</h3>
+<p>Returns the left border style of the table cell.</p>
+<p>This function was introduced in Qt 5.14.</p>
+<p><b>See also </b><a href="qtexttablecellformat.html#setLeftBorderStyle">setLeftBorderStyle</a>().</p>
+<!-- @@@leftBorderStyle -->
+<!-- $$$leftPadding[overload1]$$$leftPadding -->
+<h3 class="fn" id="leftPadding"><a name="leftPadding"></a><span class="type"><a href="../qtcore/qtglobal.html#qreal-typedef">qreal</a></span> QTextTableCellFormat::<span class="name">leftPadding</span>() const</h3>
+<p>Gets the left padding of the table cell.</p>
+<p>This function was introduced in Qt 4.4.</p>
+<p><b>See also </b><a href="qtexttablecellformat.html#setLeftPadding">setLeftPadding</a>(), <a href="qtexttablecellformat.html#rightPadding">rightPadding</a>(), <a href="qtexttablecellformat.html#topPadding">topPadding</a>(), and <a href="qtexttablecellformat.html#bottomPadding">bottomPadding</a>().</p>
+<!-- @@@leftPadding -->
+<!-- $$$rightBorder[overload1]$$$rightBorder -->
+<h3 class="fn" id="rightBorder"><a name="rightBorder"></a><span class="type"><a href="../qtcore/qtglobal.html#qreal-typedef">qreal</a></span> QTextTableCellFormat::<span class="name">rightBorder</span>() const</h3>
+<p>Returns the right border width of the table cell.</p>
+<p>This function was introduced in Qt 5.14.</p>
+<p><b>See also </b><a href="qtexttablecellformat.html#setRightBorder">setRightBorder</a>().</p>
+<!-- @@@rightBorder -->
+<!-- $$$rightBorderBrush[overload1]$$$rightBorderBrush -->
+<h3 class="fn" id="rightBorderBrush"><a name="rightBorderBrush"></a><span class="type"><a href="qbrush.html">QBrush</a></span> QTextTableCellFormat::<span class="name">rightBorderBrush</span>() const</h3>
+<p>Returns the right border brush of the table cell.</p>
+<p>This function was introduced in Qt 5.14.</p>
+<p><b>See also </b><a href="qtexttablecellformat.html#setRightBorderBrush">setRightBorderBrush</a>().</p>
+<!-- @@@rightBorderBrush -->
+<!-- $$$rightBorderStyle[overload1]$$$rightBorderStyle -->
+<h3 class="fn" id="rightBorderStyle"><a name="rightBorderStyle"></a><span class="type"><a href="qtextframeformat.html#BorderStyle-enum">QTextFrameFormat::BorderStyle</a></span> QTextTableCellFormat::<span class="name">rightBorderStyle</span>() const</h3>
+<p>Returns the right border style of the table cell.</p>
+<p>This function was introduced in Qt 5.14.</p>
+<p><b>See also </b><a href="qtexttablecellformat.html#setRightBorderStyle">setRightBorderStyle</a>().</p>
+<!-- @@@rightBorderStyle -->
+<!-- $$$rightPadding[overload1]$$$rightPadding -->
+<h3 class="fn" id="rightPadding"><a name="rightPadding"></a><span class="type"><a href="../qtcore/qtglobal.html#qreal-typedef">qreal</a></span> QTextTableCellFormat::<span class="name">rightPadding</span>() const</h3>
+<p>Gets the right padding of the table cell.</p>
+<p>This function was introduced in Qt 4.4.</p>
+<p><b>See also </b><a href="qtexttablecellformat.html#setRightPadding">setRightPadding</a>(), <a href="qtexttablecellformat.html#leftPadding">leftPadding</a>(), <a href="qtexttablecellformat.html#topPadding">topPadding</a>(), and <a href="qtexttablecellformat.html#bottomPadding">bottomPadding</a>().</p>
+<!-- @@@rightPadding -->
+<!-- $$$setBorder[overload1]$$$setBorderqreal -->
+<h3 class="fn" id="setBorder"><a name="setBorder"></a><span class="type">void</span> QTextTableCellFormat::<span class="name">setBorder</span>(<span class="type"><a href="../qtcore/qtglobal.html#qreal-typedef">qreal</a></span> <i>width</i>)</h3>
+<p>Sets the left, right, top, and bottom border <i>width</i> of the table cell.</p>
+<p>This function was introduced in Qt 5.14.</p>
+<p><b>See also </b><a href="qtexttablecellformat.html#setLeftBorder">setLeftBorder</a>(), <a href="qtexttablecellformat.html#setRightBorder">setRightBorder</a>(), <a href="qtexttablecellformat.html#setTopBorder">setTopBorder</a>(), <a href="qtexttablecellformat.html#setBottomBorder">setBottomBorder</a>(), and <a href="qtexttableformat.html#setBorderCollapse">QTextTableFormat::setBorderCollapse</a>.</p>
+<!-- @@@setBorder -->
+<!-- $$$setBorderBrush[overload1]$$$setBorderBrushconstQBrush& -->
+<h3 class="fn" id="setBorderBrush"><a name="setBorderBrush"></a><span class="type">void</span> QTextTableCellFormat::<span class="name">setBorderBrush</span>(const <span class="type"><a href="qbrush.html">QBrush</a></span> &amp;<i>brush</i>)</h3>
+<p>Sets the left, right, top, and bottom border <i>brush</i> of the table cell.</p>
+<p>This function was introduced in Qt 5.14.</p>
+<p><b>See also </b><a href="qtexttablecellformat.html#setLeftBorderBrush">setLeftBorderBrush</a>(), <a href="qtexttablecellformat.html#setRightBorderBrush">setRightBorderBrush</a>(), <a href="qtexttablecellformat.html#setTopBorderBrush">setTopBorderBrush</a>(), <a href="qtexttablecellformat.html#setBottomBorderBrush">setBottomBorderBrush</a>(), and <a href="qtexttableformat.html#setBorderCollapse">QTextTableFormat::setBorderCollapse</a>.</p>
+<!-- @@@setBorderBrush -->
+<!-- $$$setBorderStyle[overload1]$$$setBorderStyleQTextFrameFormat::BorderStyle -->
+<h3 class="fn" id="setBorderStyle"><a name="setBorderStyle"></a><span class="type">void</span> QTextTableCellFormat::<span class="name">setBorderStyle</span>(<span class="type"><a href="qtextframeformat.html#BorderStyle-enum">QTextFrameFormat::BorderStyle</a></span> <i>style</i>)</h3>
+<p>Sets the left, right, top, and bottom border <i>style</i> of the table cell.</p>
+<p>This function was introduced in Qt 5.14.</p>
+<p><b>See also </b><a href="qtexttablecellformat.html#setLeftBorderStyle">setLeftBorderStyle</a>(), <a href="qtexttablecellformat.html#setRightBorderStyle">setRightBorderStyle</a>(), <a href="qtexttablecellformat.html#setTopBorderStyle">setTopBorderStyle</a>(), <a href="qtexttablecellformat.html#setBottomBorderStyle">setBottomBorderStyle</a>(), and <a href="qtexttableformat.html#setBorderCollapse">QTextTableFormat::setBorderCollapse</a>.</p>
+<!-- @@@setBorderStyle -->
+<!-- $$$setBottomBorder[overload1]$$$setBottomBorderqreal -->
+<h3 class="fn" id="setBottomBorder"><a name="setBottomBorder"></a><span class="type">void</span> QTextTableCellFormat::<span class="name">setBottomBorder</span>(<span class="type"><a href="../qtcore/qtglobal.html#qreal-typedef">qreal</a></span> <i>width</i>)</h3>
+<p>Sets the bottom border <i>width</i> of the table cell.</p>
+<p>This function was introduced in Qt 5.14.</p>
+<p><b>See also </b><a href="qtexttablecellformat.html#bottomBorder">bottomBorder</a>() and <a href="qtexttableformat.html#setBorderCollapse">QTextTableFormat::setBorderCollapse</a>.</p>
+<!-- @@@setBottomBorder -->
+<!-- $$$setBottomBorderBrush[overload1]$$$setBottomBorderBrushconstQBrush& -->
+<h3 class="fn" id="setBottomBorderBrush"><a name="setBottomBorderBrush"></a><span class="type">void</span> QTextTableCellFormat::<span class="name">setBottomBorderBrush</span>(const <span class="type"><a href="qbrush.html">QBrush</a></span> &amp;<i>brush</i>)</h3>
+<p>Sets the bottom border <i>brush</i> of the table cell.</p>
+<p>This function was introduced in Qt 5.14.</p>
+<p><b>See also </b><a href="qtexttablecellformat.html#bottomBorderBrush">bottomBorderBrush</a>() and <a href="qtexttableformat.html#setBorderCollapse">QTextTableFormat::setBorderCollapse</a>.</p>
+<!-- @@@setBottomBorderBrush -->
+<!-- $$$setBottomBorderStyle[overload1]$$$setBottomBorderStyleQTextFrameFormat::BorderStyle -->
+<h3 class="fn" id="setBottomBorderStyle"><a name="setBottomBorderStyle"></a><span class="type">void</span> QTextTableCellFormat::<span class="name">setBottomBorderStyle</span>(<span class="type"><a href="qtextframeformat.html#BorderStyle-enum">QTextFrameFormat::BorderStyle</a></span> <i>style</i>)</h3>
+<p>Sets the bottom border <i>style</i> of the table cell.</p>
+<p>This function was introduced in Qt 5.14.</p>
+<p><b>See also </b><a href="qtexttablecellformat.html#bottomBorderStyle">bottomBorderStyle</a>() and <a href="qtexttableformat.html#setBorderCollapse">QTextTableFormat::setBorderCollapse</a>.</p>
+<!-- @@@setBottomBorderStyle -->
+<!-- $$$setBottomPadding[overload1]$$$setBottomPaddingqreal -->
+<h3 class="fn" id="setBottomPadding"><a name="setBottomPadding"></a><span class="type">void</span> QTextTableCellFormat::<span class="name">setBottomPadding</span>(<span class="type"><a href="../qtcore/qtglobal.html#qreal-typedef">qreal</a></span> <i>padding</i>)</h3>
+<p>Sets the bottom <i>padding</i> of the table cell.</p>
+<p>This function was introduced in Qt 4.4.</p>
+<p><b>See also </b><a href="qtexttablecellformat.html#bottomPadding">bottomPadding</a>(), <a href="qtexttablecellformat.html#setLeftPadding">setLeftPadding</a>(), <a href="qtexttablecellformat.html#setRightPadding">setRightPadding</a>(), and <a href="qtexttablecellformat.html#setTopPadding">setTopPadding</a>().</p>
+<!-- @@@setBottomPadding -->
+<!-- $$$setLeftBorder[overload1]$$$setLeftBorderqreal -->
+<h3 class="fn" id="setLeftBorder"><a name="setLeftBorder"></a><span class="type">void</span> QTextTableCellFormat::<span class="name">setLeftBorder</span>(<span class="type"><a href="../qtcore/qtglobal.html#qreal-typedef">qreal</a></span> <i>width</i>)</h3>
+<p>Sets the left border <i>width</i> of the table cell.</p>
+<p>This function was introduced in Qt 5.14.</p>
+<p><b>See also </b><a href="qtexttablecellformat.html#leftBorder">leftBorder</a>() and <a href="qtexttableformat.html#setBorderCollapse">QTextTableFormat::setBorderCollapse</a>.</p>
+<!-- @@@setLeftBorder -->
+<!-- $$$setLeftBorderBrush[overload1]$$$setLeftBorderBrushconstQBrush& -->
+<h3 class="fn" id="setLeftBorderBrush"><a name="setLeftBorderBrush"></a><span class="type">void</span> QTextTableCellFormat::<span class="name">setLeftBorderBrush</span>(const <span class="type"><a href="qbrush.html">QBrush</a></span> &amp;<i>brush</i>)</h3>
+<p>Sets the left border <i>brush</i> of the table cell.</p>
+<p>This function was introduced in Qt 5.14.</p>
+<p><b>See also </b><a href="qtexttablecellformat.html#leftBorderBrush">leftBorderBrush</a>() and <a href="qtexttableformat.html#setBorderCollapse">QTextTableFormat::setBorderCollapse</a>.</p>
+<!-- @@@setLeftBorderBrush -->
+<!-- $$$setLeftBorderStyle[overload1]$$$setLeftBorderStyleQTextFrameFormat::BorderStyle -->
+<h3 class="fn" id="setLeftBorderStyle"><a name="setLeftBorderStyle"></a><span class="type">void</span> QTextTableCellFormat::<span class="name">setLeftBorderStyle</span>(<span class="type"><a href="qtextframeformat.html#BorderStyle-enum">QTextFrameFormat::BorderStyle</a></span> <i>style</i>)</h3>
+<p>Sets the left border <i>style</i> of the table cell.</p>
+<p>This function was introduced in Qt 5.14.</p>
+<p><b>See also </b><a href="qtexttablecellformat.html#leftBorderStyle">leftBorderStyle</a>() and <a href="qtexttableformat.html#setBorderCollapse">QTextTableFormat::setBorderCollapse</a>.</p>
+<!-- @@@setLeftBorderStyle -->
+<!-- $$$setLeftPadding[overload1]$$$setLeftPaddingqreal -->
+<h3 class="fn" id="setLeftPadding"><a name="setLeftPadding"></a><span class="type">void</span> QTextTableCellFormat::<span class="name">setLeftPadding</span>(<span class="type"><a href="../qtcore/qtglobal.html#qreal-typedef">qreal</a></span> <i>padding</i>)</h3>
+<p>Sets the left <i>padding</i> of the table cell.</p>
+<p>This function was introduced in Qt 4.4.</p>
+<p><b>See also </b><a href="qtexttablecellformat.html#leftPadding">leftPadding</a>(), <a href="qtexttablecellformat.html#setRightPadding">setRightPadding</a>(), <a href="qtexttablecellformat.html#setTopPadding">setTopPadding</a>(), and <a href="qtexttablecellformat.html#setBottomPadding">setBottomPadding</a>().</p>
+<!-- @@@setLeftPadding -->
+<!-- $$$setPadding[overload1]$$$setPaddingqreal -->
+<h3 class="fn" id="setPadding"><a name="setPadding"></a><span class="type">void</span> QTextTableCellFormat::<span class="name">setPadding</span>(<span class="type"><a href="../qtcore/qtglobal.html#qreal-typedef">qreal</a></span> <i>padding</i>)</h3>
+<p>Sets the left, right, top, and bottom <i>padding</i> of the table cell.</p>
+<p>This function was introduced in Qt 4.4.</p>
+<p><b>See also </b><a href="qtexttablecellformat.html#setLeftPadding">setLeftPadding</a>(), <a href="qtexttablecellformat.html#setRightPadding">setRightPadding</a>(), <a href="qtexttablecellformat.html#setTopPadding">setTopPadding</a>(), and <a href="qtexttablecellformat.html#setBottomPadding">setBottomPadding</a>().</p>
+<!-- @@@setPadding -->
+<!-- $$$setRightBorder[overload1]$$$setRightBorderqreal -->
+<h3 class="fn" id="setRightBorder"><a name="setRightBorder"></a><span class="type">void</span> QTextTableCellFormat::<span class="name">setRightBorder</span>(<span class="type"><a href="../qtcore/qtglobal.html#qreal-typedef">qreal</a></span> <i>width</i>)</h3>
+<p>Sets the right border <i>width</i> of the table cell.</p>
+<p>This function was introduced in Qt 5.14.</p>
+<p><b>See also </b><a href="qtexttablecellformat.html#rightBorder">rightBorder</a>() and <a href="qtexttableformat.html#setBorderCollapse">QTextTableFormat::setBorderCollapse</a>.</p>
+<!-- @@@setRightBorder -->
+<!-- $$$setRightBorderBrush[overload1]$$$setRightBorderBrushconstQBrush& -->
+<h3 class="fn" id="setRightBorderBrush"><a name="setRightBorderBrush"></a><span class="type">void</span> QTextTableCellFormat::<span class="name">setRightBorderBrush</span>(const <span class="type"><a href="qbrush.html">QBrush</a></span> &amp;<i>brush</i>)</h3>
+<p>Sets the right border <i>brush</i> of the table cell.</p>
+<p>This function was introduced in Qt 5.14.</p>
+<p><b>See also </b><a href="qtexttablecellformat.html#rightBorderBrush">rightBorderBrush</a>() and <a href="qtexttableformat.html#setBorderCollapse">QTextTableFormat::setBorderCollapse</a>.</p>
+<!-- @@@setRightBorderBrush -->
+<!-- $$$setRightBorderStyle[overload1]$$$setRightBorderStyleQTextFrameFormat::BorderStyle -->
+<h3 class="fn" id="setRightBorderStyle"><a name="setRightBorderStyle"></a><span class="type">void</span> QTextTableCellFormat::<span class="name">setRightBorderStyle</span>(<span class="type"><a href="qtextframeformat.html#BorderStyle-enum">QTextFrameFormat::BorderStyle</a></span> <i>style</i>)</h3>
+<p>Sets the right border <i>style</i> of the table cell.</p>
+<p>This function was introduced in Qt 5.14.</p>
+<p><b>See also </b><a href="qtexttablecellformat.html#rightBorderStyle">rightBorderStyle</a>() and <a href="qtexttableformat.html#setBorderCollapse">QTextTableFormat::setBorderCollapse</a>.</p>
+<!-- @@@setRightBorderStyle -->
+<!-- $$$setRightPadding[overload1]$$$setRightPaddingqreal -->
+<h3 class="fn" id="setRightPadding"><a name="setRightPadding"></a><span class="type">void</span> QTextTableCellFormat::<span class="name">setRightPadding</span>(<span class="type"><a href="../qtcore/qtglobal.html#qreal-typedef">qreal</a></span> <i>padding</i>)</h3>
+<p>Sets the right <i>padding</i> of the table cell.</p>
+<p>This function was introduced in Qt 4.4.</p>
+<p><b>See also </b><a href="qtexttablecellformat.html#rightPadding">rightPadding</a>(), <a href="qtexttablecellformat.html#setLeftPadding">setLeftPadding</a>(), <a href="qtexttablecellformat.html#setTopPadding">setTopPadding</a>(), and <a href="qtexttablecellformat.html#setBottomPadding">setBottomPadding</a>().</p>
+<!-- @@@setRightPadding -->
+<!-- $$$setTopBorder[overload1]$$$setTopBorderqreal -->
+<h3 class="fn" id="setTopBorder"><a name="setTopBorder"></a><span class="type">void</span> QTextTableCellFormat::<span class="name">setTopBorder</span>(<span class="type"><a href="../qtcore/qtglobal.html#qreal-typedef">qreal</a></span> <i>width</i>)</h3>
+<p>Sets the top border <i>width</i> of the table cell.</p>
+<p>This function was introduced in Qt 5.14.</p>
+<p><b>See also </b><a href="qtexttablecellformat.html#topBorder">topBorder</a>() and <a href="qtexttableformat.html#setBorderCollapse">QTextTableFormat::setBorderCollapse</a>.</p>
+<!-- @@@setTopBorder -->
+<!-- $$$setTopBorderBrush[overload1]$$$setTopBorderBrushconstQBrush& -->
+<h3 class="fn" id="setTopBorderBrush"><a name="setTopBorderBrush"></a><span class="type">void</span> QTextTableCellFormat::<span class="name">setTopBorderBrush</span>(const <span class="type"><a href="qbrush.html">QBrush</a></span> &amp;<i>brush</i>)</h3>
+<p>Sets the top border <i>brush</i> of the table cell.</p>
+<p>This function was introduced in Qt 5.14.</p>
+<p><b>See also </b><a href="qtexttablecellformat.html#topBorderBrush">topBorderBrush</a>() and <a href="qtexttableformat.html#setBorderCollapse">QTextTableFormat::setBorderCollapse</a>.</p>
+<!-- @@@setTopBorderBrush -->
+<!-- $$$setTopBorderStyle[overload1]$$$setTopBorderStyleQTextFrameFormat::BorderStyle -->
+<h3 class="fn" id="setTopBorderStyle"><a name="setTopBorderStyle"></a><span class="type">void</span> QTextTableCellFormat::<span class="name">setTopBorderStyle</span>(<span class="type"><a href="qtextframeformat.html#BorderStyle-enum">QTextFrameFormat::BorderStyle</a></span> <i>style</i>)</h3>
+<p>Sets the top border <i>style</i> of the table cell.</p>
+<p>This function was introduced in Qt 5.14.</p>
+<p><b>See also </b><a href="qtexttablecellformat.html#topBorderStyle">topBorderStyle</a>() and <a href="qtexttableformat.html#setBorderCollapse">QTextTableFormat::setBorderCollapse</a>.</p>
+<!-- @@@setTopBorderStyle -->
+<!-- $$$setTopPadding[overload1]$$$setTopPaddingqreal -->
+<h3 class="fn" id="setTopPadding"><a name="setTopPadding"></a><span class="type">void</span> QTextTableCellFormat::<span class="name">setTopPadding</span>(<span class="type"><a href="../qtcore/qtglobal.html#qreal-typedef">qreal</a></span> <i>padding</i>)</h3>
+<p>Sets the top <i>padding</i> of the table cell.</p>
+<p>This function was introduced in Qt 4.4.</p>
+<p><b>See also </b><a href="qtexttablecellformat.html#topPadding">topPadding</a>(), <a href="qtexttablecellformat.html#setLeftPadding">setLeftPadding</a>(), <a href="qtexttablecellformat.html#setRightPadding">setRightPadding</a>(), and <a href="qtexttablecellformat.html#setBottomPadding">setBottomPadding</a>().</p>
+<!-- @@@setTopPadding -->
+<!-- $$$topBorder[overload1]$$$topBorder -->
+<h3 class="fn" id="topBorder"><a name="topBorder"></a><span class="type"><a href="../qtcore/qtglobal.html#qreal-typedef">qreal</a></span> QTextTableCellFormat::<span class="name">topBorder</span>() const</h3>
+<p>Returns the top border width of the table cell.</p>
+<p>This function was introduced in Qt 5.14.</p>
+<p><b>See also </b><a href="qtexttablecellformat.html#setTopBorder">setTopBorder</a>().</p>
+<!-- @@@topBorder -->
+<!-- $$$topBorderBrush[overload1]$$$topBorderBrush -->
+<h3 class="fn" id="topBorderBrush"><a name="topBorderBrush"></a><span class="type"><a href="qbrush.html">QBrush</a></span> QTextTableCellFormat::<span class="name">topBorderBrush</span>() const</h3>
+<p>Returns the top border brush of the table cell.</p>
+<p>This function was introduced in Qt 5.14.</p>
+<p><b>See also </b><a href="qtexttablecellformat.html#setTopBorderBrush">setTopBorderBrush</a>().</p>
+<!-- @@@topBorderBrush -->
+<!-- $$$topBorderStyle[overload1]$$$topBorderStyle -->
+<h3 class="fn" id="topBorderStyle"><a name="topBorderStyle"></a><span class="type"><a href="qtextframeformat.html#BorderStyle-enum">QTextFrameFormat::BorderStyle</a></span> QTextTableCellFormat::<span class="name">topBorderStyle</span>() const</h3>
+<p>Returns the top border style of the table cell.</p>
+<p>This function was introduced in Qt 5.14.</p>
+<p><b>See also </b><a href="qtexttablecellformat.html#setTopBorderStyle">setTopBorderStyle</a>().</p>
+<!-- @@@topBorderStyle -->
+<!-- $$$topPadding[overload1]$$$topPadding -->
+<h3 class="fn" id="topPadding"><a name="topPadding"></a><span class="type"><a href="../qtcore/qtglobal.html#qreal-typedef">qreal</a></span> QTextTableCellFormat::<span class="name">topPadding</span>() const</h3>
+<p>Gets the top padding of the table cell.</p>
+<p>This function was introduced in Qt 4.4.</p>
+<p><b>See also </b><a href="qtexttablecellformat.html#setTopPadding">setTopPadding</a>(), <a href="qtexttablecellformat.html#leftPadding">leftPadding</a>(), <a href="qtexttablecellformat.html#rightPadding">rightPadding</a>(), and <a href="qtexttablecellformat.html#bottomPadding">bottomPadding</a>().</p>
+<!-- @@@topPadding -->
+</div>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

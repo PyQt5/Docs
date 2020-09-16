@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qtquick3d-examples-view3d.qdoc -->
+  <title>Qt Quick 3D - View3D Example | Qt Quick 3D 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtquick3d-index.html">Qt Quick 3D</a></li>
+<li>Qt Quick 3D - View3D Example</li>
+<li id="buildversion"><a href="qtquick3d-index.html">Qt Quick 3D | Commercial or GPLv3</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#defining-the-cameras">Defining the Cameras</a></li>
+<li class="level1"><a href="#adding-the-views">Adding the Views</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Qt Quick 3D - View3D Example</h1>
+<span class="subtitle"></span>
+<!-- $$$view3d-brief -->
+<p>Demonstrates the use of <a href="qml-qtquick3d-view3d.html">View3D</a> to show a scene from multiple cameras.</p>
+<!-- @@@view3d -->
+<!-- $$$view3d-description -->
+<div class="descr"> <a name="details"></a>
+<p class="centerAlign"><img src="images/view3d-example.png" alt="" /></p><p>This example demonstrates using four separate <a href="qml-qtquick3d-view3d.html">View3D</a>s with different cameras in an application.</p>
+<a name="defining-the-cameras"></a>
+<h4 id="defining-the-cameras">Defining the Cameras</h4>
+<p>First we define the <a href="qml-qtquick3d-camera.html">cameras</a>. We're going to define several different cameras, even though we will only add 4 views. We're doing this because we want to be able to switch the camera in one of the views.</p>
+<p>The cameras have to be defined inside the root <a href="qml-qtquick3d-node.html">Node</a>. This is how the cameras are defined:</p>
+<pre class="qml">
+ <span class="type"><a href="qml-qtquick3d-node.html">Node</a></span> {
+     <span class="name">id</span>: <span class="name">standAloneScene</span>
+     ...
+ <span class="comment">// The predefined cameras. They have to be part of the scene, i.e. inside the root node.</span>
+ <span class="comment">// Animated perspective camera</span>
+ <span class="type"><a href="qml-qtquick3d-node.html">Node</a></span> {
+     <span class="type"><a href="qml-qtquick3d-perspectivecamera.html">PerspectiveCamera</a></span> {
+         <span class="name">id</span>: <span class="name">cameraPerspectiveOne</span>
+         <span class="name">z</span>: <span class="number">600</span>
+     }
+
+     PropertyAnimation on <span class="name">eulerRotation</span>.x {
+         <span class="name">loops</span>: <span class="name">Animation</span>.<span class="name">Infinite</span>
+         <span class="name">duration</span>: <span class="number">5000</span>
+         <span class="name">to</span>: -<span class="number">360</span>
+         <span class="name">from</span>: <span class="number">0</span>
+     }
+ }
+
+ <span class="comment">// Stationary perspective camera</span>
+ <span class="type"><a href="qml-qtquick3d-perspectivecamera.html">PerspectiveCamera</a></span> {
+     <span class="name">id</span>: <span class="name">cameraPerspectiveTwo</span>
+     <span class="name">z</span>: <span class="number">600</span>
+ }
+     ...
+ <span class="comment">// Stationary orthographic camera viewing from left</span>
+ <span class="type"><a href="qml-qtquick3d-orthographiccamera.html">OrthographicCamera</a></span> {
+     <span class="name">id</span>: <span class="name">cameraOrthographicLeft</span>
+     <span class="name">x</span>: -<span class="number">600</span>
+     <span class="name">eulerRotation</span>.y: -<span class="number">90</span>
+ }
+ }
+</pre>
+<a name="adding-the-views"></a>
+<h4 id="adding-the-views">Adding the Views</h4>
+<p>After defining the cameras we can add the <a href="qml-qtquick3d-view3d.html">views</a>. We divide the screen to four parts, and add views one-by-one like this:</p>
+<pre class="qml">
+ <span class="comment">// The views</span>
+ <span class="type"><a href="../qtquick/qml-qtquick-rectangle.html">Rectangle</a></span> {
+     <span class="name">id</span>: <span class="name">topLeft</span>
+     <span class="name">anchors</span>.top: <span class="name">parent</span>.<span class="name">top</span>
+     <span class="name">anchors</span>.left: <span class="name">parent</span>.<span class="name">left</span>
+     <span class="name">width</span>: <span class="name">parent</span>.<span class="name">width</span> <span class="operator">*</span> <span class="number">0.5</span>
+     <span class="name">height</span>: <span class="name">parent</span>.<span class="name">height</span> <span class="operator">*</span> <span class="number">0.5</span>
+     <span class="name">color</span>: <span class="string">&quot;#848895&quot;</span>
+     <span class="name">border</span>.color: <span class="string">&quot;black&quot;</span>
+
+     <span class="type"><a href="qml-qtquick3d-view3d.html">View3D</a></span> {
+         <span class="name">id</span>: <span class="name">topLeftView</span>
+         <span class="name">anchors</span>.fill: <span class="name">parent</span>
+         <span class="name">importScene</span>: <span class="name">standAloneScene</span>
+         <span class="name">camera</span>: <span class="name">cameraOrthographicFront</span>
+     }
+
+     <span class="type"><a href="../qtquickcontrols/qml-qtquick-controls2-label.html">Label</a></span> {
+         <span class="name">text</span>: <span class="string">&quot;Front&quot;</span>
+         <span class="name">anchors</span>.top: <span class="name">parent</span>.<span class="name">top</span>
+         <span class="name">anchors</span>.left: <span class="name">parent</span>.<span class="name">left</span>
+         <span class="name">anchors</span>.margins: <span class="number">10</span>
+         <span class="name">color</span>: <span class="string">&quot;#222840&quot;</span>
+         <span class="name">font</span>.pointSize: <span class="number">14</span>
+     }
+ }
+     ...
+</pre>
+<p>The top-right view has three buttons in it. The buttons can be used to switch the camera used in that view on the fly. The switching is done just by settings the camera property:</p>
+<pre class="qml">
+ <span class="type"><a href="../qtquickcontrols/qml-qtquick-controls2-roundbutton.html">RoundButton</a></span> {
+     <span class="name">text</span>: <span class="string">&quot;Camera 1&quot;</span>
+     <span class="name">highlighted</span>: <span class="name">topRightView</span>.<span class="name">camera</span> <span class="operator">==</span> <span class="name">cameraPerspectiveOne</span>
+     <span class="name">onClicked</span>: {
+         <span class="name">topRightView</span>.<span class="name">camera</span> <span class="operator">=</span> <span class="name">cameraPerspectiveOne</span>
+     }
+ }
+     ...
+</pre>
+<p>Files:</p>
+<ul>
+<li><a href="qtquick3d-view3d-main-cpp.html">view3d/main.cpp</a></li>
+<li><a href="qtquick3d-view3d-main-qml.html">view3d/main.qml</a></li>
+<li><a href="qtquick3d-view3d-qml-qrc.html">view3d/qml.qrc</a></li>
+<li><a href="qtquick3d-view3d-view3d-pro.html">view3d/view3d.pro</a></li>
+</ul>
+</div>
+<!-- @@@view3d -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

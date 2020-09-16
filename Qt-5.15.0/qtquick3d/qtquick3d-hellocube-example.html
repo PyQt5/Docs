@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- hellocube.qdoc -->
+  <title>Qt Quick 3D - HelloCube Example | Qt Quick 3D 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtquick3d-index.html">Qt Quick 3D</a></li>
+<li>Qt Quick 3D - HelloCube Example</li>
+<li id="buildversion"><a href="qtquick3d-index.html">Qt Quick 3D | Commercial or GPLv3</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#draw-2d-items">Draw 2D Items</a></li>
+<li class="level1"><a href="#draw-a-3d-cube">Draw a 3D Cube</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Qt Quick 3D - HelloCube Example</h1>
+<span class="subtitle"></span>
+<!-- $$$hellocube-brief -->
+<p>Demonstrates how to render 2D and 3D objects together in Qt Quick 3D.</p>
+<!-- @@@hellocube -->
+<!-- $$$hellocube-description -->
+<div class="descr"> <a name="details"></a>
+<p class="centerAlign"><img src="images/hellocube.png" alt="" /></p><p><i>HelloCube</i> demonstrates how to render a 3D cube with 2D items in Qt Quick 3D.</p>
+<a name="draw-2d-items"></a>
+<h4 id="draw-2d-items">Draw 2D Items</h4>
+<p>We set up the entire scene in the <i>main.qml</i> file.</p>
+<p>To be able to use the types in the <a href="qtquick3d-qmlmodule.html">QtQuick3D</a> module, we must import it:</p>
+<pre class="cpp">
+ import QtQuick3D 1.15
+</pre>
+<p>We define simple <a href="../qtquick/qtquick-module.html">QtQuick</a> Items with an Image and a Text on a Rectangle.</p>
+<pre class="qml">
+ <span class="type"><a href="../qtquick/qml-qtquick-image.html">Image</a></span> {
+     <span class="name">anchors</span>.fill: <span class="name">parent</span>
+     <span class="name">source</span>: <span class="string">&quot;qt_logo.png&quot;</span>
+ }
+ <span class="type"><a href="../qtquick/qml-qtquick-text.html">Text</a></span> {
+     <span class="name">id</span>: <span class="name">text</span>
+     <span class="name">anchors</span>.bottom: <span class="name">parent</span>.<span class="name">bottom</span>
+     <span class="name">anchors</span>.left: <span class="name">parent</span>.<span class="name">left</span>
+     <span class="name">color</span>: <span class="string">&quot;white&quot;</span>
+     <span class="name">font</span>.pixelSize: <span class="number">17</span>
+     <span class="name">text</span>: <span class="name">qsTr</span>(<span class="string">&quot;The Future is Written with Qt&quot;</span>)
+ }
+</pre>
+<p>This simple rectangle has two animations for flipping vertically.</p>
+<pre class="qml">
+ <span class="name">transform</span>: <span class="name">Rotation</span> {
+     <span class="name">id</span>: <span class="name">rotation</span>
+     <span class="name">origin</span>.x: <span class="name">qt_logo</span>.<span class="name">width</span> <span class="operator">/</span> <span class="number">2</span>
+     <span class="name">origin</span>.y: <span class="name">qt_logo</span>.<span class="name">height</span> <span class="operator">/</span> <span class="number">2</span>
+     <span class="type">axis</span> { <span class="name">x</span>: <span class="number">1</span>; <span class="name">y</span>: <span class="number">0</span>; <span class="name">z</span>: <span class="number">0</span> }
+ }
+
+ <span class="type"><a href="../qtquick/qml-qtquick-propertyanimation.html">PropertyAnimation</a></span> {
+     <span class="name">id</span>: <span class="name">flip1</span>
+     <span class="name">target</span>: <span class="name">rotation</span>
+     <span class="name">property</span>: <span class="string">&quot;angle&quot;</span>
+     <span class="name">duration</span>: <span class="number">600</span>
+     <span class="name">to</span>: <span class="number">180</span>
+     <span class="name">from</span>: <span class="number">0</span>
+ }
+ <span class="type"><a href="../qtquick/qml-qtquick-propertyanimation.html">PropertyAnimation</a></span> {
+     <span class="name">id</span>: <span class="name">flip2</span>
+     <span class="name">target</span>: <span class="name">rotation</span>
+     <span class="name">property</span>: <span class="string">&quot;angle&quot;</span>
+     <span class="name">duration</span>: <span class="number">600</span>
+     <span class="name">to</span>: <span class="number">360</span>
+     <span class="name">from</span>: <span class="number">180</span>
+ }
+</pre>
+<a name="draw-a-3d-cube"></a>
+<h4 id="draw-a-3d-cube">Draw a 3D Cube</h4>
+<p>Drawing a cube is very simple. After defining a <a href="qml-qtquick3d-camera.html">Camera</a>, and a <a href="qml-qtquick3d-light.html">Light</a>, we make a cube with a built-in <a href="qml-qtquick3d-model.html">Model</a>. In this example, we render previous 2D Rectangle on this cube surface as a diffuse <a href="qml-qtquick3d-texture.html">Texture</a>. Back to the properties of the Rectangle, you can see layer.enabled. This property makes the 2D item as a offscreen surface.</p>
+<pre class="qml">
+ <span class="name">layer</span>.enabled: <span class="number">true</span>
+ <span class="name">id</span>: <span class="name">cube</span>
+ <span class="name">visible</span>: <span class="number">true</span>
+ <span class="name">position</span>: <span class="name">Qt</span>.<span class="name">vector3d</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>)
+ <span class="name">source</span>: <span class="string">&quot;#Cube&quot;</span>
+ <span class="name">materials</span>: [ <span class="type"><a href="qml-qtquick3d-defaultmaterial.html">DefaultMaterial</a></span> {
+         <span class="name">diffuseMap</span>: <span class="name">Texture</span> {
+             <span class="name">id</span>: <span class="name">texture</span>
+             <span class="name">sourceItem</span>: <span class="name">qt_logo</span>
+         }
+     }
+ ]
+ <span class="name">eulerRotation</span>.y: <span class="number">90</span>
+</pre>
+<p>Files:</p>
+<ul>
+<li><a href="qtquick3d-hellocube-hellocube-pro.html">hellocube/hellocube.pro</a></li>
+<li><a href="qtquick3d-hellocube-main-cpp.html">hellocube/main.cpp</a></li>
+<li><a href="qtquick3d-hellocube-main-qml.html">hellocube/main.qml</a></li>
+<li><a href="qtquick3d-hellocube-qml-qrc.html">hellocube/qml.qrc</a></li>
+</ul>
+<p>Images:</p>
+<ul>
+<li><a href="images/used-in-examples/hellocube/qt_logo.png">hellocube/qt_logo.png</a></li>
+</ul>
+</div>
+<!-- @@@hellocube -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

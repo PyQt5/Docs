@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qquick3dviewport.cpp -->
+  <title>View3D QML Type | Qt Quick 3D 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtquick3d-index.html">Qt Quick 3D</a></li>
+<li><a href="qtquick3d-qmlmodule.html">QML Types</a></li>
+<li>View3D QML Type</li>
+<li id="buildversion"><a href="qtquick3d-index.html">Qt Quick 3D | Commercial or GPLv3</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#methods">Methods</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">View3D QML Type</h1>
+<span class="subtitle"></span>
+<!-- $$$View3D-brief -->
+<p>Provides a viewport on which to render a 3D scene. <a href="#details">More...</a></p>
+<!-- @@@View3D -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Import Statement:</td><td class="memItemRight bottomAlign"> import QtQuick3D 1.15</td></tr></table></div><ul>
+<li><a href="qml-qtquick3d-view3d-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="properties"></a>
+<h2 id="properties">Properties</h2>
+<ul>
+<li class="fn"><b><b><a href="qml-qtquick3d-view3d.html#camera-prop">camera</a></b></b> : QtQuick3D::Camera</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-view3d.html#environment-prop">environment</a></b></b> : QtQuick3D::SceneEnvironment</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-view3d.html#importScene-prop">importScene</a></b></b> : QtQuick3D::Node</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-view3d.html#renderMode-prop">renderMode</a></b></b> : enumeration</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-view3d.html#renderStats-prop">renderStats</a></b></b> : QtQuick3D::RenderStats</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-view3d.html#scene-prop">scene</a></b></b> : QtQuick3D::Node</li>
+</ul>
+<a name="methods"></a>
+<h2 id="methods">Methods</h2>
+<ul>
+<li class="fn">vector3d <b><b><a href="qml-qtquick3d-view3d.html#mapFrom3DScene-method">mapFrom3DScene</a></b></b>(<i>scenePos</i>)</li>
+<li class="fn">vector3d <b><b><a href="qml-qtquick3d-view3d.html#mapTo3DScene-method">mapTo3DScene</a></b></b>(<i>viewPos</i>)</li>
+<li class="fn">PickResult <b><b><a href="qml-qtquick3d-view3d.html#pick-method">pick</a></b></b>(<i>x</i>,  float <i>y</i>)</li>
+</ul>
+<!-- $$$View3D-description -->
+<a name="details"></a>
+<h2 id="details">Detailed Description</h2>
+<p>View3D provides a 2D surface for 3D content to be rendered to. Before 3D content can be displayed in a Qt Quick scene, it must first be flattend.</p>
+<p>There are two ways to define a 3D scene for View3D to view. The first and easiest is to just define a higharchy of <a href="qml-qtquick3d-node.html">Node</a> based items as children of the View3D. This becomes the implicit scene of the viewport.</p>
+<p>It is also possible to reference an existing scene by using the <a href="qml-qtquick3d-view3d.html#importScene-prop">importScene</a> property of the scene you want to render. This scene does not have to exist as a child of the current View3D.</p>
+<p>There is also a combination approach where you define both a scene with children nodes, as well as define a scene that is being referenced. In this case you can treat the referenced scene as a sibling of the child scene.</p>
+<p>This is demonstrated in <a href="qtquick3d-view3d-example.html">View3D example</a></p>
+<p>To control how a scene is rendered, it is necessary to define a <a href="qml-qtquick3d-sceneenvironment.html">SceneEnvironment</a> to the <a href="qml-qtquick3d-view3d.html#environment-prop">environment</a> property.</p>
+<p>To project a 3D scene to a 2D viewport, it is necessary to view the scene from a camera. If a scene has more than one camera it is possible to set which camera is used to render the scene to this viewport by setting the <a href="qml-qtquick3d-view3d.html#camera-prop">camera</a> property.</p>
+<p>It is also possible to define where the 3D scene is rendered to using the <a href="qml-qtquick3d-view3d.html#renderMode-prop">renderMode</a> property. This can be necessary for performance reasons on certain platforms where it is expensive to render to intermediate offscreen surfaces. There are certain tradeoffs to rendering directly to the window though, so this is not the default.</p>
+<!-- @@@View3D -->
+<h2>Property Documentation</h2>
+<!-- $$$camera -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="camera-prop">
+<td class="tblQmlPropNode"><p>
+<a name="camera-prop"></a><span class="name">camera</span> : <span class="type"><a href="qml-qtquick3d-camera.html">QtQuick3D::Camera</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property specifies which camera is used to render the scene. It is possible for this value to be undefined, in which case the first enabled camera in the scene will be used instead.</p>
+<p>If it is desired to not render anything in the scene, then make sure all cameras are disabled.</p>
+<p><b>See also </b><a href="qml-qtquick3d-perspectivecamera.html">PerspectiveCamera</a>, <a href="qml-qtquick3d-orthographiccamera.html">OrthographicCamera</a>, <a href="qml-qtquick3d-frustumcamera.html">FrustumCamera</a>, and <a href="qml-qtquick3d-customcamera.html">CustomCamera</a>.</p>
+</div></div><!-- @@@camera -->
+<br/>
+<!-- $$$environment -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="environment-prop">
+<td class="tblQmlPropNode"><p>
+<a name="environment-prop"></a><span class="name">environment</span> : <span class="type"><a href="qml-qtquick3d-sceneenvironment.html">QtQuick3D::SceneEnvironment</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property specifies the <a href="qml-qtquick3d-sceneenvironment.html">SceneEnvironment</a> used to render the scene.</p>
+<p><b>See also </b><a href="qml-qtquick3d-sceneenvironment.html">SceneEnvironment</a>.</p>
+</div></div><!-- @@@environment -->
+<br/>
+<!-- $$$importScene -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="importScene-prop">
+<td class="tblQmlPropNode"><p>
+<a name="importScene-prop"></a><span class="name">importScene</span> : <span class="type"><a href="qml-qtquick3d-node.html">QtQuick3D::Node</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property defines the reference node of the scene to render to the viewport. The node does not have to be a child of the <a href="qml-qtquick3d-view3d.html">View3D</a>. This referenced node becomes sibling with possible child nodes of <a href="qml-qtquick3d-view3d.html">View3D</a>.</p>
+<p><b>Note: </b>This property can only be set once, not removed or changed later.</p>
+<p><b>See also </b><a href="qml-qtquick3d-node.html">Node</a>.</p>
+</div></div><!-- @@@importScene -->
+<br/>
+<!-- $$$renderMode -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="renderMode-prop">
+<td class="tblQmlPropNode"><p>
+<a name="renderMode-prop"></a><span class="name">renderMode</span> : <span class="type"><a href="../qtqml/qml-enumeration.html">enumeration</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property determines how the scene is rendered to the viewport.</p>
+<div class="table"><table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><code>View3D.Offscreen</code></td><td class="topAlign">Scene is rendered to a texture. Comes with no limitations.</td></tr>
+<tr><td class="topAlign"><code>View3D.Underlay</code></td><td class="topAlign">Scene is rendered directly to the window before Qt Quick is rendered.</td></tr>
+<tr><td class="topAlign"><code>View3D.Overlay</code></td><td class="topAlign">Scene is rendered directly to the window after Qt Quick is rendered.</td></tr>
+<tr><td class="topAlign"><code>View3D.Inline</code></td><td class="topAlign">Scene is rendered to the current render target using <a href="../qtquick/qsgrendernode.html">QSGRenderNode</a>.</td></tr>
+</table></div>
+<p>The default mode is <code>View3D.Offscreen</code> as this is the offers the best compatibility.</p>
+</div></div><!-- @@@renderMode -->
+<br/>
+<!-- $$$renderStats -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="renderStats-prop">
+<td class="tblQmlPropNode"><p>
+<a name="renderStats-prop"></a><span class="name">renderStats</span> : <span class="type"><a href="qml-qtquick3d-renderstats.html">QtQuick3D::RenderStats</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Accessor to <a href="qml-qtquick3d-renderstats.html">RenderStats</a>, which can be used to gain information of <a href="qml-qtquick3d-renderstats.html#fps-prop">fps</a>, <a href="qml-qtquick3d-renderstats.html#frameTime-prop">frameTime</a>, <a href="qml-qtquick3d-renderstats.html#renderTime-prop">renderTime</a>, <a href="qml-qtquick3d-renderstats.html#syncTime-prop">syncTime</a>, and <a href="qml-qtquick3d-renderstats.html#maxFrameTime-prop">maxFrameTime</a>.</p>
+</div></div><!-- @@@renderStats -->
+<br/>
+<!-- $$$scene -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="scene-prop">
+<td class="tblQmlPropNode"><p>
+<a name="scene-prop"></a><span class="name">scene</span> : <span class="type"><a href="qml-qtquick3d-node.html">QtQuick3D::Node</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Holds the root scene of the <a href="qml-qtquick3d-view3d.html">View3D</a>.</p>
+<p><b>See also </b><a href="qml-qtquick3d-view3d.html#importScene-prop">importScene</a>.</p>
+</div></div><!-- @@@scene -->
+<br/>
+<h2>Method Documentation</h2>
+<!-- $$$mapFrom3DScene[overload1]$$$mapFrom3DScene -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="mapFrom3DScene-method">
+<td class="tblQmlFuncNode"><p>
+<a name="mapFrom3DScene-method"></a><span class="type"><a href="../qtquick/qml-vector3d.html">vector3d</a></span> <span class="name">mapFrom3DScene</span>(<i>scenePos</i>)</p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Transforms <i>scenePos</i> from scene space (3D) into view space (2D). The returned x- and y-values will be be in view coordinates. The returned z-value will contain the distance from the near side of the frustum (clipNear) to <i>scenePos</i> in scene coordinates. If the distance is negative, the point is behind the camera. If <i>scenePos</i> cannot be mapped to a position in the scene, a position of [0, 0, 0] is returned. This function requires that a camera is assigned to the view.</p>
+<p><b>See also </b><a href="qml-qtquick3d-view3d.html#mapTo3DScene-method">mapTo3DScene()</a> and <a href="qml-qtquick3d-camera.html#mapToViewport-method">Camera.mapToViewport()</a>.</p>
+</div></div><!-- @@@mapFrom3DScene -->
+<br/>
+<!-- $$$mapTo3DScene[overload1]$$$mapTo3DScene -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="mapTo3DScene-method">
+<td class="tblQmlFuncNode"><p>
+<a name="mapTo3DScene-method"></a><span class="type"><a href="../qtquick/qml-vector3d.html">vector3d</a></span> <span class="name">mapTo3DScene</span>(<i>viewPos</i>)</p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Transforms <i>viewPos</i> from view space (2D) into scene space (3D). The x- and y-values of <i>viewPos</i> should be in view coordinates. The z-value should be the distance from the near side of the frustum (clipNear) into the scene in scene coordinates. If <i>viewPos</i> cannot be mapped to a position in the scene, a position of [0, 0, 0] is returned.</p>
+<p><b>See also </b><a href="qml-qtquick3d-view3d.html#mapFrom3DScene-method">mapFrom3DScene()</a> and <a href="qml-qtquick3d-camera.html#mapFromViewport-method">Camera.mapFromViewport()</a>.</p>
+</div></div><!-- @@@mapTo3DScene -->
+<br/>
+<!-- $$$pick[overload1]$$$pickfloat -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="pick-method">
+<td class="tblQmlFuncNode"><p>
+<a name="pick-method"></a><span class="type"><a href="qml-qtquick3d-pickresult.html">PickResult</a></span> <span class="name">pick</span>(<i>x</i>,  <span class="type">float</span> <i>y</i>)</p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Transforms the screen space coordinates <i>x</i> and <i>y</i> to a ray cast towards that position in scene space. Returns information about the ray hit.</p>
+</div></div><!-- @@@pick -->
+<br/>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

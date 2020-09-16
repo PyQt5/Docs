@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qvirtualkeyboardextensionplugin.cpp -->
+  <title>QVirtualKeyboardExtensionPlugin Class | Qt Virtual Keyboard 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtvirtualkeyboard-index.html">Qt Virtual Keyboard</a></li>
+<li><a href="qtvirtualkeyboard-module.html">C++ Classes</a></li>
+<li>QVirtualKeyboardExtensionPlugin</li>
+<li id="buildversion"><a href="qtvirtualkeyboard-index.html">Qt Virtual Keyboard | Commercial or GPLv3</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">QVirtualKeyboardExtensionPlugin Class</h1>
+<!-- $$$QVirtualKeyboardExtensionPlugin-brief -->
+<p>Extension plugin for the Qt Virtual Keyboard. <a href="#details">More...</a></p>
+<!-- @@@QVirtualKeyboardExtensionPlugin -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign">  <span class="preprocessor">#include &lt;QVirtualKeyboardExtensionPlugin&gt;</span>
+</td></tr><tr><td class="memItemLeft rightAlign topAlign"> qmake:</td><td class="memItemRight bottomAlign"> QT += virtualkeyboard</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Inherits:</td><td class="memItemRight bottomAlign"> <a href="../qtcore/qobject.html">QObject</a></td></tr></table></div><ul>
+<li><a href="qvirtualkeyboardextensionplugin-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> virtual void </td><td class="memItemRight bottomAlign"><b><a href="qvirtualkeyboardextensionplugin.html#registerTypes">registerTypes</a></b>(const char *<i>uri</i>) const</td></tr>
+</table></div>
+<a name="details"></a>
+<!-- $$$QVirtualKeyboardExtensionPlugin-description -->
+<div class="descr">
+<h2 id="details">Detailed Description</h2>
+<p>Extension plugin allows customizing and extending the Qt Virtual Keyboard functionality. Extension plugin can provide additional keyboard layouts and input methods.</p>
+<p>Virtual keyboard loads all the extension plugins at startup. It searches for <code>plugins/virtualkeyboard</code> directory and matches the metadata found in the plugin. If there are two or more extension plugins with the same <code>Name</code>, it loads the one with the highest <code>Version</code> number.</p>
+</div>
+<p><b>See also </b><a href="technical-guide.html#virtual-keyboard-extension-plugin">Virtual Keyboard Extension Plugin</a>.</p>
+<!-- @@@QVirtualKeyboardExtensionPlugin -->
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$registerTypes[overload1]$$$registerTypesconstchar* -->
+<h3 class="fn" id="registerTypes"><a name="registerTypes"></a><code>[virtual] </code><span class="type">void</span> QVirtualKeyboardExtensionPlugin::<span class="name">registerTypes</span>(const <span class="type">char</span> *<i>uri</i>) const</h3>
+<p>If the plugin metadata contains <code>InputMethod</code> field defining an input method name, Qt Virtual Keyboard will call registerTypes() for registering the input method as QML type. The type must be registered with a <i>uri</i> if the input method is used by the default keyboard layouts. If the input method type is only used in private layouts (known only by the plugin), the uri can be omitted and chosen freely.</p>
+<!-- @@@registerTypes -->
+</div>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

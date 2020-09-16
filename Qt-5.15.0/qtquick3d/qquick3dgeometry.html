@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qquick3dgeometry.cpp -->
+  <title>QQuick3DGeometry Class | Qt Quick 3D 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtquick3d-index.html">Qt Quick 3D</a></li>
+<li><a href="qtquick3d-module.html">C++ Classes</a></li>
+<li>QQuick3DGeometry</li>
+<li id="buildversion"><a href="qtquick3d-index.html">Qt Quick 3D | Commercial or GPLv3</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#public-slots">Public Slots</a></li>
+<li class="level1"><a href="#signals">Signals</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">QQuick3DGeometry Class</h1>
+<!-- $$$QQuick3DGeometry-brief -->
+<p>Base class for defining custom geometry. <a href="#details">More...</a></p>
+<!-- @@@QQuick3DGeometry -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign">  <span class="preprocessor">#include &lt;QQuick3DGeometry&gt;</span>
+</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Since:</td><td class="memItemRight bottomAlign"> Qt 5.15</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Instantiated By:</td><td class="memItemRight bottomAlign"> <a href="qml-qtquick3d-geometry.html">Geometry</a></td></tr><tr><td class="memItemLeft rightAlign topAlign"> Inherits:</td><td class="memItemRight bottomAlign"> <a href="qquick3dobject.html">QQuick3DObject</a></td></tr></table></div><p>This class was introduced in Qt 5.15.</p>
+<ul>
+<li><a href="qquick3dgeometry-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="properties"></a>
+<h2 id="properties">Properties</h2>
+<ul>
+<li class="fn"><b><a href="qquick3dgeometry.html#name-prop">name</a></b> : QString</li>
+</ul>
+<a name="public-functions"></a>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qquick3dgeometry.html#addAttribute">addAttribute</a></b>(Attribute::Semantic <i>semantic</i>, int <i>offset</i>, Attribute::ComponentType <i>componentType</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qquick3dgeometry.html#addAttribute-1">addAttribute</a></b>(const QQuick3DGeometry::Attribute &amp;<i>attribute</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QQuick3DGeometry::Attribute </td><td class="memItemRight bottomAlign"><b><a href="qquick3dgeometry.html#attribute">attribute</a></b>(int <i>index</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="qquick3dgeometry.html#attributeCount">attributeCount</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QVector3D </td><td class="memItemRight bottomAlign"><b><a href="qquick3dgeometry.html#boundsMax">boundsMax</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QVector3D </td><td class="memItemRight bottomAlign"><b><a href="qquick3dgeometry.html#boundsMin">boundsMin</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qquick3dgeometry.html#clear">clear</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QByteArray </td><td class="memItemRight bottomAlign"><b><a href="qquick3dgeometry.html#indexBuffer">indexBuffer</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="qquick3dgeometry.html#name-prop">name</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QQuick3DGeometry::PrimitiveType </td><td class="memItemRight bottomAlign"><b><a href="qquick3dgeometry.html#primitiveType">primitiveType</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qquick3dgeometry.html#setBounds">setBounds</a></b>(const QVector3D &amp;<i>min</i>, const QVector3D &amp;<i>max</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qquick3dgeometry.html#setIndexData">setIndexData</a></b>(const QByteArray &amp;<i>data</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qquick3dgeometry.html#setPrimitiveType">setPrimitiveType</a></b>(QQuick3DGeometry::PrimitiveType <i>type</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qquick3dgeometry.html#setStride">setStride</a></b>(int <i>stride</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qquick3dgeometry.html#setVertexData">setVertexData</a></b>(const QByteArray &amp;<i>data</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="qquick3dgeometry.html#stride">stride</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QByteArray </td><td class="memItemRight bottomAlign"><b><a href="qquick3dgeometry.html#vertexBuffer">vertexBuffer</a></b>() const</td></tr>
+</table></div>
+<a name="public-slots"></a>
+<h2 id="public-slots">Public Slots</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qquick3dgeometry.html#name-prop">setName</a></b>(const QString &amp;<i>name</i>)</td></tr>
+</table></div>
+<a name="signals"></a>
+<h2 id="signals">Signals</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qquick3dgeometry.html#name-prop">nameChanged</a></b>()</td></tr>
+</table></div>
+<a name="details"></a>
+<!-- $$$QQuick3DGeometry-description -->
+<div class="descr">
+<h2 id="details">Detailed Description</h2>
+<p>The QQuick3DGeometry can be used to specify custom geometry used with Qt Quick 3D.</p>
+<p>The user should inherit this class and specify it's own properties, which can then be used from QML code. The user then should use these properties to construct the geometry and set it for the QQuick3DGeometry, which then uploads it to the Qt Quick3D engine.</p>
+<p>Example implementation:</p>
+<pre class="cpp">
+ <span class="keyword">class</span> CustomGeometry : <span class="keyword">public</span> QQuick3DGeometry
+ {
+     Q_OBJECT
+     <span class="operator">.</span><span class="operator">.</span><span class="operator">.</span> properties <span class="operator">.</span><span class="operator">.</span><span class="operator">.</span>
+
+ <span class="keyword">public</span>:
+     CustomGeometry();
+
+     <span class="type">void</span> setProperty(<span class="operator">.</span><span class="operator">.</span><span class="operator">.</span>)
+     {
+         <span class="operator">.</span><span class="operator">.</span><span class="operator">.</span>
+         rebuildGeometry();
+     }
+
+ <span class="keyword">private</span>:
+     <span class="type">void</span> rebuildGeometry()
+     {
+         <span class="type"><a href="../qtcore/qbytearray.html">QByteArray</a></span> vertices;
+         <span class="type"><a href="../qtcore/qbytearray.html">QByteArray</a></span> indices;
+         fillGeometry(vertices<span class="operator">,</span> indices);
+         setPrimitiveType(Lines);
+         setVertexBuffer(vertices);
+         setIndexBuffer(indices);
+         setStride(<span class="keyword">sizeof</span>(QVector3D));
+         setBounds(<span class="operator">.</span><span class="operator">.</span><span class="operator">.</span>);
+         addAttrubute(PositionSemantic<span class="operator">,</span> <span class="number">0</span><span class="operator">,</span> F32Type);
+     }
+ };
+</pre>
+<p>This class can then be registered as a QML type and used with <a href="qml-qtquick3d-model.html">Model</a>.</p>
+<pre class="cpp">
+ qmlRegisterType<span class="operator">&lt;</span>CustomGeometry<span class="operator">&gt;</span>(<span class="string">&quot;Example&quot;</span><span class="operator">,</span> <span class="number">1</span><span class="operator">,</span> <span class="number">0</span><span class="operator">,</span> <span class="string">&quot;CustomGeometry&quot;</span>);
+</pre>
+<pre class="cpp">
+ import Example <span class="number">1.0</span>
+
+ Model {
+     id: customModel
+     geometry: CustomGeometry {
+     }
+ }
+</pre>
+</div>
+<!-- @@@QQuick3DGeometry -->
+<div class="prop">
+<h2>Property Documentation</h2>
+<!-- $$$name-prop$$$name$$$setNameconstQString&$$$nameChanged -->
+<h3 class="fn" id="name-prop"><a name="name-prop"></a><span class="name">name</span> : <span class="type"><a href="../qtcore/qstring.html">QString</a></span></h3>
+<p>Unique name identifying the geometry. This becomes the source path for the geometry. If multiple instances from the same geometry class are used, each of them must have their own unique name. Otherwise, geometry with same name will override the others. Geometry can be shared either by setting the geometry parameter for a model or using the name of the geometry as source parameter for the model.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> QString </td><td class="memItemRight bottomAlign"><span class="name"><b>name</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>setName</b></span>(const QString &amp;<i>name</i>)</td></tr>
+</table></div>
+<p><b>Notifier signal:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>nameChanged</b></span>()</td></tr>
+</table></div>
+<!-- @@@name -->
+</div>
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$addAttribute[overload1]$$$addAttributeAttribute::SemanticintAttribute::ComponentType -->
+<h3 class="fn" id="addAttribute"><a name="addAttribute"></a><span class="type">void</span> QQuick3DGeometry::<span class="name">addAttribute</span>(<span class="type">Attribute::Semantic</span> <i>semantic</i>, <span class="type">int</span> <i>offset</i>, <span class="type">Attribute::ComponentType</span> <i>componentType</i>)</h3>
+<p>Adds vertex attribute description. Each attribute has a <i>semantic</i>, which specifies the usage of the attribute and the number of components it has, an <i>offset</i> from the beginning to the vertex to the attribute location inside a vertex and a <i>componentType</i> specifying the datatype and size of the attribute.</p>
+<p>The semantic can be one of the following:</p>
+<div class="table"><table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><code>UnknownSemantic</code></td><td class="topAlign">The semantic is not set.</td></tr>
+<tr><td class="topAlign"><code>IndexSemantic</code></td><td class="topAlign">The attribute is an index.</td></tr>
+<tr><td class="topAlign"><code>PositionSemantic</code></td><td class="topAlign">The attribute is a position.</td></tr>
+<tr><td class="topAlign"><code>NormalSemantic</code></td><td class="topAlign">The attribute is a normal vector.</td></tr>
+<tr><td class="topAlign"><code>TexCoordSemantic</code></td><td class="topAlign">The attribute is a texture coordinate.</td></tr>
+<tr><td class="topAlign"><code>TangentSemantic</code></td><td class="topAlign">The attribute is a tangent vector.</td></tr>
+<tr><td class="topAlign"><code>BinormalSemantic</code></td><td class="topAlign">The attribute is a binormal vector.</td></tr>
+</table></div>
+<p>The component type can be one of the following:</p>
+<div class="table"><table class="valuelist"><tr valign="top" class="even"><th class="tblConst">Constant</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><code>DefaultType</code></td><td class="topAlign">The attribute uses default type depending on the semantic.</td></tr>
+<tr><td class="topAlign"><code>U16Type</code></td><td class="topAlign">The attribute is an unsigned 16-bit integer.</td></tr>
+<tr><td class="topAlign"><code>U32Type</code></td><td class="topAlign">The attribute is an unsigned 32-bit integer. This is the default for IndexSemantic.</td></tr>
+<tr><td class="topAlign"><code>F32Type</code></td><td class="topAlign">The attribute is a single-precision float. This is the default for most semantics.</td></tr>
+</table></div>
+<!-- @@@addAttribute -->
+<!-- $$$addAttribute$$$addAttributeconstQQuick3DGeometry::Attribute& -->
+<h3 class="fn" id="addAttribute-1"><a name="addAttribute-1"></a><span class="type">void</span> QQuick3DGeometry::<span class="name">addAttribute</span>(const <span class="type">QQuick3DGeometry::Attribute</span> &amp;<i>attribute</i>)</h3>
+<p>Adds vertex attribute description. Each attribute has a semantic, which specifies the usage of the attribute and the number of components it has, an offset from the beginning to the vertex to the attribute location inside a vertex and a componentType specifying the datatype and size of the attribute.</p>
+<!-- @@@addAttribute -->
+<!-- $$$attribute[overload1]$$$attributeint -->
+<h3 class="fn" id="attribute"><a name="attribute"></a><span class="type">QQuick3DGeometry::Attribute</span> QQuick3DGeometry::<span class="name">attribute</span>(<span class="type">int</span> <i>index</i>) const</h3>
+<p>Returns an attribute at <i>index</i></p>
+<!-- @@@attribute -->
+<!-- $$$attributeCount[overload1]$$$attributeCount -->
+<h3 class="fn" id="attributeCount"><a name="attributeCount"></a><span class="type">int</span> QQuick3DGeometry::<span class="name">attributeCount</span>() const</h3>
+<p>Returns the attribute count.</p>
+<!-- @@@attributeCount -->
+<!-- $$$boundsMax[overload1]$$$boundsMax -->
+<h3 class="fn" id="boundsMax"><a name="boundsMax"></a><span class="type"><a href="../qtgui/qvector3d.html">QVector3D</a></span> QQuick3DGeometry::<span class="name">boundsMax</span>() const</h3>
+<p>Returns the maximum bound coordinate.</p>
+<!-- @@@boundsMax -->
+<!-- $$$boundsMin[overload1]$$$boundsMin -->
+<h3 class="fn" id="boundsMin"><a name="boundsMin"></a><span class="type"><a href="../qtgui/qvector3d.html">QVector3D</a></span> QQuick3DGeometry::<span class="name">boundsMin</span>() const</h3>
+<p>Returns the minimum bound coordinate.</p>
+<!-- @@@boundsMin -->
+<!-- $$$clear[overload1]$$$clear -->
+<h3 class="fn" id="clear"><a name="clear"></a><span class="type">void</span> QQuick3DGeometry::<span class="name">clear</span>()</h3>
+<p>Clears previously set vertex- and index data as well as attributes.</p>
+<!-- @@@clear -->
+<!-- $$$indexBuffer[overload1]$$$indexBuffer -->
+<h3 class="fn" id="indexBuffer"><a name="indexBuffer"></a><span class="type"><a href="../qtcore/qbytearray.html">QByteArray</a></span> QQuick3DGeometry::<span class="name">indexBuffer</span>() const</h3>
+<p>Returns the index buffer data.</p>
+<!-- @@@indexBuffer -->
+<!-- $$$primitiveType[overload1]$$$primitiveType -->
+<h3 class="fn" id="primitiveType"><a name="primitiveType"></a><span class="type">QQuick3DGeometry::PrimitiveType</span> QQuick3DGeometry::<span class="name">primitiveType</span>() const</h3>
+<p>Returns the primitive type. The default is <code>Triangles</code>.</p>
+<div class="table"><table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><code>Unknown</code></td><td class="topAlign">The primitive type is not set.</td></tr>
+<tr><td class="topAlign"><code>Points</code></td><td class="topAlign">The primitives are points.</td></tr>
+<tr><td class="topAlign"><code>LineStrip</code></td><td class="topAlign">The primitives are lines in a strip.</td></tr>
+<tr><td class="topAlign"><code>Lines</code></td><td class="topAlign">The primitives are lines in a list.</td></tr>
+<tr><td class="topAlign"><code>TriangleStrip</code></td><td class="topAlign">The primitives are triangles in a strip.</td></tr>
+<tr><td class="topAlign"><code>TriangleFan</code></td><td class="topAlign">The primitives are triangles in a fan.</td></tr>
+<tr><td class="topAlign"><code>Triangles</code></td><td class="topAlign">The primitives are triangles in a list.</td></tr>
+</table></div>
+<p><b>See also </b><a href="qquick3dgeometry.html#setPrimitiveType">setPrimitiveType</a>().</p>
+<!-- @@@primitiveType -->
+<!-- $$$setBounds[overload1]$$$setBoundsconstQVector3D&constQVector3D& -->
+<h3 class="fn" id="setBounds"><a name="setBounds"></a><span class="type">void</span> QQuick3DGeometry::<span class="name">setBounds</span>(const <span class="type"><a href="../qtgui/qvector3d.html">QVector3D</a></span> &amp;<i>min</i>, const <span class="type"><a href="../qtgui/qvector3d.html">QVector3D</a></span> &amp;<i>max</i>)</h3>
+<p>Sets the bounds of the geometry with <i>min</i> and <i>max</i> point.</p>
+<!-- @@@setBounds -->
+<!-- $$$setIndexData[overload1]$$$setIndexDataconstQByteArray& -->
+<h3 class="fn" id="setIndexData"><a name="setIndexData"></a><span class="type">void</span> QQuick3DGeometry::<span class="name">setIndexData</span>(const <span class="type"><a href="../qtcore/qbytearray.html">QByteArray</a></span> &amp;<i>data</i>)</h3>
+<p>Sets the index buffer <i>data</i>. If the index buffer is not set, the vertex buffer is used as is for the vertices.</p>
+<!-- @@@setIndexData -->
+<!-- $$$setPrimitiveType[overload1]$$$setPrimitiveTypeQQuick3DGeometry::PrimitiveType -->
+<h3 class="fn" id="setPrimitiveType"><a name="setPrimitiveType"></a><span class="type">void</span> QQuick3DGeometry::<span class="name">setPrimitiveType</span>(<span class="type">QQuick3DGeometry::PrimitiveType</span> <i>type</i>)</h3>
+<p>Sets the primitive <i>type</i>.</p>
+<div class="table"><table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><code>UnknownType</code></td><td class="topAlign">The primitive type is not set.</td></tr>
+<tr><td class="topAlign"><code>Points</code></td><td class="topAlign">The primitives are points.</td></tr>
+<tr><td class="topAlign"><code>LineStrip</code></td><td class="topAlign">The primitives are lines in a strip.</td></tr>
+<tr><td class="topAlign"><code>Lines</code></td><td class="topAlign">The primitives are lines in a list.</td></tr>
+<tr><td class="topAlign"><code>TriangleStrip</code></td><td class="topAlign">The primitives are triangles in a strip.</td></tr>
+<tr><td class="topAlign"><code>TriangleFan</code></td><td class="topAlign">The primitives are triangles in a fan.</td></tr>
+<tr><td class="topAlign"><code>Triangles</code></td><td class="topAlign">The primitives are triangles in a list.</td></tr>
+</table></div>
+<p><b>See also </b><a href="qquick3dgeometry.html#primitiveType">primitiveType</a>().</p>
+<!-- @@@setPrimitiveType -->
+<!-- $$$setStride[overload1]$$$setStrideint -->
+<h3 class="fn" id="setStride"><a name="setStride"></a><span class="type">void</span> QQuick3DGeometry::<span class="name">setStride</span>(<span class="type">int</span> <i>stride</i>)</h3>
+<p>Sets the byte <i>stride</i> of the vertex.</p>
+<p><b>See also </b><a href="qquick3dgeometry.html#stride">stride</a>().</p>
+<!-- @@@setStride -->
+<!-- $$$setVertexData[overload1]$$$setVertexDataconstQByteArray& -->
+<h3 class="fn" id="setVertexData"><a name="setVertexData"></a><span class="type">void</span> QQuick3DGeometry::<span class="name">setVertexData</span>(const <span class="type"><a href="../qtcore/qbytearray.html">QByteArray</a></span> &amp;<i>data</i>)</h3>
+<p>Sets the vertex buffer <i>data</i>. The buffer should hold all the vertex data packed in the array described by the attributes.</p>
+<!-- @@@setVertexData -->
+<!-- $$$stride[overload1]$$$stride -->
+<h3 class="fn" id="stride"><a name="stride"></a><span class="type">int</span> QQuick3DGeometry::<span class="name">stride</span>() const</h3>
+<p>Returns the byte stride of the vertex buffer.</p>
+<p><b>See also </b><a href="qquick3dgeometry.html#setStride">setStride</a>().</p>
+<!-- @@@stride -->
+<!-- $$$vertexBuffer[overload1]$$$vertexBuffer -->
+<h3 class="fn" id="vertexBuffer"><a name="vertexBuffer"></a><span class="type"><a href="../qtcore/qbytearray.html">QByteArray</a></span> QQuick3DGeometry::<span class="name">vertexBuffer</span>() const</h3>
+<p>Returns the vertex buffer data.</p>
+<!-- @@@vertexBuffer -->
+</div>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

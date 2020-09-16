@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qscopeguard.qdoc -->
+  <title>QScopeGuard Class | Qt Core 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtcore-index.html">Qt Core</a></li>
+<li><a href="qtcore-module.html">C++ Classes</a></li>
+<li>QScopeGuard</li>
+<li id="buildversion"><a href="qtcore-index.html">Qt 5.15.0 Reference Documentation</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#related-non-members">Related Non-Members</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">QScopeGuard Class</h1>
+<span class="small-subtitle">template &lt;typename F&gt; class QScopeGuard</span>
+<!-- $$$QScopeGuard-brief -->
+<p>Provides a scope guard for calling a function at the end of a scope. <a href="#details">More...</a></p>
+<!-- @@@QScopeGuard -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign">  <span class="preprocessor">#include &lt;QScopeGuard&gt;</span>
+</td></tr><tr><td class="memItemLeft rightAlign topAlign"> qmake:</td><td class="memItemRight bottomAlign"> QT += core</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Since:</td><td class="memItemRight bottomAlign"> Qt 5.12</td></tr></table></div><p>This class was introduced in Qt 5.12.</p>
+<ul>
+<li><a href="qscopeguard-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qscopeguard.html#QScopeGuard-1">QScopeGuard</a></b>(const F &amp;<i>f</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qscopeguard.html#QScopeGuard">QScopeGuard</a></b>(F &amp;&amp;<i>f</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qscopeguard.html#dismiss">dismiss</a></b>()</td></tr>
+</table></div>
+<a name="related-non-members"></a>
+<h2 id="related-non-members">Related Non-Members</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> QScopeGuard&lt;typename std::decay&lt;F&gt;::type&gt; </td><td class="memItemRight bottomAlign"><b><a href="qscopeguard.html#qScopeGuardx">qScopeGuard</a></b>(F &amp;&amp;<i>f</i>)</td></tr>
+</table></div>
+<a name="details"></a>
+<!-- $$$QScopeGuard-description -->
+<div class="descr">
+<h2 id="details">Detailed Description</h2>
+<p>QScopeGuard&lt;F&gt; is a class of which the sole purpose is to run the function <i>f</i> in its destructor. This is useful for guaranteeing your cleanup code is executed, whether the function is exited normally, exited early by a return statement, or exited by an exception.</p>
+<p><b>Note: </b>Exceptions are not supported. The callable shouldn't throw when executed, copied or moved.</p>
+</div>
+<p><b>See also </b><a href="qscopedvaluerollback.html">QScopedValueRollback</a>.</p>
+<!-- @@@QScopeGuard -->
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$ -->
+<div class="fngroup">
+<h3 class="fn fngroupitem" id="QScopeGuard"><a name="QScopeGuard"></a>QScopeGuard::<span class="name">QScopeGuard</span>(<span class="type">F</span> &amp;&amp;<i>f</i>)</h3><h3 class="fn fngroupitem" id="QScopeGuard-1"><a name="QScopeGuard-1"></a>QScopeGuard::<span class="name">QScopeGuard</span>(const <span class="type">F</span> &amp;<i>f</i>)</h3></div>
+<p>Create a scope guard that will execute <i>f</i> at the end of the scope.</p>
+<p>If <i>F</i> is a lambda, its type cannot be written. In that case you need to either rely on class template argument deduction (C++17 feature) and leave the template parameter out completely or use the helper function <a href="qscopeguard.html#qScopeGuardx">qScopeGuard</a>() instead of this constructor.</p>
+<p>This function was introduced in Qt 5.15.</p>
+<!-- @@@ -->
+<!-- $$$dismiss[overload1]$$$dismiss -->
+<h3 class="fn" id="dismiss"><a name="dismiss"></a><span class="type">void</span> QScopeGuard::<span class="name">dismiss</span>()</h3>
+<p>Disarms the scope guard, so that the function <i>F</i> will not be called at the end of the scope.</p>
+<!-- @@@dismiss -->
+</div>
+<div class="relnonmem">
+<h2>Related Non-Members</h2>
+<!-- $$$qScopeGuard[overload1]$$$qScopeGuardF&& -->
+<h3 class="fn" id="qScopeGuardx"><a name="qScopeGuardx"></a>template &lt;typename F&gt; <span class="type"><a href="qscopeguard.html#QScopeGuard">QScopeGuard</a></span>&lt;<span class="type">typename</span> <span class="type">std::decay</span>&lt;<span class="type">F</span>&gt;<span class="type">::type</span>&gt; <span class="name">qScopeGuard</span>(<span class="type">F</span> &amp;&amp;<i>f</i>)</h3>
+<p>The qScopeGuard function can be used to call a function at the end of the scope.</p>
+<p>Create a scope guard that will execute <i>f</i> at the end of the scope.</p>
+<p>This helper function is provided so that you can easily construct a <a href="qscopeguard.html">QScopeGuard</a> without having to name the template parameter for the type of the callable. If <i>F</i> is a lambda then you cannot write its type and relying on this helper or class template argument deduction is necessary.</p>
+<p>Example usage is as follows:</p>
+<pre class="cpp">
+ <span class="type">void</span> myComplexCodeWithMultipleReturnPoints(<span class="type">int</span> v)
+ {
+     <span class="comment">// The lambda will be executed right before your function returns</span>
+     <span class="keyword">auto</span> cleanup <span class="operator">=</span> qScopeGuard(<span class="operator">[</span><span class="operator">]</span> { code you want executed goes HERE; });
+
+     <span class="keyword">if</span> (v <span class="operator">=</span><span class="operator">=</span> <span class="operator">-</span><span class="number">1</span>)
+         <span class="keyword">return</span>;
+
+     <span class="type">int</span> v2 <span class="operator">=</span> code_that_might_throw_exceptions();
+
+     <span class="keyword">if</span> (v2 <span class="operator">=</span><span class="operator">=</span> <span class="operator">-</span><span class="number">1</span>)
+         <span class="keyword">return</span>;
+
+     (<span class="operator">.</span><span class="operator">.</span><span class="operator">.</span>)
+ }
+</pre>
+<!-- @@@qScopeGuard -->
+</div>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

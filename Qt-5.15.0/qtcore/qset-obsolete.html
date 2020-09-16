@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qset.qdoc -->
+  <title>Obsolete Members for QSet | Qt Core 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtcore-index.html">Qt Core</a></li>
+<li><a href="qtcore-module.html">C++ Classes</a></li>
+<li>QSet</li>
+<li id="buildversion"><a href="qtcore-index.html">Qt 5.15.0 Reference Documentation</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar"><div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Obsolete Members for QSet</h1>
+<p><b>The following members of class <a href="qset.html">QSet</a> are obsolete.</b> They are provided to keep old source code working. We strongly advise against using them in new code.</p>
+<h2>Public Types</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>typedef </td><td class="memItemRight bottomAlign"><b><a href="qset-obsolete.html#const_reverse_iterator-typedef">const_reverse_iterator</a></b></td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>typedef </td><td class="memItemRight bottomAlign"><b><a href="qset-obsolete.html#reverse_iterator-typedef">reverse_iterator</a></b></td></tr>
+</table></div>
+<h2>Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>QSet::const_reverse_iterator </td><td class="memItemRight bottomAlign"><b><a href="qset-obsolete.html#crbegin">crbegin</a></b>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>QSet::const_reverse_iterator </td><td class="memItemRight bottomAlign"><b><a href="qset-obsolete.html#crend">crend</a></b>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>QSet::reverse_iterator </td><td class="memItemRight bottomAlign"><b><a href="qset-obsolete.html#rbegin">rbegin</a></b>()</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>QSet::const_reverse_iterator </td><td class="memItemRight bottomAlign"><b><a href="qset-obsolete.html#rbegin-1">rbegin</a></b>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>QSet::reverse_iterator </td><td class="memItemRight bottomAlign"><b><a href="qset-obsolete.html#rend">rend</a></b>()</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>QSet::const_reverse_iterator </td><td class="memItemRight bottomAlign"><b><a href="qset-obsolete.html#rend-1">rend</a></b>() const</td></tr>
+</table></div>
+<h2>Member Type Documentation</h2>
+<!-- $$$const_reverse_iterator -->
+<h3 class="fn" id="const_reverse_iterator-typedef"><a name="const_reverse_iterator-typedef"></a>typedef QSet::<span class="name">const_reverse_iterator</span></h3>
+<p>This typedef is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>Deprecated in order to align with std::unordered_set functionality.</p>
+<p>The QSet::const_reverse_iterator typedef provides an STL-style const reverse iterator for <a href="qset.html">QSet</a>.</p>
+<p>It is simply a typedef for <code>std::reverse_iterator&lt;QSet::const_iterator&gt;</code>.</p>
+<p><b>Warning:</b> Iterators on implicitly shared containers do not work exactly like STL-iterators. You should avoid copying a container while iterators are active on that container. For more information, read <a href="containers.html#implicit-sharing-iterator-problem">Implicit sharing iterator problem</a>.</p>
+<p>This typedef was introduced in Qt 5.6.</p>
+<p><b>See also </b><a href="qset-obsolete.html#rbegin">QSet::rbegin</a>(), <a href="qset-obsolete.html#rend">QSet::rend</a>(), <a href="qset-obsolete.html#reverse_iterator-typedef">QSet::reverse_iterator</a>, and <a href="qset-const-iterator.html">QSet::const_iterator</a>.</p>
+<!-- @@@const_reverse_iterator -->
+<!-- $$$reverse_iterator -->
+<h3 class="fn" id="reverse_iterator-typedef"><a name="reverse_iterator-typedef"></a>typedef QSet::<span class="name">reverse_iterator</span></h3>
+<p>This typedef is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>Deprecated in order to align with std::unordered_set functionality.</p>
+<p>The QSet::reverse_iterator typedef provides an STL-style non-const reverse iterator for <a href="qset.html">QSet</a>.</p>
+<p>It is simply a typedef for <code>std::reverse_iterator&lt;QSet::iterator&gt;</code>.</p>
+<p><b>Warning:</b> Iterators on implicitly shared containers do not work exactly like STL-iterators. You should avoid copying a container while iterators are active on that container. For more information, read <a href="containers.html#implicit-sharing-iterator-problem">Implicit sharing iterator problem</a>.</p>
+<p>This typedef was introduced in Qt 5.6.</p>
+<p><b>See also </b><a href="qset-obsolete.html#rbegin">QSet::rbegin</a>(), <a href="qset-obsolete.html#rend">QSet::rend</a>(), <a href="qset-obsolete.html#const_reverse_iterator-typedef">QSet::const_reverse_iterator</a>, and <a href="qset-iterator.html">QSet::iterator</a>.</p>
+<!-- @@@reverse_iterator -->
+<h2>Member Function Documentation</h2>
+<!-- $$$crbegin[overload1]$$$crbegin -->
+<h3 class="fn" id="crbegin"><a name="crbegin"></a><span class="type"><a href="qset-obsolete.html#const_reverse_iterator-typedef">QSet::const_reverse_iterator</a></span> QSet::<span class="name">crbegin</span>() const</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>Deprecated in order to align with std::unordered_set functionality.</p>
+<p>Returns a const <a href="containers.html#stl-style-iterators">STL-style</a> reverse iterator pointing to the first item in the set, in reverse order.</p>
+<p>This function was introduced in Qt 5.6.</p>
+<p><b>See also </b><a href="qset.html#begin">begin</a>(), <a href="qset-obsolete.html#rbegin">rbegin</a>(), and <a href="qset-obsolete.html#rend">rend</a>().</p>
+<!-- @@@crbegin -->
+<!-- $$$crend[overload1]$$$crend -->
+<h3 class="fn" id="crend"><a name="crend"></a><span class="type"><a href="qset-obsolete.html#const_reverse_iterator-typedef">QSet::const_reverse_iterator</a></span> QSet::<span class="name">crend</span>() const</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>Deprecated in order to align with std::unordered_set functionality.</p>
+<p>Returns a const <a href="containers.html#stl-style-iterators">STL-style</a> reverse iterator pointing to one past the last item in the set, in reverse order.</p>
+<p>This function was introduced in Qt 5.6.</p>
+<p><b>See also </b><a href="qset.html#end">end</a>(), <a href="qset-obsolete.html#rend">rend</a>(), and <a href="qset-obsolete.html#rbegin">rbegin</a>().</p>
+<!-- @@@crend -->
+<!-- $$$rbegin[overload1]$$$rbegin -->
+<h3 class="fn" id="rbegin"><a name="rbegin"></a><span class="type"><a href="qset-obsolete.html#reverse_iterator-typedef">QSet::reverse_iterator</a></span> QSet::<span class="name">rbegin</span>()</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>Deprecated in order to align with std::unordered_set functionality.</p>
+<p>Returns a <a href="containers.html#stl-style-iterators">STL-style</a> reverse iterator pointing to the first item in the set, in reverse order.</p>
+<p>This function was introduced in Qt 5.6.</p>
+<p><b>See also </b><a href="qset.html#begin">begin</a>(), <a href="qset-obsolete.html#crbegin">crbegin</a>(), and <a href="qset-obsolete.html#rend">rend</a>().</p>
+<!-- @@@rbegin -->
+<!-- $$$rbegin$$$rbegin -->
+<h3 class="fn" id="rbegin-1"><a name="rbegin-1"></a><span class="type"><a href="qset-obsolete.html#const_reverse_iterator-typedef">QSet::const_reverse_iterator</a></span> QSet::<span class="name">rbegin</span>() const</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>Deprecated in order to align with std::unordered_set functionality. <p>This is an overloaded function.</p>
+<p>This function was introduced in Qt 5.6.</p>
+<!-- @@@rbegin -->
+<!-- $$$rend[overload1]$$$rend -->
+<h3 class="fn" id="rend"><a name="rend"></a><span class="type"><a href="qset-obsolete.html#reverse_iterator-typedef">QSet::reverse_iterator</a></span> QSet::<span class="name">rend</span>()</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>Deprecated in order to align with std::unordered_set functionality.</p>
+<p>Returns a <a href="containers.html#stl-style-iterators">STL-style</a> reverse iterator pointing to one past the last item in the set, in reverse order.</p>
+<p>This function was introduced in Qt 5.6.</p>
+<p><b>See also </b><a href="qset.html#end">end</a>(), <a href="qset-obsolete.html#crend">crend</a>(), and <a href="qset-obsolete.html#rbegin">rbegin</a>().</p>
+<!-- @@@rend -->
+<!-- $$$rend$$$rend -->
+<h3 class="fn" id="rend-1"><a name="rend-1"></a><span class="type"><a href="qset-obsolete.html#const_reverse_iterator-typedef">QSet::const_reverse_iterator</a></span> QSet::<span class="name">rend</span>() const</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>Deprecated in order to align with std::unordered_set functionality. <p>This is an overloaded function.</p>
+<p>This function was introduced in Qt 5.6.</p>
+<!-- @@@rend -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qquick3dabstractlight.cpp -->
+  <title>Light QML Type | Qt Quick 3D 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtquick3d-index.html">Qt Quick 3D</a></li>
+<li><a href="qtquick3d-qmlmodule.html">QML Types</a></li>
+<li>Light QML Type</li>
+<li id="buildversion"><a href="qtquick3d-index.html">Qt Quick 3D | Commercial or GPLv3</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Light QML Type</h1>
+<span class="subtitle"></span>
+<!-- $$$Light-brief -->
+<p>An uncreatable abstract base type for all lights. <a href="#details">More...</a></p>
+<!-- @@@Light -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Import Statement:</td><td class="memItemRight bottomAlign"> import QtQuick3D 1.15</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Inherits:</td><td class="memItemRight bottomAlign"> <p><a href="qml-qtquick3d-node.html">Node</a></p>
+</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Inherited By:</td><td class="memItemRight bottomAlign"> <p><a href="qml-qtquick3d-arealight.html">AreaLight</a>, <a href="qml-qtquick3d-directionallight.html">DirectionalLight</a>, <a href="qml-qtquick3d-pointlight.html">PointLight</a>, and <a href="qml-qtquick3d-spotlight.html">SpotLight</a></p>
+</td></tr></table></div><ul>
+<li><a href="qml-qtquick3d-light-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="properties"></a>
+<h2 id="properties">Properties</h2>
+<ul>
+<li class="fn"><b><b><a href="qml-qtquick3d-light.html#ambientColor-prop">ambientColor</a></b></b> : color</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-light.html#brightness-prop">brightness</a></b></b> : real</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-light.html#castsShadow-prop">castsShadow</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-light.html#color-prop">color</a></b></b> : color</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-light.html#scope-prop">scope</a></b></b> : Node</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-light.html#shadowBias-prop">shadowBias</a></b></b> : real</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-light.html#shadowFactor-prop">shadowFactor</a></b></b> : real</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-light.html#shadowFilter-prop">shadowFilter</a></b></b> : real</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-light.html#shadowMapFar-prop">shadowMapFar</a></b></b> : real</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-light.html#shadowMapQuality-prop">shadowMapQuality</a></b></b> : enumeration</li>
+</ul>
+<!-- $$$Light-description -->
+<a name="details"></a>
+<h2 id="details">Detailed Description</h2>
+<p>Light itself is an uncreatable base for all of its subtypes. The subtypes provide multiple options to determine the style of the light.</p>
+<p><b>See also </b><a href="qml-qtquick3d-arealight.html">AreaLight</a>, <a href="qml-qtquick3d-directionallight.html">DirectionalLight</a>, and <a href="qml-qtquick3d-pointlight.html">PointLight</a>.</p>
+<!-- @@@Light -->
+<h2>Property Documentation</h2>
+<!-- $$$ambientColor -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="ambientColor-prop">
+<td class="tblQmlPropNode"><p>
+<a name="ambientColor-prop"></a><span class="name">ambientColor</span> : <span class="type"><a href="../qtquick/qml-color.html">color</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>The property defines the ambient color applied to materials before being lit by this light. The default value is black, rgb(0, 0, 0).</p>
+</div></div><!-- @@@ambientColor -->
+<br/>
+<!-- $$$brightness -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="brightness-prop">
+<td class="tblQmlPropNode"><p>
+<a name="brightness-prop"></a><span class="name">brightness</span> : <span class="type"><a href="../qtqml/qml-real.html">real</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property defines an overall multiplier for this light’s effects. The default value is 100.</p>
+</div></div><!-- @@@brightness -->
+<br/>
+<!-- $$$castsShadow -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="castsShadow-prop">
+<td class="tblQmlPropNode"><p>
+<a name="castsShadow-prop"></a><span class="name">castsShadow</span> : <span class="type"><a href="../qtqml/qml-bool.html">bool</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>When this property is enabled, the light will cast shadows. The default value is false.</p>
+</div></div><!-- @@@castsShadow -->
+<br/>
+<!-- $$$color -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="color-prop">
+<td class="tblQmlPropNode"><p>
+<a name="color-prop"></a><span class="name">color</span> : <span class="type"><a href="../qtquick/qml-color.html">color</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property defines the color applied to models illuminated by this light. The default value is white, rgb(255, 255, 255).</p>
+</div></div><!-- @@@color -->
+<br/>
+<!-- $$$scope -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="scope-prop">
+<td class="tblQmlPropNode"><p>
+<a name="scope-prop"></a><span class="name">scope</span> : <span class="type"><a href="qml-qtquick3d-node.html">Node</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>The property allows the selection of a Node in the scene. Only that node and it's children are affected by this light. By default no scope is selected.</p>
+</div></div><!-- @@@scope -->
+<br/>
+<!-- $$$shadowBias -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="shadowBias-prop">
+<td class="tblQmlPropNode"><p>
+<a name="shadowBias-prop"></a><span class="name">shadowBias</span> : <span class="type"><a href="../qtqml/qml-real.html">real</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property is used to tweak the shadowing effect when when objects are casting shadows on themselves. The value range is [-1.0, 1.0]. Generally value inside [-0.1, 0.1] is sufficient. The default value is 0.</p>
+</div></div><!-- @@@shadowBias -->
+<br/>
+<!-- $$$shadowFactor -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="shadowFactor-prop">
+<td class="tblQmlPropNode"><p>
+<a name="shadowFactor-prop"></a><span class="name">shadowFactor</span> : <span class="type"><a href="../qtqml/qml-real.html">real</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property determines how dark the cast shadows should be. The value range is [0, 100], where 0 mean no shadows and 100 means the light is fully shadowed. The default value is 5.</p>
+</div></div><!-- @@@shadowFactor -->
+<br/>
+<!-- $$$shadowFilter -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="shadowFilter-prop">
+<td class="tblQmlPropNode"><p>
+<a name="shadowFilter-prop"></a><span class="name">shadowFilter</span> : <span class="type"><a href="../qtqml/qml-real.html">real</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property sets how much blur is applied to the shadows. The default value is 5.</p>
+</div></div><!-- @@@shadowFilter -->
+<br/>
+<!-- $$$shadowMapFar -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="shadowMapFar-prop">
+<td class="tblQmlPropNode"><p>
+<a name="shadowMapFar-prop"></a><span class="name">shadowMapFar</span> : <span class="type"><a href="../qtqml/qml-real.html">real</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>The property determines the maximum distance for the shadow map. Smaller values improve the precision and effects of the map. The default value is 5000.</p>
+</div></div><!-- @@@shadowMapFar -->
+<br/>
+<!-- $$$shadowMapQuality -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="shadowMapQuality-prop">
+<td class="tblQmlPropNode"><p>
+<a name="shadowMapQuality-prop"></a><span class="name">shadowMapQuality</span> : <span class="type"><a href="../qtqml/qml-enumeration.html">enumeration</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>The property sets the quality of the shadow map created for shadow rendering. Lower quality uses less resources, but produces lower quality shadows while higher quality uses more resources, but produces better quality shadows.</p>
+<p>Supported quality values are:</p>
+<div class="table"><table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><code>Light.ShadowMapQualityLow</code></td><td class="topAlign">Render shadowmap using 256x256 texture.</td></tr>
+<tr><td class="topAlign"><code>Light.ShadowMapQualityMedium</code></td><td class="topAlign">Render shadowmap using 512x512 texture.</td></tr>
+<tr><td class="topAlign"><code>Light.ShadowMapQualityHigh</code></td><td class="topAlign">Render shadowmap using 1024x1024 texture.</td></tr>
+<tr><td class="topAlign"><code>Light.ShadowMapQualityVeryHigh</code></td><td class="topAlign">Render shadowmap using 2048x2048 texture.</td></tr>
+</table></div>
+<p>The default value is <code>Light.ShadowMapQualityLow</code></p>
+</div></div><!-- @@@shadowMapQuality -->
+<br/>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qquick3ddefaultmaterial.cpp -->
+  <title>DefaultMaterial QML Type | Qt Quick 3D 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtquick3d-index.html">Qt Quick 3D</a></li>
+<li><a href="qtquick3d-qmlmodule.html">QML Types</a></li>
+<li>DefaultMaterial QML Type</li>
+<li id="buildversion"><a href="qtquick3d-index.html">Qt Quick 3D | Commercial or GPLv3</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">DefaultMaterial QML Type</h1>
+<span class="subtitle"></span>
+<!-- $$$DefaultMaterial-brief -->
+<p>Defines a Material generated depending on which properties are set. <a href="#details">More...</a></p>
+<!-- @@@DefaultMaterial -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Import Statement:</td><td class="memItemRight bottomAlign"> import QtQuick3D 1.15</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Inherits:</td><td class="memItemRight bottomAlign"> <p><a href="qml-qtquick3d-material.html">Material</a></p>
+</td></tr></table></div><ul>
+<li><a href="qml-qtquick3d-defaultmaterial-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="properties"></a>
+<h2 id="properties">Properties</h2>
+<ul>
+<li class="fn"><b><b><a href="qml-qtquick3d-defaultmaterial.html#blendMode-prop">blendMode</a></b></b> : enumeration</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-defaultmaterial.html#bumpAmount-prop">bumpAmount</a></b></b> : real</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-defaultmaterial.html#bumpMap-prop">bumpMap</a></b></b> : Texture</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-defaultmaterial.html#diffuseColor-prop">diffuseColor</a></b></b> : color</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-defaultmaterial.html#diffuseLightWrap-prop">diffuseLightWrap</a></b></b> : real</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-defaultmaterial.html#diffuseMap-prop">diffuseMap</a></b></b> : Texture</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-defaultmaterial.html#emissiveColor-prop">emissiveColor</a></b></b> : color</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-defaultmaterial.html#emissiveFactor-prop">emissiveFactor</a></b></b> : real</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-defaultmaterial.html#emissiveMap-prop">emissiveMap</a></b></b> : Texture</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-defaultmaterial.html#fresnelPower-prop">fresnelPower</a></b></b> : real</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-defaultmaterial.html#indexOfRefraction-prop">indexOfRefraction</a></b></b> : real</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-defaultmaterial.html#lighting-prop">lighting</a></b></b> : enumeration</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-defaultmaterial.html#normalMap-prop">normalMap</a></b></b> : Texture</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-defaultmaterial.html#opacity-prop">opacity</a></b></b> : real</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-defaultmaterial.html#opacityChannel-prop">opacityChannel</a></b></b> : enumeration</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-defaultmaterial.html#opacityMap-prop">opacityMap</a></b></b> : Texture</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-defaultmaterial.html#roughnessChannel-prop">roughnessChannel</a></b></b> : enumeration</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-defaultmaterial.html#roughnessMap-prop">roughnessMap</a></b></b> : Texture</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-defaultmaterial.html#specularAmount-prop">specularAmount</a></b></b> : real</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-defaultmaterial.html#specularMap-prop">specularMap</a></b></b> : Texture</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-defaultmaterial.html#specularModel-prop">specularModel</a></b></b> : enumeration</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-defaultmaterial.html#specularReflectionMap-prop">specularReflectionMap</a></b></b> : Texture</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-defaultmaterial.html#specularRoughness-prop">specularRoughness</a></b></b> : real</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-defaultmaterial.html#specularTint-prop">specularTint</a></b></b> : real</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-defaultmaterial.html#translucencyChannel-prop">translucencyChannel</a></b></b> : enumeration</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-defaultmaterial.html#translucencyMap-prop">translucencyMap</a></b></b> : Texture</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-defaultmaterial.html#translucentFalloff-prop">translucentFalloff</a></b></b> : real</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-defaultmaterial.html#vertexColorsEnabled-prop">vertexColorsEnabled</a></b></b> : bool</li>
+</ul>
+<!-- $$$DefaultMaterial-description -->
+<a name="details"></a>
+<h2 id="details">Detailed Description</h2>
+<p>Before a Model can be rendered in a scene, it must have at least one material to define how the mesh is shaded. The DefaultMaterial is the easiest way to define such a material. Even if you define a DefaultMaterial with no properties set, a valid mesh will be rendered, because the mesh defines some sensible defaults.</p>
+<p>As you change the properties of the DefaultMaterial, behind the scenes new shaders are generated, and the property values are bound. The complexity of a shader depends on a combination of the properties that are set on it, and the context of the scene itself.</p>
+<!-- @@@DefaultMaterial -->
+<h2>Property Documentation</h2>
+<!-- $$$blendMode -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="blendMode-prop">
+<td class="tblQmlPropNode"><p>
+<a name="blendMode-prop"></a><span class="name">blendMode</span> : <span class="type"><a href="../qtqml/qml-enumeration.html">enumeration</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property determines how the colors of the model rendered blend with those behind it.</p>
+<div class="table"><table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><code>DefaultMaterial.SourceOver</code></td><td class="topAlign">Default blend mode. Opaque objects occlude objects behind them.</td></tr>
+<tr><td class="topAlign"><code>DefaultMaterial.Screen</code></td><td class="topAlign">Colors are blended using an inverted multiply, producing a lighter result. This blend mode is order-independent; if you are using semi-opaque objects and experiencing <i>popping</i> as faces or models sort differently, using Screen blending is one way to produce results without popping.</td></tr>
+<tr><td class="topAlign"><code>DefaultMaterial.Multiply</code></td><td class="topAlign">Colors are blended using a multiply, producing a darker result. This blend mode is also order-independent.</td></tr>
+<tr><td class="topAlign"><code>DefaultMaterial.Overlay</code></td><td class="topAlign">A mix of Multiply and Screen modes, producing a result with higher contrast.</td></tr>
+<tr><td class="topAlign"><code>DefaultMaterial.ColorBurn</code></td><td class="topAlign">Colors are blended by inverted division where the result also is inverted, producing a darker result. Darker than Multiply.</td></tr>
+<tr><td class="topAlign"><code>DefaultMaterial.ColorDodge</code></td><td class="topAlign">Colors are blended by inverted division, producing a lighter result. Lighter than Screen.</td></tr>
+</table></div>
+</div></div><!-- @@@blendMode -->
+<br/>
+<!-- $$$bumpAmount -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="bumpAmount-prop">
+<td class="tblQmlPropNode"><p>
+<a name="bumpAmount-prop"></a><span class="name">bumpAmount</span> : <span class="type"><a href="../qtqml/qml-real.html">real</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property controls the amount of simulated displacement for the <a href="qml-qtquick3d-defaultmaterial.html#bumpMap-prop">bumpMap</a> or <a href="qml-qtquick3d-defaultmaterial.html#normalMap-prop">normalMap</a>. The default value is <code>0</code> disabling the bump effect. The range is [0, 1].</p>
+</div></div><!-- @@@bumpAmount -->
+<br/>
+<!-- $$$bumpMap -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="bumpMap-prop">
+<td class="tblQmlPropNode"><p>
+<a name="bumpMap-prop"></a><span class="name">bumpMap</span> : <span class="type"><a href="qml-qtquick3d-texture.html">Texture</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property defines a grayscale Texture to simulate fine geometry displacement across the surface of the material. Brighter pixels indicate raised regions. The amount of the effect is controlled by the <a href="qml-qtquick3d-defaultmaterial.html#bumpAmount-prop">bumpAmount</a> property.</p>
+<p><b>Note: </b>bump maps will not affect the silhouette of a model. Use a displacementMap if this is required.</p>
+</div></div><!-- @@@bumpMap -->
+<br/>
+<!-- $$$diffuseColor -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="diffuseColor-prop">
+<td class="tblQmlPropNode"><p>
+<a name="diffuseColor-prop"></a><span class="name">diffuseColor</span> : <span class="type"><a href="../qtquick/qml-color.html">color</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property determines the base color for the material. Set to black to create a purely-specular material (e.g&#x2e; metals or mirrors).</p>
+</div></div><!-- @@@diffuseColor -->
+<br/>
+<!-- $$$diffuseLightWrap -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="diffuseLightWrap-prop">
+<td class="tblQmlPropNode"><p>
+<a name="diffuseLightWrap-prop"></a><span class="name">diffuseLightWrap</span> : <span class="type"><a href="../qtqml/qml-real.html">real</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property determines the amount of light wrap for the translucency map. A value of 0 will not wrap the light at all, while a value of 1 will wrap the light all around the object.</p>
+</div></div><!-- @@@diffuseLightWrap -->
+<br/>
+<!-- $$$diffuseMap -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="diffuseMap-prop">
+<td class="tblQmlPropNode"><p>
+<a name="diffuseMap-prop"></a><span class="name">diffuseMap</span> : <span class="type"><a href="qml-qtquick3d-texture.html">Texture</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property defines a Texture to apply to the material. Using Texture with transparency will also apply the alpha channel as an opacity map.</p>
+</div></div><!-- @@@diffuseMap -->
+<br/>
+<!-- $$$emissiveColor -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="emissiveColor-prop">
+<td class="tblQmlPropNode"><p>
+<a name="emissiveColor-prop"></a><span class="name">emissiveColor</span> : <span class="type"><a href="../qtquick/qml-color.html">color</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property determines the color of self-illumination for this material.</p>
+</div></div><!-- @@@emissiveColor -->
+<br/>
+<!-- $$$emissiveFactor -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="emissiveFactor-prop">
+<td class="tblQmlPropNode"><p>
+<a name="emissiveFactor-prop"></a><span class="name">emissiveFactor</span> : <span class="type"><a href="../qtqml/qml-real.html">real</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property determines the amount of self-illumination from the material. In a scene with black ambient lighting, a material with an emissive factor of 0 will appear black wherever the light does not shine on it. Turning the emissive factor to 1 will cause the material to appear in its diffuse color instead.</p>
+<p><b>Note: </b>When you want a material to not be affected by lighting, instead of using 100% emissiveFactor consider setting the lightingMode to /c <a href="qml-qtquick3d-defaultmaterial.html">DefaultMaterial</a>.NoLighting for a performance benefit.</p>
+</div></div><!-- @@@emissiveFactor -->
+<br/>
+<!-- $$$emissiveMap -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="emissiveMap-prop">
+<td class="tblQmlPropNode"><p>
+<a name="emissiveMap-prop"></a><span class="name">emissiveMap</span> : <span class="type"><a href="qml-qtquick3d-texture.html">Texture</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property sets a Texture to be used to set the emissive factor for different parts of the material. Using a grayscale image will not affect the color of the result, while using a color image will produce glowing regions with the color affected by the emissive map.</p>
+</div></div><!-- @@@emissiveMap -->
+<br/>
+<!-- $$$fresnelPower -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="fresnelPower-prop">
+<td class="tblQmlPropNode"><p>
+<a name="fresnelPower-prop"></a><span class="name">fresnelPower</span> : <span class="type"><a href="../qtqml/qml-real.html">real</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property decreases head-on reflections (looking directly at the surface) while maintaining reflections seen at grazing angles. The default value is <code>0</code> disabling the fresnel effect.</p>
+</div></div><!-- @@@fresnelPower -->
+<br/>
+<!-- $$$indexOfRefraction -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="indexOfRefraction-prop">
+<td class="tblQmlPropNode"><p>
+<a name="indexOfRefraction-prop"></a><span class="name">indexOfRefraction</span> : <span class="type"><a href="../qtqml/qml-real.html">real</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property controls what angles of reflections are affected by the <a href="qml-qtquick3d-defaultmaterial.html#fresnelPower-prop">fresnelPower</a>. The default is <code>1.45</code>. The value must be greater or equal to <code>1.0</code>.</p>
+<p><b>Note: </b>No known material in the world have ior much greater than <code>3.0</code>.</p>
+</div></div><!-- @@@indexOfRefraction -->
+<br/>
+<!-- $$$lighting -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="lighting-prop">
+<td class="tblQmlPropNode"><p>
+<a name="lighting-prop"></a><span class="name">lighting</span> : <span class="type"><a href="../qtqml/qml-enumeration.html">enumeration</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property defines which lighting method is used when generating this material.</p>
+<p>The default value is <code>DefaultMaterial.FragmentLighting</code></p>
+<p>When using <code>DefaultMaterial.FragmentLighting</code>, diffuse and specular lighting are calculated for each rendered pixel. Certain effects (such as a Fresnel or bump map) require <code>DefaultMaterial.FragmentLighting</code> to work.</p>
+<p>When using <code>DefaultMaterial.NoLighting</code> no lighting is calculated. This mode is (predictably) very fast, and quite effective when image maps are used that do not need to be shaded by lighting.</p>
+<div class="table"><table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><code>DefaultMaterial.NoLighting</code></td><td class="topAlign">No lighting is calculated.</td></tr>
+<tr><td class="topAlign"><code>DefaultMaterial.FragmentLighting</code></td><td class="topAlign">Per-fragment lighting is calculated.</td></tr>
+</table></div>
+</div></div><!-- @@@lighting -->
+<br/>
+<!-- $$$normalMap -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="normalMap-prop">
+<td class="tblQmlPropNode"><p>
+<a name="normalMap-prop"></a><span class="name">normalMap</span> : <span class="type"><a href="qml-qtquick3d-texture.html">Texture</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property defines a RGB image used to simulate fine geometry displacement across the surface of the material. The RGB channels indicate XYZ normal deviations. The amount of the effect is controlled by the <a href="qml-qtquick3d-defaultmaterial.html#bumpAmount-prop">bumpAmount</a> property.</p>
+<p><b>Note: </b>Normal maps will not affect the silhouette of a model. Use a displacementMap if this is required.</p>
+</div></div><!-- @@@normalMap -->
+<br/>
+<!-- $$$opacity -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="opacity-prop">
+<td class="tblQmlPropNode"><p>
+<a name="opacity-prop"></a><span class="name">opacity</span> : <span class="type"><a href="../qtqml/qml-real.html">real</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property drops the opacity of just this material, separate from the model. The default is <code>1.0</code>. The range is [0.0, 1.0].</p>
+</div></div><!-- @@@opacity -->
+<br/>
+<!-- $$$opacityChannel -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="opacityChannel-prop">
+<td class="tblQmlPropNode"><p>
+<a name="opacityChannel-prop"></a><span class="name">opacityChannel</span> : <span class="type"><a href="../qtqml/qml-enumeration.html">enumeration</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property defines the texture channel used to read the opacity value from <a href="qml-qtquick3d-defaultmaterial.html#opacityMap-prop">opacityMap</a>. The default value is <code>Material.A</code>.</p>
+<div class="table"><table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><code>Material.R</code></td><td class="topAlign">Read value from texture R channel.</td></tr>
+<tr><td class="topAlign"><code>Material.G</code></td><td class="topAlign">Read value from texture G channel.</td></tr>
+<tr><td class="topAlign"><code>Material.B</code></td><td class="topAlign">Read value from texture B channel.</td></tr>
+<tr><td class="topAlign"><code>Material.A</code></td><td class="topAlign">Read value from texture A channel.</td></tr>
+</table></div>
+</div></div><!-- @@@opacityChannel -->
+<br/>
+<!-- $$$opacityMap -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="opacityMap-prop">
+<td class="tblQmlPropNode"><p>
+<a name="opacityMap-prop"></a><span class="name">opacityMap</span> : <span class="type"><a href="qml-qtquick3d-texture.html">Texture</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property defines a Texture used to control the opacity differently for different parts of the material.</p>
+</div></div><!-- @@@opacityMap -->
+<br/>
+<!-- $$$roughnessChannel -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="roughnessChannel-prop">
+<td class="tblQmlPropNode"><p>
+<a name="roughnessChannel-prop"></a><span class="name">roughnessChannel</span> : <span class="type"><a href="../qtqml/qml-enumeration.html">enumeration</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property defines the texture channel used to read the roughness value from <a href="qml-qtquick3d-defaultmaterial.html#roughnessMap-prop">roughnessMap</a>. The default value is <code>Material.R</code>.</p>
+<div class="table"><table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><code>Material.R</code></td><td class="topAlign">Read value from texture R channel.</td></tr>
+<tr><td class="topAlign"><code>Material.G</code></td><td class="topAlign">Read value from texture G channel.</td></tr>
+<tr><td class="topAlign"><code>Material.B</code></td><td class="topAlign">Read value from texture B channel.</td></tr>
+<tr><td class="topAlign"><code>Material.A</code></td><td class="topAlign">Read value from texture A channel.</td></tr>
+</table></div>
+</div></div><!-- @@@roughnessChannel -->
+<br/>
+<!-- $$$roughnessMap -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="roughnessMap-prop">
+<td class="tblQmlPropNode"><p>
+<a name="roughnessMap-prop"></a><span class="name">roughnessMap</span> : <span class="type"><a href="qml-qtquick3d-texture.html">Texture</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property defines a Texture to control the specular roughness of the material. If the texture contains multiple channels(RGBA), then the correct channel can be set using the <a href="qml-qtquick3d-defaultmaterial.html#roughnessChannel-prop">roughnessChannel</a> property.</p>
+</div></div><!-- @@@roughnessMap -->
+<br/>
+<!-- $$$specularAmount -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="specularAmount-prop">
+<td class="tblQmlPropNode"><p>
+<a name="specularAmount-prop"></a><span class="name">specularAmount</span> : <span class="type"><a href="../qtqml/qml-real.html">real</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property controls the strength of specularity (highlights and reflections). The default value is <code>0</code> disabling the specularity. The range is [0.0, 1.0].</p>
+<p><b>Note: </b>This property does not affect the <a href="qml-qtquick3d-defaultmaterial.html#specularReflectionMap-prop">specularReflectionMap</a>, but does affect the amount of reflections from a scene's <a href="qml-qtquick3d-sceneenvironment.html#lightProbe-prop">SceneEnvironment::lightProbe</a>.</p>
+<p><b>Note: </b>Unless your mesh is high resolution, you may need to use <code>DefaultMaterial.FragmentLighting</code> to get good specular highlights from scene lights.</p>
+</div></div><!-- @@@specularAmount -->
+<br/>
+<!-- $$$specularMap -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="specularMap-prop">
+<td class="tblQmlPropNode"><p>
+<a name="specularMap-prop"></a><span class="name">specularMap</span> : <span class="type"><a href="qml-qtquick3d-texture.html">Texture</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property defines a RGB Texture to modulate the amount and the color of specularity across the surface of the material. These values are multiplied by the <a href="qml-qtquick3d-defaultmaterial.html#specularAmount-prop">specularAmount</a>.</p>
+</div></div><!-- @@@specularMap -->
+<br/>
+<!-- $$$specularModel -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="specularModel-prop">
+<td class="tblQmlPropNode"><p>
+<a name="specularModel-prop"></a><span class="name">specularModel</span> : <span class="type"><a href="../qtqml/qml-enumeration.html">enumeration</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property determines which functions are used to calculate specular highlights for lights in the scene.</p>
+<div class="table"><table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><code>DefaultMaterial.Default</code></td><td class="topAlign">Specular lighting uses default lighting model.</td></tr>
+<tr><td class="topAlign"><code>DefaultMaterial.KGGX</code></td><td class="topAlign">Specular lighting uses GGX lighting model.</td></tr>
+<tr><td class="topAlign"><code>DefaultMaterial.KWard</code></td><td class="topAlign">Specular lighting uses Ward lighting model.</td></tr>
+</table></div>
+</div></div><!-- @@@specularModel -->
+<br/>
+<!-- $$$specularReflectionMap -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="specularReflectionMap-prop">
+<td class="tblQmlPropNode"><p>
+<a name="specularReflectionMap-prop"></a><span class="name">specularReflectionMap</span> : <span class="type"><a href="qml-qtquick3d-texture.html">Texture</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property sets a Texture used for specular highlights on the material. By default the Texture is applied using environmental mapping (not UV mapping): as you rotate the model the map will appear as though it is reflecting from the environment. Specular Reflection maps are an easy way to add a high-quality look with relatively low cost.</p>
+<p><b>Note: </b>Using a Light Probe in your <a href="qml-qtquick3d-sceneenvironment.html">SceneEnvironment</a> for image-based lighting will automatically use that image as the specular reflection.</p>
+<p><b>Note: </b>Crisp images cause your material to look very glossy. The more you blur your image, the softer your material will appear.</p>
+</div></div><!-- @@@specularReflectionMap -->
+<br/>
+<!-- $$$specularRoughness -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="specularRoughness-prop">
+<td class="tblQmlPropNode"><p>
+<a name="specularRoughness-prop"></a><span class="name">specularRoughness</span> : <span class="type"><a href="../qtqml/qml-real.html">real</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property controls the size of the specular highlight generated from lights, and the clarity of reflections in general. Larger values increase the roughness, softening specular highlights and blurring reflections.</p>
+</div></div><!-- @@@specularRoughness -->
+<br/>
+<!-- $$$specularTint -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="specularTint-prop">
+<td class="tblQmlPropNode"><p>
+<a name="specularTint-prop"></a><span class="name">specularTint</span> : <span class="type"><a href="../qtqml/qml-real.html">real</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property defines a color used to adjust the specular reflections. Use white for no effect</p>
+</div></div><!-- @@@specularTint -->
+<br/>
+<!-- $$$translucencyChannel -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="translucencyChannel-prop">
+<td class="tblQmlPropNode"><p>
+<a name="translucencyChannel-prop"></a><span class="name">translucencyChannel</span> : <span class="type"><a href="../qtqml/qml-enumeration.html">enumeration</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property defines the texture channel used to read the translucency value from <a href="qml-qtquick3d-defaultmaterial.html#translucencyMap-prop">translucencyMap</a>. The default value is <code>Material.A</code>.</p>
+<div class="table"><table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><code>Material.R</code></td><td class="topAlign">Read value from texture R channel.</td></tr>
+<tr><td class="topAlign"><code>Material.G</code></td><td class="topAlign">Read value from texture G channel.</td></tr>
+<tr><td class="topAlign"><code>Material.B</code></td><td class="topAlign">Read value from texture B channel.</td></tr>
+<tr><td class="topAlign"><code>Material.A</code></td><td class="topAlign">Read value from texture A channel.</td></tr>
+</table></div>
+</div></div><!-- @@@translucencyChannel -->
+<br/>
+<!-- $$$translucencyMap -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="translucencyMap-prop">
+<td class="tblQmlPropNode"><p>
+<a name="translucencyMap-prop"></a><span class="name">translucencyMap</span> : <span class="type"><a href="qml-qtquick3d-texture.html">Texture</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property defines a grayscale Texture controlling how much light can pass through the material from behind.</p>
+</div></div><!-- @@@translucencyMap -->
+<br/>
+<!-- $$$translucentFalloff -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="translucentFalloff-prop">
+<td class="tblQmlPropNode"><p>
+<a name="translucentFalloff-prop"></a><span class="name">translucentFalloff</span> : <span class="type"><a href="../qtqml/qml-real.html">real</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property defines the amount of falloff for the translucency based on the angle of the normals of the object to the light source.</p>
+</div></div><!-- @@@translucentFalloff -->
+<br/>
+<!-- $$$vertexColorsEnabled -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="vertexColorsEnabled-prop">
+<td class="tblQmlPropNode"><p>
+<a name="vertexColorsEnabled-prop"></a><span class="name">vertexColorsEnabled</span> : <span class="type"><a href="../qtqml/qml-bool.html">bool</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>When this property is enabled, the material will use vertex colors from the mesh. These will be multiplied by any other colors specified for the material.</p>
+</div></div><!-- @@@vertexColorsEnabled -->
+<br/>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qwaylandxdgoutputv1.cpp -->
+  <title>QWaylandXdgOutputManagerV1 Class | Qt Wayland Compositor 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtwaylandcompositor-index.html">Qt Wayland Compositor</a></li>
+<li><a href="qtwaylandcompositor-module.html">C++ Classes</a></li>
+<li>QWaylandXdgOutputManagerV1</li>
+<li id="buildversion"><a href="qtwaylandcompositor-index.html">Qt 5.15.0 Reference Documentation</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#reimplemented-public-functions">Reimplemented Public Functions</a></li>
+<li class="level1"><a href="#static-public-members">Static Public Members</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">QWaylandXdgOutputManagerV1 Class</h1>
+<!-- $$$QWaylandXdgOutputManagerV1-brief -->
+<p>Provides an extension for describing outputs in a desktop oriented fashion. <a href="#details">More...</a></p>
+<!-- @@@QWaylandXdgOutputManagerV1 -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign">  <span class="preprocessor">#include &lt;QWaylandXdgOutputManagerV1&gt;</span>
+</td></tr><tr><td class="memItemLeft rightAlign topAlign"> qmake:</td><td class="memItemRight bottomAlign"> QT += waylandcompositor</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Since:</td><td class="memItemRight bottomAlign"> Qt 5.14</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Inherits:</td><td class="memItemRight bottomAlign"> QWaylandCompositorExtensionTemplate</td></tr></table></div><p>This class was introduced in Qt 5.14.</p>
+<ul>
+<li><a href="qwaylandxdgoutputmanagerv1-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qwaylandxdgoutputmanagerv1.html#QWaylandXdgOutputManagerV1-1">QWaylandXdgOutputManagerV1</a></b>(QWaylandCompositor *<i>compositor</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qwaylandxdgoutputmanagerv1.html#QWaylandXdgOutputManagerV1">QWaylandXdgOutputManagerV1</a></b>()</td></tr>
+</table></div>
+<a name="reimplemented-public-functions"></a>
+<h2 id="reimplemented-public-functions">Reimplemented Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> virtual void </td><td class="memItemRight bottomAlign"><b><a href="qwaylandxdgoutputmanagerv1.html#initialize">initialize</a></b>() override</td></tr>
+</table></div>
+<a name="static-public-members"></a>
+<h2 id="static-public-members">Static Public Members</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> const wl_interface *</td><td class="memItemRight bottomAlign"><b><a href="qwaylandxdgoutputmanagerv1.html#interface">interface</a></b>()</td></tr>
+</table></div>
+<a name="details"></a>
+<!-- $$$QWaylandXdgOutputManagerV1-description -->
+<div class="descr">
+<h2 id="details">Detailed Description</h2>
+<p>The QWaylandXdgOutputManagerV1 extension provides a way for a compositor to describe outputs in a way that is more in line with the concept of an output on desktop oriented systems.</p>
+<p>Some information may not make sense in other applications such as IVI systems.</p>
+<p>QWaylandXdgOutputManagerV1 corresponds to the Wayland interface, <code>zxdg_output_manager_v1</code>.</p>
+</div>
+<!-- @@@QWaylandXdgOutputManagerV1 -->
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$QWaylandXdgOutputManagerV1$$$QWaylandXdgOutputManagerV1QWaylandCompositor* -->
+<h3 class="fn" id="QWaylandXdgOutputManagerV1-1"><a name="QWaylandXdgOutputManagerV1-1"></a>QWaylandXdgOutputManagerV1::<span class="name">QWaylandXdgOutputManagerV1</span>(<span class="type"><a href="qwaylandcompositor.html">QWaylandCompositor</a></span> *<i>compositor</i>)</h3>
+<p>Constructs a QWaylandXdgOutputManagerV1 object for the provided <i>compositor</i>.</p>
+<!-- @@@QWaylandXdgOutputManagerV1 -->
+<!-- $$$QWaylandXdgOutputManagerV1[overload1]$$$QWaylandXdgOutputManagerV1 -->
+<h3 class="fn" id="QWaylandXdgOutputManagerV1"><a name="QWaylandXdgOutputManagerV1"></a>QWaylandXdgOutputManagerV1::<span class="name">QWaylandXdgOutputManagerV1</span>()</h3>
+<p>Constructs a QWaylandXdgOutputManagerV1 object.</p>
+<!-- @@@QWaylandXdgOutputManagerV1 -->
+<!-- $$$initialize[overload1]$$$initialize -->
+<h3 class="fn" id="initialize"><a name="initialize"></a><code>[override virtual] </code><span class="type">void</span> QWaylandXdgOutputManagerV1::<span class="name">initialize</span>()</h3>
+<p>Initializes the extension.</p>
+<!-- @@@initialize -->
+<!-- $$$interface[overload1]$$$interface -->
+<h3 class="fn" id="interface"><a name="interface"></a><code>[static] </code>const <span class="type">wl_interface</span> *QWaylandXdgOutputManagerV1::<span class="name">interface</span>()</h3>
+<p>Returns the Wayland interface for <a href="qwaylandxdgoutputmanagerv1.html">QWaylandXdgOutputManagerV1</a>.</p>
+<!-- @@@interface -->
+</div>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

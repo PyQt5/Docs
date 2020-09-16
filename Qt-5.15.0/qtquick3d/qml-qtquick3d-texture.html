@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qquick3dtexture.cpp -->
+  <title>Texture QML Type | Qt Quick 3D 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtquick3d-index.html">Qt Quick 3D</a></li>
+<li><a href="qtquick3d-qmlmodule.html">QML Types</a></li>
+<li>Texture QML Type</li>
+<li id="buildversion"><a href="qtquick3d-index.html">Qt Quick 3D | Commercial or GPLv3</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Texture QML Type</h1>
+<span class="subtitle"></span>
+<!-- $$$Texture-brief -->
+<p>Defines a texture for use in 3D scenes. <a href="#details">More...</a></p>
+<!-- @@@Texture -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Import Statement:</td><td class="memItemRight bottomAlign"> import QtQuick3D 1.15</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Inherits:</td><td class="memItemRight bottomAlign"> <p><a href="qml-qtquick3d-object3d.html">Object3D</a></p>
+</td></tr></table></div><ul>
+<li><a href="qml-qtquick3d-texture-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="properties"></a>
+<h2 id="properties">Properties</h2>
+<ul>
+<li class="fn"><b><b><a href="qml-qtquick3d-texture.html#flipV-prop">flipV</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-texture.html#format-prop">format</a></b></b> : enumeration</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-texture.html#mappingMode-prop">mappingMode</a></b></b> : enumeration</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-texture.html#pivotU-prop">pivotU</a></b></b> : float</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-texture.html#pivotV-prop">pivotV</a></b></b> : float</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-texture.html#positionU-prop">positionU</a></b></b> : float</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-texture.html#positionV-prop">positionV</a></b></b> : float</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-texture.html#rotationUV-prop">rotationUV</a></b></b> : float</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-texture.html#scaleU-prop">scaleU</a></b></b> : float</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-texture.html#scaleV-prop">scaleV</a></b></b> : float</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-texture.html#source-prop">source</a></b></b> : url</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-texture.html#sourceItem-prop">sourceItem</a></b></b> : Item</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-texture.html#tilingModeHorizontal-prop">tilingModeHorizontal</a></b></b> : enumeration</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-texture.html#tilingModeVertical-prop">tilingModeVertical</a></b></b> : enumeration</li>
+</ul>
+<!-- $$$Texture-description -->
+<a name="details"></a>
+<h2 id="details">Detailed Description</h2>
+<p>Texture defines an image and how it is mapped to meshes in a 3d scene.</p>
+<p>Texture components can use image data either from a file using the <a href="qml-qtquick3d-texture.html#source-prop">source</a> property, or a Qt Quick item using the <a href="qml-qtquick3d-texture.html#sourceItem-prop">sourceItem</a> property.</p>
+<!-- @@@Texture -->
+<h2>Property Documentation</h2>
+<!-- $$$flipV -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="flipV-prop">
+<td class="tblQmlPropNode"><p>
+<a name="flipV-prop"></a><span class="name">flipV</span> : <span class="type"><a href="../qtqml/qml-bool.html">bool</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property sets the use of the vertically flipped coordinates.</p>
+</div></div><!-- @@@flipV -->
+<br/>
+<!-- $$$format -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="format-prop">
+<td class="tblQmlPropNode"><p>
+<a name="format-prop"></a><span class="name">format</span> : <span class="type"><a href="../qtqml/qml-enumeration.html">enumeration</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property controls the color format of the texture assigned in <a href="qml-qtquick3d-texture.html#source-prop">source</a> property.</p>
+<p>By default, it is automatically determined. However, it can be manually set if the automatic format is not what is wanted.</p>
+<div class="table"><table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><code>Texture.Automatic</code></td><td class="topAlign">The color format will be automatically determined (default).</td></tr>
+<tr><td class="topAlign"><code>Texture.R8</code></td><td class="topAlign">The color format is considered as 8-bit integer in R channel.</td></tr>
+<tr><td class="topAlign"><code>Texture.R16</code></td><td class="topAlign">The color format is considered as 16-bit integer in R channel.</td></tr>
+<tr><td class="topAlign"><code>Texture.R16F</code></td><td class="topAlign">The color format is considered as 16-bit float in R channel.</td></tr>
+<tr><td class="topAlign"><code>Texture.R32I</code></td><td class="topAlign">The color format is considered as 32-bit integer in R channel.</td></tr>
+<tr><td class="topAlign"><code>Texture.R32UI</code></td><td class="topAlign">The color format is considered as 32-bit unsigned integer in R channel.</td></tr>
+<tr><td class="topAlign"><code>Texture.R32F</code></td><td class="topAlign">The color format is considered as 32-bit float R channel.</td></tr>
+<tr><td class="topAlign"><code>Texture.RG8</code></td><td class="topAlign">The color format is considered as 8-bit integer in R and G channels.</td></tr>
+<tr><td class="topAlign"><code>Texture.RGBA8</code></td><td class="topAlign">The color format is considered as 8-bit integer in R, G, B and alpha channels.</td></tr>
+<tr><td class="topAlign"><code>Texture.RGB8</code></td><td class="topAlign">The color format is considered as 8-bit integer in R, G and B channels.</td></tr>
+<tr><td class="topAlign"><code>Texture.SRGB8</code></td><td class="topAlign">The color format is considered as 8-bit integer in R, G and B channels in standard RGB color space.</td></tr>
+<tr><td class="topAlign"><code>Texture.SRGB8A8</code></td><td class="topAlign">The color format is considered as 8-bit integer in R, G, B and alpha channels in standard RGB color space.</td></tr>
+<tr><td class="topAlign"><code>Texture.RGB565</code></td><td class="topAlign">The color format is considered as 5-bit integer in R and B channels and 6-bit integer in G channel.</td></tr>
+<tr><td class="topAlign"><code>Texture.RGBA5551</code></td><td class="topAlign">The color format is considered as 5-bit integer in R, G, B channels and boolean alpha channel.</td></tr>
+<tr><td class="topAlign"><code>Texture.Alpha8</code></td><td class="topAlign">The color format is considered as 8-bit alpha map.</td></tr>
+<tr><td class="topAlign"><code>Texture.Luminance8</code></td><td class="topAlign">The color format is considered as 8-bit luminance map.</td></tr>
+<tr><td class="topAlign"><code>Texture.Luminance16</code></td><td class="topAlign">The color format is considered as 16-bit luminance map.</td></tr>
+<tr><td class="topAlign"><code>Texture.LuminanceAlpha8</code></td><td class="topAlign">The color format is considered as 8-bit luminance and alpha map.</td></tr>
+<tr><td class="topAlign"><code>Texture.RGBA16F</code></td><td class="topAlign">The color format is considered as 16-bit float in R,G,B and alpha channels.</td></tr>
+<tr><td class="topAlign"><code>Texture.RG16F</code></td><td class="topAlign">The color format is considered as 16-bit float in R and G channels.</td></tr>
+<tr><td class="topAlign"><code>Texture.RG32F</code></td><td class="topAlign">The color format is considered as 32-bit float in R and G channels.</td></tr>
+<tr><td class="topAlign"><code>Texture.RGB32F</code></td><td class="topAlign">The color format is considered as 32-bit float in R, G and B channels.</td></tr>
+<tr><td class="topAlign"><code>Texture.RGBA32F</code></td><td class="topAlign">The color format is considered as 32-bit float in R, G, B and alpha channels.</td></tr>
+<tr><td class="topAlign"><code>Texture.R11G11B10</code></td><td class="topAlign">The color format is considered as 11-bit integer in R and G channels and 10-bit integer in B channel.</td></tr>
+<tr><td class="topAlign"><code>Texture.RGB9E5</code></td><td class="topAlign">The color format is considered as 9-bit mantissa in R, G and B channels and 5-bit shared exponent.</td></tr>
+<tr><td class="topAlign"><code>Texture.RGBA_DXT1</code></td><td class="topAlign">The color format is considered as DXT1 compressed format with R, G, B and alpha channels.</td></tr>
+<tr><td class="topAlign"><code>Texture.RGB_DXT1</code></td><td class="topAlign">The color format is considered as DXT1 compressed format with R, G and B channels.</td></tr>
+<tr><td class="topAlign"><code>Texture.RGBA_DXT3</code></td><td class="topAlign">The color format is considered as DXT3 compressed format with R, G, B and alpha channels.</td></tr>
+<tr><td class="topAlign"><code>Texture.RGBA_DXT5</code></td><td class="topAlign">The color format is considered as DXT5 compressed format with R, G, B and alpha channels.</td></tr>
+<tr><td class="topAlign"><code>Texture.Depth16</code></td><td class="topAlign">The color format is considered as 16-bit depth map.</td></tr>
+<tr><td class="topAlign"><code>Texture.Depth24</code></td><td class="topAlign">The color format is considered as 24-bit depth map.</td></tr>
+<tr><td class="topAlign"><code>Texture.Depth32</code></td><td class="topAlign">The color format is considered as 32-bit depth map.</td></tr>
+<tr><td class="topAlign"><code>Texture.Depth24Stencil8</code></td><td class="topAlign">The color format is considered as 24-bit depth and 8-bit stencil map.</td></tr>
+</table></div>
+</div></div><!-- @@@format -->
+<br/>
+<!-- $$$mappingMode -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="mappingMode-prop">
+<td class="tblQmlPropNode"><p>
+<a name="mappingMode-prop"></a><span class="name">mappingMode</span> : <span class="type"><a href="../qtqml/qml-enumeration.html">enumeration</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property defines which method of mapping to use when sampling this texture.</p>
+<div class="table"><table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><code>Texture.UV</code></td><td class="topAlign">The default for diffuse and opacity maps, this causes the image to be stuck to the mesh. The same portion of the image will always appear on the same vertex (unless the UV properties are animated).</td></tr>
+<tr><td class="topAlign"><code>Texture.Environment</code></td><td class="topAlign">The default for specular reflection, this causes the image to be ‘projected’ onto the material as though it is being reflected. Using Environmental Mapping for diffuse maps provides a mirror effect.</td></tr>
+<tr><td class="topAlign"><code>Texture.LightProbe</code></td><td class="topAlign">The default for HDRI sphere maps used by light probes.</td></tr>
+</table></div>
+</div></div><!-- @@@mappingMode -->
+<br/>
+<!-- $$$pivotU -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="pivotU-prop">
+<td class="tblQmlPropNode"><p>
+<a name="pivotU-prop"></a><span class="name">pivotU</span> : <span class="type">float</span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property sets the pivot U position.</p>
+<p><b>See also </b><a href="qml-qtquick3d-texture.html#rotationUV-prop">rotationUV</a>.</p>
+</div></div><!-- @@@pivotU -->
+<br/>
+<!-- $$$pivotV -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="pivotV-prop">
+<td class="tblQmlPropNode"><p>
+<a name="pivotV-prop"></a><span class="name">pivotV</span> : <span class="type">float</span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property sets the pivot V position.</p>
+<p><b>See also </b><a href="qml-qtquick3d-texture.html#rotationUV-prop">rotationUV</a>.</p>
+</div></div><!-- @@@pivotV -->
+<br/>
+<!-- $$$positionU -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="positionU-prop">
+<td class="tblQmlPropNode"><p>
+<a name="positionU-prop"></a><span class="name">positionU</span> : <span class="type">float</span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property offsets the U coordinate mapping from left to right.</p>
+</div></div><!-- @@@positionU -->
+<br/>
+<!-- $$$positionV -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="positionV-prop">
+<td class="tblQmlPropNode"><p>
+<a name="positionV-prop"></a><span class="name">positionV</span> : <span class="type">float</span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property offsets the V coordinate mapping from bottom to top.</p>
+</div></div><!-- @@@positionV -->
+<br/>
+<!-- $$$rotationUV -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="rotationUV-prop">
+<td class="tblQmlPropNode"><p>
+<a name="rotationUV-prop"></a><span class="name">rotationUV</span> : <span class="type">float</span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property rotates the texture around the pivot point. This is defined using euler angles and for a positve value rotation is clockwise.</p>
+<p><b>See also </b><a href="qml-qtquick3d-texture.html#pivotU-prop">pivotU</a> and <a href="qml-qtquick3d-texture.html#pivotV-prop">pivotV</a>.</p>
+</div></div><!-- @@@rotationUV -->
+<br/>
+<!-- $$$scaleU -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="scaleU-prop">
+<td class="tblQmlPropNode"><p>
+<a name="scaleU-prop"></a><span class="name">scaleU</span> : <span class="type">float</span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property defines how to scale the U texture coordinate when mapping to a mesh's UV coordinates.</p>
+<p>Scaling the U value when using horizontal tiling will define how many times the texture is repeated from left to right.</p>
+<p><b>See also </b><a href="qml-qtquick3d-texture.html#tilingModeHorizontal-prop">tilingModeHorizontal</a>.</p>
+</div></div><!-- @@@scaleU -->
+<br/>
+<!-- $$$scaleV -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="scaleV-prop">
+<td class="tblQmlPropNode"><p>
+<a name="scaleV-prop"></a><span class="name">scaleV</span> : <span class="type">float</span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property defines how to scale the V texture coordinate when mapping to a mesh's UV coordinates.</p>
+<p>Scaling the V value when using vertical tiling will define how many times a texture is repeated from bottom to top.</p>
+<p><b>See also </b><a href="qml-qtquick3d-texture.html#tilingModeVertical-prop">tilingModeVertical</a>.</p>
+</div></div><!-- @@@scaleV -->
+<br/>
+<!-- $$$source -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="source-prop">
+<td class="tblQmlPropNode"><p>
+<a name="source-prop"></a><span class="name">source</span> : <span class="type"><a href="../qtqml/qml-url.html">url</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property holds the location of an image file containing the data used by the texture.</p>
+<p><b>See also </b><a href="qml-qtquick3d-texture.html#sourceItem-prop">sourceItem</a>.</p>
+</div></div><!-- @@@source -->
+<br/>
+<!-- $$$sourceItem -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="sourceItem-prop">
+<td class="tblQmlPropNode"><p>
+<a name="sourceItem-prop"></a><span class="name">sourceItem</span> : <span class="type"><a href="../qtquick/qml-qtquick-item.html">Item</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property defines a Item to be used as the source of the texture. Using this property allows any 2D Qt Quick content to be used as a texture source by renderind that item as an offscreen layer.</p>
+<p>If this property is used, then the value of <a href="qml-qtquick3d-texture.html#source-prop">source</a> will be ignored.</p>
+<p><b>Note: </b>Currently there is no way to forward input events to the Item used as a texture source.</p>
+<p><b>See also </b><a href="qml-qtquick3d-texture.html#source-prop">source</a>.</p>
+</div></div><!-- @@@sourceItem -->
+<br/>
+<!-- $$$tilingModeHorizontal -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="tilingModeHorizontal-prop">
+<td class="tblQmlPropNode"><p>
+<a name="tilingModeHorizontal-prop"></a><span class="name">tilingModeHorizontal</span> : <span class="type"><a href="../qtqml/qml-enumeration.html">enumeration</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Controls how the texture is mapped when the U scaling value is greater than 1.</p>
+<div class="table"><table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><code>Texture.ClampToEdge</code></td><td class="topAlign">Texture is not tiled, but the value on the edge is used instead.</td></tr>
+<tr><td class="topAlign"><code>Texture.MirroredRepeat</code></td><td class="topAlign">Texture is repeated and mirrored over the X axis.</td></tr>
+<tr><td class="topAlign"><code>Texture.Repeat</code></td><td class="topAlign">Texture is repeated over the X axis.</td></tr>
+</table></div>
+<p><b>See also </b><a href="qml-qtquick3d-texture.html#scaleU-prop">scaleU</a>.</p>
+</div></div><!-- @@@tilingModeHorizontal -->
+<br/>
+<!-- $$$tilingModeVertical -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="tilingModeVertical-prop">
+<td class="tblQmlPropNode"><p>
+<a name="tilingModeVertical-prop"></a><span class="name">tilingModeVertical</span> : <span class="type"><a href="../qtqml/qml-enumeration.html">enumeration</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property controls how the texture is mapped when the V scaling value is greater than 1.</p>
+<div class="table"><table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><code>Texture.ClampToEdge</code></td><td class="topAlign">Texture is not tiled, but the value on the edge is used instead.</td></tr>
+<tr><td class="topAlign"><code>Texture.MirroredRepeat</code></td><td class="topAlign">Texture is repeated and mirrored over the Y axis.</td></tr>
+<tr><td class="topAlign"><code>Texture.Repeat</code></td><td class="topAlign">Texture is repeated over the Y axis.</td></tr>
+</table></div>
+<p><b>See also </b><a href="qml-qtquick3d-texture.html#scaleV-prop">scaleV</a>.</p>
+</div></div><!-- @@@tilingModeVertical -->
+<br/>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

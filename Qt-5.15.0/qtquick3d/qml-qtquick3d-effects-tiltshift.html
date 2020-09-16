@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qtquick3d-effects.qdoc -->
+  <title>TiltShift QML Type | Qt Quick 3D 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtquick3d-index.html">Qt Quick 3D</a></li>
+<li><a href="qtquick3d-qmlmodule.html">QML Types</a></li>
+<li>TiltShift QML Type</li>
+<li id="buildversion"><a href="qtquick3d-index.html">Qt Quick 3D | Commercial or GPLv3</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">TiltShift QML Type</h1>
+<span class="subtitle"></span>
+<!-- $$$TiltShift-brief -->
+<p>A tilt shift blur effect. <a href="#details">More...</a></p>
+<!-- @@@TiltShift -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Import Statement:</td><td class="memItemRight bottomAlign"> import QtQuick3D.Effects 1.15</td></tr></table></div><ul>
+<li><a href="qml-qtquick3d-effects-tiltshift-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="properties"></a>
+<h2 id="properties">Properties</h2>
+<ul>
+<li class="fn"><b><b><a href="qml-qtquick3d-effects-tiltshift.html#blurAmount-prop">blurAmount</a></b></b> : real</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-effects-tiltshift.html#focusPosition-prop">focusPosition</a></b></b> : real</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-effects-tiltshift.html#focusWidth-prop">focusWidth</a></b></b> : real</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-effects-tiltshift.html#isInverted-prop">isInverted</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-effects-tiltshift.html#isVertical-prop">isVertical</a></b></b> : bool</li>
+</ul>
+<!-- $$$TiltShift-description -->
+<a name="details"></a>
+<h2 id="details">Detailed Description</h2>
+<p class="centerAlign"><img src="images/effect_tilt_shift.png" alt="" /></p><p>The TiltShift effect simulates depth of field in a simple and performant manner. Instead of blurring based on the depth buffer, it blurs everything except for a horizontal or vertical stripe on the layer.</p>
+<p><b>See also </b><a href="qml-qtquick3d-effects-depthoffieldhqblur.html">DepthOfFieldHQBlur</a>.</p>
+<!-- @@@TiltShift -->
+<h2>Property Documentation</h2>
+<!-- $$$blurAmount -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="blurAmount-prop">
+<td class="tblQmlPropNode"><p>
+<a name="blurAmount-prop"></a><span class="name">blurAmount</span> : <span class="type"><a href="../qtqml/qml-real.html">real</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>The amount of blur. Amounts above 4 may cause artifacts. Range is <code>[0..&#x2e;10]</code>. <code>4</code> by default.</p>
+</div></div><!-- @@@blurAmount -->
+<br/>
+<!-- $$$focusPosition -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="focusPosition-prop">
+<td class="tblQmlPropNode"><p>
+<a name="focusPosition-prop"></a><span class="name">focusPosition</span> : <span class="type"><a href="../qtqml/qml-real.html">real</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Placement of the focus bar in normalized coordinates. Range is <code>[0..&#x2e;1]</code>. <code>0.5</code> by default.</p>
+</div></div><!-- @@@focusPosition -->
+<br/>
+<!-- $$$focusWidth -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="focusWidth-prop">
+<td class="tblQmlPropNode"><p>
+<a name="focusWidth-prop"></a><span class="name">focusWidth</span> : <span class="type"><a href="../qtqml/qml-real.html">real</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Objects within this normalized range of <a href="qml-qtquick3d-effects-tiltshift.html#focusPosition-prop">focusPosition</a> will be in focus. Range is <code>[0..&#x2e;1]</code>. <code>0.2</code> by default.</p>
+</div></div><!-- @@@focusWidth -->
+<br/>
+<!-- $$$isInverted -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="isInverted-prop">
+<td class="tblQmlPropNode"><p>
+<a name="isInverted-prop"></a><span class="name">isInverted</span> : <span class="type"><a href="../qtqml/qml-bool.html">bool</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Inverts the blur area, so the center is blurred instead. <code>false</code> by default.</p>
+</div></div><!-- @@@isInverted -->
+<br/>
+<!-- $$$isVertical -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="isVertical-prop">
+<td class="tblQmlPropNode"><p>
+<a name="isVertical-prop"></a><span class="name">isVertical</span> : <span class="type"><a href="../qtqml/qml-bool.html">bool</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Makes the effect work vertically instead of horizontally. <code>false</code> by default.</p>
+</div></div><!-- @@@isVertical -->
+<br/>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qhelpfiltersettingswidget.cpp -->
+  <title>QHelpFilterSettingsWidget Class | Qt Help 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qthelp-index.html">Qt Help</a></li>
+<li><a href="qthelp-module.html">C++ Classes</a></li>
+<li>QHelpFilterSettingsWidget</li>
+<li id="buildversion"><a href="qthelp-index.html">Qt 5.15.0 Reference Documentation</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">QHelpFilterSettingsWidget Class</h1>
+<!-- $$$QHelpFilterSettingsWidget-brief -->
+<p>The QHelpFilterSettingsWidget class provides a widget that allows for creating, editing and removing filters. <a href="#details">More...</a></p>
+<!-- @@@QHelpFilterSettingsWidget -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign">  <span class="preprocessor">#include &lt;QHelpFilterSettingsWidget&gt;</span>
+</td></tr><tr><td class="memItemLeft rightAlign topAlign"> qmake:</td><td class="memItemRight bottomAlign"> QT += help</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Since:</td><td class="memItemRight bottomAlign"> Qt 5.15</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Inherits:</td><td class="memItemRight bottomAlign"> <a href="../qtwidgets/qwidget.html">QWidget</a></td></tr></table></div><p>This class was introduced in Qt 5.15.</p>
+<ul>
+<li><a href="qhelpfiltersettingswidget-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qhelpfiltersettingswidget.html#QHelpFilterSettingsWidget">QHelpFilterSettingsWidget</a></b>(QWidget *<i>parent</i> = nullptr)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual </td><td class="memItemRight bottomAlign"><b><a href="qhelpfiltersettingswidget.html#dtor.QHelpFilterSettingsWidget">~QHelpFilterSettingsWidget</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qhelpfiltersettingswidget.html#applySettings">applySettings</a></b>(QHelpFilterEngine *<i>filterEngine</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qhelpfiltersettingswidget.html#readSettings">readSettings</a></b>(const QHelpFilterEngine *<i>filterEngine</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qhelpfiltersettingswidget.html#setAvailableComponents">setAvailableComponents</a></b>(const QStringList &amp;<i>components</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qhelpfiltersettingswidget.html#setAvailableVersions">setAvailableVersions</a></b>(const QList&lt;QVersionNumber&gt; &amp;<i>versions</i>)</td></tr>
+</table></div>
+<a name="details"></a>
+<!-- $$$QHelpFilterSettingsWidget-description -->
+<div class="descr">
+<h2 id="details">Detailed Description</h2>
+<p>The instance of QHelpFilterSettingsWidget may be a part of a preferences dialog. Before showing the dialog, <a href="qhelpfiltersettingswidget.html#setAvailableComponents">setAvailableComponents</a>() and <a href="qhelpfiltersettingswidget.html#setAvailableVersions">setAvailableVersions</a>() should be called, otherwise the filter settings widget will only offer a creation of empty filters, which wouldn't be useful. In addition, <a href="qhelpfiltersettingswidget.html#readSettings">readSettings</a> should also be called to fill up the filter settings widget with the list of filters already stored in the filter engine. The creation of new filters, modifications to existing filters and removal of unneeded filters are handled by the widget automatically. If you want to store the current state of the widget and apply it to the filter engine e.g&#x2e; after the user clicked the apply button - call <a href="qhelpfiltersettingswidget.html#applySettings">applySettings</a>().</p>
+</div>
+<!-- @@@QHelpFilterSettingsWidget -->
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$QHelpFilterSettingsWidget[overload1]$$$QHelpFilterSettingsWidgetQWidget* -->
+<h3 class="fn" id="QHelpFilterSettingsWidget"><a name="QHelpFilterSettingsWidget"></a>QHelpFilterSettingsWidget::<span class="name">QHelpFilterSettingsWidget</span>(<span class="type"><a href="../qtwidgets/qwidget.html#QWidget">QWidget</a></span> *<i>parent</i> = nullptr)</h3>
+<p>Constructs a filter settings widget with <i>parent</i> as parent widget.</p>
+<!-- @@@QHelpFilterSettingsWidget -->
+<!-- $$$~QHelpFilterSettingsWidget[overload1]$$$~QHelpFilterSettingsWidget -->
+<h3 class="fn" id="dtor.QHelpFilterSettingsWidget"><a name="dtor.QHelpFilterSettingsWidget"></a><code>[virtual] </code>QHelpFilterSettingsWidget::<span class="name">~QHelpFilterSettingsWidget</span>()</h3>
+<p>Destroys the filter settings widget.</p>
+<!-- @@@~QHelpFilterSettingsWidget -->
+<!-- $$$applySettings[overload1]$$$applySettingsQHelpFilterEngine* -->
+<h3 class="fn" id="applySettings"><a name="applySettings"></a><span class="type">bool</span> QHelpFilterSettingsWidget::<span class="name">applySettings</span>(<span class="type"><a href="qhelpfilterengine.html">QHelpFilterEngine</a></span> *<i>filterEngine</i>) const</h3>
+<p>Writes the filter settings, currently presented in this filter settings widget, to the <i>filterEngine</i>. The old settings stored in the filter engine will be overwritten.</p>
+<!-- @@@applySettings -->
+<!-- $$$readSettings[overload1]$$$readSettingsconstQHelpFilterEngine* -->
+<h3 class="fn" id="readSettings"><a name="readSettings"></a><span class="type">void</span> QHelpFilterSettingsWidget::<span class="name">readSettings</span>(const <span class="type"><a href="qhelpfilterengine.html">QHelpFilterEngine</a></span> *<i>filterEngine</i>)</h3>
+<p>Reads the filter settings stored inside <i>filterEngine</i> and sets up this filter settings widget accordingly.</p>
+<!-- @@@readSettings -->
+<!-- $$$setAvailableComponents[overload1]$$$setAvailableComponentsconstQStringList& -->
+<h3 class="fn" id="setAvailableComponents"><a name="setAvailableComponents"></a><span class="type">void</span> QHelpFilterSettingsWidget::<span class="name">setAvailableComponents</span>(const <span class="type"><a href="../qtcore/qstringlist.html">QStringList</a></span> &amp;<i>components</i>)</h3>
+<p>Sets the list of all available components to <i>components</i>.</p>
+<p><b>See also </b><a href="qhelpfilterengine.html#availableComponents">QHelpFilterEngine::availableComponents</a>().</p>
+<!-- @@@setAvailableComponents -->
+<!-- $$$setAvailableVersions[overload1]$$$setAvailableVersionsconstQList<QVersionNumber>& -->
+<h3 class="fn" id="setAvailableVersions"><a name="setAvailableVersions"></a><span class="type">void</span> QHelpFilterSettingsWidget::<span class="name">setAvailableVersions</span>(const <span class="type"><a href="../qtcore/qlist.html">QList</a></span>&lt;<span class="type"><a href="../qtcore/qversionnumber.html">QVersionNumber</a></span>&gt; &amp;<i>versions</i>)</h3>
+<p>Sets the list of all available version numbers to <i>versions</i>.</p>
+<p><b>See also </b><a href="qhelpfilterengine.html#availableVersions">QHelpFilterEngine::availableVersions</a>().</p>
+<!-- @@@setAvailableVersions -->
+</div>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

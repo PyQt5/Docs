@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tagfile>
+    <compound kind="class">
+        <name>Qt.labs.lottieqt.LottieAnimation</name>
+        <filename>qml-qt-labs-lottieqt-lottieanimation.html</filename>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type></type>
+            <name>finished</name>
+            <anchorfile>qml-qt-labs-lottieqt-lottieanimation.html</anchorfile>
+            <anchor>finished-signal</anchor>
+            <arglist>()</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>void</type>
+            <name>start</name>
+            <anchorfile>qml-qt-labs-lottieqt-lottieanimation.html</anchorfile>
+            <anchor>start-method</anchor>
+            <arglist>()</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>void</type>
+            <name>play</name>
+            <anchorfile>qml-qt-labs-lottieqt-lottieanimation.html</anchorfile>
+            <anchor>play-method</anchor>
+            <arglist>()</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>void</type>
+            <name>pause</name>
+            <anchorfile>qml-qt-labs-lottieqt-lottieanimation.html</anchorfile>
+            <anchor>pause-method</anchor>
+            <arglist>()</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>void</type>
+            <name>togglePause</name>
+            <anchorfile>qml-qt-labs-lottieqt-lottieanimation.html</anchorfile>
+            <anchor>togglePause-method</anchor>
+            <arglist>()</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>void</type>
+            <name>stop</name>
+            <anchorfile>qml-qt-labs-lottieqt-lottieanimation.html</anchorfile>
+            <anchor>stop-method</anchor>
+            <arglist>()</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>void</type>
+            <name>gotoAndPlay</name>
+            <anchorfile>qml-qt-labs-lottieqt-lottieanimation.html</anchorfile>
+            <anchor>gotoAndPlay-method</anchor>
+            <arglist>( frame)</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>bool</type>
+            <name>gotoAndPlay</name>
+            <anchorfile>qml-qt-labs-lottieqt-lottieanimation.html</anchorfile>
+            <anchor>gotoAndPlay-method</anchor>
+            <arglist>( frameMarker)</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>void</type>
+            <name>gotoAndStop</name>
+            <anchorfile>qml-qt-labs-lottieqt-lottieanimation.html</anchorfile>
+            <anchor>gotoAndStop-method</anchor>
+            <arglist>( frame)</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>bool</type>
+            <name>gotoAndStop</name>
+            <anchorfile>qml-qt-labs-lottieqt-lottieanimation.html</anchorfile>
+            <anchor>gotoAndStop-method</anchor>
+            <arglist>( frameMarker)</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>double</type>
+            <name>getDuration</name>
+            <anchorfile>qml-qt-labs-lottieqt-lottieanimation.html</anchorfile>
+            <anchor>getDuration-method</anchor>
+            <arglist>( inFrames)</arglist>
+        </member>
+    </compound>
+</tagfile>

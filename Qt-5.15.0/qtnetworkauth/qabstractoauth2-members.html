@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qabstractoauth2.cpp -->
+  <title>List of All Members for QAbstractOAuth2 | Qt Network Authorization 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtnetworkauth-index.html">Qt Network Authorization</a></li>
+<li><a href="qtnetworkauth-module.html">C++ Classes</a></li>
+<li>QAbstractOAuth2</li>
+<li id="buildversion"><a href="qtnetworkauth-index.html">Qt Network Authorization | Commercial or GPLv3</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar"><div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">List of All Members for QAbstractOAuth2</h1>
+<p>This is the complete list of members for <a href="qabstractoauth2.html">QAbstractOAuth2</a>, including inherited members.</p>
+<div class="table"><table class="propsummary">
+<tr><td class="topAlign"><ul>
+<li class="fn">enum class <span class="name"><b><a href="qabstractoauth.html#ContentType-enum">ContentType</a></b></span></li>
+<li class="fn">enum class <span class="name"><b><a href="qabstractoauth.html#Error-enum">Error</a></b></span></li>
+<li class="fn"><span class="name"><b><a href="qabstractoauth2.html#QAbstractOAuth2-1">QAbstractOAuth2</a></b></span>(QNetworkAccessManager *, QObject *)</li>
+<li class="fn"><span class="name"><b><a href="qabstractoauth2.html#QAbstractOAuth2">QAbstractOAuth2</a></b></span>(QObject *)</li>
+<li class="fn">enum class <span class="name"><b><a href="qabstractoauth.html#Stage-enum">Stage</a></b></span></li>
+<li class="fn">enum class <span class="name"><b><a href="qabstractoauth.html#Status-enum">Status</a></b></span></li>
+<li class="fn"><span class="name"><b><a href="qabstractoauth2.html#authorizationCallbackReceived">authorizationCallbackReceived</a></b></span>(const QVariantMap &amp;)</li>
+<li class="fn"><span class="name"><b><a href="qabstractoauth.html#authorizationUrl-prop">authorizationUrlChanged</a></b></span>(const QUrl &amp;)</li>
+<li class="fn"><span class="name"><b><a href="qabstractoauth.html#authorizeWithBrowser">authorizeWithBrowser</a></b></span>(const QUrl &amp;)</li>
+<li class="fn"><span class="name"><b><a href="qabstractoauth.html#clientIdentifier-prop">clientIdentifierChanged</a></b></span>(const QString &amp;)</li>
+<li class="fn"><span class="name"><b><a href="qabstractoauth2.html#clientIdentifierSharedKey-prop">clientIdentifierSharedKeyChanged</a></b></span>(const QString &amp;)</li>
+<li class="fn"><span class="name"><b><a href="qabstractoauth.html#contentType-prop">contentTypeChanged</a></b></span>(QAbstractOAuth::ContentType )</li>
+<li class="fn"><span class="name"><b><a href="../qtcore/qobject.html#deleteLater">deleteLater</a></b></span>()</li>
+<li class="fn"><span class="name"><b><a href="../qtcore/qobject.html#destroyed">destroyed</a></b></span>(QObject *)</li>
+<li class="fn"><span class="name"><b><a href="qabstractoauth2.html#error">error</a></b></span>(const QString &amp;, const QString &amp;, const QUrl &amp;)</li>
+<li class="fn"><span class="name"><b><a href="qabstractoauth2.html#expiration-prop">expirationAtChanged</a></b></span>(const QDateTime &amp;)</li>
+<li class="fn"><span class="name"><b><a href="qabstractoauth.html#extraTokens-prop">extraTokensChanged</a></b></span>(const QVariantMap &amp;)</li>
+<li class="fn"><span class="name"><b><a href="qabstractoauth.html#grant">grant</a></b></span>()</li>
+<li class="fn"><span class="name"><b><a href="qabstractoauth.html#granted">granted</a></b></span>()</li>
+<li class="fn"><span class="name"><b><a href="../qtcore/qobject.html#objectNameChanged">objectNameChanged</a></b></span>(const QString &amp;)</li>
+<li class="fn"><span class="name"><b><a href="qabstractoauth2.html#refreshToken-prop">refreshTokenChanged</a></b></span>(const QString &amp;)</li>
+<li class="fn"><span class="name"><b><a href="qabstractoauth2.html#scope-prop">scopeChanged</a></b></span>(const QString &amp;)</li>
+<li class="fn"><span class="name"><b><a href="qabstractoauth2.html#state-prop">stateChanged</a></b></span>(const QString &amp;)</li>
+<li class="fn"><span class="name"><b><a href="qabstractoauth.html#status-prop">statusChanged</a></b></span>(QAbstractOAuth::Status )</li>
+<li class="fn"><span class="name"><b><a href="qabstractoauth.html#token-prop">tokenChanged</a></b></span>(const QString &amp;)</li>
+<li class="fn"><span class="name"><b><a href="qabstractoauth2.html#userAgent-prop">userAgentChanged</a></b></span>(const QString &amp;)</li>
+<li class="fn"><span class="name"><b><a href="qabstractoauth2.html#dtor.QAbstractOAuth2">~QAbstractOAuth2</a></b></span>()</li>
+<li class="fn"><span class="name"><b><a href="qabstractoauth.html#authorizationUrl">authorizationUrl</a></b></span>() const : QUrl</li>
+<li class="fn"><span class="name"><b><a href="../qtcore/qobject.html#blockSignals">blockSignals</a></b></span>(bool ) : bool</li>
+<li class="fn"><span class="name"><b><a href="qabstractoauth.html#callback">callback</a></b></span>() const : QString</li>
+<li class="fn"><span class="name"><b><a href="../qtcore/qobject.html#childEvent">childEvent</a></b></span>(QChildEvent *)</li>
+<li class="fn"><span class="name"><b><a href="../qtcore/qobject.html#children">children</a></b></span>() const : const QObjectList &amp;</li>
+<li class="fn"><span class="name"><b><a href="qabstractoauth.html#clientIdentifier">clientIdentifier</a></b></span>() const : QString</li>
+<li class="fn"><span class="name"><b><a href="qabstractoauth2.html#clientIdentifierSharedKey-prop">clientIdentifierSharedKey</a></b></span>() const : QString</li>
+<li class="fn"><span class="name"><b><a href="../qtcore/qobject.html#connect">connect</a></b></span>(const QObject *, const char *, const QObject *, const char *, Qt::ConnectionType ) : QMetaObject::Connection</li>
+<li class="fn"><span class="name"><b><a href="../qtcore/qobject.html#connect-1">connect</a></b></span>(const QObject *, const QMetaMethod &amp;, const QObject *, const QMetaMethod &amp;, Qt::ConnectionType ) : QMetaObject::Connection</li>
+<li class="fn"><span class="name"><b><a href="../qtcore/qobject.html#connect-2">connect</a></b></span>(const QObject *, const char *, const char *, Qt::ConnectionType ) const : QMetaObject::Connection</li>
+<li class="fn"><span class="name"><b><a href="../qtcore/qobject.html#connect-3">connect</a></b></span>(const QObject *, PointerToMemberFunction , const QObject *, PointerToMemberFunction , Qt::ConnectionType ) : QMetaObject::Connection</li>
+<li class="fn"><span class="name"><b><a href="../qtcore/qobject.html#connect-4">connect</a></b></span>(const QObject *, PointerToMemberFunction , Functor ) : QMetaObject::Connection</li>
+<li class="fn"><span class="name"><b><a href="../qtcore/qobject.html#connect-5">connect</a></b></span>(const QObject *, PointerToMemberFunction , const QObject *, Functor , Qt::ConnectionType ) : QMetaObject::Connection</li>
+<li class="fn"><span class="name"><b><a href="../qtcore/qobject.html#connectNotify">connectNotify</a></b></span>(const QMetaMethod &amp;)</li>
+<li class="fn"><span class="name"><b><a href="qabstractoauth.html#contentType">contentType</a></b></span>() const : QAbstractOAuth::ContentType</li>
+<li class="fn"><span class="name"><b><a href="qabstractoauth2.html#createAuthenticatedUrl">createAuthenticatedUrl</a></b></span>(const QUrl &amp;, const QVariantMap &amp;) : QUrl</li>
+<li class="fn"><span class="name"><b><a href="../qtcore/qobject.html#customEvent">customEvent</a></b></span>(QEvent *)</li>
+<li class="fn"><span class="name"><b><a href="qabstractoauth2.html#deleteResource">deleteResource</a></b></span>(const QUrl &amp;, const QVariantMap &amp;) : QNetworkReply *</li>
+<li class="fn"><span class="name"><b><a href="../qtcore/qobject.html#disconnect">disconnect</a></b></span>(const QObject *, const char *, const QObject *, const char *) : bool</li>
+<li class="fn"><span class="name"><b><a href="../qtcore/qobject.html#disconnect-1">disconnect</a></b></span>(const QObject *, const QMetaMethod &amp;, const QObject *, const QMetaMethod &amp;) : bool</li>
+<li class="fn"><span class="name"><b><a href="../qtcore/qobject.html#disconnect-2">disconnect</a></b></span>(const char *, const QObject *, const char *) const : bool</li>
+<li class="fn"><span class="name"><b><a href="../qtcore/qobject.html#disconnect-3">disconnect</a></b></span>(const QObject *, const char *) const : bool</li>
+<li class="fn"><span class="name"><b><a href="../qtcore/qobject.html#disconnect-4">disconnect</a></b></span>(const QMetaObject::Connection &amp;) : bool</li>
+<li class="fn"><span class="name"><b><a href="../qtcore/qobject.html#disconnect-5">disconnect</a></b></span>(const QObject *, PointerToMemberFunction , const QObject *, PointerToMemberFunction ) : bool</li>
+<li class="fn"><span class="name"><b><a href="../qtcore/qobject.html#disconnectNotify">disconnectNotify</a></b></span>(const QMetaMethod &amp;)</li>
+<li class="fn"><span class="name"><b><a href="../qtcore/qobject.html#dumpObjectInfo">dumpObjectInfo</a></b></span>() const</li>
+<li class="fn"><span class="name"><b><a href="../qtcore/qobject.html#dumpObjectTree">dumpObjectTree</a></b></span>() const</li>
+<li class="fn"><span class="name"><b><a href="../qtcore/qobject.html#dynamicPropertyNames">dynamicPropertyNames</a></b></span>() const : QList&lt;QByteArray&gt;</li>
+<li class="fn"><span class="name"><b><a href="../qtcore/qobject.html#event">event</a></b></span>(QEvent *) : bool</li>
+<li class="fn"><span class="name"><b><a href="../qtcore/qobject.html#eventFilter">eventFilter</a></b></span>(QObject *, QEvent *) : bool</li>
+<li class="fn"><span class="name"><b><a href="qabstractoauth2.html#expiration-prop">expirationAt</a></b></span>() const : QDateTime</li>
+<li class="fn"><span class="name"><b><a href="qabstractoauth.html#extraTokens">extraTokens</a></b></span>() const : QVariantMap</li>
+<li class="fn"><span class="name"><b><a href="../qtcore/qobject.html#findChild">findChild</a></b></span>(const QString &amp;, Qt::FindChildOptions ) const : T</li>
+<li class="fn"><span class="name"><b><a href="../qtcore/qobject.html#findChildren">findChildren</a></b></span>(const QString &amp;, Qt::FindChildOptions ) const : QList&lt;T&gt;</li>
+</ul></td><td class="topAlign"><ul>
+<li class="fn"><span class="name"><b><a href="../qtcore/qobject.html#findChildren-2">findChildren</a></b></span>(const QRegularExpression &amp;, Qt::FindChildOptions ) const : QList&lt;T&gt;</li>
+<li class="fn"><span class="name"><b><a href="qabstractoauth.html#generateRandomString">generateRandomString</a></b></span>(quint8 ) : QByteArray</li>
+<li class="fn"><span class="name"><b><a href="qabstractoauth2.html#get">get</a></b></span>(const QUrl &amp;, const QVariantMap &amp;) : QNetworkReply *</li>
+<li class="fn"><span class="name"><b><a href="qabstractoauth2.html#head">head</a></b></span>(const QUrl &amp;, const QVariantMap &amp;) : QNetworkReply *</li>
+<li class="fn"><span class="name"><b><a href="../qtcore/qobject.html#inherits">inherits</a></b></span>(const char *) const : bool</li>
+<li class="fn"><span class="name"><b><a href="../qtcore/qobject.html#installEventFilter">installEventFilter</a></b></span>(QObject *)</li>
+<li class="fn"><span class="name"><b><a href="../qtcore/qobject.html#isSignalConnected">isSignalConnected</a></b></span>(const QMetaMethod &amp;) const : bool</li>
+<li class="fn"><span class="name"><b><a href="../qtcore/qobject.html#isWidgetType">isWidgetType</a></b></span>() const : bool</li>
+<li class="fn"><span class="name"><b><a href="../qtcore/qobject.html#isWindowType">isWindowType</a></b></span>() const : bool</li>
+<li class="fn"><span class="name"><b><a href="../qtcore/qobject.html#killTimer">killTimer</a></b></span>(int )</li>
+<li class="fn"><span class="name"><b><a href="../qtcore/qobject.html#metaObject">metaObject</a></b></span>() const : const QMetaObject *</li>
+<li class="fn"><span class="name"><b><a href="qabstractoauth.html#modifyParametersFunction">modifyParametersFunction</a></b></span>() const : QAbstractOAuth::ModifyParametersFunction</li>
+<li class="fn"><span class="name"><b><a href="../qtcore/qobject.html#moveToThread">moveToThread</a></b></span>(QThread *)</li>
+<li class="fn"><span class="name"><b><a href="qabstractoauth.html#networkAccessManager">networkAccessManager</a></b></span>() const : QNetworkAccessManager *</li>
+<li class="fn"><span class="name"><b><a href="../qtcore/qobject.html#objectName-prop">objectName</a></b></span>() const : QString</li>
+<li class="fn"><span class="name"><b><a href="../qtcore/qobject.html#parent">parent</a></b></span>() const : QObject *</li>
+<li class="fn"><span class="name"><b><a href="qabstractoauth2.html#post">post</a></b></span>(const QUrl &amp;, const QVariantMap &amp;) : QNetworkReply *</li>
+<li class="fn"><span class="name"><b><a href="qabstractoauth2.html#post-1">post</a></b></span>(const QUrl &amp;, const QByteArray &amp;) : QNetworkReply *</li>
+<li class="fn"><span class="name"><b><a href="qabstractoauth2.html#post-2">post</a></b></span>(const QUrl &amp;, QHttpMultiPart *) : QNetworkReply *</li>
+<li class="fn"><span class="name"><b><a href="qabstractoauth.html#prepareRequest">prepareRequest</a></b></span>(QNetworkRequest *, const QByteArray &amp;, const QByteArray &amp;)</li>
+<li class="fn"><span class="name"><b><a href="../qtcore/qobject.html#property">property</a></b></span>(const char *) const : QVariant</li>
+<li class="fn"><span class="name"><b><a href="qabstractoauth2.html#put">put</a></b></span>(const QUrl &amp;, const QVariantMap &amp;) : QNetworkReply *</li>
+<li class="fn"><span class="name"><b><a href="qabstractoauth2.html#put-1">put</a></b></span>(const QUrl &amp;, const QByteArray &amp;) : QNetworkReply *</li>
+<li class="fn"><span class="name"><b><a href="qabstractoauth2.html#put-2">put</a></b></span>(const QUrl &amp;, QHttpMultiPart *) : QNetworkReply *</li>
+<li class="fn"><span class="name"><b><a href="../qtcore/qobject.html#receivers">receivers</a></b></span>(const char *) const : int</li>
+<li class="fn"><span class="name"><b><a href="qabstractoauth2.html#refreshToken">refreshToken</a></b></span>() const : QString</li>
+<li class="fn"><span class="name"><b><a href="../qtcore/qobject.html#removeEventFilter">removeEventFilter</a></b></span>(QObject *)</li>
+<li class="fn"><span class="name"><b><a href="qabstractoauth.html#replyHandler">replyHandler</a></b></span>() const : QAbstractOAuthReplyHandler *</li>
+<li class="fn"><span class="name"><b><a href="qabstractoauth.html#resourceOwnerAuthorization">resourceOwnerAuthorization</a></b></span>(const QUrl &amp;, const QVariantMap &amp;)</li>
+<li class="fn"><span class="name"><b><a href="qabstractoauth2.html#responseType">responseType</a></b></span>() const : QString</li>
+<li class="fn"><span class="name"><b><a href="qabstractoauth2.html#scope-prop">scope</a></b></span>() const : QString</li>
+<li class="fn"><span class="name"><b><a href="../qtcore/qobject.html#sender">sender</a></b></span>() const : QObject *</li>
+<li class="fn"><span class="name"><b><a href="../qtcore/qobject.html#senderSignalIndex">senderSignalIndex</a></b></span>() const : int</li>
+<li class="fn"><span class="name"><b><a href="qabstractoauth.html#setAuthorizationUrl">setAuthorizationUrl</a></b></span>(const QUrl &amp;)</li>
+<li class="fn"><span class="name"><b><a href="qabstractoauth.html#setClientIdentifier">setClientIdentifier</a></b></span>(const QString &amp;)</li>
+<li class="fn"><span class="name"><b><a href="qabstractoauth2.html#clientIdentifierSharedKey-prop">setClientIdentifierSharedKey</a></b></span>(const QString &amp;)</li>
+<li class="fn"><span class="name"><b><a href="qabstractoauth.html#setContentType">setContentType</a></b></span>(QAbstractOAuth::ContentType )</li>
+<li class="fn"><span class="name"><b><a href="qabstractoauth.html#setModifyParametersFunction">setModifyParametersFunction</a></b></span>(const QAbstractOAuth::ModifyParametersFunction &amp;)</li>
+<li class="fn"><span class="name"><b><a href="qabstractoauth.html#setNetworkAccessManager">setNetworkAccessManager</a></b></span>(QNetworkAccessManager *)</li>
+<li class="fn"><span class="name"><b><a href="../qtcore/qobject.html#objectName-prop">setObjectName</a></b></span>(const QString &amp;)</li>
+<li class="fn"><span class="name"><b><a href="../qtcore/qobject.html#setParent">setParent</a></b></span>(QObject *)</li>
+<li class="fn"><span class="name"><b><a href="../qtcore/qobject.html#setProperty">setProperty</a></b></span>(const char *, const QVariant &amp;) : bool</li>
+<li class="fn"><span class="name"><b><a href="qabstractoauth2.html#setRefreshToken">setRefreshToken</a></b></span>(const QString &amp;)</li>
+<li class="fn"><span class="name"><b><a href="qabstractoauth.html#setReplyHandler">setReplyHandler</a></b></span>(QAbstractOAuthReplyHandler *)</li>
+<li class="fn"><span class="name"><b><a href="qabstractoauth2.html#scope-prop">setScope</a></b></span>(const QString &amp;)</li>
+<li class="fn"><span class="name"><b><a href="qabstractoauth2.html#state-prop">setState</a></b></span>(const QString &amp;)</li>
+<li class="fn"><span class="name"><b><a href="qabstractoauth.html#setStatus">setStatus</a></b></span>(QAbstractOAuth::Status )</li>
+<li class="fn"><span class="name"><b><a href="qabstractoauth.html#setToken">setToken</a></b></span>(const QString &amp;)</li>
+<li class="fn"><span class="name"><b><a href="qabstractoauth2.html#userAgent-prop">setUserAgent</a></b></span>(const QString &amp;)</li>
+<li class="fn"><span class="name"><b><a href="../qtcore/qobject.html#signalsBlocked">signalsBlocked</a></b></span>() const : bool</li>
+<li class="fn"><span class="name"><b><a href="../qtcore/qobject.html#startTimer">startTimer</a></b></span>(int , Qt::TimerType ) : int</li>
+<li class="fn"><span class="name"><b><a href="../qtcore/qobject.html#startTimer-1">startTimer</a></b></span>(std::chrono::milliseconds , Qt::TimerType ) : int</li>
+<li class="fn"><span class="name"><b><a href="qabstractoauth2.html#state-prop">state</a></b></span>() const : QString</li>
+<li class="fn"><span class="name"><b><a href="../qtcore/qobject.html#staticMetaObject-var">staticMetaObject</a></b></span> : </li>
+<li class="fn"><span class="name"><b><a href="qabstractoauth.html#status">status</a></b></span>() const : QAbstractOAuth::Status</li>
+<li class="fn"><span class="name"><b><a href="../qtcore/qobject.html#thread">thread</a></b></span>() const : QThread *</li>
+<li class="fn"><span class="name"><b><a href="../qtcore/qobject.html#timerEvent">timerEvent</a></b></span>(QTimerEvent *)</li>
+<li class="fn"><span class="name"><b><a href="qabstractoauth.html#token">token</a></b></span>() const : QString</li>
+<li class="fn"><span class="name"><b><a href="../qtcore/qobject.html#tr">tr</a></b></span>(const char *, const char *, int ) : QString</li>
+<li class="fn"><span class="name"><b><a href="qabstractoauth2.html#userAgent-prop">userAgent</a></b></span>() const : QString</li>
+</ul>
+</td></tr>
+</table></div>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

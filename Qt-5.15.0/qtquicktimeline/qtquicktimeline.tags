@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tagfile>
+    <compound kind="class">
+        <name>QtQuick.Timeline.Keyframe</name>
+        <filename>qml-qtquick-timeline-keyframe.html</filename>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type></type>
+            <name>easingCurveChanged</name>
+            <anchorfile>qml-qtquick-timeline-keyframe.html</anchorfile>
+            <anchor>easingCurveChanged-signal</anchor>
+            <arglist>()</arglist>
+        </member>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick.Timeline.KeyframeGroup</name>
+        <filename>qml-qtquick-timeline-keyframegroup.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick.Timeline.Timeline</name>
+        <filename>qml-qtquick-timeline-timeline.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick.Timeline.TimelineAnimation</name>
+        <filename>qml-qtquick-timeline-timelineanimation.html</filename>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type></type>
+            <name>finished</name>
+            <anchorfile>qml-qtquick-timeline-timelineanimation.html</anchorfile>
+            <anchor>finished-signal</anchor>
+            <arglist>()</arglist>
+        </member>
+    </compound>
+</tagfile>

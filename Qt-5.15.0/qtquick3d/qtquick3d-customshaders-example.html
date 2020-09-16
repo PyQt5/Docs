@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qtquick3d-examples-customshaders.qdoc -->
+  <title>Qt Quick 3D - Custom Shaders Example | Qt Quick 3D 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtquick3d-index.html">Qt Quick 3D</a></li>
+<li>Qt Quick 3D - Custom Shaders Example</li>
+<li id="buildversion"><a href="qtquick3d-index.html">Qt Quick 3D | Commercial or GPLv3</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#implementing-a-custom-material">Implementing a custom material</a></li>
+<li class="level1"><a href="#using-a-custom-material">Using a custom material</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Qt Quick 3D - Custom Shaders Example</h1>
+<span class="subtitle"></span>
+<!-- $$$customshaders-brief -->
+<p>Demonstrates the use of custom vertex and fragment shaders.</p>
+<!-- @@@customshaders -->
+<!-- $$$customshaders-description -->
+<div class="descr"> <a name="details"></a>
+<p>This example demonstrates using a custom material composed by a vertex and a fragment shader.</p>
+<p class="centerAlign"><img src="images/customshaders-example.png" alt="" /></p><a name="implementing-a-custom-material"></a>
+<h4 id="implementing-a-custom-material">Implementing a custom material</h4>
+<p>Uniforms used in the shader are declared in the <a href="qml-qtquick3d-materials-custommaterial.html">CustomMaterial</a> and the declaration is added dynamically to the shader file by the shader generator. <a href="qml-qtquick3d-shaderinfo.html">ShaderInfo</a> includes GLSL version that is also added to the shaders, so version declaration is not allowed in the custom shaders themselves.</p>
+<p>Each shader is implemented in a separate shader file. In this example, the vertex shader is defined in example.vert and the fragment shader in example.frag. Each shader has to be declared in QML and the stage set appropriately. A custom pass using those particular shaders is also needed.</p>
+<p>In this example, a mesh is deformed by the vertex shader according to a sine function. The end result is controlled by two sliders corresponding to the time and amplitude values of the sine function. The fragment shader is used to color the mesh according to the position values of the vertices.</p>
+<pre class="qml">
+ <span class="type"><a href="qml-qtquick3d-materials-custommaterial.html">CustomMaterial</a></span> {
+     property <span class="type"><a href="../qtqml/qml-real.html">real</a></span> <span class="name">time</span>: <span class="number">0.0</span>
+     property <span class="type"><a href="../qtqml/qml-real.html">real</a></span> <span class="name">amplitude</span>: <span class="number">5.0</span>
+
+     <span class="name">shaderInfo</span>: <span class="name">ShaderInfo</span> {
+         <span class="name">version</span>: <span class="string">&quot;330&quot;</span>
+         <span class="name">type</span>: <span class="string">&quot;GLSL&quot;</span>
+     }
+
+     <span class="type"><a href="qml-qtquick3d-shader.html">Shader</a></span> {
+         <span class="name">id</span>: <span class="name">vertShader</span>
+         <span class="name">stage</span>: <span class="name">Shader</span>.<span class="name">Vertex</span>
+         <span class="name">shader</span>: <span class="string">&quot;example.vert&quot;</span>
+     }
+
+     <span class="type"><a href="qml-qtquick3d-shader.html">Shader</a></span> {
+         <span class="name">id</span>: <span class="name">fragShader</span>
+         <span class="name">stage</span>: <span class="name">Shader</span>.<span class="name">Fragment</span>
+         <span class="name">shader</span>: <span class="string">&quot;example.frag&quot;</span>
+     }
+
+     <span class="name">passes</span>: [ <span class="type"><a href="qml-qtquick3d-pass.html">Pass</a></span> {
+             <span class="name">shaders</span>: [ <span class="name">vertShader</span>, <span class="name">fragShader</span> ]
+         }
+     ]
+ }
+</pre>
+<a name="using-a-custom-material"></a>
+<h4 id="using-a-custom-material">Using a custom material</h4>
+<p>A custom material using custom shaders is used the same way as any other material. The uniforms in the shader can be easily updated with property bindings in the QML.</p>
+<pre class="qml">
+ <span class="type"><a href="qml-qtquick3d-model.html">Model</a></span> {
+     <span class="name">position</span>: <span class="name">Qt</span>.<span class="name">vector3d</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>)
+     <span class="name">scale</span>: <span class="name">Qt</span>.<span class="name">vector3d</span>(<span class="number">2</span>, <span class="number">2</span>, <span class="number">2</span>)
+     <span class="name">source</span>: <span class="string">&quot;#Sphere&quot;</span>
+     <span class="name">materials</span>: [
+         <span class="type">ExampleMaterial</span> {
+             <span class="name">id</span>: <span class="name">exampleMaterial</span>
+             <span class="name">time</span>: <span class="name">control</span>.<span class="name">time</span>
+             <span class="name">amplitude</span>: <span class="name">control</span>.<span class="name">amplitude</span>
+         }
+     ]
+ }
+</pre>
+<p>Files:</p>
+<ul>
+<li><a href="qtquick3d-customshaders-examplematerial-qml.html">customshaders/ExampleMaterial.qml</a></li>
+<li><a href="qtquick3d-customshaders-materialcontrol-qml.html">customshaders/MaterialControl.qml</a></li>
+<li><a href="qtquick3d-customshaders-customshaders-pro.html">customshaders/customshaders.pro</a></li>
+<li><a href="qtquick3d-customshaders-main-cpp.html">customshaders/main.cpp</a></li>
+<li><a href="qtquick3d-customshaders-main-qml.html">customshaders/main.qml</a></li>
+<li><a href="qtquick3d-customshaders-resources-qrc.html">customshaders/resources.qrc</a></li>
+</ul>
+</div>
+<!-- @@@customshaders -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

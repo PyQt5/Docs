@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qquick3dshaderutils.cpp -->
+  <title>Shader QML Type | Qt Quick 3D 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtquick3d-index.html">Qt Quick 3D</a></li>
+<li><a href="qtquick3d-qmlmodule.html">QML Types</a></li>
+<li>Shader QML Type</li>
+<li id="buildversion"><a href="qtquick3d-index.html">Qt Quick 3D | Commercial or GPLv3</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Shader QML Type</h1>
+<span class="subtitle"></span>
+<!-- $$$Shader-brief -->
+<p>Container component for defining shader code used by CustomMaterials and Effects. <a href="#details">More...</a></p>
+<!-- @@@Shader -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Import Statement:</td><td class="memItemRight bottomAlign"> import QtQuick3D 1.15</td></tr></table></div><ul>
+<li><a href="qml-qtquick3d-shader-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="properties"></a>
+<h2 id="properties">Properties</h2>
+<ul>
+<li class="fn"><b><b><a href="qml-qtquick3d-shader.html#shader-prop">shader</a></b></b> : string</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-shader.html#stage-prop">stage</a></b></b> : enumeration</li>
+</ul>
+<!-- $$$Shader-description -->
+<a name="details"></a>
+<h2 id="details">Detailed Description</h2>
+<!-- @@@Shader -->
+<h2>Property Documentation</h2>
+<!-- $$$shader -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="shader-prop">
+<td class="tblQmlPropNode"><p>
+<a name="shader-prop"></a><span class="name">shader</span> : <span class="type"><a href="../qtqml/qml-string.html">string</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Specifies the name of the shader source file.</p>
+</div></div><!-- @@@shader -->
+<br/>
+<!-- $$$stage -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="stage-prop">
+<td class="tblQmlPropNode"><p>
+<a name="stage-prop"></a><span class="name">stage</span> : <span class="type"><a href="../qtqml/qml-enumeration.html">enumeration</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Specifies the shader stage. The default is <code>Shader.Shared</code></p>
+<div class="table"><table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><code>Shader.Shared</code></td><td class="topAlign">The shader can be shared among different stages</td></tr>
+<tr><td class="topAlign"><code>Shader.Vertex</code></td><td class="topAlign">The shader is a vertex shader</td></tr>
+<tr><td class="topAlign"><code>Shader.Fragment</code></td><td class="topAlign">The shader is a fragment shader</td></tr>
+<tr><td class="topAlign"><code>Shader.Geometry</code></td><td class="topAlign">The shader is a geometry shader</td></tr>
+<tr><td class="topAlign"><code>Shader.Compute</code></td><td class="topAlign">The shader is a compute shader</td></tr>
+</table></div>
+</div></div><!-- @@@stage -->
+<br/>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

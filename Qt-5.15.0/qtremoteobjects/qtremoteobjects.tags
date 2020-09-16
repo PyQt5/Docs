@@ -1,0 +1,766 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tagfile>
+    <compound kind="class">
+        <name>QtRemoteObjects.Host</name>
+        <filename>qml-qtremoteobjects-host.html</filename>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>bool</type>
+            <name>enableRemoting</name>
+            <anchorfile>qml-qtremoteobjects-host.html</anchorfile>
+            <anchor>enableRemoting-method</anchor>
+            <arglist>( object,  string name)</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>bool</type>
+            <name>disableRemoting</name>
+            <anchorfile>qml-qtremoteobjects-host.html</anchorfile>
+            <anchor>disableRemoting-method</anchor>
+            <arglist>( remoteObject)</arglist>
+        </member>
+    </compound>
+    <compound kind="class">
+        <name>QtRemoteObjects.Node</name>
+        <filename>qml-qtremoteobjects-node.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QRemoteObjectAbstractPersistedStore</name>
+        <filename>qremoteobjectabstractpersistedstore.html</filename>
+        <base>QObject</base>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type></type>
+            <name>QRemoteObjectAbstractPersistedStore</name>
+            <anchorfile>qremoteobjectabstractpersistedstore.html</anchorfile>
+            <anchor>QRemoteObjectAbstractPersistedStore</anchor>
+            <arglist>(QObject *parent)</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="pure" static="no">
+            <type>virtual void</type>
+            <name>saveProperties</name>
+            <anchorfile>qremoteobjectabstractpersistedstore.html</anchorfile>
+            <anchor>saveProperties</anchor>
+            <arglist>(const QString &amp;repName, const QByteArray &amp;repSig, const QVariantList &amp;values) = 0</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="pure" static="no">
+            <type>virtual QVariantList</type>
+            <name>restoreProperties</name>
+            <anchorfile>qremoteobjectabstractpersistedstore.html</anchorfile>
+            <anchor>restoreProperties</anchor>
+            <arglist>(const QString &amp;repName, const QByteArray &amp;repSig) = 0</arglist>
+        </member>
+    </compound>
+    <compound kind="class">
+        <name>QRemoteObjectDynamicReplica</name>
+        <filename>qremoteobjectdynamicreplica.html</filename>
+        <base>QRemoteObjectReplica</base>
+        <member kind="function" protection="public" virtualness="virtual" static="no">
+            <type>virtual </type>
+            <name>~QRemoteObjectDynamicReplica</name>
+            <anchorfile>qremoteobjectdynamicreplica.html</anchorfile>
+            <anchor>dtor.QRemoteObjectDynamicReplica</anchor>
+            <arglist>() override</arglist>
+        </member>
+    </compound>
+    <compound kind="class">
+        <name>QRemoteObjectHost</name>
+        <filename>qremoteobjecthost.html</filename>
+        <base>QRemoteObjectHostBase</base>
+        <member kind="property" type="QUrl">
+            <name>hostUrl</name>
+            <anchorfile>qremoteobjecthost.html</anchorfile>
+            <anchor>hostUrl-prop</anchor>
+            <arglist></arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type></type>
+            <name>QRemoteObjectHost</name>
+            <anchorfile>qremoteobjecthost.html</anchorfile>
+            <anchor>QRemoteObjectHost</anchor>
+            <arglist>(QObject *parent)</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type></type>
+            <name>QRemoteObjectHost</name>
+            <anchorfile>qremoteobjecthost.html</anchorfile>
+            <anchor>QRemoteObjectHost-1</anchor>
+            <arglist>(const QUrl &amp;address, const QUrl &amp;registryAddress, QRemoteObjectHostBase::AllowedSchemas allowedSchemas, QObject *parent)</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type></type>
+            <name>QRemoteObjectHost</name>
+            <anchorfile>qremoteobjecthost.html</anchorfile>
+            <anchor>QRemoteObjectHost-2</anchor>
+            <arglist>(const QUrl &amp;address, QObject *parent)</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="virtual" static="no">
+            <type>virtual QUrl</type>
+            <name>hostUrl</name>
+            <anchorfile>qremoteobjecthost.html</anchorfile>
+            <anchor>hostUrl</anchor>
+            <arglist>() const const override</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="virtual" static="no">
+            <type>virtual bool</type>
+            <name>setHostUrl</name>
+            <anchorfile>qremoteobjecthost.html</anchorfile>
+            <anchor>setHostUrl</anchor>
+            <arglist>(const QUrl &amp;hostAddress, QRemoteObjectHostBase::AllowedSchemas allowedSchemas) override</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>void</type>
+            <name>hostUrlChanged</name>
+            <anchorfile>qremoteobjecthost.html</anchorfile>
+            <anchor>hostUrl-prop</anchor>
+            <arglist>()</arglist>
+        </member>
+    </compound>
+    <compound kind="class">
+        <name>QRemoteObjectHostBase</name>
+        <filename>qremoteobjecthostbase.html</filename>
+        <base>QRemoteObjectNode</base>
+        <member kind="enumeration">
+            <name>AllowedSchemas</name>
+            <anchorfile>qremoteobjecthostbase.html</anchorfile>
+            <anchor>AllowedSchemas-enum</anchor>
+        </member>
+        <member kind="enumvalue">
+            <name>BuiltInSchemasOnly</name>
+            <anchorfile>qremoteobjecthostbase.html</anchorfile>
+            <anchor>AllowedSchemas-enum</anchor>
+            <arglist></arglist>
+        </member>
+        <member kind="enumvalue">
+            <name>AllowExternalRegistration</name>
+            <anchorfile>qremoteobjecthostbase.html</anchorfile>
+            <anchor>AllowedSchemas-enum</anchor>
+            <arglist></arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="virtual" static="no">
+            <type>virtual void</type>
+            <name>setName</name>
+            <anchorfile>qremoteobjecthostbase.html</anchorfile>
+            <anchor>setName</anchor>
+            <arglist>(const QString &amp;name) override</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>bool</type>
+            <name>enableRemoting</name>
+            <anchorfile>qremoteobjecthostbase.html</anchorfile>
+            <anchor>enableRemoting</anchor>
+            <arglist>(ObjectType *object)</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>bool</type>
+            <name>enableRemoting</name>
+            <anchorfile>qremoteobjecthostbase.html</anchorfile>
+            <anchor>enableRemoting-1</anchor>
+            <arglist>(QObject *object, const QString &amp;name)</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>bool</type>
+            <name>enableRemoting</name>
+            <anchorfile>qremoteobjecthostbase.html</anchorfile>
+            <anchor>enableRemoting-2</anchor>
+            <arglist>(QAbstractItemModel *model, const QString &amp;name, const QVector&lt;int&gt; roles, QItemSelectionModel *selectionModel)</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>bool</type>
+            <name>disableRemoting</name>
+            <anchorfile>qremoteobjecthostbase.html</anchorfile>
+            <anchor>disableRemoting</anchor>
+            <arglist>(QObject *remoteObject)</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>void</type>
+            <name>addHostSideConnection</name>
+            <anchorfile>qremoteobjecthostbase.html</anchorfile>
+            <anchor>addHostSideConnection</anchor>
+            <arglist>(QIODevice *ioDevice)</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>bool</type>
+            <name>proxy</name>
+            <anchorfile>qremoteobjecthostbase.html</anchorfile>
+            <anchor>proxy</anchor>
+            <arglist>(const QUrl &amp;registryUrl, const QUrl &amp;hostUrl, QRemoteObjectHostBase::RemoteObjectNameFilter filter)</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>bool</type>
+            <name>reverseProxy</name>
+            <anchorfile>qremoteobjecthostbase.html</anchorfile>
+            <anchor>reverseProxy</anchor>
+            <arglist>(QRemoteObjectHostBase::RemoteObjectNameFilter filter)</arglist>
+        </member>
+    </compound>
+    <compound kind="class">
+        <name>QRemoteObjectNode</name>
+        <filename>qremoteobjectnode.html</filename>
+        <base>QObject</base>
+        <member kind="property" type="QUrl">
+            <name>registryUrl</name>
+            <anchorfile>qremoteobjectnode.html</anchorfile>
+            <anchor>registryUrl-prop</anchor>
+            <arglist></arglist>
+        </member>
+        <member kind="property" type="QRemoteObjectAbstractPersistedStore*">
+            <name>persistedStore</name>
+            <anchorfile>qremoteobjectnode.html</anchorfile>
+            <anchor>persistedStore-prop</anchor>
+            <arglist></arglist>
+        </member>
+        <member kind="property" type="int">
+            <name>heartbeatInterval</name>
+            <anchorfile>qremoteobjectnode.html</anchorfile>
+            <anchor>heartbeatInterval-prop</anchor>
+            <arglist></arglist>
+        </member>
+        <member kind="enumeration">
+            <name>ErrorCode</name>
+            <anchorfile>qremoteobjectnode.html</anchorfile>
+            <anchor>ErrorCode-enum</anchor>
+        </member>
+        <member kind="enumvalue">
+            <name>NoError</name>
+            <anchorfile>qremoteobjectnode.html</anchorfile>
+            <anchor>ErrorCode-enum</anchor>
+            <arglist></arglist>
+        </member>
+        <member kind="enumvalue">
+            <name>RegistryNotAcquired</name>
+            <anchorfile>qremoteobjectnode.html</anchorfile>
+            <anchor>ErrorCode-enum</anchor>
+            <arglist></arglist>
+        </member>
+        <member kind="enumvalue">
+            <name>RegistryAlreadyHosted</name>
+            <anchorfile>qremoteobjectnode.html</anchorfile>
+            <anchor>ErrorCode-enum</anchor>
+            <arglist></arglist>
+        </member>
+        <member kind="enumvalue">
+            <name>NodeIsNoServer</name>
+            <anchorfile>qremoteobjectnode.html</anchorfile>
+            <anchor>ErrorCode-enum</anchor>
+            <arglist></arglist>
+        </member>
+        <member kind="enumvalue">
+            <name>ServerAlreadyCreated</name>
+            <anchorfile>qremoteobjectnode.html</anchorfile>
+            <anchor>ErrorCode-enum</anchor>
+            <arglist></arglist>
+        </member>
+        <member kind="enumvalue">
+            <name>UnintendedRegistryHosting</name>
+            <anchorfile>qremoteobjectnode.html</anchorfile>
+            <anchor>ErrorCode-enum</anchor>
+            <arglist></arglist>
+        </member>
+        <member kind="enumvalue">
+            <name>OperationNotValidOnClientNode</name>
+            <anchorfile>qremoteobjectnode.html</anchorfile>
+            <anchor>ErrorCode-enum</anchor>
+            <arglist></arglist>
+        </member>
+        <member kind="enumvalue">
+            <name>SourceNotRegistered</name>
+            <anchorfile>qremoteobjectnode.html</anchorfile>
+            <anchor>ErrorCode-enum</anchor>
+            <arglist></arglist>
+        </member>
+        <member kind="enumvalue">
+            <name>MissingObjectName</name>
+            <anchorfile>qremoteobjectnode.html</anchorfile>
+            <anchor>ErrorCode-enum</anchor>
+            <arglist></arglist>
+        </member>
+        <member kind="enumvalue">
+            <name>HostUrlInvalid</name>
+            <anchorfile>qremoteobjectnode.html</anchorfile>
+            <anchor>ErrorCode-enum</anchor>
+            <arglist></arglist>
+        </member>
+        <member kind="enumvalue">
+            <name>ProtocolMismatch</name>
+            <anchorfile>qremoteobjectnode.html</anchorfile>
+            <anchor>ErrorCode-enum</anchor>
+            <arglist></arglist>
+        </member>
+        <member kind="enumvalue">
+            <name>ListenFailed</name>
+            <anchorfile>qremoteobjectnode.html</anchorfile>
+            <anchor>ErrorCode-enum</anchor>
+            <arglist></arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type></type>
+            <name>QRemoteObjectNode</name>
+            <anchorfile>qremoteobjectnode.html</anchorfile>
+            <anchor>QRemoteObjectNode</anchor>
+            <arglist>(QObject *parent)</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type></type>
+            <name>QRemoteObjectNode</name>
+            <anchorfile>qremoteobjectnode.html</anchorfile>
+            <anchor>QRemoteObjectNode-1</anchor>
+            <arglist>(const QUrl &amp;registryAddress, QObject *parent)</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>bool</type>
+            <name>connectToNode</name>
+            <anchorfile>qremoteobjectnode.html</anchorfile>
+            <anchor>connectToNode</anchor>
+            <arglist>(const QUrl &amp;address)</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>void</type>
+            <name>addClientSideConnection</name>
+            <anchorfile>qremoteobjectnode.html</anchorfile>
+            <anchor>addClientSideConnection</anchor>
+            <arglist>(QIODevice *ioDevice)</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="virtual" static="no">
+            <type>virtual void</type>
+            <name>setName</name>
+            <anchorfile>qremoteobjectnode.html</anchorfile>
+            <anchor>setName</anchor>
+            <arglist>(const QString &amp;name)</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>ObjectType *</type>
+            <name>acquire</name>
+            <anchorfile>qremoteobjectnode.html</anchorfile>
+            <anchor>acquire</anchor>
+            <arglist>(const QString &amp;name)</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>QStringList</type>
+            <name>instances</name>
+            <anchorfile>qremoteobjectnode.html</anchorfile>
+            <anchor>instances</anchor>
+            <arglist>() const const</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>QStringList</type>
+            <name>instances</name>
+            <anchorfile>qremoteobjectnode.html</anchorfile>
+            <anchor>instances-1</anchor>
+            <arglist>(const QString &amp;typeName) const const</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>QRemoteObjectDynamicReplica *</type>
+            <name>acquireDynamic</name>
+            <anchorfile>qremoteobjectnode.html</anchorfile>
+            <anchor>acquireDynamic</anchor>
+            <arglist>(const QString &amp;name)</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>QAbstractItemModelReplica *</type>
+            <name>acquireModel</name>
+            <anchorfile>qremoteobjectnode.html</anchorfile>
+            <anchor>acquireModel</anchor>
+            <arglist>(const QString &amp;name, QtRemoteObjects::InitialAction action, const QVector&lt;int&gt; &amp;rolesHint)</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>QUrl</type>
+            <name>registryUrl</name>
+            <anchorfile>qremoteobjectnode.html</anchorfile>
+            <anchor>registryUrl-prop</anchor>
+            <arglist>() const const</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="virtual" static="no">
+            <type>virtual bool</type>
+            <name>setRegistryUrl</name>
+            <anchorfile>qremoteobjectnode.html</anchorfile>
+            <anchor>registryUrl-prop</anchor>
+            <arglist>(const QUrl &amp;registryAddress)</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>bool</type>
+            <name>waitForRegistry</name>
+            <anchorfile>qremoteobjectnode.html</anchorfile>
+            <anchor>waitForRegistry</anchor>
+            <arglist>(int timeout)</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>const QRemoteObjectRegistry *</type>
+            <name>registry</name>
+            <anchorfile>qremoteobjectnode.html</anchorfile>
+            <anchor>registry</anchor>
+            <arglist>() const const</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>QRemoteObjectAbstractPersistedStore *</type>
+            <name>persistedStore</name>
+            <anchorfile>qremoteobjectnode.html</anchorfile>
+            <anchor>persistedStore-prop</anchor>
+            <arglist>() const const</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>void</type>
+            <name>setPersistedStore</name>
+            <anchorfile>qremoteobjectnode.html</anchorfile>
+            <anchor>persistedStore-prop</anchor>
+            <arglist>(QRemoteObjectAbstractPersistedStore *persistedStore)</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>QRemoteObjectNode::ErrorCode</type>
+            <name>lastError</name>
+            <anchorfile>qremoteobjectnode.html</anchorfile>
+            <anchor>lastError</anchor>
+            <arglist>() const const</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>int</type>
+            <name>heartbeatInterval</name>
+            <anchorfile>qremoteobjectnode.html</anchorfile>
+            <anchor>heartbeatInterval-prop</anchor>
+            <arglist>() const const</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>void</type>
+            <name>setHeartbeatInterval</name>
+            <anchorfile>qremoteobjectnode.html</anchorfile>
+            <anchor>heartbeatInterval-prop</anchor>
+            <arglist>(int interval)</arglist>
+        </member>
+        <member kind="typedef" type="">
+            <name>RemoteObjectSchemaHandler</name>
+            <anchorfile>qremoteobjectnode.html</anchorfile>
+            <anchor>RemoteObjectSchemaHandler-typedef</anchor>
+            <arglist></arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>void</type>
+            <name>registerExternalSchema</name>
+            <anchorfile>qremoteobjectnode.html</anchorfile>
+            <anchor>registerExternalSchema</anchor>
+            <arglist>(const QString &amp;schema, QRemoteObjectNode::RemoteObjectSchemaHandler handler)</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>void</type>
+            <name>remoteObjectAdded</name>
+            <anchorfile>qremoteobjectnode.html</anchorfile>
+            <anchor>remoteObjectAdded</anchor>
+            <arglist>(const QRemoteObjectSourceLocation &amp;loc)</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>void</type>
+            <name>remoteObjectRemoved</name>
+            <anchorfile>qremoteobjectnode.html</anchorfile>
+            <anchor>remoteObjectRemoved</anchor>
+            <arglist>(const QRemoteObjectSourceLocation &amp;loc)</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>void</type>
+            <name>heartbeatIntervalChanged</name>
+            <anchorfile>qremoteobjectnode.html</anchorfile>
+            <anchor>heartbeatInterval-prop</anchor>
+            <arglist>(int heartbeatInterval)</arglist>
+        </member>
+        <member kind="function" protection="protected" virtualness="virtual" static="no">
+            <type>virtual void</type>
+            <name>timerEvent</name>
+            <anchorfile>qremoteobjectnode.html</anchorfile>
+            <anchor>timerEvent</anchor>
+            <arglist>(QTimerEvent *) override</arglist>
+        </member>
+    </compound>
+    <compound kind="class">
+        <name>QRemoteObjectPendingCall</name>
+        <filename>qremoteobjectpendingcall.html</filename>
+        <member kind="enumeration">
+            <name>Error</name>
+            <anchorfile>qremoteobjectpendingcall.html</anchorfile>
+            <anchor>Error-enum</anchor>
+        </member>
+        <member kind="enumvalue">
+            <name>NoError</name>
+            <anchorfile>qremoteobjectpendingcall.html</anchorfile>
+            <anchor>Error-enum</anchor>
+            <arglist></arglist>
+        </member>
+        <member kind="enumvalue">
+            <name>InvalidMessage</name>
+            <anchorfile>qremoteobjectpendingcall.html</anchorfile>
+            <anchor>Error-enum</anchor>
+            <arglist></arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>QVariant</type>
+            <name>returnValue</name>
+            <anchorfile>qremoteobjectpendingcall.html</anchorfile>
+            <anchor>returnValue</anchor>
+            <arglist>() const const</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>QRemoteObjectPendingCall::Error</type>
+            <name>error</name>
+            <anchorfile>qremoteobjectpendingcall.html</anchorfile>
+            <anchor>error</anchor>
+            <arglist>() const const</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>bool</type>
+            <name>isFinished</name>
+            <anchorfile>qremoteobjectpendingcall.html</anchorfile>
+            <anchor>isFinished</anchor>
+            <arglist>() const const</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>bool</type>
+            <name>waitForFinished</name>
+            <anchorfile>qremoteobjectpendingcall.html</anchorfile>
+            <anchor>waitForFinished</anchor>
+            <arglist>(int timeout)</arglist>
+        </member>
+    </compound>
+    <compound kind="class">
+        <name>QRemoteObjectPendingCallWatcher</name>
+        <filename>qremoteobjectpendingcallwatcher.html</filename>
+        <base>QObject</base>
+        <base>QRemoteObjectPendingCall</base>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>bool</type>
+            <name>isFinished</name>
+            <anchorfile>qremoteobjectpendingcallwatcher.html</anchorfile>
+            <anchor>isFinished</anchor>
+            <arglist>() const const</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>void</type>
+            <name>waitForFinished</name>
+            <anchorfile>qremoteobjectpendingcallwatcher.html</anchorfile>
+            <anchor>waitForFinished</anchor>
+            <arglist>()</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>void</type>
+            <name>finished</name>
+            <anchorfile>qremoteobjectpendingcallwatcher.html</anchorfile>
+            <anchor>finished</anchor>
+            <arglist>(QRemoteObjectPendingCallWatcher *self)</arglist>
+        </member>
+    </compound>
+    <compound kind="class">
+        <name>QRemoteObjectPendingReply</name>
+        <filename>qremoteobjectpendingreply.html</filename>
+        <base>QRemoteObjectPendingCall</base>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>QRemoteObjectPendingReply::Type</type>
+            <name>returnValue</name>
+            <anchorfile>qremoteobjectpendingreply.html</anchorfile>
+            <anchor>returnValue</anchor>
+            <arglist>() const const</arglist>
+        </member>
+    </compound>
+    <compound kind="class">
+        <name>QRemoteObjectRegistry</name>
+        <filename>qremoteobjectregistry.html</filename>
+        <base>QRemoteObjectReplica</base>
+        <member kind="property" type="QRemoteObjectSourceLocations">
+            <name>sourceLocations</name>
+            <anchorfile>qremoteobjectregistry.html</anchorfile>
+            <anchor>sourceLocations-prop</anchor>
+            <arglist></arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="virtual" static="no">
+            <type>virtual </type>
+            <name>~QRemoteObjectRegistry</name>
+            <anchorfile>qremoteobjectregistry.html</anchorfile>
+            <anchor>dtor.QRemoteObjectRegistry</anchor>
+            <arglist>() override</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>QRemoteObjectSourceLocations</type>
+            <name>sourceLocations</name>
+            <anchorfile>qremoteobjectregistry.html</anchorfile>
+            <anchor>sourceLocations</anchor>
+            <arglist>() const const</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>void</type>
+            <name>remoteObjectAdded</name>
+            <anchorfile>qremoteobjectregistry.html</anchorfile>
+            <anchor>remoteObjectAdded</anchor>
+            <arglist>(const QRemoteObjectSourceLocation &amp;entry)</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>void</type>
+            <name>remoteObjectRemoved</name>
+            <anchorfile>qremoteobjectregistry.html</anchorfile>
+            <anchor>remoteObjectRemoved</anchor>
+            <arglist>(const QRemoteObjectSourceLocation &amp;entry)</arglist>
+        </member>
+    </compound>
+    <compound kind="class">
+        <name>QRemoteObjectRegistryHost</name>
+        <filename>qremoteobjectregistryhost.html</filename>
+        <base>QRemoteObjectHostBase</base>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type></type>
+            <name>QRemoteObjectRegistryHost</name>
+            <anchorfile>qremoteobjectregistryhost.html</anchorfile>
+            <anchor>QRemoteObjectRegistryHost</anchor>
+            <arglist>(const QUrl &amp;registryAddress, QObject *parent)</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="virtual" static="no">
+            <type>virtual bool</type>
+            <name>setRegistryUrl</name>
+            <anchorfile>qremoteobjectregistryhost.html</anchorfile>
+            <anchor>setRegistryUrl</anchor>
+            <arglist>(const QUrl &amp;registryUrl) override</arglist>
+        </member>
+    </compound>
+    <compound kind="class">
+        <name>QRemoteObjectReplica</name>
+        <filename>qremoteobjectreplica.html</filename>
+        <base>QObject</base>
+        <member kind="property" type="QRemoteObjectNode*">
+            <name>node</name>
+            <anchorfile>qremoteobjectreplica.html</anchorfile>
+            <anchor>node-prop</anchor>
+            <arglist></arglist>
+        </member>
+        <member kind="property" type="State">
+            <name>state</name>
+            <anchorfile>qremoteobjectreplica.html</anchorfile>
+            <anchor>state-prop</anchor>
+            <arglist></arglist>
+        </member>
+        <member kind="enumeration">
+            <name>State</name>
+            <anchorfile>qremoteobjectreplica.html</anchorfile>
+            <anchor>State-enum</anchor>
+        </member>
+        <member kind="enumvalue">
+            <name>Uninitialized</name>
+            <anchorfile>qremoteobjectreplica.html</anchorfile>
+            <anchor>State-enum</anchor>
+            <arglist></arglist>
+        </member>
+        <member kind="enumvalue">
+            <name>Default</name>
+            <anchorfile>qremoteobjectreplica.html</anchorfile>
+            <anchor>State-enum</anchor>
+            <arglist></arglist>
+        </member>
+        <member kind="enumvalue">
+            <name>Valid</name>
+            <anchorfile>qremoteobjectreplica.html</anchorfile>
+            <anchor>State-enum</anchor>
+            <arglist></arglist>
+        </member>
+        <member kind="enumvalue">
+            <name>Suspect</name>
+            <anchorfile>qremoteobjectreplica.html</anchorfile>
+            <anchor>State-enum</anchor>
+            <arglist></arglist>
+        </member>
+        <member kind="enumvalue">
+            <name>SignatureMismatch</name>
+            <anchorfile>qremoteobjectreplica.html</anchorfile>
+            <anchor>State-enum</anchor>
+            <arglist></arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>bool</type>
+            <name>isReplicaValid</name>
+            <anchorfile>qremoteobjectreplica.html</anchorfile>
+            <anchor>isReplicaValid</anchor>
+            <arglist>() const const</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>bool</type>
+            <name>waitForSource</name>
+            <anchorfile>qremoteobjectreplica.html</anchorfile>
+            <anchor>waitForSource</anchor>
+            <arglist>(int timeout)</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>bool</type>
+            <name>isInitialized</name>
+            <anchorfile>qremoteobjectreplica.html</anchorfile>
+            <anchor>isInitialized</anchor>
+            <arglist>() const const</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>QRemoteObjectReplica::State</type>
+            <name>state</name>
+            <anchorfile>qremoteobjectreplica.html</anchorfile>
+            <anchor>state</anchor>
+            <arglist>() const const</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>QRemoteObjectNode *</type>
+            <name>node</name>
+            <anchorfile>qremoteobjectreplica.html</anchorfile>
+            <anchor>node-prop</anchor>
+            <arglist>() const const</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="virtual" static="no">
+            <type>virtual void</type>
+            <name>setNode</name>
+            <anchorfile>qremoteobjectreplica.html</anchorfile>
+            <anchor>node-prop</anchor>
+            <arglist>(QRemoteObjectNode *node)</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>void</type>
+            <name>initialized</name>
+            <anchorfile>qremoteobjectreplica.html</anchorfile>
+            <anchor>initialized</anchor>
+            <arglist>()</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>void</type>
+            <name>notified</name>
+            <anchorfile>qremoteobjectreplica.html</anchorfile>
+            <anchor>notified</anchor>
+            <arglist>()</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>void</type>
+            <name>stateChanged</name>
+            <anchorfile>qremoteobjectreplica.html</anchorfile>
+            <anchor>stateChanged</anchor>
+            <arglist>(QRemoteObjectReplica::State state, QRemoteObjectReplica::State oldState)</arglist>
+        </member>
+    </compound>
+    <compound kind="class">
+        <name>QtROClientFactory</name>
+        <filename>qtroclientfactory.html</filename>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>void</type>
+            <name>qRegisterRemoteObjectsClient</name>
+            <anchorfile>qtroclientfactory.html</anchorfile>
+            <anchor>qRegisterRemoteObjectsClient</anchor>
+            <arglist>(const QString &amp;id)</arglist>
+        </member>
+    </compound>
+    <compound kind="class">
+        <name>QtROServerFactory</name>
+        <filename>qtroserverfactory.html</filename>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>void</type>
+            <name>qRegisterRemoteObjectsServer</name>
+            <anchorfile>qtroserverfactory.html</anchorfile>
+            <anchor>qRegisterRemoteObjectsServer</anchor>
+            <arglist>(const QString &amp;id)</arglist>
+        </member>
+    </compound>
+    <compound kind="class">
+        <name>QtRemoteObjects.QtRemoteObjects</name>
+        <filename>qml-qtremoteobjects-qtremoteobjects.html</filename>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>Promise</type>
+            <name>watch</name>
+            <anchorfile>qml-qtremoteobjects-qtremoteobjects.html</anchorfile>
+            <anchor>watch-method</anchor>
+            <arglist>( reply,  int timeout = 30000 )</arglist>
+        </member>
+    </compound>
+    <compound kind="class">
+        <name>QtRemoteObjects.SettingsStore</name>
+        <filename>qml-qtremoteobjects-settingsstore.html</filename>
+    </compound>
+</tagfile>

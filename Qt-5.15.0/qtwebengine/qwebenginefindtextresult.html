@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qwebenginefindtextresult.cpp -->
+  <title>QWebEngineFindTextResult Class | Qt WebEngine 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtwebengine-index.html">Qt WebEngine</a></li>
+<li><a href="qtwebengine-modules.html">C++ Classes</a></li>
+<li>QWebEngineFindTextResult</li>
+<li id="buildversion"><a href="qtwebengine-index.html">Qt 5.15.0 Reference Documentation</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">QWebEngineFindTextResult Class</h1>
+<!-- $$$QWebEngineFindTextResult-brief -->
+<p>The QWebEngineFindTextResult class encapsulates the result of a string search on a page. <a href="#details">More...</a></p>
+<!-- @@@QWebEngineFindTextResult -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign">  <span class="preprocessor">#include &lt;QWebEngineFindTextResult&gt;</span>
+</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Since:</td><td class="memItemRight bottomAlign"> Qt 5.14</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Instantiated By:</td><td class="memItemRight bottomAlign"> <a href="qml-qtwebengine-findtextresult.html">FindTextResult</a></td></tr></table></div><p>This class was introduced in Qt 5.14.</p>
+<ul>
+<li><a href="qwebenginefindtextresult-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="properties"></a>
+<h2 id="properties">Properties</h2>
+<ul>
+<li class="fn"><b><a href="qwebenginefindtextresult.html#activeMatch-prop">activeMatch</a></b> : const int</li>
+<li class="fn"><b><a href="qwebenginefindtextresult.html#numberOfMatches-prop">numberOfMatches</a></b> : const int</li>
+</ul>
+<a name="public-functions"></a>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="qwebenginefindtextresult.html#activeMatch-prop">activeMatch</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="qwebenginefindtextresult.html#numberOfMatches-prop">numberOfMatches</a></b>() const</td></tr>
+</table></div>
+<a name="details"></a>
+<!-- $$$QWebEngineFindTextResult-description -->
+<div class="descr">
+<h2 id="details">Detailed Description</h2>
+<p>The string search can be initiated by the <a href="qwebenginepage.html#findText">QWebEnginePage::findText</a>() or <a href="qml-qtwebengine-webengineview.html#findText-method">WebEngineView.findText()</a> method. The results of the search are highlighted in the view. The details of this result are passed as a QWebEngineFindTextResult object that can be used to show a status message, such as &quot;2 of 2 matches&quot;. For example:</p>
+<pre class="cpp">
+ <span class="type"><a href="../qtcore/qobject.html">QObject</a></span><span class="operator">::</span>connect(view<span class="operator">.</span>page()<span class="operator">,</span> <span class="operator">&amp;</span><span class="type"><a href="qwebenginepage.html">QWebEnginePage</a></span><span class="operator">::</span>findTextFinished<span class="operator">,</span> <span class="operator">[</span><span class="operator">]</span>(<span class="keyword">const</span> <span class="type">QWebEngineFindTextResult</span> <span class="operator">&amp;</span>result) {
+     <a href="../qtcore/qtglobal.html#qInfo">qInfo</a>() <span class="operator">&lt;</span><span class="operator">&lt;</span> result<span class="operator">.</span>activeMatch() <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;of&quot;</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> result<span class="operator">.</span>numberOfMatches() <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;matches&quot;</span>;
+ });
+</pre>
+<p>Results are passed to the user in the <a href="qwebenginepage.html#findTextFinished">QWebEnginePage::findTextFinished</a>() and <a href="qml-qtwebengine-webengineview.html#findTextFinished-signal">WebEngineView.findTextFinished()</a> signals.</p>
+</div>
+<!-- @@@QWebEngineFindTextResult -->
+<div class="prop">
+<h2>Property Documentation</h2>
+<!-- $$$activeMatch-prop$$$activeMatch -->
+<h3 class="fn" id="activeMatch-prop"><a name="activeMatch-prop"></a><span class="name">activeMatch</span> : const <span class="type">int</span></h3>
+<p>This property holds the index of the currently highlighted match.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> int </td><td class="memItemRight bottomAlign"><span class="name"><b>activeMatch</b></span>() const</td></tr>
+</table></div>
+<!-- @@@activeMatch -->
+<!-- $$$numberOfMatches-prop$$$numberOfMatches -->
+<h3 class="fn" id="numberOfMatches-prop"><a name="numberOfMatches-prop"></a><span class="name">numberOfMatches</span> : const <span class="type">int</span></h3>
+<p>This property holds the number of matches found.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> int </td><td class="memItemRight bottomAlign"><span class="name"><b>numberOfMatches</b></span>() const</td></tr>
+</table></div>
+<!-- @@@numberOfMatches -->
+</div>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

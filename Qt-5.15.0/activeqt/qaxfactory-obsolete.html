@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qaxfactory.cpp -->
+  <title>Obsolete Members for QAxFactory | Active Qt 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="activeqt-index.html">Active Qt</a></li>
+<li>QAxFactory</li>
+<li id="buildversion"><a href="activeqt-index.html">Qt 5.15.0 Reference Documentation</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar"><div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Obsolete Members for QAxFactory</h1>
+<p><b>The following members of class <a href="qaxfactory.html">QAxFactory</a> are obsolete.</b> They are provided to keep old source code working. We strongly advise against using them in new code.</p>
+<h2>Macros</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code></td><td class="memItemRight bottomAlign"><b><a href="qaxfactory-obsolete.html#QAXFACTORY_DEFAULT">QAXFACTORY_DEFAULT</a></b>(<i>Class</i>, <i>ClassID</i>, <i>InterfaceID</i>, <i>EventID</i>, <i>LibID</i>, <i>AppID</i>)</td></tr>
+</table></div>
+<h2>Macro Documentation</h2>
+<!-- $$$QAXFACTORY_DEFAULT[overload1]$$$QAXFACTORY_DEFAULT -->
+<h3 class="fn" id="QAXFACTORY_DEFAULT"><a name="QAXFACTORY_DEFAULT"></a><span class="name">QAXFACTORY_DEFAULT</span>(<i>Class</i>, <i>ClassID</i>, <i>InterfaceID</i>, <i>EventID</i>, <i>LibID</i>, <i>AppID</i>)</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>This macro can be used to export a single <a href="../qtcore/qobject.html">QObject</a> subclass <i>Class</i> a this COM server through an implicitly declared <a href="qaxfactory.html">QAxFactory</a> implementation.</p>
+<p>This macro exports the class <i>Class</i> as a COM coclass with the CLSID <i>ClassID</i>. The properties and slots will be declared through a COM interface with the IID <i>InterfaceID</i>, and signals will be declared through a COM event interface with the IID <i>EventID</i>. All declarations will be in a type library with the id <i>LibID</i>, and if the server is an executable server then it will have the application id <i>AppID</i>.</p>
+<pre class="cpp">
+ <span class="preprocessor">#include &lt;qaxfactory.h&gt;</span>
+
+ <span class="preprocessor">#include &quot;theactivex.h&quot;</span>
+
+ QAXFACTORY_DEFAULT(
+     TheActiveX<span class="operator">,</span>                               <span class="comment">// widget class</span>
+     <span class="string">&quot;{01234567-89AB-CDEF-0123-456789ABCDEF}&quot;</span><span class="operator">,</span> <span class="comment">// class ID</span>
+     <span class="string">&quot;{01234567-89AB-CDEF-0123-456789ABCDEF}&quot;</span><span class="operator">,</span> <span class="comment">// interface ID</span>
+     <span class="string">&quot;{01234567-89AB-CDEF-0123-456789ABCDEF}&quot;</span><span class="operator">,</span> <span class="comment">// event interface ID</span>
+     <span class="string">&quot;{01234567-89AB-CDEF-0123-456789ABCDEF}&quot;</span><span class="operator">,</span> <span class="comment">// type library ID</span>
+     <span class="string">&quot;{01234567-89AB-CDEF-0123-456789ABCDEF}&quot;</span>  <span class="comment">// application ID</span>
+ )
+</pre>
+<p><b>Note: </b>This class has been deprecated in favor of <a href="qaxfactory.html#QAXFACTORY_BEGIN">QAXFACTORY_BEGIN</a>().</p>
+<p><b>See also </b><a href="qaxfactory.html#QAXFACTORY_EXPORT">QAXFACTORY_EXPORT</a>().</p>
+<!-- @@@QAXFACTORY_DEFAULT -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

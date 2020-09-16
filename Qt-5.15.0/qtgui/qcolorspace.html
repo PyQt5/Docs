@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qcolorspace.cpp -->
+  <title>QColorSpace Class | Qt GUI 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtgui-index.html">Qt GUI</a></li>
+<li><a href="qtgui-module.html">C++ Classes</a></li>
+<li>QColorSpace</li>
+<li id="buildversion"><a href="qtgui-index.html">Qt 5.15.0 Reference Documentation</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-types">Public Types</a></li>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#static-public-members">Static Public Members</a></li>
+<li class="level1"><a href="#related-non-members">Related Non-Members</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">QColorSpace Class</h1>
+<!-- $$$QColorSpace-brief -->
+<p>The QColorSpace class provides a color space abstraction. <a href="#details">More...</a></p>
+<!-- @@@QColorSpace -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign">  <span class="preprocessor">#include &lt;QColorSpace&gt;</span>
+</td></tr><tr><td class="memItemLeft rightAlign topAlign"> qmake:</td><td class="memItemRight bottomAlign"> QT += gui</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Since:</td><td class="memItemRight bottomAlign"> Qt 5.14</td></tr></table></div><p>This class was introduced in Qt 5.14.</p>
+<ul>
+<li><a href="qcolorspace-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h2 id="public-types">Public Types</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qcolorspace.html#NamedColorSpace-enum">NamedColorSpace</a></b> { SRgb, SRgbLinear, AdobeRgb, DisplayP3, ProPhotoRgb }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> enum class </td><td class="memItemRight bottomAlign"><b><a href="qcolorspace.html#Primaries-enum">Primaries</a></b> { Custom, SRgb, AdobeRgb, DciP3D65, ProPhotoRgb }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> enum class </td><td class="memItemRight bottomAlign"><b><a href="qcolorspace.html#TransferFunction-enum">TransferFunction</a></b> { Custom, Linear, Gamma, SRgb, ProPhotoRgb }</td></tr>
+</table></div>
+<a name="public-functions"></a>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qcolorspace.html#QColorSpace-4">QColorSpace</a></b>(const QPointF &amp;<i>whitePoint</i>, const QPointF &amp;<i>redPoint</i>, const QPointF &amp;<i>greenPoint</i>, const QPointF &amp;<i>bluePoint</i>, QColorSpace::TransferFunction <i>fun</i>, float <i>gamma</i> = 0.0f)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qcolorspace.html#QColorSpace-3">QColorSpace</a></b>(QColorSpace::Primaries <i>primaries</i>, float <i>gamma</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qcolorspace.html#QColorSpace-2">QColorSpace</a></b>(QColorSpace::Primaries <i>primaries</i>, QColorSpace::TransferFunction <i>fun</i>, float <i>gamma</i> = 0.0f)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qcolorspace.html#QColorSpace-1">QColorSpace</a></b>(QColorSpace::NamedColorSpace <i>namedColorSpace</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qcolorspace.html#QColorSpace">QColorSpace</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> float </td><td class="memItemRight bottomAlign"><b><a href="qcolorspace.html#gamma">gamma</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QByteArray </td><td class="memItemRight bottomAlign"><b><a href="qcolorspace.html#iccProfile">iccProfile</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qcolorspace.html#isValid">isValid</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QColorSpace::Primaries </td><td class="memItemRight bottomAlign"><b><a href="qcolorspace.html#primaries">primaries</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qcolorspace.html#setPrimaries">setPrimaries</a></b>(QColorSpace::Primaries <i>primariesId</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qcolorspace.html#setPrimaries-1">setPrimaries</a></b>(const QPointF &amp;<i>whitePoint</i>, const QPointF &amp;<i>redPoint</i>, const QPointF &amp;<i>greenPoint</i>, const QPointF &amp;<i>bluePoint</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qcolorspace.html#setTransferFunction">setTransferFunction</a></b>(QColorSpace::TransferFunction <i>transferFunction</i>, float <i>gamma</i> = 0.0f)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qcolorspace.html#swap">swap</a></b>(QColorSpace &amp;<i>other</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QColorSpace::TransferFunction </td><td class="memItemRight bottomAlign"><b><a href="qcolorspace.html#transferFunction">transferFunction</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QColorTransform </td><td class="memItemRight bottomAlign"><b><a href="qcolorspace.html#transformationToColorSpace">transformationToColorSpace</a></b>(const QColorSpace &amp;<i>colorspace</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QColorSpace </td><td class="memItemRight bottomAlign"><b><a href="qcolorspace.html#withTransferFunction">withTransferFunction</a></b>(QColorSpace::TransferFunction <i>transferFunction</i>, float <i>gamma</i> = 0.0f) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QVariant </td><td class="memItemRight bottomAlign"><b><a href="qcolorspace.html#operator-QVariant">operator QVariant</a></b>() const</td></tr>
+</table></div>
+<a name="static-public-members"></a>
+<h2 id="static-public-members">Static Public Members</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> QColorSpace </td><td class="memItemRight bottomAlign"><b><a href="qcolorspace.html#fromIccProfile">fromIccProfile</a></b>(const QByteArray &amp;<i>iccProfile</i>)</td></tr>
+</table></div>
+<a name="related-non-members"></a>
+<h2 id="related-non-members">Related Non-Members</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qcolorspace.html#operator-not-eq-6">operator!=</a></b>(const QColorSpace &amp;<i>colorSpace1</i>, const QColorSpace &amp;<i>colorSpace2</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QDataStream &amp;</td><td class="memItemRight bottomAlign"><b><a href="qcolorspace.html#operator-lt-lt">operator&lt;&lt;</a></b>(QDataStream &amp;<i>stream</i>, const QColorSpace &amp;<i>colorSpace</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qcolorspace.html#operator-eq-eq-4">operator==</a></b>(const QColorSpace &amp;<i>colorSpace1</i>, const QColorSpace &amp;<i>colorSpace2</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QDataStream &amp;</td><td class="memItemRight bottomAlign"><b><a href="qcolorspace.html#operator-gt-gt">operator&gt;&gt;</a></b>(QDataStream &amp;<i>stream</i>, QColorSpace &amp;<i>colorSpace</i>)</td></tr>
+</table></div>
+<a name="details"></a>
+<!-- $$$QColorSpace-description -->
+<div class="descr">
+<h2 id="details">Detailed Description</h2>
+<p>Color values can be interpreted in different ways, and based on the interpretation can live in different spaces. We call this <i>color spaces</i>.</p>
+<p>QColorSpace provides access to creating several predefined color spaces and can generate QColorTransforms for converting colors from one color space to another.</p>
+<p>QColorSpace can also represent color spaces defined by ICC profiles or embedded in images, that do not otherwise fit the predefined color spaces.</p>
+<p>A color space can generally speaking be conceived as a combination of set of primary colors and a transfer function. The primaries defines the axes of the color space, and the transfer function how values are mapped on the axes. The primaries are defined by three primary colors that represent exactly how red, green, and blue look in this particular color space, and a white color that represents where and how bright pure white is. The range of colors expressable by the primary colors is called the gamut, and a color space that can represent a wider range of colors is also known as a wide-gamut color space.</p>
+<p>The transfer function or gamma curve determines how each component in the color space is encoded. These are used because human perception does not operate linearly, and the transfer functions try to ensure that colors will seem evenly spaced to human eyes.</p>
+</div>
+<!-- @@@QColorSpace -->
+<div class="types">
+<h2>Member Type Documentation</h2>
+<!-- $$$NamedColorSpace$$$SRgb$$$SRgbLinear$$$AdobeRgb$$$DisplayP3$$$ProPhotoRgb -->
+<h3 class="fn" id="NamedColorSpace-enum"><a name="NamedColorSpace-enum"></a>enum QColorSpace::<span class="name">NamedColorSpace</span></h3>
+<p>Predefined color spaces.</p>
+<div class="table"><table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><code>QColorSpace::SRgb</code></td><td class="topAlign tblval"><code>1</code></td><td class="topAlign">The sRGB color space, which Qt operates in by default. It is a close approximation of how most classic monitors operate, and a mode most software and hardware support. <a href="http://www.color.org/chardata/rgb/srgb.xalter">ICC registration of sRGB</a>.</td></tr>
+<tr><td class="topAlign"><code>QColorSpace::SRgbLinear</code></td><td class="topAlign tblval"><code>2</code></td><td class="topAlign">The sRGB color space with linear gamma. Useful for gamma-corrected blending.</td></tr>
+<tr><td class="topAlign"><code>QColorSpace::AdobeRgb</code></td><td class="topAlign tblval"><code>3</code></td><td class="topAlign">The Adobe RGB color space is a classic wide-gamut color space, using a gamma of 2.2&#x2e; <a href="http://www.color.org/chardata/rgb/adobergb.xalter">ICC registration of Adobe RGB (1998)</a></td></tr>
+<tr><td class="topAlign"><code>QColorSpace::DisplayP3</code></td><td class="topAlign tblval"><code>4</code></td><td class="topAlign">A color-space using the primaries of DCI-P3, but with the whitepoint and transfer function of sRGB. Common in modern wide-gamut screens. <a href="http://www.color.org/chardata/rgb/DCIP3.xalter">ICC registration of DCI-P3</a></td></tr>
+<tr><td class="topAlign"><code>QColorSpace::ProPhotoRgb</code></td><td class="topAlign tblval"><code>5</code></td><td class="topAlign">The Pro Photo RGB color space, also known as ROMM RGB is a very wide gamut color space. <a href="http://www.color.org/chardata/rgb/rommrgb.xalter">ICC registration of ROMM RGB</a></td></tr>
+</table></div>
+<!-- @@@NamedColorSpace -->
+<!-- $$$Primaries$$$Custom$$$SRgb$$$AdobeRgb$$$DciP3D65$$$ProPhotoRgb -->
+<h3 class="fn" id="Primaries-enum"><a name="Primaries-enum"></a>enum class QColorSpace::<span class="name">Primaries</span></h3>
+<p>Predefined sets of primary colors.</p>
+<div class="table"><table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><code>QColorSpace::Primaries::Custom</code></td><td class="topAlign tblval"><code>0</code></td><td class="topAlign">The primaries are undefined or does not match any predefined sets.</td></tr>
+<tr><td class="topAlign"><code>QColorSpace::Primaries::SRgb</code></td><td class="topAlign tblval"><code>1</code></td><td class="topAlign">The sRGB primaries</td></tr>
+<tr><td class="topAlign"><code>QColorSpace::Primaries::AdobeRgb</code></td><td class="topAlign tblval"><code>2</code></td><td class="topAlign">The Adobe RGB primaries</td></tr>
+<tr><td class="topAlign"><code>QColorSpace::Primaries::DciP3D65</code></td><td class="topAlign tblval"><code>3</code></td><td class="topAlign">The DCI-P3 primaries with the D65 whitepoint</td></tr>
+<tr><td class="topAlign"><code>QColorSpace::Primaries::ProPhotoRgb</code></td><td class="topAlign tblval"><code>4</code></td><td class="topAlign">The ProPhoto RGB primaries with the D50 whitepoint</td></tr>
+</table></div>
+<!-- @@@Primaries -->
+<!-- $$$TransferFunction$$$Custom$$$Linear$$$Gamma$$$SRgb$$$ProPhotoRgb -->
+<h3 class="fn" id="TransferFunction-enum"><a name="TransferFunction-enum"></a>enum class QColorSpace::<span class="name">TransferFunction</span></h3>
+<p>Predefined transfer functions or gamma curves.</p>
+<div class="table"><table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><code>QColorSpace::TransferFunction::Custom</code></td><td class="topAlign tblval"><code>0</code></td><td class="topAlign">The custom or null transfer function</td></tr>
+<tr><td class="topAlign"><code>QColorSpace::TransferFunction::Linear</code></td><td class="topAlign tblval"><code>1</code></td><td class="topAlign">The linear transfer functions</td></tr>
+<tr><td class="topAlign"><code>QColorSpace::TransferFunction::Gamma</code></td><td class="topAlign tblval"><code>2</code></td><td class="topAlign">A transfer function that is a real gamma curve based on the value of <a href="qcolorspace.html#gamma">gamma</a>()</td></tr>
+<tr><td class="topAlign"><code>QColorSpace::TransferFunction::SRgb</code></td><td class="topAlign tblval"><code>3</code></td><td class="topAlign">The sRGB transfer function, composed of linear and gamma parts</td></tr>
+<tr><td class="topAlign"><code>QColorSpace::TransferFunction::ProPhotoRgb</code></td><td class="topAlign tblval"><code>4</code></td><td class="topAlign">The ProPhoto RGB transfer function, composed of linear and gamma parts</td></tr>
+</table></div>
+<!-- @@@TransferFunction -->
+</div>
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$QColorSpace$$$QColorSpaceconstQPointF&constQPointF&constQPointF&constQPointF&QColorSpace::TransferFunctionfloat -->
+<h3 class="fn" id="QColorSpace-4"><a name="QColorSpace-4"></a>QColorSpace::<span class="name">QColorSpace</span>(const <span class="type"><a href="../qtcore/qpointf.html">QPointF</a></span> &amp;<i>whitePoint</i>, const <span class="type"><a href="../qtcore/qpointf.html">QPointF</a></span> &amp;<i>redPoint</i>, const <span class="type"><a href="../qtcore/qpointf.html">QPointF</a></span> &amp;<i>greenPoint</i>, const <span class="type"><a href="../qtcore/qpointf.html">QPointF</a></span> &amp;<i>bluePoint</i>, <span class="type"><a href="qcolorspace.html#TransferFunction-enum">QColorSpace::TransferFunction</a></span> <i>fun</i>, <span class="type">float</span> <i>gamma</i> = 0.0f)</h3>
+<p>Creates a custom colorspace with a primaries based on the chromaticities of the primary colors <i>whitePoint</i>, <i>redPoint</i>, <i>greenPoint</i> and <i>bluePoint</i>, and using the transfer function <i>fun</i> and optionally <i>gamma</i>.</p>
+<!-- @@@QColorSpace -->
+<!-- $$$QColorSpace$$$QColorSpaceQColorSpace::Primariesfloat -->
+<h3 class="fn" id="QColorSpace-3"><a name="QColorSpace-3"></a>QColorSpace::<span class="name">QColorSpace</span>(<span class="type"><a href="qcolorspace.html#Primaries-enum">QColorSpace::Primaries</a></span> <i>primaries</i>, <span class="type">float</span> <i>gamma</i>)</h3>
+<p>Creates a custom color space with the primaries <i>primaries</i>, using a gamma transfer function of <i>gamma</i>.</p>
+<!-- @@@QColorSpace -->
+<!-- $$$QColorSpace$$$QColorSpaceQColorSpace::PrimariesQColorSpace::TransferFunctionfloat -->
+<h3 class="fn" id="QColorSpace-2"><a name="QColorSpace-2"></a>QColorSpace::<span class="name">QColorSpace</span>(<span class="type"><a href="qcolorspace.html#Primaries-enum">QColorSpace::Primaries</a></span> <i>primaries</i>, <span class="type"><a href="qcolorspace.html#TransferFunction-enum">QColorSpace::TransferFunction</a></span> <i>fun</i>, <span class="type">float</span> <i>gamma</i> = 0.0f)</h3>
+<p>Creates a custom color space with the primaries <i>primaries</i>, using the transfer function <i>fun</i> and optionally <i>gamma</i>.</p>
+<!-- @@@QColorSpace -->
+<!-- $$$QColorSpace$$$QColorSpaceQColorSpace::NamedColorSpace -->
+<h3 class="fn" id="QColorSpace-1"><a name="QColorSpace-1"></a>QColorSpace::<span class="name">QColorSpace</span>(<span class="type"><a href="qcolorspace.html#NamedColorSpace-enum">QColorSpace::NamedColorSpace</a></span> <i>namedColorSpace</i>)</h3>
+<p>Creates a new colorspace object that represents a <i>namedColorSpace</i>.</p>
+<!-- @@@QColorSpace -->
+<!-- $$$QColorSpace[overload1]$$$QColorSpace -->
+<h3 class="fn" id="QColorSpace"><a name="QColorSpace"></a>QColorSpace::<span class="name">QColorSpace</span>()</h3>
+<p>Creates a new colorspace object that represents an undefined and invalid colorspace.</p>
+<!-- @@@QColorSpace -->
+<!-- $$$fromIccProfile[overload1]$$$fromIccProfileconstQByteArray& -->
+<h3 class="fn" id="fromIccProfile"><a name="fromIccProfile"></a><code>[static] </code><span class="type"><a href="qcolorspace.html#QColorSpace">QColorSpace</a></span> QColorSpace::<span class="name">fromIccProfile</span>(const <span class="type"><a href="../qtcore/qbytearray.html">QByteArray</a></span> &amp;<i>iccProfile</i>)</h3>
+<p>Creates a <a href="qcolorspace.html">QColorSpace</a> from ICC profile <i>iccProfile</i>.</p>
+<p><b>Note: </b>Not all ICC profiles are supported. <a href="qcolorspace.html">QColorSpace</a> only supports RGB-XYZ ICC profiles that are three-component matrix-based.</p>
+<p>If the ICC profile is not supported an invalid <a href="qcolorspace.html">QColorSpace</a> is returned where you can still read the original ICC profile using <a href="qcolorspace.html#iccProfile">iccProfile</a>().</p>
+<p><b>See also </b><a href="qcolorspace.html#iccProfile">iccProfile</a>().</p>
+<!-- @@@fromIccProfile -->
+<!-- $$$gamma[overload1]$$$gamma -->
+<h3 class="fn" id="gamma"><a name="gamma"></a><span class="type">float</span> QColorSpace::<span class="name">gamma</span>() const</h3>
+<p>Returns the gamma value of color spaces with <code>TransferFunction::Gamma</code>, an approximate gamma value for other predefined color spaces, or 0.0 if no approximate gamma is known.</p>
+<p><b>See also </b><a href="qcolorspace.html#transferFunction">transferFunction</a>().</p>
+<!-- @@@gamma -->
+<!-- $$$iccProfile[overload1]$$$iccProfile -->
+<h3 class="fn" id="iccProfile"><a name="iccProfile"></a><span class="type"><a href="../qtcore/qbytearray.html">QByteArray</a></span> QColorSpace::<span class="name">iccProfile</span>() const</h3>
+<p>Returns an ICC profile representing the color space.</p>
+<p>If the color space was generated from an ICC profile, that profile is returned, otherwise one is generated.</p>
+<p><b>Note: </b>Even invalid color spaces may return the ICC profile if they were generated from one, to allow applications to implement wider support themselves.</p>
+<p><b>See also </b><a href="qcolorspace.html#fromIccProfile">fromIccProfile</a>().</p>
+<!-- @@@iccProfile -->
+<!-- $$$isValid[overload1]$$$isValid -->
+<h3 class="fn" id="isValid"><a name="isValid"></a><span class="type">bool</span> QColorSpace::<span class="name">isValid</span>() const</h3>
+<p>Returns <code>true</code> if the color space is valid.</p>
+<!-- @@@isValid -->
+<!-- $$$primaries[overload1]$$$primaries -->
+<h3 class="fn" id="primaries"><a name="primaries"></a><span class="type"><a href="qcolorspace.html#Primaries-enum">QColorSpace::Primaries</a></span> QColorSpace::<span class="name">primaries</span>() const</h3>
+<p>Returns the predefined primaries of the color space or <code>primaries::Custom</code> if it doesn't match any of them.</p>
+<p><b>See also </b><a href="qcolorspace.html#setPrimaries">setPrimaries</a>().</p>
+<!-- @@@primaries -->
+<!-- $$$setPrimaries[overload1]$$$setPrimariesQColorSpace::Primaries -->
+<h3 class="fn" id="setPrimaries"><a name="setPrimaries"></a><span class="type">void</span> QColorSpace::<span class="name">setPrimaries</span>(<span class="type"><a href="qcolorspace.html#Primaries-enum">QColorSpace::Primaries</a></span> <i>primariesId</i>)</h3>
+<p>Sets the primaries to those of the <i>primariesId</i> set.</p>
+<p><b>See also </b><a href="qcolorspace.html#primaries">primaries</a>().</p>
+<!-- @@@setPrimaries -->
+<!-- $$$setPrimaries$$$setPrimariesconstQPointF&constQPointF&constQPointF&constQPointF& -->
+<h3 class="fn" id="setPrimaries-1"><a name="setPrimaries-1"></a><span class="type">void</span> QColorSpace::<span class="name">setPrimaries</span>(const <span class="type"><a href="../qtcore/qpointf.html">QPointF</a></span> &amp;<i>whitePoint</i>, const <span class="type"><a href="../qtcore/qpointf.html">QPointF</a></span> &amp;<i>redPoint</i>, const <span class="type"><a href="../qtcore/qpointf.html">QPointF</a></span> &amp;<i>greenPoint</i>, const <span class="type"><a href="../qtcore/qpointf.html">QPointF</a></span> &amp;<i>bluePoint</i>)</h3>
+<p>Set primaries to the chromaticities of <i>whitePoint</i>, <i>redPoint</i>, <i>greenPoint</i> and <i>bluePoint</i>.</p>
+<p><b>See also </b><a href="qcolorspace.html#primaries">primaries</a>().</p>
+<!-- @@@setPrimaries -->
+<!-- $$$setTransferFunction[overload1]$$$setTransferFunctionQColorSpace::TransferFunctionfloat -->
+<h3 class="fn" id="setTransferFunction"><a name="setTransferFunction"></a><span class="type">void</span> QColorSpace::<span class="name">setTransferFunction</span>(<span class="type"><a href="qcolorspace.html#TransferFunction-enum">QColorSpace::TransferFunction</a></span> <i>transferFunction</i>, <span class="type">float</span> <i>gamma</i> = 0.0f)</h3>
+<p>Sets the transfer function to <i>transferFunction</i> and <i>gamma</i>.</p>
+<p><b>See also </b><a href="qcolorspace.html#transferFunction">transferFunction</a>(), <a href="qcolorspace.html#gamma">gamma</a>(), and <a href="qcolorspace.html#withTransferFunction">withTransferFunction</a>().</p>
+<!-- @@@setTransferFunction -->
+<!-- $$$swap[overload1]$$$swapQColorSpace& -->
+<h3 class="fn" id="swap"><a name="swap"></a><span class="type">void</span> QColorSpace::<span class="name">swap</span>(<span class="type"><a href="qcolorspace.html#QColorSpace">QColorSpace</a></span> &amp;<i>other</i>)</h3>
+<p>Swaps color space <i>other</i> with this color space. This operation is very fast and never fails.</p>
+<!-- @@@swap -->
+<!-- $$$transferFunction[overload1]$$$transferFunction -->
+<h3 class="fn" id="transferFunction"><a name="transferFunction"></a><span class="type"><a href="qcolorspace.html#TransferFunction-enum">QColorSpace::TransferFunction</a></span> QColorSpace::<span class="name">transferFunction</span>() const</h3>
+<p>Returns the predefined transfer function of the color space or <code>TransferFunction::Custom</code> if it doesn't match any of them.</p>
+<p><b>See also </b><a href="qcolorspace.html#gamma">gamma</a>(), <a href="qcolorspace.html#setTransferFunction">setTransferFunction</a>(), and <a href="qcolorspace.html#withTransferFunction">withTransferFunction</a>().</p>
+<!-- @@@transferFunction -->
+<!-- $$$transformationToColorSpace[overload1]$$$transformationToColorSpaceconstQColorSpace& -->
+<h3 class="fn" id="transformationToColorSpace"><a name="transformationToColorSpace"></a><span class="type"><a href="qcolortransform.html">QColorTransform</a></span> QColorSpace::<span class="name">transformationToColorSpace</span>(const <span class="type"><a href="qcolorspace.html#QColorSpace">QColorSpace</a></span> &amp;<i>colorspace</i>) const</h3>
+<p>Generates and returns a color space transformation from this color space to <i>colorspace</i>.</p>
+<!-- @@@transformationToColorSpace -->
+<!-- $$$withTransferFunction[overload1]$$$withTransferFunctionQColorSpace::TransferFunctionfloat -->
+<h3 class="fn" id="withTransferFunction"><a name="withTransferFunction"></a><span class="type"><a href="qcolorspace.html#QColorSpace">QColorSpace</a></span> QColorSpace::<span class="name">withTransferFunction</span>(<span class="type"><a href="qcolorspace.html#TransferFunction-enum">QColorSpace::TransferFunction</a></span> <i>transferFunction</i>, <span class="type">float</span> <i>gamma</i> = 0.0f) const</h3>
+<p>Returns a copy of this color space, except using the transfer function <i>transferFunction</i> and <i>gamma</i>.</p>
+<p><b>See also </b><a href="qcolorspace.html#transferFunction">transferFunction</a>(), <a href="qcolorspace.html#gamma">gamma</a>(), and <a href="qcolorspace.html#setTransferFunction">setTransferFunction</a>().</p>
+<!-- @@@withTransferFunction -->
+<!-- $$$operator QVariant[overload1]$$$operator QVariant -->
+<h3 class="fn" id="operator-QVariant"><a name="operator-QVariant"></a><span class="type"><a href="../qtcore/qvariant.html">QVariant</a></span> QColorSpace::<span class="name">operator QVariant</span>() const</h3>
+<p>Returns the color space as a <a href="../qtcore/qvariant.html">QVariant</a>.</p>
+<p>This function was introduced in Qt 5.15.</p>
+<!-- @@@operator QVariant -->
+</div>
+<div class="relnonmem">
+<h2>Related Non-Members</h2>
+<!-- $$$operator!=$$$operator!=constQColorSpace&constQColorSpace& -->
+<h3 class="fn" id="operator-not-eq-6"><a name="operator-not-eq-6"></a><span class="type">bool</span> <span class="name">operator!=</span>(const <span class="type"><a href="qcolorspace.html#QColorSpace">QColorSpace</a></span> &amp;<i>colorSpace1</i>, const <span class="type"><a href="qcolorspace.html#QColorSpace">QColorSpace</a></span> &amp;<i>colorSpace2</i>)</h3>
+<p>Returns <code>true</code> if colorspace <i>colorSpace1</i> is not equal to colorspace <i>colorSpace2</i>; otherwise returns <code>false</code></p>
+<!-- @@@operator!= -->
+<!-- $$$operator<<[overload1]$$$operator<<QDataStream&constQColorSpace& -->
+<h3 class="fn" id="operator-lt-lt"><a name="operator-lt-lt"></a><span class="type"><a href="../qtcore/qdatastream.html">QDataStream</a></span> &amp;<span class="name">operator&lt;&lt;</span>(<span class="type"><a href="../qtcore/qdatastream.html">QDataStream</a></span> &amp;<i>stream</i>, const <span class="type"><a href="qcolorspace.html#QColorSpace">QColorSpace</a></span> &amp;<i>colorSpace</i>)</h3>
+<p>Writes the given <i>colorSpace</i> to the given <i>stream</i> as an ICC profile.</p>
+<p><b>See also </b><a href="qcolorspace.html#iccProfile">QColorSpace::iccProfile</a>() and <a href="../qtcore/datastreamformat.html">Serializing Qt Data Types</a>.</p>
+<!-- @@@operator<< -->
+<!-- $$$operator==$$$operator==constQColorSpace&constQColorSpace& -->
+<h3 class="fn" id="operator-eq-eq-4"><a name="operator-eq-eq-4"></a><span class="type">bool</span> <span class="name">operator==</span>(const <span class="type"><a href="qcolorspace.html#QColorSpace">QColorSpace</a></span> &amp;<i>colorSpace1</i>, const <span class="type"><a href="qcolorspace.html#QColorSpace">QColorSpace</a></span> &amp;<i>colorSpace2</i>)</h3>
+<p>Returns <code>true</code> if colorspace <i>colorSpace1</i> is equal to colorspace <i>colorSpace2</i>; otherwise returns <code>false</code></p>
+<!-- @@@operator== -->
+<!-- $$$operator>>[overload1]$$$operator>>QDataStream&QColorSpace& -->
+<h3 class="fn" id="operator-gt-gt"><a name="operator-gt-gt"></a><span class="type"><a href="../qtcore/qdatastream.html">QDataStream</a></span> &amp;<span class="name">operator&gt;&gt;</span>(<span class="type"><a href="../qtcore/qdatastream.html">QDataStream</a></span> &amp;<i>stream</i>, <span class="type"><a href="qcolorspace.html#QColorSpace">QColorSpace</a></span> &amp;<i>colorSpace</i>)</h3>
+<p>Reads a color space from the given <i>stream</i> and stores it in the given <i>colorSpace</i>.</p>
+<p><b>See also </b><a href="qcolorspace.html#fromIccProfile">QColorSpace::fromIccProfile</a>() and <a href="../qtcore/datastreamformat.html">Serializing Qt Data Types</a>.</p>
+<!-- @@@operator>> -->
+</div>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

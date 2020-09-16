@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qsgmaterialrhishader.cpp -->
+  <title>GraphicsPipelineState Struct | Qt Quick 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtquick-index.html">Qt Quick</a></li>
+<li><a href="qtquick-module.html">C++ Classes</a></li>
+<li>GraphicsPipelineState</li>
+<li id="buildversion"><a href="qtquick-index.html">Qt 5.15.0 Reference Documentation</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-types">Public Types</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">GraphicsPipelineState Struct</h1>
+<span class="small-subtitle">struct <a href="qsgmaterialrhishader.html">QSGMaterialRhiShader</a>::GraphicsPipelineState</span>
+<!-- $$$GraphicsPipelineState-brief -->
+<p>Describes state changes that the material wants to apply to the currently active graphics pipeline state. <a href="#details">More...</a></p>
+<!-- @@@GraphicsPipelineState -->
+<p>This struct was introduced in Qt 5.14.</p>
+<ul>
+<li><a href="qsgmaterialrhishader-graphicspipelinestate-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h2 id="public-types">Public Types</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qsgmaterialrhishader-graphicspipelinestate.html#BlendFactor-enum">BlendFactor</a></b> { Zero, One, SrcColor, OneMinusSrcColor, DstColor, &hellip;, OneMinusSrc1Alpha }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> flags </td><td class="memItemRight bottomAlign"><b><a href="qsgmaterialrhishader-graphicspipelinestate.html#ColorMaskComponent-enum">ColorMask</a></b></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qsgmaterialrhishader-graphicspipelinestate.html#ColorMaskComponent-enum">ColorMaskComponent</a></b> { R, G, B, A }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qsgmaterialrhishader-graphicspipelinestate.html#CullMode-enum">CullMode</a></b> { CullNone, CullFront, CullBack }</td></tr>
+</table></div>
+<a name="details"></a>
+<!-- $$$GraphicsPipelineState-description -->
+<div class="descr">
+<h2 id="details">Detailed Description</h2>
+<p>Unlike <a href="qsgmaterialshader.html">QSGMaterialShader</a>, directly issuing state change commands with the underlying graphics API is not possible with <a href="qsgmaterialrhishader.html">QSGMaterialRhiShader</a>. This is mainly because the concept of individually changeable states is considered deprecated and not supported with modern graphics APIs.</p>
+<p>Therefore, it is up to <a href="qsgmaterialrhishader.html">QSGMaterialRhiShader</a> to expose a data structure with the set of supported states, which the material can change in its updatePipelineState() implementation, if there is one. The scenegraph will then internally apply these changes to the active graphics pipeline state, then rolling them back as appropriate.</p>
+</div>
+<!-- @@@GraphicsPipelineState -->
+<div class="types">
+<h2>Member Type Documentation</h2>
+<!-- $$$BlendFactor$$$Zero$$$One$$$SrcColor$$$OneMinusSrcColor$$$DstColor$$$OneMinusDstColor$$$SrcAlpha$$$OneMinusSrcAlpha$$$DstAlpha$$$OneMinusDstAlpha$$$ConstantColor$$$OneMinusConstantColor$$$ConstantAlpha$$$OneMinusConstantAlpha$$$SrcAlphaSaturate$$$Src1Color$$$OneMinusSrc1Color$$$Src1Alpha$$$OneMinusSrc1Alpha -->
+<h3 class="fn" id="BlendFactor-enum"><a name="BlendFactor-enum"></a>enum GraphicsPipelineState::<span class="name">BlendFactor</span></h3>
+<div class="table"><table class="valuelist"><tr><th class="tblConst">Constant</th><th class="tblVal">Value</th></tr>
+<tr><td class="topAlign"><code>QSGMaterialRhiShader::GraphicsPipelineState::Zero</code></td><td class="topAlign tblval"><code>0</code></td></tr>
+<tr><td class="topAlign"><code>QSGMaterialRhiShader::GraphicsPipelineState::One</code></td><td class="topAlign tblval"><code>1</code></td></tr>
+<tr><td class="topAlign"><code>QSGMaterialRhiShader::GraphicsPipelineState::SrcColor</code></td><td class="topAlign tblval"><code>2</code></td></tr>
+<tr><td class="topAlign"><code>QSGMaterialRhiShader::GraphicsPipelineState::OneMinusSrcColor</code></td><td class="topAlign tblval"><code>3</code></td></tr>
+<tr><td class="topAlign"><code>QSGMaterialRhiShader::GraphicsPipelineState::DstColor</code></td><td class="topAlign tblval"><code>4</code></td></tr>
+<tr><td class="topAlign"><code>QSGMaterialRhiShader::GraphicsPipelineState::OneMinusDstColor</code></td><td class="topAlign tblval"><code>5</code></td></tr>
+<tr><td class="topAlign"><code>QSGMaterialRhiShader::GraphicsPipelineState::SrcAlpha</code></td><td class="topAlign tblval"><code>6</code></td></tr>
+<tr><td class="topAlign"><code>QSGMaterialRhiShader::GraphicsPipelineState::OneMinusSrcAlpha</code></td><td class="topAlign tblval"><code>7</code></td></tr>
+<tr><td class="topAlign"><code>QSGMaterialRhiShader::GraphicsPipelineState::DstAlpha</code></td><td class="topAlign tblval"><code>8</code></td></tr>
+<tr><td class="topAlign"><code>QSGMaterialRhiShader::GraphicsPipelineState::OneMinusDstAlpha</code></td><td class="topAlign tblval"><code>9</code></td></tr>
+<tr><td class="topAlign"><code>QSGMaterialRhiShader::GraphicsPipelineState::ConstantColor</code></td><td class="topAlign tblval"><code>10</code></td></tr>
+<tr><td class="topAlign"><code>QSGMaterialRhiShader::GraphicsPipelineState::OneMinusConstantColor</code></td><td class="topAlign tblval"><code>11</code></td></tr>
+<tr><td class="topAlign"><code>QSGMaterialRhiShader::GraphicsPipelineState::ConstantAlpha</code></td><td class="topAlign tblval"><code>12</code></td></tr>
+<tr><td class="topAlign"><code>QSGMaterialRhiShader::GraphicsPipelineState::OneMinusConstantAlpha</code></td><td class="topAlign tblval"><code>13</code></td></tr>
+<tr><td class="topAlign"><code>QSGMaterialRhiShader::GraphicsPipelineState::SrcAlphaSaturate</code></td><td class="topAlign tblval"><code>14</code></td></tr>
+<tr><td class="topAlign"><code>QSGMaterialRhiShader::GraphicsPipelineState::Src1Color</code></td><td class="topAlign tblval"><code>15</code></td></tr>
+<tr><td class="topAlign"><code>QSGMaterialRhiShader::GraphicsPipelineState::OneMinusSrc1Color</code></td><td class="topAlign tblval"><code>16</code></td></tr>
+<tr><td class="topAlign"><code>QSGMaterialRhiShader::GraphicsPipelineState::Src1Alpha</code></td><td class="topAlign tblval"><code>17</code></td></tr>
+<tr><td class="topAlign"><code>QSGMaterialRhiShader::GraphicsPipelineState::OneMinusSrc1Alpha</code></td><td class="topAlign tblval"><code>18</code></td></tr>
+</table></div>
+<p>This enum was introduced or modified in Qt 5.14.</p>
+<!-- @@@BlendFactor -->
+<!-- $$$ColorMaskComponent$$$R$$$G$$$B$$$A -->
+<h3 class="flags" id="ColorMaskComponent-enum"><a name="ColorMaskComponent-enum"></a>enum GraphicsPipelineState::<span class="name">ColorMaskComponent</span><br/>flags GraphicsPipelineState::<span class="name">ColorMask</span></h3>
+<div class="table"><table class="valuelist"><tr><th class="tblConst">Constant</th><th class="tblVal">Value</th></tr>
+<tr><td class="topAlign"><code>QSGMaterialRhiShader::GraphicsPipelineState::R</code></td><td class="topAlign tblval"><code>1 &lt;&lt; 0</code></td></tr>
+<tr><td class="topAlign"><code>QSGMaterialRhiShader::GraphicsPipelineState::G</code></td><td class="topAlign tblval"><code>1 &lt;&lt; 1</code></td></tr>
+<tr><td class="topAlign"><code>QSGMaterialRhiShader::GraphicsPipelineState::B</code></td><td class="topAlign tblval"><code>1 &lt;&lt; 2</code></td></tr>
+<tr><td class="topAlign"><code>QSGMaterialRhiShader::GraphicsPipelineState::A</code></td><td class="topAlign tblval"><code>1 &lt;&lt; 3</code></td></tr>
+</table></div>
+<p>This enum was introduced or modified in Qt 5.14.</p>
+<p>The ColorMask type is a typedef for <a href="../qtcore/qflags.html">QFlags</a>&lt;ColorMaskComponent&gt;. It stores an OR combination of ColorMaskComponent values.</p>
+<!-- @@@ColorMaskComponent -->
+<!-- $$$CullMode$$$CullNone$$$CullFront$$$CullBack -->
+<h3 class="fn" id="CullMode-enum"><a name="CullMode-enum"></a>enum GraphicsPipelineState::<span class="name">CullMode</span></h3>
+<div class="table"><table class="valuelist"><tr><th class="tblConst">Constant</th><th class="tblVal">Value</th></tr>
+<tr><td class="topAlign"><code>QSGMaterialRhiShader::GraphicsPipelineState::CullNone</code></td><td class="topAlign tblval"><code>0</code></td></tr>
+<tr><td class="topAlign"><code>QSGMaterialRhiShader::GraphicsPipelineState::CullFront</code></td><td class="topAlign tblval"><code>1</code></td></tr>
+<tr><td class="topAlign"><code>QSGMaterialRhiShader::GraphicsPipelineState::CullBack</code></td><td class="topAlign tblval"><code>2</code></td></tr>
+</table></div>
+<p>This enum was introduced or modified in Qt 5.14.</p>
+<!-- @@@CullMode -->
+</div>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qrendercapabilities.cpp -->
+  <title>RenderCapabilities QML Type | Qt 3D 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qt3d-index.html">Qt 3D</a></li>
+<li><a href="qt3d-qml.html">QML Types</a></li>
+<li>RenderCapabilities QML Type</li>
+<li id="buildversion"><a href="qt3d-index.html">Qt 5.15.0 Reference Documentation</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">RenderCapabilities QML Type</h1>
+<span class="subtitle"></span>
+<!-- $$$RenderCapabilities-brief -->
+<p>The QRenderCapabilities class holds settings related to available rendering engines. <a href="#details">More...</a></p>
+<!-- @@@RenderCapabilities -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Import Statement:</td><td class="memItemRight bottomAlign"> import Qt3D.Render 2.15</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Since:</td><td class="memItemRight bottomAlign"> Qt 5.15</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Instantiates:</td><td class="memItemRight bottomAlign"> <a href="qml-qt3d-render-rendercapabilities.html"><a href="qt3drender-qrendercapabilities.html">QRenderCapabilities</a></td></tr></table></div><ul>
+<li><a href="qml-qt3d-render-rendercapabilities-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="properties"></a>
+<h2 id="properties">Properties</h2>
+<ul>
+<li class="fn"><b><b><a href="qml-qt3d-render-rendercapabilities.html#api-prop">api</a></b></b> : QRenderCapabilities::API</li>
+<li class="fn"><b><b><a href="qml-qt3d-render-rendercapabilities.html#driverVersion-prop">driverVersion</a></b></b> : QString</li>
+<li class="fn"><b><b><a href="qml-qt3d-render-rendercapabilities.html#extensions-prop">extensions</a></b></b> : QStringList</li>
+<li class="fn"><b><b><a href="qml-qt3d-render-rendercapabilities.html#glslVersion-prop">glslVersion</a></b></b> : QString</li>
+<li class="fn"><b><b><a href="qml-qt3d-render-rendercapabilities.html#majorVersion-prop">majorVersion</a></b></b> : int</li>
+<li class="fn"><b><b><a href="qml-qt3d-render-rendercapabilities.html#maxComputeInvocations-prop">maxComputeInvocations</a></b></b> : int</li>
+<li class="fn"><b><b><a href="qml-qt3d-render-rendercapabilities.html#maxComputeSharedMemorySize-prop">maxComputeSharedMemorySize</a></b></b> : int</li>
+<li class="fn"><b><b><a href="qml-qt3d-render-rendercapabilities.html#maxImageUnits-prop">maxImageUnits</a></b></b> : int</li>
+<li class="fn"><b><b><a href="qml-qt3d-render-rendercapabilities.html#maxSSBOBindings-prop">maxSSBOBindings</a></b></b> : int</li>
+<li class="fn"><b><b><a href="qml-qt3d-render-rendercapabilities.html#maxSSBOSize-prop">maxSSBOSize</a></b></b> : int</li>
+<li class="fn"><b><b><a href="qml-qt3d-render-rendercapabilities.html#maxSamples-prop">maxSamples</a></b></b> : int</li>
+<li class="fn"><b><b><a href="qml-qt3d-render-rendercapabilities.html#maxTextureLayers-prop">maxTextureLayers</a></b></b> : int</li>
+<li class="fn"><b><b><a href="qml-qt3d-render-rendercapabilities.html#maxTextureSize-prop">maxTextureSize</a></b></b> : int</li>
+<li class="fn"><b><b><a href="qml-qt3d-render-rendercapabilities.html#maxTextureUnits-prop">maxTextureUnits</a></b></b> : int</li>
+<li class="fn"><b><b><a href="qml-qt3d-render-rendercapabilities.html#maxUBOBindings-prop">maxUBOBindings</a></b></b> : int</li>
+<li class="fn"><b><b><a href="qml-qt3d-render-rendercapabilities.html#maxUBOSize-prop">maxUBOSize</a></b></b> : int</li>
+<li class="fn"><b><b><a href="qml-qt3d-render-rendercapabilities.html#maxWorkGroupCountX-prop">maxWorkGroupCountX</a></b></b> : int</li>
+<li class="fn"><b><b><a href="qml-qt3d-render-rendercapabilities.html#maxWorkGroupCountY-prop">maxWorkGroupCountY</a></b></b> : int</li>
+<li class="fn"><b><b><a href="qml-qt3d-render-rendercapabilities.html#maxWorkGroupCountZ-prop">maxWorkGroupCountZ</a></b></b> : int</li>
+<li class="fn"><b><b><a href="qml-qt3d-render-rendercapabilities.html#maxWorkGroupSizeX-prop">maxWorkGroupSizeX</a></b></b> : int</li>
+<li class="fn"><b><b><a href="qml-qt3d-render-rendercapabilities.html#maxWorkGroupSizeY-prop">maxWorkGroupSizeY</a></b></b> : int</li>
+<li class="fn"><b><b><a href="qml-qt3d-render-rendercapabilities.html#maxWorkGroupSizeZ-prop">maxWorkGroupSizeZ</a></b></b> : int</li>
+<li class="fn"><b><b><a href="qml-qt3d-render-rendercapabilities.html#minorVersion-prop">minorVersion</a></b></b> : int</li>
+<li class="fn"><b><b><a href="qml-qt3d-render-rendercapabilities.html#profile-prop">profile</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-qt3d-render-rendercapabilities.html#renderer-prop">renderer</a></b></b> : QString</li>
+<li class="fn"><b><b><a href="qml-qt3d-render-rendercapabilities.html#supportsCompute-prop">supportsCompute</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-qt3d-render-rendercapabilities.html#supportsImageStore-prop">supportsImageStore</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-qt3d-render-rendercapabilities.html#supportsSSBO-prop">supportsSSBO</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-qt3d-render-rendercapabilities.html#supportsUBO-prop">supportsUBO</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-qt3d-render-rendercapabilities.html#valid-prop">valid</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-qt3d-render-rendercapabilities.html#vendor-prop">vendor</a></b></b> : QString</li>
+</ul>
+<!-- $$$RenderCapabilities-description -->
+<a name="details"></a>
+<h2 id="details">Detailed Description</h2>
+<p>RenderCapabilities provides details of graphical features that are available at runtime. It can be used to decide which code path to use for some algorithms, for example, depending on whether compute shaders are available or not.</p>
+<!-- @@@RenderCapabilities -->
+<h2>Property Documentation</h2>
+<!-- $$$api -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="api-prop">
+<td class="tblQmlPropNode"><p>
+<a name="api-prop"></a><span class="qmlreadonly">[read-only] </span><span class="name">api</span> : <span class="type">QRenderCapabilities::API</span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Returns which API is currently in use.</p>
+</div></div><!-- @@@api -->
+<br/>
+<!-- $$$driverVersion -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="driverVersion-prop">
+<td class="tblQmlPropNode"><p>
+<a name="driverVersion-prop"></a><span class="qmlreadonly">[read-only] </span><span class="name">driverVersion</span> : <span class="type">QString</span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Returns the driver version string.</p>
+</div></div><!-- @@@driverVersion -->
+<br/>
+<!-- $$$extensions -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="extensions-prop">
+<td class="tblQmlPropNode"><p>
+<a name="extensions-prop"></a><span class="qmlreadonly">[read-only] </span><span class="name">extensions</span> : <span class="type">QStringList</span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Returns the list of extensions currently available.</p>
+</div></div><!-- @@@extensions -->
+<br/>
+<!-- $$$glslVersion -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="glslVersion-prop">
+<td class="tblQmlPropNode"><p>
+<a name="glslVersion-prop"></a><span class="qmlreadonly">[read-only] </span><span class="name">glslVersion</span> : <span class="type">QString</span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Returns the GLSL version string.</p>
+</div></div><!-- @@@glslVersion -->
+<br/>
+<!-- $$$majorVersion -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="majorVersion-prop">
+<td class="tblQmlPropNode"><p>
+<a name="majorVersion-prop"></a><span class="qmlreadonly">[read-only] </span><span class="name">majorVersion</span> : <span class="type"><a href="../qtqml/qml-int.html">int</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Returns the major version number currently in use.</p>
+</div></div><!-- @@@majorVersion -->
+<br/>
+<!-- $$$maxComputeInvocations -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="maxComputeInvocations-prop">
+<td class="tblQmlPropNode"><p>
+<a name="maxComputeInvocations-prop"></a><span class="qmlreadonly">[read-only] </span><span class="name">maxComputeInvocations</span> : <span class="type"><a href="../qtqml/qml-int.html">int</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Returns the maximum number of Compute Shaders available.</p>
+</div></div><!-- @@@maxComputeInvocations -->
+<br/>
+<!-- $$$maxComputeSharedMemorySize -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="maxComputeSharedMemorySize-prop">
+<td class="tblQmlPropNode"><p>
+<a name="maxComputeSharedMemorySize-prop"></a><span class="qmlreadonly">[read-only] </span><span class="name">maxComputeSharedMemorySize</span> : <span class="type"><a href="../qtqml/qml-int.html">int</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Returns the maximum amount of shared memory available for Compute Shaders.</p>
+</div></div><!-- @@@maxComputeSharedMemorySize -->
+<br/>
+<!-- $$$maxImageUnits -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="maxImageUnits-prop">
+<td class="tblQmlPropNode"><p>
+<a name="maxImageUnits-prop"></a><span class="qmlreadonly">[read-only] </span><span class="name">maxImageUnits</span> : <span class="type"><a href="../qtqml/qml-int.html">int</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Returns the maximum number of available image units.</p>
+</div></div><!-- @@@maxImageUnits -->
+<br/>
+<!-- $$$maxSSBOBindings -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="maxSSBOBindings-prop">
+<td class="tblQmlPropNode"><p>
+<a name="maxSSBOBindings-prop"></a><span class="qmlreadonly">[read-only] </span><span class="name">maxSSBOBindings</span> : <span class="type"><a href="../qtqml/qml-int.html">int</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Returns the maximum number of available SSBO binding points, if supported.</p>
+</div></div><!-- @@@maxSSBOBindings -->
+<br/>
+<!-- $$$maxSSBOSize -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="maxSSBOSize-prop">
+<td class="tblQmlPropNode"><p>
+<a name="maxSSBOSize-prop"></a><span class="qmlreadonly">[read-only] </span><span class="name">maxSSBOSize</span> : <span class="type"><a href="../qtqml/qml-int.html">int</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Returns the maximum size of SSBOs, if available.</p>
+</div></div><!-- @@@maxSSBOSize -->
+<br/>
+<!-- $$$maxSamples -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="maxSamples-prop">
+<td class="tblQmlPropNode"><p>
+<a name="maxSamples-prop"></a><span class="qmlreadonly">[read-only] </span><span class="name">maxSamples</span> : <span class="type"><a href="../qtqml/qml-int.html">int</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Returns the maximum number of samples available for MSAA.</p>
+</div></div><!-- @@@maxSamples -->
+<br/>
+<!-- $$$maxTextureLayers -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="maxTextureLayers-prop">
+<td class="tblQmlPropNode"><p>
+<a name="maxTextureLayers-prop"></a><span class="qmlreadonly">[read-only] </span><span class="name">maxTextureLayers</span> : <span class="type"><a href="../qtqml/qml-int.html">int</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Returns the number of available texture layers.</p>
+</div></div><!-- @@@maxTextureLayers -->
+<br/>
+<!-- $$$maxTextureSize -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="maxTextureSize-prop">
+<td class="tblQmlPropNode"><p>
+<a name="maxTextureSize-prop"></a><span class="qmlreadonly">[read-only] </span><span class="name">maxTextureSize</span> : <span class="type"><a href="../qtqml/qml-int.html">int</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Returns the maximum size of textures.</p>
+</div></div><!-- @@@maxTextureSize -->
+<br/>
+<!-- $$$maxTextureUnits -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="maxTextureUnits-prop">
+<td class="tblQmlPropNode"><p>
+<a name="maxTextureUnits-prop"></a><span class="qmlreadonly">[read-only] </span><span class="name">maxTextureUnits</span> : <span class="type"><a href="../qtqml/qml-int.html">int</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Returns the number of available texture units.</p>
+</div></div><!-- @@@maxTextureUnits -->
+<br/>
+<!-- $$$maxUBOBindings -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="maxUBOBindings-prop">
+<td class="tblQmlPropNode"><p>
+<a name="maxUBOBindings-prop"></a><span class="qmlreadonly">[read-only] </span><span class="name">maxUBOBindings</span> : <span class="type"><a href="../qtqml/qml-int.html">int</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Returns the maximum number of available UBO binding points, if supported.</p>
+</div></div><!-- @@@maxUBOBindings -->
+<br/>
+<!-- $$$maxUBOSize -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="maxUBOSize-prop">
+<td class="tblQmlPropNode"><p>
+<a name="maxUBOSize-prop"></a><span class="qmlreadonly">[read-only] </span><span class="name">maxUBOSize</span> : <span class="type"><a href="../qtqml/qml-int.html">int</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Returns the maximum size of UBOs, if supported.</p>
+</div></div><!-- @@@maxUBOSize -->
+<br/>
+<!-- $$$maxWorkGroupCountX -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="maxWorkGroupCountX-prop">
+<td class="tblQmlPropNode"><p>
+<a name="maxWorkGroupCountX-prop"></a><span class="qmlreadonly">[read-only] </span><span class="name">maxWorkGroupCountX</span> : <span class="type"><a href="../qtqml/qml-int.html">int</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Returns the maximum number of available Compute Shader workgroups in the X axis.</p>
+</div></div><!-- @@@maxWorkGroupCountX -->
+<br/>
+<!-- $$$maxWorkGroupCountY -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="maxWorkGroupCountY-prop">
+<td class="tblQmlPropNode"><p>
+<a name="maxWorkGroupCountY-prop"></a><span class="qmlreadonly">[read-only] </span><span class="name">maxWorkGroupCountY</span> : <span class="type"><a href="../qtqml/qml-int.html">int</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Returns the maximum number of available Compute Shader workgroups in the Y axis.</p>
+</div></div><!-- @@@maxWorkGroupCountY -->
+<br/>
+<!-- $$$maxWorkGroupCountZ -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="maxWorkGroupCountZ-prop">
+<td class="tblQmlPropNode"><p>
+<a name="maxWorkGroupCountZ-prop"></a><span class="qmlreadonly">[read-only] </span><span class="name">maxWorkGroupCountZ</span> : <span class="type"><a href="../qtqml/qml-int.html">int</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Returns the maximum number of available Compute Shader workgroups in the Z axis.</p>
+</div></div><!-- @@@maxWorkGroupCountZ -->
+<br/>
+<!-- $$$maxWorkGroupSizeX -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="maxWorkGroupSizeX-prop">
+<td class="tblQmlPropNode"><p>
+<a name="maxWorkGroupSizeX-prop"></a><span class="qmlreadonly">[read-only] </span><span class="name">maxWorkGroupSizeX</span> : <span class="type"><a href="../qtqml/qml-int.html">int</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Returns the maximum size of Compute Shader local workgroups in the X axis.</p>
+</div></div><!-- @@@maxWorkGroupSizeX -->
+<br/>
+<!-- $$$maxWorkGroupSizeY -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="maxWorkGroupSizeY-prop">
+<td class="tblQmlPropNode"><p>
+<a name="maxWorkGroupSizeY-prop"></a><span class="qmlreadonly">[read-only] </span><span class="name">maxWorkGroupSizeY</span> : <span class="type"><a href="../qtqml/qml-int.html">int</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Returns the maximum size of Compute Shader local workgroups in the Y axis.</p>
+</div></div><!-- @@@maxWorkGroupSizeY -->
+<br/>
+<!-- $$$maxWorkGroupSizeZ -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="maxWorkGroupSizeZ-prop">
+<td class="tblQmlPropNode"><p>
+<a name="maxWorkGroupSizeZ-prop"></a><span class="qmlreadonly">[read-only] </span><span class="name">maxWorkGroupSizeZ</span> : <span class="type"><a href="../qtqml/qml-int.html">int</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Returns the maximum size of Compute Shader local workgroups in the Z axis.</p>
+</div></div><!-- @@@maxWorkGroupSizeZ -->
+<br/>
+<!-- $$$minorVersion -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="minorVersion-prop">
+<td class="tblQmlPropNode"><p>
+<a name="minorVersion-prop"></a><span class="qmlreadonly">[read-only] </span><span class="name">minorVersion</span> : <span class="type"><a href="../qtqml/qml-int.html">int</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Returns the minor version number currently in use.</p>
+</div></div><!-- @@@minorVersion -->
+<br/>
+<!-- $$$profile -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="profile-prop">
+<td class="tblQmlPropNode"><p>
+<a name="profile-prop"></a><span class="qmlreadonly">[read-only] </span><span class="name">profile</span> : <span class="type"><a href="../qtqml/qml-bool.html">bool</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Returns which profile (if applicable) is currently in use.</p>
+</div></div><!-- @@@profile -->
+<br/>
+<!-- $$$renderer -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="renderer-prop">
+<td class="tblQmlPropNode"><p>
+<a name="renderer-prop"></a><span class="qmlreadonly">[read-only] </span><span class="name">renderer</span> : <span class="type">QString</span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Returns the device identification string.</p>
+</div></div><!-- @@@renderer -->
+<br/>
+<!-- $$$supportsCompute -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="supportsCompute-prop">
+<td class="tblQmlPropNode"><p>
+<a name="supportsCompute-prop"></a><span class="qmlreadonly">[read-only] </span><span class="name">supportsCompute</span> : <span class="type"><a href="../qtqml/qml-bool.html">bool</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Returns true if Compute Shaders are supported.</p>
+</div></div><!-- @@@supportsCompute -->
+<br/>
+<!-- $$$supportsImageStore -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="supportsImageStore-prop">
+<td class="tblQmlPropNode"><p>
+<a name="supportsImageStore-prop"></a><span class="qmlreadonly">[read-only] </span><span class="name">supportsImageStore</span> : <span class="type"><a href="../qtqml/qml-bool.html">bool</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Returns true if Image Store operations are supported.</p>
+</div></div><!-- @@@supportsImageStore -->
+<br/>
+<!-- $$$supportsSSBO -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="supportsSSBO-prop">
+<td class="tblQmlPropNode"><p>
+<a name="supportsSSBO-prop"></a><span class="qmlreadonly">[read-only] </span><span class="name">supportsSSBO</span> : <span class="type"><a href="../qtqml/qml-bool.html">bool</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Returns true if SSBOs are supported.</p>
+</div></div><!-- @@@supportsSSBO -->
+<br/>
+<!-- $$$supportsUBO -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="supportsUBO-prop">
+<td class="tblQmlPropNode"><p>
+<a name="supportsUBO-prop"></a><span class="qmlreadonly">[read-only] </span><span class="name">supportsUBO</span> : <span class="type"><a href="../qtqml/qml-bool.html">bool</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Returns true if UBOs are supported.</p>
+</div></div><!-- @@@supportsUBO -->
+<br/>
+<!-- $$$valid -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="valid-prop">
+<td class="tblQmlPropNode"><p>
+<a name="valid-prop"></a><span class="qmlreadonly">[read-only] </span><span class="name">valid</span> : <span class="type"><a href="../qtqml/qml-bool.html">bool</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>true if the data is valid, otherwise Qt 3D failed to query the available hardware.</p>
+</div></div><!-- @@@valid -->
+<br/>
+<!-- $$$vendor -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="vendor-prop">
+<td class="tblQmlPropNode"><p>
+<a name="vendor-prop"></a><span class="qmlreadonly">[read-only] </span><span class="name">vendor</span> : <span class="type">QString</span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Returns the vendor identification string.</p>
+</div></div><!-- @@@vendor -->
+<br/>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

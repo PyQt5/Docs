@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qt3dcore-module.qdoc -->
+  <title>Obsolete Members for Qt3DCore | Qt 3D 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qt3d-index.html">Qt 3D</a></li>
+<li>Obsolete Members for Qt3DCore</li>
+<li id="buildversion"><a href="qt3d-index.html">Qt 5.15.0 Reference Documentation</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar"><div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Obsolete Members for Qt3DCore</h1>
+<p><b>The following members of class <a href="qt3dcore.html">Qt3DCore</a> are obsolete.</b> They are provided to keep old source code working. We strongly advise against using them in new code.</p>
+<h2>Types</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>enum </td><td class="memItemRight bottomAlign"><b><a href="qt3dcore-qscenechange-obsolete.html#ChangeFlag-enum">ChangeFlag</a></b> { NodeCreated, NodeDeleted, PropertyUpdated, PropertyValueAdded, PropertyValueRemoved, &hellip;, AllChanges }</td></tr>
+</table></div>
+<h2>Type Documentation</h2>
+<!-- $$$ChangeFlag$$$NodeCreated$$$NodeDeleted$$$PropertyUpdated$$$PropertyValueAdded$$$PropertyValueRemoved$$$ComponentAdded$$$ComponentRemoved$$$CommandRequested$$$CallbackTriggered$$$AllChanges -->
+<h3 class="flags" id="ChangeFlag-enum"><a name="ChangeFlag-enum"></a>enum <span class="name">ChangeFlag</span><br/>flags Qt3DCore::<span class="name">ChangeFlags</span></h3>
+<p>This enum is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>The types of change that can be sent and received by Qt3D's change notification system.</p>
+<div class="table"><table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><code>Qt3DCore::QSceneChange::NodeCreated</code></td><td class="topAlign tblval"><code>1 &lt;&lt; 0</code></td><td class="topAlign">A new instance of a <a href="qt3dcore-qnode.html">QNode</a> subclass has been created.</td></tr>
+<tr><td class="topAlign"><code>Qt3DCore::QSceneChange::NodeDeleted</code></td><td class="topAlign tblval"><code>1 &lt;&lt; 1</code></td><td class="topAlign">A <a href="qt3dcore-qnode.html">QNode</a> has been deleted.</td></tr>
+<tr><td class="topAlign"><code>Qt3DCore::QSceneChange::PropertyUpdated</code></td><td class="topAlign tblval"><code>1 &lt;&lt; 2</code></td><td class="topAlign">A <a href="qt3dcore-qnode.html">QNode</a> property has been updated.</td></tr>
+<tr><td class="topAlign"><code>Qt3DCore::QSceneChange::PropertyValueAdded</code></td><td class="topAlign tblval"><code>1 &lt;&lt; 3</code></td><td class="topAlign">A <a href="qt3dcore-qnode.html">QNode</a> has been added to the scene.</td></tr>
+<tr><td class="topAlign"><code>Qt3DCore::QSceneChange::PropertyValueRemoved</code></td><td class="topAlign tblval"><code>1 &lt;&lt; 4</code></td><td class="topAlign">A <a href="qt3dcore-qnode.html">QNode</a> has been removed from the scene.</td></tr>
+<tr><td class="topAlign"><code>Qt3DCore::QSceneChange::CommandRequested</code></td><td class="topAlign tblval"><code>1 &lt;&lt; 7</code></td><td class="topAlign">A <a href="qt3dcore-qnodecommand.html">QNodeCommand</a> has been sent between a node and its backend.</td></tr>
+<tr><td class="topAlign"><code>Qt3DCore::QSceneChange::ComponentAdded</code></td><td class="topAlign tblval"><code>1 &lt;&lt; 5</code></td><td class="topAlign">A <a href="qt3dcore-qcomponent.html">QComponent</a> has been added to a <a href="qt3dcore-qentity.html">QEntity</a>.</td></tr>
+<tr><td class="topAlign"><code>Qt3DCore::QSceneChange::ComponentRemoved</code></td><td class="topAlign tblval"><code>1 &lt;&lt; 6</code></td><td class="topAlign">A <a href="qt3dcore-qcomponent.html">QComponent</a> has been removed from a <a href="qt3dcore-qentity.html">QEntity</a>.</td></tr>
+<tr><td class="topAlign"><code>Qt3DCore::QSceneChange::CallbackTriggered</code></td><td class="topAlign tblval"><code>1 &lt;&lt; 8</code></td><td class="topAlign">A <a href="qt3dcore-qnode.html">QNode</a> triggered a callback.</td></tr>
+<tr><td class="topAlign"><code>Qt3DCore::QSceneChange::AllChanges</code></td><td class="topAlign tblval"><code>0xFFFFFFFF</code></td><td class="topAlign">Allows an observer to monitor for any of the above changes.</td></tr>
+</table></div>
+<p>The ChangeFlags type is a typedef for <a href="../qtcore/qflags.html">QFlags</a>&lt;ChangeFlag&gt;. It stores an OR combination of ChangeFlag values.</p>
+<!-- @@@ChangeFlag -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

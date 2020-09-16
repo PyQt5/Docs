@@ -1,0 +1,677 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tagfile>
+    <compound kind="class">
+        <name>QtQuick3D.Effects.AdditiveColorGradient</name>
+        <filename>qml-qtquick3d-effects-additivecolorgradient.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.Materials.AluminumAnodizedEmissiveMaterial</name>
+        <filename>qml-qtquick3d-materials-aluminumanodizedemissivematerial.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.Materials.AluminumAnodizedMaterial</name>
+        <filename>qml-qtquick3d-materials-aluminumanodizedmaterial.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.Materials.AluminumBrushedMaterial</name>
+        <filename>qml-qtquick3d-materials-aluminumbrushedmaterial.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.Materials.AluminumEmissiveMaterial</name>
+        <filename>qml-qtquick3d-materials-aluminumemissivematerial.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.Materials.AluminumMaterial</name>
+        <filename>qml-qtquick3d-materials-aluminummaterial.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.AreaLight</name>
+        <filename>qml-qtquick3d-arealight.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.Helpers.AxisHelper</name>
+        <filename>qml-qtquick3d-helpers-axishelper.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.Blending</name>
+        <filename>qml-qtquick3d-blending.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.Effects.Blur</name>
+        <filename>qml-qtquick3d-effects-blur.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.Bounds</name>
+        <filename>qml-qtquick3d-bounds.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.Effects.BrushStrokes</name>
+        <filename>qml-qtquick3d-effects-brushstrokes.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.Buffer</name>
+        <filename>qml-qtquick3d-buffer.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.BufferBlit</name>
+        <filename>qml-qtquick3d-bufferblit.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.BufferInput</name>
+        <filename>qml-qtquick3d-bufferinput.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.Camera</name>
+        <filename>qml-qtquick3d-camera.html</filename>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>vector3d</type>
+            <name>mapToViewport</name>
+            <anchorfile>qml-qtquick3d-camera.html</anchorfile>
+            <anchor>mapToViewport-method</anchor>
+            <arglist>( scenePos)</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>vector3d</type>
+            <name>mapFromViewport</name>
+            <anchorfile>qml-qtquick3d-camera.html</anchorfile>
+            <anchor>mapFromViewport-method</anchor>
+            <arglist>( viewportPos)</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>vector3d</type>
+            <name>lookAt</name>
+            <anchorfile>qml-qtquick3d-camera.html</anchorfile>
+            <anchor>lookAt-method</anchor>
+            <arglist>( scenePos)</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>vector3d</type>
+            <name>lookAt</name>
+            <anchorfile>qml-qtquick3d-camera.html</anchorfile>
+            <anchor>lookAt-method</anchor>
+            <arglist>( node)</arglist>
+        </member>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.Effects.ChromaticAberration</name>
+        <filename>qml-qtquick3d-effects-chromaticaberration.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.Effects.ColorMaster</name>
+        <filename>qml-qtquick3d-effects-colormaster.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.Command</name>
+        <filename>qml-qtquick3d-command.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.Materials.CopperMaterial</name>
+        <filename>qml-qtquick3d-materials-coppermaterial.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.CullMode</name>
+        <filename>qml-qtquick3d-cullmode.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.CustomCamera</name>
+        <filename>qml-qtquick3d-customcamera.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.Materials.CustomMaterial</name>
+        <filename>qml-qtquick3d-materials-custommaterial.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.Helpers.DebugView</name>
+        <filename>qml-qtquick3d-helpers-debugview.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.DefaultMaterial</name>
+        <filename>qml-qtquick3d-defaultmaterial.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.DepthInput</name>
+        <filename>qml-qtquick3d-depthinput.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.Effects.DepthOfFieldHQBlur</name>
+        <filename>qml-qtquick3d-effects-depthoffieldhqblur.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.Effects.Desaturate</name>
+        <filename>qml-qtquick3d-effects-desaturate.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.DirectionalLight</name>
+        <filename>qml-qtquick3d-directionallight.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.Effects.DistortionRipple</name>
+        <filename>qml-qtquick3d-effects-distortionripple.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.Effects.DistortionSphere</name>
+        <filename>qml-qtquick3d-effects-distortionsphere.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.Effects.DistortionSpiral</name>
+        <filename>qml-qtquick3d-effects-distortionspiral.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.Effects.EdgeDetect</name>
+        <filename>qml-qtquick3d-effects-edgedetect.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.Effects.Effect</name>
+        <filename>qml-qtquick3d-effects-effect.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.Effects.Emboss</name>
+        <filename>qml-qtquick3d-effects-emboss.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.Effects.Flip</name>
+        <filename>qml-qtquick3d-effects-flip.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.Materials.FrostedGlassMaterial</name>
+        <filename>qml-qtquick3d-materials-frostedglassmaterial.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.Materials.FrostedGlassSinglePassMaterial</name>
+        <filename>qml-qtquick3d-materials-frostedglasssinglepassmaterial.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.FrustumCamera</name>
+        <filename>qml-qtquick3d-frustumcamera.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.Effects.Fxaa</name>
+        <filename>qml-qtquick3d-effects-fxaa.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.Effects.GaussianBlur</name>
+        <filename>qml-qtquick3d-effects-gaussianblur.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.Geometry</name>
+        <filename>qml-qtquick3d-geometry.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.Materials.GlassMaterial</name>
+        <filename>qml-qtquick3d-materials-glassmaterial.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.Materials.GlassRefractiveMaterial</name>
+        <filename>qml-qtquick3d-materials-glassrefractivematerial.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.Helpers.GridGeometry</name>
+        <filename>qml-qtquick3d-helpers-gridgeometry.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.Effects.HDRBloomTonemap</name>
+        <filename>qml-qtquick3d-effects-hdrbloomtonemap.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.Light</name>
+        <filename>qml-qtquick3d-light.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.Loader3D</name>
+        <filename>qml-qtquick3d-loader3d.html</filename>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>object</type>
+            <name>setSource</name>
+            <anchorfile>qml-qtquick3d-loader3d.html</anchorfile>
+            <anchor>setSource-method</anchor>
+            <arglist>( source,  object properties)</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type></type>
+            <name>loaded</name>
+            <anchorfile>qml-qtquick3d-loader3d.html</anchorfile>
+            <anchor>loaded-signal</anchor>
+            <arglist>()</arglist>
+        </member>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.Material</name>
+        <filename>qml-qtquick3d-material.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.Model</name>
+        <filename>qml-qtquick3d-model.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.Effects.MotionBlur</name>
+        <filename>qml-qtquick3d-effects-motionblur.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.Node</name>
+        <filename>qml-qtquick3d-node.html</filename>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type></type>
+            <name>rotate</name>
+            <anchorfile>qml-qtquick3d-node.html</anchorfile>
+            <anchor>rotate-method</anchor>
+            <arglist>( degrees,  vector3d axis,  TransformSpace space)</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>vector3d</type>
+            <name>mapPositionToScene</name>
+            <anchorfile>qml-qtquick3d-node.html</anchorfile>
+            <anchor>mapPositionToScene-method</anchor>
+            <arglist>( localPosition)</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>vector3d</type>
+            <name>mapPositionFromScene</name>
+            <anchorfile>qml-qtquick3d-node.html</anchorfile>
+            <anchor>mapPositionFromScene-method</anchor>
+            <arglist>( scenePosition)</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>vector3d</type>
+            <name>mapPositionToNode</name>
+            <anchorfile>qml-qtquick3d-node.html</anchorfile>
+            <anchor>mapPositionToNode-method</anchor>
+            <arglist>( node,  vector3d localPosition)</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>vector3d</type>
+            <name>mapPositionFromNode</name>
+            <anchorfile>qml-qtquick3d-node.html</anchorfile>
+            <anchor>mapPositionFromNode-method</anchor>
+            <arglist>( node,  vector3d localPosition)</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>vector3d</type>
+            <name>mapDirectionToScene</name>
+            <anchorfile>qml-qtquick3d-node.html</anchorfile>
+            <anchor>mapDirectionToScene-method</anchor>
+            <arglist>( localDirection)</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>vector3d</type>
+            <name>mapDirectionFromScene</name>
+            <anchorfile>qml-qtquick3d-node.html</anchorfile>
+            <anchor>mapDirectionFromScene-method</anchor>
+            <arglist>( sceneDirection)</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>vector3d</type>
+            <name>mapDirectionToNode</name>
+            <anchorfile>qml-qtquick3d-node.html</anchorfile>
+            <anchor>mapDirectionToNode-method</anchor>
+            <arglist>( node,  vector3d localDirection)</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>vector3d</type>
+            <name>mapDirectionFromNode</name>
+            <anchorfile>qml-qtquick3d-node.html</anchorfile>
+            <anchor>mapDirectionFromNode-method</anchor>
+            <arglist>( node,  vector3d localDirection)</arglist>
+        </member>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.Object3D</name>
+        <filename>qml-qtquick3d-object3d.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.OrthographicCamera</name>
+        <filename>qml-qtquick3d-orthographiccamera.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.Materials.PaperArtisticMaterial</name>
+        <filename>qml-qtquick3d-materials-paperartisticmaterial.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.Materials.PaperOfficeMaterial</name>
+        <filename>qml-qtquick3d-materials-paperofficematerial.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.Pass</name>
+        <filename>qml-qtquick3d-pass.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.PerspectiveCamera</name>
+        <filename>qml-qtquick3d-perspectivecamera.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.PickResult</name>
+        <filename>qml-qtquick3d-pickresult.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.Materials.PlasticStructuredRedEmissiveMaterial</name>
+        <filename>qml-qtquick3d-materials-plasticstructuredredemissivematerial.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.Materials.PlasticStructuredRedMaterial</name>
+        <filename>qml-qtquick3d-materials-plasticstructuredredmaterial.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.PointLight</name>
+        <filename>qml-qtquick3d-pointlight.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.PrincipledMaterial</name>
+        <filename>qml-qtquick3d-principledmaterial.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QQuick3D</name>
+        <filename>qquick3d.html</filename>
+        <member kind="function" protection="public" virtualness="non" static="yes">
+            <type>QSurfaceFormat</type>
+            <name>idealSurfaceFormat</name>
+            <anchorfile>qquick3d.html</anchorfile>
+            <anchor>idealSurfaceFormat</anchor>
+            <arglist>(int samples)</arglist>
+        </member>
+    </compound>
+    <compound kind="class">
+        <name>QQuick3DGeometry</name>
+        <filename>qquick3dgeometry.html</filename>
+        <base>QQuick3DObject</base>
+        <member kind="property" type="QString">
+            <name>name</name>
+            <anchorfile>qquick3dgeometry.html</anchorfile>
+            <anchor>name-prop</anchor>
+            <arglist></arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>QString</type>
+            <name>name</name>
+            <anchorfile>qquick3dgeometry.html</anchorfile>
+            <anchor>name-prop</anchor>
+            <arglist>() const const</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>QByteArray</type>
+            <name>vertexBuffer</name>
+            <anchorfile>qquick3dgeometry.html</anchorfile>
+            <anchor>vertexBuffer</anchor>
+            <arglist>() const const</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>QByteArray</type>
+            <name>indexBuffer</name>
+            <anchorfile>qquick3dgeometry.html</anchorfile>
+            <anchor>indexBuffer</anchor>
+            <arglist>() const const</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>int</type>
+            <name>attributeCount</name>
+            <anchorfile>qquick3dgeometry.html</anchorfile>
+            <anchor>attributeCount</anchor>
+            <arglist>() const const</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>QQuick3DGeometry::Attribute</type>
+            <name>attribute</name>
+            <anchorfile>qquick3dgeometry.html</anchorfile>
+            <anchor>attribute</anchor>
+            <arglist>(int index) const const</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>QQuick3DGeometry::PrimitiveType</type>
+            <name>primitiveType</name>
+            <anchorfile>qquick3dgeometry.html</anchorfile>
+            <anchor>primitiveType</anchor>
+            <arglist>() const const</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>QVector3D</type>
+            <name>boundsMin</name>
+            <anchorfile>qquick3dgeometry.html</anchorfile>
+            <anchor>boundsMin</anchor>
+            <arglist>() const const</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>QVector3D</type>
+            <name>boundsMax</name>
+            <anchorfile>qquick3dgeometry.html</anchorfile>
+            <anchor>boundsMax</anchor>
+            <arglist>() const const</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>int</type>
+            <name>stride</name>
+            <anchorfile>qquick3dgeometry.html</anchorfile>
+            <anchor>stride</anchor>
+            <arglist>() const const</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>void</type>
+            <name>setVertexData</name>
+            <anchorfile>qquick3dgeometry.html</anchorfile>
+            <anchor>setVertexData</anchor>
+            <arglist>(const QByteArray &amp;data)</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>void</type>
+            <name>setIndexData</name>
+            <anchorfile>qquick3dgeometry.html</anchorfile>
+            <anchor>setIndexData</anchor>
+            <arglist>(const QByteArray &amp;data)</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>void</type>
+            <name>setStride</name>
+            <anchorfile>qquick3dgeometry.html</anchorfile>
+            <anchor>setStride</anchor>
+            <arglist>(int stride)</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>void</type>
+            <name>setBounds</name>
+            <anchorfile>qquick3dgeometry.html</anchorfile>
+            <anchor>setBounds</anchor>
+            <arglist>(const QVector3D &amp;min, const QVector3D &amp;max)</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>void</type>
+            <name>setPrimitiveType</name>
+            <anchorfile>qquick3dgeometry.html</anchorfile>
+            <anchor>setPrimitiveType</anchor>
+            <arglist>(QQuick3DGeometry::PrimitiveType type)</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>void</type>
+            <name>addAttribute</name>
+            <anchorfile>qquick3dgeometry.html</anchorfile>
+            <anchor>addAttribute</anchor>
+            <arglist>(Attribute::Semantic semantic, int offset, Attribute::ComponentType componentType)</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>void</type>
+            <name>addAttribute</name>
+            <anchorfile>qquick3dgeometry.html</anchorfile>
+            <anchor>addAttribute-1</anchor>
+            <arglist>(const QQuick3DGeometry::Attribute &amp;attribute)</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>void</type>
+            <name>clear</name>
+            <anchorfile>qquick3dgeometry.html</anchorfile>
+            <anchor>clear</anchor>
+            <arglist>()</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>void</type>
+            <name>setName</name>
+            <anchorfile>qquick3dgeometry.html</anchorfile>
+            <anchor>name-prop</anchor>
+            <arglist>(const QString &amp;name)</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>void</type>
+            <name>nameChanged</name>
+            <anchorfile>qquick3dgeometry.html</anchorfile>
+            <anchor>name-prop</anchor>
+            <arglist>()</arglist>
+        </member>
+    </compound>
+    <compound kind="class">
+        <name>QQuick3DObject</name>
+        <filename>qquick3dobject.html</filename>
+        <base>QObject</base>
+        <base>QQmlParserStatus</base>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>QString</type>
+            <name>state</name>
+            <anchorfile>qquick3dobject.html</anchorfile>
+            <anchor>state-prop</anchor>
+            <arglist>() const const</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>void</type>
+            <name>setState</name>
+            <anchorfile>qquick3dobject.html</anchorfile>
+            <anchor>state-prop</anchor>
+            <arglist>(const QString &amp;state)</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>QQuick3DObject *</type>
+            <name>parentItem</name>
+            <anchorfile>qquick3dobject.html</anchorfile>
+            <anchor>parent-prop</anchor>
+            <arglist>() const const</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>void</type>
+            <name>setParentItem</name>
+            <anchorfile>qquick3dobject.html</anchorfile>
+            <anchor>parent-prop</anchor>
+            <arglist>(QQuick3DObject *parentItem)</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>void</type>
+            <name>parentChanged</name>
+            <anchorfile>qquick3dobject.html</anchorfile>
+            <anchor>parent-prop</anchor>
+            <arglist>()</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>void</type>
+            <name>stateChanged</name>
+            <anchorfile>qquick3dobject.html</anchorfile>
+            <anchor>state-prop</anchor>
+            <arglist>()</arglist>
+        </member>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.QuaternionAnimation</name>
+        <filename>qml-qtquick3d-quaternionanimation.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.RenderState</name>
+        <filename>qml-qtquick3d-renderstate.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.RenderStats</name>
+        <filename>qml-qtquick3d-renderstats.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.Repeater3D</name>
+        <filename>qml-qtquick3d-repeater3d.html</filename>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type></type>
+            <name>objectAdded</name>
+            <anchorfile>qml-qtquick3d-repeater3d.html</anchorfile>
+            <anchor>objectAdded-signal</anchor>
+            <arglist>( index,  Object3D object)</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type></type>
+            <name>objectRemoved</name>
+            <anchorfile>qml-qtquick3d-repeater3d.html</anchorfile>
+            <anchor>objectRemoved-signal</anchor>
+            <arglist>( index,  Object3D object)</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>Object3D</type>
+            <name>objectAt</name>
+            <anchorfile>qml-qtquick3d-repeater3d.html</anchorfile>
+            <anchor>objectAt-method</anchor>
+            <arglist>( index)</arglist>
+        </member>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.Effects.SCurveTonemap</name>
+        <filename>qml-qtquick3d-effects-scurvetonemap.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.Effects.Scatter</name>
+        <filename>qml-qtquick3d-effects-scatter.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.SceneEnvironment</name>
+        <filename>qml-qtquick3d-sceneenvironment.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.SetUniformValue</name>
+        <filename>qml-qtquick3d-setuniformvalue.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.Shader</name>
+        <filename>qml-qtquick3d-shader.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.ShaderInfo</name>
+        <filename>qml-qtquick3d-shaderinfo.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.SpotLight</name>
+        <filename>qml-qtquick3d-spotlight.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.Materials.SteelMilledConcentricMaterial</name>
+        <filename>qml-qtquick3d-materials-steelmilledconcentricmaterial.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.Texture</name>
+        <filename>qml-qtquick3d-texture.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.TextureInput</name>
+        <filename>qml-qtquick3d-textureinput.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.Effects.TiltShift</name>
+        <filename>qml-qtquick3d-effects-tiltshift.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.View3D</name>
+        <filename>qml-qtquick3d-view3d.html</filename>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>vector3d</type>
+            <name>mapFrom3DScene</name>
+            <anchorfile>qml-qtquick3d-view3d.html</anchorfile>
+            <anchor>mapFrom3DScene-method</anchor>
+            <arglist>( scenePos)</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>vector3d</type>
+            <name>mapTo3DScene</name>
+            <anchorfile>qml-qtquick3d-view3d.html</anchorfile>
+            <anchor>mapTo3DScene-method</anchor>
+            <arglist>( viewPos)</arglist>
+        </member>
+        <member kind="function" protection="public" virtualness="non" static="no">
+            <type>PickResult</type>
+            <name>pick</name>
+            <anchorfile>qml-qtquick3d-view3d.html</anchorfile>
+            <anchor>pick-method</anchor>
+            <arglist>( x,  float y)</arglist>
+        </member>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.Effects.Vignette</name>
+        <filename>qml-qtquick3d-effects-vignette.html</filename>
+    </compound>
+    <compound kind="class">
+        <name>QtQuick3D.Helpers.WasdController</name>
+        <filename>qml-qtquick3d-helpers-wasdcontroller.html</filename>
+    </compound>
+</tagfile>

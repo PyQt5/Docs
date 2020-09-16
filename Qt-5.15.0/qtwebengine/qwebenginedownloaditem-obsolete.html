@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qwebenginedownloaditem.cpp -->
+  <title>Obsolete Members for QWebEngineDownloadItem | Qt WebEngine 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtwebengine-index.html">Qt WebEngine</a></li>
+<li><a href="qtwebengine-modules.html">C++ Classes</a></li>
+<li>QWebEngineDownloadItem</li>
+<li id="buildversion"><a href="qtwebengine-index.html">Qt 5.15.0 Reference Documentation</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar"><div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Obsolete Members for QWebEngineDownloadItem</h1>
+<p><b>The following members of class <a href="qwebenginedownloaditem.html">QWebEngineDownloadItem</a> are obsolete.</b> They are provided to keep old source code working. We strongly advise against using them in new code.</p>
+<h2>Public Types</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>enum </td><td class="memItemRight bottomAlign"><b><a href="qwebenginedownloaditem-obsolete.html#DownloadType-enum">DownloadType</a></b> { Attachment, DownloadAttribute, UserRequested, SavePage }</td></tr>
+</table></div>
+<h2>Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>QString </td><td class="memItemRight bottomAlign"><b><a href="qwebenginedownloaditem-obsolete.html#path">path</a></b>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>void </td><td class="memItemRight bottomAlign"><b><a href="qwebenginedownloaditem-obsolete.html#setPath">setPath</a></b>(QString <i>path</i>)</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>QWebEngineDownloadItem::DownloadType </td><td class="memItemRight bottomAlign"><b><a href="qwebenginedownloaditem-obsolete.html#type">type</a></b>() const</td></tr>
+</table></div>
+<h2>Member Type Documentation</h2>
+<!-- $$$DownloadType$$$Attachment$$$DownloadAttribute$$$UserRequested$$$SavePage -->
+<h3 class="fn" id="DownloadType-enum"><a name="DownloadType-enum"></a>enum QWebEngineDownloadItem::<span class="name">DownloadType</span></h3>
+<p>This enum is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>Describes the requested download's type.</p>
+<div class="table"><table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><code>QWebEngineDownloadItem::Attachment</code></td><td class="topAlign tblval"><code>0</code></td><td class="topAlign">The web server's response includes a <code>Content-Disposition</code> header with the <code>attachment</code> directive. If <code>Content-Disposition</code> is present in the reply, the web server is indicating that the client should prompt the user to save the content regardless of the content type. See <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec19.html#sec19.5.1">RFC 2616 section 19.5&#x2e;1</a> for details.</td></tr>
+<tr><td class="topAlign"><code>QWebEngineDownloadItem::DownloadAttribute</code></td><td class="topAlign tblval"><code>1</code></td><td class="topAlign">The user clicked a link with the <code>download</code> attribute.</td></tr>
+<tr><td class="topAlign"><code>QWebEngineDownloadItem::UserRequested</code></td><td class="topAlign tblval"><code>2</code></td><td class="topAlign">The user initiated the download, for example by selecting a web action.</td></tr>
+<tr><td class="topAlign"><code>QWebEngineDownloadItem::SavePage</code></td><td class="topAlign tblval"><code>3</code></td><td class="topAlign">Saving of the current page was requested (for example by the <a href="qwebenginepage.html#WebAction-enum">QWebEnginePage::SavePage</a> web action).</td></tr>
+</table></div>
+<p>This enum was introduced or modified in Qt 5.8.</p>
+<!-- @@@DownloadType -->
+<h2>Member Function Documentation</h2>
+<!-- $$$path[overload1]$$$path -->
+<h3 class="fn" id="path"><a name="path"></a><span class="type"><a href="../qtcore/qstring.html">QString</a></span> QWebEngineDownloadItem::<span class="name">path</span>() const</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>Use <a href="qwebenginedownloaditem.html#suggestedFileName">suggestedFileName</a>(), <a href="qwebenginedownloaditem.html#downloadDirectory">downloadDirectory</a>(), and <a href="qwebenginedownloaditem.html#downloadFileName">downloadFileName</a>() instead.</p>
+<p>Returns the full target path where data is being downloaded to.</p>
+<p>The path includes the file name. The default suggested path is the standard download location and file name is deduced not to overwrite already existing files.</p>
+<p><b>See also </b><a href="qwebenginedownloaditem-obsolete.html#setPath">setPath</a>().</p>
+<!-- @@@path -->
+<!-- $$$setPath[overload1]$$$setPathQString -->
+<h3 class="fn" id="setPath"><a name="setPath"></a><span class="type">void</span> QWebEngineDownloadItem::<span class="name">setPath</span>(<span class="type"><a href="../qtcore/qstring.html">QString</a></span> <i>path</i>)</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>Use <a href="qwebenginedownloaditem.html#setDownloadDirectory">setDownloadDirectory</a>() and <a href="qwebenginedownloaditem.html#setDownloadFileName">setDownloadFileName</a>() instead.</p>
+<p>Sets the full target path to download the file to.</p>
+<p>The <i>path</i> should also include the file name. The download path can only be set in response to the <a href="qwebengineprofile.html#downloadRequested">QWebEngineProfile::downloadRequested</a>() signal before the download is accepted. Past that point, this function has no effect on the download item's state.</p>
+<p><b>See also </b><a href="qwebenginedownloaditem-obsolete.html#path">path</a>().</p>
+<!-- @@@setPath -->
+<!-- $$$type[overload1]$$$type -->
+<h3 class="fn" id="type"><a name="type"></a><span class="type"><a href="qwebenginedownloaditem-obsolete.html#DownloadType-enum">QWebEngineDownloadItem::DownloadType</a></span> QWebEngineDownloadItem::<span class="name">type</span>() const</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>Returns the requested download's type.</p>
+<p><b>Note: </b>This property works unreliably, except for <code>SavePage</code> downloads. Use <a href="qwebenginedownloaditem.html#isSavePageDownload">isSavePageDownload</a>() instead.</p>
+<p>This function was introduced in Qt 5.8.</p>
+<!-- @@@type -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

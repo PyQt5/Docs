@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- metalunderqml.qdoc -->
+  <title>Scene Graph - Metal Under QML | Qt Quick 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtquick-index.html">Qt Quick</a></li>
+<li>Scene Graph - Metal Under QML</li>
+<li id="buildversion"><a href="qtquick-index.html">Qt 5.15.0 Reference Documentation</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar"><div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Scene Graph - Metal Under QML</h1>
+<span class="subtitle"></span>
+<!-- $$$scenegraph/metalunderqml-brief -->
+<p>Shows how to render directly with Metal under a Qt Quick scene.</p>
+<!-- @@@scenegraph/metalunderqml -->
+<!-- $$$scenegraph/metalunderqml-description -->
+<div class="descr"> <a name="details"></a>
+<p class="centerAlign"><img src="images/metalunderqml-example.jpg" alt="" /></p><p>The Metal Under QML example shows how an application can make use of the <a href="qquickwindow.html#beforeRendering">QQuickWindow::beforeRendering</a>() and <a href="qquickwindow.html#beforeRenderPassRecording">QQuickWindow::beforeRenderPassRecording</a>() signals to draw custom Metal content under a Qt Quick scene. This signal is emitted at the start of every frame, before the scene graph starts its rendering, thus any Metal draw calls that are made as a response to this signal, will stack under the Qt Quick items. There are two signals, because the custom Metal commands are recorded onto the same command buffer with the same render command encoder that the scene graph uses. beforeRendering() on its own is not sufficient for this because it gets emitted at the start of the frame, before having an <a href="https://developer.apple.com/documentation/metal/mtlrendercommandencoder">MTLRenderCommandEncoder</a> available. By also connecting to beforeRenderPassRecording(), the application can gain access to the necessary native objects.</p>
+<p>As an alternative, applications that wish to render Metal content on top of the Qt Quick scene, can do so by connecting to the <a href="qquickwindow.html#afterRendering">QQuickWindow::afterRendering</a>() and <a href="qquickwindow.html#afterRenderPassRecording">QQuickWindow::afterRenderPassRecording</a>() signals.</p>
+<p>In this example, we will also see how it is possible to have values that are exposed to QML which affect the Metal rendering. We animate the threshold value using a <a href="qml-qtquick-numberanimation.html">NumberAnimation</a> in the QML file and this value is used by the Metal shader program that draws the squircles.</p>
+<p>The example is equivalent in most ways to the <a href="qtquick-scenegraph-openglunderqml-example.html">OpenGL Under QML</a>, <a href="qtquick-scenegraph-d3d11underqml-example.html">Direct3D 11 Under QML</a>, and <a href="qtquick-scenegraph-vulkanunderqml-example.html">Vulkan Under QML</a> examples, they all render the same custom content, just via different native APIs.</p>
+<p><a href="https://code.qt.io/cgit/qt/qtdeclarative.git/tree/examples/quick/scenegraph/metalunderqml?h=5.15">Example project @ code.qt.io</a></p>
+</div>
+<!-- @@@scenegraph/metalunderqml -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

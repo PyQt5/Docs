@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qstring.cpp -->
+  <title>Obsolete Members for QString | Qt Core 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtcore-index.html">Qt Core</a></li>
+<li><a href="qtcore-module.html">C++ Classes</a></li>
+<li>QString</li>
+<li id="buildversion"><a href="qtcore-index.html">Qt 5.15.0 Reference Documentation</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar"><div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Obsolete Members for QString</h1>
+<p><b>The following members of class <a href="qstring.html">QString</a> are obsolete.</b> They are provided to keep old source code working. We strongly advise against using them in new code.</p>
+<h2>Public Types</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>enum </td><td class="memItemRight bottomAlign"><b><a href="qstring-obsolete.html#SplitBehavior-enum">SplitBehavior</a></b> { KeepEmptyParts, SkipEmptyParts }</td></tr>
+</table></div>
+<h2>Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>QStringList </td><td class="memItemRight bottomAlign"><b><a href="qstring-obsolete.html#split-1">split</a></b>(const QString &amp;<i>sep</i>, QString::SplitBehavior <i>behavior</i>, Qt::CaseSensitivity <i>cs</i> = Qt::CaseSensitive) const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>QStringList </td><td class="memItemRight bottomAlign"><b><a href="qstring-obsolete.html#split-2">split</a></b>(QChar <i>sep</i>, QString::SplitBehavior <i>behavior</i>, Qt::CaseSensitivity <i>cs</i> = Qt::CaseSensitive) const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>QStringList </td><td class="memItemRight bottomAlign"><b><a href="qstring-obsolete.html#split-3">split</a></b>(const QRegExp &amp;<i>rx</i>, QString::SplitBehavior <i>behavior</i>) const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>QStringList </td><td class="memItemRight bottomAlign"><b><a href="qstring-obsolete.html#split-4">split</a></b>(const QRegularExpression &amp;<i>re</i>, QString::SplitBehavior <i>behavior</i>) const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>QVector&lt;QStringRef&gt; </td><td class="memItemRight bottomAlign"><b><a href="qstring-obsolete.html#splitRef-1">splitRef</a></b>(const QString &amp;<i>sep</i>, QString::SplitBehavior <i>behavior</i>, Qt::CaseSensitivity <i>cs</i> = Qt::CaseSensitive) const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>QVector&lt;QStringRef&gt; </td><td class="memItemRight bottomAlign"><b><a href="qstring-obsolete.html#splitRef-3">splitRef</a></b>(const QRegExp &amp;<i>rx</i>, QString::SplitBehavior <i>behavior</i>) const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>QVector&lt;QStringRef&gt; </td><td class="memItemRight bottomAlign"><b><a href="qstring-obsolete.html#splitRef-4">splitRef</a></b>(const QRegularExpression &amp;<i>re</i>, QString::SplitBehavior <i>behavior</i>) const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>QString &amp;</td><td class="memItemRight bottomAlign"><b><a href="qstring-obsolete.html#sprintf">sprintf</a></b>(const char *<i>cformat</i>, <i>...</i>)</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>QByteArray </td><td class="memItemRight bottomAlign"><b><a href="qstring-obsolete.html#toAscii">toAscii</a></b>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>QString &amp;</td><td class="memItemRight bottomAlign"><b><a href="qstring-obsolete.html#vsprintf">vsprintf</a></b>(const char *<i>cformat</i>, va_list <i>ap</i>)</td></tr>
+</table></div>
+<h2>Static Public Members</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>QString </td><td class="memItemRight bottomAlign"><b><a href="qstring-obsolete.html#fromAscii">fromAscii</a></b>(const char *<i>str</i>, int <i>size</i> = -1)</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> <code>(obsolete) </code>QString </td><td class="memItemRight bottomAlign"><b><a href="qstring-obsolete.html#fromAscii-1">fromAscii</a></b>(const QByteArray &amp;<i>str</i>)</td></tr>
+</table></div>
+<h2>Member Type Documentation</h2>
+<!-- $$$SplitBehavior$$$KeepEmptyParts$$$SkipEmptyParts -->
+<h3 class="fn" id="SplitBehavior-enum"><a name="SplitBehavior-enum"></a>enum QString::<span class="name">SplitBehavior</span></h3>
+<p>This enum is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>Use <a href="qt.html#SplitBehaviorFlags-enum">Qt::SplitBehavior</a> instead.</p>
+<p>This enum specifies how the <a href="qstring.html#split">split</a>() function should behave with respect to empty strings.</p>
+<div class="table"><table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><code>QString::KeepEmptyParts</code></td><td class="topAlign tblval"><code>0</code></td><td class="topAlign">If a field is empty, keep it in the result.</td></tr>
+<tr><td class="topAlign"><code>QString::SkipEmptyParts</code></td><td class="topAlign tblval"><code>1</code></td><td class="topAlign">If a field is empty, don't include it in the result.</td></tr>
+</table></div>
+<p><b>See also </b><a href="qstring.html#split">split</a>().</p>
+<!-- @@@SplitBehavior -->
+<h2>Member Function Documentation</h2>
+<!-- $$$fromAscii[overload1]$$$fromAsciiconstchar*int -->
+<h3 class="fn" id="fromAscii"><a name="fromAscii"></a><code>[static] </code><span class="type"><a href="qstring.html#QString">QString</a></span> QString::<span class="name">fromAscii</span>(const <span class="type">char</span> *<i>str</i>, <span class="type">int</span> <i>size</i> = -1)</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>Returns a <a href="qstring.html">QString</a> initialized with the first <i>size</i> characters from the string <i>str</i>.</p>
+<p>If <i>size</i> is -1 (default), it is taken to be strlen(<i>str</i>).</p>
+<p>This function does the same as <a href="qstring.html#fromLatin1">fromLatin1</a>().</p>
+<p><b>See also </b><a href="qstring-obsolete.html#toAscii">toAscii</a>(), <a href="qstring.html#fromLatin1">fromLatin1</a>(), <a href="qstring.html#fromUtf8">fromUtf8</a>(), and <a href="qstring.html#fromLocal8Bit">fromLocal8Bit</a>().</p>
+<!-- @@@fromAscii -->
+<!-- $$$fromAscii$$$fromAsciiconstQByteArray& -->
+<h3 class="fn" id="fromAscii-1"><a name="fromAscii-1"></a><code>[static] </code><span class="type"><a href="qstring.html#QString">QString</a></span> QString::<span class="name">fromAscii</span>(const <span class="type"><a href="qbytearray.html">QByteArray</a></span> &amp;<i>str</i>)</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>This is an overloaded function.</p>
+<p>Returns a <a href="qstring.html">QString</a> initialized with the string <i>str</i>.</p>
+<p>This function was introduced in Qt 5.0.</p>
+<!-- @@@fromAscii -->
+<!-- $$$split$$$splitconstQString&QString::SplitBehaviorQt::CaseSensitivity -->
+<h3 class="fn" id="split-1"><a name="split-1"></a><span class="type"><a href="qstringlist.html">QStringList</a></span> QString::<span class="name">split</span>(const <span class="type"><a href="qstring.html#QString">QString</a></span> &amp;<i>sep</i>, <span class="type"><a href="qstring-obsolete.html#SplitBehavior-enum">QString::SplitBehavior</a></span> <i>behavior</i>, <span class="type"><a href="qt.html#CaseSensitivity-enum">Qt::CaseSensitivity</a></span> <i>cs</i> = Qt::CaseSensitive) const</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>This is an overloaded function.</p>
+<!-- @@@split -->
+<!-- $$$split$$$splitQCharQString::SplitBehaviorQt::CaseSensitivity -->
+<h3 class="fn" id="split-2"><a name="split-2"></a><span class="type"><a href="qstringlist.html">QStringList</a></span> QString::<span class="name">split</span>(<span class="type"><a href="qchar.html">QChar</a></span> <i>sep</i>, <span class="type"><a href="qstring-obsolete.html#SplitBehavior-enum">QString::SplitBehavior</a></span> <i>behavior</i>, <span class="type"><a href="qt.html#CaseSensitivity-enum">Qt::CaseSensitivity</a></span> <i>cs</i> = Qt::CaseSensitive) const</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>This is an overloaded function.</p>
+<!-- @@@split -->
+<!-- $$$split$$$splitconstQRegExp&QString::SplitBehavior -->
+<h3 class="fn" id="split-3"><a name="split-3"></a><span class="type"><a href="qstringlist.html">QStringList</a></span> QString::<span class="name">split</span>(const <span class="type"><a href="qregexp.html">QRegExp</a></span> &amp;<i>rx</i>, <span class="type"><a href="qstring-obsolete.html#SplitBehavior-enum">QString::SplitBehavior</a></span> <i>behavior</i>) const</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>This is an overloaded function.</p>
+<!-- @@@split -->
+<!-- $$$split$$$splitconstQRegularExpression&QString::SplitBehavior -->
+<h3 class="fn" id="split-4"><a name="split-4"></a><span class="type"><a href="qstringlist.html">QStringList</a></span> QString::<span class="name">split</span>(const <span class="type"><a href="qregularexpression.html">QRegularExpression</a></span> &amp;<i>re</i>, <span class="type"><a href="qstring-obsolete.html#SplitBehavior-enum">QString::SplitBehavior</a></span> <i>behavior</i>) const</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>This is an overloaded function.</p>
+<p>This function was introduced in Qt 5.0.</p>
+<!-- @@@split -->
+<!-- $$$splitRef$$$splitRefconstQString&QString::SplitBehaviorQt::CaseSensitivity -->
+<h3 class="fn" id="splitRef-1"><a name="splitRef-1"></a><span class="type"><a href="qvector.html">QVector</a></span>&lt;<span class="type"><a href="qstringref.html">QStringRef</a></span>&gt; QString::<span class="name">splitRef</span>(const <span class="type"><a href="qstring.html#QString">QString</a></span> &amp;<i>sep</i>, <span class="type"><a href="qstring-obsolete.html#SplitBehavior-enum">QString::SplitBehavior</a></span> <i>behavior</i>, <span class="type"><a href="qt.html#CaseSensitivity-enum">Qt::CaseSensitivity</a></span> <i>cs</i> = Qt::CaseSensitive) const</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>This is an overloaded function.</p>
+<p>This function was introduced in Qt 5.4.</p>
+<!-- @@@splitRef -->
+<!-- $$$splitRef$$$splitRefconstQRegExp&QString::SplitBehavior -->
+<h3 class="fn" id="splitRef-3"><a name="splitRef-3"></a><span class="type"><a href="qvector.html">QVector</a></span>&lt;<span class="type"><a href="qstringref.html">QStringRef</a></span>&gt; QString::<span class="name">splitRef</span>(const <span class="type"><a href="qregexp.html">QRegExp</a></span> &amp;<i>rx</i>, <span class="type"><a href="qstring-obsolete.html#SplitBehavior-enum">QString::SplitBehavior</a></span> <i>behavior</i>) const</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>This is an overloaded function.</p>
+<p>This function was introduced in Qt 5.4.</p>
+<!-- @@@splitRef -->
+<!-- $$$splitRef$$$splitRefconstQRegularExpression&QString::SplitBehavior -->
+<h3 class="fn" id="splitRef-4"><a name="splitRef-4"></a><span class="type"><a href="qvector.html">QVector</a></span>&lt;<span class="type"><a href="qstringref.html">QStringRef</a></span>&gt; QString::<span class="name">splitRef</span>(const <span class="type"><a href="qregularexpression.html">QRegularExpression</a></span> &amp;<i>re</i>, <span class="type"><a href="qstring-obsolete.html#SplitBehavior-enum">QString::SplitBehavior</a></span> <i>behavior</i>) const</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>This is an overloaded function.</p>
+<p>This function was introduced in Qt 5.4.</p>
+<!-- @@@splitRef -->
+<!-- $$$sprintf[overload1]$$$sprintfconstchar*... -->
+<h3 class="fn" id="sprintf"><a name="sprintf"></a><span class="type"><a href="qstring.html#QString">QString</a></span> &amp;QString::<span class="name">sprintf</span>(const <span class="type">char</span> *<i>cformat</i>, <i>...</i>)</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>Use <a href="qstring.html#asprintf">asprintf</a>(), <a href="qstring.html#arg">arg</a>() or <a href="qtextstream.html">QTextStream</a> instead.</p>
+<!-- @@@sprintf -->
+<!-- $$$toAscii[overload1]$$$toAscii -->
+<h3 class="fn" id="toAscii"><a name="toAscii"></a><span class="type"><a href="qbytearray.html">QByteArray</a></span> QString::<span class="name">toAscii</span>() const</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>Returns an 8-bit representation of the string as a <a href="qbytearray.html">QByteArray</a>.</p>
+<p>This function does the same as <a href="qstring.html#toLatin1">toLatin1</a>().</p>
+<p>Note that, despite the name, this function does not necessarily return an US-ASCII (ANSI X3.4-1986) string and its result may not be US-ASCII compatible.</p>
+<p><b>See also </b><a href="qstring-obsolete.html#fromAscii">fromAscii</a>(), <a href="qstring.html#toLatin1">toLatin1</a>(), <a href="qstring.html#toUtf8">toUtf8</a>(), <a href="qstring.html#toLocal8Bit">toLocal8Bit</a>(), and <a href="qtextcodec.html">QTextCodec</a>.</p>
+<!-- @@@toAscii -->
+<!-- $$$vsprintf[overload1]$$$vsprintfconstchar*va_list -->
+<h3 class="fn" id="vsprintf"><a name="vsprintf"></a><span class="type"><a href="qstring.html#QString">QString</a></span> &amp;QString::<span class="name">vsprintf</span>(const <span class="type">char</span> *<i>cformat</i>, <span class="type">va_list</span> <i>ap</i>)</h3>
+<p>This function is obsolete. It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>Use <a href="qstring.html#vasprintf">vasprintf</a>(), <a href="qstring.html#arg">arg</a>() or <a href="qtextstream.html">QTextStream</a> instead.</p>
+<!-- @@@vsprintf -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

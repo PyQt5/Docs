@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- antialiasing.qdoc -->
+  <title>Qt Quick 3D - Antialiasing Example | Qt Quick 3D 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtquick3d-index.html">Qt Quick 3D</a></li>
+<li>Qt Quick 3D - Antialiasing Example</li>
+<li id="buildversion"><a href="qtquick3d-index.html">Qt Quick 3D | Commercial or GPLv3</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#the-test-scene">The test scene</a></li>
+<li class="level1"><a href="#controlling-antialiasing">Controlling antialiasing</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Qt Quick 3D - Antialiasing Example</h1>
+<span class="subtitle"></span>
+<!-- $$$antialiasing-brief -->
+<p>Demonstrates the antialiasing modes in Qt Quick 3D.</p>
+<!-- @@@antialiasing -->
+<!-- $$$antialiasing-description -->
+<div class="descr"> <a name="details"></a>
+<p class="centerAlign"><img src="images/antialiasing-example.png" alt="" /></p><p>The <i>Antialiasing</i> example demonstrates how to control antialiasing in Qt Quick 3D. It shows a simple scene that exhibits antialiasing artifacts. There is a simple Qt Quick user interface that allows choosing between the antialiasing types, and setting the options that control them.</p>
+<a name="the-test-scene"></a>
+<h4 id="the-test-scene">The test scene</h4>
+<p>This example shows a simple scene that contains a sphere and two rotated cubes. The scene is set up so that it clearly shows jagged edges when antialiasing is not enabled.</p>
+<a name="controlling-antialiasing"></a>
+<h4 id="controlling-antialiasing">Controlling antialiasing</h4>
+<p>Antialiasing is controlled by the <a href="qml-qtquick3d-sceneenvironment.html">SceneEnvironment</a> object. The values are set based on the selection made in the user interface.</p>
+<p>The {<a href="qml-qtquick3d-sceneenvironment.html">SceneEnvironment</a>.antialiasingMode}{antialiasing mode} can be set to <code>NoAA</code> to disable antialiasing, or to one of the following:</p>
+<ul>
+<li><code>SSAA</code> for supersample antialiasing</li>
+<li><code>MSAA</code> for multisample antialiasing</li>
+<li><code>ProgressiveAA</code> for progressive antialiasing</li>
+</ul>
+<p>The {<a href="qml-qtquick3d-sceneenvironment.html">SceneEnvironment</a>.antialiasingQuality}{antialiasing quality} can be set to <code>Medium</code>, <code>High</code>, or <code>VeryHigh</code>.</p>
+<p>In addition, {<a href="qml-qtquick3d-sceneenvironment.html">SceneEnvironment</a>.temporalAAEnabled}{temporal antialiasing} can be enabled independently.</p>
+<pre class="qml">
+      <span class="name">environment</span>: <span class="name">SceneEnvironment</span> {
+          <span class="name">id</span>: <span class="name">sceneEnvironment</span>
+          <span class="name">clearColor</span>: <span class="string">&quot;#f0f0f0&quot;</span>
+          <span class="name">backgroundMode</span>: <span class="name">SceneEnvironment</span>.<span class="name">Color</span>
+
+          <span class="name">antialiasingMode</span>: <span class="name">modeButton1</span>.<span class="name">checked</span> ? <span class="name">SceneEnvironment</span>.<span class="name">NoAA</span> : <span class="name">modeButton2</span>.<span class="name">checked</span>
+                                                  ? <span class="name">SceneEnvironment</span>.<span class="name">SSAA</span> : <span class="name">modeButton3</span>.<span class="name">checked</span>
+                                                    ? <span class="name">SceneEnvironment</span>.<span class="name">MSAA</span> : <span class="name">SceneEnvironment</span>.<span class="name">ProgressiveAA</span>
+
+          <span class="name">antialiasingQuality</span>: <span class="name">qualityButton1</span>.<span class="name">checked</span> ? <span class="name">SceneEnvironment</span>.<span class="name">Medium</span> : <span class="name">qualityButton2</span>.<span class="name">checked</span>
+                                                        ? <span class="name">SceneEnvironment</span>.<span class="name">High</span> : <span class="name">SceneEnvironment</span>.<span class="name">VeryHigh</span>
+          <span class="name">temporalAAEnabled</span>: <span class="name">temporalModeButton</span>.<span class="name">checked</span>
+          <span class="name">temporalAAStrength</span>: <span class="name">temporalStrengthSlider</span>.<span class="name">value</span>
+      }
+</pre>
+<p>Files:</p>
+<ul>
+<li><a href="qtquick3d-antialiasing-antialiasing-pro.html">antialiasing/antialiasing.pro</a></li>
+<li><a href="qtquick3d-antialiasing-main-cpp.html">antialiasing/main.cpp</a></li>
+<li><a href="qtquick3d-antialiasing-main-qml.html">antialiasing/main.qml</a></li>
+<li><a href="qtquick3d-antialiasing-qml-qrc.html">antialiasing/qml.qrc</a></li>
+</ul>
+</div>
+<!-- @@@antialiasing -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

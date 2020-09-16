@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qquick3dnode.cpp -->
+  <title>Node QML Type | Qt Quick 3D 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtquick3d-index.html">Qt Quick 3D</a></li>
+<li><a href="qtquick3d-qmlmodule.html">QML Types</a></li>
+<li>Node QML Type</li>
+<li id="buildversion"><a href="qtquick3d-index.html">Qt Quick 3D | Commercial or GPLv3</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#methods">Methods</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Node QML Type</h1>
+<span class="subtitle"></span>
+<!-- $$$Node-brief -->
+<p>The base component for an object that exists in a 3D Scene. <a href="#details">More...</a></p>
+<!-- @@@Node -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Import Statement:</td><td class="memItemRight bottomAlign"> import QtQuick3D 1.15</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Inherits:</td><td class="memItemRight bottomAlign"> <p><a href="qml-qtquick3d-object3d.html">Object3D</a></p>
+</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Inherited By:</td><td class="memItemRight bottomAlign"> <p><a href="qml-qtquick3d-helpers-axishelper.html">AxisHelper</a>, <a href="qml-qtquick3d-camera.html">Camera</a>, <a href="qml-qtquick3d-light.html">Light</a>, <a href="qml-qtquick3d-loader3d.html">Loader3D</a>, <a href="qml-qtquick3d-model.html">Model</a>, and <a href="qml-qtquick3d-repeater3d.html">Repeater3D</a></p>
+</td></tr></table></div><ul>
+<li><a href="qml-qtquick3d-node-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="properties"></a>
+<h2 id="properties">Properties</h2>
+<ul>
+<li class="fn"><b><b><a href="qml-qtquick3d-node.html#TransformSpace-prop">TransformSpace</a></b></b> : enumeration</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-node.html#eulerRotation-prop">eulerRotation</a></b></b> : vector3d</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-node.html#forward-prop">forward</a></b></b> : vector3d</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-node.html#opacity-prop">opacity</a></b></b> : real</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-node.html#pivot-prop">pivot</a></b></b> : vector3d</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-node.html#position-prop">position</a></b></b> : vector3d</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-node.html#right-prop">right</a></b></b> : vector3d</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-node.html#rotation-prop">rotation</a></b></b> : quaternion</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-node.html#scale-prop">scale</a></b></b> : vector3d</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-node.html#scenePosition-prop">scenePosition</a></b></b> : vector3d</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-node.html#sceneRotation-prop">sceneRotation</a></b></b> : vector3d</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-node.html#sceneScale-prop">sceneScale</a></b></b> : vector3d</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-node.html#sceneTransform-prop">sceneTransform</a></b></b> : matrix4x4</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-node.html#staticFlags-prop">staticFlags</a></b></b> : int</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-node.html#up-prop">up</a></b></b> : vector3d</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-node.html#visible-prop">visible</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-node.html#x-prop">x</a></b></b> : real</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-node.html#y-prop">y</a></b></b> : real</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-node.html#z-prop">z</a></b></b> : real</li>
+</ul>
+<a name="methods"></a>
+<h2 id="methods">Methods</h2>
+<ul>
+<li class="fn">vector3d <b><b><a href="qml-qtquick3d-node.html#mapDirectionFromNode-method">mapDirectionFromNode</a></b></b>(<i>node</i>,  vector3d <i>localDirection</i>)</li>
+<li class="fn">vector3d <b><b><a href="qml-qtquick3d-node.html#mapDirectionFromScene-method">mapDirectionFromScene</a></b></b>(<i>sceneDirection</i>)</li>
+<li class="fn">vector3d <b><b><a href="qml-qtquick3d-node.html#mapDirectionToNode-method">mapDirectionToNode</a></b></b>(<i>node</i>,  vector3d <i>localDirection</i>)</li>
+<li class="fn">vector3d <b><b><a href="qml-qtquick3d-node.html#mapDirectionToScene-method">mapDirectionToScene</a></b></b>(<i>localDirection</i>)</li>
+<li class="fn">vector3d <b><b><a href="qml-qtquick3d-node.html#mapPositionFromNode-method">mapPositionFromNode</a></b></b>(<i>node</i>,  vector3d <i>localPosition</i>)</li>
+<li class="fn">vector3d <b><b><a href="qml-qtquick3d-node.html#mapPositionFromScene-method">mapPositionFromScene</a></b></b>(<i>scenePosition</i>)</li>
+<li class="fn">vector3d <b><b><a href="qml-qtquick3d-node.html#mapPositionToNode-method">mapPositionToNode</a></b></b>(<i>node</i>,  vector3d <i>localPosition</i>)</li>
+<li class="fn">vector3d <b><b><a href="qml-qtquick3d-node.html#mapPositionToScene-method">mapPositionToScene</a></b></b>(<i>localPosition</i>)</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-node.html#rotate-method">rotate</a></b></b>(<i>degrees</i>,  vector3d <i>axis</i>,  TransformSpace <i>space</i>)</li>
+</ul>
+<!-- $$$Node-description -->
+<a name="details"></a>
+<h2 id="details">Detailed Description</h2>
+<p>Node type can be used to wrap other objects for the purpose of grouping them, or animating them. This snippet shows how to use Node to animate a camera.</p>
+<pre class="qml">
+ <span class="type"><a href="qml-qtquick3d-node.html">Node</a></span> {
+     <span class="type"><a href="qml-qtquick3d-perspectivecamera.html">PerspectiveCamera</a></span> {
+         <span class="name">position</span>: <span class="name">Qt</span>.<span class="name">vector3d</span>(<span class="number">0</span>, <span class="number">0</span>, -<span class="number">600</span>)
+     }
+
+     SequentialAnimation on <span class="name">eulerRotation</span>.y {
+         <span class="name">loops</span>: <span class="name">Animation</span>.<span class="name">Infinite</span>
+         <span class="type"><a href="../qtquick/qml-qtquick-propertyanimation.html">PropertyAnimation</a></span> {
+             <span class="name">duration</span>: <span class="number">5000</span>
+             <span class="name">from</span>: <span class="number">0</span>
+             <span class="name">to</span>: <span class="number">360</span>
+         }
+     }
+ }
+</pre>
+<p>Node has to be used also if creating a scene outside of <a href="qml-qtquick3d-view3d.html">View3D</a>, for example for the purpose of switching scenes on the fly, or showing the same scene on multiple views.</p>
+<pre class="qml">
+ Node {
+     id: standAloneScene
+
+     DirectionalLight {}
+
+     Model {
+         source: &quot;#Sphere&quot;
+         materials: [ CopperMaterial {} ]
+     }
+
+     PerspectiveCamera {
+         z: -600
+     }
+ }
+
+ View3D {
+     importScene: standAloneScene
+ }
+</pre>
+<!-- @@@Node -->
+<h2>Property Documentation</h2>
+<!-- $$$TransformSpace -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="TransformSpace-prop">
+<td class="tblQmlPropNode"><p>
+<a name="TransformSpace-prop"></a><span class="name">TransformSpace</span> : <span class="type"><a href="../qtqml/qml-enumeration.html">enumeration</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Defines the relationship of the axis.</p>
+<div class="table"><table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><code>Node.LocalSpace</code></td><td class="topAlign">Axis is relative to the local orientation of this node.</td></tr>
+<tr><td class="topAlign"><code>Node.ParentSpace</code></td><td class="topAlign">Axis is relative to the local orientation of the parent node.</td></tr>
+<tr><td class="topAlign"><code>Node.SceneSpace</code></td><td class="topAlign">Axis is relative to the scene.</td></tr>
+</table></div>
+</div></div><!-- @@@TransformSpace -->
+<br/>
+<!-- $$$eulerRotation -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="eulerRotation-prop">
+<td class="tblQmlPropNode"><p>
+<a name="eulerRotation-prop"></a><span class="name">eulerRotation</span> : <span class="type"><a href="../qtquick/qml-vector3d.html">vector3d</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property contains the rotation values for the x, y, and z axis. These values are stored as a vector3d. Rotation order is assumed to be XYZ.</p>
+</div></div><!-- @@@eulerRotation -->
+<br/>
+<!-- $$$forward -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="forward-prop">
+<td class="tblQmlPropNode"><p>
+<a name="forward-prop"></a><span class="name">forward</span> : <span class="type"><a href="../qtquick/qml-vector3d.html">vector3d</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property returns a normalized vector of the nodes forward direction in scene space.</p>
+<p><b>See also </b><a href="qml-qtquick3d-node.html#up-prop">up</a>, <a href="qml-qtquick3d-node.html#right-prop">right</a>, and <a href="qml-qtquick3d-node.html#mapDirectionToScene-method">mapDirectionToScene</a>.</p>
+</div></div><!-- @@@forward -->
+<br/>
+<!-- $$$opacity -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="opacity-prop">
+<td class="tblQmlPropNode"><p>
+<a name="opacity-prop"></a><span class="name">opacity</span> : <span class="type"><a href="../qtqml/qml-real.html">real</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property contains the local opacity value of the Node. Since Node objects are not necessarialy visible, this value might not have any affect, but this value is inherited by all children of the Node, which might be visible.</p>
+</div></div><!-- @@@opacity -->
+<br/>
+<!-- $$$pivot -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="pivot-prop">
+<td class="tblQmlPropNode"><p>
+<a name="pivot-prop"></a><span class="name">pivot</span> : <span class="type"><a href="../qtquick/qml-vector3d.html">vector3d</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property contains the pivot values for the x, y, and z axis. These values are used as the pivot points when applying rotations to the node.</p>
+</div></div><!-- @@@pivot -->
+<br/>
+<!-- $$$position -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="position-prop">
+<td class="tblQmlPropNode"><p>
+<a name="position-prop"></a><span class="name">position</span> : <span class="type"><a href="../qtquick/qml-vector3d.html">vector3d</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property contains the position translation in local coordinate space.</p>
+<p><b>See also </b><a href="qml-qtquick3d-node.html#x-prop">x</a>, <a href="qml-qtquick3d-node.html#y-prop">y</a>, and <a href="qml-qtquick3d-node.html#z-prop">z</a>.</p>
+</div></div><!-- @@@position -->
+<br/>
+<!-- $$$right -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="right-prop">
+<td class="tblQmlPropNode"><p>
+<a name="right-prop"></a><span class="name">right</span> : <span class="type"><a href="../qtquick/qml-vector3d.html">vector3d</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property returns a normalized vector of the nodes right direction in scene space.</p>
+<p><b>See also </b><a href="qml-qtquick3d-node.html#forward-prop">forward</a>, <a href="qml-qtquick3d-node.html#up-prop">up</a>, and <a href="qml-qtquick3d-node.html#mapDirectionToScene-method">mapDirectionToScene</a>.</p>
+</div></div><!-- @@@right -->
+<br/>
+<!-- $$$rotation -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="rotation-prop">
+<td class="tblQmlPropNode"><p>
+<a name="rotation-prop"></a><span class="name">rotation</span> : <span class="type"><a href="../qtquick/qml-quaternion.html">quaternion</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property contains the rotation values for the node. These values are stored as a quaternion.</p>
+</div></div><!-- @@@rotation -->
+<br/>
+<!-- $$$scale -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="scale-prop">
+<td class="tblQmlPropNode"><p>
+<a name="scale-prop"></a><span class="name">scale</span> : <span class="type"><a href="../qtquick/qml-vector3d.html">vector3d</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property contains the scale values for the x, y, and z axis.</p>
+</div></div><!-- @@@scale -->
+<br/>
+<!-- $$$scenePosition -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="scenePosition-prop">
+<td class="tblQmlPropNode"><p>
+<a name="scenePosition-prop"></a><span class="name">scenePosition</span> : <span class="type"><a href="../qtquick/qml-vector3d.html">vector3d</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property returns the position of the node in scene space.</p>
+<p><b>Note: </b>This is sometimes also referred to as the global position. But then in the meaning &quot;global in the 3D world&quot;, and not &quot;global to the screen or desktop&quot; (which is usually the interpretation in other Qt APIs).</p>
+<p><b>Note: </b>the position will be reported in the same orientation as the node.</p>
+<p><b>See also </b><a href="qml-qtquick3d-node.html#mapPositionToScene-method">mapPositionToScene</a>.</p>
+</div></div><!-- @@@scenePosition -->
+<br/>
+<!-- $$$sceneRotation -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="sceneRotation-prop">
+<td class="tblQmlPropNode"><p>
+<a name="sceneRotation-prop"></a><span class="name">sceneRotation</span> : <span class="type"><a href="../qtquick/qml-vector3d.html">vector3d</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property returns the rotation of the node in scene space.</p>
+</div></div><!-- @@@sceneRotation -->
+<br/>
+<!-- $$$sceneScale -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="sceneScale-prop">
+<td class="tblQmlPropNode"><p>
+<a name="sceneScale-prop"></a><span class="name">sceneScale</span> : <span class="type"><a href="../qtquick/qml-vector3d.html">vector3d</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property returns the scale of the node in scene space.</p>
+</div></div><!-- @@@sceneScale -->
+<br/>
+<!-- $$$sceneTransform -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="sceneTransform-prop">
+<td class="tblQmlPropNode"><p>
+<a name="sceneTransform-prop"></a><span class="name">sceneTransform</span> : <span class="type"><a href="../qtquick/qml-matrix4x4.html">matrix4x4</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property returns the global transform matrix for this node.</p>
+<p><b>Note: </b>the return value will be in right-handed coordinates.</p>
+</div></div><!-- @@@sceneTransform -->
+<br/>
+<!-- $$$staticFlags -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="staticFlags-prop">
+<td class="tblQmlPropNode"><p>
+<a name="staticFlags-prop"></a><span class="name">staticFlags</span> : <span class="type"><a href="../qtqml/qml-int.html">int</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property defines the static flags that are used to evaluate how the node is rendered. Currently doesn't do anything but act as a placeholder for a future implementation.</p>
+<p>This property was introduced in Qt 5.15.</p>
+</div></div><!-- @@@staticFlags -->
+<br/>
+<!-- $$$up -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="up-prop">
+<td class="tblQmlPropNode"><p>
+<a name="up-prop"></a><span class="name">up</span> : <span class="type"><a href="../qtquick/qml-vector3d.html">vector3d</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property returns a normalized vector of the nodes up direction in scene space.</p>
+<p><b>See also </b><a href="qml-qtquick3d-node.html#forward-prop">forward</a>, <a href="qml-qtquick3d-node.html#right-prop">right</a>, and <a href="qml-qtquick3d-node.html#mapDirectionToScene-method">mapDirectionToScene</a>.</p>
+</div></div><!-- @@@up -->
+<br/>
+<!-- $$$visible -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="visible-prop">
+<td class="tblQmlPropNode"><p>
+<a name="visible-prop"></a><span class="name">visible</span> : <span class="type"><a href="../qtqml/qml-bool.html">bool</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>When this property is true, the Node (and its children) can be visible.</p>
+</div></div><!-- @@@visible -->
+<br/>
+<!-- $$$x -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="x-prop">
+<td class="tblQmlPropNode"><p>
+<a name="x-prop"></a><span class="name">x</span> : <span class="type"><a href="../qtqml/qml-real.html">real</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property contains the x value of the position translation in local coordinate space.</p>
+<p><b>See also </b><a href="qml-qtquick3d-node.html#position-prop">position</a>.</p>
+</div></div><!-- @@@x -->
+<br/>
+<!-- $$$y -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="y-prop">
+<td class="tblQmlPropNode"><p>
+<a name="y-prop"></a><span class="name">y</span> : <span class="type"><a href="../qtqml/qml-real.html">real</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property contains the y value of the position translation in local coordinate space.</p>
+<p><b>See also </b><a href="qml-qtquick3d-node.html#position-prop">position</a>.</p>
+</div></div><!-- @@@y -->
+<br/>
+<!-- $$$z -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="z-prop">
+<td class="tblQmlPropNode"><p>
+<a name="z-prop"></a><span class="name">z</span> : <span class="type"><a href="../qtqml/qml-real.html">real</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This property contains the z value of the position translation in local coordinate space.</p>
+<p><b>See also </b><a href="qml-qtquick3d-node.html#position-prop">position</a>.</p>
+</div></div><!-- @@@z -->
+<br/>
+<h2>Method Documentation</h2>
+<!-- $$$mapDirectionFromNode[overload1]$$$mapDirectionFromNodevector3d -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="mapDirectionFromNode-method">
+<td class="tblQmlFuncNode"><p>
+<a name="mapDirectionFromNode-method"></a><span class="type"><a href="../qtquick/qml-vector3d.html">vector3d</a></span> <span class="name">mapDirectionFromNode</span>(<i>node</i>,  <span class="type"><a href="../qtquick/qml-vector3d.html">vector3d</a></span> <i>localDirection</i>)</p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Transforms <i>localDirection</i> from the local space of <i>node</i> to the local space of this node. The return value is not affected by the (inherited) scale or position of the node.</p>
+<p><b>Note: </b>the return value will have the same length as <i>localDirection</i> (i.e&#x2e; not normalized).</p>
+<p><b>See also </b><a href="qml-qtquick3d-node.html#mapDirectionToNode-method">mapDirectionToNode</a>, <a href="qml-qtquick3d-node.html#mapDirectionFromScene-method">mapDirectionFromScene</a>, and <a href="qml-qtquick3d-node.html#mapDirectionToScene-method">mapDirectionToScene</a>.</p>
+</div></div><!-- @@@mapDirectionFromNode -->
+<br/>
+<!-- $$$mapDirectionFromScene[overload1]$$$mapDirectionFromScene -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="mapDirectionFromScene-method">
+<td class="tblQmlFuncNode"><p>
+<a name="mapDirectionFromScene-method"></a><span class="type"><a href="../qtquick/qml-vector3d.html">vector3d</a></span> <span class="name">mapDirectionFromScene</span>(<i>sceneDirection</i>)</p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Transforms <i>sceneDirection</i> from scene space to local space. The return value is not affected by the (inherited) scale or position of the node.</p>
+<p><b>Note: </b>the return value will have the same length as <i>sceneDirection</i> (i.e not normalized).</p>
+<p><b>See also </b><a href="qml-qtquick3d-node.html#mapDirectionToScene-method">mapDirectionToScene</a>, <a href="qml-qtquick3d-node.html#mapDirectionToNode-method">mapDirectionToNode</a>, and <a href="qml-qtquick3d-node.html#mapDirectionFromNode-method">mapDirectionFromNode</a>.</p>
+</div></div><!-- @@@mapDirectionFromScene -->
+<br/>
+<!-- $$$mapDirectionToNode[overload1]$$$mapDirectionToNodevector3d -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="mapDirectionToNode-method">
+<td class="tblQmlFuncNode"><p>
+<a name="mapDirectionToNode-method"></a><span class="type"><a href="../qtquick/qml-vector3d.html">vector3d</a></span> <span class="name">mapDirectionToNode</span>(<i>node</i>,  <span class="type"><a href="../qtquick/qml-vector3d.html">vector3d</a></span> <i>localDirection</i>)</p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Transforms <i>localDirection</i> from this nodes local space to the local space of <i>node</i>. The return value is not affected by the (inherited) scale or position of the node.</p>
+<p><b>Note: </b>the return value will have the same length as <i>localDirection</i> (i.e&#x2e; not normalized).</p>
+<p><b>See also </b><a href="qml-qtquick3d-node.html#mapDirectionFromNode-method">mapDirectionFromNode</a>, <a href="qml-qtquick3d-node.html#mapDirectionFromScene-method">mapDirectionFromScene</a>, and <a href="qml-qtquick3d-node.html#mapDirectionToScene-method">mapDirectionToScene</a>.</p>
+</div></div><!-- @@@mapDirectionToNode -->
+<br/>
+<!-- $$$mapDirectionToScene[overload1]$$$mapDirectionToScene -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="mapDirectionToScene-method">
+<td class="tblQmlFuncNode"><p>
+<a name="mapDirectionToScene-method"></a><span class="type"><a href="../qtquick/qml-vector3d.html">vector3d</a></span> <span class="name">mapDirectionToScene</span>(<i>localDirection</i>)</p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Transforms <i>localDirection</i> from local space to scene space. The return value is not affected by the (inherited) scale or position of the node.</p>
+<p><b>Note: </b>the return value will have the same length as <i>localDirection</i> (i.e&#x2e; not normalized).</p>
+<p><b>See also </b><a href="qml-qtquick3d-node.html#mapDirectionFromScene-method">mapDirectionFromScene</a>, <a href="qml-qtquick3d-node.html#mapDirectionToNode-method">mapDirectionToNode</a>, and <a href="qml-qtquick3d-node.html#mapDirectionFromNode-method">mapDirectionFromNode</a>.</p>
+</div></div><!-- @@@mapDirectionToScene -->
+<br/>
+<!-- $$$mapPositionFromNode[overload1]$$$mapPositionFromNodevector3d -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="mapPositionFromNode-method">
+<td class="tblQmlFuncNode"><p>
+<a name="mapPositionFromNode-method"></a><span class="type"><a href="../qtquick/qml-vector3d.html">vector3d</a></span> <span class="name">mapPositionFromNode</span>(<i>node</i>,  <span class="type"><a href="../qtquick/qml-vector3d.html">vector3d</a></span> <i>localPosition</i>)</p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Transforms <i>localPosition</i> from the local space of <i>node</i> to the local space of this node.</p>
+<p><b>See also </b><a href="qml-qtquick3d-node.html#mapPositionToScene-method">mapPositionToScene</a>, <a href="qml-qtquick3d-node.html#mapPositionFromScene-method">mapPositionFromScene</a>, and <a href="qml-qtquick3d-node.html#mapPositionToNode-method">mapPositionToNode</a>.</p>
+</div></div><!-- @@@mapPositionFromNode -->
+<br/>
+<!-- $$$mapPositionFromScene[overload1]$$$mapPositionFromScene -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="mapPositionFromScene-method">
+<td class="tblQmlFuncNode"><p>
+<a name="mapPositionFromScene-method"></a><span class="type"><a href="../qtquick/qml-vector3d.html">vector3d</a></span> <span class="name">mapPositionFromScene</span>(<i>scenePosition</i>)</p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Transforms <i>scenePosition</i> from scene space to local space.</p>
+<p><b>See also </b><a href="qml-qtquick3d-node.html#mapPositionToScene-method">mapPositionToScene</a>, <a href="qml-qtquick3d-node.html#mapPositionToNode-method">mapPositionToNode</a>, and <a href="qml-qtquick3d-node.html#mapPositionFromNode-method">mapPositionFromNode</a>.</p>
+</div></div><!-- @@@mapPositionFromScene -->
+<br/>
+<!-- $$$mapPositionToNode[overload1]$$$mapPositionToNodevector3d -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="mapPositionToNode-method">
+<td class="tblQmlFuncNode"><p>
+<a name="mapPositionToNode-method"></a><span class="type"><a href="../qtquick/qml-vector3d.html">vector3d</a></span> <span class="name">mapPositionToNode</span>(<i>node</i>,  <span class="type"><a href="../qtquick/qml-vector3d.html">vector3d</a></span> <i>localPosition</i>)</p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Transforms <i>localPosition</i> from the local space of this node to the local space of <i>node</i>.</p>
+<p><b>See also </b><a href="qml-qtquick3d-node.html#mapPositionToScene-method">mapPositionToScene</a>, <a href="qml-qtquick3d-node.html#mapPositionFromScene-method">mapPositionFromScene</a>, and <a href="qml-qtquick3d-node.html#mapPositionFromNode-method">mapPositionFromNode</a>.</p>
+</div></div><!-- @@@mapPositionToNode -->
+<br/>
+<!-- $$$mapPositionToScene[overload1]$$$mapPositionToScene -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="mapPositionToScene-method">
+<td class="tblQmlFuncNode"><p>
+<a name="mapPositionToScene-method"></a><span class="type"><a href="../qtquick/qml-vector3d.html">vector3d</a></span> <span class="name">mapPositionToScene</span>(<i>localPosition</i>)</p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Transforms <i>localPosition</i> from local space to scene space.</p>
+<p><b>Note: </b>&quot;Scene space&quot; is sometimes also referred to as the &quot;global space&quot;. But then in the meaning &quot;global in the 3D world&quot;, and not &quot;global to the screen or desktop&quot; (which is usually the interpretation in other Qt APIs).</p>
+<p><b>See also </b><a href="qml-qtquick3d-node.html#mapPositionFromScene-method">mapPositionFromScene</a>, <a href="qml-qtquick3d-node.html#mapPositionToNode-method">mapPositionToNode</a>, and <a href="qml-qtquick3d-node.html#mapPositionFromNode-method">mapPositionFromNode</a>.</p>
+</div></div><!-- @@@mapPositionToScene -->
+<br/>
+<!-- $$$rotate[overload1]$$$rotatevector3dTransformSpace -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="rotate-method">
+<td class="tblQmlFuncNode"><p>
+<a name="rotate-method"></a><span class="name">rotate</span>(<i>degrees</i>,  <span class="type"><a href="../qtquick/qml-vector3d.html">vector3d</a></span> <i>axis</i>,  <span class="type">TransformSpace</span> <i>space</i>)</p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Rotates this node around an <i>axis</i> by the given <i>degrees</i>. The specified rotation will be added to the node's current rotation. The axis can be specified relative to different <a href="qml-qtquick3d-node.html#TransformSpace-prop"><i>space</i>s</a>.</p>
+</div></div><!-- @@@rotate -->
+<br/>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

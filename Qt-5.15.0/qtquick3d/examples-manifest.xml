@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<instructionals module="QtQuick3D">
+    <examples>
+        <example name="Qt Quick 3D - Antialiasing Example" docUrl="qthelp://org.qt-project.qtquick3d.5150/qtquick3d/qtquick3d-antialiasing-example.html" projectPath="quick3d/antialiasing/antialiasing.pro" imageUrl="qthelp://org.qt-project.qtquick3d.5150/qtquick3d/images/antialiasing-example.png">
+            <description><![CDATA[Demonstrates the antialiasing modes in Qt Quick 3D.]]></description>
+            <tags>antialiasing,quick,quick3d</tags>
+            <fileToOpen>quick3d/antialiasing/main.cpp</fileToOpen>
+            <fileToOpen mainFile="true">quick3d/antialiasing/main.qml</fileToOpen>
+        </example>
+        <example name="Qt Quick 3D - Custom Materials Example" docUrl="qthelp://org.qt-project.qtquick3d.5150/qtquick3d/qtquick3d-custommaterial-example.html" projectPath="quick3d/custommaterial/custommaterial.pro" imageUrl="qthelp://org.qt-project.qtquick3d.5150/qtquick3d/images/custommaterial-example.png">
+            <description><![CDATA[Demonstrates the use of some Material Library materials.]]></description>
+            <tags>custom,materials,quick,quick3d</tags>
+            <fileToOpen>quick3d/custommaterial/main.cpp</fileToOpen>
+            <fileToOpen mainFile="true">quick3d/custommaterial/main.qml</fileToOpen>
+        </example>
+        <example name="Qt Quick 3D - Custom Shaders Example" docUrl="qthelp://org.qt-project.qtquick3d.5150/qtquick3d/qtquick3d-customshaders-example.html" projectPath="quick3d/customshaders/customshaders.pro" imageUrl="qthelp://org.qt-project.qtquick3d.5150/qtquick3d/images/customshaders-example.png">
+            <description><![CDATA[Demonstrates the use of custom vertex and fragment shaders.]]></description>
+            <tags>custom,quick,quick3d,shaders</tags>
+            <fileToOpen>quick3d/customshaders/main.cpp</fileToOpen>
+            <fileToOpen mainFile="true">quick3d/customshaders/main.qml</fileToOpen>
+        </example>
+        <example name="Qt Quick 3D - Dynamic Model Creation Example" docUrl="qthelp://org.qt-project.qtquick3d.5150/qtquick3d/qtquick3d-dynamiccreation-example.html" projectPath="quick3d/dynamiccreation/dynamiccreation.pro" imageUrl="qthelp://org.qt-project.qtquick3d.5150/qtquick3d/images/dynamiccreation-example.png">
+            <description><![CDATA[Demonstrates dynamic model creation.]]></description>
+            <tags>creation,dynamic,model,quick,quick3d</tags>
+            <fileToOpen>quick3d/dynamiccreation/main.cpp</fileToOpen>
+            <fileToOpen mainFile="true">quick3d/dynamiccreation/main.qml</fileToOpen>
+        </example>
+        <example name="Qt Quick 3D - Dynamic Texture Example" docUrl="qthelp://org.qt-project.qtquick3d.5150/qtquick3d/qtquick3d-dynamictexture-example.html" projectPath="quick3d/dynamictexture/dynamictexture.pro" imageUrl="qthelp://org.qt-project.qtquick3d.5150/qtquick3d/images/dynamictexture.png">
+            <description><![CDATA[Demonstrates how to use a 2D layer as a 3D texture.]]></description>
+            <tags>dynamic,quick,quick3d,texture</tags>
+            <fileToOpen>quick3d/dynamictexture/main.cpp</fileToOpen>
+            <fileToOpen mainFile="true">quick3d/dynamictexture/main.qml</fileToOpen>
+        </example>
+        <example name="Qt Quick 3D - HelloCube Example" docUrl="qthelp://org.qt-project.qtquick3d.5150/qtquick3d/qtquick3d-hellocube-example.html" projectPath="quick3d/hellocube/hellocube.pro" imageUrl="qthelp://org.qt-project.qtquick3d.5150/qtquick3d/images/hellocube.png">
+            <description><![CDATA[Demonstrates how to render 2D and 3D objects together in Qt Quick 3D.]]></description>
+            <tags>hellocube,quick,quick3d</tags>
+            <fileToOpen>quick3d/hellocube/main.cpp</fileToOpen>
+            <fileToOpen mainFile="true">quick3d/hellocube/main.qml</fileToOpen>
+        </example>
+        <example name="Qt Quick 3D - Lights Example" docUrl="qthelp://org.qt-project.qtquick3d.5150/qtquick3d/qtquick3d-lights-example.html" projectPath="quick3d/lights/lights.pro" imageUrl="qthelp://org.qt-project.qtquick3d.5150/qtquick3d/images/lights-example.png">
+            <description><![CDATA[Demonstrates the use of different light types.]]></description>
+            <tags>lights,quick,quick3d</tags>
+            <fileToOpen>quick3d/lights/main.cpp</fileToOpen>
+            <fileToOpen mainFile="true">quick3d/lights/main.qml</fileToOpen>
+        </example>
+        <example name="Qt Quick 3D - Picking example" docUrl="qthelp://org.qt-project.qtquick3d.5150/qtquick3d/qtquick3d-picking-example.html" projectPath="quick3d/picking/picking.pro" imageUrl="qthelp://org.qt-project.qtquick3d.5150/qtquick3d/images/picking-example.png">
+            <description><![CDATA[Demonstrates picking of models.]]></description>
+            <tags>picking,quick,quick3d</tags>
+            <fileToOpen>quick3d/picking/main.cpp</fileToOpen>
+            <fileToOpen mainFile="true">quick3d/picking/main.qml</fileToOpen>
+        </example>
+        <example name="Qt Quick 3D - Principled Material Example" docUrl="qthelp://org.qt-project.qtquick3d.5150/qtquick3d/qtquick3d-principledmaterial-example.html" projectPath="quick3d/principledmaterial/principledmaterial.pro" imageUrl="qthelp://org.qt-project.qtquick3d.5150/qtquick3d/images/principledmaterial-example.png">
+            <description><![CDATA[Demonstrates the use of Principled Material.]]></description>
+            <tags>material,principled,quick,quick3d</tags>
+            <fileToOpen>quick3d/principledmaterial/main.cpp</fileToOpen>
+            <fileToOpen mainFile="true">quick3d/principledmaterial/main.qml</fileToOpen>
+        </example>
+        <example name="Qt Quick 3D - Quick Items Example" docUrl="qthelp://org.qt-project.qtquick3d.5150/qtquick3d/qtquick3d-quickitems-example.html" projectPath="quick3d/quickitems/quickitems.pro" imageUrl="qthelp://org.qt-project.qtquick3d.5150/qtquick3d/images/quickitems-example.png">
+            <description><![CDATA[Demonstrates the use of Qt Quick Items in Quick 3D scene.]]></description>
+            <tags>items,quick,quick3d</tags>
+            <fileToOpen>quick3d/quickitems/main.cpp</fileToOpen>
+            <fileToOpen mainFile="true">quick3d/quickitems/main.qml</fileToOpen>
+        </example>
+        <example name="Qt Quick 3D - Simple Example" docUrl="qthelp://org.qt-project.qtquick3d.5150/qtquick3d/qtquick3d-simple-example.html" projectPath="quick3d/simple/simple.pro" imageUrl="qthelp://org.qt-project.qtquick3d.5150/qtquick3d/images/simple.png">
+            <description><![CDATA[Demonstrates how to render a simple scene in Qt Quick 3D.]]></description>
+            <tags>quick,quick3d,simple</tags>
+            <fileToOpen>quick3d/simple/main.cpp</fileToOpen>
+            <fileToOpen mainFile="true">quick3d/simple/main.qml</fileToOpen>
+        </example>
+        <example name="Qt Quick 3D - View3D Example" docUrl="qthelp://org.qt-project.qtquick3d.5150/qtquick3d/qtquick3d-view3d-example.html" projectPath="quick3d/view3d/view3d.pro" imageUrl="qthelp://org.qt-project.qtquick3d.5150/qtquick3d/images/view3d-example.png">
+            <description><![CDATA[Demonstrates the use of View3D to show a scene from multiple cameras.]]></description>
+            <tags>quick,quick3d,view3d</tags>
+            <fileToOpen>quick3d/view3d/main.cpp</fileToOpen>
+            <fileToOpen mainFile="true">quick3d/view3d/main.qml</fileToOpen>
+        </example>
+    </examples>
+</instructionals>

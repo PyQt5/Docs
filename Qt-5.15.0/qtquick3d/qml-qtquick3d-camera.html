@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qquick3dcamera.cpp -->
+  <title>Camera QML Type | Qt Quick 3D 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtquick3d-index.html">Qt Quick 3D</a></li>
+<li><a href="qtquick3d-qmlmodule.html">QML Types</a></li>
+<li>Camera QML Type</li>
+<li id="buildversion"><a href="qtquick3d-index.html">Qt Quick 3D | Commercial or GPLv3</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#methods">Methods</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Camera QML Type</h1>
+<span class="subtitle"></span>
+<!-- $$$Camera-brief -->
+<p>Defines an abstract base for Cameras. <a href="#details">More...</a></p>
+<!-- @@@Camera -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Import Statement:</td><td class="memItemRight bottomAlign"> import QtQuick3D 1.15</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Inherits:</td><td class="memItemRight bottomAlign"> <p><a href="qml-qtquick3d-node.html">Node</a></p>
+</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Inherited By:</td><td class="memItemRight bottomAlign"> <p><a href="qml-qtquick3d-customcamera.html">CustomCamera</a>, <a href="qml-qtquick3d-orthographiccamera.html">OrthographicCamera</a>, and <a href="qml-qtquick3d-perspectivecamera.html">PerspectiveCamera</a></p>
+</td></tr></table></div><ul>
+<li><a href="qml-qtquick3d-camera-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="properties"></a>
+<h2 id="properties">Properties</h2>
+<ul>
+<li class="fn"><b><b><a href="qml-qtquick3d-camera.html#FieldOfViewOrientation-prop">FieldOfViewOrientation</a></b></b> : enumeration</li>
+<li class="fn"><b><b><a href="qml-qtquick3d-camera.html#frustumCullingEnabled-prop">frustumCullingEnabled</a></b></b> : bool</li>
+</ul>
+<a name="methods"></a>
+<h2 id="methods">Methods</h2>
+<ul>
+<li class="fn">vector3d <b><b><a href="qml-qtquick3d-camera.html#lookAt-method-1">lookAt</a></b></b>(<i>node</i>)</li>
+<li class="fn">vector3d <b><b><a href="qml-qtquick3d-camera.html#lookAt-method">lookAt</a></b></b>(<i>scenePos</i>)</li>
+<li class="fn">vector3d <b><b><a href="qml-qtquick3d-camera.html#mapFromViewport-method">mapFromViewport</a></b></b>(<i>viewportPos</i>)</li>
+<li class="fn">vector3d <b><b><a href="qml-qtquick3d-camera.html#mapToViewport-method">mapToViewport</a></b></b>(<i>scenePos</i>)</li>
+</ul>
+<!-- $$$Camera-description -->
+<a name="details"></a>
+<h2 id="details">Detailed Description</h2>
+<p>A Camera is always necessary to view the content of a 3D scene. A camera defines how to project the content of a 3D scene into a 2D coordinate space, which can then be used on a 2D surface. When a camera is present in the scene it can be used to direct what is displayed in a <a href="qml-qtquick3d-view3d.html">View3D</a>.</p>
+<p>To determine the projection of this camera a high level API is provided. First it is possible to position this Camera like any other spatial Node in the scene. This determines where the Camera is in the scene, and what direction it is facing. The default direction of the camera is such that the forward vector is looking up the -Z axis, and the up direction vector is up the +Y axis. With this in mind any transformation applied to the camera as well as the transformations inherited from it's parent Nodes you can define exactly where and in what direction your camera is facing.</p>
+<p>The second part of determining the projection of the camera is defining the frustum that defines the what parts of the scenes are visible, as well as how they are visible. The Camera subtypes provide multiple options to determine the shape of the Camera's frustum.</p>
+<p><b>See also </b><a href="qml-qtquick3d-perspectivecamera.html">PerspectiveCamera</a>, <a href="qml-qtquick3d-orthographiccamera.html">OrthographicCamera</a>, <a href="qml-qtquick3d-frustumcamera.html">FrustumCamera</a>, and <a href="qml-qtquick3d-customcamera.html">CustomCamera</a>.</p>
+<!-- @@@Camera -->
+<h2>Property Documentation</h2>
+<!-- $$$FieldOfViewOrientation -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="FieldOfViewOrientation-prop">
+<td class="tblQmlPropNode"><p>
+<a name="FieldOfViewOrientation-prop"></a><span class="name">FieldOfViewOrientation</span> : <span class="type"><a href="../qtqml/qml-enumeration.html">enumeration</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>This enum type specifies the orientation in which camera field of view is given:</p>
+<div class="table"><table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><code>Camera.Vertical</code></td><td class="topAlign">Camera field of view is vertical, i.e&#x2e; aspect ratio is adjusted vertically. This is the default orientation.</td></tr>
+<tr><td class="topAlign"><code>Camera.Horizontal</code></td><td class="topAlign">Camera field of view is horizontal, i.e&#x2e; aspect ratio is adjusted horizontally.</td></tr>
+</table></div>
+</div></div><!-- @@@FieldOfViewOrientation -->
+<br/>
+<!-- $$$frustumCullingEnabled -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="frustumCullingEnabled-prop">
+<td class="tblQmlPropNode"><p>
+<a name="frustumCullingEnabled-prop"></a><span class="name">frustumCullingEnabled</span> : <span class="type"><a href="../qtqml/qml-bool.html">bool</a></span></p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>When this property is <code>true</code> object outside the frustum will be culled, meaning they will not be rendered. By default this property is set to <code>false</code>, but for complex scene where a lot of the objects are outside the camera frustum it might be beneficial to enable frustum culling.</p>
+</div></div><!-- @@@frustumCullingEnabled -->
+<br/>
+<h2>Method Documentation</h2>
+<!-- $$$lookAt$$$lookAt -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="lookAt-method-1">
+<td class="tblQmlFuncNode"><p>
+<a name="lookAt-method-1"></a><span class="type"><a href="../qtquick/qml-vector3d.html">vector3d</a></span> <span class="name">lookAt</span>(<i>node</i>)</p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Sets the rotation value of a camera to be directed at <i>node</i>.</p>
+<p>This method was introduced in Qt 5.15.</p>
+</div></div><!-- @@@lookAt -->
+<br/>
+<!-- $$$lookAt[overload1]$$$lookAt -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="lookAt-method">
+<td class="tblQmlFuncNode"><p>
+<a name="lookAt-method"></a><span class="type"><a href="../qtquick/qml-vector3d.html">vector3d</a></span> <span class="name">lookAt</span>(<i>scenePos</i>)</p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Sets the rotation value of a camera to be directed at <i>scenePos</i>.</p>
+<p>This method was introduced in Qt 5.15.</p>
+</div></div><!-- @@@lookAt -->
+<br/>
+<!-- $$$mapFromViewport[overload1]$$$mapFromViewport -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="mapFromViewport-method">
+<td class="tblQmlFuncNode"><p>
+<a name="mapFromViewport-method"></a><span class="type"><a href="../qtquick/qml-vector3d.html">vector3d</a></span> <span class="name">mapFromViewport</span>(<i>viewportPos</i>)</p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Transforms <i>viewportPos</i> from viewport space (2D) into global scene space (3D). The x- and y-values of <i>viewportPos</i> must be normalized, with the top-left of the viewport being [0,0] and the bottom-right being [1,1]. The z-value should be the distance from the near side of the frustum (clipNear) into the scene in scene coordinates. If <i>viewportPos</i> cannot be mapped to a position in the scene, a position of [0, 0, 0] is returned.</p>
+<p><b>See also </b><a href="qml-qtquick3d-camera.html#mapToViewport-method">mapToViewport</a> and <a href="qml-qtquick3d-view3d.html#mapTo3DScene-method">View3D.mapTo3DScene()</a>.</p>
+</div></div><!-- @@@mapFromViewport -->
+<br/>
+<!-- $$$mapToViewport[overload1]$$$mapToViewport -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="mapToViewport-method">
+<td class="tblQmlFuncNode"><p>
+<a name="mapToViewport-method"></a><span class="type"><a href="../qtquick/qml-vector3d.html">vector3d</a></span> <span class="name">mapToViewport</span>(<i>scenePos</i>)</p></td></tr>
+</table></div></div>
+<div class="qmldoc"><p>Transforms <i>scenePos</i> from global scene space (3D) into viewport space (2D). The returned position is normalized, with the top-left of the viewport being [0,0] and the bottom-right being [1,1]. The returned z-value will contain the distance from the near side of the frustum (clipNear) to <i>scenePos</i> in view coordinates. If the distance is negative, the point is behind camera. If <i>scenePos</i> cannot be mapped to a position in the viewport, a position of [0, 0, 0] is returned.</p>
+<p><b>See also </b><a href="qml-qtquick3d-camera.html#mapFromViewport-method">mapFromViewport()</a> and <a href="qml-qtquick3d-view3d.html#mapFrom3DScene-method">View3D.mapFrom3DScene()</a>.</p>
+</div></div><!-- @@@mapToViewport -->
+<br/>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

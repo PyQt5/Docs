@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<!-- qsgmaterialrhishader.cpp -->
+  <title>QSGMaterialRhiShader Class | Qt Quick 5.15.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+    <div class="main">
+    <div class="main-rounded">
+        <div class="navigationbar">
+        <ul>
+<li><a href="../qtdoc/index.html">Qt 5.15</a></li>
+<li><a href="qtquick-index.html">Qt Quick</a></li>
+<li><a href="qtquick-module.html">C++ Classes</a></li>
+<li>QSGMaterialRhiShader</li>
+<li id="buildversion"><a href="qtquick-index.html">Qt 5.15.0 Reference Documentation</a></li>
+    </ul>
+    </div>
+</div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-types">Public Types</a></li>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#protected-functions">Protected Functions</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">QSGMaterialRhiShader Class</h1>
+<!-- $$$QSGMaterialRhiShader-brief -->
+<p>The QSGMaterialRhiShader class represents a graphics API independent shader program. <a href="#details">More...</a></p>
+<!-- @@@QSGMaterialRhiShader -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign">  <span class="preprocessor">#include &lt;QSGMaterialRhiShader&gt;</span>
+</td></tr><tr><td class="memItemLeft rightAlign topAlign"> qmake:</td><td class="memItemRight bottomAlign"> QT += quick</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Since:</td><td class="memItemRight bottomAlign"> Qt 5.14</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Inherits:</td><td class="memItemRight bottomAlign"> <a href="qsgmaterialshader.html">QSGMaterialShader</a></td></tr></table></div><p>This class was introduced in Qt 5.14.</p>
+<ul>
+<li><a href="qsgmaterialrhishader-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h2 id="public-types">Public Types</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qsgmaterialrhishader-graphicspipelinestate.html">GraphicsPipelineState</a></b></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> class </td><td class="memItemRight bottomAlign"><b><a href="qsgmaterialrhishader-renderstate.html">RenderState</a></b></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qsgmaterialrhishader.html#Flag-enum">Flag</a></b> { UpdatesGraphicsPipelineState }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> flags </td><td class="memItemRight bottomAlign"><b><a href="qsgmaterialrhishader.html#Flag-enum">Flags</a></b></td></tr>
+</table></div>
+<a name="public-functions"></a>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qsgmaterialrhishader.html#QSGMaterialRhiShader">QSGMaterialRhiShader</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QSGMaterialRhiShader::Flags </td><td class="memItemRight bottomAlign"><b><a href="qsgmaterialrhishader.html#flags">flags</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qsgmaterialrhishader.html#setFlag">setFlag</a></b>(QSGMaterialRhiShader::Flags <i>flags</i>, bool <i>on</i> = true)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual bool </td><td class="memItemRight bottomAlign"><b><a href="qsgmaterialrhishader.html#updateGraphicsPipelineState">updateGraphicsPipelineState</a></b>(QSGMaterialRhiShader::RenderState &amp;<i>state</i>, QSGMaterialRhiShader::GraphicsPipelineState *<i>ps</i>, QSGMaterial *<i>newMaterial</i>, QSGMaterial *<i>oldMaterial</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual void </td><td class="memItemRight bottomAlign"><b><a href="qsgmaterialrhishader.html#updateSampledImage">updateSampledImage</a></b>(QSGMaterialRhiShader::RenderState &amp;<i>state</i>, int <i>binding</i>, QSGTexture **<i>texture</i>, QSGMaterial *<i>newMaterial</i>, QSGMaterial *<i>oldMaterial</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual bool </td><td class="memItemRight bottomAlign"><b><a href="qsgmaterialrhishader.html#updateUniformData">updateUniformData</a></b>(QSGMaterialRhiShader::RenderState &amp;<i>state</i>, QSGMaterial *<i>newMaterial</i>, QSGMaterial *<i>oldMaterial</i>)</td></tr>
+</table></div>
+<a name="protected-functions"></a>
+<h2 id="protected-functions">Protected Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qsgmaterialrhishader.html#setShader">setShader</a></b>(QSGMaterialRhiShader::Stage <i>stage</i>, const QShader &amp;<i>shader</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qsgmaterialrhishader.html#setShaderFileName">setShaderFileName</a></b>(QSGMaterialRhiShader::Stage <i>stage</i>, const QString &amp;<i>filename</i>)</td></tr>
+</table></div>
+<a name="details"></a>
+<!-- $$$QSGMaterialRhiShader-description -->
+<div class="descr">
+<h2 id="details">Detailed Description</h2>
+<p>QSGMaterialRhiShader is a modern, cross-platform alternative to <a href="qsgmaterialshader.html">QSGMaterialShader</a>. The latter is tied to OpenGL and GLSL by design, whereas QSGMaterialRhiShader is based on QShader, a container for multiple versions of a graphics shader together with reflection information.</p>
+<p><b>Note: </b>All classes with QSG prefix should be used solely on the scene graph's rendering thread. See <a href="qtquick-visualcanvas-scenegraph.html#scene-graph-and-rendering">Scene Graph and Rendering</a> for more information.</p>
+</div>
+<!-- @@@QSGMaterialRhiShader -->
+<div class="types">
+<h2>Member Type Documentation</h2>
+<!-- $$$Flag$$$UpdatesGraphicsPipelineState -->
+<h3 class="flags" id="Flag-enum"><a name="Flag-enum"></a>enum QSGMaterialRhiShader::<span class="name">Flag</span><br/>flags QSGMaterialRhiShader::<span class="name">Flags</span></h3>
+<p>Flag values to indicate special material properties.</p>
+<div class="table"><table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><code>QSGMaterialRhiShader::UpdatesGraphicsPipelineState</code></td><td class="topAlign tblval"><code>0x0001</code></td><td class="topAlign">Setting this flag enables calling <a href="qsgmaterialrhishader.html#updateGraphicsPipelineState">updateGraphicsPipelineState</a>().</td></tr>
+</table></div>
+<p>The Flags type is a typedef for <a href="../qtcore/qflags.html">QFlags</a>&lt;Flag&gt;. It stores an OR combination of Flag values.</p>
+<!-- @@@Flag -->
+</div>
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$QSGMaterialRhiShader[overload1]$$$QSGMaterialRhiShader -->
+<h3 class="fn" id="QSGMaterialRhiShader"><a name="QSGMaterialRhiShader"></a>QSGMaterialRhiShader::<span class="name">QSGMaterialRhiShader</span>()</h3>
+<p>Constructs a new QSGMaterialRhiShader.</p>
+<!-- @@@QSGMaterialRhiShader -->
+<!-- $$$flags[overload1]$$$flags -->
+<h3 class="fn" id="flags"><a name="flags"></a><span class="type"><a href="qsgmaterialrhishader.html#Flag-enum">QSGMaterialRhiShader::Flags</a></span> QSGMaterialRhiShader::<span class="name">flags</span>() const</h3>
+<p>Returns the currently set flags for this material shader.</p>
+<!-- @@@flags -->
+<!-- $$$setFlag[overload1]$$$setFlagQSGMaterialRhiShader::Flagsbool -->
+<h3 class="fn" id="setFlag"><a name="setFlag"></a><span class="type">void</span> QSGMaterialRhiShader::<span class="name">setFlag</span>(<span class="type"><a href="qsgmaterialrhishader.html#Flag-enum">QSGMaterialRhiShader::Flags</a></span> <i>flags</i>, <span class="type">bool</span> <i>on</i> = true)</h3>
+<p>Sets the <i>flags</i> on this material shader if <i>on</i> is true; otherwise clears the specified flags.</p>
+<!-- @@@setFlag -->
+<!-- $$$setShader[overload1]$$$setShaderQSGMaterialRhiShader::StageconstQShader& -->
+<h3 class="fn" id="setShader"><a name="setShader"></a><code>[protected] </code><span class="type">void</span> QSGMaterialRhiShader::<span class="name">setShader</span>(<span class="type">QSGMaterialRhiShader::Stage</span> <i>stage</i>, const <span class="type"><a href="../qtgui/qshader.html">QShader</a></span> &amp;<i>shader</i>)</h3>
+<p>Sets the <i>shader</i> for the specified <i>stage</i>.</p>
+<!-- @@@setShader -->
+<!-- $$$setShaderFileName[overload1]$$$setShaderFileNameQSGMaterialRhiShader::StageconstQString& -->
+<h3 class="fn" id="setShaderFileName"><a name="setShaderFileName"></a><code>[protected] </code><span class="type">void</span> QSGMaterialRhiShader::<span class="name">setShaderFileName</span>(<span class="type">QSGMaterialRhiShader::Stage</span> <i>stage</i>, const <span class="type"><a href="../qtcore/qstring.html">QString</a></span> &amp;<i>filename</i>)</h3>
+<p>Sets the <i>filename</i> for the shader for the specified <i>stage</i>.</p>
+<p>The file is expected to contain a serialized QRhiShader.</p>
+<!-- @@@setShaderFileName -->
+<!-- $$$updateGraphicsPipelineState[overload1]$$$updateGraphicsPipelineStateQSGMaterialRhiShader::RenderState&QSGMaterialRhiShader::GraphicsPipelineState*QSGMaterial*QSGMaterial* -->
+<h3 class="fn" id="updateGraphicsPipelineState"><a name="updateGraphicsPipelineState"></a><code>[virtual] </code><span class="type">bool</span> QSGMaterialRhiShader::<span class="name">updateGraphicsPipelineState</span>(<span class="type"><a href="qsgmaterialrhishader-renderstate.html">QSGMaterialRhiShader::RenderState</a></span> &amp;<i>state</i>, <span class="type"><a href="qsgmaterialrhishader-graphicspipelinestate.html">QSGMaterialRhiShader::GraphicsPipelineState</a></span> *<i>ps</i>, <span class="type"><a href="qsgmaterial.html">QSGMaterial</a></span> *<i>newMaterial</i>, <span class="type"><a href="qsgmaterial.html">QSGMaterial</a></span> *<i>oldMaterial</i>)</h3>
+<p>This function is called by the scene graph to enable the material to provide a custom set of graphics state. The set of states that are customizable by material is limited to blending and related settings.</p>
+<p><b>Note: </b>This function is only called when the <a href="qsgmaterialrhishader.html#Flag-enum">UpdatesGraphicsPipelineState</a> flag was enabled via setFlags(). By default it is not set, and so this function is never called.</p>
+<p>The return value must be <code>true</code> whenever a change was made to any of the members in <i>ps</i>.</p>
+<p><b>Note: </b>The contents of <i>ps</i> is not persistent between invocations of this function.</p>
+<p>The current rendering <i>state</i> is passed from the scene graph.</p>
+<p>The subclass specific state can be extracted from <i>newMaterial</i>. When <i>oldMaterial</i> is null, this shader was just activated.</p>
+<!-- @@@updateGraphicsPipelineState -->
+<!-- $$$updateSampledImage[overload1]$$$updateSampledImageQSGMaterialRhiShader::RenderState&intQSGTexture**QSGMaterial*QSGMaterial* -->
+<h3 class="fn" id="updateSampledImage"><a name="updateSampledImage"></a><code>[virtual] </code><span class="type">void</span> QSGMaterialRhiShader::<span class="name">updateSampledImage</span>(<span class="type"><a href="qsgmaterialrhishader-renderstate.html">QSGMaterialRhiShader::RenderState</a></span> &amp;<i>state</i>, <span class="type">int</span> <i>binding</i>, <span class="type"><a href="qsgtexture.html">QSGTexture</a></span> **<i>texture</i>, <span class="type"><a href="qsgmaterial.html">QSGMaterial</a></span> *<i>newMaterial</i>, <span class="type"><a href="qsgmaterial.html">QSGMaterial</a></span> *<i>oldMaterial</i>)</h3>
+<p>This function is called by the scene graph to prepare using a sampled image in the shader, typically in form of a combined image sampler.</p>
+<p><i>binding</i> is the binding number of the sampler. The function is called for each variable in the material's shaders' <a href="../qtgui/qshaderdescription.html#combinedImageSamplers">QShaderDescription::combinedImageSamplers</a>().</p>
+<p>When *<i>texture</i> is null, it must be set to a <a href="qsgtexture.html">QSGTexture</a> pointer before returning. When non-null, it is up to the material to decide if a new <code>QSGTexture *</code> is stored to it, or if it updates some parameters on the already known <a href="qsgtexture.html">QSGTexture</a>. The ownership of the <a href="qsgtexture.html">QSGTexture</a> is not transferred.</p>
+<p>The current rendering <i>state</i> is passed from the scene graph. It is up to the material to enqueue the texture data uploads to the QRhiResourceUpdateBatch retriveable via <a href="qsgmaterialrhishader-renderstate.html#resourceUpdateBatch">RenderState::resourceUpdateBatch</a>().</p>
+<p>The subclass specific state can be extracted from <i>newMaterial</i>.</p>
+<p><i>oldMaterial</i> can be used to minimize changes. When <i>oldMaterial</i> is null, this shader was just activated.</p>
+<!-- @@@updateSampledImage -->
+<!-- $$$updateUniformData[overload1]$$$updateUniformDataQSGMaterialRhiShader::RenderState&QSGMaterial*QSGMaterial* -->
+<h3 class="fn" id="updateUniformData"><a name="updateUniformData"></a><code>[virtual] </code><span class="type">bool</span> QSGMaterialRhiShader::<span class="name">updateUniformData</span>(<span class="type"><a href="qsgmaterialrhishader-renderstate.html">QSGMaterialRhiShader::RenderState</a></span> &amp;<i>state</i>, <span class="type"><a href="qsgmaterial.html">QSGMaterial</a></span> *<i>newMaterial</i>, <span class="type"><a href="qsgmaterial.html">QSGMaterial</a></span> *<i>oldMaterial</i>)</h3>
+<p>This function is called by the scene graph to get the contents of the shader program's uniform buffer updated. The implementation is not expected to perform any real graphics operations, it is merely responsible for copying data to the <a href="../qtcore/qbytearray.html">QByteArray</a> returned from <a href="qsgmaterialrhishader-renderstate.html#uniformData">RenderState::uniformData</a>(). The scene graph takes care of making that buffer visible in the shaders.</p>
+<p>The current rendering <i>state</i> is passed from the scene graph. If the state indicates that any relevant state is dirty, the implementation must update the appropriate region in the buffer data that is accessible via <a href="qsgmaterialrhishader-renderstate.html#uniformData">RenderState::uniformData</a>(). When a state, such as, matrix or opacity, is not dirty, there is no need to touch the corresponding region since the data is persistent.</p>
+<p>The return value must be <code>true</code> whenever any change was made to the uniform data.</p>
+<p>The subclass specific state, such as the color of a flat color material, should be extracted from <i>newMaterial</i> to update the relevant regions in the buffer accordingly.</p>
+<p><i>oldMaterial</i> can be used to minimize buffer changes (which are typically memcpy calls) when updating material states. When <i>oldMaterial</i> is null, this shader was just activated.</p>
+<!-- @@@updateUniformData -->
+</div>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2020 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br/>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br/>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>
